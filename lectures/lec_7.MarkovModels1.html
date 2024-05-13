@@ -7,7 +7,9 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
   <title>Taller de análisis de decisiones - Markov Models</title>
@@ -967,12 +969,12 @@
 <section id="conceptualize-the-markov-model-1" class="slide level2">
 <h2>2. Conceptualize the Markov Model</h2>
 <p>Two major steps:</p>
-<h3 id="a.-determine-health-states">{{&lt; fa check-circle &gt;}} 2a. Determine health states</h3>
-<h3 id="b.-determine-transitions">{{&lt; fa check-circle &gt;}} 2b. Determine transitions</h3>
+<h3 id="a.-determine-health-states"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 2a. Determine health states</h3>
+<h3 id="b.-determine-transitions"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 2b. Determine transitions</h3>
 </section>
 <section id="step-2-conceptualize-the-model" class="slide level2">
 <h2>Step 2: Conceptualize the Model</h2>
-<h3 id="a.-determine-health-states-1">{{&lt; fa check-circle &gt;}} 2a. Determine health states</h3>
+<h3 id="a.-determine-health-states-1"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 2a. Determine health states</h3>
 <div>
 <ul>
 <li class="fragment">There are three health states people can experience:
@@ -986,7 +988,7 @@
 </section>
 <section id="step-2-conceptualize-the-model-1" class="slide level2">
 <h2>Step 2: Conceptualize the Model</h2>
-<h3 id="a.-determine-health-states-2">{{&lt; fa check-circle &gt;}} 2a. Determine health states</h3>
+<h3 id="a.-determine-health-states-2"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 2a. Determine health states</h3>
 <div>
 <ul>
 <li>There three health states people can experience:
@@ -997,7 +999,7 @@
 </ol></li>
 </ul>
 </div>
-<h3 id="b.-determine-transitions-1">{{&lt; fa check-circle &gt;}} 2b. Determine transitions</h3>
+<h3 id="b.-determine-transitions-1"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 2b. Determine transitions</h3>
 <div>
 <ul>
 <li class="fragment">Individuals who become sick cannot transition back to healthy.</li>
@@ -1089,13 +1091,13 @@
 <section id="parameterize-the-model-1" class="slide level2">
 <h2>3. Parameterize the Model</h2>
 <p>Basic steps</p>
-<h3 id="a.-determine-basic-model-parameters">{{&lt; fa check-circle &gt;}} 3a. Determine basic model parameters</h3>
-<h3 id="b.-curate-and-define-model-inputs">{{&lt; fa check-circle &gt;}} 3b. Curate and define model inputs</h3>
+<h3 id="a.-determine-basic-model-parameters"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3a. Determine basic model parameters</h3>
+<h3 id="b.-curate-and-define-model-inputs"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b. Curate and define model inputs</h3>
 </section>
 <section id="parameterize-the-model-2" class="slide level2">
 <h2>3. Parameterize the Model</h2>
 <p>Basic steps</p>
-<h3 id="a.-determine-basic-model-parameters-1">{{&lt; fa check-circle &gt;}} 3a. Determine basic model parameters</h3>
+<h3 id="a.-determine-basic-model-parameters-1"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3a. Determine basic model parameters</h3>
 <div>
 <ul>
 <li class="fragment">Define the population (e.g., 25 year old females)</li>
@@ -1225,8 +1227,8 @@
 <div class="column" style="width:50%;">
 <div>
 <ul>
-<li class="fragment">If we’re not careful, we could effectively rule out the possibility of Healthy {{&lt; fa arrow-right-long &gt;}} Sick{{&lt; fa arrow-right-long &gt;}} Dead within a cycle.</li>
-<li class="fragment">The model would <em>look like</em> a basic Healthy {{&lt; fa arrow-right-long &gt;}} Dead transition, but they took a detour through Sick along the way!</li>
+<li class="fragment">If we’re not careful, we could effectively rule out the possibility of Healthy <i class="fa-solid fa-arrow-right-long" aria-label="arrow-right-long"></i> Sick<i class="fa-solid fa-arrow-right-long" aria-label="arrow-right-long"></i> Dead within a cycle.</li>
+<li class="fragment">The model would <em>look like</em> a basic Healthy <i class="fa-solid fa-arrow-right-long" aria-label="arrow-right-long"></i> Dead transition, but they took a detour through Sick along the way!</li>
 </ul>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1534,17 +1536,17 @@
 </section>
 <section id="parameterize-the-model-3" class="slide level2">
 <h2>3. Parameterize the Model</h2>
-<h3 id="b.-curate-and-define-model-inputs-1">{{&lt; fa check-circle &gt;}} 3b. Curate and define model inputs</h3>
+<h3 id="b.-curate-and-define-model-inputs-1"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b. Curate and define model inputs</h3>
 <div class="nobullet">
 <ul>
-<li class="fragment"><p>{{&lt; fa check-circle &gt;}} 3b.i. Source and define the base case values.</p></li>
-<li class="fragment"><p>{{&lt; fa check-circle &gt;}} 3b.ii. Source and define sources of uncertainty.</p></li>
+<li class="fragment"><p><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b.i. Source and define the base case values.</p></li>
+<li class="fragment"><p><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b.ii. Source and define sources of uncertainty.</p></li>
 </ul>
 </div>
 </section>
 <section id="parameterize-the-model-4" class="slide level2">
 <h2>3. Parameterize the Model</h2>
-<h3 id="b.-curate-and-define-model-inputs-2">{{&lt; fa check-circle &gt;}} 3b. Curate and define model inputs</h3>
+<h3 id="b.-curate-and-define-model-inputs-2"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b. Curate and define model inputs</h3>
 <div>
 <ul>
 <li class="fragment">Rate of disease onset</li>

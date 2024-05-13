@@ -290,8 +290,8 @@
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#esquema",
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#esquema",
     "title": "Introducción al análisis de decisiones",
-    "section": "Esquema {{< fa regular clipboard >}}",
-    "text": "Esquema {{&lt; fa regular clipboard &gt;}}\n\n\nPresentaciones\nMotivación\nEjemplos de análisis de decisiones\nObjetivos del taller"
+    "section": "Esquema ",
+    "text": "Esquema \n\n\nPresentaciones\nMotivación\nEjemplos de análisis de decisiones\nObjetivos del taller"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#curso-sitio-web",
@@ -717,8 +717,8 @@
     "objectID": "lectures/lec_1a.introduction-to-decision-analysis.html#outline",
     "href": "lectures/lec_1a.introduction-to-decision-analysis.html#outline",
     "title": "Introduction to Decision Analysis",
-    "section": "Outline {{< fa regular clipboard >}}",
-    "text": "Outline {{&lt; fa regular clipboard &gt;}}\n\n\nIntroductions\nMotivation\nExamples of Decision Analysis\nWorkshop objectives"
+    "section": "Outline ",
+    "text": "Outline \n\n\nIntroductions\nMotivation\nExamples of Decision Analysis\nWorkshop objectives"
   },
   {
     "objectID": "lectures/lec_1a.introduction-to-decision-analysis.html#course-website",
@@ -942,7 +942,7 @@
     "href": "lectures/lec_5a.cea-fundamentals1.html#features-of-economic-evaluation",
     "title": "CEA Fundamentals: Valuing Costs",
     "section": "Features of Economic Evaluation",
-    "text": "Features of Economic Evaluation\n\n\n{{&lt; fa check-circle &gt;}} Systematic quantification of costs and consequences.\n\n\n\n{{&lt; fa check-circle &gt;}} Comparative analysis of alternative courses of action.\n\nWe’ll focus on this in the next lecture."
+    "text": "Features of Economic Evaluation\n\n\n Systematic quantification of costs and consequences.\n\n\n\n Comparative analysis of alternative courses of action.\n\nWe’ll focus on this in the next lecture."
   },
   {
     "objectID": "lectures/lec_5a.cea-fundamentals1.html#techniques-for-economic-evaluation",
@@ -1516,21 +1516,21 @@
     "href": "lectures/lec_7.MarkovModels1.html#conceptualize-the-markov-model-1",
     "title": "Markov Models",
     "section": "2. Conceptualize the Markov Model",
-    "text": "2. Conceptualize the Markov Model\nTwo major steps:\n{{&lt; fa check-circle &gt;}} 2a. Determine health states\n{{&lt; fa check-circle &gt;}} 2b. Determine transitions"
+    "text": "2. Conceptualize the Markov Model\nTwo major steps:\n 2a. Determine health states\n 2b. Determine transitions"
   },
   {
     "objectID": "lectures/lec_7.MarkovModels1.html#step-2-conceptualize-the-model",
     "href": "lectures/lec_7.MarkovModels1.html#step-2-conceptualize-the-model",
     "title": "Markov Models",
     "section": "Step 2: Conceptualize the Model",
-    "text": "Step 2: Conceptualize the Model\n{{&lt; fa check-circle &gt;}} 2a. Determine health states\n\n\nThere are three health states people can experience:\n\nRemain Healthy\nBecome Sick\nDeath"
+    "text": "Step 2: Conceptualize the Model\n 2a. Determine health states\n\n\nThere are three health states people can experience:\n\nRemain Healthy\nBecome Sick\nDeath"
   },
   {
     "objectID": "lectures/lec_7.MarkovModels1.html#step-2-conceptualize-the-model-1",
     "href": "lectures/lec_7.MarkovModels1.html#step-2-conceptualize-the-model-1",
     "title": "Markov Models",
     "section": "Step 2: Conceptualize the Model",
-    "text": "Step 2: Conceptualize the Model\n{{&lt; fa check-circle &gt;}} 2a. Determine health states\n\n\nThere three health states people can experience:\n\nRemain Healthy\nBecome Sick\nDeath\n\n\n\n{{&lt; fa check-circle &gt;}} 2b. Determine transitions\n\n\nIndividuals who become sick cannot transition back to healthy."
+    "text": "Step 2: Conceptualize the Model\n 2a. Determine health states\n\n\nThere three health states people can experience:\n\nRemain Healthy\nBecome Sick\nDeath\n\n\n\n 2b. Determine transitions\n\n\nIndividuals who become sick cannot transition back to healthy."
   },
   {
     "objectID": "lectures/lec_7.MarkovModels1.html#bubble-diagram",
@@ -1544,14 +1544,14 @@
     "href": "lectures/lec_7.MarkovModels1.html#parameterize-the-model-1",
     "title": "Markov Models",
     "section": "3. Parameterize the Model",
-    "text": "3. Parameterize the Model\nBasic steps\n{{&lt; fa check-circle &gt;}} 3a. Determine basic model parameters\n{{&lt; fa check-circle &gt;}} 3b. Curate and define model inputs"
+    "text": "3. Parameterize the Model\nBasic steps\n 3a. Determine basic model parameters\n 3b. Curate and define model inputs"
   },
   {
     "objectID": "lectures/lec_7.MarkovModels1.html#parameterize-the-model-2",
     "href": "lectures/lec_7.MarkovModels1.html#parameterize-the-model-2",
     "title": "Markov Models",
     "section": "3. Parameterize the Model",
-    "text": "3. Parameterize the Model\nBasic steps\n{{&lt; fa check-circle &gt;}} 3a. Determine basic model parameters\n\n\nDefine the population (e.g., 25 year old females)\nDefine the Markov cycle length (e.g., 1-year cycle)\nDefine the time horizon (e.g., followed until age 100 or death)"
+    "text": "3. Parameterize the Model\nBasic steps\n 3a. Determine basic model parameters\n\n\nDefine the population (e.g., 25 year old females)\nDefine the Markov cycle length (e.g., 1-year cycle)\nDefine the time horizon (e.g., followed until age 100 or death)"
   },
   {
     "objectID": "lectures/lec_7.MarkovModels1.html#a.-define-the-markov-cycle-length",
@@ -1586,7 +1586,7 @@
     "href": "lectures/lec_7.MarkovModels1.html#a.-define-the-markov-cycle-length-4",
     "title": "Markov Models",
     "section": "3a. Define the Markov Cycle Length",
-    "text": "3a. Define the Markov Cycle Length\nThe challenge of selecting an appropriate cycle length boils down to how we deal with competing risks.\n\n\n\n\nIf we’re not careful, we could effectively rule out the possibility of Healthy {{&lt; fa arrow-right-long &gt;}} Sick{{&lt; fa arrow-right-long &gt;}} Dead within a cycle.\nThe model would look like a basic Healthy {{&lt; fa arrow-right-long &gt;}} Dead transition, but they took a detour through Sick along the way!\n\n\n\n\n\n\n\n\n\n\nG\n\n\n\nHealthy\n\nHealthy\n\n\n\nHealthy-&gt;Healthy\n\n\n\n\n\nSick\n\nSick\n\n\n\nHealthy-&gt;Sick\n\n\n\n\n\nDead\n\nDead\n\n\n\nHealthy-&gt;Dead\n\n\n\n\n\nSick-&gt;Sick\n\n\n\n\n\nSick-&gt;Dead\n\n\n\n\n\nDead-&gt;Dead"
+    "text": "3a. Define the Markov Cycle Length\nThe challenge of selecting an appropriate cycle length boils down to how we deal with competing risks.\n\n\n\n\nIf we’re not careful, we could effectively rule out the possibility of Healthy  Sick Dead within a cycle.\nThe model would look like a basic Healthy  Dead transition, but they took a detour through Sick along the way!\n\n\n\n\n\n\n\n\n\n\nG\n\n\n\nHealthy\n\nHealthy\n\n\n\nHealthy-&gt;Healthy\n\n\n\n\n\nSick\n\nSick\n\n\n\nHealthy-&gt;Sick\n\n\n\n\n\nDead\n\nDead\n\n\n\nHealthy-&gt;Dead\n\n\n\n\n\nSick-&gt;Sick\n\n\n\n\n\nSick-&gt;Dead\n\n\n\n\n\nDead-&gt;Dead"
   },
   {
     "objectID": "lectures/lec_7.MarkovModels1.html#a.-define-the-markov-cycle-length-5",
@@ -1656,14 +1656,14 @@
     "href": "lectures/lec_7.MarkovModels1.html#parameterize-the-model-3",
     "title": "Markov Models",
     "section": "3. Parameterize the Model",
-    "text": "3. Parameterize the Model\n{{&lt; fa check-circle &gt;}} 3b. Curate and define model inputs\n\n\n{{&lt; fa check-circle &gt;}} 3b.i. Source and define the base case values.\n{{&lt; fa check-circle &gt;}} 3b.ii. Source and define sources of uncertainty."
+    "text": "3. Parameterize the Model\n 3b. Curate and define model inputs\n\n\n 3b.i. Source and define the base case values.\n 3b.ii. Source and define sources of uncertainty."
   },
   {
     "objectID": "lectures/lec_7.MarkovModels1.html#parameterize-the-model-4",
     "href": "lectures/lec_7.MarkovModels1.html#parameterize-the-model-4",
     "title": "Markov Models",
     "section": "3. Parameterize the Model",
-    "text": "3. Parameterize the Model\n{{&lt; fa check-circle &gt;}} 3b. Curate and define model inputs\n\n\nRate of disease onset\nHealth state utilities and costs\nHazard ratios, odds ratios or relative risks for different strategies.\n… and so on."
+    "text": "3. Parameterize the Model\n 3b. Curate and define model inputs\n\n\nRate of disease onset\nHealth state utilities and costs\nHazard ratios, odds ratios or relative risks for different strategies.\n… and so on."
   },
   {
     "objectID": "lectures/lec_7.MarkovModels1.html#parameterize-the-model-5",
@@ -2853,7 +2853,7 @@
     "href": "lectures/lec_6.ICERs.html#objectives-shopping-spree-problem",
     "title": "Incremental Cost-Effectiveness Analysis",
     "section": "Objectives: Shopping Spree Problem",
-    "text": "Objectives: Shopping Spree Problem\n{{&lt; fa circle-check &gt;}} Maximize the total net effectiveness (health benefit) of the programs selected.\n{{&lt; fa circle-check &gt;}} Stay within budget."
+    "text": "Objectives: Shopping Spree Problem\n Maximize the total net effectiveness (health benefit) of the programs selected.\n Stay within budget."
   },
   {
     "objectID": "lectures/lec_6.ICERs.html#shopping-spree-problem",
@@ -2951,7 +2951,7 @@
     "href": "lectures/lec_6.ICERs.html#summary-shopping-spree-problem",
     "title": "Incremental Cost-Effectiveness Analysis",
     "section": "Summary: Shopping Spree Problem",
-    "text": "Summary: Shopping Spree Problem\n{{&lt; fa circle-check &gt;}} Maximize the total net effectiveness (health benefit)\n{{&lt; fa circle-check &gt;}} Stay within budget\n{{&lt; fa note-sticky &gt;}} Can do the same with other objectives (e.g., Minimize costs, subject decision to ‘minimum benefit’ constraint, etc.)"
+    "text": "Summary: Shopping Spree Problem\n Maximize the total net effectiveness (health benefit)\n Stay within budget\n Can do the same with other objectives (e.g., Minimize costs, subject decision to ‘minimum benefit’ constraint, etc.)"
   },
   {
     "objectID": "lectures/lec_6.ICERs.html#use-of-cea-in-two-situations-2",
@@ -2972,7 +2972,7 @@
     "href": "lectures/lec_6.ICERs.html#objectives-competing-choice-problem",
     "title": "Incremental Cost-Effectiveness Analysis",
     "section": "Objectives: Competing Choice Problem",
-    "text": "Objectives: Competing Choice Problem\n{{&lt; fa circle-check &gt;}} Cannot implement more than one strategy at a time.\n{{&lt; fa circle-check &gt;}} Incremental cost-effectiveness ratio is below a pre-specified adoption threshold."
+    "text": "Objectives: Competing Choice Problem\n Cannot implement more than one strategy at a time.\n Incremental cost-effectiveness ratio is below a pre-specified adoption threshold."
   },
   {
     "objectID": "lectures/lec_6.ICERs.html#whats-different",
