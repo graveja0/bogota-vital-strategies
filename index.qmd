@@ -1,6 +1,5 @@
 ---
 title: Decision Analysis Workshop
-subtitle: Vanderbilt-Nigeria Building Research Capacity in HIV and Non-communicable Diseases, November 2023
 editor: visual
 format: 
   html:
@@ -18,6 +17,8 @@ bibliography: references.bib
 | Tuesday June 18   | 9:00 - 9:45 am | Welcome and Introductions                                                                  |                                                                                          |
 +-------------------+----------------+--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 |                   | 9:45 - 10:00   | [Introduction to Decision Analysis](lectures/lec_1a.introduction-to-decision-analysis.qmd) |                                                                                          |
+|                   |                |                                                                                            |                                                                                          |
+|                   |                | [Introducción al análisis de decisiones](lectures/ESP_lec_1a.introduction-to-decision-analysis.qmd) |                                                                                          |
 +-------------------+----------------+--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 |                   | 10:00-11:00    | [Decision Trees and Probabilities](lectures/lec_2.decision-trees-and-probabilities.qmd)    |                                                                                          |
 +-------------------+----------------+--------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
