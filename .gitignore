@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.Rdata
+.httr-oauth
+.DS_Store
+
+/.quarto/
+_site/
+*cache*
+*html*
+site_libs/
+*files*
+*.json*
+*.feed*
+_bundled-daily-material/

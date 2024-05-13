@@ -1,0 +1,30 @@
+project:
+  type: website
+  resources:
+    - "*.xlsx"
+    - "*.xlsm"
+    - "*.xls"
+    - "*.pptx"
+    - "*.pdf"
+    - "*.docx"
+    - "*.amua"
+
+website:
+  title: "Decision Analysis Workshop"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    
+execute:
+  freeze: true  # never re-render during project render    
+
+
+

@@ -1,0 +1,39 @@
+---
+title: "Instructors"
+editor: source
+editor_options: 
+  chunk_output_type: console
+---
+
+
+### John Graves (Vanderbilt University)
+
+[![](https://www.vumc.org/health-policy/sites/default/files/people/John%20Graves%202021%20crop.jpg){height="100" fig-align="left" fig-alt="Info about John Graves"}](https://www.vumc.org/health-policy/person/john-graves-phd)
+
+John A. Graves, Ph.D. is Professor of Health Policy and Medicine at Vanderbilt University School of Medicine, and Professor of Management at the Vanderbilt Owen Graduate School of Management in Nashville, Tennessee, USA. He directs the Center for Health Economic Modeling at Vanderbilt University Medical Center, and is a faculty affiliate of the Vanderbilt Institute for Global Health (VIGH) and the Vanderbilt Ingram Cancer Center.
+
+Dr. Graves has over twenty years of experience at the intersection of research and policymaking, having contributed to policy modeling efforts that informed the design and execution of the 2006 Massachusetts health reform legistlation and the 2010 Affordable Care Act, for which he served as lead modeler for the White House Office of Health Reform. Since joining the Vanderbilt faculty in 2011, Dr. Graves has led large research projects focused on the design of health insurance, the returns to health care spending and quality, and the cost-effectiveness of genetic testing in diverse health system populations.
+
+Dr. Graves teaches econometrics, statistics, and health policy courses to masters and Ph.D. students drawn from across Vanderbilt University, and is course director for policy and health economics content for Vanderbilt School of Medicine medical students. He also co-directs the Health Care Valuation Lab--a novel course collaboration between the Owen Graduate School of Management, Vanderbilt School of Medicine, and the Nashville Entrepreneur Center's [Project Healthcare](https://www.ec.co/programs/project-healthcare/) Initiative. Prior to joining Vanderbilt, he taught in the the Master's in Public Administration in International Development at the Harvard Kennedy School, and is an affiliate of the Abdul Latif Jameel Poverty Action Lab at MIT.
+
+Dr. Graves holds a Ph.D. in Health Policy from Harvard University and an undergraduate degree in economics and English literature from the University of the South in Sewanee, Tennessee. He is an elected member of the National Academy of Social Insurance, and his work has been recognized with fellowships and awards from the National Institute for Healthcare Management, the National Bureau of Economic Research, and the American Statistical Association.
+
+### Jinyi Zhu (Vanderbilt University)
+
+[![](https://www.vumc.org/health-policy/sites/default/files/people/Zhu_Jinyi.jpg){height="100" fig-align="left" fig-alt="Info about Jinyi Zhu"}](https://www.vumc.org/health-policy/person/jinyi-zhu-phd-mph)
+
+Jinyi Zhu is an Assistant Professor in the Department of Health Policy. Her research focuses on applications and methods to inform decision-making for resource allocation in public health and health care. Specifically, her research falls into three main areas: 1) resource prioritization for the prevention and treatment of cardiovascular disease, 2) applied model-based cost-effectiveness analysis in other clinical areas including TB and HIV, and 3) methodological advances in disease simulation modeling (e.g., model calibration and validation).
+
+Dr. Zhu received a Ph.D. in Health Policy from Harvard University. She also holds an MPH from Yale University and a BS in Biology and BA in economics from Peking University.
+
+ 
+### Ashley Leech (Vanderbilt University) [Note: Remote only]
+
+[![](https://www.vumc.org/health-policy/sites/default/files/people/ashley%20leech.png){height="100" fig-align="left" fig-alt="Info about Ashley Leech"}](https://www.vumc.org/health-policy/person/ashley-leech-phd-ms)
+
+Ashley Leech is an Assistant Professor in the Department of Health Policy at the Vanderbilt University School of Medicine. Dr. Leech's research combines health services research and health economic methods to answer questions related to healthcare access, delivery, resource allocation, and use, and outcomes for reproductive-age women and their children. She is the Principal Investigator of an NIH/NIDA-funded career development award on Advancing Treatment Outcomes for Pregnant Women with Opioid Use Disorder where she is using decision science methodology to promote the coverage and adoption of high-value healthcare for pregnant women with opioid use disorder, a population that disproportionately faces major impediments to care.
+
+Dr. Leech completed her post-doctoral training in Health Economics at the Center for the Evaluation of Value and Risk in Health (CEVR) at Tufts University School of Medicine where she focused on decision science methodology and received her Ph.D. in Health Services Research at Boston University School of Public Health.
+
+
+
