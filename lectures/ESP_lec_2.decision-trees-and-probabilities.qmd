@@ -1,0 +1,984 @@
+---
+title: "Árboles de decisión y probabilidades"
+format:
+  revealjs:
+    theme: slides.scss
+    incremental: false
+    slide-number: true
+    logo: ../vchem.png
+    html-math-method: katex
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    footer: |
+      [Volver al sitio web](../index.html)
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Objetivos de aprendizaje y esquema
+
+## Objetivos de aprendizaje
+
+- Construir y resolver un problema de decisión calculando el
+    el **valor esperado** de una intervención entre estrategias competidoras en un
+    árbol de decisión
+
+- Determinar el umbral de decisión en una serie de escenarios
+
+- Diferenciar entre probabilidades conjuntas y condicionales y
+    demostrar su uso en árboles de decisión
+
+## Esquema
+
+
+::: columns
+::: {.column width="50%"}
+1.  Estructura
+2.  Revisión de probabilidades
+3.  Probabilidades en los árboles de decisión
+:::
+
+::: {.column width="50%"}
+4.  Puntos fuertes/limitaciones de los árboles de decisión
+:::
+:::
+
+# La estructura de un análisis de decisión {background="#43464B"}
+
+## Recapitulación: Análisis de decisión {background="#43464B"}
+
+<br>
+
+::: incremental
+- Tiene como objetivo informar la elección bajo incertidumbre utilizando un enfoque explícito,
+    enfoque cuantitativo
+
+- Tiene como objetivo identificar, medir y valorar las **consecuencias de las decisiones**
+    (riesgos/beneficios) y la incertidumbre cuando hay que tomar una decisión,
+    más apropiadamente a lo largo del tiempo
+:::
+
+# ¿Debo ir a la playa o quedarme en casa? {background="#c2f0c2"}
+
+## ¿Debo ir a la playa o quedarme en casa? {auto-animate="true"}
+
+#### Posibles estados del mundo:
+
+::: nonincremental
+- En la playa sin lluvia.
+- En la playa con lluvia.
+- En casa sin lluvia.
+- En casa con lluvia.
+:::
+
+## ¿Debería ir a la playa o quedarme en casa? {auto-animate="true"}
+
+### Consideraciones:
+
+::: nonincremental
+- [Probabilidad de lluvia]{style="color: green;"}
+- [Mi bienestar general cuando]{style="color: green;"}
+    - En la playa sin lluvia.
+    - En la playa con lluvia.
+    - En casa sin lluvia.
+    - En casa con lluvia.
+:::
+
+## ¿Debería ir a la playa o quedarme en casa? {auto-animate="true"}
+
+### Consideraciones:
+
+::: nonincremental
+- [Probabilidad de lluvia]{style="color: verde;"} --\> **probabilidades**
+- [Mi bienestar general cuando]{style="color: green;"}
+    - En la playa sin lluvia.
+    - En la playa con lluvia.
+    - En casa sin lluvia.
+    - En casa con lluvia.
+:::
+
+## ¿Debería ir a la playa o quedarme en casa? {auto-animate="true"}
+
+### Consideraciones:
+
+::: nonincremental
+- [Probabilidad de lluvia]{style="color: verde;"} --\> **probabilidades**
+- [Mi bienestar general cuando]{style="color: green;"}
+    - En la playa sin lluvia. --\> **probabilidades**
+    - En la playa con lluvia. --\> En casa sin lluvia.
+    - En casa sin lluvia. --\> En casa sin lluvia.
+    - En casa con lluvia. --\> En casa con lluvia.
+:::
+
+```{r decision-trees}
+#| echo = FALSE
+
+###############################################################################################
+# Note:
+#   Mermaid images created with DiagrammeR are ridiculously hard to export as images,
+#   and even when they do export, they end up with tons of unnecessary white space.
+#   As a result, our solution here is to include the code that generates each 
+#   decision tree, then to use the "Export" feature within Rstudio/Posit to
+#   save it as a temporary .png. We then pare down the whitespace in the saved
+#   image by cropping it accordingly, and then saving this image in the media directory. 
+###############################################################################################
+
+library(DiagrammeR)
+#https://mermaid-js.github.io/mermaid/#/flowchart
+
+
+dt_key <- mermaid("graph LR
+        A[ ]---B[ ]
+        B---C[Decision Node]
+        D[ ]---E(( ))
+        E---F(( Chance Node))
+        linkStyle 1 stroke:#ff3,stroke-width:0px,color:red;
+        linkStyle 3 stroke:#ff3,stroke-width:0px,color:red;
+        style A fill:#ffffff,stroke:#333,stroke-width:0px
+        style D fill:#ffffff,stroke:#333,stroke-width:0px
+        style C fill:#ffffff,stroke:#333,stroke-width:0px
+        style F fill:#ffffff,stroke:#333,stroke-width:0px")
+
+
+dt_beachhome1 <- mermaid("graph LR
+    A[ ]---B[ ]
+    B---|Beach|C(( ))
+    B---|Home|D(( ))
+    C---|x|Rain[Rain]
+    C---|1-x|NoRain[No Rain]
+    D---|x|Rain2[Rain]
+    D---|1-x|NoRain2[No Rain]
+    style A fill:#ffffff,stroke:#333,stroke-width:0px
+    style Rain fill:#ffffff,stroke:#333,strike-width:2px
+    style NoRain fill:#ffffff,stroke:#333,strike-width:2px
+    style Rain2 fill:#ffffff,stroke:#333,strike-width:2px
+    style NoRain2 fill:#ffffff,stroke:#333,strike-width:2px")
+
+dt_beachhome2  <- mermaid("graph LR
+    A[ ]---B[ ]
+    B---|Beach|C(( ))
+    B---|Home|D(( ))
+    C---|0.3|Rain[Rain]
+    C---|0.7|NoRain[No Rain]
+    D---|0.3|Rain2[Rain]
+    D---|0.7|NoRain2[No Rain]
+    style A fill:#ffffff,stroke:#333,stroke-width:0px
+    style Rain fill:#ffffff,stroke:#333,strike-width:2px
+    style NoRain fill:#ffffff,stroke:#333,strike-width:2px
+    style Rain2 fill:#ffffff,stroke:#333,strike-width:2px
+    style NoRain2 fill:#ffffff,stroke:#333,strike-width:2px")
+
+dt_beachhome3 <- mermaid("graph LR
+    A[ ]---B[ ]
+    B---|Beach|C(( ))
+    B---|Home|D(( ))
+    C---|0.3|Rain[Rain]
+    C---|0.7|NoRain[No Rain]
+    D---|0.3|Rain2[Rain]
+    D---|0.7|NoRain2[No Rain]
+    Rain2---pHomeRain[0.6]
+    NoRain2---pHomeNoRain[0.8]
+    Rain---pBeachRain[0.4]
+    NoRain---pBeachNoRain[1.0]
+    linkStyle 10 stroke:#ff3,stroke-width:0px,color:red;     
+    linkStyle 9 stroke:#ff3,stroke-width:0px,color:red; 
+    linkStyle 7 stroke:#ff3,stroke-width:0px,color:red;    
+    linkStyle 8 stroke:#ff3,stroke-width:0px,color:red;
+    style pBeachRain fill:#ffffff,stroke-width:0px
+    style pBeachNoRain fill:#ffffff,stroke-width:0px   
+    style pHomeRain fill:#ffffff,stroke-width:0px
+    style pHomeNoRain fill:#ffffff,stroke-width:0px   
+    style A fill:#ffffff,stroke:#333,stroke-width:0px
+    style Rain fill:#ffffff,stroke:#333,strike-width:2px
+    style NoRain fill:#ffffff,stroke:#333,strike-width:2px
+    style Rain2 fill:#ffffff,stroke:#333,strike-width:2px
+    style NoRain2 fill:#ffffff,stroke:#333,strike-width:2px")
+
+dt_beachhome_EVbeach <- mermaid("graph LR
+    A[ ]---B[ ]
+    B---|Beach|C(( ))
+    B---|Home|D(( ))
+    C---|0.3|Rain[Rain]
+    C---|0.7|NoRain[No Rain]
+    D---|0.3|Rain2[Rain]
+    D---|0.7|NoRain2[No Rain]
+    Rain2---pHomeRain[0.6]
+    NoRain2---pHomeNoRain[0.8]
+    Rain---pBeachRain[0.4]
+    NoRain---pBeachNoRain[1.0]
+    linkStyle 10 stroke:#ff3,stroke-width:0px,color:red;     
+    linkStyle 9 stroke:#ff3,stroke-width:0px,color:red; 
+    linkStyle 7 stroke:#ff3,stroke-width:0px,color:red;    
+    linkStyle 8 stroke:#ff3,stroke-width:0px,color:red;
+    style pBeachRain fill:#ffffff,stroke-width:0px
+    style pBeachNoRain fill:#ffffff,stroke-width:0px   
+    style pHomeRain fill:#ffffff,stroke-width:0px
+    style pHomeNoRain fill:#ffffff,stroke-width:0px   
+    style A fill:#ffffff,stroke:#333,stroke-width:0px
+    style Rain fill:#f3bab6,stroke:#333,strike-width:2px
+    style NoRain fill:#f3bab6,stroke:#333,strike-width:2px
+    style Rain2 fill:#ffffff,stroke:#333,strike-width:2px
+    style NoRain2 fill:#ffffff,stroke:#333,strike-width:2px")
+
+dt_beachhome_EVhome <- mermaid("graph LR
+    A[ ]---B[ ]
+    B---|Beach|C(( ))
+    B---|Home|D(( ))
+    C---|0.3|Rain[Rain]
+    C---|0.7|NoRain[No Rain]
+    D---|0.3|RainH[Rain]
+    D---|0.7|NoRainH[No Rain]
+    RainH---pHomeRain[0.6]
+    NoRainH---pHomeNoRain[0.8]
+    Rain---pBeachRain[0.4]
+    NoRain---pBeachNoRain[1.0]
+    linkStyle 10 stroke:#ff3,stroke-width:0px,color:red;     
+    linkStyle 9 stroke:#ff3,stroke-width:0px,color:red; 
+    linkStyle 7 stroke:#ff3,stroke-width:0px,color:red;    
+    linkStyle 8 stroke:#ff3,stroke-width:0px,color:red;
+    style pBeachRain fill:#ffffff,stroke-width:0px
+    style pBeachNoRain fill:#ffffff,stroke-width:0px   
+    style pHomeRain fill:#ffffff,stroke-width:0px
+    style pHomeNoRain fill:#ffffff,stroke-width:0px   
+    style A fill:#ffffff,stroke:#333,stroke-width:0px
+    style Rain fill:#ffffff,stroke:#333,strike-width:2px
+    style NoRain fill:#ffffff,stroke:#333,strike-width:2px
+    style RainH fill:#f3bab6,stroke:#333,strike-width:2px
+    style NoRainH fill:#f3bab6,stroke:#333,strike-width:2px")
+
+dt_beachhome_pB <- mermaid("graph LR
+    A[ ]---B[ ]
+    B---|Beach=0.82|C(( ))
+    B---|Home=0.74|D(( ))
+    C---|p_B|Rain[Rain]
+    C---|1-p_B|NoRain[No Rain]
+    D---|0.3|Rain2[Rain]
+    D---|0.7|NoRain2[No Rain]
+    Rain2---pHomeRain[0.6]
+    NoRain2---pHomeNoRain[0.8]
+    Rain---pBeachRain[0.4]
+    NoRain---pBeachNoRain[1.0]
+    linkStyle 10 stroke:#ff3,stroke-width:0px,color:red;     
+    linkStyle 9 stroke:#ff3,stroke-width:0px,color:red; 
+    linkStyle 7 stroke:#ff3,stroke-width:0px,color:red;    
+    linkStyle 8 stroke:#ff3,stroke-width:0px,color:red;
+    style pBeachRain fill:#ffffff,stroke-width:0px
+    style pBeachNoRain fill:#ffffff,stroke-width:0px   
+    style pHomeRain fill:#ffffff,stroke-width:0px
+    style pHomeNoRain fill:#ffffff,stroke-width:0px   
+    style A fill:#ffffff,stroke:#333,stroke-width:0px
+    style Rain fill:#ffffff,stroke:#333,strike-width:2px
+    style NoRain fill:#ffffff,stroke:#333,strike-width:2px
+    style Rain2 fill:#ffffff,stroke:#333,strike-width:2px
+    style NoRain2 fill:#ffffff,stroke:#333,strike-width:2px")
+```
+
+## Árboles de decisión
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+- Un nodo de decisión cuadrado indica un punto de decisión entre
+    opciones alternativas.
+- Un nodo de azar circular indica un punto en el que son posibles dos o más
+    alternativas para un paciente.
+:::
+:::
+:::
+
+## Árboles de decisión
+
+::: columns
+::: {.column width="50%"}
+- Un nodo de decisión cuadrado indica un punto de decisión entre
+    opciones alternativas.
+- Un nodo de azar circular indica un punto en el que son posibles dos o más
+    alternativas para un paciente.
+:::
+
+::: {.column width="50%"}
+![](media/lec_conceptual-and-theoretical-frameworks/dt_key.png)
+:::
+:::
+
+::: notes
+(1) Empezamos con un nodo de decisión -- que sólo muestra visualmente el
+    punto de decisión (por lo que no se adjuntan probabilidades aquí)
+
+(2) A partir de nuestro nodo de decisión, crearemos nodos de azar,
+    o nodos de probabilidad, para modelar las probabilidades de nuestras
+    diferentes opciones
+
+(3) Los sucesos correspondientes de los nodos de azar deben sumar 1 según
+    según la "ley de la probabilidad total"
+:::
+
+## Árboles de decisión
+
+::: incremental
+- Los caminos son secuencias de sucesos mutuamente excluyentes y son las
+    rutas a través del árbol.
+- Las probabilidades muestran la probabilidad de que ocurra un suceso concreto en un
+    nodo de azar.
+:::
+
+## ¿Debería ir a la playa o quedarme en casa? {auto-animate="true"}
+
+### Árbol de decisión:
+
+![](media/lec_conceptual-and-theoretical-frameworks/dt_beachhome1.png){fig-align="center"}
+
+::: notes
+(2) Los resultados que nos importan para este modelo son LLUVIA frente a NO LLUVIA,
+    por lo que añadimos que al final de nuestras ramas, que representan la
+    nodos terminales -- o los estados finales de nuestro modelo
+:::
+
+# {{< fa nube-lluvia >}} {background="#c2f0c2"}
+
+Probabilidad de lluvia = 30%
+
+## ¿Debería ir a la playa o quedarme en casa? {auto-animate="true"}
+
+### Árbol de decisión:
+
+![](media/lec_conceptual-and-theoretical-frameworks/dt_beachhome2.png){fig-align="center"}
+
+::: notes
+(1) La probabilidad de lluvia es del 30% - tanto si te quedas en casa como si vas a la
+    playa & sabemos que las ramas tienen que sumar 1 debido a la
+    ley de la probabilidad total
+(2) Sin embargo, no hemos terminado todavía, ya que sería útil si tuviéramos
+    alguna manera de VALORAR los resultados - en términos de decir, la lluvia en la
+    playa, frente a si lloviera en casa, etc.
+(3) Si no le das valor a los diferentes resultados, entonces estamos diciendo esencialmente que valoramos la LLUVIA.
+    esencialmente diciendo que valoramos igual la LLUVIA frente a la NO LLUVIA entre
+    las opciones playa y casa
+(4) Pero si tuviera que adivinar, esto probablemente no es cierto a menos que usted es el
+    que le guste tanto la lluvia en la playa como en casa).
+    casa)
+:::
+
+## ¿Debería ir a la playa o quedarme en casa?
+
+### Payoffs
+
+| Escenario | Payoff |
+|-------------------|--------|
+| En la playa, sin lluvia 1.0
+| En la playa, lluvia 0.4
+| En casa, sin lluvia 0,8
+| En casa, lluvia 0,6
+
+::: fragment
+En la playa, no llueve \> En casa, no llueve \> En casa, llueve \> En la playa, llueve
+:::
+
+::: notes
+(1) Entraremos en esto más adelante, pero las utilidades se miden
+    entre 0 y 1.
+(2) Para los estados de salud, por ejemplo, 0 = peor salud y 1 = perfecta
+    salud
+(3) Aquí, estamos valorando "playa, sin lluvia" como el "estado más ideal" en el que queremos estar.
+    en el que queremos estar
+:::
+
+## ¿Debo ir a la playa o quedarme en casa?
+
+### Árbol de decisión:
+
+![](media/lec_conceptual-and-theoretical-frameworks/dt_beachhome3.png){fig-align="center"
+width="50%"}
+
+## ¿Cuál es el valor esperado de ir a la playa?
+
+::: columns
+::: {.column width="50%"}
+$\color{verde}{0,82} = \color{rojo}{0,3} * \color{blue}{0.4}}_{\text{Rain}} + \underbrace {color{rojo} {0,7} * \color{azul} {1,0} {{texto{sin lluvia}}$
+
+- Probabilidades en [rojo]{style="color: rojo;"}.
+- Pagos en [azul]{style="color: blue;"}.
+- Valor esperado en [verde]{style="color: green;"}.
+:::
+
+::: {.column width="50%"}
+![](media/lec_conceptual-and-theoretical-frameworks/dt_beachhome_EVbeach.png){fig-align="center"}
+:::
+:::
+
+## ¿Cuál es el valor esperado de quedarse en casa?
+
+::: columns
+::: {.column width="50%"}
+0,74 = 0,3. \cdot \color{blue}{0.6}}_{\text{Rain}} + ...rojo, 0,7... \...sin lluvia...
+
+- Probabilidades en [rojo]{style="color: rojo;"}.
+- Pagos en [azul]{style="color: blue;"}.
+- Valor esperado en [verde]{style="color: green;"}.
+:::
+
+::: {.column width="50%"}
+![](media/lec_conceptual-and-theoretical-frameworks/dt_beachhome_EVhome.png){fig-align="center"}
+:::
+:::
+
+# {{< fa circle-check >}} Playa {background="#c2f0c2"}
+
+EV(Beach)=0.82 \> EV(Home)=0.74
+
+## Valores esperados
+
+- Valor esperado = La suma de las probabilidades multiplicadas para cada
+    opción de azar o intervención
+
+![](images/expected%20value.png){width="269"}
+
+::: notes
+Ecuación: 1 a infinito -- representa el infinito \# de ramas en el
+árbol de decisión. En nuestro ejemplo, sólo teníamos 2 ramas, pero si tuviera 3
+o 4 o 5 ... que lo representaría como i = 3, 4, 5 y luego se multiplican
+las probabilidades.
+
+Xi = resultado y P = probabilidad
+:::
+
+## Valores Esperados {auto-animate="true"}
+
+::: {style="font-size: 0.8em"}
+::: incremental
+- El valor esperado en el contexto de los árboles de decisión son los
+    "payoffs" ponderados por sus probabilidades precedentes
+
+- Lo que obtenemos es: el resultado que se espera EN PROMEDIO para cualquier
+    alternativa de decisión (por ejemplo, duración de la vida, calidad de vida, costes
+    vida)
+
+    - Ejemplo: Por término medio, los pacientes que reciban el tratamiento A vivirán 0,30
+        años más que los pacientes que reciban el tratamiento B
+:::
+
+::: fragment
+::: {.callout-important appearance="simple"}
+Maximizar el valor esperado es un criterio razonable de elección ante
+perspectivas inciertas; aunque no necesariamente promete los mejores
+resultados para **un individuo**.
+:::
+:::
+:::
+
+# Determinación del umbral de decisión {auto-animate="true"}
+
+## ¿A qué probabilidad $p$ son iguales las dos opciones?
+
+::: fragment
+Supongamos que queremos saber a qué probabilidad de lluvia $p$ nos es
+indiferentes entre ir a la playa o quedarnos en casa...
+:::
+
+::: incremental
+- Escribe la ecuación para cada elección utilizando una variable, p, para la
+    probabilidad en cuestión
+
+- Establece las ecuaciones iguales entre sí y resuelve para p.
+:::
+
+## ¿A qué probabilidad $p$ son iguales las dos opciones? {auto-animate="true"}
+
+**Playa:** [0.82]{style="color:green;"} = 0.3 x 0.4 + 0.7 x 1.0
+
+**Casa:** [0.74]{style="color:verde;"} = 0.3 x 0.6 + 0.7 x 0.8
+
+## ¿A qué probabilidad $p$ son iguales las dos opciones? {auto-animate="true"}
+
+${underbrace{0.3 * 0.4 + 0.7 * 1.0}_{\text{Playa}} = \underbrace{0.3 * 0.6 + 0.7 * 0.8}_{\text{Casa}}$
+
+## ¿A qué probabilidad $p$ son iguales las dos opciones? {auto-animate="true"}
+
+Sustituya la probabilidad de lluvia por **P** y **1-P** y resuelva para "P"
+
+<br>
+
+p \* 0.4 + (1-p) \* 1.0 = p \* 0.6 + (1-p) \* 0.8
+
+<br>
+
+$\underbrace{0,3 * 0,4 + 0,7 * 1,0}_{texto{Playa}} = \underbrace{0,3 * 0,6 + 0,7 * 0,8}_{texto{Casa}}$
+
+## ¿A qué probabilidad $p$ son iguales las dos opciones? {auto-animate="true"}
+
+p \* 0.4 + (1-p) \* 1.0 = p \* 0.6 + (1-p) \* 0.8
+
+## ¿A qué probabilidad $p$ son iguales las dos opciones? {auto-animate="true"}
+
+p \* 0.4 + (1-p) \* 1.0 = p \* 0.6 + (1-p) \* 0.8
+
+<br>
+
+**0,4p + 1-p = 0,6p + 0,8 - 0,8p**
+
+**1-0,6p = 0,8 - 0,2p**
+
+**1-0,8 = 0,6p - 0,2p**
+
+**0.2 = 0.4 \* p**
+
+[**0.5 = p**]{style="color:green;"}
+
+## ¿A qué probabilidad $p$ son iguales las dos opciones? {auto-animate="true"}
+
+> Cuando la probabilidad de lluvia es del 50% TANTO en la playa como en casa, dado
+> cómo hemos ponderado los resultados, ir a la playa sería lo mismo que
+> quedarse en casa
+
+<br>
+
+> En otras palabras, usted sería indiferente entre los dos -- permanecer en
+> casa o ir a la playa
+
+## ¿A qué probabilidad ($p_B$) de lluvia para la playa le es indiferente entre las dos opciones? {auto-animate="true"}
+
+::: incremental
+![](media/lec_conceptual-and-theoretical-frameworks/dt_beachhome_pB.png){fig-align="center"
+width="50%"}
+:::
+
+## ¿A qué probabilidad ($p_B$) de lluvia para la playa le es indiferente una de las dos opciones? {auto-animate="true"}
+
+::: {style="font-size: 0.8em"}
+::: incremental
+- Antes hemos calculado el beneficio esperado de quedarse en casa:
+    0,74 (que era un valor esperado menor que ir a la playa cuando
+    la probabilidad de lluvia en ambos era del 30%) <br>
+
+- ¿Cuál tendría que ser** $p_B$ para obtener una recompensa esperada *en la playa
+    playa* de 0,74?
+
+    - En otras palabras, ¿con qué probabilidad de lluvia en la playa
+        ¿le resultaría indiferente quedarse en casa o ir a la playa?
+:::
+:::
+
+::: notes
+(1) Formulemos ahora una pregunta ligeramente distinta.
+    probabilidad....
+(2) Supongamos ahora que la probabilidad de lluvia para la opción CASA
+    no cambia (por lo que se mantiene en 0,3)
+(3) DIFERENCIA CLAVE CON RESPECTO AL ÚLTIMO EJEMPLO: En el último ejemplo, las
+    probabilidades eran las mismas y queríamos obtener nuestro umbral de
+    indiferencia entre la playa y quedarse en casa
+(4) \*\*Ahora estamos suponiendo que todavía hay una probabilidad del 30% de que
+    que llueva si te quedas en casa, pero ¿a qué probabilidad de lluvia en la
+    playa te sería indiferente entre las dos opciones? (Puesto que
+    elegimos la playa cuando ambas probabilidades eran iguales al 30%)
+
+- En otras palabras, ¿con qué probabilidad de LLOVER EN LA PLAYA
+    sería indiferente entre la playa y su casa
+:::
+
+## ¿A qué probabilidad ($p_B$) de lluvia para la playa te es indiferente entre las dos opciones? {auto-animate="true"}
+
+Fije 0,74 (valor esperado de quedarse en casa) igual a la **playa**
+y resuelva para $p_B$.
+
+<br>
+
+p~B~ \* 0.4 + (1 - p~B~) \* 1.0 = 0.74
+
+## ¿A qué probabilidad ($p_B$) de lluvia para la playa le es indiferente una de las dos opciones? {auto-animate="true"}
+
+::: {.fragment .fade-out}
+p~B~ \* 0.4 + (1 - p~B~) \* 1.0 = 0.74
+:::
+
+::: incremental
+p~B~ \* 0.4 + 1 - p~B~ = 0.74
+:::
+
+## ¿A qué probabilidad ($p_B$) de lluvia para la playa le es indiferente entre las dos opciones? {auto-animate="true"}
+
+::: {.fragment .fade-out}
+p~B~ \* 0.4 + 1 - p~B~ = 0.74
+:::
+
+::: incremental
+p~B~ \* -0.6 = -0.26
+:::
+
+## ¿A qué probabilidad ($p_B$) de lluvia para la playa le es indiferente entre las dos opciones? {auto-animate="true"}
+
+::: {.fragment .fade-out}
+p~B~ \* -0.6 = -0.26
+:::
+
+::: incremental
+p~B~ = -0.26 / -0.6 = [**0.43**]{style="color:green;"}
+:::
+
+## ¿A qué probabilidad ($p_B$) de lluvia para la playa te es indiferente entre las dos opciones? {auto-animate="true"}
+
+> Cuando la probabilidad de lluvia en la playa es del 43% (la probabilidad de lluvia
+> en casa se mantiene en el 30%), nos sería indiferente quedarnos en
+> casa e ir a la playa.
+
+> Si la probabilidad de que llueva en la playa es > > del 43%, nos quedaríamos en > casa.
+> casa
+
+# Revisión de Probabilidades {background="#43464B"}
+
+## Probabilidades en Árboles de Decisión
+
+**Eventos mutuamente excluyentes**
+
+::: incremental
+- 2 cosas que no pueden ocurrir juntas (un suceso no puede ocurrir al mismo
+    mismo tiempo que el otro)
+    - Ejemplo: 2 sucesos, sobrevivir o morir; mutuamente excluyentes porque una
+        persona no puede ser ambas cosas a la vez
+    - Ejemplo: 2 sucesos, curado o no curado
+:::
+
+## Probabilidades dentro de los árboles de decisión
+
+**Sucesos mutuamente excluyentes**
+
+![](images/vaccine.png)
+
+## Probabilidades dentro de los árboles de decisión
+
+**Sucesos mutuamente excluyentes**
+
+- Suponiendo que los sucesos sean mutuamente excluyentes, la probabilidad de que ocurran 2
+    2 sucesos es la **suma de las probabilidades de cada suceso
+    ocurra individualmente**
+
+$$
+P(A o B) = P(A) + P(B) 
+$$
+
+## Probabilidades en árboles de decisión
+
+::: {.callout-note appearance="simple"}
+## Probabilidad conjunta
+
+P(A y B): La probabilidad de que dos eventos ocurran al mismo tiempo.
+:::
+
+::: {.callout-note appearance="simple"}
+## Probabilidad condicional
+
+P(A\|B): La probabilidad de un suceso A dado que se sabe que ha ocurrido un suceso B.
+ha ocurrido.
+:::
+
+```{r}
+#| echo = FALSE
+
+dt_evans97 <- mermaid("
+graph LR
+Attack[ ]---|Migrane Attack|Decision[ ]
+Decision---|Treatment A|TrtA(( ))
+Decision---|Treatment B|TrtB(( ))
+
+style Attack fill:#ffffff,stroke-width:0px
+
+
+TrtA---|\"Relief (0.558)\"|ReliefA(( ))
+TrtA---|\"No Relief (0.442)\"|NoReliefA(( ))
+ReliefA---|\"No recurrence (0.594)\"|NoRecA((A))
+ReliefA---|\"Recurrence (0.406)\"|RecA((B))
+NoReliefA---|\"Endures Attack (0.92)\"|AttackA((C))
+NoReliefA---|\"ER (0.08)\"|ERA(( ))
+ERA---|\"Relief (0.998)\"|ERReliefA((D))
+ERA---|\"Hospitalization (0.002)\"|ERHospA((E))
+style NoRecA fill:#ffffff,stroke-width:0px
+style RecA fill:#ffffff,stroke-width:0px
+style AttackA fill:#ffffff,stroke:#333,stroke-width:0px      
+style ERReliefA fill:#ffffff,stroke:#333,stroke-width:0px  
+style ERHospA fill:#ffffff,stroke:#333,stroke-width:0px
+
+
+TrtB---|\"Relief (0.379)\"|ReliefB(( ))
+TrtB---|\"No Relief (0.621)\"|NoReliefB(( ))
+ReliefB---|\"No recurrence (0.703)\"|NoRecB((F))
+ReliefB---|\"Recurrence (0.297)\"|RecB((G))
+NoReliefB---|\"Endures Attack (0.92)\"|AttackB((H))
+NoReliefB---|\"ER (0.08)\"|ERB(( ))
+ERB---|\"Relief (0.998)\"|ERReliefB((I))
+ERB---|\"Hospitalization (0.002)\"|ERHospB((J))
+
+style NoRecB fill:#ffffff,stroke-width:0px
+style RecB fill:#ffffff,stroke-width:0px
+style AttackB fill:#ffffff,stroke:#333,stroke-width:0px      
+style ERReliefB fill:#ffffff,stroke:#333,stroke-width:0px  
+style ERHospB fill:#ffffff,stroke:#333,stroke-width:0px
+
+")
+
+```
+
+## {background="#43464B" background-image="media/lec_conceptual-and-theoretical-frameworks/dt_evans97.png" data-background-size="contain"}
+
+## Probabilidades {background-image="media/lec_conceptual-and-theoretical-frameworks/dt_evans97.png" data-background-size="contain" background-opacity="0.2"}
+
+::: incremental
+- Desplazándose de izquierda a derecha, las primeras probabilidades del árbol muestran
+    la probabilidad de un suceso.
+- Las probabilidades siguientes son **condicionales.**
+    - La probabilidad de un suceso dado que un suceso anterior ocurrió o
+        no haya ocurrido.
+- Al multiplicar las probabilidades a lo largo de las rutas se calcula la probabilidad de la ruta
+    que es una probabilidad **conjunta**.
+:::
+
+## Caminos
+
+- Caminos = secuencia de acontecimientos que conducen a un "pago" posterior
+- En otras palabras, una secuencia de acontecimientos conduce a un
+    resultado/consecuencia, o recompensa
+- Ejemplo: Nuestro ejemplo de la playa tiene 4 caminos.
+
+## Caminos
+
+- Camino A: Esta persona va a la playa pero llueve
+- Camino B: Esta persona va a la playa pero no llueve
+
+![](images/pathways.png)
+
+## Probabilidad condicional
+
+Ejemplo: ¿Cuál es la probabilidad condicional de muerte al año de
+nacimiento, dado que el bebé tiene una madre fumadora?
+
+(Probabilidad de que ocurra un suceso (B) dado que ha ocurrido otro suceso
+(A))
+
+$$
+P(A|B) = P(A y B) / P(B) 
+$$
+
+## Probabilidad condicional, revisión 2x2
+
+::: {style="font-size: 0.8em"}
+¿Cuál es la probabilidad condicional de muerte al año de nacer,
+dado que el bebé tiene una madre fumadora?
+
+![](images/condition1.png){width="470"}
+
+*\*A= muerte en el primer año; B= madre fumadora*.
+
+[P(A\|B)]{style="color: #169873;"} = 16.712 / (1.197.142 + 16.712) <br>
+= 14 por cada 1.000 nacimientos
+:::
+
+## Probabilidad condicional, revisión 2x2
+
+::: {style="font-size: 0.8em"}
+O, si quisiéramos utilizar la ecuación de probabilidad condicional
+
+![](images/condition1.png){width="470"}
+
+[P(A|B) = P(A y B)/P(B)]{style="color: #169873;"} <br> *\*A= muerte en
+primer año; B=madre fumadora* <br>
+
+[P(A y B)]{style="color: #169873;"} = 16.712 / 4.111.059 = 0,0041 <br>
+[P(B)]{style="color: #169873;"} = 1.213.854/4.111.059 = 0,295 <br>
+[P(A|B)]{style="color: #169873;"} = 0.0041/0.295 = 0.014
+:::
+
+## Probabilidad condicional, 2x2 revisión
+
+::: {style="font-size: 0.8em"}
+Probabilidad de A\|B es diferente de la de B\|A
+
+![](images/condition2.png){width="470"}
+
+Si A = muerte en el primer año; B=bebé con peso normal al nacer, entonces la
+probabilidad condicional de P(A\|B) = la probabilidad de muerte del niño
+dado que el niño tiene un peso normal al nacer
+:::
+
+## Probabilidad condicional, revisión 2x2
+
+::: {style="font-size: 0.8em"}
+¿Cuál es la probabilidad condicional de muerte de un bebé, dado que el
+niño tiene un peso normal al nacer
+
+![](images/condition2.png){width="470"}
+
+Si A = muerte en el primer año; B=niño con peso normal al nacer <br>
+
+[P(A\|B)]{style="color: #169873;"} = 14.442 / (14.442+ 3.804.294) <br> =
+3,8 muertes por cada 1.000 nacimientos
+:::
+
+## Probabilidad condicional, revisión 2x2
+
+::: {style="font-size: 0.8em"}
+O, si quisiéramos utilizar la ecuación
+
+![](images/condition2.png){width="470"}
+
+[P(A|B) = P(A y B)/P(B)]{style="color: #169873;"}\
+
+[P(A y B)]{style="color: #169873;"} = 14,442 <br>
+[P(B)]{style="color: #169873;"} = 3.818.736 <br>
+[P(A|B)]{style="color: #169873;"} = 14,442/3,818,736 = 0.0038
+:::
+
+## Probabilidad condicional, revisión 2x2
+
+::: {style="font-size: 0.8em"}
+Por otra parte, la probabilidad condicional de P(B\|A) es la
+probabilidad de que un bebé tenga un peso normal al nacer, dado que el
+murió en el plazo de 1 año desde su nacimiento
+
+![](images/condition2.png){width="470"}
+
+*B=bebé con peso normal al nacer; A = muerte en el primer año*.
+:::
+
+## Probabilidad condicional, revisión 2x2
+
+Resuelve P(B\|A) -- la probabilidad de que un infante tuviera peso normal al nacer
+dado que el bebé murió en el primer año desde su nacimiento
+
+![](images/condition2.png){width="470"}
+
+[P(B|A)]{style="color: #169873;"} = 14,442 / (14,442+ 21,054) = 0.41
+
+# Otros conceptos del análisis de decisiones {background="#43464B"}
+
+## Filosofías de Decisión {auto-animate="true"}
+
+::: {.callout-important appearance="simple"}
+Maximizar el valor esperado es un criterio razonable de elección dadas
+perspectivas inciertas; aunque no necesariamente promete los mejores
+resultados para cualquier individuo.
+:::
+
+- Mínimo-máximo arrepentimiento
+
+- Máximo
+
+- Utilidad esperada
+
+## Filosofías de decisión {auto-animate="true"}
+
+::: {.callout-important appearance="simple"}
+Maximizar el valor esperado es un criterio razonable de elección dadas
+perspectivas inciertas; aunque no necesariamente promete los mejores
+resultados para cualquier individuo.
+:::
+
+- El arrepentimiento minimáximo
+
+    - Nunca vayas a la playa si no llueve 0%.
+
+- Utilidad máxima
+
+- Utilidad esperada
+
+::: notes
+(1) Veamos rápidamente las filosofías de decisión en lo que respecta a la ponderación de las preferencias.
+    ponderación de preferencias. Existen diferentes niveles de aversión al riesgo &
+    hay diferentes filosofías de decisión para estos comportamientos
+
+(2) La filosofía del arrepentimiento mini-max significa esencialmente que nunca irías
+    a la playa si no llueve al 0%.
+
+- Por ejemplo, los médicos pueden tener aversión al riesgo y, por tanto, minimizar el arrepentimiento máximo.
+    pesar
+:::
+
+## Decision Philosophies {auto-animate="true"}
+
+::: {.callout-important appearance="simple"}
+Maximizar el valor esperado es un criterio razonable de elección dadas
+perspectivas inciertas; aunque no necesariamente promete los mejores
+resultados para cualquier individuo.
+:::
+
+- El arrepentimiento minimáximo
+    - Nunca vayas a la playa si no llueve 0%.
+- Maxi-max
+    - Ir siempre a la playa a menos que llueva al 100%.
+- Utilidad esperada
+
+::: notes
+(3)(a) La utilidad maxi-max es la inversa -- donde siempre irías a la
+playa a menos que lloviera al 100% -- buscas el riesgo -- te gusta tanto la
+playa tanto que vas a intentarlo.
+
+(3)(b) Otro ejemplo de esto en un contexto médico es el ejemplo del paciente desesperado.
+desesperado: vas a morir de todos modos, así que te vamos a dar este
+este tratamiento, pero tiene efectos secundarios desagradables -- cáncer --
+quimioterapias, incluso trasplantes de médula ósea, de segunda o tercera línea.
+alta probabilidad de un mal resultado, pero si no haces nada entonces vas a
+a morir.
+:::
+
+## Decision Philosophies {auto-animate="true"}
+
+::: {.callout-important appearance="simple"}
+Maximizar el valor esperado es un criterio razonable de elección ante
+perspectivas inciertas; aunque no necesariamente promete los mejores
+resultados para cualquier individuo.
+:::
+
+- El arrepentimiento minimáximo
+    - Nunca vayas a la playa si no llueve 0%.
+- Maxi-max
+    - Ir siempre a la playa a menos que llueva al 100%.
+- Utilidad esperada
+    - Depende del tiempo.
+
+Notas
+(4) Si vas a basar tu decisión en la utilidad esperada, entonces tu
+    depende del tiempo y del valor que le des a ciertos resultados.
+    resultados -- este es el enfoque del pensador racional -- cuánto valoras
+    la pérdida de utilidad de no disfrutar de la playa, por ejemplo.
+    experiencia de ir a la playa, por ejemplo.
+:::
+
+## Payoffs
+
+::: incremental
+- A cada estado del mundo se le asigna un coste o resultado.
+- Nuestro objetivo suele ser calcular el valor esperado de estos resultados.
+- En las próximas clases profundizaremos en las teorías y marcos que subyacen a los distintos
+    resultados en las próximas clases
+:::
+
+# Fortalezas/limitaciones de los árboles de decisión
+
+## Puntos fuertes
+
+::: incrementales
+- Son fáciles de describir y entender
+- Funcionan bien con un horizonte temporal limitado
+- Los árboles de decisión son un marco potente para analizar decisiones y
+    pueden proporcionar perspectivas rápidas/útiles, pero tienen limitaciones.
+:::
+
+## Limitaciones
+
+::: incremental
+- No tienen en cuenta explícitamente el paso del tiempo.
+    - Los sucesos recurrentes deben incorporarse por separado al modelo.
+    - Está bien para ciclos de tiempo cortos (por ejemplo, 12 meses), pero a menudo queremos
+        modelizar a lo largo de toda la vida.
+- Es difícil incorporar detalles clínicos reales.
+    La estructura de árbol puede volverse compleja rápidamente.
+:::
+
+## Avance de lo que está por venir
+
+![](images/VOI5.png){width="591"}
+
+::: {style="font-size: 0.8em"}
+- ¡Un árbol más complejo!
+:::
