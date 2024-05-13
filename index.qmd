@@ -15,8 +15,8 @@ bibliography: references.bib
 | Fecha     | Hora programada | Tema                                                                                                                                          | Notas |
 |-------------|-------------|-----------------------------------|-----------------------|
 | Martes    | 9:00 - 9:45 am  | Bienvenida y presentaciones                                                                                                                   |       |
-|           | 9:45 - 10:00    | [Introducción al análisis de decisiones](lectures/lec_1a.introduction-to-decision-analysis.qmd)                                               |       |
-|           | 10:00-11:00     | [Árboles de decisión y probabilidades](lectures/lec_2.decision-trees-and-probabilities.qmd)                                                   |       |
+|           | 9:45 - 10:00    | [Introducción al análisis de decisiones](lectures/ESP_lec_1a.introduction-to-decision-analysis.qmd)                                               |       |
+|           | 10:00-11:00     | [Árboles de decisión y probabilidades](lectures/ESP_lec_2.decision-trees-and-probabilities.qmd)                                                   |       |
 |           | 11:00-11:15     | Pausa                                                                                                                                         |       |
 |           | 11:15 - 11:00   | [Caso práctico: Probabilidades y árboles de decisión](case-studies/cs_prob-decision.html)                                                     |       |
 |           | 1:00 - 2:00 pm  | Pausa                                                                                                                                         |       |

@@ -10,7 +10,7 @@ project:
     - "*.amua"
 
 website:
-  title: "Decision Analysis Workshop"
+  title: "Taller de análisis de decisiones"
   navbar:
     left:
       - href: index.qmd
