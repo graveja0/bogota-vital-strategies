@@ -166,13 +166,13 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td></td>
 <td>9:45 - 10:00</td>
-<td><a href="lectures/lec_1a.introduction-to-decision-analysis.qmd">Introduction to Decision Analysis</a></td>
+<td><a href="./lectures/lec_1a.introduction-to-decision-analysis.html">Introduction to Decision Analysis</a></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>10:00-11:00</td>
-<td><a href="lectures/lec_2.decision-trees-and-probabilities.qmd">Decision Trees and Probabilities</a></td>
+<td><a href="./lectures/lec_2.decision-trees-and-probabilities.html">Decision Trees and Probabilities</a></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -214,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td></td>
 <td>9:15 - 10:30</td>
-<td><a href="lectures/lec_5a.cea-fundamentals1.qmd">CEA Fundamentals 1: Costs</a></td>
+<td><a href="./lectures/lec_5a.cea-fundamentals1.html">CEA Fundamentals 1: Costs</a></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -226,13 +226,13 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td></td>
 <td>10:45 - 12:00</td>
-<td><a href="lectures/lec_5b.cea-fundamentals2.qmd">CEA Fundamentals 2: Health Outcomes</a></td>
+<td><a href="./lectures/lec_5b.cea-fundamentals2.html">CEA Fundamentals 2: Health Outcomes</a></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>12:00 - 1:30</td>
-<td><a href="lectures/lec_6.ICERs.qmd">CEA Fundamentals 3: Incremental Cost Effectiveness Analysis</a></td>
+<td><a href="./lectures/lec_6.ICERs.html">CEA Fundamentals 3: Incremental Cost Effectiveness Analysis</a></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -252,7 +252,7 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td>Thursday June 20</td>
 <td>9:00 - 1:00</td>
-<td><a href="lectures/lec_7.MarkovModels1.qmd">Markov Models</a></td>
+<td><a href="./lectures/lec_7.MarkovModels1.html">Markov Models</a></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -264,13 +264,13 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td></td>
 <td>2:00 - 2:45</td>
-<td><a href="lectures/lec_sensitivity.qmd">Deterministic &amp; Scenario Analysis</a></td>
+<td><a href="./lectures/lec_sensitivity.html">Deterministic &amp; Scenario Analysis</a></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td></td>
 <td>2:45-4:00</td>
-<td><a href="lectures/lec_advanced-modeling-techniques.qmd">Advanced Modeling Techniques</a></td>
+<td><a href="./lectures/lec_advanced-modeling-techniques.html">Advanced Modeling Techniques</a></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -385,7 +385,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/graveja0\.github\.io\/bogota-vital-strategies\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
