@@ -13,3 +13,4 @@ site_libs/
 *.json*
 *.feed*
 _bundled-daily-material/
+_freeze/

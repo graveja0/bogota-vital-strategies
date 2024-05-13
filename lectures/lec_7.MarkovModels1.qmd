@@ -1,0 +1,2173 @@
+---
+title: "Markov Models"
+format:
+  revealjs:
+    theme: slides.scss
+    incremental: true
+    slide-number: true
+    logo: ../vchem.png
+    html-math-method: katex
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    footer: |
+      [Back to Website](../index.html)
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(here)
+library(gt)
+source(here::here("_healthy-sick-dead/01-healthy-sick-dead_setup.r"))
+source(here('_healthy-sick-dead/functions_healthy-sick-dead.r'))
+source(here("_healthy-sick-dead/02_healthy-sick-dead_process-parameters.r"))
+source(here("_healthy-sick-dead/04_healthy-sick-dead_discounting-and-cycle-adjustments.r"))
+source(here("_healthy-sick-dead/05_healthy-sick-dead_construct-transition-probability-matrices.r"))
+```
+
+# Learning Objectives and Outline
+
+## Learning Objectives
+
+::: incremental
+-   Discuss pros and cons of decision modeling using decision trees vs.
+    a formal deterministic model
+
+-   Understand the components and structure of discrete time Markov
+    models
+
+-   Calculate Markov cycles by hand, using Markov bubble diagram
+
+-   Apply methods for Markov cycle correction
+:::
+
+## A Simple Disease Process
+
+::: incremental
+-   Suppose we want to model the cost-effectiveness of alternative
+    strategies to prevent a disease from occurring.
+-   We start with a healthy population of 25 year olds and there are
+    three health states people can experience:
+    1.  Remain **Healthy**
+    2.  Become **Sick**
+    3.  **Death**
+:::
+
+## A Simple Disease Process
+
+::: incremental
+-   Remaining healthy carries no utility decrement (utility weight = 1.0
+    per cycle in healthy state)
+-   Becoming sick carries a 0.25 utility decrement for the remainder of
+    the person's life (utility weight = 0.75)
+-   Death carries a utility value of 0.
+:::
+
+## A Simple Disease Process
+
+::: incremental
+-   There is no cost associated with remaining healthy.
+-   Becoming sick incurs \$1,000 / year in costs.
+-   Becoming sick increases the risk of death by 300%.
+:::
+
+## A Simple Disease Process
+
+A country's health institute is considering five preventive care
+strategies that reduce the risk of becoming sick:
+
+| Strategy | Description                                      | Cost         |
+|----------|--------------------------------------------------|--------------|
+| A        | Standard of Care                                 | \$25/year    |
+| B        | Additional 4% reduction in risk of becoming sick | \$1,000/year |
+| C        | 12% reduction in risk                            | \$3,100/year |
+| D        | 8% reduction in risk                             | \$1,550/year |
+| E        | 8% reduction in risk                             | \$5,000/year |
+
+## Model Option 1: Decision Tree
+
+-   One option would be to use a decision tree to model the expected
+    utility and costs associated with each strategy.
+-   Model time horizon: 10 years
+-   The next slide shows the decision tree for outcomes experienced in
+    the first year.
+
+##  {background-image="images/paste-01F7F5A9.png" data-background-size="contain"}
+
+<!-- Note: Data to construct are contained in media/decision_tree_markov_health_sick_dead_1y.Rdata -->
+
+## Model Option 1: Decision Tree {background-image="images/paste-01F7F5A9.png" data-background-size="contain" background-opacity="0.4"}
+
+-   What limitations do you see?
+
+##  {background-image="images/paste-55AF9B31.png" data-background-size="contain"}
+
+Decision tree for two full cycles.
+
+<!-- Note: Data to construct are contained in media/decision_tree_markov_health_sick_dead_2y.Rdata -->
+
+##  {background-image="images/paste-AAAFE3F8.png" data-background-size="contain"}
+
+Strategy A decision tree for 5 cycles.
+
+<!-- Note: Data to construct are contained in media/decision_tree_markov_health_sick_dead_5y.Rdata -->
+
+## Decision Trees
+
+| Pros                                 | Cons |
+|--------------------------------------|------|
+| Simple, rapid & can provide insights |      |
+
+: {tbl-colwidths="\[50, 50\]"}
+
+## Decision Trees
+
+| Pros                                 | Cons |
+|--------------------------------------|------|
+| Simple, rapid & can provide insights |      |
+| Easy to describe & understand        |      |
+
+: {tbl-colwidths="\[50, 50\]"}
+
+## Decision Trees
+
+| Pros                                 | Cons |
+|--------------------------------------|------|
+| Simple, rapid & can provide insights |      |
+| Easy to describe & understand        |      |
+| Works well with limited time horizon |      |
+
+: {tbl-colwidths="\[50, 50\]"}
+
+## Decision Trees
+
+| Pros                                 | Cons                                 |
+|--------------------------------------|--------------------------------------|
+| Simple, rapid & can provide insights | Difficult to include clinical detail |
+| Easy to describe & understand        |                                      |
+| Works well with limited time horizon |                                      |
+
+: {tbl-colwidths="\[50, 50\]"}
+
+## Decision Trees
+
+| Pros                                 | Cons                                   |
+|--------------------------------------|----------------------------------------|
+| Simple, rapid & can provide insights | Difficult to include clinical detail   |
+| Easy to describe & understand        | Elapse of time is not readily evident. |
+| Works well with limited time horizon |                                        |
+
+: {tbl-colwidths="\[50, 50\]"}
+
+## Decision Trees
+
+| Pros                                 | Cons                                                |
+|--------------------------------------|-----------------------------------------------------|
+| Simple, rapid & can provide insights | Difficult to include clinical detail                |
+| Easy to describe & understand        | Elapse of time is not readily evident.              |
+| Works well with limited time horizon | Difficult to model longer (\>1 cycle) time horizons |
+
+: {tbl-colwidths="\[50, 50\]"}
+
+## Decision Trees
+
+![](images/markov1.png)
+
+## Next Steps
+
+-   Ideally we want a modeling approach that can incorporate flexibility
+    and handle the complexities that make decision trees
+    difficult/unwieldy.
+
+# Markov Models {background="#43464B"}
+
+## Markov Models
+
+Common approach in decision analyses that adds additional flexibility.
+
+| Pros                                  | Cons |
+|---------------------------------------|------|
+| Can model repeated events             |      |
+| $\quad \quad \quad \quad \quad \quad$ |      |
+
+: {tbl-colwidths="\[50, 50\]"}
+
+## Markov Models
+
+Common approach in decision analyses that adds additional flexibility.
+
+| Pros                                                  | Cons |
+|-------------------------------------------------------|------|
+| Can model repeated events                             |      |
+| Can model more complex + longitudinal clinical events |      |
+
+: {tbl-colwidths="\[50, 50\]"}
+
+## Markov Models
+
+Common approach in decision analyses that adds additional flexibility.
+
+| Pros                                                        | Cons |
+|-------------------------------------------------------------|------|
+| Can model repeated events                                   |      |
+| Can model more complex + longitudinal clinical events       |      |
+| Not computationally intensive; efficient to model and debug |      |
+
+: {tbl-colwidths="\[50, 50\]"}
+
+## Markov Models
+
+::: incremental
+-   The advantages of Markov models derive from their structure around
+    mutually exclusive disease states.
+
+-   These disease states represent the possible states or consequences
+    of strategies or options under consideration.
+
+-   Because there are a fixed number of disease states the population
+    can be in, there is no need to model complex pathways, as we saw in
+    the decision tree "explosion" a few slides back.
+:::
+
+## Markov Trees
+
+It is also common to pair a Markov model with a decision tree.[^1]
+
+[^1]: Gasauskas et al. 2022
+
+::: columns
+::: {.column width="50%"}
+![](media/lec_conceptual-and-theoretical-frameworks/dt_hboc.png){fig-align="center"
+style="padding-top: 100px;"}
+:::
+
+::: {.column width="50%"}
+:::
+:::
+
+## Markov Trees
+
+It is also common to pair a Markov model with a decision tree.[^2]
+
+[^2]: Gasauskas et al. 2022
+
+::: columns
+::: {.column width="50%"}
+![](media/lec_conceptual-and-theoretical-frameworks/dt_hboc.png){fig-align="center"
+style="padding-top: 100px;"}
+:::
+
+::: {.column width="50%"}
+![](media/lec_conceptual-and-theoretical-frameworks/mar_hboc.png){fig-align="center"}
+:::
+:::
+
+## Markov Tree {.smaller}
+
+A simple decision tree is implicit in nearly every decision analysis.
+
+::: columns
+::: {.column width="50%"}
+![](images/paste-13DB786D.png){fig-align="center" height="500px"}
+:::
+
+::: {.column width="50%"}
+:::
+:::
+
+## Markov Tree: Example {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](images/paste-13DB786D.png){fig-align="center" height="500px"}
+:::
+
+::: {.column width="50%"}
+Treatment A:![](images/paste-BA42AD3E.png)
+:::
+:::
+
+## Markov Tree: Example {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](images/caroline_model1.png){fig-align="center" height="500px"}
+:::
+
+::: {.column width="50%"}
+Treatment A:![](images/caroline_model2.png)
+:::
+:::
+
+## When choosing a model structure...
+
+<br>
+
+> "Things should be made as simple as possible, but not simpler" -
+> Albert Einstein
+
+::: notes
+(1) When choosing a model structure, you want to choose one that best
+    fits your research question & one that adequately represents the
+    clinical background/problem -- zeroing in on what's most important
+
+(2) You always want to first build the structure completely
+    independently & data free AND then see how hard it is to get data +
+    calibrate
+
+(3) **You never want to model based on the data**\* nor do you ever want
+    to make something complicated just to make it complicated\*\*
+
+(4) Just because a model is "super complicated/complex" doesn't mean
+    it's more publishable or better than something that's more
+    simplistic
+:::
+
+```{r, eval = FALSE}
+#| echo = FALSE
+
+
+library(tidygraph)
+library(ggraph)
+library(igraph)
+library(DiagrammeR)
+
+dt_healthysickdead <- 
+  mermaid("graph LR
+    Healthy0[ ]---|Healthy|Healthy[ ]
+    Healthy---|Treatment A|TxA(M)
+    Healthy---|Treatment B|TxB(M)
+    Healthy---|Treatment C|TxC(M)
+    Healthy---|Treatment D|TxD(M)
+    Healthy---|Treatment E|TxE(M)
+    style Healthy0 fill:#ffffff,stroke:#333,stroke-width:0px
+    style TxA fill:#ffffff,stroke:#333,strike-width:0px
+    style TxB fill:#ffffff,stroke:#333,strike-width:0px
+    style TxC fill:#ffffff,stroke:#333,strike-width:0px
+    style TxD fill:#ffffff,stroke:#333,strike-width:0px
+    style TxE fill:#ffffff,stroke:#333,strike-width:0px"); dt_healthysickdead 
+
+
+## Treatment A
+
+m_P <- matrix(c(
+  0.9822,0,0.0178,
+               0.1376, .8556,0.0068,
+                0,0,1),
+              nrow=3,
+              byrow=TRUE,
+              dimnames=list(c("Sick","Healthy","Dead"),
+                            c("Sick","Healthy","Dead"))); m_P
+
+
+g <- graph.adjacency(m_P>0, mode="directed", weighted=TRUE)
+E(g)$weight2 <- sprintf(c(.9822,.0178,.1376,.8556,.0068,1.00),fmt="%3.3f")
+
+curve.reciprocal.edges <- function(g, curve=.3){
+  # Return a graph where the edge-attribute $curved is reset to highlight reciprocal edges
+  el <- t(apply(get.edgelist(g),1,sort))
+  E(g)$curved <- 0
+  E(g)[duplicated(el) | duplicated(el,fromLast =TRUE)]$curved <- curve
+  (g)
+}
+
+set.seed(12343)
+plot(curve.reciprocal.edges(g), vertex.size=100, 
+     vertex.color = "white",
+     vertex.label.color = "black",
+     edge.label = E(g)$weight2 ,
+     arrow.size=100, label.cex=3)
+
+```
+
+# Constructing a Markov Model {background="#43464B"}
+
+## Key characteristics {.smaller}
+
+::: incremental
+-   Allows for health state transitions [over
+    time]{style="background-color: yellow;"}
+-   Individuals can only exist in one state at a time (mutually
+    exclusive health states)
+-   At the beginning or end of each cycle, patients transition across
+    health states via transition probabilities & individuals stay in
+    health state [for entire cycle
+    length]{style="background-color: yellow;"}
+-   Probability of transitioning depends on the current state ("no
+    memory"); (tunnel states can account for this potential limitation)
+-   Transition probabilities remain constant over time (apart from
+    embedded lifetables)
+-   Results report "average" of cohort
+:::
+
+## Key characteristics {.smaller}
+
+<br>
+
+> "CYCLE" = Minimum amount of time that any individual will spend in a
+> state before possible transition to another state
+
+-   More on this in the next slides
+
+## Steps
+
+1.  Define the decision problem
+2.  Conceptualize the model
+3.  Parameterize the model
+4.  Calculate or define the transition probability matrix
+5.  Run the model
+
+# 1. Define the Decision Problem {background="#c2f0c2"}
+
+## Step 1: Define the Decision Problem
+
+We defined the decision problem earlier in this lecture, so we'll repeat
+the basic objectives briefly here.
+
+## Step 1: Define the Decision Problem
+
+**Goal:** model the cost-effectiveness of alternative strategies to
+prevent a disease from occurring.
+
+| Strategy | Description                                      | Cost         |
+|----------|--------------------------------------------------|--------------|
+| A        | Standard of Care                                 | \$25/year    |
+| B        | Additional 4% reduction in risk of becoming sick | \$1,000/year |
+| C        | 12% reduction in risk                            | \$3,100/year |
+| D        | 8% reduction in risk                             | \$1,550/year |
+| E        | 8% reduction in risk                             | \$5,000/year |
+
+## Step 1: Define the Decision Problem
+
+![](images/paste-13DB786D.png){fig-align="center"}
+
+# 2. Conceptualize the Markov Model {background="#c2f0c2"}
+
+## 2. Conceptualize the Markov Model
+
+Two major steps:
+
+### {{< fa check-circle >}} 2a. Determine health states
+
+### {{< fa check-circle >}} 2b. Determine transitions
+
+## Step 2: Conceptualize the Model
+
+### {{< fa check-circle >}} 2a. Determine health states
+
+::: incremental
+-   There are three health states people can experience:
+    1.  Remain **Healthy**
+    2.  Become **Sick**
+    3.  **Death**
+:::
+
+## Step 2: Conceptualize the Model
+
+### {{< fa check-circle >}} 2a. Determine health states
+
+::: nonincremental
+-   There three health states people can experience:
+    1.  Remain **Healthy**
+    2.  Become **Sick**
+    3.  **Death**
+:::
+
+### {{< fa check-circle >}} 2b. Determine transitions
+
+::: incremental
+-   Individuals who become sick cannot transition back to healthy.
+:::
+
+## "Bubble Diagram"
+
+State transition ("bubble") diagrams are useful visualizations of a
+Markov model.
+
+```{dot}
+//| fig-align: center
+//| fig-width: 4
+digraph G {
+    layout = neato;
+    Healthy [pos="0,0!"];
+    Sick [pos="1,1!"]; 
+    Dead [pos="1,-1!"]
+    Healthy -> Healthy;
+    Sick -> Sick;
+    Healthy -> Sick; 
+    Sick -> Dead;
+    Healthy -> Dead;
+    Dead -> Dead;
+  }
+```
+
+::: footer
+Diagram constructed using the [Graphviz Visual
+Editor](http://magjac.com/graphviz-visual-editor/)
+:::
+
+# 3. Parameterize the Model {background="#c2f0c2"}
+
+## 3. Parameterize the Model
+
+Basic steps
+
+### {{< fa check-circle >}} 3a. Determine basic model parameters
+
+### {{< fa check-circle >}} 3b. Curate and define model inputs
+
+## 3. Parameterize the Model
+
+Basic steps
+
+### {{< fa check-circle >}} 3a. Determine basic model parameters
+
+::: incremental
+-   Define the population (e.g., 25 year old females)
+-   Define the Markov cycle length (e.g., 1-year cycle)
+-   Define the time horizon (e.g., followed until age 100 or death)
+:::
+
+## 3a. Define the Markov Cycle Length
+
+<!-- https://www.youtube.com/watch?v=bVlMq67HT48 -->
+
+::: incremental
+-   Fundamentally, we're modeling a continuous time process (e.g.,
+    progression of disease).
+-   A discrete time Markov model "breaks up" time into "chunks" (i.e.,
+    "cycles").
+-   A consequence is that the model will show us what fraction start out
+    a cycle in a given state, and what fraction end up in each state at
+    the end of the cycle.
+:::
+
+## 3a. Define the Markov cycle length
+
+::: incremental
+-   Suppose we used a one-year cycle for the healthy-sick-dead model.
+-   Think about the underlying (continuous time) disease process.
+    -   Recall that becoming sick substantially increases the likelihood
+        of death.
+-   If we're not careful, what are we (implicitly) assuming *can* and
+    *can't* happen in a single cycle?
+:::
+
+## 3a. Define the Markov Cycle Length
+
+::: {style="padding-top: 200px;"}
+![](images/paste-9C03CB85.png)
+
+```{r, eval = FALSE}
+#| echo: false
+library(DiagrammeR)
+mermaid("
+gantt
+  title One-Year Cycle Length
+  dateFormat  YYYY-MM-DD
+  section Health States
+  Healthy : 2021-01-01, 59d
+  Sick     : 2021-03-01 , 100d
+  Dead     : 2021-06-09 , 206d
+  ")
+```
+:::
+
+## 3a. Define the Markov Cycle Length {.smaller}
+
+The challenge of selecting an appropriate cycle length boils down to how
+we deal with **competing risks**.
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+-   Competing risks: individuals can transition from their current
+    health state to two or more other health states.
+:::
+:::
+
+::: {.column width="50%"}
+```{dot}
+//| fig-align: center
+//| fig-width: 4
+digraph G {
+    layout = neato;
+    Healthy [pos="0,0!"];
+    Sick [pos="1,1!"]; 
+    Dead [pos="1,-1!"]
+    Healthy -> Healthy;
+    Sick -> Sick;
+    Healthy -> Sick [color="red"]; 
+    Sick -> Dead;
+    Healthy -> Dead [color="red"];
+    Dead -> Dead;
+  }
+```
+:::
+:::
+
+## 3a. Define the Markov Cycle Length {.smaller}
+
+The challenge of selecting an appropriate cycle length boils down to how
+we deal with **competing risks**.
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+-   If we're not careful, we could effectively rule out the possibility
+    of Healthy {{< fa arrow-right-long >}}
+    Sick{{< fa arrow-right-long >}} Dead within a cycle.
+-   The model would *look like* a basic Healthy
+    {{< fa arrow-right-long >}} Dead transition, but they took a detour
+    through Sick along the way!
+:::
+:::
+
+::: {.column width="50%"}
+```{dot}
+//| fig-align: center
+//| fig-width: 4
+digraph G {
+    layout = neato;
+    Healthy [pos="0,0!"];
+    Sick [pos="1,1!"]; 
+    Dead [pos="1,-1!"]
+    Healthy -> Healthy;
+    Sick -> Sick;
+    Healthy -> Sick [color="blue"]; 
+    Sick -> Dead [color="blue"];
+    Healthy -> Dead [color="red"];
+    Dead -> Dead;
+  }
+```
+:::
+:::
+
+## 3a. Define the Markov Cycle Length {.smaller}
+
+| Pros                                                        | Cons                            |
+|-------------------------------------------------------------|---------------------------------|
+| Can model repeated events                                   | Competing risks are a challenge |
+| Can model more complex + longitudinal clinical events       |                                 |
+| Not computationally intensive; efficient to model and debug |                                 |
+
+## 3a. Define the Markov Cycle Length
+
+-   It may be tempting to simply shorten the cycle length (e.g., use 1
+    day cycle vs. 1 year cycle).
+
+::: incremental
+-   For a 75 year horizon, how many cycles would that be?
+    -   27,375!!!
+-   Any possible issues with this?
+:::
+
+## 3a. Define the Markov Cycle Length
+
+-   Shortening the cycle creates a computational challenge.
+
+::: incremental
+-   Base case requires 27,375 daily cycles.
+-   Now suppose we want to run 2,000 probabilistic sensitivity analysis
+    model runs.
+    -   We now have 57,750,000 cycle runs to contend with!
+:::
+
+## 3a. Define the Markov Cycle Length {.smaller}
+
+| Pros                                                        | Cons                                                      |
+|-------------------------------------------------------------|-----------------------------------------------------------|
+| Can model repeated events                                   | Can only transition once in a given cycle                 |
+| Can model more complex + longitudinal clinical events       | Shortening the cycle can create computational challenges. |
+| Not computationally intensive; efficient to model and debug |                                                           |
+
+## 3a. Define the Markov Cycle Length
+
+More challenges ...
+
+## 3a. Define the Markov Cycle Length
+
+More challenges ...
+
+-   Markov models are "memoryless" -- they don't remember what happened
+    before the current cycle.
+    -   If your risk of transition to a sicker health state depends on
+        events that happened earlier in time, the model can't explicitly
+        account for this.
+
+## 3a. Define the Markov Cycle Length
+
+More challenges ...
+
+-   There are workarounds known as "tunnel states" to get around this
+    problem, though these are difficult to do and present their own
+    challenges
+    -   We won't cover them this week but we can provide references if
+        you want to explore!
+
+## 3a. Define the Markov Cycle Length {.smaller}
+
+| Pros                                                        | Cons                                                                   |
+|-------------------------------------------------------------|------------------------------------------------------------------------|
+| Can model repeated events                                   | Can only transition once in a given cycle                              |
+| Can model more complex + longitudinal clinical events       | Shortening the cycle can create computational challenges.              |
+| Not computationally intensive; efficient to model and debug | Shortening cycle can cause "state explosion" if tunnel states are used |
+
+: {tbl-colwidths="\[50, 50\]"}
+
+## 3a. Define the Markov Cycle Length {.smaller}
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+-   It's also advisable to pick a cycle length that aligns with the
+    clinical/disease timelines of the decision problem.
+    -   Treatment schedules.
+    -   Acute vs. chronic condition.
+-   Another option is to incorporate "short-run" events that happen
+    early in the course of a disease/intervention within the decision
+    tree, then allow the Markov model to model longer-term health
+    consequences.
+:::
+:::
+
+::: {.column width="50%"}
+```{dot}
+//| fig-align: center
+//| fig-width: 4
+digraph G {
+    layout = neato;
+    Healthy [pos="0,0!"];
+    Sick [pos="1,1!"]; 
+    Dead [pos="1,-1!"];
+    Healthy -> Healthy ;
+    Sick -> Sick ;
+    Healthy -> Sick ; 
+    Sick -> Dead ;
+    Healthy -> Dead;
+    Dead -> Dead;
+  }
+```
+:::
+:::
+
+## 3. Parameterize the Model
+
+### {{< fa check-circle >}} 3b. Curate and define model inputs
+
+::: nobullet
+-   {{< fa check-circle >}} 3b.i. Source and define the base case
+    values.
+
+-   {{< fa check-circle >}} 3b.ii. Source and define sources of
+    uncertainty.
+:::
+
+## 3. Parameterize the Model
+
+### {{< fa check-circle >}} 3b. Curate and define model inputs
+
+::: incremental
+-   Rate of disease onset
+-   Health state utilities and costs
+-   Hazard ratios, odds ratios or relative risks for different
+    strategies.
+-   ... and so on.
+:::
+
+## 3. Parameterize the Model
+
+We defined many of the underlying parameters earlier in this lecture, so
+we'll repeat them briefly here.
+
+## 3. Parameterize the Model
+
+-   We start with a healthy population of 25 year olds and follow them
+    until age 100 (or death, if earlier).
+
+::: incremental
+-   Remaining healthy carries no utility decrement (utility weight= 1.0)
+-   Becoming sick carries a 0.25 utility decrement for the remainder of
+    the person's life (utility weight = 0.75)
+-   Death carries a utility weight value of 0.
+:::
+
+## 3. Parameterize the Model
+
+-   There is no cost associated with remaining healthy.
+
+::: incremental
+-   Becoming sick incurs \$1,000 / year in costs.
+-   Becoming sick increases the risk of death by 300%.
+:::
+
+## 3. Parameterize the Model
+
+Each strategy has a different cost and impact on the likelihood of
+becoming sick.
+
+| Strategy | Description                                      | Cost         |
+|----------|--------------------------------------------------|--------------|
+| A        | Standard of Care                                 | \$25/year    |
+| B        | Additional 4% reduction in risk of becoming sick | \$1,000/year |
+| C        | 12% reduction in risk                            | \$3,100/year |
+| D        | 8% reduction in risk                             | \$1,550/year |
+| E        | 8% reduction in risk                             | \$5,000/year |
+
+## 3. Parameterize the Model
+
+::: {.callout-important appearance="simple"}
+It is **critical** to follow a formal process for parameterizing your
+model.
+:::
+
+::: incremental
+-   Often, parameters are drawn from the published literature, and it is
+    important to track the source (published value, assumption, etc.)
+    for each model parameter.
+    -   For example, the percent risk reduction parameter for each
+        strategy may come from different clinical trials.
+    -   The parameter governing death from background causes may be
+        derived from mortality data.
+:::
+
+## 3. Parameterize the Model {.smaller}
+
+::: {.callout-important appearance="simple"}
+It is **critical** to follow a formal process for parameterizing your
+model.
+:::
+
+::: incremental
+-   Some parameters may just be values (e.g., cost of Strategy A is
+    \$25/yr)
+-   Some parameters may be functions of other parameters.
+    -   For example, suppose we want to follow a cohort of 25 year olds
+        until age 100 or death, if it occurs earlier.
+    -   In that case we have two "fixed" parameters: the starting age,
+        and the maximum age.
+    -   We can use these two parameters to infer the total number of
+        cycles we need to run.
+:::
+
+## 3. Parameterize the Model
+
+::: {.callout-important appearance="simple"}
+It is **critical** to follow a formal process for parameterizing your
+model.
+:::
+
+::: incremental
+-   Parameters also have various "flavors":
+    1.  Probabilities
+    2.  Rates
+    3.  Hazard ratios
+    4.  Costs
+    5.  Utilities
+    6.  etc.
+:::
+
+## 3. Parameterize the Model
+
+::: {.callout-important appearance="simple"}
+It is **critical** to follow a formal process for parameterizing your
+model.
+:::
+
+::: incremental
+-   All of the above highlight the importance of adopting a formal
+    process for naming and tracking the value, source, and uncertainty
+    distribution of **all** model parameters in one place.
+
+-   We recommend a structured approach based on parameter naming
+    conventions and parameter tables.
+:::
+
+## 3. Parameterize the Model
+
+Naming conventions:
+
+```{r}
+knitr::kable(
+  dplyr::tibble(
+    type = c("Probability","Rate","Matrix","Cost","Utility","Hazard Ratio"),
+    prefix = c("p_","r_","m_","c_","u_","hr_")
+  )
+)
+```
+
+## Parameter Table {.smaller}
+
+::: footer
+Note: Only a subset of model parameters are shown in table.
+:::
+
+::: {style="font-size: 0.6em"}
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+
+rows_to_show <- c(1,2,13,14,17,19:21,41)
+
+params_raw[rows_to_show,1:7]  %>% gt() %>% 
+  tab_header(title = "Parameter Table") %>% 
+  sub_missing(missing_text="") %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "#e1efda")
+    ),
+    locations = cells_body(
+      rows = c(1:length(rows_to_show))
+    )
+  ) %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "#fce4d6")
+    ),
+    locations = cells_body(
+      rows = c(length(rows_to_show))
+    )
+  ) %>% 
+    tab_style(
+    style = list(
+      cell_fill(color = "#ed7d31")
+    ),
+    locations = cells_body(
+      columns = c(2),
+      rows = c(length(rows_to_show))
+    )
+  ) 
+
+```
+:::
+
+##  {.smaller}
+
+**param** column is the short name of the parameter
+
+::: footer
+Note: Only a subset of model parameters are shown in table.
+:::
+
+::: {style="font-size: 0.6em"}
+```{r}
+ 
+
+print_table <- function(target) {
+  params_raw[rows_to_show,1:7]  %>% gt() %>% 
+  tab_header(title = "Parameter Table") %>% 
+  sub_missing(missing_text="") %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "#e1efda")
+    ),
+    locations = cells_body(
+      rows = c(1:length(rows_to_show))
+    )
+  ) %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "#fce4d6")
+    ),
+    locations = cells_body(
+      rows = c(length(rows_to_show))
+    )
+  ) %>% 
+    tab_style(
+    style = list(
+      cell_fill(color = "#ed7d31")
+    ),
+    locations = cells_body(
+      columns = c(2),
+      rows = c(length(rows_to_show))
+    )
+  ) %>% 
+  tab_style(
+    style = list(
+      cell_borders(
+        sides = c("left","right"),
+        color = "darkred",
+        weight = px(2)
+      )),
+      locations = cells_body(
+        columns = c(target)
+      
+    )
+  ) %>% 
+  tab_style(
+    style = list(
+      cell_borders(
+        sides = c("top"),
+        color = "darkred",
+        weight = px(2)
+      )),
+      locations = cells_body(
+        rows = c(1),
+        columns = c(target)
+    )
+  ) %>% 
+  tab_style(
+    style = list(
+      cell_borders(
+        sides = c("bottom"),
+        color = "darkred",
+        weight = px(2)
+      )),
+      locations = cells_body(
+        rows = length(rows_to_show),
+        columns = c(target)
+    )
+  )
+}
+
+print_table(1)
+
+
+```
+:::
+
+##  {.smaller}
+
+**base_case** is the parameter value for the base case.
+
+::: footer
+Note: Only a subset of model parameters are shown in table.
+:::
+
+::: {style="font-size: 0.6em"}
+```{r}
+print_table(2)
+```
+:::
+
+##  {.smaller}
+
+**formula** defines model parameter formulas for parameters that are
+functions of other model parameters.
+
+::: footer
+Note: Only a subset of model parameters are shown in table.
+:::
+
+::: {style="font-size: 0.6em"}
+```{r}
+print_table(3)
+```
+:::
+
+##  {.smaller}
+
+**description** provides a text description of the parameter.
+
+::: {style="font-size: 0.6em"}
+```{r}
+print_table(4)
+```
+:::
+
+::: footer
+Note: Only a subset of model parameters are shown in table.
+:::
+
+##  {.smaller}
+
+**notes** is an optional column where you add additional notes or
+context for the parameter.
+
+::: footer
+Note: Only a subset of model parameters are shown in table.
+:::
+
+::: {style="font-size: 0.6em"}
+```{r}
+print_table(5)
+```
+:::
+
+##  {.smaller}
+
+**distribution** specifies the uncertainty distribution for the
+parameter. It is used for probabilistic sensitivity analyses, which we
+cover in our intermediate (week-long) workshop.
+
+::: footer
+Note: Only a subset of model parameters are shown in table.
+:::
+
+::: {style="font-size: 0.6em"}
+```{r}
+print_table(6) %>% tab_options(table.width = pct(100))
+```
+:::
+
+##  {.smaller}
+
+::: footer
+Note: Only a subset of model parameters are shown in table.
+:::
+
+**source** provides the source for the parameter. It could be a
+published research article, an assumption, or just simply an unsourced
+modeling parameter (e.g., the starting age of the modeled cohort).
+
+::: {style="font-size: 0.6em"}
+```{r}
+print_table(7)
+```
+:::
+
+# 4. Calculate or define the transition probability matrix {background="#c2f0c2"}
+
+## Defining the Transition Probability Matrix
+
+-   The transition probability matrix is a square matrix that defines
+    the probability of transitioning from one health state to another
+    health state in a single time step.
+
+-   Constructing the matrix is a fairly technical, but fairly
+    straightforward process.
+
+    -   We could spend an entire day of lecture and case studies on this
+        alone (and we do in our weeklong intermediate course!)
+    -   However, in the interest of time, we'll skip over these
+        technical details today.
+
+## Transition Probability Matrix
+
+::: columns
+::: {.column width="40%"}
+```{dot}
+//| fig-align: center
+//| fig-width: 4
+digraph G {
+    layout = neato;
+    Healthy [pos="0,0!"];
+    Sick [pos="1,1!"]; 
+    Dead [pos="1,-1!"]
+    Healthy -> Healthy [label="0.856"];
+    Sick -> Sick [label="0.982"];
+    Healthy -> Sick [label="0.138"]; 
+    Sick -> Dead [label="0.018"];
+    Healthy -> Dead [label="0.007"];
+    Dead -> Dead [label="1.0"];
+  }
+```
+:::
+
+::: {.column width="50%"}
+|         | Healthy | Sick  | Dead  |
+|---------|---------|-------|-------|
+| Healthy | 0.856   | 0.138 | 0.007 |
+| Sick    | 0       | 0.982 | 0.018 |
+| Dead    | 0       | 0     | 1     |
+:::
+:::
+
+# 5. Run the Model {background="#c2f0c2"}
+
+## Executing the model requires two inputs {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: r-vstack
+::: {data-id="occ"}
+Health State Occupancy at Beginning of Cycle
+:::
+
+::: {data-id="m_P"}
+Transition Probability Matrix
+:::
+:::
+
+##  {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: r-hstack
+::: {data-id="occ"}
+Health State Occupancy at Beginning of Cycle
+:::
+
+::: {data-id="m_P"}
+Transition Probability Matrix
+:::
+:::
+
+##  {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: r-hstack
+::: {data-id="occ"}
+Health State Occupancy at Beginning of Cycle
+:::
+
+::: {data-id="m_P"}
+Transition Probability Matrix
+:::
+
+::: {data-id="occ1"}
+$\quad \quad \quad \quad \quad \quad \quad \quad$
+:::
+:::
+
+::: columns
+::: {.column width="33%"}
+$s =$
+
+```{r}
+s <- m_P[[1]][,1]  %>% t()
+colnames(s) <- c("H","S","D")
+s[1,] <- c(1,0,0)
+rownames(s) <- c("")
+s %>% round(.,3)
+```
+:::
+
+::: {.column width="33%"}
+$P =$
+
+```{r}
+P <- round(m_P[[1]],3)  
+colnames(P) = rownames(P) = c("H","S","D")
+P
+```
+:::
+
+::: {.column width="33%"}
+$\quad \quad \quad \quad$
+:::
+:::
+
+##  {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: r-hstack
+::: {data-id="occ"}
+Health State Occupancy at Beginning of Cycle
+:::
+
+::: {data-id="m_P"}
+Transition Probability Matrix
+:::
+
+::: {data-id="occ1"}
+Health State Occupancy at End of Cycle
+:::
+:::
+
+::: columns
+::: {.column width="33%"}
+$s =$
+
+```{r}
+s <- m_P[[1]][,1]  %>% t()
+colnames(s) <- c("H","S","D")
+s[1,] <- c(1,0,0)
+rownames(s) <- c("")
+s %>% round(.,3)
+```
+:::
+
+::: {.column width="33%"}
+$P =$
+
+```{r}
+P <- round(m_P[[1]],3)  
+colnames(P) = rownames(P) = c("H","S","D")
+P 
+```
+:::
+
+::: {.column width="33%"}
+$s \cdot P=$
+
+```{r}
+s %*% P %>% round(.,3)
+```
+:::
+:::
+
+##  {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: r-hstack
+::: {data-id="occ"}
+Health State Occupancy at Beginning of Cycle
+:::
+
+::: {data-id="m_P"}
+Transition Probability Matrix
+:::
+
+::: {data-id="occ1"}
+Health State Occupancy at End of Cycle
+:::
+:::
+
+::: columns
+::: {.column width="33%"}
+$s =$
+
+```{r}
+s <- m_P[[1]][,1]  %>% t()
+colnames(s) <- c("H","S","D")
+s[1,] <- c(1,0,0)
+rownames(s) <- c("")
+s
+```
+:::
+
+::: {.column width="33%"}
+$P =$
+
+```{r}
+P <- round(m_P[[1]],3)  
+colnames(P) = rownames(P) = c("H","S","D")
+P
+```
+:::
+
+::: {.column width="33%"}
+$s \cdot P=$
+
+```{r}
+s %*% P %>% round(.,3)
+```
+:::
+:::
+
+##  {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: r-hstack
+::: {data-id="occ"}
+Health State Occupancy at Beginning of Cycle
+:::
+
+::: {data-id="m_P"}
+Transition Probability Matrix
+:::
+
+::: {data-id="occ1"}
+Health State Occupancy at End of Cycle
+:::
+:::
+
+::: columns
+::: {.column width="33%"}
+$s =$
+
+```{r}
+s <- m_P[[1]][,1]  %>% t()
+colnames(s) <- c("H","S","D")
+s[1,] <- c(1,0,0)
+rownames(s) <- c("")
+s
+```
+
+::: {style="padding-top: 50px;"}
+:::
+
+::: {data-id="tr1"}
+```{r}
+s%*% P %>% round(.,3)
+```
+:::
+:::
+
+::: {.column width="33%"}
+$P =$
+
+```{r}
+P <- round(m_P[[1]],3)  
+colnames(P) = rownames(P) = c("H","S","D")
+P
+```
+
+```{r}
+P <- round(m_P[[1]],3)  
+colnames(P) = rownames(P) = c("H","S","D")
+P
+```
+:::
+
+::: {.column width="33%"}
+$s \cdot P=$
+
+```{r}
+s %*% P %>% round(.,3)
+```
+
+::: {style="padding-top: 50px;"}
+:::
+
+```{r}
+(s %*% P) %*% P %>% round(.,3)
+```
+:::
+:::
+
+##  {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: r-hstack
+::: {data-id="occ"}
+Health State Occupancy at Beginning of Cycle
+:::
+
+::: {data-id="m_P"}
+Transition Probability Matrix
+:::
+
+::: {data-id="occ1"}
+Health State Occupancy at End of Cycle
+:::
+:::
+
+::: columns
+::: {.column width="33%"}
+$s =$
+
+```{r}
+s <- m_P[[1]][,1]  %>% t()
+colnames(s) <- c("H","S","D")
+s[1,] <- c(1,0,0)
+rownames(s) <- c("")
+s
+```
+
+::: {style="padding-top: 50px;"}
+:::
+
+::: {data-id="tr1"}
+```{r}
+s%*% P %>% round(.,3)
+```
+:::
+
+::: {style="padding-top: 50px;"}
+:::
+
+::: {data-id="tr2"}
+```{r}
+(s%*% P) %*% P %>% round(.,3)
+```
+:::
+:::
+
+::: {.column width="33%"}
+$P =$
+
+```{r}
+P <- round(m_P[[1]],3)  
+colnames(P) = rownames(P) = c("H","S","D")
+P
+```
+
+```{r}
+P <- round(m_P[[1]],3)  
+colnames(P) = rownames(P) = c("H","S","D")
+P
+```
+
+```{r}
+P <- round(m_P[[1]],3)  
+colnames(P) = rownames(P) = c("H","S","D")
+P
+```
+:::
+
+::: {.column width="33%"}
+$s \cdot P=$
+
+```{r}
+s %*% P %>% round(.,3)
+```
+
+::: {style="padding-top: 50px;"}
+:::
+
+```{r}
+(s %*% P) %*% P %>% round(.,3)
+```
+
+::: {style="padding-top: 50px;"}
+:::
+
+::: {data-id="tr3"}
+```{r}
+((s %*% P) %*% P) %*% P %>% round(.,3)
+```
+:::
+:::
+:::
+
+##  {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: {data-id="occ1"}
+Health State Occupancy at End of Cycle
+:::
+
+::: {data-id="tr1"}
+```{r}
+s %*% P
+```
+:::
+
+::: {data-id="tr2"}
+```{r}
+(s %*% P) %*% P
+```
+:::
+
+::: {data-id="tr3"}
+```{r}
+((s %*% P) %*% P) %*% P 
+```
+:::
+
+## Markov Trace {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: {data-id="occ1"}
+Health State Occupancy Over Ten Cycles
+:::
+
+```{r}
+0:10 %>% map_df(~(s %*% (P %^% .x) %>% data.frame()))  %>% 
+  mutate(cycle = 0:10) %>% 
+  select(cycle,everything()) %>% 
+  print(row.names=FALSE)
+  
+```
+
+##  {data-visibility="hidden"}
+
+```{mermaid}
+graph LR
+        subgraph Step 1
+        A[ ]==>|Parameterize|Software
+        end
+        Software -->Excel
+        Software -->R
+        Excel --> ExcelModelType[Model Type]
+        R --> RModelType[Model Type]
+        ExcelModelType --> ExcelMarkov[Markov]
+        RModelType --> RMarkov[Markov]
+        RModelType --> RMicro[Microsimulation]
+        RModelType --> RDES[Discrete Event Simulation]
+        style A fill:#ffffde,stroke:#333,stroke-width:0px
+      
+```
+
+## A Markov Model of Cancer {data-visibility="hidden"}
+
+```{dot}
+//| fig-align: center
+//| fig-width: 10
+
+digraph G {
+    layout = neato;
+    Healthy [pos="0,0!"];
+    "Stage 1" [pos="-1.5,-1!"];
+    "Stage 2" [pos="0,-1!"];
+    "Stage 3" [pos="1.5,-1!" ];
+    "Remission" [pos="-1.5,-2!"];
+    Death [pos="1.5,-2!"];
+    Healthy -> "Stage 1";
+    Healthy -> Healthy;
+    Healthy ->"Stage 2";
+    Healthy -> "Stage 3";
+    Healthy -> Death;
+    "Stage 1" -> Death; 
+    "Stage 2" -> Death; 
+    "Stage 3" -> Death;
+    "Stage 1" -> Remission; 
+    Remission -> "Stage 1";
+    "Stage 2" -> Remission; 
+    Remission -> "Stage 2"; 
+    Remission -> Remission; 
+    "Stage 1" -> "Stage 1"
+    "Stage 2" -> "Stage 2" 
+    "Stage 3" -> "Stage 3"
+    Remission -> Death;
+    "Stage 1" -> "Stage 2"; 
+    "Stage 2" -> "Stage 1"; 
+    "Stage 2" -> "Stage 3";
+    "Stage 3" -> "Stage 2"; 
+  }
+```
+
+## Transition Probability Matrix {.smaller data-visibility="hidden"}
+
+::: columns
+::: {.column width="65%"}
+```{r}
+round(m_P[[1]],3)  %>% knitr::kable()
+```
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="30%"}
+-   test
+:::
+:::
+
+::: {#refs}
+:::
+
+# Calculate cycles by hand {background="#c2f0c2"}
+
+## In-class example {.smaller}
+
+::: incremental
+-   A new drug was developed for cancer patients in remission to
+    decrease their chance of relapse
+-   This drug is \$10,000 per year (2022 USD)
+-   Research question: Is the new drug cost-effective compared to the
+    current standard of care?
+-   Let's say we want to model this over a 4-year time horizon
+:::
+
+## In-class example {.smaller}
+
+<br>
+
+::: {style="font-size: 0.6em"}
+|                      | Standard of Care | New Drug |
+|----------------------|------------------|----------|
+| Healthy to Stage 1   | 5%               |          |
+| Healthy to Stage 2   | 2%               |          |
+| Healthy to Stage 3   | 1%               |          |
+| Stage 1 to Stage 2   | 10%              |          |
+| Stage 1 to Remission | 25%              |          |
+| Stage 2 to Stage 1   | 5%               |          |
+| Stage 2 to Stage 3   | 15%              |          |
+| Stage 2 to Remission | 20%              |          |
+| Stage 3 to Stage 2   | 5%               |          |
+| Stage 3 to Death     | 45%              |          |
+| Remission to Stage 1 | 10%              | 2%       |
+| Remission to Stage 2 | 5%               | 1%       |
+:::
+
+## In-class example {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](images/Mark-example1.png){fig-align="center"
+style="padding-top: 100px;"}
+:::
+
+::: {.column width="50%"}
+![](images/Mark-example2.png){fig-align="center"}
+:::
+:::
+
+## In-class example {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](images/Mark-example3.png){fig-align="center"
+style="padding-top: 100px;"}
+:::
+
+::: {.column width="50%"}
+![](images/Mark-example4.png){fig-align="center"}
+:::
+:::
+
+## In-class example {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](images/Mark-example5.png){fig-align="center"
+style="padding-top: 100px;"}
+:::
+
+::: {.column width="50%"}
+![](images/Mark-example7.png){fig-align="center"}
+:::
+:::
+
+## In-class example {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](images/Mark-example8.png){fig-align="center"
+style="padding-top: 100px;"}
+:::
+
+::: {.column width="50%"}
+![](images/Mark-NewDrug.png){fig-align="center"}
+:::
+:::
+
+## In-class example {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](images/Mark-example9.png){fig-align="center"
+style="padding-top: 100px;"}
+:::
+
+::: {.column width="50%"}
+![](images/Mark-example10.png){fig-align="center"}
+:::
+:::
+
+## In-class example {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](images/Mark-example9.png){fig-align="center"
+style="padding-top: 100px;"}
+:::
+
+::: {.column width="50%"}
+![](images/Mark-example11.png){fig-align="center"}
+:::
+:::
+
+<!-- ## In-class example {.smaller} -->
+
+<!-- <br> -->
+
+<!-- Markov model be continued in class next week... -->
+
+# Calculating Outcomes {background="#c2f0c2"}
+
+## An example Markov Trace (75 year horizon)
+
+::: {style="font-size: 0.7em"}
+| Cycle    | Healthy | Sick  | Dead  |
+|----------|---------|-------|-------|
+| 0        | 1.000   | 0.000 | 0.000 |
+| 1        | 0.856   | 0.138 | 0.007 |
+| 2        | 0.732   | 0.253 | 0.015 |
+| 3        | 0.626   | 0.349 | 0.025 |
+| 4        | 0.536   | 0.429 | 0.035 |
+| 5        | 0.458   | 0.495 | 0.046 |
+| ...      | ...     | ...   | ...   |
+| 75 (End) | 0       | 0.282 | 0.718 |
+:::
+
+## Markov Traces
+
+-   Often we are modeling several competing strategies.
+-   Each strategy has its own transition probability matrix.
+-   Therefore, each strategy will have it's own Markov trace.
+
+## Calculating Outcomes
+
+-   With our markov traces complete, we can calculate expected outcomes
+    (e.g., costs, QALYs, DALYs, etc.).
+-   Much like we did with decision trees, we need to define "payoffs"
+    for each health state.
+
+## Defining Payoffs
+
+-   Cost outcomes: Cost of being healthy, sick, dead (including any
+    additional costs of treatment/intervention, if applicable).
+-   QALY outcomes: Utility weight of being healthy (usually 1.0), sick,
+    dead (usually 0.0).
+-   DALY outcomes: Disability weights of being sick (YLD) and remaining
+    life expectancy based on reference life table (YLL)
+
+## Defining Payoffs
+
+::: nonincremental
+-   We can calculate the total payoff for each cycle by multiplying the
+    number or fraction of the cohort in each health state by its payoff
+    value, and adding them together.
+:::
+
+Example Markov Trace (two cycles):
+
+::: {style="font-size: 0.7em"}
+| Cycle | Healthy | Sick  | Dead  |
+|-------|---------|-------|-------|
+| 0     | 1.000   | 0.000 | 0.000 |
+| 1     | 0.856   | 0.138 | 0.007 |
+:::
+
+## Example: Life Years
+
+-   We'll build our example using a simple outcome: expected life years
+    under a given strategy.
+-   Payoffs:
+    -   Healthy: [1.0]{style="color:green;"}
+    -   Sick: [1.0]{style="color:green;"} \[they're still alive!\]
+    -   Dead: [0.0]{style="color:green;"}
+
+## Example: Life Years
+
+-   To get the total "payoff" for a given cycle, we multiply the
+    fraction of the cohort in a given health state by the payoff
+    associated with that health state.
+-   Do this for each health state, and add them together to get the
+    total.
+
+::: {style="font-size: 0.7em"}
+| Cycle | Healthy | Sick  | Dead  | LY  |
+|-------|---------|-------|-------|-----|
+| 0     | 1.000   | 0.000 | 0.000 |     |
+| 1     | 0.856   | 0.138 | 0.007 |     |
+:::
+
+## Example: Life Years
+
+What is the LY "payoff" for Cycle 0?
+
+::: {style="font-size: 0.7em"}
+| Cycle | Healthy | Sick  | Dead  | LY  |
+|-------|---------|-------|-------|-----|
+| 0     | 1.000   | 0.000 | 0.000 |     |
+| 1     | 0.856   | 0.138 | 0.007 |     |
+:::
+
+## Example: Life Years
+
+What is the LY "payoff" for Cycle 0?
+
+::: {style="font-size: 0.7em"}
+| Cycle | Healthy | Sick  | Dead  | LY                                                                                                                 |
+|-------|---------|-------|-------|--------------------------------------------------------------------------------------------------------------------|
+| 0     | 1.000   | 0.000 | 0.000 | 1.0 = 1.0 \* [1.0]{style="color:green;"} + 0.0 \* [1.0]{style="color:green;"} + 0.0 \* [0.0]{style="color:green;"} |
+| 1     | 0.856   | 0.138 | 0.007 |                                                                                                                    |
+:::
+
+## Example: Life Years
+
+What is the LY "payoff" for Cycle 1?
+
+::: {style="font-size: 0.7em"}
+| Cycle | Healthy | Sick  | Dead  | LY                                                                                                                         |
+|-------|---------|-------|-------|----------------------------------------------------------------------------------------------------------------------------|
+| 0     | 1.000   | 0.000 | 0.000 | 1.0                                                                                                                        |
+| 1     | 0.856   | 0.138 | 0.007 | 0.994 = 0.856 \* [1.0]{style="color:green;"} + 0.138 \* [1.0]{style="color:green;"} + 0.007 \* [0.0]{style="color:green;"} |
+:::
+
+... and so on.
+
+## Example: Life Years
+
+::: {style="font-size: 0.7em"}
+| Cycle    | Healthy | Sick  | Dead  | LY    |
+|----------|---------|-------|-------|-------|
+| 0        | 1.000   | 0.000 | 0.000 | 1     |
+| 1        | 0.856   | 0.138 | 0.007 | 0.993 |
+| 2        | 0.732   | 0.253 | 0.015 | 0.985 |
+| 3        | 0.626   | 0.349 | 0.025 | 0.975 |
+| 4        | 0.536   | 0.429 | 0.035 | 0.965 |
+| 5        | 0.458   | 0.495 | 0.046 | 0.954 |
+| ...      | ...     | ...   | ...   |       |
+| 75 (End) | 0       | 0.282 | 0.718 | 0.282 |
+:::
+
+## Example: Costs
+
+-   Now suppose we want to calculate costs.
+-   Payoffs:
+    -   Healthy: [\$0]{style="color:blue;"}
+    -   Sick: [\$1,000]{style="color:blue;"}
+    -   Dead: [\$0]{style="color:blue;"}
+
+## Example: Costs
+
+What is the Cost "payoff" for Cycle 0?
+
+::: {style="font-size: 0.7em"}
+| Cycle | Healthy | Sick  | Dead  | Cost |
+|-------|---------|-------|-------|------|
+| 0     | 1.000   | 0.000 | 0.000 |      |
+| 1     | 0.856   | 0.138 | 0.007 |      |
+:::
+
+## Example: Costs
+
+What is the Cost "payoff" for Cycle 0?
+
+::: {style="font-size: 0.7em"}
+| Cycle | Healthy | Sick  | Dead  | Cost                                                                                                        |
+|-------|---------|-------|-------|-------------------------------------------------------------------------------------------------------------|
+| 0     | 1.000   | 0.000 | 0.000 | 0 = 1.00 \* [0]{style="color:blue;"} + 0.0 \* [1000]{style="color:blue;"} + 0.0 \* [0]{style="color:blue;"} |
+| 1     | 0.856   | 0.138 | 0.007 |                                                                                                             |
+:::
+
+## Example: Costs
+
+What is the cost "payoff" for Cycle 1?
+
+::: {style="font-size: 0.7em"}
+| Cycle | Healthy | Sick  | Dead  | Cost                                                                                                     |
+|-------|---------|-------|-------|----------------------------------------------------------------------------------------------------------|
+| 0     | 1.000   | 0.000 | 0.000 | 0                                                                                                        |
+| 1     | 0.856   | 0.138 | 0.007 | 138 = 0.856\*[0]{style="color:blue;"}+0.138\*[1000]{style="color:blue;"}+0.007\*[0]{style="color:blue;"} |
+:::
+
+... and so on.
+
+## Other Outcomes
+
+-   We can repeat a similar process for health outcomes (e.g., QALYs,
+    YLDs) by multiplying the "payoff" (e.g., utility weight, disability
+    weight) for a given health state by the fraction of the cohort in
+    that health state in the cycle.
+
+# Calculating Total Expected Outcomes
+
+## Total Outcomes
+
+## Total Life Years
+
+Let's look at the Markov trace and cycle outcomes for the Life Year
+outcome.
+
+::: {style="font-size: 0.7em"}
+| Cycle    | Healthy | Sick  | Dead  | LY (single cycle) |
+|----------|---------|-------|-------|-------------------|
+| 0        | 1.000   | 0.000 | 0.000 | 1                 |
+| 1        | 0.856   | 0.138 | 0.007 | 0.993             |
+| 2        | 0.732   | 0.253 | 0.015 | 0.985             |
+| 3        | 0.626   | 0.349 | 0.025 | 0.975             |
+| 4        | 0.536   | 0.429 | 0.035 | 0.965             |
+| 5        | 0.458   | 0.495 | 0.046 | 0.954             |
+| ...      | ...     | ...   | ...   |                   |
+| 75 (End) | 0       | 0.282 | 0.718 | 0.282             |
+:::
+
+## Life years
+
+We can create a new column that accumulates life years over each cycle.
+
+::: {style="font-size: 0.7em"}
+| Cycle    | Healthy | Sick  | Dead  | LY (single cycle) | LY (cumulative)   |
+|----------|---------|-------|-------|-------------------|-------------------|
+| 0        | 1.000   | 0.000 | 0.000 | 1                 | 1                 |
+| 1        | 0.856   | 0.138 | 0.007 | 0.993             | 1 + 0.993 = 1.993 |
+| 2        | 0.732   | 0.253 | 0.015 | 0.985             |                   |
+| 3        | 0.626   | 0.349 | 0.025 | 0.975             |                   |
+| 4        | 0.536   | 0.429 | 0.035 | 0.965             |                   |
+| 5        | 0.458   | 0.495 | 0.046 | 0.954             |                   |
+| ...      | ...     | ...   | ...   | ...               |                   |
+| 75 (End) | 0       | 0.282 | 0.718 | 0.282             |                   |
+:::
+
+## Life years
+
+::: {style="font-size: 0.7em"}
+| Cycle    | Healthy | Sick  | Dead  | LY (single cycle) | LY (cumulative)           |
+|----------|---------|-------|-------|-------------------|---------------------------|
+| 0        | 1.000   | 0.000 | 0.000 | 1                 | 1                         |
+| 1        | 0.856   | 0.138 | 0.007 | 0.993             | 1.993                     |
+| 2        | 0.732   | 0.253 | 0.015 | 0.985             | 1 + 0.993 + 0.985 = 2.978 |
+| 3        | 0.626   | 0.349 | 0.025 | 0.975             |                           |
+| 4        | 0.536   | 0.429 | 0.035 | 0.965             |                           |
+| 5        | 0.458   | 0.495 | 0.046 | 0.954             |                           |
+| ...      | ...     | ...   | ...   | ...               |                           |
+| 75 (End) | 0       | 0.282 | 0.718 | 0.282             |                           |
+:::
+
+## Life years {.smaller}
+
+-   The cumulative LYs for an individual starting in the Healthy state
+    is **44.825**
+
+-   Note that this is within a 75 years time horizon
+
+::: {style="font-size: 0.7em"}
+| Cycle    | Healthy | Sick  | Dead  | LY (single cycle) | LY (cumulative) |
+|----------|---------|-------|-------|-------------------|-----------------|
+| 0        | 1.000   | 0.000 | 0.000 | 1                 | 1               |
+| 1        | 0.856   | 0.138 | 0.007 | 0.993             | 1.993           |
+| 2        | 0.732   | 0.253 | 0.015 | 0.985             | 2.978           |
+| 3        | 0.626   | 0.349 | 0.025 | 0.975             | 3.954           |
+| 4        | 0.536   | 0.429 | 0.035 | 0.965             | 4.919           |
+| 5        | 0.458   | 0.495 | 0.046 | 0.954             | 5.872           |
+| ...      | ...     | ...   | ...   | ...               | ...             |
+| 75 (End) | 0       | 0.282 | 0.718 | 0.282             | **44.825**      |
+:::
+
+## Total Outcomes
+
+-   We can do a similar exercise to get total costs, total QALYs, total
+    DALYs, etc.
+-   However, it's not that simple. There are some extra complications we
+    have to deal with.
+    -   Discounting
+    -   Cycle correction
+
+# Cycle correction {background="#c2f0c2"}
+
+## The problem
+
+-   In real life, events could occur at any points in a given cycle, but
+    a Markov model assumes all events occur either at the beginning or
+    end of each cycle
+
+-   Time is continuous, so are survival/event-free survival curves
+
+-   When we discretize time by using a fixed cycle length, we can make
+    two assumptions
+
+    -   Suppose this is a simple Well $\rightarrow$ Dead process
+
+## The problem {.smaller}
+
+::: columns
+::: {.column width="50%"}
+::: fragment
+Assuming death happens at the end of cycle
+(A)![](images/paste-48DC2C4B.png){fig-align="center" width="512"}
+:::
+
+::: fragment
+Overestimates state membership in Well
+:::
+:::
+
+::: {.column width="50%"}
+::: fragment
+Assuming death happens at the start of cycle
+(B)![](images/paste-6C74F22E.png){fig-align="center" width="525"}
+:::
+
+::: fragment
+Underestimates state membership in Well
+:::
+:::
+:::
+
+[Source](https://doi.org/10.1177/0272989X08315241)
+
+## The problem {.smaller}
+
+![](images/half-cycle.png){width="513"}
+
+::: notes
+1.  When counting subjects at the END of cycle (top visual) (transition
+    happens at beginning of cycle) - you would be underestimating LYs
+
+-   Say you have 10 people & 5 die halfway through, you wouldn't be
+    counting the 5 that started that has accumulated SOME costs &
+    benefits in that cycle; you would only be counting the "end"
+    survivors.
+
+2.  If you counted subjects at BEGINNING of cycle (the bottom visual)
+    (transition happens at end of previous cycle), you would be
+    overestimating LYs
+
+-   For example, for these 10 people, they die halfway through the
+    cycle, but you already gave that person the full cycle's benefits &
+    costs at the beginning (even though they shouldn't get the full
+    benefits & costs because they died halfway through)
+:::
+
+## Half-cycle correction
+
+::: columns
+::: {.column width="50%"}
+![](images/paste-1105574D.png)
+:::
+
+::: {.column width="50%"}
+:::
+:::
+
+[Source](https://doi.org/10.1177/0272989X08315241)
+
+## Half-cycle correction
+
+::: columns
+::: {.column width="50%"}
+![](images/paste-F622FD0F.png)
+:::
+
+::: {.column width="50%"}
+::: fragment
+![](images/paste-4F29D3CE.png)
+:::
+:::
+:::
+
+[Source](https://doi.org/10.1177/0272989X08315241)
+
+## Half-cycle correction {.smaller}
+
+![](images/paste-86501A0D.png){fig-align="center"}
+
+-   Multiply the outcomes by 1/2 in the first and last cycle.
+
+-   Shifting the computed, discrete state membership curve to the left
+    by 1/2 cycle.
+
+-   Essentially assuming that events happen in the middle of cycle
+
+[Source](https://doi.org/10.1177/0272989X08315241)
+
+## Half-cycle correction
+
+<br>
+
+![](images/half-cycle2.png)
+
+::: notes
+(1) Intuition behind it -- the image to the left represents
+    underestimation
+
+(2) & you can see if you line that up to the Y-AXIS (center figures),
+    the triangular areas can be seen to be equal to a rectangle one-half
+    cycle wide extending from 0 to 1.
+
+(3) If you add back the original rectangles, the approximation is NOW
+    BETTER -- it has corrected for the underestimation.
+:::
+
+# Apply cycle correction methods to our markov trace...
+
+## Half-cycle correction {.smaller}
+
+-   Multiply the outcomes by 1/2 in the first and last cycle.
+
+::: fragment
+::: {style="font-size: 0.7em"}
+| Cycle    | Healthy | Sick  | Dead  | LY (single cycle, adjusted) | LY (cumulative)     |
+|----------|---------|-------|-------|-----------------------------|---------------------|
+| 0        | 1.000   | 0.000 | 0.000 | 1**\*0.5**                  | **0.5**             |
+| 1        | 0.856   | 0.138 | 0.007 | 0.993                       | 0.5 + 0.993 = 1.493 |
+| 2        | 0.732   | 0.253 | 0.015 | 0.985                       | 2.478               |
+| 3        | 0.626   | 0.349 | 0.025 | 0.975                       | 3.454               |
+| 4        | 0.536   | 0.429 | 0.035 | 0.965                       | 4.419               |
+| 5        | 0.458   | 0.495 | 0.046 | 0.954                       | 5.372               |
+| ...      | ...     | ...   | ...   | ...                         | ...                 |
+| 75 (End) | 0       | 0.282 | 0.718 | 0.282 **\*0.5**             | **44.184**          |
+:::
+:::
+
+::: fragment
+::: callout-note
+## This number is smaller than our original estimate without half-cycle correction (44.825!)
+:::
+:::
+
+## Summary
+
+-   Once we have total (discounted, half-cycle corrected) outcomes for
+    each strategy, we can turn to conducting incremental
+    cost-effectiveness analysis.
+-   We covered these methods yesterday!
+
+## Markov Models
+
+| Pros                                                        | Cons                                                                   |
+|-------------------------------------------------------------|------------------------------------------------------------------------|
+| Can model repeated events                                   | Can only transition once in a given cycle                              |
+| Can model more complex + longitudinal clinical events       | Shortening the cycle can create computational challenges.              |
+| Not computationally intensive; efficient to model and debug | Shortening cycle can cause "state explosion" if tunnel states are used |
+
+: {tbl-colwidths="\[50, 50\]"}
+
+# Next up: Markov Case Study {background="#43464B"}

@@ -1,0 +1,373 @@
+---
+title: "Advanced Modeling Techniques"
+format:
+  revealjs:
+    theme: slides.scss
+    incremental: true
+    slide-number: true
+    logo: ../vchem.png
+    html-math-method: katex
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    footer: |
+      [Back to Website](../index.html)
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 90
+---
+
+# Learning Objectives and Outline
+
+## Learning Objectives
+
+-   Be able to understand the basic concepts and identify the strengths and limitations of
+    alternative modeling techniques, including:
+
+    ::: nonincremental
+    -   Microsimulation (Monte Carlo simulation)
+
+    -   Discrete event simulation
+
+    -   Infectious disease (dynamic) models
+    :::
+
+## Outline
+
+-   Microsimulation (Monte Carlo simulation)
+
+-   Discrete event simulation
+
+-   Infectious disease (dynamic) models
+
+-   Comparison of model types
+
+# Microsimulation
+
+## Microsimulation models
+
+-   Markov simulation
+
+    -   Focuses on the average: essentially assuming infinite cohort of individuals
+        transitions through the model simultaneously to obtain the expected values
+
+-   Microsimulation
+
+    -   Synonyms = stochastic microsimulation, individual-based model, 1st order Monte
+        Carlo simulation
+
+    -   Hypothetical individuals transition through the model, one at a time
+
+## Steps {.smaller}
+
+1.  Determine initial state, using the distribution of starting probabilities
+
+    -   e.g. probability of starting in sick/healthy
+
+2.  Simulate individual trajectory through health states, using **random numbers** to
+    determine actual transitions (yes/no) from transition probabilities
+
+3.  Record \# of cycles in each state
+
+4.  Repeat steps 1-3 many times (N)
+
+5.  Calculate mean \# of cycles from sample of N
+
+    -   Can weight states by utility, cost, discount factor (same as with Markov models)
+
+## Random numbers
+
+![](images/paste-ECA4B291.png){fig-align="center" width="700"}
+
+![](images/paste-65EE9EB8.png){fig-align="center" width="700" height="259"}
+
+## Markov cohort vs Microsimulation
+
+\[Shift to Powerpoint...\]
+
+## Example
+
+Context: Economic evaluation of TB prevention among people living with HIV in Tanzania
+
+[![Zhu et al., The Lancet Global Health,
+2022](images/paste-693A3914.png)](https://www.sciencedirect.com/science/article/pii/S2214109X22003722)
+
+## Example
+
+-   TB accounts for \>25% deaths among people living with HIV
+
+-   Isoniazid preventive therapy (IPT) can prevent TB among people receiving
+    antiretroviral therapy (ART)
+
+-   HIV programmes are now initiating patients on ART with higher average CD4 cell counts
+    and lower tuberculosis risks under test-and-treat guidelines
+
+-   We aimed to investigate how this change has affected the health impact and
+    cost-effectiveness of IPT
+
+## Example
+
+![Zhu et al, The Lancet Global Health, 2022](images/paste-893141CB.png)
+
+## Example
+
+::: {.callout-note .fragment appearance="simple"}
+Why choose a microsimulation model?
+:::
+
+-   Individual-level characteristics on age, sex, CD4 cell count
+
+-   Tracking individual trajectory is crucial for this question
+
+    -   CD4 cell counts change with HIV treatment
+
+    -   Event rates (mortality and TB progression rates) are dependent on CD4 cell counts
+
+-   A markov cohort model wouldn't be able to capture these complex mechanisms!
+
+# Discrete event simulation
+
+## Microsimulation vs DES {.smaller}
+
+::: fragment
+::: {style="color: blue"}
+Miscrosimulation
+:::
+
+![](images/paste-ADA3A919.png){fig-align="center" width="1689"}
+:::
+
+::: fragment
+::: {style="color: blue"}
+Discrete event simulation
+:::
+
+![](images/paste-F1424244.png){fig-align="center" width="1687"}
+:::
+
+## DES {.smaller}
+
+::: {style="font-size: 0.95em"}
+-   **Similar to microsimulation,** DES simulates one individual at a time $\rightarrow$
+    Subject to stochasticity
+
+-   **Different from microsimulation** (where time is discretized), DES models time
+    continuously
+
+-   **Pros:**
+
+    -   Faster: Skips unnecessary cycles where no events happen
+
+    -   More natural to implement when data are presented as time-to-event distributions
+        (wait time, length of stay in hospital, onset-to-treatment time for acute
+        conditions)
+
+-   **Cons:**
+
+    -   Less intuitive: "time to death is sampled from a Weibull distribution of shape =
+        2.72, scale = 58.5" (DES) vs. "the probability of death in year 1 is 0.038"
+        (Microsim)
+
+    -   Those time steps may be useful even if there's no event! (In the HIV/TB example,
+        CD4 cell count is updated every cycle to recalculate TB and death risks)
+:::
+
+## Example
+
+![](images/paste-CFBFCE8E.png)
+
+## Example
+
+![Graves et al, 2017](images/paste-D21543AB.png)
+
+# Infectious disease (dynamic) models
+
+## Why dynamic models?
+
+-   So far all model types we discussed assume that individuals in the model cohort
+    experience events independently
+
+    -   Appropriate assumption for most chronic disease models
+
+-   But what about infectious diseases (e.g. COVID) where individuals interact with each
+    other?
+
+    -   E.g. the risk of acquiring COVID for a healthy (susceptible) individual depends on
+        how many individuals current have COVID in the population
+
+## The SIR model
+
+The most classic model in infectious disease epidemiology. Appropriate for many common
+infectious diseases (e.g., the flu).
+
+![](images/SIR.svg)
+
+## The SIR model
+
+![Source: Vynnycky, Emilia; White, Richard. An Introduction to Infectious Disease
+Modelling.](images/paste-36EB7CF0.png)
+
+## Variants of the SIR model {.smaller}
+
+-   From the simple SIR process, we can add more stuctures to reflect the process of a
+    particular disease, for example:
+
+    -   Age- or sex- mixing: appropriate for sexually transmitted diseases
+
+    -   A stage where individuals are infected but not infectious: appropriate for
+        diseases with a latent stage, e.g., TB, COVID-19
+
+![](images/SEIR.svg){.fragment fig-align="center"}
+
+##  {.smaller}
+
+Dynamic models are often expressed/solved as difference/differential equations
+
+::: columns
+::: {.column width="50%"}
+Example:
+
+![](images/paste-A420C388.png){fig-align="center" width="262"}
+:::
+
+::: {.column width="50%"}
+They can be solved by hand or using softwares (e.g. deSolve package in R)
+:::
+:::
+
+# How to choose the right model?
+
+## Comparison of model types
+
+::: {style="font-size: 0.58em; line-height: 1"}
++---------------+----------------------------------+----------------------------------+
+| Model Type    | Strengths                        | Limitations                      |
++===============+==================================+==================================+
+| Decision tree | Transparent                      | Difficult to capture progression |
+|               |                                  | over time or repeated events     |
+|               | Straightforward calculations     |                                  |
++---------------+----------------------------------+----------------------------------+
+| Markov cohort | Able to capture repeated events  | Difficult to capture individual  |
+|               | over time                        | heterogeneity or track history   |
+|               |                                  | of events                        |
+|               | Fast run speed                   |                                  |
+|               |                                  | Hard to handle complicated       |
+|               |                                  | disease process (subject to      |
+|               |                                  | state explosion)                 |
++---------------+----------------------------------+----------------------------------+
+:::
+
+## Comparison of model types
+
+::: {style="font-size: 0.58em; line-height: 1"}
++---------------------+-------------------------------+-------------------------------+
+| Model Type          | Strengths                     | Limitations                   |
++=====================+===============================+===============================+
+| Decision tree       | Transparent                   | Difficult to capture          |
+|                     |                               | progression over time or      |
+|                     | Straightforward calculations  | repeated events               |
++---------------------+-------------------------------+-------------------------------+
+| Markov cohort       | Able to capture repeated      | Difficult to capture          |
+|                     | events over time              | individual heterogeneity or   |
+|                     |                               | track history of events       |
+|                     | Fast run speed                |                               |
+|                     |                               | Hard to handle complicated    |
+|                     |                               | disease process (subject to   |
+|                     |                               | state explosion)              |
++---------------------+-------------------------------+-------------------------------+
+| **Microsimulation** | **Easy to track history**     | **Requires a large number of  |
+|                     |                               | runs to converge**            |
+|                     | **Very powerful and           |                               |
+|                     | flexible**                    | **Slowest run speed**         |
++---------------------+-------------------------------+-------------------------------+
+:::
+
+## Comparison of model types
+
+::: {style="font-size: 0.58em; line-height: 1"}
++----------------------------+----------------------------+----------------------------+
+| Model Type                 | Strengths                  | Limitations                |
++============================+============================+============================+
+| Decision tree              | Transparent                | Difficult to capture       |
+|                            |                            | progression over time or   |
+|                            | Straightforward            | repeated events            |
+|                            | calculations               |                            |
++----------------------------+----------------------------+----------------------------+
+| Markov cohort              | Able to capture repeated   | Difficult to capture       |
+|                            | events over time           | individual heterogeneity   |
+|                            |                            | or track history of events |
+|                            | Fast run speed             |                            |
+|                            |                            | Hard to handle complicated |
+|                            |                            | disease process (subject   |
+|                            |                            | to state explosion)        |
++----------------------------+----------------------------+----------------------------+
+| Microsimulation            | Easy to track history      | Requires a large number of |
+|                            |                            | runs to converge           |
+|                            | Very powerful and flexible |                            |
+|                            |                            | Slowest run speed          |
++----------------------------+----------------------------+----------------------------+
+| **Discrete event           | **Easy to track history**  | **Requires a large number  |
+| simulation**               |                            | of runs to converge**      |
+|                            | **Faster than              |                            |
+|                            | microsimulation**          | **Time-to-event            |
+|                            |                            | distributions are less     |
+|                            |                            | intuitive and harder to    |
+|                            |                            | obtain than event          |
+|                            |                            | rates/probabilities**      |
++----------------------------+----------------------------+----------------------------+
+:::
+
+## Comparison of model types
+
+::: {style="font-size: 0.50em; line-height: 1"}
++---------------------------+----------------------------+----------------------------+
+| Model Type                | Strengths                  | Limitations                |
++===========================+============================+============================+
+| Decision tree             | Transparent                | Difficult to capture       |
+|                           |                            | progression over time or   |
+|                           | Straightforward            | repeated events            |
+|                           | calculations               |                            |
++---------------------------+----------------------------+----------------------------+
+| Markov cohort             | Able to capture repeated   | Difficult to capture       |
+|                           | events over time           | individual heterogeneity   |
+|                           |                            | or track history of events |
+|                           | Fast run speed             |                            |
+|                           |                            | Hard to handle complicated |
+|                           |                            | disease process (subject   |
+|                           |                            | to state explosion)        |
++---------------------------+----------------------------+----------------------------+
+| Microsimulation           | Easy to track history      | Requires a large number of |
+|                           |                            | runs to converge           |
+|                           | Very powerful and flexible |                            |
+|                           |                            | Slowest run speed          |
++---------------------------+----------------------------+----------------------------+
+| Discrete event simulation | Easy to track history      | Requires a large number of |
+|                           |                            | runs to converge           |
+|                           | Faster than                |                            |
+|                           | microsimulation            | Time-to-event              |
+|                           |                            | distributions are less     |
+|                           |                            | intuitive and harder to    |
+|                           |                            | obtain than event          |
+|                           |                            | rates/probabilities        |
++---------------------------+----------------------------+----------------------------+
+| **Dynamic**               | **Able to capture          | **More data requirements   |
+|                           | transmission of disease**  | (e.g. contact patterns in  |
+|                           |                            | populaton)**               |
+|                           |                            |                            |
+|                           |                            | **More black-box**         |
++---------------------------+----------------------------+----------------------------+
+:::
+
+## How to choose the right model?
+
+Factors to consider:
+
+-   Policy question/interventions
+
+-   Data availability
+
+-   Natural history of disease
+
+-   Computational resources available

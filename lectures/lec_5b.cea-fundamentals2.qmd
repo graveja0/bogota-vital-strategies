@@ -1,0 +1,677 @@
+---
+title: "CEA Fundamentals: Valuing Outcomes"
+format:
+  revealjs:
+    theme: slides.scss
+    incremental: false
+    slide-number: true
+    logo: ../vchem.png
+    html-math-method: katex
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    footer: |
+      [Back to Website](../index.html)
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Learning Objectives and Outline
+
+## Learning Objectives
+
+-   Understand the concepts of summary measures of health, specifically,
+    quality-adjusted life years (QALYs)
+
+-   Describe the general differences between direct and indirect methods
+    for estimating health state utilities
+
+-   Curate model parameters for quantifying "benefits" (the denominator
+    in the CEA ratio)
+
+## Outline
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+1.  Valuing health outcomes: QALYs/DALYs
+2.  Utility weights / instruments
+:::
+
+::: {.column width="50%"}
+3.  Where to get values
+:::
+:::
+
+# ICER review {background="#43464B"}
+
+$$
+\frac{C_1 - C_0 \quad  (\Delta C)}{E_1 - E_0 \quad  (\Delta E)}
+$$
+
+## Numerator (costs)
+
+Valued in monetary terms
+
+<br> - E.g., <br> [\$USD / ₦NGN / KES / R]{style="color: #016301"}
+
+## Denominator (benefits):
+
+Valued in terms of **clinical outcomes**
+
+<br> - E.g., <br> [\# of HIV cases prevented]{style="color: #016301"}
+<br> [\# of children seizure free]{style="color: #016301"} <br> [\# of
+quality-adjusted life years gained]{style="color: #016301"} <br>
+
+-   What's important for the question at hand
+-   Most analyses report several different outcomes
+-   QALY/DALYs enable comparability across disease areas
+
+# Valuing Health Outcomes
+
+## Why summary measures of health?
+
+-   QALYs and DALYs both provide a summary measure of health
+
+-   Allow comparison of health attainment / disease burden
+
+    -   Across diseases
+
+    -   Across populations
+
+    -   Over time etc.
+
+## QALYs {.smaller}
+
+-   Origin story: welfare economics
+
+    -   Utility = holistic measure of satisfaction or wellbeing
+
+-   With QALYs, two dimensions of interest:
+
+    -   length of life (measured in life-years)
+
+    -   quality of life (measured by utility weight, usually between 0
+        and 1)
+
+![](images/paste-A0D04843.png)
+
+## QALYs
+
+<br>
+
+> QALY: A metric that reflects both changes in life expectancy and
+> quality of life (pain, function, or both)
+
+## QALYs {.smaller}
+
+![](images/qaly.png)
+
+## Example: Patient with coronary heart disease [(with surgery)]{style="color: blue;"}
+
+![](images/Slide2.png){fig-align="center" width="543"}
+
+::: {style="font-size: 0.6em"}
+*Source: Harvard Decision Science*
+:::
+
+## Example: Patient with coronary heart disease [(with surgery)]{style="color: blue;"}
+
+![](images/Slide1.png){fig-align="center"}
+
+## Example: Patient with coronary heart disease [(without surgery)]{style="color: blue;"}
+
+![](images/QALY graphs_3.png){fig-align="center"}
+
+## Example: Patient with coronary heart disease
+
+-   With surgery: 7.875 QALYs
+-   Without surgery: 6.625 QALYs
+-   Benefit from surgery intervention:
+    -   In QALYs: 7.875 -- 6.625 QALYs = 1.25 QALYs
+
+    -   In life years: 10 years -- 10 years = 0 LYs
+
+## Utility weights -- How are they obtained? {.smaller}
+
+<br>
+
+-   Utility weights for most health states are between 0 (death) and 1
+    (perfect health)
+
+-   Direct methods
+
+    -   Standard gamble
+
+    -   Time trade-Off
+
+    -   Rating scales
+
+-   Indirect methods:
+
+    -   EQ-5D
+
+    -   Other utility instrument: SF-36; Health Utilities Index (HUI)
+
+## Direct methods - Standard Gamble (SG) {.smaller}
+
+::: fragment
+> "What risk of death would you accept in order to avoid \[living with
+> an amputated leg for the rest of your life\] and live the rest of your
+> life in perfect health?"
+:::
+
+::: columns
+::: {.column width="45%"}
+::: fragment
+![](images/amputation.png){fig-align="center" width="800"}
+:::
+:::
+:::
+
+::: {.column width="55%"}
+:::
+
+## Direct methods - Standard Gamble (SG) {.smaller}
+
+<div>
+
+> "What risk of death you would accept in order to avoid \[living with
+> an amputated leg the rest of your life\] and live the rest of your
+> life in perfect health?"
+
+</div>
+
+::: columns
+::: {.column width="45%"}
+<div>
+
+![](images/amputation.png){fig-align="center" width="800"}
+
+</div>
+:::
+
+::: {.column width="55%"}
+-   Find the threshold $p$ that sets EV(A) = EV(B)
+-   Assume respondent answered that they would be indifferent between A
+    and B at a threshold of $pDeath$ = 0.10
+-   Then **U(Amputation)** = $p$\*U(Death) + $(1-p)$\*U(Perfect Health)
+    = 0.10\*0 + (1-0.10)\*1 = **0.9** = [threshold of indifference
+    between surgery & no surgery (I will live with this rather than have
+    a high risk of dying"\*\*\*)]{style="color: #E0A458;"}
+:::
+:::
+
+::: notes
+(1) The STANDARD GAMBLE technique asks patients (FOR EXAMPLE) - I WANT
+    YOU TO IMAGINE
+
+(2) Your leg gets amputated above the knee
+
+(3) This doesn't impact your life expectancy, but you now live your life
+    with an amputated leg
+
+(4) Now, there's a NEW TREATMENT available where they can re-attach your
+    leg
+
+(5) But the treatment is RISKY & those undergoing it have a probability
+    of dying
+
+(6) The standard gamble technique asks you to find the THRESHOLD of
+    indifference between SURGERY & NO SURGERY
+
+(7) In other words, let's say you have a 30% probability of dying: Would
+    you do the treatment?
+
+-   What about a 20% probability of dying?
+
+-   What about a 10%? - Ajay says yes, .90 is your utility value for the
+    health state of living with an amputated knee Etc.
+
+(8) Okay, I will live with this rather than have any high risk of
+    dying"\*\*\*
+
+This is the STANDARD GAMBLE TECHNIQUE
+:::
+
+## Direct methods - Standard Gamble (SG) {.smaller}
+
+> "What risk of death you would accept in order to avoid \[living with
+> an amputated leg the rest of your life\] and live the rest of your
+> life in perfect health?"
+
+![](images/amputation2.png)
+
+## Direct methods - Standard Gamble (SG) {.smaller}
+
+::: fragment
+> "What risk of death you would accept in order to avoid \[living with
+> stroke the rest of your life\] and live the rest of your life in
+> perfect health?"
+:::
+
+::: columns
+::: {.column width="45%"}
+::: fragment
+![](images/paste-6247DCFC.png){fig-align="center" width="600"}
+:::
+:::
+:::
+
+::: {.column width="55%"}
+:::
+
+## How bad is having a stroke? {.smaller}
+
+-   As a result of a stroke, you
+
+    ::: nonincremental
+    -   Have impaired use of your left arm and leg
+
+    -   Need some help bathing and dressing
+
+    -   Need a cane or other device to walk
+
+    -   Experience mild pain a few days per week
+
+    -   Are able to work, with some modifications
+
+    -   Need assistance with shopping, household chores, errands
+
+    -   Feel anxious and depressed sometimes
+    :::
+
+## Direct methods - Standard Gamble (SG) {.smaller}
+
+<div>
+
+> "What risk of death you would accept in order to avoid \[living with
+> stroke the rest of your life\] and live the rest of your life in
+> perfect health?"
+
+</div>
+
+::: columns
+::: {.column width="45%"}
+<div>
+
+![](images/paste-6247DCFC.png){fig-align="center" width="600"}
+
+</div>
+:::
+
+::: {.column width="55%"}
+-   Find the threshold $p_T$ that sets EV(A) = EV(B)
+-   Assume respondent answered that they would be indifferent between A
+    and B at a threshold $p_T = 0.2$
+-   Then **U(Stroke)** = $p_T$\*U(Death) + $(1-p_T)$\*U(Perfect Health)
+    = 0.2\*0 + (1-0.2)\*1 = **0.8**
+:::
+:::
+
+## Direct Methods - Time Trade-Off (TTO)
+
+-   An alternative to standard gamble
+
+-   Instead of risk of death, TTO uses time alive to value health states
+
+-   Does not involve uncertainty in choices
+
+-   Task might be easier for some respondents compared to standard
+    gamble
+
+## Direct Methods - Time Trade-Off (TTO) {.smaller}
+
+::: fragment
+> "What portion of your current life expectancy of 40 years would you
+> give up to improve your current health state (stroke) to 'perfect
+> health'?"
+:::
+
+::: fragment
+![](images/paste-BAEB413C.png){fig-align="center" width="600"}
+:::
+
+::: fragment
+U(Post-Stroke) \* 40 years = U(Perfect Health) \* 25 years + U(Dead) \*
+15 years
+
+U(Post-Stroke) \* 40 years = 1 \* 25 years + 0 \* 15 years
+
+U(Post-Stroke) = 25/40 = 0.625
+:::
+
+## SG vs TTO
+
+-   SG represents decision-making under uncertainty; TTO is
+    decision-making under certainty
+
+-   TTO might inadvertently capture time preference (i.e., we might
+    value health in the future less than we do today) as opposed to only
+    valuing the health states
+
+-   Risk posture is captured in SG (risk aversion for death) but not in
+    TTO
+
+-   Utility values from SG usually \> TTO for same state
+
+## Direct methods -- Rating scales
+
+> "On a scale where 0 represents death and 100 represents perfect
+> health, what number would you say best describes your health state
+> over the past 2 weeks?"
+
+-   Problem: It does not have the interval property we desire
+    -   A value of "90" on this scale is not necessarily twice as good
+        as a value of "45"
+
+## Visual Analogue Scale (VAS)
+
+The Visual Analog Scale (VAS) is a commonly-used rating scale
+
+::: fragment
+![Source:
+https://assessment-module.yale.edu/im-palliative/visual-analogue-scale](images/paste-B88DC3D6.png){alt="Source: https://assessment-module.yale.edu/im-palliative/visual-analogue-scale"}
+:::
+
+## Direct methods -- Rating scales
+
+-   Easy to use: Rating scales often used where time or cognitive
+    ability/literacy prevents use of other methods
+-   Very subjective and prone to more extreme answers! Usually,
+    utilities for **VAS \< TTO \< SG**
+
+## Practical issue -- keep an eye out for "cheaters" {.smaller}
+
+[Hypothetical "cheating" example:]{.underline}
+
+-   Drug company X has discovered a drug that prevents diabetes but
+    causes migraines (side-effect)
+
+-   They use VAS to estimate the utility of diabetes in their decision
+    model and SG to estimate the utility of migraines
+
+-   Is there a problem here? (yes, there is!!)
+
+    -   Recall, usually utilities for VAS \< TTO \< SG
+
+    -   Thus, **this approach overstates the benefit by using a lower
+        U(Diabetes) and higher U(migraines)**
+
+
+::: notes
+-   SG will usually have a higher utility (so better quality of life) - so they are downplaying the migraine side effect 
+
+-   Whereas VAS usually has a lower utility, so they will gain MORE from preventing diabetes since a lower utility = worse off. 
+:::
+
+## Indirect Methods - EQ-5D {.smaller}
+
+::: columns
+::: {.column width="50%"}
+-   System for describing health states
+
+-   5 domains: mobility; self-care; usual activities; pain/discomfort;
+    and anxiety/depression
+
+-   3 levels: 243 distinct health states (e.g. 11223)
+
+-   Valuations elicited through population based surveys with VAS, TTO
+:::
+
+::: {.column width="50%"}
+![](images/paste-09F7C9EE.png)
+:::
+:::
+
+::: notes
+(1) Indirect utility measures map preferences onto a utility scale via a generic health-related quality of life questionnaire
+:::
+
+
+## Indirect Methods
+<br>
+
+INDIRECT UTILITY MEASURES
+<br>
+
+-   HUI – Health Utility Index 
+-   EQ5D – EuroQol health status measure 
+-   SF-6D – Converts SF-36 & SF-12 scores to utilities 
+-   QWB – Quality of well-being scale 
+
+::: notes
+(1) I’m not going to get into detail for each of these since you don’t need to know the granularity of each right now until you start exploring for your studies in the future, but just as an overview of some of the more well-known ones: 
+
+(2) HUI (Health Utility Index), based on a large, Canadian community sample (copyrighted, not free to use), patients are asked to consider their health over the past 2, 3, & 4 weeks 
+
+(2) EQ5D, European & US-based, asks participants to consider their health during the day of the interview; free but need to request permission & if you need to translate into other languages then it can be quite pricey 
+
+(3) SF-6D, 4 to 1-week recall period, converts the SF-36 & SF-12 (validated, generic quality of life measures) into utility scores, conversion done by University of Sheffield developer John Brazier; published articles on the methodology to convert these
+
+(4) QWB (Quality of Well-Being scale), asks participants to consider their health over the previous three days, primary care patients in San Diego, CA; contact UCSD health outcomes assessment program for access 
+:::
+
+
+## Indirect Methods
+<br>
+
+CAUTION – <br>
+
+You may see articles / studies that report “NON-PREFERENCED-BASED” quality of life measures (e.g. measuring burden, ”quality of life”, symptoms; usually not on 0 to 1 scale), which often report “summary scores”, but these are NOT THE SAME as [PREFERENCE-BASED measures (e.g., how one VALUES different health states)]{style="background-color: yellow;"} 
+
+::: notes
+The latter of which can be used in economic evaluations 
+:::
+
+
+## Disease specific measures 
+<br>
+
+More sensitive to changes in a particular disease 
+<br>
+
+Disadvantages – <br>
+
+-   Many people have multiple health conditions
+
+-   Can not be transferred to QALY/Utility unless statistically mapped to generalized measures (EQ5D, etc.)
+
+::: notes
+(1) Disease specific measures are more sensitive to changes in a particular disease 
+(2) For example, **Using a disease-specific quality of life measure for epilepsy 
+:::
+
+
+## Off-the-shelf numbers for your own CEAs?
+
+<br>
+
+-   Large scale utility studies
+-   Balancing tradeoffs between different measures
+      -   Sensitivity analyses! 
+-   Tufts CEA registry
+-   Alongside RCTs
+
+## DALYs
+
+You, furthermore, will not be tested on DALYs, but for your
+reference/interest:
+
+<br>
+
+-   Origin story: Global Burden of Disease Study
+
+-   Deliberately a measure of health, not welfare/utility
+
+-   Similar to QALYs, two dimensions of interest:
+
+    -   length of life (differences in life expectancy)
+
+    -   quality of life (measured by disability weight)
+
+## DALYs
+
+[![](images/DALY_disability_affected_life_year_infographic.svg){width="1500"}](https://en.wikipedia.org/wiki/Disability-adjusted_life_year)
+
+::: fragment
+**DALYs = YLL + YLD**
+
+-   YLL (Years of Life Lost)
+-   YLD (Years Lived with Disability)
+:::
+
+## DALYs = [YLL]{style="color: red;"} + YLD
+
+-   **Years of Life Lost (YLL):** changes in life expectancy, calculated
+    from comparison to synthetic life table
+
+-   YLL example: Providing HIV treatment delays death from age 30 to age
+    50
+
+    -   Life years gained = 20 years
+
+    -   YLL?
+
+## Synthetic, Reference Life Table
+
+::: {style="font-size: 0.6em"}
+| Age | Life Expectancy | Age | Life Expectancy |
+|:---:|:---------------:|:---:|:---------------:|
+|  0  |      88.9       | 50  |      39.6       |
+|  1  |      88.0       | 55  |      34.9       |
+|  5  |      84.0       | 60  |      30.3       |
+| 10  |      79.0       | 65  |      25.7       |
+| 15  |      74.1       | 70  |      21.3       |
+| 20  |      69.1       | 75  |      17.1       |
+| 25  |      64.1       | 80  |      13.2       |
+| 30  |      59.2       | 85  |      10.0       |
+| 35  |      54.3       | 90  |       7.6       |
+| 40  |      49.3       | 95  |       5.9       |
+| 45  |      44.4       |     |                 |
+
+Source:
+http://ghdx.healthdata.org/record/ihme-data/global-burden-disease-study-2019-gbd-2019-reference-life-table
+:::
+
+## Synthetic, Reference Life Table
+
+::: {style="font-size: 0.6em"}
+| Age |    Life Expectancy     | Age |    Life Expectancy     |
+|:---:|:----------------------:|:---:|:----------------------:|
+|  0  |          88.9          | 50  | [**39.6**]{.underline} |
+|  1  |          88.0          | 55  |          34.9          |
+|  5  |          84.0          | 60  |          30.3          |
+| 10  |          79.0          | 65  |          25.7          |
+| 15  |          74.1          | 70  |          21.3          |
+| 20  |          69.1          | 75  |          17.1          |
+| 25  |          64.1          | 80  |          13.2          |
+| 30  | [**59.2**]{.underline} | 85  |          10.0          |
+| 35  |          54.3          | 90  |          7.6           |
+| 40  |          49.3          | 95  |          5.9           |
+| 45  |          44.4          |     |                        |
+
+Source:
+http://ghdx.healthdata.org/record/ihme-data/global-burden-disease-study-2019-gbd-2019-reference-life-table
+:::
+
+## DALYs = [YLL]{style="color: red;"} + YLD
+
+::: nonincremental
+-   Years of Life Lost (YLL): changes in life expectancy, calculated
+    from comparison to synthetic life table
+
+-   YLL example: Providing HIV treatment delays death from age 30 to age
+    50
+
+    -   Life years (LYs) gained: 20 years
+
+    -   YLL: LE(50) - LE(30) = 39.6 - 59.2 = -19.6 DALYs = **19.6 DALYs
+        averted**
+:::
+
+::: fragment
+::: callout-note
+YLL (measured as DALYs averted) $\neq$ LYs gained!
+:::
+:::
+
+## DALYs = YLL + [YLD]{style="color: red;"}
+
+-   Years Lived with Disability (YLD): calculated similar to QALYs,
+    utility weight ≈ 1 - disability weight
+
+-   YLD example: Effective asthma control for 10 years
+
+    -   Disability weight (uncontrolled asthma) = ?
+
+    -   Disability weight (controlled asthma) = ?
+
+## Disability Weights {.smaller}
+
+::: columns
+::: {.column width="50%"}
+-   Common values for small set of named health conditions (e.g.
+    early/late HIV, HIV/ART)
+-   First iteration: expert opinion
+-   Second iteration: Pop-based HH surveys in several world regions
+    (13,902 respondents)
+    -   Paired comparison of two health state descriptions which worse
+
+    -   Probit regression to calculate disability weights
+
+    -   235 unique health states
+:::
+
+::: {.column width="50%"}
+::: fragment
+[![Source: Salomon, Joshua A., et al. "Disability weights for the Global
+Burden of Disease 2013 study." The Lancet Global Health 3.11 (2015):
+e712-e723.](images/paste-51631169.png){width="404"}](http://www.thelancet.com/journals/langlo/article/PIIS2214-109X(15)00069-8/fulltext)
+:::
+:::
+:::
+
+## DALYs = YLL + [YLD]{style="color: red;"}
+
+::: nonincremental
+-   Years Lived with Disability (YLD): calculated similar to QALYs,
+    utility weight ≈ 1 - disability weight
+
+-   YLD example: Effective asthma control for 10 years
+
+    -   Disability weight (uncontrolled asthma) = 0.133
+
+    -   Disability weight (controlled asthma) = 0.015
+
+    -   YLD = 10 \* 0.015 - 10 \* 0.133 = -1.18 DALYs = **1.18 DALYs
+        averted**
+:::
+
+## DALYs for CEA {.smaller}
+
+::: {style="font-size: 0.9em"}
+-   Recommended calculation approach has changed over time (age
+    weighting, discounting, now both out)
+-   Some will calculate a "QALY-like" DALY, using utility weight = 1-
+    disability weight
+-   Discounting still generally done for CEA
+:::
+
+::: fragment
+::: callout-important
+**Common practice**
+
+-   High-income setting: QALYs
+-   Low- and middle- income setting = DALYs \*\*\*Since disability
+    weights are freely & publicly available (these weights are required
+    for DALY calculations), it can reduce costs/time/resources compared
+    to collecting QALY estimates
+:::
+:::
+
+# Next week: How to solve incremental CEAs!

@@ -1,0 +1,209 @@
+---
+title: "Deterministic & Scenario Analysis"
+format: 
+  revealjs:
+      theme: slides.scss
+      background-transition: fade
+      highlight-style: ayu-mirage
+      footer: |
+        [Back to Website](../index.html)
+editor_options: 
+chunk_output_type: console
+bibliography: ../references.bib
+---
+
+# Learning Objectives and Outline
+
+## Learning Objectives
+
+-   Explain the purpose of deterministic sensitivity analysis and provide examples of one-way versus two-way analyses.
+
+-   Detail the advantages/disadvantages of deterministic sensitivity analysis.
+
+## Outline
+
+1.  One-way sensitivity analysis.
+2.  Examples from publications.
+3.  Two-way sensitivity analysis.
+4.  Examples from publications.
+5.  Limitations and extensions.
+6.  Scenario analysis
+7.  Threshold analysis
+
+# One-way sensitivity analysis {background="#43464B"}
+
+## One-way sensitivity analysis
+
+::: incremental
+-   Usually the starting point for sensitivity analyses
+-   Sequentially testing one variable at a time (i.e., Age, BMI, QALY, other clinically important parameters), while holding everything else constant
+-   Determining how this variation impacts the results
+-   One-way sensitivity analyses are often presented in a **tornado diagram**
+    -   Used to visually rank the different variables in order of their overall influence on the magnitude of the model outputs
+:::
+
+## A simple decision tree
+
+![](images/Screen%20Shot%202022-09-27%20at%203.43.43%20PM.png)
+
+## A simple decision tree
+
+![](images/Screen%20Shot%202022-09-27%20at%203.44.29%20PM.png)
+
+## A simple decision tree
+
+![](images/Screen%20Shot%202022-09-27%20at%203.45.20%20PM.png)
+
+# Examples from publications
+
+## Rotavirus case study from Capstone
+
+![](images/file_show.jpeg)
+
+## Rotavirus case study from Capstone
+
+![](images/file_show2.jpeg)
+
+## Rotavirus case study from Capstone
+
+![](images/file_show3.jpeg)
+
+## Other examples
+
+![](images/Screen%20Shot%202022-09-26%20at%2010.33.51%20PM.png)
+
+## Other examples
+
+![](images/Screen%20Shot%202022-10-06%20at%209.13.02%20AM-01.png)
+
+## Other examples
+
+![](images/Screen%20Shot%202022-10-06%20at%209.15.55%20AM.png){width="759"}
+
+## Other examples
+
+![](images/Screen%20Shot%202022-10-06%20at%209.19.09%20AM.png){width="777"}
+
+# Two-way sensitivity analysis {background="#43464B"}
+
+## Two-way sensitivity analysis
+
+::: incremental
+-   A way to map the interaction effects between two parameters in a decision analysis model
+-   Varies 2 parameters at a time
+-   Explores the robustness of results in more depth
+:::
+
+# Examples from publications
+
+## HIV prevention
+
+![](images/Screen%20Shot%202022-09-28%20at%209.54.01%20AM.png){width="517"}
+
+## HIV prevention
+
+::: incremental
+-   Markov model examining strategies for HIV prevention among serodiscordant couples seeking conception (woman does not have HIV and male has HIV)
+
+-   We know that if the **male partner is consistently on medication for HIV** (i.e., resulting in virologic suppression), then the risk of transmission is small regardless of the woman taking PrEP (pre-exposure prophylaxis)
+
+-   And we also know that PrEP has traditionally been really **costly**
+:::
+
+## HIV prevention
+
+![](images/Screen%20Shot%202022-09-26%20at%2010.22.19%20PM.png)
+
+## Financial incentives for acute stroke care
+
+![](images/Screen%20Shot%202022-09-28%20at%2010.25.53%20PM.png){width="543"}
+
+## Financial incentives for acute stroke care
+
+::: incremental
+-   Under pay for performance policies in the US, **physicians or hospitals are paid more for meeting evidence-based quality targets**
+
+-   Study objective: Illustrate how pay-for-performance incentives can be quantitatively bounded using cost-effectiveness modeling, through the **application of reimbursement to hospitals for faster time-to-tPA for acute ischemic stroke**
+:::
+
+## Financial incentives for acute stroke care
+
+> When administered quickly after stroke onset (within three hours, as approved by the FDA), tPA helps to restore blood flow to brain regions affected by a stroke, thereby limiting the risk of damage and functional impairment
+
+## Financial incentives for acute stroke care
+
+![](images/Screen%20Shot%202022-09-28%20at%2010.14.03%20PM.png){width="520"}
+
+# Limitations of deterministic sensitivity analyses {background="#43464B"}
+
+## Caution: Limitations!
+
+-   Limited by the subjectivity of the choice of parameters to analyze
+-   That's why we also run PSAs!, i.e., varying ALL input parameters at the same time, using priors to play a distribution around each value
+
+# Opportunity to practice in Exercise!
+
+# Scenario analysis
+
+## Scenario analysis
+
+-   Focuses more on model **assumptions** rather than parameter uncertainty
+-   Could include separate analysis on:
+
+> Subgroups/sub-populations, including different age cohorts & risk levels
+
+<br>
+
+> Different perspectives (societal; modified societal; etc)
+
+## Scenario analysis
+
+> Hypothetical scenarios ("optimistic" and "conservative" scenarios; for example, if we have little evidence of long-term survival associated with medication X, we might have an optimistic versus conservative scenario)
+
+<br>
+
+> Time horizons
+
+## Examples
+
+![](images/Screen%20Shot%202022-10-06%20at%209.13.02%20AM-02.png)
+
+## Examples
+
+![](images/Screen%20Shot%202022-10-06%20at%209.25.20%20AM.png)
+
+## Examples
+
+![](images/Screen%20Shot%202022-10-06%20at%209.25.50%20AM.png)
+
+## Examples
+
+![](images/Screen%20Shot%202022-10-06%20at%209.26.44%20AM.png)
+
+## Examples
+
+![](images/Screen%20Shot%202022-10-06%20at%208.54.33%20AM.png)
+
+## Examples
+
+![](images/Screen%20Shot%202022-10-06%20at%209.11.39%20AM.png){width="748"}
+
+# Threshold analysis
+
+## Threshold analysis
+
+-   Answers the question: What the input parameter need be to meet the country thresholds of:
+    -   \$50,000/QALY gained
+    -   \$100,000/QALY gained
+    -   \$150,000/QALY gained
+    -   \$200,000/QALY gained
+
+## Examples
+
+![](images/Screen%20Shot%202022-10-06%20at%209.13.02%20AM.png)
+
+## Examples
+
+![](images/Screen%20Shot%202022-10-06%20at%209.14.02%20AM.png)
+
+# Thank you!

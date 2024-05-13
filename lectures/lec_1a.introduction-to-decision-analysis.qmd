@@ -1,0 +1,297 @@
+---
+title: "Introduction to Decision Analysis"
+format:
+  revealjs:
+    theme: slides.scss
+    incremental: true
+    slide-number: true
+    logo: ../vchem.png
+    html-math-method: katex
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    footer: |
+      [Back to Website](../index.html)
+editor_options: 
+  chunk_output_type: console
+editor: source
+---
+
+## Outline {{< fa regular clipboard >}}
+
+::: incremental
+1.  Introductions
+2.  Motivation
+3.  Examples of Decision Analysis
+4.  Workshop objectives
+:::
+
+## Course Website
+
+::: {style="font-size: 2.0em"}
+https://github.com/graveja0/bogota-vital-strategies
+:::
+
+::: incremental
+-   All course materials (slides, case studies) are posted here.
+-   Our (likely evolving) schedule will also be posted here, and updated regularly.
+:::
+
+## Introductions
+
+-   Please introduce yourself!
+
+# Motivation {background="#43464B"}
+
+## The Past Two Decades ...
+
+::: incremental
+-   Cured Hepatitis C
+-   Significantly reduced incidence of HIV
+-   Potential cure for relapsed/refractory leukemia & lymphoma
+-   Perfected vaccines (e.g. HPV vaccine) to prevent diseases such as cervical & other cancers
+-   Strides in preventing cardiovascular disease
+:::
+
+## Despite these advances ...
+
+-   Burden of non-communicable diseases (NCDs) like cancer, cardiovascular disease, and diabetes is growing.
+-   NCDs are the cause of 74 percent of deaths globally, with most (86%) of those deaths in low- and middle-income countries (LMICs)
+    -   Source: [WHO](https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases)
+-   Rates also remain high in many parts of the world for malnutrition, unmet need for sexual and reproductive health services, and maternal mortality.
+
+##  {background-image="images/new_decision-analysis-overview.png" data-background-size="contain"}
+
+##  {background-image="images/new_decision-analysis-overview_blank.png" data-background-size="contain"}
+
+<br><br>
+
+# Examples of Decision Analyses {background="#43464B"}
+
+## Ex 1. HIV
+
+::: {.callout-important appearance="minimal" icon="false"}
+You have been appointed as Director of a funding allocation committee responsible for prevention & treatment initiatives for HIV.
+:::
+
+::: incremental
+1.  How will the committee decide on the proportion of funds for prevention efforts versus treatment?
+
+2.  Should any of the funds be used for research?
+
+3.  How do you respond to a member who argues that the funds are better spent on childhood vaccinations?
+:::
+
+## Ex 2. Birth Defects {auto-animate="true"}
+
+::: incremental
+-   A hypothetical birth defect is present in every 1 in 1,000 children born
+
+-   Unless treated, this condition has a 50% fatality rate
+:::
+
+## Ex 2. Birth Defects {auto-animate="true"}
+
+::: {.callout-important appearance="minimal" icon="false"}
+### [**Should we test for this hypothetical birth defect?**]{style="color: forestgreen;"}
+:::
+
+-   A hypothetical birth defect is present in every 1 in 1,000 children born.
+
+-   Unless treated, this condition has a 50% fatality rate.
+
+## Ex 2. Birth Defects {auto-animate="true"}
+
+::: {.callout-important appearance="minimal" icon="false"}
+### [**Should we test for this hypothetical birth defect?**]{style="color: forestgreen;"}
+:::
+
+::: incremental
+-   Diagnostic test: Perfectly accurate
+
+-   All newborns in whom the defect is identified can be successfully cured
+
+-   BUT the test itself can be lethal:
+
+    -   **4 in every 10,000** infants tested will die as a direct and observable result of the testing procedure
+:::
+
+## Ex 2. Birth Defects {auto-animate="true"}
+
+::: {.callout-note appearance="minimal"}
+**Objective**: Minimize total expected deaths
+:::
+
+## Ex 2. Birth Defects {auto-animate="true"}
+
+::: {.callout-note appearance="minimal"}
+**Objective**: Minimize total expected deaths
+:::
+
+::: incremental
+-   Consider a population of **100,000 newborns**
+
+-   **Testing** produces: (0.0004 x 100,000) = **40** expected deaths
+
+-   **No testing** produces: (0.001 x 0.5 x 100,000) = **50** expected deaths
+:::
+
+## Ex 2. Birth Defects {auto-animate="true"}
+
+::: {.callout-note appearance="minimal"}
+**Objective**: Minimize total expected deaths
+:::
+
+-   Consider a population of **100,000 newborns**
+
+-   **Testing** produces: (0.0004 x 100,000) = **40** expected deaths
+
+-   **No testing** produces: (0.001 x 0.5 x 100,000) = **50** expected deaths
+
+#### Looks like TESTING WINS!
+
+## Ex 2. Birth Defects {auto-animate="true"}
+
+::: {.callout-note appearance="minimal"}
+**Objective**: Minimize total expected deaths
+:::
+
+-   Consider a population of **100,000 newborns**
+
+-   **Testing** produces: (0.0004 x 100,000) = **40** expected deaths
+
+-   **No testing** produces: (0.001 x 0.5 x 100,000) = **50** expected deaths
+
+#### Looks like TESTING WINS!
+
+#### [Anyone got a problem with this??]{style="color: darkred;"}
+
+## **Different lives are lost**
+
+::: incremental
+-   With **testing**, virtually all 40 deaths occur in infants born without the fatal condition.
+
+-   With **no testing**, all 50 expected deaths occur from "natural causes" (i.e. unpreventable birth defect)
+:::
+
+## **Different lives are lost**
+
+::: incremental
+-   "Innocent deaths" inflicted on children who had **"nothing to gain"** from testing program
+
+-   We may treat one child's death as more tolerable than some other's -- even when we have no way, before the fact, of distinguishing one infant from the other.
+:::
+
+## Ex 3. Colon Cancer
+
+::: incremental
+-   3rd leading cause of cancer death.
+-   Men, women, all races.
+-   Early detection aids in prevention & improves health outcomes .
+-   $\sim80\%$ preventable.
+:::
+
+## Ex 3. Colon Cancer -- **Prevention**
+
+::: incremental
+-   When to screen?
+-   Which test & how often?
+-   If a polyp is found/removed, when to repeat?
+:::
+
+## Ex 3. Colon Cancer -- **Prevention**
+
+::: incremental
+-   Cost-effectiveness of alternative screening tests?
+-   Alternative frequencies of screening?
+-   How should screening vary by risk groups?
+:::
+
+## Ex 3. Colon Cancer - **Estimating Probabilities**
+
+::: incremental
+-   Predict colon cancer risk/incidence
+    -   Family history, past polyps, other factors
+    -   Probability of getting colon cancer
+-   Predict impact from colon cancer
+    -   Probability of cure
+    -   Probability of death
+    -   Probability of morbidity\
+:::
+
+## Ex 3. Colon Cancer - **Estimating Probabilities**
+
+::: incremental
+-   Predict "benefit" from screening
+    -   All previous probabilities
+    -   Probability of early detection
+    -   Probability of complication from testing
+    -   Probability of false positive
+    -   Probability of false negative
+    -   Probability of positive tests = cancer
+    -   Probability of negative test = no cancer
+:::
+
+## Estimating probabilities is fundamental to decision making {background="#43464B"}
+
+::: incremental
+-   Cannot readily obtain needed probabilities
+-   Varying time periods / lengths
+-   Methods to estimate probabilities
+:::
+
+<!-- TK This needs to be a full page  -->
+
+## Commonality of cases {background="#43464B"}
+
+::: incremental
+-   Unavoidable tradeoffs
+-   Different perspectives may lead to different conclusions
+-   Multiple competing objectives
+-   Complexity
+-   Uncertainty
+:::
+
+## Decision Analysis {background="#43464B"}
+
+<br>
+
+::: incremental
+-   Aims to inform choice under uncertainty using an explicit, quantitative approach
+
+-   Aims to [identify, measure, & value the **consequences of decisions** under uncertainty]{style="color: #169873;"} when a decision needs to be made, most appropriately over time.
+:::
+
+## Workshop Design
+
+1.  We're *flexible* -- if there is a topic that is unclear to you, or that you would like expanded upon, please let us know!
+2.  Mixed content
+
+-   Lectures
+-   Small group case studies
+-   Large group case studies and "hands-on" Excel exercises
+
+## Workshop Content
+
+1.  Basics of decision analysis (Days 1-2)
+
+-   Decision trees
+-   Bayes theorem and treatment thresholds
+-   Uncertainty and prioritizing future research
+
+## Workshop Content
+
+2.  Basics of Cost-Effectiveness Analysis (Days 3-4)
+
+-   Valuing cost and health outcomes
+-   Incremental cost-effectiveness analysis
+-   Introduction to Markov Modeling
+
+## Workshop Content
+
+3.  Advanced Topic Preview (Day 5)
+
+-   Sensitivity Analysis
+-   Advanced CEA modeling frameworks.
+
+# Questions? {background="#43464B"}
