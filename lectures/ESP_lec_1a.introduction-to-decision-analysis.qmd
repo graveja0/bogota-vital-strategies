@@ -26,6 +26,13 @@ editor: source
 4.  Objetivos del taller
 :::
 
+::: {.notes}
+1.  Introductions
+2.  Motivation
+3.  Examples of Decision Analysis
+4.  Workshop objectives
+:::
+
 ## Curso Sitio web
 
 ::: {style="font-size: 2.0em"}
