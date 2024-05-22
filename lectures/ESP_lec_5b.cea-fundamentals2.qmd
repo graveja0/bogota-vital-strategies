@@ -1,0 +1,677 @@
+---
+title: "Fundamentos del CEA: Valoración de los resultados sanitarios"
+format:
+  revealjs:
+    theme: slides.scss
+    incremental: false
+    slide-number: true
+    logo: ../vchem.png
+    html-math-method: katex
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    footer: |
+      [Volver al sitio web](../index.html)
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Objetivos de aprendizaje y esquema
+
+## Objetivos de aprendizaje
+
+- Comprender los conceptos de medidas resumidas de la salud, en concreto
+    años de vida ajustados por calidad (AVAC)
+
+- Describir las diferencias generales entre los métodos directos e indirectos
+    para estimar las utilidades del estado de salud
+
+- Curar los parámetros del modelo para cuantificar los "beneficios" (el denominador
+    en el cociente CEA)
+
+## Esquema
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+1.  Valoración de los resultados sanitarios: AVAC/AVD
+2.  Pesos de utilidad / instrumentos
+:::
+
+::: {.column width="50%"}
+3.  Dónde obtener valores
+:::
+:::
+
+# Revisión ICER {background="#43464B"}
+
+$$
+\frac{C_1 - C_0 \quad (\Delta C)}{E_1 - E_0 \quad (\Delta E)}
+$$
+
+## Numerador (costes)
+
+Valorados en términos monetarios
+
+<br> - Por ejemplo, <br> [\$USD / ₦NGN / KES / R]{style="color: #016301"}
+
+## Denominador (beneficios):
+
+Valorado en términos de **resultados clínicos**.
+
+<br> - Por ejemplo, <br> [\# de casos de VIH prevenidos]{style="color: #016301"}
+<br> [\# de niños sin convulsiones]{style="color: #016301"} <br> [\# de
+años de vida ajustados por calidad ganados]{style="color: #016301"} <br>
+
+- Lo important para la cuestión que nos ocupa
+- La mayoría de los análisis informan de varios resultados diferentes
+- Los AVAC/AVD permiten la comparación entre áreas de enfermedad
+
+# Valoración de los resultados sanitarios
+
+## ¿Por qué medidas de salud resumidas?
+
+- Tanto los AVAC como los AVAD proporcionan una medida resumida de la salud
+
+- Permiten comparar el nivel de salud y la carga de morbilidad
+
+    - Entre enfermedades
+
+    - Entre poblaciones
+
+    - A lo largo del tiempo, etc.
+
+## AVAC {.smaller}
+
+- Origen: economía del bienestar
+
+    - Utilidad = medida holística de satisfacción o bienestar
+
+- Con los AVAC, hay dos dimensiones de interés
+
+    - duración de la vida (medida en años de vida)
+
+    - calidad de vida (medida por el peso de la utilidad, normalmente entre 0
+        y 1)
+
+![](images/paste-A0D04843.png)
+
+## AVAC
+
+<br>
+
+> AVAC: métrica que refleja tanto los cambios en la esperanza de vida como en la
+> calidad de vida (dolor, función o ambos)
+
+## QALYs {.smaller}
+
+![](images/qaly.png)
+
+## Ejemplo: Paciente con cardiopatía coronaria [(con cirugía)]{style="color: azul;"}
+
+![](images/Slide2.png){fig-align="center" width="543"}
+
+::: {style="font-size: 0.6em"}
+*Fuente: Harvard Decision Science*
+:::
+
+## Ejemplo: Paciente con cardiopatía coronaria [(con cirugía)]{style="color: azul;"}
+
+![](images/Slide1.png){fig-align="center"}
+
+## Ejemplo: Paciente con cardiopatía coronaria [(sin cirugía)]{style="color: azul;"}
+
+![](images/QALY graphs_3.png){fig-align="center"}
+
+## Ejemplo: Paciente con cardiopatía coronaria
+
+- Con cirugía 7,875 AVAC
+- Sin cirugía 6,625 AVAC
+- Beneficio de la intervención quirúrgica:
+    - En AVAC: 7,875 -- 6,625 AVAC = 1,25 AVAC
+
+    - En años de vida 10 años -- 10 años = 0 AVAC
+
+## Pesos de utilidad -- ¿Cómo se obtienen? {.smaller}
+
+<br>
+
+- Los pesos de utilidad para la mayoría de los estados de salud están entre 0 (muerte) y 1
+    (salud perfecta)
+
+- Métodos directos
+
+    - Apuesta estándar
+
+    - Compromiso de tiempo
+
+    - Escalas de valoración
+
+- Métodos indirectos:
+
+    - EQ-5D
+
+    - Otros instrumentos de utilidad: SF-36; Índice de Utilidad para la Salud (HUI)
+
+## Métodos directos: Standard Gamble (SG) {.smaller}
+
+::: fragment
+> "¿Qué riesgo de muerte aceptaría para evitar \[vivir con
+> vivir el resto de su vida con una pierna amputada]?
+> vida en perfecto estado de salud?"
+:::
+
+::: columns
+::: {.column width="45%"}
+::: fragment
+![](images/amputation.png){fig-align="center" width="800"}
+:::
+:::
+:::
+
+::: {.column width="55%"}
+:::
+
+## Métodos directos - Standard Gamble (SG) {.smaller}
+
+<div>
+
+> "¿Qué riesgo de muerte aceptaría para evitar \[vivir con
+> una pierna amputada el resto de su vida] y vivir el resto de su
+> vida en perfecto estado de salud?"
+
+</div>
+
+::: columns
+::: {.column width="45%"}
+<div>
+
+![](images/amputation.png){fig-align="center" width="800"}
+
+</div>
+:::
+
+::: {.column width="55%"}
+- Encuentre el umbral $p$ que establece EV(A) = EV(B)
+- Supongamos que el encuestado responde que le es indiferente A
+    y B en un umbral de $pMuerte$ = 0,10
+- Entonces **U(Amputación)** = $p$\*U(Muerte) + $(1-p)$\*U(Salud perfecta)
+    = 0,10\*0 + (1-0,10)\*1 = **0,9** = [umbral de indiferencia
+    entre operarse y no operarse (viviré con esto antes que tener
+    un alto riesgo de morir"\*\*\*)]{style="color: #E0A458;"}
+:::
+:::
+
+::: notes
+(1) La técnica GAMBLE ESTÁNDAR pregunta a los pacientes (POR EJEMPLO) - QUIERO
+    QUIERO QUE IMAGINE
+
+(2) Le amputan la pierna por encima de la rodilla
+
+(3) Esto no afecta a su esperanza de vida, pero ahora vive su vida
+    con una pierna amputada
+
+(4) Ahora, hay un NUEVO TRATAMIENTO disponible donde se puede volver a colocar su
+    pierna
+
+(5) Pero el tratamiento es RIESGOSO y los que se someten a él tienen una probabilidad
+    de morir
+
+(6) La técnica de la apuesta estándar le pide que encuentre el UMBRAL de
+    indiferencia entre CIRUGÍA Y NO CIRUGÍA
+
+(7) En otras palabras, supongamos que tiene un 30% de probabilidades de morir: ¿Haría
+    tratamiento?
+
+- ¿Y con una probabilidad de morir del 20%?
+
+- ¿Y un 10%? - Ajay dice que sí, 0,90 es tu valor de utilidad para el
+    estado de salud de vivir con una rodilla amputada Etc.
+
+(8) Vale, viviré con esto antes que tener un alto riesgo de
+    morir"\*\*\*
+
+Esta es la TÉCNICA ESTÁNDAR DE GAMBLE
+:::
+
+## Métodos directos - Standard Gamble (SG) {.smaller}
+
+> ¿Qué riesgo de muerte aceptaría para evitar vivir con una pierna amputada el resto de su vida?
+> una pierna amputada el resto de su vida] y vivir el resto de su
+> vida en perfecto estado de salud?"
+
+![](images/amputation2.png)
+
+## Métodos directos - Standard Gamble (SG) {.smaller}
+
+::: fragment
+> "¿Qué riesgo de muerte aceptaría para evitar \[vivir con
+> ictus el resto de su vida] y vivir el resto de su vida en
+> perfecta salud?"
+:::
+
+::: columns
+::: {.column width="45%"}
+::: fragment
+![](images/paste-6247DCFC.png){fig-align="center" width="600"}
+:::
+:::
+:::
+
+::: {.column width="55%"}
+:::
+
+## ¿Qué tan malo es tener un derrame cerebral? {.smaller}
+
+- Como resultado de un derrame cerebral, usted
+
+::: nonincremental
+    - Tiene impedido el uso del brazo y la pierna izquierdos
+
+    - Necesita ayuda para bañarse y vestirse
+
+    - Necesita un bastón u otro dispositivo para caminar
+
+    - Experimenta dolor leve algunos días a la semana
+
+    - Puede trabajar, con algunas modificaciones
+
+    - Necesita ayuda para hacer la compra, las tareas domésticas y los recados.
+
+    - A veces se siente ansioso y deprimido
+:::
+
+## Métodos directos - Standard Gamble (SG) {.smaller}
+
+<div>
+
+> "¿Qué riesgo de muerte aceptaría para evitar \[vivir con
+> ictus el resto de su vida] y vivir el resto de su vida en
+> perfecta salud?"
+
+</div>
+
+::: columns
+::: {.column width="45%"}
+<div>
+
+![](images/paste-6247DCFC.png){fig-align="center" width="600"}
+
+</div>
+:::
+
+::: {.column width="55%"}
+- Encontrar el umbral $p_T$ que establece EV(A) = EV(B)
+- Supongamos que el encuestado responde que le es indiferente A
+    y B en un umbral $p_T = 0,2$.
+- Entonces **U(Accidente cerebrovascular)** = $p_T$\*U(Muerte) + $(1-p_T)$\*U(Salud perfecta)
+    = 0.2\*0 + (1-0.2)\*1 = **0.8**
+:::
+:::
+
+## Métodos Directos - Time Trade-Off (TTO)
+
+- Una alternativa a la apuesta estándar
+
+- En lugar del riesgo de muerte, el TTO utiliza el tiempo de vida para valorar los estados de salud
+
+- No implica incertidumbre en las elecciones
+
+- La tarea puede resultar más fácil para algunos encuestados que la apuesta estándar
+    estándar
+
+## Métodos Directos - Time Trade-Off (TTO) {.smaller}
+
+::: fragment
+> "¿A qué parte de su esperanza de vida actual de 40 años renunciaría para mejorar su estado de salud actual?
+> a qué parte de su esperanza de vida actual de 40 años renunciaría para mejorar su estado de salud actual (ictus) hasta alcanzar la "salud perfecta"?
+> salud'?"
+:::
+
+::: fragment
+![](images/paste-BAEB413C.png){fig-align="center" width="600"}
+:::
+
+::: fragment
+U(Post-ictus) \* 40 años = U(Salud perfecta) \* 25 años + U(Muerto) \*
+15 años
+
+U(Después de la apoplejía) \* 40 años = 1 \* 25 años + 0 \* 15 años
+
+U(Después de la apoplejía) = 25/40 = 0,625
+:::
+
+## SG vs TTO
+
+- La SG representa la toma de decisiones bajo incertidumbre; la TTO es
+    la toma de decisiones con certeza
+
+- La TTO podría captar inadvertidamente la preferencia temporal (es decir, podríamos
+    valorar menos la salud en el futuro que hoy), en lugar de valorar únicamente los estados de salud en el futuro.
+    los estados de salud
+
+- La postura ante el riesgo se recoge en la SG (aversión al riesgo de muerte), pero no en la
+    TTO
+
+- Los valores de utilidad de la SG suelen ser superiores a los de la TTO para el mismo estado.
+
+## Métodos directos: escalas de valoración
+
+> "En una escala en la que 0 representa la muerte y 100 representa la perfecta
+> salud, ¿qué número diría que describe mejor su estado de salud
+> durante las últimas 2 semanas?"
+
+- Problema: No tiene la propiedad de intervalo que deseamos
+    - Un valor de "90" en esta escala no es necesariamente el doble de bueno
+        que un valor de "45".
+
+## Escala visual analógica (EVA)
+
+La escala visual analógica (EVA) es una escala de valoración muy utilizada.
+
+::: fragment
+Fuente:
+https://assessment-module.yale.edu/im-palliative/visual-analogue-scale](images/paste-B88DC3D6.png){alt="Fuente: https://assessment-module.yale.edu/im-palliative/visual-analogue-scale"}
+:::
+
+## Métodos directos -- Escalas de valoración
+
+- Fáciles de utilizar: Las escalas de valoración suelen utilizarse cuando el tiempo o la
+    capacidad cognitiva/alfabetización impide el uso de otros métodos
+- Muy subjetivos y propensos a respuestas extremas. Generalmente,
+    utilidades para **VAS \< TTO \< SG**
+
+## Cuestión práctica: vigilar a los "tramposos" {.smaller}
+
+[Ejemplo hipotético de "trampa":]{.subrayado}
+
+- La compañía farmacéutica X ha descubierto un medicamento que previene la diabetes pero
+    causa migrañas (efecto secundario)
+
+- Utilizan la EAV para estimar la utilidad de la diabetes en su modelo de decisión y la SG para estimar la utilidad de la migraña.
+    y SG para estimar la utilidad de las migrañas.
+
+- ¿Hay algún problema? (¡sí, lo hay!)
+
+    - Recordemos que, por lo general, la utilidad de la EVA es menor que la de la TTO y menor que la de la SG.
+
+    - Por lo tanto, **este enfoque exagera la utilidad al utilizar una
+        U(Diabetes) y mayor U(migrañas)**
+
+
+::: notes
+- SG suele tener una mayor utilidad (por tanto, mejor calidad de vida), por lo que se resta importancia al efecto secundario de la migraña. 
+
+- Mientras que VAS suele tener una utilidad más baja, por lo que ganarán MÁS con la prevención de la diabetes, ya que una utilidad más baja = peor situación. 
+:::
+
+## Métodos indirectos - EQ-5D {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- Sistema de descripción de estados de salud
+
+- 5 dominios: movilidad; autocuidado; actividades habituales; dolor/malestar
+    y ansiedad/depresión
+
+- 3 niveles: 243 estados de salud distintos (por ejemplo, 11223)
+
+- Valoraciones obtenidas mediante encuestas poblacionales con VAS, TTO
+:::
+
+::: {.column width="50%"}
+![](images/paste-09F7C9EE.png)
+:::
+:::
+
+::: notes
+(1) Las medidas indirectas de utilidad representan las preferencias en una escala de utilidad a través de un cuestionario genérico de calidad de vida relacionada con la salud.
+:::
+
+
+## Métodos indirectos
+<br>
+
+MEDIDAS INDIRECTAS DE UTILIDAD
+<br>
+
+- HUI - Índice de utilidad para la salud 
+- EQ5D - Medida del estado de salud EuroQol 
+- SF-6D - Convierte las puntuaciones SF-36 y SF-12 en utilidades 
+- QWB - Escala de calidad del bienestar 
+
+::: notes
+(1) No voy a entrar en detalles para cada uno de estos ya que no es necesario conocer la granularidad de cada uno en este momento hasta que comience a explorar para sus estudios en el futuro, pero sólo como una visión general de algunos de los más conocidos: 
+
+(2) HUI (Índice de Utilidad para la Salud), basado en una amplia muestra comunitaria canadiense (con derechos de autor, no de uso gratuito), se pide a los pacientes que consideren su salud en las últimas 2, 3 y 4 semanas. 
+
+(2) EQ5D, basado en Europa y EE.UU., pide a los participantes que consideren su estado de salud durante el día de la entrevista; es gratuito, pero hay que pedir permiso y, si hay que traducirlo a otros idiomas, puede resultar bastante caro. 
+
+(3) SF-6D, periodo de recuerdo de 4 a 1 semana, convierte el SF-36 y el SF-12 (medidas de calidad de vida genéricas y validadas) en puntuaciones de utilidad, conversión realizada por John Brazier, desarrollador de la Universidad de Sheffield; artículos publicados sobre la metodología para convertirlos.
+
+(4) QWB (Quality of Well-Being scale), pide a los participantes que consideren su estado de salud durante los tres días anteriores, pacientes de atención primaria en San Diego, California; póngase en contacto con el programa de evaluación de resultados de salud de la UCSD para obtener acceso. 
+:::
+
+
+## Métodos indirectos
+<br>
+
+PRECAUCIÓN - <br>
+
+Es posible que vea artículos / estudios que informan de medidas de calidad de vida "NO BASADAS EN PREFERENCIAS" (por ejemplo, que miden la carga, la "calidad de vida", los síntomas; normalmente no en una escala de 0 a 1), que a menudo informan de "puntuaciones de resumen", pero éstas NO SON LO MISMO que [medidas BASADAS EN PREFERENCIAS (por ejemplo, cómo valora uno los diferentes estados de salud)]{style="background-color: yellow;"} 
+
+::: notes
+Estas últimas pueden utilizarse en las evaluaciones económicas. 
+:::
+
+
+## Medidas específicas de la enfermedad 
+<br>
+
+Más sensibles a los cambios en una enfermedad concreta 
+<br>
+
+Desventajas - <br>
+
+- Muchas personas tienen múltiples condiciones de salud
+
+- No se puede transferir a QALY/Utilidad a menos que se mapee estadísticamente a medidas generalizadas (EQ5D, etc.)
+
+::: notes
+(1) Las medidas específicas de una enfermedad son más sensibles a los cambios en una enfermedad concreta. 
+(2) Por ejemplo, **Utilizar una medida de calidad de vida específica de la enfermedad para la epilepsia 
+:::
+
+
+## ¿Números estándar para sus propias ACE?
+
+<br>
+
+- Estudios de utilidad a gran escala
+- Equilibrio entre diferentes medidas
+      - Análisis de sensibilidad 
+- Registro de ACE de Tufts
+- Junto con los ECA
+
+## DALYs
+
+Usted, además, no será evaluado en DALYs, pero para su
+referencia/interés:
+
+<br>
+
+- Historia de origen: Estudio sobre la carga mundial de morbilidad
+
+- Deliberadamente una medida de salud, no de bienestar/utilidad
+
+- Similar a los AVAC, dos dimensiones de interés:
+
+    - duración de la vida (diferencias en la esperanza de vida)
+
+    - calidad de vida (medida por el peso de la discapacidad)
+
+## DALYs
+
+[![](images/DALY_disability_affected_life_year_infographic.svg){width="1500"}](https://en.wikipedia.org/wiki/Disability-adjusted_life_year)
+
+::: fragment
+**DALYs = YLL + YLD**
+
+- AVP (Años de vida perdidos)
+- YLD (Años vividos con discapacidad)
+:::
+
+## DALYs = [YLL]{style="color: red;"} + YLD
+
+- **Años de vida perdidos (AVP):** cambios en la esperanza de vida, calculados
+    a partir de la comparación con la tabla de vida sintética
+
+- Ejemplo de YLL: El tratamiento del VIH retrasa la muerte de los 30 a los
+    50
+
+    - Años de vida ganados = 20 años
+
+    - ¿YLL?
+
+## Tabla de vida sintética, de referencia
+
+::: {style="font-size: 0.6em"}
+| Edad | Esperanza de Vida | Edad | Esperanza de Vida |
+|:---:|:---------------:|:---:|:---------------:|
+| 0 | 88.9 | 50 | 39.6 |
+| 1 | 88.0 | 55 | 34.9 |
+| 5 | 84.0 | 60 | 30.3 |
+| 10 | 79.0 | 65 | 25.7 |
+| 15 | 74.1 | 70 | 21.3 |
+| 20 | 69.1 | 75 | 17.1 |
+| 25 | 64.1 | 80 | 13.2 |
+| 30 | 59.2 | 85 | 10.0 |
+| 35 | 54.3 | 90 | 7.6 |
+| 40 | 49.3 | 95 | 5.9 |
+| 45 | 44.4 | | |
+
+Fuente:
+http://ghdx.healthdata.org/record/ihme-data/global-burden-disease-study-2019-gbd-2019-reference-life-table
+:::
+
+## Sintético, Tabla de Vida de Referencia
+
+::: {style="font-size: 0.6em"}
+| Age |    Life Expectancy     | Age |    Life Expectancy     |
+|:---:|:----------------------:|:---:|:----------------------:|
+|  0  |          88.9          | 50  | [**39.6**]{.underline} |
+|  1  |          88.0          | 55  |          34.9          |
+|  5  |          84.0          | 60  |          30.3          |
+| 10  |          79.0          | 65  |          25.7          |
+| 15  |          74.1          | 70  |          21.3          |
+| 20  |          69.1          | 75  |          17.1          |
+| 25  |          64.1          | 80  |          13.2          |
+| 30  | [**59.2**]{.underline} | 85  |          10.0          |
+| 35  |          54.3          | 90  |          7.6           |
+| 40  |          49.3          | 95  |          5.9           |
+| 45  |          44.4          |     |                        |
+
+Fuente:
+http://ghdx.healthdata.org/record/ihme-data/global-burden-disease-study-2019-gbd-2019-reference-life-table
+:::
+
+
+## DALYs = [YLL]{style="color: red;"} + YLD
+
+::: nonincremental
+- Años de vida perdidos (AVP): cambios en la esperanza de vida, calculados
+    a partir de la comparación con la tabla de vida sintética
+
+- Ejemplo de YLL: El tratamiento del VIH retrasa la muerte de los 30 a los
+    50
+
+    - Años de vida ganados: 20 años
+
+    - AVAD: AV(50) - AV(30) = 39,6 - 59,2 = -19,6 AVAD = **19,6 AVAD
+        evitados**
+:::
+
+::: fragment
+::: callout-note
+YLL (medidos como AVAD evitados) $\neq$ ¡AJ ganados!
+:::
+:::
+
+## DALYs = YLL + [YLD]{style="color: red;"}
+
+- Años vividos con discapacidad (AVAD): calculados de forma similar a los AVAC,
+    peso de la utilidad ≈ 1 - peso de la discapacidad
+
+- Ejemplo de AVLD: Control efectivo del asma durante 10 años
+
+    - Peso de la discapacidad (asma no controlada) = ?
+
+    - Peso de la discapacidad (asma controlada) = ?
+
+## Pesos de discapacidad {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- Valores comunes para un pequeño conjunto de condiciones de salud con nombre (p. ej.
+    VIH temprano/tardío, VIH/ART)
+- Primera iteración: opinión de expertos
+- Segunda iteración: Encuestas de población a domicilio en varias regiones del mundo
+    (13.902 encuestados)
+    - Comparación por pares de dos descripciones del estado de salud que empeoran
+
+    - Regresión probit para calcular la ponderación de la discapacidad
+
+    - 235 estados de salud únicos
+:::
+
+::: {.column width="50%"}
+::: fragment
+[Fuente: Salomon, Joshua A., et al. "Disability weights for the Global
+Burden of Disease 2013 study". The Lancet Global Health 3.11 (2015):
+e712-e723.](images/paste-51631169.png){width="404"}](http://www.thelancet.com/journals/langlo/article/PIIS2214-109X(15)00069-8/fulltext)
+:::
+:::
+:::
+
+## DALYs = YLL + [YLD]{style="color: red;"}
+
+::: nonincremental
+- Años Vividos con Discapacidad (AVLD): calculados de forma similar a los AVAC,
+    peso de la utilidad ≈ 1 - peso de la discapacidad
+
+- Ejemplo de AVLD: Control efectivo del asma durante 10 años
+
+    - Peso de la discapacidad (asma no controlada) = 0,133
+
+    - Peso de la discapacidad (asma controlada) = 0,015
+
+    - YLD = 10 \* 0.015 - 10 \* 0.133 = -1.18 DALYs = **1.18 DALYs
+        evitados**
+:::
+
+## DALYs for CEA {.smaller}
+
+::: {style="font-size: 0.9em"}
+- El método de cálculo recomendado ha cambiado con el tiempo (ponderación
+    ponderación por edad, descuento, ahora ambos)
+- Algunos calculan un AVAD "similar al AVAC", utilizando la ponderación de utilidad = 1-
+    peso de la discapacidad
+- En general, el descuento se sigue realizando para el ACE
+:::
+
+::: fragment
+::: important
+**Práctica común**
+
+- Entorno de altos ingresos: AVAC
+- Entorno de renta baja y media = AVAD*****Puesto que la discapacidad
+    discapacidad están disponibles libre y públicamente (estas ponderaciones son necesarias
+    para calcular los AVAD), puede reducir los costes/tiempo/recursos
+    en comparación con la recopilación de estimaciones de AVAC
+:::
+:::
+

@@ -1,0 +1,243 @@
+---
+title: "Injury Markov Model"
+---
+
+```{dot}
+digraph MarkovModel {
+    rankdir=TB;
+    node [shape = ellipse, style=filled, color=lightblue];
+
+    // Define states
+    NoInjury [label="No Injury (Healthy)", pos="0,2!"];
+    MinorInjury [label="Minor Injury", pos="1,1!"];
+    ModerateInjury [label="Moderate Injury", pos="1,0!"];
+    SevereInjury [label="Severe Injury", pos="1,-1!"];
+    RecoveredSequelae [label="Recovered with Sequelae", pos="2,0!"];
+    Death [label="Death", color=lightgray, pos="3,1!"];
+    DeathInjury [label="Death from Injury", color=lightgray, pos="3,-1!"];
+
+    // Define transitions without labels
+    NoInjury -> MinorInjury;
+    NoInjury -> ModerateInjury;
+    NoInjury -> SevereInjury;
+    NoInjury -> Death;
+
+    MinorInjury -> NoInjury;
+    MinorInjury -> RecoveredSequelae;
+    MinorInjury -> Death;
+
+    ModerateInjury -> NoInjury;
+    ModerateInjury -> RecoveredSequelae;
+    ModerateInjury -> DeathInjury;
+
+    SevereInjury -> NoInjury;
+    SevereInjury -> RecoveredSequelae;
+    SevereInjury -> DeathInjury;
+
+    RecoveredSequelae -> Death;
+
+    // Tighter and more circular loopbacks to represent ongoing risk or recurrence
+    NoInjury -> NoInjury [headport=n, tailport=n, constraint=false];
+    MinorInjury -> MinorInjury [headport=e, tailport=e, constraint=false];
+    ModerateInjury -> ModerateInjury [headport=e, tailport=e, constraint=false]; // Loopback on the bottom
+    SevereInjury -> SevereInjury [headport=w, tailport=w, constraint=false];
+    RecoveredSequelae -> RecoveredSequelae [headport=s, tailport=s, constraint=false];
+    Death -> Death [headport=s, tailport=s, constraint=false]
+    DeathInjury -> DeathInjury [headport=s, tailport=s, constraint=false]
+}
+
+```
+
+
+```{dot}
+digraph MarkovModel {
+    rankdir=TB;
+    node [shape = ellipse, style=filled, color=lightblue];
+
+    // Define states
+    SinLesion [label="Sin Lesión (Saludable)", pos="0,2!"];
+    LesionLeve [label="Lesión Leve", pos="1,1!"];
+    LesionModerada [label="Lesión Moderada", pos="1,0!"];
+    LesionGrave [label="Lesión Grave", pos="1,-1!"];
+    RecuperadoSecuelas [label="Recuperado con Secuelas", pos="2,0!"];
+    Muerte [label="Muerte", color=lightgray, pos="3,1!"];
+    MuerteLesion [label="Muerte por Lesión", color=lightgray, pos="3,-1!"];
+
+    // Define transitions without labels
+    SinLesion -> LesionLeve;
+    SinLesion -> LesionModerada;
+    SinLesion -> LesionGrave;
+    SinLesion -> Muerte;
+
+    LesionLeve -> SinLesion;
+    LesionLeve -> RecuperadoSecuelas;
+    LesionLeve -> Muerte;
+
+    LesionModerada -> SinLesion;
+    LesionModerada -> RecuperadoSecuelas;
+    LesionModerada -> MuerteLesion;
+
+    LesionGrave -> SinLesion;
+    LesionGrave -> RecuperadoSecuelas;
+    LesionGrave -> MuerteLesion;
+
+    RecuperadoSecuelas -> Muerte;
+
+    // Tighter and more circular loopbacks to represent ongoing risk or recurrence
+    SinLesion -> SinLesion [headport=n, tailport=n, constraint=false];
+    LesionLeve -> LesionLeve [headport=e, tailport=e, constraint=false];
+    LesionModerada -> LesionModerada [headport=e, tailport=e, constraint=false]; // Loopback on the bottom
+    LesionGrave -> LesionGrave [headport=w, tailport=w, constraint=false];
+    RecuperadoSecuelas -> RecuperadoSecuelas [headport=s, tailport=s, constraint=false];
+    Muerte -> Muerte [headport=s, tailport=s, constraint=false];
+    MuerteLesion -> MuerteLesion [headport=s, tailport=s, constraint=false];
+}
+
+```
+
+
+# Introduction
+
+This document provides proposed injury incidence rates based on real-world data for creating a Markov model to evaluate the cost-effectiveness of strategies to prevent injuries from gunpowder and fireworks. The proposed rates are converted to probabilities for use in the Markov model.
+
+# Injury Incidence Rates
+
+## Data Sources
+
+1. **Centers for Disease Control and Prevention (CDC)**
+   - The CDC provides detailed reports on injuries related to fireworks, including rates of different types of injuries (minor, moderate, severe) and outcomes.
+   - [CDC Fireworks Safety](https://www.cdc.gov/fireworks/injury-data/index.html)
+
+2. **Consumer Product Safety Commission (CPSC)**
+   - The CPSC publishes annual reports on fireworks-related injuries, including detailed statistics on the nature and severity of injuries.
+   - [CPSC Fireworks Reports](https://www.cpsc.gov/s3fs-public/2020-Fireworks-Report.pdf)
+
+3. **National Fire Protection Association (NFPA)**
+   - The NFPA provides reports on firework injuries and fatalities, including detailed data on the types of injuries and their frequencies.
+   - [NFPA Fireworks](https://www.nfpa.org/Public-Education/By-topic/Seasonal/Fireworks)
+
+4. **Journal Articles and Epidemiological Studies**
+   - Several peer-reviewed journal articles provide data on fireworks and gunpowder-related injuries, including their incidence rates and severity.
+   - Witsaman RJ, Comstock RD, Smith GA. Pediatric fireworks-related injuries in the United States: 1990–2003. Pediatrics. 2006;118(1):296-303.
+   - Smith GA, Knapp JF, Barnett TM, Shields BJ. The rockets' red glare, the bombs bursting in air: fireworks-related injuries to children. Pediatrics. 1996;98(1):1-9.
+
+5. **World Health Organization (WHO)**
+   - The WHO provides global data on injuries and their prevention, including sections related to burns and trauma from explosive materials.
+   - [WHO Burns](https://www.who.int/news-room/fact-sheets/detail/burns)
+
+## Proposed Incidence Rates and Probabilities
+
+### Transition from No Injury (Healthy)
+
+1. **To Minor Injury**
+   - Incidence Rate: 7% per year
+   - Probability: \( P = 1 - e^{-0.07} \approx 0.0677 \)
+   - [CDC Fireworks Safety](https://www.cdc.gov/fireworks/injury-data/index.html)
+   - [CPSC Fireworks Reports](https://www.cpsc.gov/s3fs-public/2020-Fireworks-Report.pdf)
+
+2. **To Moderate Injury**
+   - Incidence Rate: 2% per year
+   - Probability: \( P = 1 - e^{-0.02} \approx 0.0198 \)
+   - Smith GA, Knapp JF, Barnett TM, Shields BJ. Pediatrics. 1996;98(1):1-9.
+   - [NFPA Fireworks](https://www.nfpa.org/Public-Education/By-topic/Seasonal/Fireworks)
+
+3. **To Severe Injury**
+   - Incidence Rate: 0.5% per year
+   - Probability: \( P = 1 - e^{-0.005} \approx 0.005 \)
+   - Witsaman RJ, Comstock RD, Smith GA. Pediatrics. 2006;118(1):296-303.
+   - [WHO Burns](https://www.who.int/news-room/fact-sheets/detail/burns)
+
+4. **To Death**
+   - Incidence Rate: 0.01% per year
+   - Probability: \( P = 1 - e^{-0.0001} \approx 0.0001 \)
+   - [CPSC Fireworks Reports](https://www.cpsc.gov/s3fs-public/2020-Fireworks-Report.pdf)
+   - [WHO Burns](https://www.who.int/news-room/fact-sheets/detail/burns)
+
+### Recovery Transitions
+
+5. **From Minor Injury to No Injury**
+   - Probability: 85%
+   - Based on general epidemiological data and recovery rates from burns and trauma.
+   - Peck MD. Epidemiology of burns throughout the world. Part I: Distribution and risk factors. Burns. 2011;37(7):1087-1100.
+   - Brusselaers N, Monstrey S, Vogelaers D, Hoste E, Blot S. Severe burn injury in Europe: a systematic review of the incidence, etiology, morbidity, and mortality. Crit Care. 2010;14(5):R188.
+
+6. **From Minor Injury to Recovered with Sequelae**
+   - Probability: 10%
+   - Based on general epidemiological data and recovery rates from burns and trauma.
+   - Peck MD. Epidemiology of burns throughout the world. Part I: Distribution and risk factors. Burns. 2011;37(7):1087-1100.
+   - Brusselaers N, Monstrey S, Vogelaers D, Hoste E, Blot S. Severe burn injury in Europe: a systematic review of the incidence, etiology, morbidity, and mortality. Crit Care. 2010;14(5):R188.
+
+7. **From Minor Injury to Death**
+   - Probability: 5%
+   - Based on general epidemiological data and recovery rates from burns and trauma.
+   - Peck MD. Epidemiology of burns throughout the world. Part I: Distribution and risk factors. Burns. 2011;37(7):1087-1100.
+   - Brusselaers N, Monstrey S, Vogelaers D, Hoste E, Blot S. Severe burn injury in Europe: a systematic review of the incidence, etiology, morbidity, and mortality. Crit Care. 2010;14(5):R188.
+
+8. **From Moderate Injury to No Injury**
+   - Probability: 50%
+   - Based on general epidemiological data and recovery rates from burns and trauma.
+   - Peck MD. Epidemiology of burns throughout the world. Part I: Distribution and risk factors. Burns. 2011;37(7):1087-1100.
+   - Brusselaers N, Monstrey S, Vogelaers D, Hoste E, Blot S. Severe burn injury in Europe: a systematic review of the incidence, etiology, morbidity, and mortality. Crit Care. 2010;14(5):R188.
+
+9. **From Moderate Injury to Recovered with Sequelae**
+   - Probability: 40%
+   - Based on general epidemiological data and recovery rates from burns and trauma.
+   - Peck MD. Epidemiology of burns throughout the world. Part I: Distribution and risk factors. Burns. 2011;37(7):1087-1100.
+   - Brusselaers N, Monstrey S, Vogelaers D, Hoste E, Blot S. Severe burn injury in Europe: a systematic review of the incidence, etiology, morbidity, and mortality. Crit Care. 2010;14(5):R188.
+
+10. **From Moderate Injury to Death from Injury**
+    - Probability: 10%
+    - Based on general epidemiological data and recovery rates from burns and trauma.
+    - Peck MD. Epidemiology of burns throughout the world. Part I: Distribution and risk factors. Burns. 2011;37(7):1087-1100.
+    - Brusselaers N, Monstrey S, Vogelaers D, Hoste E, Blot S. Severe burn injury in Europe: a systematic review of the incidence, etiology, morbidity, and mortality. Crit Care. 2010;14(5):R188.
+
+11. **From Severe Injury to No Injury**
+    - Probability: 20%
+    - Based on general epidemiological data and recovery rates from burns and trauma.
+    - Peck MD. Epidemiology of burns throughout the world. Part I: Distribution and risk factors. Burns. 2011;37(7):1087-1100.
+    - Brusselaers N, Monstrey S, Vogelaers D, Hoste E, Blot S. Severe burn injury in Europe: a systematic review of the incidence, etiology, morbidity, and mortality. Crit Care. 2010;14(5):R188.
+    
+## Proposed Health State Utility Values
+
+1. **No Injury (Healthy)**
+   - Utility Value: 1.0 (or slightly less to reflect normal life variability, e.g., 0.95)
+
+2. **Minor Injury**
+   - Utility Value: 0.98 
+   - Rationale: Minor injuries such as small burns or cuts typically have a temporary and moderate impact on quality of life.
+
+3. **Moderate Injury**
+   - Utility Value: 0.9 if sequelae; 0.95 if not. 
+   - Rationale: Moderate injuries, including more severe burns and lacerations, have a more significant but still temporary impact on quality of life.
+
+4. **Severe Injury**
+   - Utility Value: 0.60 
+   - Rationale: Severe injuries such as major burns, limb injuries, or serious eye damage substantially reduce quality of life and may involve long recovery periods.
+   - Holtslag HR, Post MW, Lindeman E, van der Werken C. "Long-term functional health status of severely injured patients." Injury. 2007;38(3):280-289.
+   
+    - Ringburg AN, Polinder S, van Ierland MC, Steyerberg EW, van Lieshout EM, Patka P, van Vugt AB, Schipper IB. "Prevalence and prognostic factors of disability after major trauma." The Journal of Trauma. 2011;70(4):916-922.
+    
+    - Esselman PC, Thombs BD, Magyar-Russell G, Fauerbach JA. "Burn rehabilitation: state of the science." American Journal of Physical Medicine & Rehabilitation. 2006;85(4):383-413.
+    - Browne AL, Biering-Sørensen F, Kennelly M, Noonan VK, Post MWM, Middleton JW, et al. "Spinal Cord Injury–Related Functional Outcomes in a Prospective Multicenter Study." The Journal of Spinal Cord Medicine. 2016;39(2):155-166.
+
+5. **Severe: Recovered with Sequelae**
+   - Utility Value: 0.75
+   - Rationale: Individuals who have recovered but suffer from long-term sequelae (e.g., chronic pain, scarring) experience a permanent reduction in quality of life, although it may be less severe than during the acute injury phase.
+
+6. **Death**
+   - Utility Value: 0.0
+
+<!-- ### Sources  -->
+
+<!-- 1. **Tengs TO, Wallace A. One thousand health-related quality-of-life estimates. Medical Care. 2000;38(6):583-637.** -->
+<!--    - Provides a comprehensive list of health-related quality-of-life estimates across a range of conditions. -->
+
+<!-- 2. **Gabriel SE, Crowson CS, O’Fallon WM. A cost-effectiveness analysis of total hip arthroplasty. Clinical Orthopaedics and Related Research. 1999;(358):123-133.** -->
+<!--    - Utility values for different health states, particularly related to injuries and chronic conditions. -->
+
+<!-- 3. **Torrance GW, Feeny D, Furlong W, Barr RD, Zhang Y, Wang Q. Multiattribute utility function for a comprehensive health status classification system. Health Utilities Index Mark 2. Medical Care. 1996;34(7):702-722.** -->
+<!--    - Provides utility values based on comprehensive health status classification systems. -->
+
+<!-- 4. **EuroQol Group. EuroQol--a new facility for the measurement of health-related quality of life. Health Policy. 1990;16(3):199-208.** -->
+<!--    - Details on the EQ-5D, a widely used instrument for measuring health-related quality of life. -->
+

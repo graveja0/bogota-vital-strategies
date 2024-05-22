@@ -194,7 +194,7 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 ## Ej 3. Cáncer de colon -- **Prevención**
 
 ::: incremental
-- ¿Cuándo realizar el cribado?
+- ¿Cuándo realizar el tamizaje?
 - ¿Qué prueba y con qué frecuencia?
 - Si se encuentra/extrae un pólipo, ¿cuándo repetir?
 :::
@@ -202,9 +202,9 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 ## Ej 3. Cáncer de colon -- **Prevención**
 
 ::: incremental
-- ¿Coste-efectividad de pruebas de cribado alternativas?
-- ¿Frecuencias alternativas de cribado?
-- ¿Cómo debería variar el cribado según los grupos de riesgo?
+- ¿Coste-efectividad de pruebas de tamizaje alternativas?
+- ¿Frecuencias alternativas de tamizaje?
+- ¿Cómo debería variar el tamizaje según los grupos de riesgo?
 :::
 
 ## Ej 3. Cáncer de colon - **Estimación de probabilidades**
@@ -222,7 +222,7 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 ## Ej 3. Cáncer de colon - **Estimación de probabilidades**
 
 ::: incremental
-- Predecir el "beneficio" del cribado
+- Predecir el "beneficio" del tamizaje
     - Todas las probabilidades anteriores
     - Probabilidad de detección precoz
     - Probabilidad de complicaciones derivadas de las pruebas
@@ -283,7 +283,7 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 
 2.  Fundamentos del análisis coste-eficacia (Días 3-4)
 
-- Valoración de costes y resultados sanitarios
+- Valoración de costos y resultados sanitarios
 - Análisis coste-efectividad incremental
 - Introducción a los modelos de Markov
 

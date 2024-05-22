@@ -1,0 +1,2021 @@
+---
+title: "Análisis coste-eficacia incremental"
+format:
+  revealjs:
+    theme: slides.scss
+    incremental: false
+    slide-number: true
+    logo: ../vchem.png
+    html-math-method: katex
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    footer: |
+      [Volver al sitio web](../index.html)
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+```{r, echo = FALSE}
+library(tidyverse)
+library(DiagrammeR)
+library(here)
+library(glue)
+library(Matrix)
+library(expm)
+library(ggrepel)    # For plotting
+library(ellipse)    # For plotting
+library(scales)     # For dollar signs and commas
+library(randtoolbox)
+library(igraph)
+library(tidygraph)
+library(ggraph)
+library(progress)
+library(hrbrthemes)
+library(ggsci)
+library(directlabels)
+library(gt)
+library(ggpmisc)
+library(kableExtra)
+library(knitr)
+options(knitr.kable.NA = '') 
+```
+
+```{=html}
+<style>
+.nobullet li {
+  list-style-type: none;
+}
+</style>
+```
+```{r, echo = FALSE}
+
+source("./functions_healthy-sick-dead.r")
+
+theme_cea<- function(base_size = 11, base_family = "Gill Sans", ticks = TRUE) {
+  
+  ret <- ggplot2::theme_bw(base_family = base_family, base_size = base_size) +
+    ggplot2::theme(
+      axis.line = ggplot2::element_blank(),
+      axis.title.x = ggplot2::element_text(vjust = -0.3),
+      axis.title.y = ggplot2::element_text(vjust = 0.8),
+      legend.background = ggplot2::element_blank(),
+      legend.key = ggplot2::element_blank(),
+      legend.title = ggplot2::element_text(face="plain"),
+      panel.background = ggplot2::element_blank(),
+      panel.border = ggplot2::element_blank(),
+      panel.grid = ggplot2::element_blank(),
+      plot.background = ggplot2::element_blank(),
+      strip.background = ggplot2::element_blank()
+    )
+  
+  if (!ticks) {
+    ret <- ret + ggplot2::theme(axis.ticks = ggplot2::element_blank())
+  }
+  
+  ret
+}
+
+load("./data/df_cea.RData")
+
+df <- 
+  df_cea %>% 
+  select(Cost, Effect) %>% 
+  mutate(Cost = round(Cost,0)) %>% 
+  mutate(Effect = round(Effect,2)) %>% 
+  rownames_to_column(var= "strategy") %>% 
+  select(strategy, everything())
+
+df_s <- 
+  df_cea %>% 
+  arrange(Cost) %>% 
+  select(Cost, Effect) %>% 
+  rownames_to_column(var= "strategy") %>% 
+  select(strategy, everything())
+
+df_i1 <-
+  df_cea %>%
+  rownames_to_column(var= "strategy") %>% 
+  select(strategy, everything()) %>% 
+  arrange(Cost) %>%
+  mutate(d_cost = Cost - lag(Cost),
+         d_effect = Effect - lag(Effect)) %>%
+  select(strategy, Cost, d_cost ,Effect, d_effect)
+
+df_i2 <- 
+  df_i1 %>% 
+  mutate(icer = d_cost / d_effect) %>% 
+  mutate(status = case_when(icer<0 ~ "Dominated",
+                            TRUE ~ "" )) 
+
+df_i3 <- 
+  df_i2 %>% 
+  #filter(status != "Dominated") %>% 
+  arrange(status,Cost) %>%
+  mutate(d_cost = Cost - lag(Cost),
+         d_effect = Effect - lag(Effect)) %>% 
+  mutate(icer = d_cost / d_effect) %>% 
+  mutate(icer = ifelse(status %in% c("Dominated","Dominated (Extended)"), NA, icer)) %>% 
+  mutate(d_cost = ifelse(status %in% c("Dominated","Dominated (Extended)"), NA, d_cost)) %>% 
+  mutate(d_effect = ifelse(status %in% c("Dominated","Dominated (Extended)"), NA, d_effect)) %>% 
+  mutate(status = case_when(!is.na(icer) & icer<0 ~ "Dominated",
+                             !is.na(icer) & icer > lead(icer) & lead(status) != "Dominated" ~ "Dominated (Extended)",
+                             TRUE ~ status))
+
+df_i4 <- 
+  df_i3 %>% 
+  arrange(status, Cost) %>% 
+   mutate(d_cost = Cost - lag(Cost),
+         d_effect = Effect - lag(Effect)) %>% 
+  mutate(icer = d_cost / d_effect) %>% 
+  mutate(icer = ifelse(status %in% c("Dominated","Dominated (Extended)"), NA, icer)) %>% 
+  mutate(d_cost = ifelse(status %in% c("Dominated","Dominated (Extended)"), NA, d_cost)) %>% 
+  mutate(d_effect = ifelse(status %in% c("Dominated","Dominated (Extended)"), NA, d_effect)) %>% 
+  
+  mutate(status = case_when(!is.na(icer) & icer<0 ~ "Dominated",
+                             !is.na(icer) & icer > lead(icer) & lead(status) != "Dominated" ~ "Dominated (Extended)",
+                             TRUE ~ status))
+                            
+
+```
+
+# Objetivos de aprendizaje y esquema
+
+## Objetivos de aprendizaje
+
+- Diferenciar entre ratios CEA medios e incrementales
+
+- Caracterizar los problemas de decisión según sean competitivos o
+    no competidores
+
+- Calcular e interpretar los ICER
+
+- Practicar la exclusión de estrategias "dominadas" y "ampliamente dominadas".
+    dominadas" y "ampliamente dominadas"
+
+- Identificar las estrategias asistenciales de "alto valor" frente a las de "bajo valor", basándose en
+    umbrales de rentabilidad generalmente aceptados
+
+## Esquema
+
+<br>
+
+::: columnas
+::: {.column width="50%"}
+1.  Revisión del coeficiente de ACE
+2.  CEA no competidores frente a CEA competidores
+3.  CEA incremental
+:::
+
+::: {.column width="50%"}
+4.  Dominancia y dominancia ampliada
+5.  Comparadores
+6.  Umbrales CEA
+:::
+:::
+
+# Análisis Coste-Efectividad {background="#43464B"}
+
+## Análisis Coste-Efectividad
+
+::: incremental
+- Cuantifica cómo maximizar la calidad y cantidad de vida entre
+    alternativas en competencia, dados unos recursos restringidos
+
+- Es una medida explícita de la relación calidad-precio
+
+- Una herramienta de toma de decisiones a NIVEL DE POBLACIÓN
+:::
+
+## El análisis coste-eficacia NO ES
+
+::: incremental
+- Reducción indiscriminada de costes
+- Reducción
+- Para la toma de decisiones a nivel individual
+- La única herramienta para la toma de decisiones
+:::
+
+## Análisis Coste-Efectividad {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: r-vstack
+::: {data-id="costA"}
+Coste de la intervención
+:::
+
+::: {data-id="costB"}
+Coste de la alternativa
+:::
+
+::: {data-id="beneficioA"}
+Beneficio de la intervención
+:::
+
+::: {data-id="beneficioB"}
+Beneficio de la alternativa
+:::
+:::
+
+## Análisis Coste-Efectividad {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: r-vstack
+::: {data-id="costA" style="color: #B98476;"}
+Coste de la intervención
+:::
+
+::: {data-id="costB" style="color: #B98476;"}
+Coste de la alternativa
+:::
+
+::: {data-id="beneficioA" style="color: #3FA090;"}
+Beneficio de la intervención
+:::
+
+::: {data-id="benefitB" style="color: #3FA090;"}
+Beneficio de la alternativa
+:::
+:::
+
+## Relación coste-eficacia {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: r-vstack
+::: r-hstack
+::: {data-id="costeA" style="color: #B98476;"}
+Coste de la intervención
+:::
+
+$$ \quad - \quad $$
+
+::: {data-id="costeB" style="color: #B98476;"}
+Coste de la alternativa
+:::
+:::
+
+$$\frac{\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad {\quad}{\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad}$$
+
+::: r-hstack
+::: {data-id="beneficioA" style="color: #3FA090;"}
+Beneficio de la intervención
+:::
+
+$$ \quad - \quad $$
+
+::: {data-id="beneficioB" style="color: #3FA090;"}
+Beneficio de la alternativa
+:::
+:::
+:::
+
+## Relación coste-eficacia {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: r-vstack
+::: r-hstack
+::: {data-id="costeA" style="color: #B98476;"}
+$C_1$
+:::
+
+$$ \quad - \quad $$
+
+::: {data-id="costeB" style="color: #B98476;"}
+$C_0$
+:::
+:::
+
+$$\frac{\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad {\quad}{\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad}$$
+
+::: r-hstack
+::: {data-id="beneficioA" style="color: #3FA090;"}
+$E_0$
+:::
+
+$$ \quad - \quad $$
+
+::: {data-id="beneficioB" style="color: #3FA090;"}
+$E_1$
+:::
+:::
+:::
+
+## Relación coste-eficacia {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+::: r-vstack
+::: r-hstack
+::: {data-id="costeA" style="color: #B98476;"}
+$\Delta C$
+:::
+:::
+
+$$\frac{\quad \quad \quad \quad }{\quad \quad \quad \quad \quad \quad }$$
+
+::: r-hstack
+::: {data-id="beneficioA" style="color: #3FA090;"}
+$\Delta E$
+:::
+:::
+:::
+
+## Relación coste-efectividad incremental {.smaller}
+
+**El más utilizado, ya que para la mayoría de las enfermedades ya existe algún tratamiento disponible.
+tratamiento disponible.**
+
+::: incremental
+::: columnas
+::: {.column width="50%"}
+- $C_1$: valor actual neto de los costes totales a lo largo de la vida del nuevo tratamiento
+- $C_0$: valor actual neto de los costes totales a lo largo de la vida del tratamiento por defecto
+    tratamiento por defecto
+- $E_1$: eficacia del nuevo tratamiento, medida en esperanza de vida esperada
+    esperanza de vida esperada, años de vida ajustados por calidad (AVAC) o
+    años de vida ajustados por discapacidad (AVAD), o algún resultado sanitario
+    relevante para la decisión.
+- $E_0$: eficacia del tratamiento por defecto
+:::
+
+::: {.column width="50%"}
+::: {style="padding-top: 100px;"}
+$$
+\frac{C_1 - C_0 \quad (\Delta C)}{E_1 - E_0 \quad (\Delta E)}
+$$
+:::
+:::
+:::
+:::
+
+## Árbol de decisión de enfermedades neurológicas
+
+(De ayer)
+
+![](images/cea-example1.png)
+
+## Resultados
+
+- $C_{treat}$ = coste esperado de la estrategia tratar a todos.
+- $C_{no treat}$ = coste esperado de la estrategia *no tratar a nadie*.
+- $C_{biopsy}$ = coste esperado de la estrategia de biopsia.
+
+## Resultados
+
+- $C_{treat}$ = coste esperado de la estrategia tratar a todos.
+- $C_{no treat}$ = coste esperado de la estrategia "no tratar a nadie".
+- $C_{biopsy}$ = coste esperado de la estrategia de biopsia.
+- $E_{treat}$ = esperanza de vida esperada de la estrategia de tratar a todos.
+- $E_{no tratar}$ = esperanza de vida esperada de la estrategia "no tratar a nadie".
+- $E_{biopsy}$ = esperanza de vida esperada de la estrategia de biopsia.
+
+## Resultados en Amua
+
+![](images/outcomes-amua.png){fig-align="center"}
+
+## Tratar todo frente a no tratar nada
+
+Estrategia: No tratar a nadie ![](images/cea-example2.png)
+
+## Tratar a todos vs. No tratar a nadie
+
+Estrategia: Tratar a todos ![](images/cea-example3.png)
+
+## Conclusiones clave (por ahora)
+
+::: incremental
+- El tratamiento produce una *mayor* esperanza de vida para los enfermos,
+    pero tiene un coste.
+- El tratamiento produce una esperanza de vida *más baja* para los que no tienen la enfermedad, *y también* tiene un coste.
+    enfermedad, *y también* tiene un coste.
+- La biopsia puede ayudar a equilibrar estos dos resultados dirigiendo mejor
+    tratamiento, pero también conlleva costes y riesgos.
+- El ACE incremental proporciona un marco transparente para cuantificar y sopesar estas consideraciones.
+    sopesar estas consideraciones.
+:::
+
+## Relación coste-eficacia media {.smaller}
+
+**Caso especial en el que** se supone que $C_0$ y $E_0$ son cero.
+
+::: columnas
+::: {.column width="50%"}
+- $C_1$: valor actual neto de los costes totales a lo largo de la vida del nuevo tratamiento
+- $C_0$: Se supone cero
+- $E_1$: eficacia del nuevo tratamiento, medida en esperanza de vida esperada
+    esperanza de vida esperada, años de vida ajustados por calidad (AVAC) o
+    años de vida ajustados por discapacidad (AVAD), o algún resultado sanitario
+    relevante para la decisión.
+- $E_0$: Se supone cero
+:::
+
+::: {.column width="50%"}
+::: {style="padding-top: 50px;"}
+$$
+ICER &= \frac{C_1 - 0}{E_1 - 0}
+ICER &= \frac{C_1 - 0}{E_1 - 0} \\\frac{C_1}{E_1 - 0}
+ &= \frac{C_1}{E_1 }
+\fin{alineado}
+$$
+:::
+:::
+:::
+
+# CEA no competidores vs. competidores {background="#43464B"}
+
+## Uso de CEA en dos situaciones {auto-animate="true"}
+
+1.  **Compras compulsivas**: El problema de decisión tiene programas
+    programas/intervenciones.
+
+- Cada programa se compara con una alternativa nula.
+    calcular una relación coste-eficacia "media".
+
+## Uso del ACE en dos situaciones {auto-animate="true"}
+
+2.  **Elección competitiva**: El problema de decisión tiene programas
+    programas/intervenciones para el mismo fin; estas opciones son
+    mutuamente excluyentes.
+
+- Dos o más alternativas activas además de la opción nula.
+- Es necesario calcular una "relación coste-eficacia incremental",
+    que nos da el coste añadido por unidad de beneficio añadido de una
+    opción, en relación con la siguiente opción menos costosa
+
+## Problema de decisión no competitiva (de compra)
+
+**¿Cómo podemos medir la prioridad relativa de varios programas sanitarios que compiten por unos recursos limitados?
+que compiten por unos recursos limitados?
+
+::: incremental
+1.  Programa de enfermedades cardiovasculares
+2.  Programa de maternidad segura
+3.  Iniciativa de prevención del VIH
+4.  Vacunación infantil
+5.  5. Detección de la depresión
+:::
+
+## Supuestos
+
+::: incremental
+- Se supone que las alternativas del programa son independientes
+- La restricción presupuestaria es la única limitación
+- Ni el coste neto ni la eficacia neta dependen de qué otros
+    programas se seleccionen
+- Se supone que los programas son divisibles.
+    implementados]\
+:::
+
+## Objetivos: El problema de las compras compulsivas {background="#c2f0c2"}
+
+#### {{< fa circle-check >}} Maximizar la eficacia neta total (beneficio para la salud) de los programas seleccionados.
+
+#### {{< fa circle-check >}} No salirse del presupuesto.
+
+## El problema de las compras compulsivas {.smaller}
+
+::: columnas
+::: {.column width="50%"}
+::: incremental
+Paso 1: - Descartar programas que cuestan \$ pero tienen efectos negativos para la salud
+<br> - Dominado por la alternativa de "ningún programa"
+:::
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-width: 8
+#| fig-align: center
+
+df_ex <- 
+  tibble(
+  program = LETTERS[1:8],
+  cost = c(27,30,56,20,30,50,40,-20),
+  qalys = c(30,20,70,40,50,75,-30,20)
+  ) %>% 
+  mutate(type = case_when(cost > 0 & qalys <0 ~ "cp_en",
+                          cost <0  & qalys > 0 ~ "cn_ep",
+                          cost >0 & qalys > 0 ~ "cp_ep")) %>% 
+  mutate(label = case_when(type == "cp_en" ~ "Less effective\nmore costly",
+                           type == "cn_ep" ~ "More effective\nless costly",
+                           type == "cp_ep" ~ "More effective\nmore costly"))
+
+  df_ex %>% 
+    filter(type %in% c("cp_en")) %>% 
+    ggplot(aes(x = qalys, y = cost)) + 
+    theme_cea() + 
+    geom_point(size=6, aes(pch=type,colour = type)) +
+    geom_quadrant_lines(linetype = "solid") +
+    #hrbrthemes::theme_ipsum(base_size=16) + 
+    theme(axis.title.x = ggplot2::element_text( size=24, angle=0),
+          axis.title.y = ggplot2::element_text(size = 24,angle=1)) + 
+    scale_x_continuous(limits = c(-max(abs(df_ex$qalys)),max(abs(df_ex$qalys))), breaks = NULL , position="top") + 
+    scale_y_continuous(limits = c(-max(abs(df_ex$cost)),max(abs(df_ex$cost))), breaks = NULL ,position = "right") +
+    labs(x = "Incremental Costs", y = "Incremental Health") + 
+    geom_dl(method = list("smart.grid",hjust=.9,cex=2,vjust=1),aes(label = glue("{label}"))) +
+    theme(legend.position ="none") +
+    scale_shape_manual(values = c(4)) + 
+    scale_colour_manual(values = c("red")) + 
+    geom_label(aes(label=program),size=10)
+
+
+```
+:::
+:::
+
+## El problema de las compras compulsivas {.smaller}
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+Paso 2:\
+- Seleccionar programas que ahorren costes y ofrezcan beneficios; el ahorro neto puede
+también puede añadirse al presupuesto <br> - Ahorro de costes comparado con la alternativa de no
+programa
+:::
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-width: 8
+#| fig-align: center
+
+  df_ex %>% 
+  filter(type %in% c("cp_en","cn_ep")) %>% 
+  ggplot(aes(x = qalys, y = cost)) + 
+  theme_cea() + 
+  geom_point(size=6, aes(pch=type,colour = type)) +
+  geom_quadrant_lines(linetype = "solid") +
+  #hrbrthemes::theme_ipsum(base_size=16) + 
+  theme(axis.title.x = ggplot2::element_text( size=24, angle=0),
+        axis.title.y = ggplot2::element_text(size = 24,angle=1)) + 
+  scale_x_continuous(limits = c(-max(abs(df_ex$qalys)),max(abs(df_ex$qalys))), breaks = NULL , position="top") + 
+  scale_y_continuous(limits = c(-max(abs(df_ex$cost)),max(abs(df_ex$cost))), breaks = NULL ,position = "right") +
+  labs(x = "Incremental Costs", y = "Incremental Health") + 
+  geom_dl(method = list("smart.grid",hjust=.9,cex=2,vjust=1),aes(label = glue("{label}"))) +
+  theme(legend.position ="none") +
+  scale_shape_manual(values = c(19,4,3)) + 
+  scale_colour_manual(values = c("darkgreen","red","blue")) + 
+  geom_label(aes(label=program),size = 10)
+
+
+```
+:::
+:::
+
+## El problema de las compras compulsivas {.smaller}
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+Paso 3:\
+- Clasificar otros programas en orden ascendente según su ratio coste-eficacia
+relación coste-eficacia (de menor a mayor) 
+<br> 
+- A continuación se seleccionan los programas del
+de menor a mayor coste hasta agotar el presupuesto.
+de programas seleccionados dependerá de la restricción presupuestaria
+:::
+:::
+
+::: {.column width="50%"}
+```{r}
+#| fig-width: 5
+#| fig-align: center
+
+  df_ex %>% 
+  filter(!(type %in% c("cp_en","cn_ep"))) %>% 
+  ggplot(aes(x = qalys, y = cost)) + 
+
+  #geom_point(size=6, aes(pch=type,colour = type)) +
+  geom_quadrant_lines(linetype = "solid") +
+  #hrbrthemes::theme_ipsum(base_size=16) + 
+    geom_label(aes(label=program), colour = "black") + 
+  theme(axis.title.x = ggplot2::element_text( size=24, angle=0),
+        axis.title.y = ggplot2::element_text(size = 24,angle=1)) + 
+  scale_x_continuous(limits = c(-max(abs(df_ex$qalys)),max(abs(df_ex$qalys))), breaks = NULL , position="top") + 
+  scale_y_continuous(limits = c(-max(abs(df_ex$cost)),max(abs(df_ex$cost))), breaks = NULL ,position = "right") +
+  labs(x = "Incremental Costs", y = "Incremental Health") + 
+  #geom_dl(method = list("first.points",hjust=2,cex=2),aes(label = glue("{program}"))) +
+  theme(legend.position ="none") +
+  scale_shape_manual(values = c(3))  + 
+  theme_cea() 
+  #scale_colour_manual(values = c("blue")) 
+
+
+
+```
+:::
+:::
+
+## El problema de las compras compulsivas {.smaller}
+
+Pasos 1 y 2: Descartar las opciones dominadas y seleccionar intervenciones que ahorren costes
+de ahorro <br>
+
+```{r}
+color.me.red <- which(df_ex$type == "cp_en")
+color.me.green <- which(df_ex$type == "cn_ep")
+
+df_ex %>% 
+  mutate(status = case_when(type=="cp_en" ~ "Ruled Out",
+                            type=="cn_ep" ~ "Adopted")) %>% 
+         
+         select(program,cost,qalys,status) %>% kable(col.names = c("Program","Cost","QALYs","Status"),format.args = list(big.mark = ",")) %>% 
+    kableExtra::kable_styling() %>%
+  kableExtra::row_spec(color.me.red, bold = T, color = "black", background = "#FCD2CA") %>% 
+  kableExtra::row_spec(color.me.green, bold = T, color = "black", background = "#a8d4a7")
+
+df_ex_excl <- 
+  df_ex %>%
+  mutate(status = case_when(type=="cp_en" ~ "Higher Costs, Worse Health",
+                            type=="cn_ep" ~ "Lower Costs, Better Health")) %>% 
+         
+         select(program,cost,qalys,status) %>% 
+  na.omit()
+```
+
+## El problema de las compras compulsivas {.smaller}
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+- Presupuesto inicial: \$80
+- Ahorro presupuestario: [\$20]{style="color: #a8d4a7;"}.
+- Presupuesto total: \80 dólares + 20 dólares: #a8d4a7;"} = \$100
+:::
+:::
+
+::: {.column width="50%"}
+```{r}
+
+color.me.red <- which(df_ex$type == "cp_en")
+color.me.green <- which(df_ex$type == "cn_ep")
+
+df_ex %>% 
+  mutate(status = case_when(type=="cp_en" ~ "Ruled Out",
+                            type=="cn_ep" ~ "Adopted")) %>% 
+         
+         select(program,cost,qalys,status) %>% 
+  kable(col.names = c("Program","Cost","QALYs","Status"),format.args = list(big.mark = ",")) %>% 
+  kableExtra::kable_styling() %>%
+  kableExtra::row_spec(color.me.red, bold = T, color = "black", background = "#FCD2CA") %>% 
+  kableExtra::row_spec(color.me.green, bold = T, color = "black", background = "#a8d4a7")
+
+```
+:::
+:::
+
+## El problema de las compras compulsivas {.smaller}
+
+::: columns
+::: {.column width="50%"}
+::: incremental
+- Calcular la relación coste-eficacia media.
+:::
+:::
+
+::: {.column width="50%"}
+```{r}
+
+df_ex_ <-
+  df_ex %>% 
+  filter(!(type %in% c("cp_en","cn_ep")))  %>% 
+  mutate(ce = round(cost/qalys,2))
+
+color.me.red <- which(df_ex_$type == "cp_en")
+color.me.green <- which(df_ex_$type == "cn_ep")
+
+df_ex_ %>% 
+  mutate(status = case_when(type=="cp_en" ~ "Ruled Out",
+                            type=="cn_ep" ~ "Adopted")) %>% 
+         
+         select(program,cost,qalys,ce) %>% 
+  kable(col.names = c("Program","Cost","QALYs","C/E"),format.args = list(big.mark = ",")) %>% 
+  kableExtra::kable_styling() %>%
+  kableExtra::row_spec(color.me.red, bold = T, color = "black", background = "#FCD2CA") %>% 
+  kableExtra::row_spec(color.me.green, bold = T, color = "black", background = "#a8d4a7")
+
+```
+:::
+:::
+
+## El problema de las compras compulsivas {.smaller}
+
+::: columns
+::: {.column width="50%"}
+- Calcular la relación coste-eficacia media.
+- Ordenar (por C/E) en orden ascendente .
+:::
+
+::: {.column width="50%"}
+```{r}
+
+df_ex_ <-
+  df_ex %>% 
+  filter(!(type %in% c("cp_en","cn_ep")))  %>% 
+  mutate(ce = round(cost/qalys,2)) %>% 
+  arrange(ce)
+
+color.me.red <- which(df_ex_$type == "cp_en")
+color.me.green <- which(df_ex_$type == "cn_ep")
+
+df_ex_ %>% 
+  mutate(status = case_when(type=="cp_en" ~ "Ruled Out",
+                            type=="cn_ep" ~ "Adopted")) %>% 
+         
+         select(program,cost,qalys,ce) %>% 
+  kable(col.names = c("Program","Cost","QALYs","C/E"),format.args = list(big.mark = ",")) %>% 
+  kableExtra::kable_styling() %>%
+  kableExtra::row_spec(color.me.red, bold = T, color = "black", background = "#FCD2CA") %>% 
+  kableExtra::row_spec(color.me.green, bold = T, color = "black", background = "#a8d4a7")
+
+```
+:::
+:::
+
+::: notes
+- Queremos ordenar los RATIOS de menor a mayor para la inclusión en el presupuesto
+    presupuestario, ya que cuanto más bajo sea, más eficientemente ganaremos AVAC.
+    o que obtenemos más beneficios por dólar gastado en atención sanitaria.
+:::
+
+## El problema de las compras compulsivas
+
+::: incremental
+- Calcular los costes acumulados
+- Determinar qué es adoptable en función de la restricción presupuestaria global
+    (\$100)
+- Calcular los efectos acumulados (AVAC)
+:::
+
+## El problema de las compras compulsivas {.smaller}
+
+Presupuesto: \$100
+
+```{r}
+
+budget <- 100
+
+df_ex_ <-
+  df_ex %>% 
+  filter(!(type %in% c("cp_en","cn_ep")))  %>% 
+  mutate(ce = round(cost/qalys,2)) %>% 
+  arrange(ce) %>% 
+  mutate(cumcost = cumsum(cost)) %>%
+  mutate(cumeffect=cumsum(qalys)) %>% 
+  mutate(in_budget = as.integer(cumcost<=budget))
+
+color.me.red <- which(df_ex_$in_budget==0)
+color.me.green <- which(df_ex_$in_budget == 1)
+
+df_ex_ %>% 
+  mutate(status = case_when(in_budget==0 ~ "Out of Budget",
+                            in_budget==1 ~ "Within Budget")) %>% 
+         
+         select(program,cost,qalys,ce,cumcost,cumeffect) %>% 
+  kable(col.names = c("Program","Cost","QALYs","C/E","Cumulative Cost","Cumulative QALYs"),format.args = list(big.mark = ",")) #%>% 
+  # kableExtra::kable_styling() %>%
+  # kableExtra::row_spec(color.me.red, bold = T, color = "black", background = "#FCD2CA") %>% 
+  # kableExtra::row_spec(color.me.green, bold = T, color = "black", background = "#a8d4a7")
+
+```
+
+## El problema de las compras compulsivas {.smaller}
+
+Presupuesto: \$100
+
+```{r}
+
+color.me.red <- which(df_ex_$in_budget==0)
+color.me.green <- which(df_ex_$in_budget == 1)
+
+df_ex_ %>% 
+  mutate(status = case_when(in_budget==0 ~ "",
+                            in_budget==1 ~ "")) %>% 
+         
+         select(program,cost,qalys,ce,cumcost,cumeffect) %>% 
+  kable(col.names = c("Program","Cost","QALYs","C/E","Cumulative Cost","Cumulative QALYs"),format.args = list(big.mark = ",")) %>% 
+  kableExtra::kable_styling() %>%
+  kableExtra::row_spec(color.me.red, bold = T, color = "black", background = "#FCD2CA") %>% 
+  kableExtra::row_spec(color.me.green, bold = T, color = "black", background = "#a8d4a7")
+
+```
+
+```{r}
+df_ex_[color.me.green,] %>% 
+  bind_rows(df_ex_excl %>% filter(qalys>0) %>% mutate(cost=NA,qalys=NA)) %>% 
+  summarise(Adopted=paste0(program,collapse=", "), Effect = sum(qalys,na.rm=TRUE), Threshold = max(ce,na.rm=TRUE)) %>% 
+  mutate(Budget = budget) %>% 
+  select(Budget,everything()) %>% 
+  kable() %>% 
+    kableExtra::kable_styling()
+```
+
+::: notes
+(1) Si tenemos un presupuesto de 100 dólares, entonces, basándonos en nuestras opciones de programa, podríamos financiar los programas D, E y F, con un coste acumulado de 100 dólares.
+    podríamos financiar los programas D, E y F, con un coste acumulado de 100 $.
+
+(2) El beneficio sanitario total incluiría, por término medio, 165 años de vida ajustados a la calidad ganados gracias al conjunto de estos programas.
+    años de vida ajustados a la calidad gracias al conjunto de estos programas
+
+(3) Y entonces podríamos decir que nuestro umbral de rentabilidad estaría
+    0,667 dólares por año de vida ajustado por calidad ganado.
+    en el que el presupuesto se asigna de forma "óptima" dadas las restricciones presupuestarias.
+
+(4) Más adelante hablaremos de los umbrales.
+:::
+
+## El problema de las compras compulsivas {.smaller}
+
+Presupuesto: \$150
+
+```{r}
+
+budget = 150
+
+df_ex_ <-
+  df_ex %>% 
+  filter(!(type %in% c("cp_en","cn_ep")))  %>% 
+  mutate(ce = round(cost/qalys,2)) %>% 
+  arrange(ce) %>% 
+  mutate(cumcost = cumsum(cost)) %>%
+  mutate(cumeffect=cumsum(qalys)) %>% 
+  mutate(in_budget = as.integer(cumcost<=budget))
+
+
+color.me.red <- which(df_ex_$in_budget==0)
+color.me.green <- which(df_ex_$in_budget == 1)
+
+df_ex_ %>% 
+  mutate(status = case_when(in_budget==0 ~ "",
+                            in_budget==1 ~ "")) %>% 
+         
+         select(program,cost,qalys,ce,cumcost,cumeffect) %>% 
+  kable(col.names = c("Program","Cost","QALYs","C/E","Cumulative Cost","Cumulative QALYs"),format.args = list(big.mark = ",")) %>% 
+  kableExtra::kable_styling() %>%
+  kableExtra::row_spec(color.me.red, bold = T, color = "black", background = "#FCD2CA") %>% 
+  kableExtra::row_spec(color.me.green, bold = T, color = "black", background = "#a8d4a7")
+
+```
+
+```{r}
+df_ex_[color.me.green,] %>% 
+    bind_rows(df_ex_excl %>% filter(qalys>0) %>% mutate(cost=NA,qalys=NA)) %>% 
+  summarise(Adopted=paste0(program,collapse=", "), Cost = sum(cost,na.rm=TRUE), Effect = sum(qalys,na.rm=TRUE), Threshold = max(ce,na.rm=TRUE)) %>% 
+  mutate(Budget = budget) %>% 
+  mutate(Remaining = budget - Cost) %>% 
+  select(Budget,everything()) %>% 
+  kable() %>% 
+    kableExtra::kable_styling()
+```
+
+## El problema de las compras compulsivas {.smaller}
+
+Presupuesto: \$150
+
+```{r}
+color.me.red <- which(df_ex_$in_budget==0)[-1]
+color.me.green <- which(df_ex_$in_budget == 1)
+color.me.yellow <- which(df_ex_$in_budget==0)[1]
+
+df_ex_ %>% 
+  mutate(status = case_when(in_budget==0 ~ "",
+                            in_budget==1 ~ "")) %>% 
+         
+         select(program,cost,qalys,ce,cumcost,cumeffect) %>% 
+  kable(col.names = c("Program","Cost","QALYs","C/E","Cumulative Cost","Cumulative QALYs"),format.args = list(big.mark = ",")) %>% 
+  kableExtra::kable_styling() %>%
+  kableExtra::row_spec(color.me.red, bold = T, color = "black", background = "#FCD2CA") %>% 
+  kableExtra::row_spec(color.me.green, bold = T, color = "black", background = "#a8d4a7") %>% 
+  kableExtra::row_spec(color.me.yellow, bold = T, color = "black", background = "#e3df74")
+
+```
+
+```{r}
+df_ex_[color.me.green,] %>% 
+    bind_rows(df_ex_excl %>% filter(qalys>0) %>% mutate(cost=NA,qalys=NA)) %>% 
+  summarise(Adopted=paste0(program,collapse=", "), Cost = sum(cost,na.rm=TRUE), Effect = sum(qalys,na.rm=TRUE), Threshold = max(ce,na.rm=TRUE)) %>% 
+  mutate(Budget = budget) %>% 
+  mutate(Remaining = budget - Cost) %>% 
+  select(Budget,everything()) %>% 
+  kable() %>% 
+    kableExtra::kable_styling()
+```
+
+## El problema de las compras compulsivas {.smaller}
+
+Presupuesto: \$150
+
+```{r}
+df_ex_ %>% 
+  mutate(diff = pmax(0,cumcost-budget)) %>% 
+  mutate(test = (cost-diff)/cost) %>% 
+  mutate(program = ifelse(diff==0 ,program,
+                          ifelse((cost-diff)/cost>0,
+                                 paste0(program," (",round(100*(cost-diff)/cost,1),"%)"),program))) %>% 
+  mutate(status = case_when(in_budget==0 ~ "",
+                            in_budget==1 ~ "")) %>% 
+         
+         select(program,cost,qalys,ce,cumcost,cumeffect) %>% 
+  kable(col.names = c("Program","Cost","QALYs","C/E","Cumulative Cost","Cumulative QALYs"),format.args = list(big.mark = ",")) %>% 
+  kableExtra::kable_styling() %>%
+  kableExtra::row_spec(color.me.red, bold = T, color = "black", background = "#FCD2CA") %>% 
+  kableExtra::row_spec(color.me.green, bold = T, color = "black", background = "#a8d4a7") %>% 
+  kableExtra::row_spec(color.me.yellow, bold = T, color = "black", background = "#e3df74")
+
+```
+
+```{r}
+df_ex_[c(color.me.green,color.me.yellow),]  %>% 
+  mutate(diff = pmax(0,cumcost-budget)) %>% 
+  mutate(program = ifelse(diff==0,program,paste0(program," (",round(100*(cost-diff)/cost,1),"%)"))) %>% 
+  mutate(cost = cost *(cost-diff)/cost) %>% 
+  mutate(qalys = qalys * (cost-diff)/cost) %>% 
+  mutate(cumcost = cumsum(cost),cumeffect=cumsum(qalys)) %>% 
+  bind_rows(df_ex_excl %>% filter(qalys>0) %>% mutate(cost=NA,qalys=NA)) %>% 
+  summarise(Adopted=paste0(program,collapse=", "), Cost = sum(cost,na.rm=TRUE), Effect = sum(qalys,na.rm=TRUE), Threshold = max(ce,na.rm=TRUE)) %>% 
+  
+  #summarise(Adopted=paste0(program,collapse=", "), Cost = sum(cost), Effect = sum(qalys), Threshold = max(ce)) %>% 
+  mutate(Budget = budget) %>% 
+  mutate(Remaining = budget - Cost) %>% 
+  select(Budget,everything()) %>% 
+  kable() %>% 
+    kableExtra::kable_styling()
+```
+
+::: {style="font-size: 0.8em"}
+- quedan \$50 pero el programa C cuesta \$56 (50/56 = 0,89)
+- 0,89*70 AVAC del programa C = 62,3 AVAC
+:::
+
+## Summary: El problema de las compras compulsivas
+
+#### {{< fa circle-check >}} Maximizar la eficacia neta total (beneficio para la salud)
+
+#### {{< fa circle-check >}} Ajustarse al presupuesto
+
+#### {{< fa note-sticky >}} Puede hacer lo mismo con otros objetivos (por ejemplo, minimizar costes, someter la decisión a la restricción de "beneficio mínimo", etc.)
+
+## Uso de la ACE en dos situaciones  {auto-animate="true"}
+
+::: {.fragment .highlight-grey}
+1.  **Compras compulsivas**: El problema de decisión tiene
+    programas/intervenciones.
+:::
+
+## Uso de la ACE en dos situaciones  {auto-animate="true"}
+
+2.  **Elección competitiva**: El problema de decisión tiene programas
+    programas/intervenciones para el mismo fin; estas opciones son
+    mutuamente excluyentes.
+
+## Objetivos: Problema de elección competitiva {background="#c2f0c2"}
+
+#### {{< fa circle-check >}} No se puede aplicar más de una estrategia a la vez.
+
+#### {{< fa circle-check >}} La relación coste-efectividad incremental está por debajo de un umbral de adopción preespecificado.
+
+## ¿Cuál es la diferencia?
+
+::: columns
+::: {.column width="50%"}
+**Juerga de compras**
+
+1.  Puede seleccionar varios programas
+2.  Diferentes costes y efectos asociados a cada uno
+3.  Requiere el cálculo de una *Relación coste-eficacia media*.
+:::
+
+::: {.column width="50%"}
+**Elección competidora**
+
+1.  [Los programas se excluyen mutuamente.]{style="color: rojo;"}
+2.  Diferentes costes y efectos asociados a cada uno.
+3.  3. [Requiere el cálculo de una *Relación Coste-Efectividad Incremental* (RCEI).
+    (ICER)]{style="color: red;"}
+:::
+:::
+
+# Incremental CEA {background="black"}
+
+# 1. Incremental CEA en imágenes
+
+## 1. Calcular costes y efectos incrementales
+
+::: incremental
+- A menudo, se define una estrategia que refleja la práctica actual ("statu quo", "no hacer nada", "historia natural").
+    no hacer nada", "historia natural").
+- A continuación se calculan los costes y efectos de cada estrategia en relación con el
+    respecto al statu quo.
+- Representar gráficamente la diferencia de costes y efectos con los efectos sobre la salud en el eje de abscisas y los efectos sobre los costes en el eje de ordenadas.
+    en el eje de abscisas y los efectos en los costes en el eje de ordenadas.
+:::
+
+## 1. Calcular el coste y los efectos {.smaller auto-animate="true"}
+
+![](images/vis_icer1.png){fig-align="center"}
+
+## Identificar las estrategias dominadas {.smaller auto-animate="true"}
+
+::: nonincremental
+- Podemos descartar cualquier estrategia que resulte en menos salud a mayor
+    coste.
+:::
+
+## Identificar Estrategias Dominadas {.smaller auto-animate="true"}
+
+![](images/vis_icer2.png){fig-align="center"}
+
+## Identificar Estrategias Dominadas {.smaller auto-animate="true"}
+
+::: incremental
+- También podemos descartar estrategias en las que *alguna otra estrategia competidora
+    estrategia* resulta en más (o igual) salud a menor (o igual)
+    coste.
+- Esto se conoce como dominancia "fuerte".
+:::
+
+## Identificar Estrategias Dominadas {.smaller auto-animate="true"}
+
+![](images/vis_icer3.png){fig-align="center"}
+
+## Identificar Estrategias Dominantes {.smaller auto-animate="true"}
+
+![](images/vis_icer4.png){fig-align="center"}
+
+## ¿Y la estrategia B? {.smaller auto-animate="true"}
+
+![](images/vis_icer5.png){fig-align="center"}
+
+## Estrategias híbridas
+
+::: incremental
+- Supongamos que es factible implementar parcialmente las estrategias **A** y
+    **D**.
+    - Por ejemplo, podríamos implementar **A** para el 90% de la población
+        y **D** para el 10% de la población, o viceversa.
+:::
+
+## 90% A, 10% D
+
+![](images/vis_icer6a.png){fig-align="center"}
+
+## 10% A, 90% D
+
+![](images/vis_icer6b.png){fig-align="center"}
+
+## 50% A, 50% D {.smaller auto-animate="true"}
+
+- ¿Podemos hacer alguna afirmación sobre **B** ahora?
+
+![](images/vis_icer6c.png){fig-align="center"}
+
+## Dominancia Extendida (Débil) {.smaller auto-animate="true"}
+
+- **B** se descarta por dominancia extendida ("débil").
+
+![](images/vis_icer7.png){fig-align="center"}
+
+## Dominancia extendida (débil) {.smaller auto-animate="true"}
+
+![](images/vis_icer8.png){fig-align="center"}
+
+## Frontera de Eficiencia {.smaller auto-animate="true"}
+
+::: no incremental
+- La frontera de eficiencia es el conjunto de estrategias no dominadas.
+:::
+
+![](images/vis_icer9.png){fig-align="center"}
+
+## ICERs {.smaller auto-animate="true"}
+
+- La pendiente de una línea que une dos puntos es la relación coste-eficacia
+    coste-efectividad incremental comparando esas estrategias. Más
+    más adelante
+
+![](images/vis_icer10.png){fig-align="center"}
+
+# 2. CEA incremental en tablas
+
+## CEA incremental {.smaller auto-animate="true"}
+
+</br> </br> </br> </br> </br>
+
+::: {.callout-important appearance="simple"}
+Tenga en cuenta que el siguiente ejemplo utiliza estrategias y
+¡valores que el ejemplo utilizado en las imágenes anteriores!
+:::
+
+## CEA incremental {.smaller auto-animate="true"}
+
+::: incremental
+1.  Calcular los costes y efectos de cada estrategia.
+
+2.  Ordenar la tabla por costes en orden ascendente.[^1]
+
+3.  Calcular la ICER en función de la diferencia de costes y efectos.
+
+4.  Determinar las estrategias dominadas (ICER<0).
+
+5.  Volver a calcular las RCEI tras eliminar las estrategias dominadas.
+
+6.  Determinar las estrategias descartadas por dominancia extendida.
+
+7.  Volver a calcular las RCEI tras descartar todas las estrategias dominadas.
+
+8.  Repetir 5-7 según sea necesario.
+:::
+
+[^1]: La menos costosa primero, la más costosa después
+
+## CEA incremental {.smaller auto-animate="true"}
+
+::: columns
+::: {.column width="50%"}
+[1. Calcular los costes y efectos de cada estrategia.]{.fragment
+.highlight-red}
+:::
+
+::: {.column width="50%"}
+:::
+:::
+
+```{r}
+df %>% kable(col.names = c("Strategy","Cost","QALYs"),format.args = list(big.mark = ","),digits = 3) %>% 
+  kable_styling()
+```
+
+## CEA incremental {.smaller auto-animate="true"}
+
+::: columnas
+::: {.column width="50%"}
+1.  Calcular costes y efectos para cada estrategia.
+
+[2. Ordenar la tabla por costes en orden ascendente.]{.fragment
+.highlight-red}[^2]
+:::
+
+::: {.column width="50%"}
+:::
+:::
+
+[^2]: [Menos costoso primero, más costoso último]{.fragment .highlight-red}
+
+```{r}
+df_s %>% kable(col.names = c("Strategy","Cost","QALYs"),format.args = list(big.mark = ","),digits = c(1,0,3)) %>% 
+  kable_styling()
+```
+
+## CEA incremental  {.smaller auto-animate="true"}
+
+::: columns
+::: {.column width="50%"}
+1.  Calcule los costes y efectos de cada estrategia.
+
+2.  Ordenar la tabla por costes en orden ascendente.[^3]
+
+[3. Calcular la ICER en función de la diferencia de costes y efectos.]{.fragment
+.highlight-red}
+:::
+
+::: {.column width="50%"}
+:::
+:::
+
+[^3]: El menos costoso primero, el más costoso último
+
+```{r}
+df_i2 %>% select(-status) %>% kable(col.names = c("Strategy","Cost","dCost","QALYs","dQALYs","ICER"),format.args = list(big.mark = ","), digits = c(1,0,0,3,3,0)) %>% 
+  kable_styling() %>% 
+  column_spec(c(3,5), background = "yellow")
+```
+
+## Incremental CEA {.smaller auto-animate="true"}
+
+::: columns
+::: {.column width="50%"}
+1.  Calcular costes y efectos para cada estrategia.
+
+2.  Ordena la tabla por costes en orden ascendente[^4].
+
+3.  3. Calcular la ICER en función de la diferencia de costes y efectos.
+:::
+
+::: {.column width="50%"}
+[4. Determinar estrategias dominadas (ICER<0)]{.fragment .highlight-red}
+:::
+:::
+
+[^4]: El menos costoso primero, el más costoso último
+
+```{r}
+# color.me <- which(df_i2$status == "Dominated")
+# df_i2  %>% kable(col.names = c("Strategy","Cost","dCost","QALYs","dQALYs","ICER",""),format.args = list(big.mark = ",")) %>% 
+#   kable_styling() %>%
+#   row_spec(color.me, bold = T, color = "black", background = "#FCD2CA")
+```
+
+## Determinar Estrategias Dominadas {.smaller auto-animate="true"}
+
+::: incremental
+- Echemos un vistazo a nuestra tabla.
+- Observe que la estrategia E tiene una ICER **negativa**. ¿A qué se debe?
+- La estrategia E aumenta los costes pero reduce los AVAC.
+- Por lo tanto, nos iría mejor seleccionando la estrategia C (obtendríamos
+    más beneficios para la salud por menos dinero...)
+:::
+
+```{r}
+color.me <- which(df_i2$status == "Dominated")
+df_i2  %>% 
+  mutate(status = "") %>% 
+  kable(col.names = c("Strategy","Cost","dCost","QALYs","dQALYs","ICER",""),format.args = list(big.mark = ","),
+        digits = c(0,0,0,3,3,0)) %>% 
+  kable_styling() %>%
+  row_spec(color.me, bold = T, color = "black", background = "#FCD2CA")
+```
+
+## Determinar Estrategias Dominadas {.smaller auto-animate="true"}
+
+::: incremental
+- **La dominancia fuerte** se refiere a situaciones en las que una estrategia es
+    preferida sobre otra tanto en costes como en efectos sobre la salud (p. ej., AVAC),
+    AVAC).
+- Cuando identificamos una opción fuertemente dominante, la eliminamos de la tabla y volvemos a calcular el ICERS.
+    tabla y volvemos a calcular el ICERS basándonos en las estrategias restantes.
+:::
+
+```{r}
+color.me <- which(df_i2$status == "Dominated")
+df_i2  %>% 
+  kable(col.names = c("Strategy","Cost","dCost","QALYs","dQALYs","ICER",""),format.args = list(big.mark = ","),digits = c(0,0,0,3,3,0)) %>% 
+  kable_styling() %>%
+  row_spec(color.me, bold = T, color = "black", background = "#FCD2CA")
+```
+
+## Breve comentario sobre las ICER negativas
+
+- Queremos descartar las estrategias que cuestan *más* pero dan como resultado menos
+    salud.
+    - Esto implica una RCEI negativa.
+- Pero, ¿qué otro escenario daría lugar a una RCEI negativa?
+    - La estrategia aumenta la salud pero reduce los costes.
+    - Es una gran estrategia.
+
+## Ambas estrategias tienen un ICER negativo
+
+![](images/vis_icer-negative.png){fig-align="center"}
+
+## Un breve comentario sobre las RCEI negativas
+
+- Por esta razón, es una mala práctica informar de las ICER negativas.
+- Tenga cuidado al eliminar una estrategia porque tiene una RCEI negativa.
+    - Puede que sea una gran estrategia.
+
+## Incremental CEA {.smaller auto-animate="true"}
+
+::: columnas
+::: {.column width="50%"}
+1.  Calcular costes y efectos para cada estrategia.
+
+2.  Ordena la tabla por costes en orden ascendente[^5].
+
+3.  3. Calcular la ICER en función de la diferencia de costes y efectos.
+:::
+
+::: {.column width="50%"}
+[4. Determinar estrategias dominadas (ICER<0)]{.fragment .highlight-red}
+:::
+:::
+
+[^5]: La menos costosa primero, la más costosa después
+
+```{r}
+color.me <- which(df_i2$status == "Dominated")
+df_i2  %>% kable(col.names = c("Strategy","Cost","dCost","QALYs","dQALYs","ICER",""),format.args = list(big.mark = ","), digits = c(0,0,0,3,3,0)) %>% 
+  kable_styling() %>%
+  row_spec(color.me, bold = T, color = "black", background = "#FCD2CA")
+```
+
+## Incremental CEA {.smaller auto-animate="true"}
+
+::: columnas
+::: {.column width="50%"}
+1.  Calcular costes y efectos para cada estrategia.
+
+2.  Ordena la tabla por costes en orden ascendente[^6].
+
+3.  3. Calcular la ICER en función de la diferencia de costes y efectos.
+:::
+
+::: {.column width="50%"}
+4.  Determinar estrategias dominadas (ICER<0).
+
+[5. 5. Volver a calcular las RCEI tras eliminar las estrategias dominadas.
+dominadas.]{.fragment .highlight-red}
+:::
+:::
+
+[^6]: La menos costosa primero, la más costosa después
+
+```{r}
+
+color.me <- which(df_i2$status == "Dominated")
+df_i2  %>% mutate(d_cost = ifelse(status %in% c("Dominated","Dominated (Extended)"), NA, d_cost)) %>%
+  mutate(d_effect = ifelse(status %in% c("Dominated","Dominated (Extended)"), NA, d_effect))  %>%
+  kable(col.names = c("Strategy","Cost","dCost","QALYs","dQALYs","ICER",""),format.args = list(big.mark = ","), digits = c(0,0,0,3,3,0,0)) %>%
+  kable_styling() %>%
+  row_spec(color.me, bold = T, color = "black", background = "#FCD2CA")
+```
+
+## Incremental CEA {.smaller auto-animate="true"}
+
+::: columnas
+::: {.column width="50%"}
+1.  Calcular costes y efectos para cada estrategia.
+
+2.  Ordena la tabla por costes en orden ascendente[^7].
+
+3.  3. Calcular la ICER en función de la diferencia de costes y efectos.
+:::
+
+::: {.column width="50%"}
+4.  Determinar las estrategias dominadas (ICER<0).
+
+5.  Vuelva a calcular los ICER tras eliminar las estrategias dominadas.
+:::
+:::
+
+[^7]: La menos costosa primero, la más costosa después
+
+```{r}
+color.me <- grep("DominatedXXXXX",df_i3$status)
+df_i3  %>% 
+  mutate(status = "") %>% 
+  kable(col.names = c("Strategy","Cost","dCost","QALYs","dQALYs","ICER",""),format.args = list(big.mark = ","), digits = c(0,0,0,3,3,0)) %>% 
+  kable_styling() %>%
+  row_spec(color.me, bold = T, color = "black", background = "#FCD2CA")
+```
+
+## Determinar Estrategias Dominadas {.smaller auto-animate="true"}
+
+::: incremental
+- Aún no hemos terminado
+- ¿Notamos algo raro en la estrategia B?
+- Su ICER es **mayor** que la siguiente alternativa más costosa
+    (estrategia D)
+:::
+
+```{r}
+color.me <- grep("B",df_i3$strategy)
+df_i3  %>% 
+  mutate(status = "") %>% 
+  kable(col.names = c("Strategy","Cost","dCost","QALYs","dQALYs","ICER",""),format.args = list(big.mark = ","), digits = c(0,0,0,3,3,0)) %>% 
+  kable_styling() %>%
+  row_spec(color.me, bold = T, color = "black", background = "#e5f536")
+```
+
+## Determinar Estrategias Dominadas {.smaller auto-animate="true"}
+
+- Un signo revelador de dominancia extendida en una tabla (ordenada) de ACE es una
+    estrategia con un ICER mayor que la siguiente opción más cara.
+
+```{r}
+color.me <- grep("Dominated",df_i3$status)
+df_i3  %>% 
+  kable(col.names = c("Strategy","Cost","dCost","QALYs","dQALYs","ICER",""),format.args = list(big.mark = ","), digits = c(0,0,0,3,3,0,0)) %>% 
+  kable_styling() %>%
+  row_spec(color.me, bold = T, color = "black", background = "#FCD2CA")
+```
+
+## Determinar Estrategias Dominadas {.smaller auto-animate="true"}
+
+::: nonincremental
+- Esto también se puede ver en las imágenes ....
+:::
+
+![](images/vis_icer11.png){fig-align="center"}
+
+## CEA incremental {.smaller auto-animate="true"}
+
+::: columnas
+::: {.column width="50%"}
+1.  Calcular costes y efectos para cada estrategia.
+
+2.  Ordena la tabla por costes en orden ascendente[^8].
+
+3.  3. Calcular la ICER en función de la diferencia de costes y efectos.
+:::
+
+::: {.column width="50%"}
+4.  Determinar las estrategias dominadas (ICER<0).
+
+5.  5. Volver a calcular los ICER tras eliminar las estrategias dominadas.
+
+[6. Determinar las estrategias descartadas por dominancia extendida.]{.fragment
+.highlight-red}
+:::
+:::
+
+[^8]: La menos costosa primero, la más costosa al final
+
+```{r}
+color.me <- grep("Dominated",df_i3$status)
+df_i3  %>% 
+  kable(col.names = c("Strategy","Cost","dCost","QALYs","dQALYs","ICER",""),format.args = list(big.mark = ","), digits = c(0,0,0,3,3,0,0)) %>% 
+  kable_styling() %>%
+  row_spec(color.me, bold = T, color = "black", background = "#FCD2CA")
+```
+
+## Incremental CEA {.smaller auto-animate="true"}
+
+::: columnas
+::: {.column width="50%"}
+[7. Vuelva a calcular los ICER después de descartar todas las estrategias dominadas.
+dominadas.]{.fragment .highlight-red}
+:::
+
+::: {.column width="50%"}
+:::
+:::
+
+```{r}
+color.me <- grep("Dominated",df_i4$status)
+df_i4  %>% kable(col.names = c("Strategy","Cost","dCost","QALYs","dQALYs","ICER",""),format.args = list(big.mark = ","), digits = c(0,0,0,3,3,0,0)) %>% 
+  kable_styling() %>%
+  row_spec(color.me, bold = T, color = "black", background = "#FCD2CA")
+```
+
+::: {style="font-size: 0.8em"}
+- La Estrategia D es más cara que la Estrategia B, pero la Estrategia D está
+    gana salud DE FORMA MÁS EFICAZ que la Estrategia B
+:::
+
+## In-class practice: DALYs {.smaller}
+
+**Nine** different prophylaxis to prevent someone with HIV from
+acquiring opportunistic infections related to AIDS
+
+::: {style="font-size: 0.8em"}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+df <- 
+  tibble::tribble(
+                                          ~Strategy,      ~Cost, ~DALYs,
+                                   "No prophylaxis",  40288,  0,
+                                          "TMP-SMX",  44786,  2.56,
+                            "TMP-SMX, azithromycin",  45944,  3.04,
+                             "TMP-SMX, fluconazole",  47046,  3.01,
+               "TMP-SMX, azithromycin, fluconazole",  48596,   3.6,
+                             "TMP-SMX, ganciclovir",  54628,   3.2,
+               "TMP-SMX, azithromycin, ganciclovir",  56812,  3.83,
+                "TMP-SMX, fluconazole, ganciclovir",  58082,   3.8,
+  "TMP-SMX, azithromycin, fluconazole, ganciclovir",  61119,  4.62
+  ) %>% 
+  mutate(DALYs = 9.5 - DALYs) %>% 
+  mutate(iCost = c(0,diff(Cost))) %>% 
+  mutate(DALYs_averted = -c(0,diff(DALYs))) %>% 
+  select(Strategy, Cost, iCost,DALYs, everything())
+
+df %>% 
+  select(-DALYs_averted,-iCost) %>% 
+  kable(col.names = c("Strategy","Cost","DALYs"),format.args = list(big.mark = ",")) %>% 
+  kable_styling()
+```
+:::
+
+## Calcular los costes incrementales y los DALY evitados  {.smaller}
+
+::: {style="font-size: 0.8em"}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+df %>% 
+  kable(col.names = c("Strategy","Cost","Incremental Cost","DALYs","DALYs Averted"),format.args = list(big.mark = ",")) %>% 
+  kable_styling() %>% 
+  column_spec(c(3,5), background = "yellow")
+```
+:::
+
+## Calcular los costes incrementales y los DALY evitados  {.smaller}
+
+::: {style="font-size: 0.8em"}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+df %>% 
+  select(-Cost,-DALYs) %>% 
+  mutate(iCost_per_DALY_averted = round(iCost/DALYs_averted,0)) %>% 
+  kable(col.names = c("Strategy","Incremental Cost","DALYs Averted", "Incremental Cost per DALY Averted"),
+        format.args = list(big.mark = ",")) %>%
+  kable_styling() %>% 
+    column_spec(c(4), background = "yellow")
+```
+:::
+
+## Determinar las estrategias dominadas {.smaller}
+
+::: {style="font-size: 0.7em"}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+df1 <- 
+  df %>% 
+  mutate(cost_per_daly_averted = iCost/DALYs_averted) %>% 
+  mutate(status = ifelse(cost_per_daly_averted <0 , "Dominated (Strong)","")) %>% 
+  mutate(status = ifelse(is.na(status),"",status)) 
+
+color.me.red <- which(df1$status == "Dominated (Strong)")
+
+df1 %>% 
+  mutate(cost_per_daly_averted = round(cost_per_daly_averted,0)) %>% 
+    select(-Cost,-DALYs) %>% 
+  kable(col.names = c("Strategy","Incremental Cost","DALYs Averted", "Incremental Cost per DALY Averted", "Status"),format.args = list(big.mark = ",")) %>%
+  kable_styling() %>% 
+  row_spec(color.me.red, bold = T, color = "black", background = "#FCD2CA")
+```
+:::
+
+# Eliminar estrategias dominadas y recalcular
+
+## Determinar estrategias dominadas {.smaller}
+
+::: {style="font-size: 0.7em"}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+df2 <- 
+  df1 %>% 
+  group_by(status) %>% 
+  nest()  %>% 
+  filter(status=="") %>% 
+  unnest(cols = c(data)) %>% 
+  arrange(Cost) %>% 
+  mutate(iCost = c(0,diff(Cost))) %>% 
+  mutate(DALYs_averted = -c(0,diff(DALYs))) %>% 
+  mutate(cost_per_daly_averted = iCost/DALYs_averted) %>% 
+  mutate(status = ifelse(cost_per_daly_averted <0 , "Dominated (Strong)","")) %>% 
+  mutate(status = ifelse(cost_per_daly_averted > lead(cost_per_daly_averted), "Dominated (Extended)",status)) %>% 
+  mutate(status = ifelse(is.na(status),"",status)) %>% 
+  ungroup()
+
+df2 %>% 
+  select(Strategy,Cost,iCost,DALYs,DALYs_averted) %>% 
+  kable(col.names = c("Strategy","Cost","Incremental Cost","DALYs","DALYs Averted"),format.args = list(big.mark = ",")) %>% 
+  kable_styling()
+```
+:::
+
+## Determinar estrategias dominadas {.smaller}
+
+
+::: {style="font-size: 0.7em"}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+color.me.red <- which(df2$status == "Dominated (Strong)" | df2$status == "Dominated (Extended)")
+
+df2 %>% 
+  mutate(cost_per_daly_averted = round(cost_per_daly_averted,0)) %>% 
+  select(Strategy,iCost,DALYs_averted,cost_per_daly_averted,status) %>% 
+  kable(col.names = c("Strategy","Incremental Cost","DALYs Averted", "Incremental Cost per DALY Averted", "Status"),format.args = list(big.mark = ",")) %>%
+  kable_styling() %>% 
+  row_spec(color.me.red, bold = T, color = "black", background = "#FCD2CA")
+```
+:::
+
+# Eliminar estrategias dominadas y recalcular
+
+## Determinar estrategias dominadas {.smaller}
+
+## Determinar estrategias dominadas {.smaller}
+
+
+::: {style="font-size: 0.7em"}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+df3 <- 
+  df2 %>% 
+  group_by(status) %>% 
+  nest()  %>% 
+  filter(status=="") %>% 
+  unnest(cols = c(data)) %>% 
+  arrange(Cost) %>% 
+  mutate(iCost = c(0,diff(Cost))) %>% 
+  mutate(DALYs_averted = -c(0,diff(DALYs))) %>% 
+  mutate(cost_per_daly_averted = iCost/DALYs_averted) %>% 
+  mutate(status = ifelse(cost_per_daly_averted <0 , "Dominated (Strong)","")) %>% 
+  mutate(status = ifelse(cost_per_daly_averted > lead(cost_per_daly_averted), "Dominated (Extended)",status)) %>% 
+  mutate(status = ifelse(is.na(status),"",status)) %>% 
+  ungroup()
+
+df3 %>% 
+  select(Strategy,Cost,iCost,DALYs,DALYs_averted) %>% 
+  kable(col.names = c("Strategy","Cost","Incremental Cost","DALYs","DALYs Averted"),format.args = list(big.mark = ",")) %>% 
+  kable_styling()
+```
+:::
+
+## Determinar estrategias dominadas {.smaller}
+
+::: {style="font-size: 0.7em"}
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+
+color.me.red <- which(df3$status == "Dominated (Strong)" | df3$status == "Dominated (Extended)")
+
+df3 %>% 
+  mutate(cost_per_daly_averted = round(cost_per_daly_averted,0)) %>% 
+ select(Strategy,iCost,DALYs_averted,cost_per_daly_averted,status) %>% 
+  kable(col.names = c("Strategy","Incremental Cost","DALYs Averted", "Incremental Cost per DALY Averted", "Status"),format.args = list(big.mark = ",")) %>%
+  kable_styling() %>% 
+  row_spec(color.me.red, bold = T, color = "black", background = "#FCD2CA")
+```
+:::
+
+## Tabla Final {.smaller}
+
+::: {style="font-size: 0.7em"}
+```{r}
+df4 <- 
+  df3 %>%
+  bind_rows(df1 %>%
+              group_by(status) %>%
+              nest()  %>%
+              filter(status != "") %>%
+              unnest(cols = c(data))) %>%
+ bind_rows(df2 %>%
+              group_by(status) %>%
+              nest()  %>%
+              filter(status != "") %>%
+              unnest(cols = c(data))) %>%  
+  mutate(cost_per_daly_averted = ifelse(status=="",cost_per_daly_averted,NA)) %>% 
+  select(Strategy, iCost, DALYs_averted, cost_per_daly_averted, status)
+
+color.me.red <- which(df4$status == "Dominated (Strong)" | df4$status == "Dominated (Extended)")
+
+df4 %>% 
+  mutate(cost_per_daly_averted = round(cost_per_daly_averted,0)) %>% 
+  kable(col.names = c("Strategy","Incremental Cost","DALYs Averted", "Incremental Cost per DALY Averted", "Status"),format.args = list(big.mark = ",")) %>%
+  kable_styling() %>% 
+  row_spec(color.me.red, bold = T, color = "black", background = "#FCD2CA") 
+
+```
+:::
+
+## Una nota sobre los COMPARADORES
+
+![](images/comparator1.png){width="564"}
+
+::: notes
+- Los comparadores son REALMENTE IMPORTANTES.
+- Lo ideal es identificar TODAS LAS POSIBLES intervenciones aplicables
+    al problema, incluida la opción de "no hacer nada".
+:::
+
+## Una nota sobre los COMPARADORES
+
+![](images/comparator2.png){width="527"}
+
+# ¿Dónde trazar la línea? {background="#43464B"}
+
+::: notas
+- Lo que CEA no puede decirnos es CÓMO GASTAR
+:::
+
+## Umbrales CEA
+
+::: incremental
+- Ya tenemos nuestros ICER, pero ¿cómo tomamos una decisión?
+- Debemos definir un **umbral** ($\lambda$), o un valor de ICER que
+    que determina si aplicamos o no una estrategia determinada.
+    - También se conoce como umbral de "disposición a pagar" (DAP).
+:::
+
+## Umbrales CEA
+
+¿Qué son los umbrales habituales y cómo se determinan?
+
+::: incrementales
+- En los países de renta alta, los umbrales habituales son \$50.000/QALY,
+    \100.000 $/QALY y 100.000 $/QALY.
+- En los PIBM, 0,5-3 veces el producto interior bruto (PIB) per cápita por AVAD evitado.
+    evitado.
+- Más información en unos minutos.
+:::
+
+## ¿Cómo orientan los umbrales del ACE la toma de decisiones?
+
+![](images/vis_wtp.png){fig-align="center" width="469"}
+
+## ¿Cómo orientan los umbrales del CEA la toma de decisiones?
+
+![](images/vis_wtp2.png){fig-align="center" width="469"}
+
+## ¿Cómo guían los umbrales del CEA la toma de decisiones?
+
+![](images/thresholds1.png){fig-align="center" width="469"}
+
+::: notas
+(1) ¿Cómo sabemos si algo es "de alto valor" frente a "de bajo valor" o "sin valor"?
+    o "sin valor"?
+
+(2) Supongamos que comparamos la vacunación antigripal con la no vacunación &
+    que nuestra relación coste-eficacia arroja un precio por unidad de beneficio de
+    \90.000 $ / AVAC ganado
+
+(3) [PREGUNTA A CLASE] - ¿Se consideraría esto de "alto valor"?
+
+(4) Este precio debe compararse con un valor de referencia o umbral que represente
+    lo que la sociedad está dispuesta a pagar por las mejoras sanitarias o los
+    costes de oportunidad asociados al desplazamiento de intervenciones dentro de un
+    presupuesto fijo
+
+(5) En EE.UU., el valor de referencia se sitúa en torno a los 100.000 $/QALY, según las estimaciones de la
+    estimaciones de la disposición a pagar
+
+(6) El valor supuesto de un umbral es realmente importante porque
+    determina en última instancia cómo debe invertir la sociedad en atención, lo que
+    que, en última instancia, repercute en la salud general de la población.
+
+(7) Todo lo que supere este umbral se considerará coste-efectivo
+    (atención de bajo valor)
+
+(8) Todo lo que esté por debajo se considerará de alto valor (ganar cada
+    años de vida ajustados por calidad a un coste menor).
+
+(9) Todo lo que se sitúe a la izquierda se considerará atención de valor NULO.
+
+(10) Esto es muy importante porque... \*\*\*Los recursos invertidos en intervenciones de bajo
+     o sin valor podrían aplicarse mejor a estrategias de prevención y
+     estrategias de prevención y tratamiento más eficaces que
+     la salud de la población.
+:::
+
+## CEA Thresholds {.smaller}
+
+![](images/vis_icer12.png){fig-align="center"}
+
+## CEA Thresholds {.smaller}
+
+![](images/vis_icer13.png){fig-align="center"}
+
+## CEA Thresholds {.smaller}
+
+![](images/vis_icer14.png){fig-align="center"}
+
+## CEA Thresholds {.smaller}
+
+![](images/thokala.png)
+
+Se han estimado los umbrales de diferentes maneras: - "del lado de la oferta" (Reino Unido y
+Europa) - "del lado de la demanda" (EE.UU.) - consumo per cápita (EE.UU./LMICs)
+
+Notas
+(1) Hay diferentes formas de determinar un umbral rentable &
+    se hace de forma un poco diferente en todo el mundo, de lo que hablamos en
+    un artículo reciente en el que colaboré con colegas del Reino Unido, en el que se analiza
+    la evolución de estos umbrales.
+
+(2) Algunos países, como el Reino Unido, utilizan lo que se ha dado en llamar "umbral de la oferta".
+    "umbral de la oferta", que representa la noción de coste de oportunidad.
+    coste de oportunidad: si la salud generada por una intervención
+    intervención del NICE, por ejemplo, es mayor que la salud
+    si el dinero se hubiera gastado en otra cosa.
+    otra cosa, con un presupuesto fijo.
+
+(3) Otra forma en que países como EE.UU. han definido los umbrales de EC es
+    lo que se denomina una perspectiva del "lado de la demanda", o la
+    la "disposición a pagar" de la sociedad por las mejoras sanitarias. Sigue habiendo un coste de oportunidad
+    pero desde la perspectiva de los bienes y servicios que estaríamos
+    y servicios a los que estaríamos dispuestos a renunciar por esos beneficios
+    salud.
+
+(4) Asimismo, otra forma en que los países han considerado el umbral
+    en términos de consumo per cápita, de acuerdo con la idea de que
+    de que las personas que viven en países con mayores ingresos pueden y están dispuestas a pagar más por la salud.
+    pagar más por la salud, lo que tiene un sentido intuitivo.
+:::
+
+## Coste de oportunidad ("del lado de la oferta") {.smaller}
+
+<br>
+
+::: incremental
+- La decisión debe basarse en el valor de aquello a lo que se renunciará como
+    consecuencia de ese coste.
+
+    - Se conoce como "coste de oportunidad".
+
+- Si se comprometen recursos para financiar una intervención, entonces
+    no están disponibles para financiar y realizar otras **(shopping spree
+    de compras)**.
+
+- El coste de oportunidad de un compromiso de recursos es la salud
+    El coste de oportunidad de un compromiso de recursos es la salud a la que se renuncia porque esas "otras" intervenciones de las que dispone el sistema sanitario no pueden llevarse a cabo.
+    disponibles para el sistema sanitario.
+
+- Fuente: Véase K Claxton sobre la estimación del umbral NICE en el
+    Reino Unido / Woods et al, & otros
+:::
+
+## Coste de oportunidad ("del lado de la oferta") {.smaller}
+
+![](images/thresholds2.png)
+
+::: notas
+(1) Esta es la estimación de la CEA más cercana a la "oferta" a la que se ha acercado EE.UU.
+    a
+(2) Esta simulación examinó el coste de oportunidad atribuido a las personas que
+    que abandonan el seguro médico debido al aumento de las primas
+    (lo que suele ocurrir cuando los costes de intervención son muy elevados: a menudo son los consumidores los que soportan la carga).
+    suelen ser los consumidores los que soportan la carga)
+(3) Los autores concluyeron que el umbral debería situarse en torno a los 100.000 $/QALY
+    (que es lo que se suele utilizar en Estados Unidos).
+(4) Pero los académicos británicos sostienen que no se trata de un coste de oportunidad real
+    de oportunidad porque no evalúa el coste de oportunidad de
+    por otras alternativas más eficaces (pero a menudo más costosas).
+    costosas).
+
+- ya sea dentro del sector sanitario o desplazando otros programas en
+    otros sectores debido a lo mucho que gastamos en sanidad
+- y hay muchas otras cosas que considerar, como el efecto del aumento de los costes sanitarios en los copagos de los pacientes, las esperas, etc.
+    en los copagos de los pacientes, los tiempos de espera, la generosidad de los planes de las empresas o en los seguros públicos.
+    los planes de las empresas o los seguros públicos.
+:::
+
+## Coste de oportunidad ("del lado de la oferta") {.smaller}
+
+<br>
+
+::: {style="font-size: 0.8em"}
+> Si no se tiene en cuenta el presupuesto con el que se opera, entonces
+> algunos medicamentos podrían ocupar la mitad del presupuesto y desplazar
+> intervenciones que producen beneficios significativos para la salud.
+> aumentar las primas o quitar dinero a otros sectores.
+
+> Los académicos han argumentado que el umbral debería ser más bajo o más conservador para los medicamentos más caros.
+> El NICE utiliza un umbral de impacto presupuestario de 20.000 libras esterlinas.
+> (NICE utiliza un umbral de impacto presupuestario de 20.000 GBP/QALY para estas terapias de precio más elevado, frente a 30.000 GBP/QALY).
+> frente a 30.000 GBP/QALY para otras)
+:::
+
+## Disposición a pagar ("del lado de la demanda")
+
+![](images/thresholds3.png)
+
+::: notas
+(1) Dado que nuestro sistema sanitario es más complicado y no tenemos
+    y no tenemos necesariamente un presupuesto "fijo", los EE.UU. han
+    los umbrales en función de lo que se suele denominar
+    criterios de "demanda" o "disposición a pagar", que también puede
+    representarse como la disposición a renunciar a otros tipos de consumo
+    para mejorar la salud.
+
+(2) Esta disposición a pagar se ha derivado de encuestas y también de lo que
+    Medicare ha estado dispuesto a pagar por intervenciones
+
+(3) Hay quien sostiene que conocer la disposición a pagar de una población es importante, sobre todo en un estudio único.
+    población es importante, sobre todo en un sistema de pagador único financiado
+    que se financia a través de la seguridad social.
+    la toma de decisiones
+
+(4) Pero existe una enorme variación en los estudios sobre la disposición a pagar.
+    de los estudios sobre la disposición a pagar.
+    vida (mayor VDP).
+
+(5) Esta breve perspectiva ofrece una visión general de los umbrales
+    umbrales que hemos utilizado en EE.UU. en el pasado y en qué se basan
+    en qué se basan (han sido en gran medida arbitrarios).
+    recomendamos su lectura
+:::
+
+## CEA Thresholds in LMICs
+
+![](images/thresholds4.png)
+
+::: notas
+(1) Otros umbrales que han utilizado los países se basan en el PIB per cápita.
+    PIB per cápita; principalmente el umbral de 1-3X PIB per cápita
+
+(2) Aunque este intervalo de umbrales se corresponde aproximadamente con lo que se ha convertido en
+    convención para los países de renta alta (1X PIB per cápita en EE.UU. es
+    60.000 dólares y 3 veces ese valor es el límite superior que utilizamos.
+    50.000 como límite inferior, 100.000 como base y 150.000 como límite superior).
+    como extremo superior)
+
+(3) PERO el consumo per cápita en los países más ricos supera el consumo per cápita en los países de renta baja y media.
+    per cápita de los países de renta baja y media en uno o dos órdenes de magnitud.
+    órdenes de magnitud y, por tanto, algunos analistas sostienen que
+    el gasto sanitario debería representar una parte menor del PIB per cápita
+    per cápita en los países de renta baja y media.
+:::
+
+## CEA Thresholds in LMICs {.smaller} (Umbrales de CEA en PIBM)
+
+<br>
+
+::: incremental
+- Las anteriores directrices de la OMS recomendaban a los países utilizar las siguientes pautas:
+    Una intervención es coste-efectiva si el coste/ AVAD evitado es inferior a
+    1-3 veces el PIB per cápita del país
+- Algunos han argumentado que las directrices de la OMS pueden ser demasiado altas y dar lugar a
+    la adopción de intervenciones que desplacen a servicios
+    que proporcionan mayores beneficios sanitarios.
+- Sugieren que 0,5 PIBpc es un valor de referencia más apropiado para los países de renta baja y 0,71 PIBpc para los de renta media.
+    bajos y 0,71 PIBpc para los países de ingresos medios (véase Woods et
+    al 2016)
+:::
+
+::: notas
+(1) Los analistas también han argumentado que el umbral debería ser más bajo para
+    estos países basándose en una perspectiva de presupuesto sanitario
+
+(2) En Perú, por ejemplo, un estudio halló que la adición de un tratamiento del cáncer de mama
+    de mama podría ser rentable según el criterio general de 1 a 3 veces el PIB per cápita.
+    per cápita; sin embargo, el coste de añadir el nuevo fármaco superaría el presupuesto total de Perú para el cáncer de mama.
+    superaría todo el presupuesto de Perú para el tratamiento del cáncer de mama.
+:::
+
+## Umbrales de ACE en PIBM
+
+![](images/thresholds5.png)
+
+::: notas
+(1) Se puede ver en mi artículo sobre esto --
+
+(2) Encontramos:
+
+- La proporción de estudios PUBLICADOS que citan un umbral de 1 a 3 veces el PIB per cápita ha aumentado con el tiempo.
+    per cápita ha aumentado con el tiempo y esto se corresponde en gran medida con el
+    reconocimiento de este umbral por parte de la OMS a principios de la década de 2000.
+    Antes de esto, la mayoría de los estudios no citaban ningún umbral u otros umbrales de EC.
+
+- Desde entonces, la OMS ha dejado de recomendar este umbral, ya que
+    ha recibido MUCHAS reacciones en contra, incluida mi ponencia.
+
+(3) Hasta que encontremos una medida mejor, el DSP3 y otros académicos
+    han estimado umbrales más conservadores (diapositiva anterior) que yo
+    para los PIBM y NO utilizaría los supuestos per cápita.
+
+(4) Pero aún no tenemos una estimación perfecta del umbral
+:::
+
+## VIH Ejemplo anterior {.smaller}
+
+::: {style="font-size: 0.7em"}
+```{r}
+df4 <- 
+  df3 %>%
+  bind_rows(df1 %>%
+              group_by(status) %>%
+              nest()  %>%
+              filter(status != "") %>%
+              unnest(cols = c(data))) %>%
+ bind_rows(df2 %>%
+              group_by(status) %>%
+              nest()  %>%
+              filter(status != "") %>%
+              unnest(cols = c(data))) %>%  
+  mutate(cost_per_daly_averted = ifelse(status=="",cost_per_daly_averted,NA)) %>% 
+  select(Strategy, iCost, DALYs_averted, cost_per_daly_averted, status)
+
+color.me.red <- which(df4$status == "Dominated (Strong)" | df4$status == "Dominated (Extended)")
+
+df4 %>% 
+  mutate(cost_per_daly_averted = round(cost_per_daly_averted,0)) %>% 
+  kable(col.names = c("Strategy","Incremental Cost","DALYs Averted", "Incremental Cost per DALY Averted", "Status"),format.args = list(big.mark = ",")) %>%
+  kable_styling() %>% 
+  row_spec(color.me.red, bold = T, color = "black", background = "#FCD2CA") 
+
+```
+:::
+
+## VIH Ejemplo anterior {.smaller}
+
+<br>
+
+- Si nuestro umbral de CE fuera 2 veces el PIB (PIB = \$2.500), ¿qué opción elegiríamos
+    elegiríamos como responsables de la toma de decisiones?
+- Si nuestro umbral de EC fuera 1x PIB (PIB = \$2.500), ¿qué opción
+    elegiríamos como responsables de la toma de decisiones?
+
+# Siguiente: Estudio de caso ICER {background="#43464B"}

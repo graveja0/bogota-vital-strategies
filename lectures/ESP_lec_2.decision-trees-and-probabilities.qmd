@@ -454,7 +454,7 @@ Xi = resultado y P = probabilidad
     "payoffs" ponderados por sus probabilidades precedentes
 
 - Lo que obtenemos es: el resultado que se espera EN PROMEDIO para cualquier
-    alternativa de decisión (por ejemplo, duración de la vida, calidad de vida, costes
+    alternativa de decisión (por ejemplo, duración de la vida, calidad de vida, costos
     vida)
 
     - Ejemplo: Por término medio, los pacientes que reciban el tratamiento A vivirán 0,30

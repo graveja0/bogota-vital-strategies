@@ -12,30 +12,30 @@ bibliography: references.bib
 
 # Calendario de talleres
 
-| Fecha     | Hora programada | Tema                                                                                                                                          | Notas |
-|-------------|-------------|-----------------------------------|-----------------------|
-| Martes    | 9:00 - 9:45 am  | Bienvenida y presentaciones                                                                                                                   |       |
-|           | 9:45 - 10:00    | [Introducción al análisis de decisiones](lectures/ESP_lec_1a.introduction-to-decision-analysis.qmd)                                               |       |
-|           | 10:00-11:00     | [Árboles de decisión y probabilidades](lectures/ESP_lec_2.decision-trees-and-probabilities.qmd)                                                   |       |
-|           | 11:00-11:15     | Pausa                                                                                                                                         |       |
-|           | 11:15 - 11:00   | [Caso práctico: Probabilidades y árboles de decisión](case-studies/cs_prob-decision.html)                                                     |       |
-|           | 1:00 - 2:00 pm  | Pausa                                                                                                                                         |       |
-|           | 1:45 - 3:15 pm  | [C](case-studies/cs_decision-tree-excel.qmd)[Caso práctico: Construir un árbol de decisión en Excel](case-studies/cs_decision-tree-excel.qmd) |       |
-|           | 3:15 - 4:00 pm  | Revisión de casos prácticos / Debate en grupo: Árboles de decisión; Instalar Amua                                                             |       |
-| Miércoles | 9:00-9:15       | Resumen diario                                                                                                                                |       |
-|           | 9:15 - 10:30    | [Fundamentos CEA 1: Costes](lectures/lec_5a.cea-fundamentals1.qmd)                                                                            |       |
-|           | 10:30 - 10:45   | Pausa                                                                                                                                         |       |
-|           | 10:45 - 12:00   | [Fundamentos CEA 2: Resultados sanitarios](lectures/lec_5b.cea-fundamentals2.qmd)                                                             |       |
-|           | 12:00 - 1:30    | [Fundamentos del ACE 3: Análisis coste-eficacia incremental](lectures/lec_6.ICERs.qmd)                                                        |       |
-|           | 1:30 - 2:30     | Almuerzo                                                                                                                                      |       |
-|           | 2:30 - 4:30     | [Estudio de caso: Análisis coste-eficacia incremental](case-studies/cs_icer.html)                                                             |       |
-| Jueves    | 9:00 - 1:00     | [Modelos de Markov](lectures/lec_7.MarkovModels1.qmd)                                                                                         |       |
-|           | 1:00 - 2:00     | Almuerzo                                                                                                                                      |       |
-|           | 2:00 - 2:45     | [Análisis determinista y de escenarios](lectures/lec_sensitivity.qmd)                                                                         |       |
-|           | 2:45-4:00       | [Técnicas avanzadas de modelización](lectures/lec_advanced-modeling-techniques.qmd)                                                           |       |
-| Viernes   |                 |                                                                                                                                               |       |
-|           | 9:00- 11:00     | [Caso práctico: Modelos de Markov](case-studies/cs_markov.qmd)                                                                                |       |
-|           | 11:00 - 11:45   | Estudio de caso en grupo: Resultados y CEA incremental                                                                                        |       |
-|           | 11:45 - 12:00   | Ceremonia de entrega de certificados                                                                                                          |       |
+| Fecha     | Hora programada         | Tema                                                                                                | Notas |
+|---------------|---------------|--------------------------|-----------------|
+| Martes    | 9:00 - 9:45 am          | Bienvenida y presentaciones                                                                         |       |
+|           | 9:45 - 10:00            | [Introducción al análisis de decisiones](lectures/ESP_lec_1a.introduction-to-decision-analysis.qmd) |       |
+|           | 10:00-11:00             | [Árboles de decisión y probabilidades](lectures/ESP_lec_2.decision-trees-and-probabilities.qmd)     |       |
+|           | 11:00-11:15             | Café                                                                                                |       |
+|           | 11:15 - 11:00           | [Caso de estudio: Probabilidades y árboles de decisión](case-studies/cs_prob-decision.html)         |       |
+|           | 1:00 - 2:00 pm          | Café                                                                                                |       |
+|           | 1:45 - 3:15 pm          | [Caso de estudio: Construir un árbol de decisión en Excel](case-studies/cs_decision-tree-excel.qmd) |       |
+|           | 3:15 - 4:00 pm          | Revisión de casos prácticos / Debate en grupo: Árboles de decisión; Instalar Amua                   |       |
+| Miércoles | 9:00-9:15               | Resumen diario                                                                                      |       |
+|           | 9:15 - 10:30            | [Fundamentos CEA 1: Costos](lectures/lec_5a.cea-fundamentals1.qmd)                                  |       |
+|           | 10:30 - 10:45           | Café                                                                                                |       |
+|           | 10:45 - 12:00           | [Fundamentos CEA 2: Resultados sanitarios](lectures/lec_5b.cea-fundamentals2.qmd)                   |       |
+|           | 12:00 - 1:30            | [Fundamentos del ACE 3: Análisis coste-eficacia incremental](lectures/lec_6.ICERs.qmd)              |       |
+|           | 1:30 - 2:30             | Almuerzo                                                                                            |       |
+|           | 2:30 - 4:30             | [Caso de estudio: Análisis coste-eficacia incremental](case-studies/cs_icer.html)                   |       |
+| Jueves    | 9:00 - 1:00             | [Modelos de Markov](lectures/lec_7.MarkovModels1.qmd)                                               |       |
+|           | 1:00 - 2:00             | Almuerzo                                                                                            |       |
+|           | 2:00 - 2:45             | [Análisis determinista y de escenarios](lectures/lec_sensitivity.qmd)                               |       |
+|           | 2:45-4:00 Move to Thurs | [Técnicas avanzadas de modelización](lectures/lec_advanced-modeling-techniques.qmd)                 |       |
+| Viernes   |                         |                                                                                                     |       |
+|           | 9:00- 11:00             | [Caso de estudio: Modelos de Markov](case-studies/cs_markov.qmd)                                    |       |
+|           | 11:00 - 11:45           | Estudio de caso en grupo: Resultados y CEA incremental                                              |       |
+|           | 11:45 - 12:00           | Ceremonia de entrega de certificados                                                                |       |
 
 : {tbl-colwidths="\[10,20,30,5,20\]"}
