@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Taller de análisis de decisiones - Injury Markov Model</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Taller de análisis de decisiones</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">Instructores</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#injury-incidence-rates" id="toc-injury-incidence-rates" class="nav-link" data-scroll-target="#injury-incidence-rates">Injury Incidence Rates</a>
+  <ul class="collapse">
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a></li>
+  <li><a href="#proposed-incidence-rates-and-probabilities" id="toc-proposed-incidence-rates-and-probabilities" class="nav-link" data-scroll-target="#proposed-incidence-rates-and-probabilities">Proposed Incidence Rates and Probabilities</a>
+  <ul class="collapse">
+  <li><a href="#transition-from-no-injury-healthy" id="toc-transition-from-no-injury-healthy" class="nav-link" data-scroll-target="#transition-from-no-injury-healthy">Transition from No Injury (Healthy)</a></li>
+  <li><a href="#recovery-transitions" id="toc-recovery-transitions" class="nav-link" data-scroll-target="#recovery-transitions">Recovery Transitions</a></li>
+  </ul></li>
+  <li><a href="#proposed-health-state-utility-values" id="toc-proposed-health-state-utility-values" class="nav-link" data-scroll-target="#proposed-health-state-utility-values">Proposed Health State Utility Values</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Injury Markov Model</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 515.39 332.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
+<title>MarkovModel</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-328 511.39,-328 511.39,4 -4,4"></polygon>
+<!-- NoInjury -->
+<g id="node1" class="node">
+<title>NoInjury</title>
+<ellipse fill="lightblue" stroke="lightblue" cx="236.32" cy="-270" rx="88.04" ry="18"></ellipse>
+<text text-anchor="middle" x="236.32" y="-265.8" font-family="Times,serif" font-size="14.00">No Injury (Healthy)</text>
+</g>
+<!-- NoInjury&#45;&gt;NoInjury -->
+<g id="edge15" class="edge">
+<title>NoInjury:n-&gt;NoInjury:n</title>
+<path fill="none" stroke="black" d="M236.32,-288C245.32,-300 245.32,-324 236.32,-324 229.29,-324 227.76,-309.35 231.71,-297.22"></path>
+<polygon fill="black" stroke="black" points="234.98,-298.51 236.32,-288 228.72,-295.38 234.98,-298.51"></polygon>
+</g>
+<!-- MinorInjury -->
+<g id="node2" class="node">
+<title>MinorInjury</title>
+<ellipse fill="lightblue" stroke="lightblue" cx="407.32" cy="-198" rx="61.39" ry="18"></ellipse>
+<text text-anchor="middle" x="407.32" y="-193.8" font-family="Times,serif" font-size="14.00">Minor Injury</text>
+</g>
+<!-- NoInjury&#45;&gt;MinorInjury -->
+<g id="edge1" class="edge">
+<title>NoInjury-&gt;MinorInjury</title>
+<path fill="none" stroke="black" d="M269.37,-253.12C295.18,-242.03 331.25,-227.24 360.09,-215.93"></path>
+<polygon fill="black" stroke="black" points="361.52,-219.13 369.57,-212.24 358.98,-212.61 361.52,-219.13"></polygon>
+</g>
+<!-- ModerateInjury -->
+<g id="node3" class="node">
+<title>ModerateInjury</title>
+<ellipse fill="lightblue" stroke="lightblue" cx="236.32" cy="-198" rx="74.1" ry="18"></ellipse>
+<text text-anchor="middle" x="236.32" y="-193.8" font-family="Times,serif" font-size="14.00">Moderate Injury</text>
+</g>
+<!-- NoInjury&#45;&gt;ModerateInjury -->
+<g id="edge2" class="edge">
+<title>NoInjury-&gt;ModerateInjury</title>
+<path fill="none" stroke="black" d="M230.41,-251.7C229.61,-243.98 229.39,-234.71 229.73,-226.11"></path>
+<polygon fill="black" stroke="black" points="233.22,-226.32 230.43,-216.1 226.24,-225.84 233.22,-226.32"></polygon>
+</g>
+<!-- SevereInjury -->
+<g id="node4" class="node">
+<title>SevereInjury</title>
+<ellipse fill="lightblue" stroke="lightblue" cx="81.32" cy="-198" rx="63.15" ry="18"></ellipse>
+<text text-anchor="middle" x="81.32" y="-193.8" font-family="Times,serif" font-size="14.00">Severe Injury</text>
+</g>
+<!-- NoInjury&#45;&gt;SevereInjury -->
+<g id="edge3" class="edge">
+<title>NoInjury-&gt;SevereInjury</title>
+<path fill="none" stroke="black" d="M197.01,-253.81C172.88,-243.48 142.26,-229.72 118.52,-218.57"></path>
+<polygon fill="black" stroke="black" points="120.01,-215.4 109.47,-214.28 117.01,-221.72 120.01,-215.4"></polygon>
+</g>
+<!-- Death -->
+<g id="node6" class="node">
+<title>Death</title>
+<ellipse fill="lightgray" stroke="lightgray" cx="426.32" cy="-54" rx="34.19" ry="18"></ellipse>
+<text text-anchor="middle" x="426.32" y="-49.8" font-family="Times,serif" font-size="14.00">Death</text>
+</g>
+<!-- NoInjury&#45;&gt;Death -->
+<g id="edge4" class="edge">
+<title>NoInjury-&gt;Death</title>
+<path fill="none" stroke="black" d="M318.58,-263.28C385.81,-256.69 473.23,-243.07 495.32,-216 530.04,-173.47 481.48,-110.86 449.83,-77.64"></path>
+<polygon fill="black" stroke="black" points="452.09,-74.94 442.6,-70.24 447.09,-79.84 452.09,-74.94"></polygon>
+</g>
+<!-- MinorInjury&#45;&gt;NoInjury -->
+<g id="edge5" class="edge">
+<title>MinorInjury-&gt;NoInjury</title>
+<path fill="none" stroke="black" d="M377.02,-213.7C352.3,-224.38 316.96,-238.9 287.84,-250.39"></path>
+<polygon fill="black" stroke="black" points="286.26,-247.25 278.23,-254.15 288.81,-253.76 286.26,-247.25"></polygon>
+</g>
+<!-- MinorInjury&#45;&gt;MinorInjury -->
+<g id="edge16" class="edge">
+<title>MinorInjury:e-&gt;MinorInjury:e</title>
+<path fill="none" stroke="black" d="M468.32,-198C474.52,-216 486.52,-216 486.52,-198 486.52,-183.94 479.19,-180.86 473.04,-188.77"></path>
+<polygon fill="black" stroke="black" points="469.75,-187.5 468.32,-198 475.99,-190.69 469.75,-187.5"></polygon>
+</g>
+<!-- RecoveredSequelae -->
+<g id="node5" class="node">
+<title>RecoveredSequelae</title>
+<ellipse fill="lightblue" stroke="lightblue" cx="289.32" cy="-126" rx="109.35" ry="18"></ellipse>
+<text text-anchor="middle" x="289.32" y="-121.8" font-family="Times,serif" font-size="14.00">Recovered with Sequelae</text>
+</g>
+<!-- MinorInjury&#45;&gt;RecoveredSequelae -->
+<g id="edge6" class="edge">
+<title>MinorInjury-&gt;RecoveredSequelae</title>
+<path fill="none" stroke="black" d="M381.43,-181.64C365.25,-172.04 344.17,-159.53 326.25,-148.91"></path>
+<polygon fill="black" stroke="black" points="327.61,-145.64 317.22,-143.55 324.03,-151.66 327.61,-145.64"></polygon>
+</g>
+<!-- MinorInjury&#45;&gt;Death -->
+<g id="edge7" class="edge">
+<title>MinorInjury-&gt;Death</title>
+<path fill="none" stroke="black" d="M409.62,-179.87C412.85,-155.67 418.8,-111.21 422.66,-82.39"></path>
+<polygon fill="black" stroke="black" points="426.17,-82.57 424.02,-72.19 419.23,-81.64 426.17,-82.57"></polygon>
+</g>
+<!-- ModerateInjury&#45;&gt;NoInjury -->
+<g id="edge8" class="edge">
+<title>ModerateInjury-&gt;NoInjury</title>
+<path fill="none" stroke="black" d="M242.22,-216.1C243.03,-223.79 243.26,-233.05 242.93,-241.67"></path>
+<polygon fill="black" stroke="black" points="239.43,-241.48 242.24,-251.7 246.42,-241.96 239.43,-241.48"></polygon>
+</g>
+<!-- ModerateInjury&#45;&gt;ModerateInjury -->
+<g id="edge17" class="edge">
+<title>ModerateInjury:e-&gt;ModerateInjury:e</title>
+<path fill="none" stroke="black" d="M310.32,-198C316.38,-216 328.38,-216 328.38,-198 328.38,-183.94 321.05,-180.86 314.96,-188.77"></path>
+<polygon fill="black" stroke="black" points="311.69,-187.49 310.32,-198 317.94,-190.64 311.69,-187.49"></polygon>
+</g>
+<!-- ModerateInjury&#45;&gt;RecoveredSequelae -->
+<g id="edge9" class="edge">
+<title>ModerateInjury-&gt;RecoveredSequelae</title>
+<path fill="none" stroke="black" d="M249.15,-180.05C255.44,-171.75 263.14,-161.58 270.11,-152.38"></path>
+<polygon fill="black" stroke="black" points="273,-154.36 276.24,-144.28 267.42,-150.14 273,-154.36"></polygon>
+</g>
+<!-- DeathInjury -->
+<g id="node7" class="node">
+<title>DeathInjury</title>
+<ellipse fill="lightgray" stroke="lightgray" cx="81.32" cy="-126" rx="81.09" ry="18"></ellipse>
+<text text-anchor="middle" x="81.32" y="-121.8" font-family="Times,serif" font-size="14.00">Death from Injury</text>
+</g>
+<!-- ModerateInjury&#45;&gt;DeathInjury -->
+<g id="edge10" class="edge">
+<title>ModerateInjury-&gt;DeathInjury</title>
+<path fill="none" stroke="black" d="M202.69,-181.81C179.8,-171.47 149.28,-157.69 124.58,-146.54"></path>
+<polygon fill="black" stroke="black" points="125.98,-143.33 115.43,-142.4 123.1,-149.71 125.98,-143.33"></polygon>
+</g>
+<!-- SevereInjury&#45;&gt;NoInjury -->
+<g id="edge11" class="edge">
+<title>SevereInjury-&gt;NoInjury</title>
+<path fill="none" stroke="black" d="M117.52,-212.86C141.44,-223.04 172.69,-237.05 197.18,-248.52"></path>
+<polygon fill="black" stroke="black" points="196.01,-251.84 206.55,-252.94 199,-245.51 196.01,-251.84"></polygon>
+</g>
+<!-- SevereInjury&#45;&gt;SevereInjury -->
+<g id="edge18" class="edge">
+<title>SevereInjury:w-&gt;SevereInjury:w</title>
+<path fill="none" stroke="black" d="M17.32,-198C12,-216 0,-216 0,-198 0,-183.94 7.32,-180.86 13.07,-188.77"></path>
+<polygon fill="black" stroke="black" points="9.96,-190.39 17.32,-198 16.31,-187.45 9.96,-190.39"></polygon>
+</g>
+<!-- SevereInjury&#45;&gt;RecoveredSequelae -->
+<g id="edge12" class="edge">
+<title>SevereInjury-&gt;RecoveredSequelae</title>
+<path fill="none" stroke="black" d="M120.45,-183.83C152.4,-173.08 197.94,-157.75 233.69,-145.72"></path>
+<polygon fill="black" stroke="black" points="235.13,-148.93 243.49,-142.43 232.89,-142.3 235.13,-148.93"></polygon>
+</g>
+<!-- SevereInjury&#45;&gt;DeathInjury -->
+<g id="edge13" class="edge">
+<title>SevereInjury-&gt;DeathInjury</title>
+<path fill="none" stroke="black" d="M81.32,-179.7C81.32,-171.98 81.32,-162.71 81.32,-154.11"></path>
+<polygon fill="black" stroke="black" points="84.82,-154.1 81.32,-144.1 77.82,-154.1 84.82,-154.1"></polygon>
+</g>
+<!-- RecoveredSequelae&#45;&gt;RecoveredSequelae -->
+<g id="edge19" class="edge">
+<title>RecoveredSequelae:s-&gt;RecoveredSequelae:s</title>
+<path fill="none" stroke="black" d="M289.32,-108C298.32,-96 298.32,-72 289.32,-72 282.29,-72 280.76,-86.65 284.71,-98.78"></path>
+<polygon fill="black" stroke="black" points="281.72,-100.62 289.32,-108 287.98,-97.49 281.72,-100.62"></polygon>
+</g>
+<!-- RecoveredSequelae&#45;&gt;Death -->
+<g id="edge14" class="edge">
+<title>RecoveredSequelae-&gt;Death</title>
+<path fill="none" stroke="black" d="M321.1,-108.76C342.82,-97.67 371.53,-83 393.47,-71.79"></path>
+<polygon fill="black" stroke="black" points="395.11,-74.88 402.42,-67.21 391.92,-68.65 395.11,-74.88"></polygon>
+</g>
+<!-- Death&#45;&gt;Death -->
+<g id="edge20" class="edge">
+<title>Death:s-&gt;Death:s</title>
+<path fill="none" stroke="black" d="M426.32,-36C435.32,-24 435.32,0 426.32,0 419.29,0 417.76,-14.65 421.71,-26.78"></path>
+<polygon fill="black" stroke="black" points="418.72,-28.62 426.32,-36 424.98,-25.49 418.72,-28.62"></polygon>
+</g>
+<!-- DeathInjury&#45;&gt;DeathInjury -->
+<g id="edge21" class="edge">
+<title>DeathInjury:s-&gt;DeathInjury:s</title>
+<path fill="none" stroke="black" d="M81.32,-108C90.32,-96 90.32,-72 81.32,-72 74.29,-72 72.76,-86.65 76.71,-98.78"></path>
+<polygon fill="black" stroke="black" points="73.72,-100.62 81.32,-108 79.98,-97.49 73.72,-100.62"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<svg width="672" height="480" viewbox="0.00 0.00 522.93 332.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
+<title>MarkovModel</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-328 518.93,-328 518.93,4 -4,4"></polygon>
+<!-- SinLesion -->
+<g id="node1" class="node">
+<title>SinLesion</title>
+<ellipse fill="lightblue" stroke="lightblue" cx="242.91" cy="-270" rx="99.59" ry="18"></ellipse>
+<text text-anchor="middle" x="242.91" y="-265.8" font-family="Times,serif" font-size="14.00">Sin Lesión (Saludable)</text>
+</g>
+<!-- SinLesion&#45;&gt;SinLesion -->
+<g id="edge15" class="edge">
+<title>SinLesion:n-&gt;SinLesion:n</title>
+<path fill="none" stroke="black" d="M242.91,-288C251.91,-300 251.91,-324 242.91,-324 235.88,-324 234.34,-309.35 238.29,-297.22"></path>
+<polygon fill="black" stroke="black" points="241.56,-298.51 242.91,-288 235.3,-295.38 241.56,-298.51"></polygon>
+</g>
+<!-- LesionLeve -->
+<g id="node2" class="node">
+<title>LesionLeve</title>
+<ellipse fill="lightblue" stroke="lightblue" cx="416.91" cy="-198" rx="59.07" ry="18"></ellipse>
+<text text-anchor="middle" x="416.91" y="-193.8" font-family="Times,serif" font-size="14.00">Lesión Leve</text>
+</g>
+<!-- SinLesion&#45;&gt;LesionLeve -->
+<g id="edge1" class="edge">
+<title>SinLesion-&gt;LesionLeve</title>
+<path fill="none" stroke="black" d="M277.05,-252.94C303.54,-241.77 340.44,-226.92 369.73,-215.63"></path>
+<polygon fill="black" stroke="black" points="371.26,-218.79 379.35,-211.94 368.76,-212.25 371.26,-218.79"></polygon>
+</g>
+<!-- LesionModerada -->
+<g id="node3" class="node">
+<title>LesionModerada</title>
+<ellipse fill="lightblue" stroke="lightblue" cx="242.91" cy="-198" rx="78.76" ry="18"></ellipse>
+<text text-anchor="middle" x="242.91" y="-193.8" font-family="Times,serif" font-size="14.00">Lesión Moderada</text>
+</g>
+<!-- SinLesion&#45;&gt;LesionModerada -->
+<g id="edge2" class="edge">
+<title>SinLesion-&gt;LesionModerada</title>
+<path fill="none" stroke="black" d="M236.99,-251.7C236.2,-243.98 235.97,-234.71 236.31,-226.11"></path>
+<polygon fill="black" stroke="black" points="239.81,-226.32 237.01,-216.1 232.82,-225.84 239.81,-226.32"></polygon>
+</g>
+<!-- LesionGrave -->
+<g id="node4" class="node">
+<title>LesionGrave</title>
+<ellipse fill="lightblue" stroke="lightblue" cx="82.91" cy="-198" rx="63.15" ry="18"></ellipse>
+<text text-anchor="middle" x="82.91" y="-193.8" font-family="Times,serif" font-size="14.00">Lesión Grave</text>
+</g>
+<!-- SinLesion&#45;&gt;LesionGrave -->
+<g id="edge3" class="edge">
+<title>SinLesion-&gt;LesionGrave</title>
+<path fill="none" stroke="black" d="M201.68,-253.46C176.8,-243.12 145.41,-229.44 121.1,-218.38"></path>
+<polygon fill="black" stroke="black" points="122.37,-215.12 111.82,-214.13 119.45,-221.48 122.37,-215.12"></polygon>
+</g>
+<!-- Muerte -->
+<g id="node6" class="node">
+<title>Muerte</title>
+<ellipse fill="lightgray" stroke="lightgray" cx="431.91" cy="-54" rx="38.85" ry="18"></ellipse>
+<text text-anchor="middle" x="431.91" y="-49.8" font-family="Times,serif" font-size="14.00">Muerte</text>
+</g>
+<!-- SinLesion&#45;&gt;Muerte -->
+<g id="edge4" class="edge">
+<title>SinLesion-&gt;Muerte</title>
+<path fill="none" stroke="black" d="M333.54,-262.51C399.78,-255.67 481.6,-242.09 502.91,-216 537.61,-173.51 488.68,-111.39 456.38,-78.1"></path>
+<polygon fill="black" stroke="black" points="458.52,-75.29 448.98,-70.68 453.56,-80.23 458.52,-75.29"></polygon>
+</g>
+<!-- LesionLeve&#45;&gt;SinLesion -->
+<g id="edge5" class="edge">
+<title>LesionLeve-&gt;SinLesion</title>
+<path fill="none" stroke="black" d="M386.48,-213.49C361.54,-224.07 325.8,-238.51 296.17,-250.02"></path>
+<polygon fill="black" stroke="black" points="294.86,-246.77 286.79,-253.64 297.38,-253.3 294.86,-246.77"></polygon>
+</g>
+<!-- LesionLeve&#45;&gt;LesionLeve -->
+<g id="edge16" class="edge">
+<title>LesionLeve:e-&gt;LesionLeve:e</title>
+<path fill="none" stroke="black" d="M475.91,-198C481.94,-216 493.94,-216 493.94,-198 493.94,-183.94 486.62,-180.86 480.54,-188.77"></path>
+<polygon fill="black" stroke="black" points="477.26,-187.49 475.91,-198 483.52,-190.63 477.26,-187.49"></polygon>
+</g>
+<!-- RecuperadoSecuelas -->
+<g id="node5" class="node">
+<title>RecuperadoSecuelas</title>
+<ellipse fill="lightblue" stroke="lightblue" cx="293.91" cy="-126" rx="109.92" ry="18"></ellipse>
+<text text-anchor="middle" x="293.91" y="-121.8" font-family="Times,serif" font-size="14.00">Recuperado con Secuelas</text>
+</g>
+<!-- LesionLeve&#45;&gt;RecuperadoSecuelas -->
+<g id="edge6" class="edge">
+<title>LesionLeve-&gt;RecuperadoSecuelas</title>
+<path fill="none" stroke="black" d="M390.22,-181.81C373.02,-172.02 350.4,-159.15 331.41,-148.34"></path>
+<polygon fill="black" stroke="black" points="333.11,-145.28 322.69,-143.38 329.65,-151.37 333.11,-145.28"></polygon>
+</g>
+<!-- LesionLeve&#45;&gt;Muerte -->
+<g id="edge7" class="edge">
+<title>LesionLeve-&gt;Muerte</title>
+<path fill="none" stroke="black" d="M418.72,-179.87C421.27,-155.67 425.97,-111.21 429.01,-82.39"></path>
+<polygon fill="black" stroke="black" points="432.52,-82.5 430.09,-72.19 425.56,-81.77 432.52,-82.5"></polygon>
+</g>
+<!-- LesionModerada&#45;&gt;SinLesion -->
+<g id="edge8" class="edge">
+<title>LesionModerada-&gt;SinLesion</title>
+<path fill="none" stroke="black" d="M248.8,-216.1C249.61,-223.79 249.84,-233.05 249.51,-241.67"></path>
+<polygon fill="black" stroke="black" points="246.02,-241.48 248.82,-251.7 253,-241.96 246.02,-241.48"></polygon>
+</g>
+<!-- LesionModerada&#45;&gt;LesionModerada -->
+<g id="edge17" class="edge">
+<title>LesionModerada:e-&gt;LesionModerada:e</title>
+<path fill="none" stroke="black" d="M321.91,-198C327.79,-216 339.79,-216 339.79,-198 339.79,-183.94 332.46,-180.86 326.45,-188.77"></path>
+<polygon fill="black" stroke="black" points="323.19,-187.48 321.91,-198 329.47,-190.58 323.19,-187.48"></polygon>
+</g>
+<!-- LesionModerada&#45;&gt;RecuperadoSecuelas -->
+<g id="edge9" class="edge">
+<title>LesionModerada-&gt;RecuperadoSecuelas</title>
+<path fill="none" stroke="black" d="M255.25,-180.05C261.3,-171.75 268.71,-161.58 275.42,-152.38"></path>
+<polygon fill="black" stroke="black" points="278.26,-154.42 281.32,-144.28 272.6,-150.3 278.26,-154.42"></polygon>
+</g>
+<!-- MuerteLesion -->
+<g id="node7" class="node">
+<title>MuerteLesion</title>
+<ellipse fill="lightgray" stroke="lightgray" cx="82.91" cy="-126" rx="82.81" ry="18"></ellipse>
+<text text-anchor="middle" x="82.91" y="-121.8" font-family="Times,serif" font-size="14.00">Muerte por Lesión</text>
+</g>
+<!-- LesionModerada&#45;&gt;MuerteLesion -->
+<g id="edge10" class="edge">
+<title>LesionModerada-&gt;MuerteLesion</title>
+<path fill="none" stroke="black" d="M208.19,-181.81C184.56,-171.47 153.06,-157.69 127.56,-146.54"></path>
+<polygon fill="black" stroke="black" points="128.67,-143.2 118.11,-142.4 125.87,-149.62 128.67,-143.2"></polygon>
+</g>
+<!-- LesionGrave&#45;&gt;SinLesion -->
+<g id="edge11" class="edge">
+<title>LesionGrave-&gt;SinLesion</title>
+<path fill="none" stroke="black" d="M119.64,-212.67C144.33,-222.86 176.76,-236.95 202.22,-248.48"></path>
+<polygon fill="black" stroke="black" points="201.05,-251.8 211.6,-252.76 203.95,-245.43 201.05,-251.8"></polygon>
+</g>
+<!-- LesionGrave&#45;&gt;LesionGrave -->
+<g id="edge18" class="edge">
+<title>LesionGrave:w-&gt;LesionGrave:w</title>
+<path fill="none" stroke="black" d="M18.91,-198C13.58,-216 1.58,-216 1.58,-198 1.58,-183.94 8.91,-180.86 14.65,-188.77"></path>
+<polygon fill="black" stroke="black" points="11.54,-190.39 18.91,-198 17.9,-187.45 11.54,-190.39"></polygon>
+</g>
+<!-- LesionGrave&#45;&gt;RecuperadoSecuelas -->
+<g id="edge12" class="edge">
+<title>LesionGrave-&gt;RecuperadoSecuelas</title>
+<path fill="none" stroke="black" d="M122.59,-183.83C155,-173.08 201.21,-157.75 237.47,-145.72"></path>
+<polygon fill="black" stroke="black" points="239.02,-148.9 247.41,-142.43 236.82,-142.25 239.02,-148.9"></polygon>
+</g>
+<!-- LesionGrave&#45;&gt;MuerteLesion -->
+<g id="edge13" class="edge">
+<title>LesionGrave-&gt;MuerteLesion</title>
+<path fill="none" stroke="black" d="M82.91,-179.7C82.91,-171.98 82.91,-162.71 82.91,-154.11"></path>
+<polygon fill="black" stroke="black" points="86.41,-154.1 82.91,-144.1 79.41,-154.1 86.41,-154.1"></polygon>
+</g>
+<!-- RecuperadoSecuelas&#45;&gt;RecuperadoSecuelas -->
+<g id="edge19" class="edge">
+<title>RecuperadoSecuelas:s-&gt;RecuperadoSecuelas:s</title>
+<path fill="none" stroke="black" d="M293.91,-108C302.91,-96 302.91,-72 293.91,-72 286.88,-72 285.34,-86.65 289.29,-98.78"></path>
+<polygon fill="black" stroke="black" points="286.3,-100.62 293.91,-108 292.56,-97.49 286.3,-100.62"></polygon>
+</g>
+<!-- RecuperadoSecuelas&#45;&gt;Muerte -->
+<g id="edge14" class="edge">
+<title>RecuperadoSecuelas-&gt;Muerte</title>
+<path fill="none" stroke="black" d="M325.91,-108.76C347.37,-97.88 375.61,-83.56 397.54,-72.43"></path>
+<polygon fill="black" stroke="black" points="399.18,-75.53 406.52,-67.88 396.01,-69.28 399.18,-75.53"></polygon>
+</g>
+<!-- Muerte&#45;&gt;Muerte -->
+<g id="edge20" class="edge">
+<title>Muerte:s-&gt;Muerte:s</title>
+<path fill="none" stroke="black" d="M431.91,-36C440.91,-24 440.91,0 431.91,0 424.88,0 423.34,-14.65 427.29,-26.78"></path>
+<polygon fill="black" stroke="black" points="424.3,-28.62 431.91,-36 430.56,-25.49 424.3,-28.62"></polygon>
+</g>
+<!-- MuerteLesion&#45;&gt;MuerteLesion -->
+<g id="edge21" class="edge">
+<title>MuerteLesion:s-&gt;MuerteLesion:s</title>
+<path fill="none" stroke="black" d="M82.91,-108C91.91,-96 91.91,-72 82.91,-72 75.88,-72 74.34,-86.65 78.29,-98.78"></path>
+<polygon fill="black" stroke="black" points="75.3,-100.62 82.91,-108 81.56,-97.49 75.3,-100.62"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>This document provides proposed injury incidence rates based on real-world data for creating a Markov model to evaluate the cost-effectiveness of strategies to prevent injuries from gunpowder and fireworks. The proposed rates are converted to probabilities for use in the Markov model.</p>
+</section>
+<section id="injury-incidence-rates" class="level1">
+<h1>Injury Incidence Rates</h1>
+<section id="data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="data-sources">Data Sources</h2>
+<ol type="1">
+<li><strong>Centers for Disease Control and Prevention (CDC)</strong>
+<ul>
+<li>The CDC provides detailed reports on injuries related to fireworks, including rates of different types of injuries (minor, moderate, severe) and outcomes.</li>
+<li><a href="https://www.cdc.gov/fireworks/injury-data/index.html">CDC Fireworks Safety</a></li>
+</ul></li>
+<li><strong>Consumer Product Safety Commission (CPSC)</strong>
+<ul>
+<li>The CPSC publishes annual reports on fireworks-related injuries, including detailed statistics on the nature and severity of injuries.</li>
+<li><a href="https://www.cpsc.gov/s3fs-public/2020-Fireworks-Report.pdf">CPSC Fireworks Reports</a></li>
+</ul></li>
+<li><strong>National Fire Protection Association (NFPA)</strong>
+<ul>
+<li>The NFPA provides reports on firework injuries and fatalities, including detailed data on the types of injuries and their frequencies.</li>
+<li><a href="https://www.nfpa.org/Public-Education/By-topic/Seasonal/Fireworks">NFPA Fireworks</a></li>
+</ul></li>
+<li><strong>Journal Articles and Epidemiological Studies</strong>
+<ul>
+<li>Several peer-reviewed journal articles provide data on fireworks and gunpowder-related injuries, including their incidence rates and severity.</li>
+<li>Witsaman RJ, Comstock RD, Smith GA. Pediatric fireworks-related injuries in the United States: 1990–2003. Pediatrics. 2006;118(1):296-303.</li>
+<li>Smith GA, Knapp JF, Barnett TM, Shields BJ. The rockets’ red glare, the bombs bursting in air: fireworks-related injuries to children. Pediatrics. 1996;98(1):1-9.</li>
+</ul></li>
+<li><strong>World Health Organization (WHO)</strong>
+<ul>
+<li>The WHO provides global data on injuries and their prevention, including sections related to burns and trauma from explosive materials.</li>
+<li><a href="https://www.who.int/news-room/fact-sheets/detail/burns">WHO Burns</a></li>
+</ul></li>
+</ol>
+</section>
+<section id="proposed-incidence-rates-and-probabilities" class="level2">
+<h2 class="anchored" data-anchor-id="proposed-incidence-rates-and-probabilities">Proposed Incidence Rates and Probabilities</h2>
+<section id="transition-from-no-injury-healthy" class="level3">
+<h3 class="anchored" data-anchor-id="transition-from-no-injury-healthy">Transition from No Injury (Healthy)</h3>
+<ol type="1">
+<li><strong>To Minor Injury</strong>
+<ul>
+<li>Incidence Rate: 7% per year</li>
+<li>Probability: ( P = 1 - e^{-0.07} )</li>
+<li><a href="https://www.cdc.gov/fireworks/injury-data/index.html">CDC Fireworks Safety</a></li>
+<li><a href="https://www.cpsc.gov/s3fs-public/2020-Fireworks-Report.pdf">CPSC Fireworks Reports</a></li>
+</ul></li>
+<li><strong>To Moderate Injury</strong>
+<ul>
+<li>Incidence Rate: 2% per year</li>
+<li>Probability: ( P = 1 - e^{-0.02} )</li>
+<li>Smith GA, Knapp JF, Barnett TM, Shields BJ. Pediatrics. 1996;98(1):1-9.</li>
+<li><a href="https://www.nfpa.org/Public-Education/By-topic/Seasonal/Fireworks">NFPA Fireworks</a></li>
+</ul></li>
+<li><strong>To Severe Injury</strong>
+<ul>
+<li>Incidence Rate: 0.5% per year</li>
+<li>Probability: ( P = 1 - e^{-0.005} )</li>
+<li>Witsaman RJ, Comstock RD, Smith GA. Pediatrics. 2006;118(1):296-303.</li>
+<li><a href="https://www.who.int/news-room/fact-sheets/detail/burns">WHO Burns</a></li>
+</ul></li>
+<li><strong>To Death</strong>
+<ul>
+<li>Incidence Rate: 0.01% per year</li>
+<li>Probability: ( P = 1 - e^{-0.0001} )</li>
+<li><a href="https://www.cpsc.gov/s3fs-public/2020-Fireworks-Report.pdf">CPSC Fireworks Reports</a></li>
+<li><a href="https://www.who.int/news-room/fact-sheets/detail/burns">WHO Burns</a></li>
+</ul></li>
+</ol>
+</section>
+<section id="recovery-transitions" class="level3">
+<h3 class="anchored" data-anchor-id="recovery-transitions">Recovery Transitions</h3>
+<ol start="5" type="1">
+<li><strong>From Minor Injury to No Injury</strong>
+<ul>
+<li>Probability: 85%</li>
+<li>Based on general epidemiological data and recovery rates from burns and trauma.</li>
+<li>Peck MD. Epidemiology of burns throughout the world. Part I: Distribution and risk factors. Burns. 2011;37(7):1087-1100.</li>
+<li>Brusselaers N, Monstrey S, Vogelaers D, Hoste E, Blot S. Severe burn injury in Europe: a systematic review of the incidence, etiology, morbidity, and mortality. Crit Care. 2010;14(5):R188.</li>
+</ul></li>
+<li><strong>From Minor Injury to Recovered with Sequelae</strong>
+<ul>
+<li>Probability: 10%</li>
+<li>Based on general epidemiological data and recovery rates from burns and trauma.</li>
+<li>Peck MD. Epidemiology of burns throughout the world. Part I: Distribution and risk factors. Burns. 2011;37(7):1087-1100.</li>
+<li>Brusselaers N, Monstrey S, Vogelaers D, Hoste E, Blot S. Severe burn injury in Europe: a systematic review of the incidence, etiology, morbidity, and mortality. Crit Care. 2010;14(5):R188.</li>
+</ul></li>
+<li><strong>From Minor Injury to Death</strong>
+<ul>
+<li>Probability: 5%</li>
+<li>Based on general epidemiological data and recovery rates from burns and trauma.</li>
+<li>Peck MD. Epidemiology of burns throughout the world. Part I: Distribution and risk factors. Burns. 2011;37(7):1087-1100.</li>
+<li>Brusselaers N, Monstrey S, Vogelaers D, Hoste E, Blot S. Severe burn injury in Europe: a systematic review of the incidence, etiology, morbidity, and mortality. Crit Care. 2010;14(5):R188.</li>
+</ul></li>
+<li><strong>From Moderate Injury to No Injury</strong>
+<ul>
+<li>Probability: 50%</li>
+<li>Based on general epidemiological data and recovery rates from burns and trauma.</li>
+<li>Peck MD. Epidemiology of burns throughout the world. Part I: Distribution and risk factors. Burns. 2011;37(7):1087-1100.</li>
+<li>Brusselaers N, Monstrey S, Vogelaers D, Hoste E, Blot S. Severe burn injury in Europe: a systematic review of the incidence, etiology, morbidity, and mortality. Crit Care. 2010;14(5):R188.</li>
+</ul></li>
+<li><strong>From Moderate Injury to Recovered with Sequelae</strong>
+<ul>
+<li>Probability: 40%</li>
+<li>Based on general epidemiological data and recovery rates from burns and trauma.</li>
+<li>Peck MD. Epidemiology of burns throughout the world. Part I: Distribution and risk factors. Burns. 2011;37(7):1087-1100.</li>
+<li>Brusselaers N, Monstrey S, Vogelaers D, Hoste E, Blot S. Severe burn injury in Europe: a systematic review of the incidence, etiology, morbidity, and mortality. Crit Care. 2010;14(5):R188.</li>
+</ul></li>
+<li><strong>From Moderate Injury to Death from Injury</strong>
+<ul>
+<li>Probability: 10%</li>
+<li>Based on general epidemiological data and recovery rates from burns and trauma.</li>
+<li>Peck MD. Epidemiology of burns throughout the world. Part I: Distribution and risk factors. Burns. 2011;37(7):1087-1100.</li>
+<li>Brusselaers N, Monstrey S, Vogelaers D, Hoste E, Blot S. Severe burn injury in Europe: a systematic review of the incidence, etiology, morbidity, and mortality. Crit Care. 2010;14(5):R188.</li>
+</ul></li>
+<li><strong>From Severe Injury to No Injury</strong>
+<ul>
+<li>Probability: 20%</li>
+<li>Based on general epidemiological data and recovery rates from burns and trauma.</li>
+<li>Peck MD. Epidemiology of burns throughout the world. Part I: Distribution and risk factors. Burns. 2011;37(7):1087-1100.</li>
+<li>Brusselaers N, Monstrey S, Vogelaers D, Hoste E, Blot S. Severe burn injury in Europe: a systematic review of the incidence, etiology, morbidity, and mortality. Crit Care. 2010;14(5):R188.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="proposed-health-state-utility-values" class="level2">
+<h2 class="anchored" data-anchor-id="proposed-health-state-utility-values">Proposed Health State Utility Values</h2>
+<ol type="1">
+<li><strong>No Injury (Healthy)</strong>
+<ul>
+<li>Utility Value: 1.0 (or slightly less to reflect normal life variability, e.g., 0.95)</li>
+</ul></li>
+<li><strong>Minor Injury</strong>
+<ul>
+<li>Utility Value: 0.98</li>
+<li>Rationale: Minor injuries such as small burns or cuts typically have a temporary and moderate impact on quality of life.</li>
+</ul></li>
+<li><strong>Moderate Injury</strong>
+<ul>
+<li>Utility Value: 0.9 if sequelae; 0.95 if not.</li>
+<li>Rationale: Moderate injuries, including more severe burns and lacerations, have a more significant but still temporary impact on quality of life.</li>
+</ul></li>
+<li><strong>Severe Injury</strong>
+<ul>
+<li><p>Utility Value: 0.60</p></li>
+<li><p>Rationale: Severe injuries such as major burns, limb injuries, or serious eye damage substantially reduce quality of life and may involve long recovery periods.</p></li>
+<li><p>Holtslag HR, Post MW, Lindeman E, van der Werken C. “Long-term functional health status of severely injured patients.” Injury. 2007;38(3):280-289.</p></li>
+<li><p>Ringburg AN, Polinder S, van Ierland MC, Steyerberg EW, van Lieshout EM, Patka P, van Vugt AB, Schipper IB. “Prevalence and prognostic factors of disability after major trauma.” The Journal of Trauma. 2011;70(4):916-922.</p></li>
+<li><p>Esselman PC, Thombs BD, Magyar-Russell G, Fauerbach JA. “Burn rehabilitation: state of the science.” American Journal of Physical Medicine &amp; Rehabilitation. 2006;85(4):383-413.</p></li>
+<li><p>Browne AL, Biering-Sørensen F, Kennelly M, Noonan VK, Post MWM, Middleton JW, et al.&nbsp;“Spinal Cord Injury–Related Functional Outcomes in a Prospective Multicenter Study.” The Journal of Spinal Cord Medicine. 2016;39(2):155-166.</p></li>
+</ul></li>
+<li><strong>Severe: Recovered with Sequelae</strong>
+<ul>
+<li>Utility Value: 0.75</li>
+<li>Rationale: Individuals who have recovered but suffer from long-term sequelae (e.g., chronic pain, scarring) experience a permanent reduction in quality of life, although it may be less severe than during the acute injury phase.</li>
+</ul></li>
+<li><strong>Death</strong>
+<ul>
+<li>Utility Value: 0.0</li>
+</ul></li>
+</ol>
+<!-- ### Sources  -->
+<!-- 1. **Tengs TO, Wallace A. One thousand health-related quality-of-life estimates. Medical Care. 2000;38(6):583-637.** -->
+<!--    - Provides a comprehensive list of health-related quality-of-life estimates across a range of conditions. -->
+<!-- 2. **Gabriel SE, Crowson CS, O’Fallon WM. A cost-effectiveness analysis of total hip arthroplasty. Clinical Orthopaedics and Related Research. 1999;(358):123-133.** -->
+<!--    - Utility values for different health states, particularly related to injuries and chronic conditions. -->
+<!-- 3. **Torrance GW, Feeny D, Furlong W, Barr RD, Zhang Y, Wang Q. Multiattribute utility function for a comprehensive health status classification system. Health Utilities Index Mark 2. Medical Care. 1996;34(7):702-722.** -->
+<!--    - Provides utility values based on comprehensive health status classification systems. -->
+<!-- 4. **EuroQol Group. EuroQol--a new facility for the measurement of health-related quality of life. Health Policy. 1990;16(3):199-208.** -->
+<!--    - Details on the EQ-5D, a widely used instrument for measuring health-related quality of life. -->
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

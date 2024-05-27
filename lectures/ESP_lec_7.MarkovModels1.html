@@ -386,22 +386,6 @@
 <li class="fragment"><p>Aplicar métodos de corrección de ciclos de Markov</p></li>
 </ul>
 </div>
-<aside class="notes">
-<ul>
-<li>One</li>
-<li>Two</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="un-proceso-de-enfermedad-simple" class="slide level2">
 <h2>Un proceso de enfermedad simple</h2>
@@ -428,22 +412,6 @@
 <li class="fragment">La muerte conlleva un valor de utilidad de 0.</li>
 </ul>
 </div>
-<aside class="notes">
-<ul>
-<li>note 1</li>
-<li>note 2</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="un-proceso-de-enfermedad-simple-1" class="slide level2">
 <h2>Un proceso de enfermedad simple</h2>
@@ -460,15 +428,15 @@
 <p>El Instituto de Salud de un país estudia cinco estrategias de prevención preventiva que reducen el riesgo de enfermar:</p>
 <table>
 <colgroup>
-<col style="width: 24%">
+<col style="width: 25%">
 <col style="width: 50%">
-<col style="width: 24%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Strategy</th>
-<th>Description</th>
-<th>Cost</th>
+<th>Estrategia</th>
+<th>Descripción</th>
+<th>Coste</th>
 </tr>
 </thead>
 <tbody>
@@ -515,17 +483,17 @@
 <section id="opción-de-modelo-1-árbol-de-decisión-1" class="slide level2" data-background-image="images/paste-01F7F5A9.png" data-background-size="contain" data-background-opacity="0.4">
 <h2>Opción de modelo 1: Árbol de decisión</h2>
 <ul>
-<li class="fragment">What limitations do you see?</li>
+<li class="fragment">¿Qué limitaciones ve?</li>
 </ul>
 </section>
 <section id="section-1" class="slide level2" data-background-image="images/paste-55AF9B31.png" data-background-size="contain">
 <h2></h2>
-<p>Decision tree for two full cycles.</p>
+<p>Árbol de decisión para dos ciclos completos.</p>
 <!-- Note: Data to construct are contained in media/decision_tree_markov_health_sick_dead_2y.Rdata -->
 </section>
 <section id="section-2" class="slide level2" data-background-image="images/paste-AAAFE3F8.png" data-background-size="contain">
 <h2></h2>
-<p>Strategy A decision tree for 5 cycles.</p>
+<p>Estrategia Un árbol de decisión para 5 ciclos.</p>
 <!-- Note: Data to construct are contained in media/decision_tree_markov_health_sick_dead_5y.Rdata -->
 </section>
 <section id="árboles-de-decisión" class="slide level2">
@@ -890,141 +858,141 @@
 <h2>Key characteristics</h2>
 <div>
 <ul>
-<li class="fragment">Allows for health state transitions <span style="background-color: yellow;">over time</span></li>
-<li class="fragment">Individuals can only exist in one state at a time (mutually exclusive health states)</li>
-<li class="fragment">At the beginning or end of each cycle, patients transition across health states via transition probabilities &amp; individuals stay in health state <span style="background-color: yellow;">for entire cycle length</span></li>
-<li class="fragment">Probability of transitioning depends on the current state (“no memory”); (tunnel states can account for this potential limitation)</li>
-<li class="fragment">Transition probabilities remain constant over time (apart from embedded lifetables)</li>
-<li class="fragment">Results report “average” of cohort</li>
+<li class="fragment">Permite transiciones de estado de salud <span style="color de fondo: amarillo;">en tiempo</span></li>
+<li class="fragment">Los individuos sólo pueden existir en un estado a la vez (estados de salud mutuamente estados de salud mutuamente excluyentes)</li>
+<li class="fragment">Al principio o al final de cada ciclo, los pacientes pasan por estados de salud mediante probabilidades de transición y los individuos permanecen en estado de salud <span style="color de fondo: amarillo;">durante todo el ciclo length</span></li>
+<li class="fragment">La probabilidad de transición depende del estado actual (“sin memoria”); (los estados túnel pueden tener en cuenta esta posible limitación)</li>
+<li class="fragment">Las probabilidades de transición permanecen constantes a lo largo del tiempo (aparte de las tablas de vida integradas)</li>
+<li class="fragment">Los resultados indican la “media” de la cohorte</li>
 </ul>
 </div>
 </section>
-<section id="key-characteristics-1" class="slide level2 smaller">
-<h2>Key characteristics</h2>
+<section id="características-principales" class="slide level2 smaller">
+<h2>Características principales</h2>
 <p><br></p>
 <blockquote>
-<p>“CYCLE” = Minimum amount of time that any individual will spend in a state before possible transition to another state</p>
+<p>“CICLO” = Cantidad mínima de tiempo que cualquier individuo pasará en un estado antes de una posible transición a otro estado</p>
 </blockquote>
 <ul>
-<li class="fragment">More on this in the next slides</li>
+<li class="fragment">Más información en las siguientes diapositivas</li>
 </ul>
 </section>
-<section id="steps" class="slide level2">
-<h2>Steps</h2>
+<section id="pasos" class="slide level2">
+<h2>Pasos</h2>
 <ol type="1">
-<li class="fragment">Define the decision problem</li>
-<li class="fragment">Conceptualize the model</li>
-<li class="fragment">Parameterize the model</li>
-<li class="fragment">Calculate or define the transition probability matrix</li>
-<li class="fragment">Run the model</li>
+<li class="fragment">Definir el problema de decisión</li>
+<li class="fragment">Conceptualizar el modelo</li>
+<li class="fragment">Parametrizar el modelo</li>
+<li class="fragment">Calcular o definir la matriz de probabilidades de transición</li>
+<li class="fragment">Ejecutar el modelo</li>
 </ol>
 </section></section>
 <section>
-<section id="define-the-decision-problem" class="title-slide slide level1 center" data-background="#c2f0c2">
-<h1>1. Define the Decision Problem</h1>
+<section id="definir-el-problema-de-decisión" class="title-slide slide level1 center" data-background="#c2f0c2">
+<h1>1. Definir el problema de decisión</h1>
 
 </section>
-<section id="step-1-define-the-decision-problem" class="slide level2">
-<h2>Step 1: Define the Decision Problem</h2>
-<p>We defined the decision problem earlier in this lecture, so we’ll repeat the basic objectives briefly here.</p>
+<section id="paso-1-definir-el-problema-de-decisión" class="slide level2">
+<h2>Paso 1: Definir el problema de decisión</h2>
+<p>Ya hemos definido el problema de decisión anteriormente en esta clase, así que repetiremos los objetivos básicos brevemente aquí.</p>
 </section>
-<section id="step-1-define-the-decision-problem-1" class="slide level2">
-<h2>Step 1: Define the Decision Problem</h2>
-<p><strong>Goal:</strong> model the cost-effectiveness of alternative strategies to prevent a disease from occurring.</p>
+<section id="paso-1-definir-el-problema-de-decisión-1" class="slide level2">
+<h2>Paso 1: Definir el problema de decisión</h2>
+<p><strong>Objetivo:</strong> modelar la rentabilidad de estrategias alternativas para para prevenir la aparición de una enfermedad.</p>
 <table>
 <colgroup>
-<col style="width: 13%">
-<col style="width: 67%">
-<col style="width: 18%">
+<col style="width: 25%">
+<col style="width: 50%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Strategy</th>
-<th>Description</th>
-<th>Cost</th>
+<th>Estrategia</th>
+<th>Descripción</th>
+<th>Coste</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>A</td>
-<td>Standard of Care</td>
-<td>$25/year</td>
+<td>Normas de asistencia</td>
+<td>25 $/año</td>
 </tr>
 <tr class="even">
 <td>B</td>
-<td>Additional 4% reduction in risk of becoming sick</td>
-<td>$1,000/year</td>
+<td>Reducción adicional del 4% del riesgo de enfermar</td>
+<td>1,000 $/año</td>
 </tr>
 <tr class="odd">
 <td>C</td>
-<td>12% reduction in risk</td>
-<td>$3,100/year</td>
+<td>12% de reducción del riesgo</td>
+<td>3,100 $/año</td>
 </tr>
 <tr class="even">
 <td>D</td>
-<td>8% reduction in risk</td>
-<td>$1,550/year</td>
+<td>8% de reducción del riesgo</td>
+<td>1,550 $/año</td>
 </tr>
 <tr class="odd">
 <td>E</td>
-<td>8% reduction in risk</td>
-<td>$5,000/year</td>
+<td>8% de reducción del riesgo</td>
+<td>5,000 $/año</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="step-1-define-the-decision-problem-2" class="slide level2">
-<h2>Step 1: Define the Decision Problem</h2>
+<section id="paso-1-definir-el-problema-de-decisión-2" class="slide level2">
+<h2>Paso 1: Definir el problema de decisión</h2>
 
 <img data-src="images/paste-13DB786D.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
 <section>
-<section id="conceptualize-the-markov-model" class="title-slide slide level1 center" data-background="#c2f0c2">
-<h1>2. Conceptualize the Markov Model</h1>
+<section id="conceptualizar-el-modelo-de-markov" class="title-slide slide level1 center" data-background="#c2f0c2">
+<h1>2. Conceptualizar el modelo de Markov</h1>
 
 </section>
-<section id="conceptualize-the-markov-model-1" class="slide level2">
-<h2>2. Conceptualize the Markov Model</h2>
-<p>Two major steps:</p>
-<h3 id="a.-determine-health-states"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 2a. Determine health states</h3>
-<h3 id="b.-determine-transitions"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 2b. Determine transitions</h3>
+<section id="conceptualizar-el-modelo-de-markov-1" class="slide level2">
+<h2>2. Conceptualizar el modelo de Markov</h2>
+<p>Dos pasos principales:</p>
+<h3 id="a.-determinar-los-estados-de-salud"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 2a. Determinar los estados de salud</h3>
+<h3 id="b.-determinar-las-transiciones"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 2b. Determinar las transiciones</h3>
 </section>
-<section id="step-2-conceptualize-the-model" class="slide level2">
-<h2>Step 2: Conceptualize the Model</h2>
-<h3 id="a.-determine-health-states-1"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 2a. Determine health states</h3>
+<section id="paso-2-conceptualizar-el-modelo" class="slide level2">
+<h2>Paso 2: Conceptualizar el modelo</h2>
+<h3 id="a.-determinar-estados-de-salud"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 2a. Determinar estados de salud</h3>
 <div>
 <ul>
-<li class="fragment">There are three health states people can experience:
+<li class="fragment">Las personas pueden experimentar tres estados de salud:
 <ol type="1">
-<li class="fragment">Remain <strong>Healthy</strong></li>
-<li class="fragment">Become <strong>Sick</strong></li>
-<li class="fragment"><strong>Death</strong></li>
+<li class="fragment">Permanecer <strong>Sano</strong></li>
+<li class="fragment">Enfermar**.</li>
+<li class="fragment"><strong>Morir</strong></li>
 </ol></li>
 </ul>
 </div>
 </section>
-<section id="step-2-conceptualize-the-model-1" class="slide level2">
-<h2>Step 2: Conceptualize the Model</h2>
-<h3 id="a.-determine-health-states-2"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 2a. Determine health states</h3>
+<section id="paso-2-conceptualizar-el-modelo-1" class="slide level2">
+<h2>Paso 2: Conceptualizar el Modelo</h2>
+<h3 id="a.-determinar-los-estados-de-salud-1"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 2a. Determinar los estados de salud</h3>
 <div>
 <ul>
-<li>There three health states people can experience:
+<li>Las personas pueden experimentar tres estados de salud:
 <ol type="1">
-<li>Remain <strong>Healthy</strong></li>
-<li>Become <strong>Sick</strong></li>
-<li><strong>Death</strong></li>
+<li>Permanecer <strong>Sano</strong></li>
+<li>Enfermar**.</li>
+<li><strong>Morir</strong></li>
 </ol></li>
 </ul>
 </div>
-<h3 id="b.-determine-transitions-1"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 2b. Determine transitions</h3>
+<h3 id="b.-determinar-transiciones"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 2b. Determinar transiciones</h3>
 <div>
 <ul>
-<li class="fragment">Individuals who become sick cannot transition back to healthy.</li>
+<li class="fragment">Los individuos que enferman no pueden volver a estar sanos.</li>
 </ul>
 </div>
 </section>
-<section id="bubble-diagram" class="slide level2">
-<h2>“Bubble Diagram”</h2>
-<p>State transition (“bubble”) diagrams are useful visualizations of a Markov model.</p>
+<section id="diagrama-de-burbujas" class="slide level2">
+<h2>“Diagrama de burbujas</h2>
+<p>Los diagramas de transición de estados (“burbuja”) son visualizaciones útiles de un modelo de Markov.</p>
 <div class="cell" data-fig-width="4" data-layout-align="center">
 <div class="cell-output-display">
 <div>
@@ -1100,25 +1068,25 @@
 </div>
 </section></section>
 <section>
-<section id="parameterize-the-model" class="title-slide slide level1 center" data-background="#c2f0c2">
-<h1>3. Parameterize the Model</h1>
+<section id="parametrizar-el-modelo" class="title-slide slide level1 center" data-background="#c2f0c2">
+<h1>3. Parametrizar el modelo</h1>
 
 </section>
-<section id="parameterize-the-model-1" class="slide level2">
-<h2>3. Parameterize the Model</h2>
-<p>Basic steps</p>
-<h3 id="a.-determine-basic-model-parameters"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3a. Determine basic model parameters</h3>
-<h3 id="b.-curate-and-define-model-inputs"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b. Curate and define model inputs</h3>
+<section id="parametrizar-el-modelo-1" class="slide level2">
+<h2>3. Parametrizar el modelo</h2>
+<p>Pasos básicos</p>
+<h3 id="a.-determinar-los-parámetros-básicos-del-modelo"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3a. Determinar los parámetros básicos del modelo</h3>
+<h3 id="b.-curar-y-definir-las-entradas-del-modelo"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b. Curar y definir las entradas del modelo</h3>
 </section>
-<section id="parameterize-the-model-2" class="slide level2">
-<h2>3. Parameterize the Model</h2>
-<p>Basic steps</p>
-<h3 id="a.-determine-basic-model-parameters-1"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3a. Determine basic model parameters</h3>
+<section id="parametrizar-el-modelo-2" class="slide level2">
+<h2>3. Parametrizar el modelo</h2>
+<p>Pasos básicos</p>
+<h3 id="a.-determinar-los-parámetros-básicos-del-modelo-1"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3a. Determinar los parámetros básicos del modelo</h3>
 <div>
 <ul>
-<li class="fragment">Define the population (e.g., 25 year old females)</li>
-<li class="fragment">Define the Markov cycle length (e.g., 1-year cycle)</li>
-<li class="fragment">Define the time horizon (e.g., followed until age 100 or death)</li>
+<li class="fragment">Definir la población (por ejemplo, mujeres de 25 años)</li>
+<li class="fragment">Definir la duración del ciclo de Markov (por ejemplo, ciclo de 1 año)</li>
+<li class="fragment">Definir el horizonte temporal (p.&nbsp;ej., seguimiento hasta los 100 años o la muerte)</li>
 </ul>
 </div>
 </section>
@@ -1127,9 +1095,9 @@
 <!-- https://www.youtube.com/watch?v=bVlMq67HT48 -->
 <div>
 <ul>
-<li class="fragment">Fundamentally, we’re modeling a continuous time process (e.g., progression of disease).</li>
-<li class="fragment">A discrete time Markov model “breaks up” time into “chunks” (i.e., “cycles”).</li>
-<li class="fragment">A consequence is that the model will show us what fraction start out a cycle in a given state, and what fraction end up in each state at the end of the cycle.</li>
+<li class="fragment">Fundamentalmente, estamos modelando un proceso de tiempo continuo (por ejemplo, progresión de la enfermedad).</li>
+<li class="fragment">Un modelo de Markov de tiempo discreto “divide” el tiempo en “trozos” (es decir, “ciclos”).</li>
+<li class="fragment">Una consecuencia es que el modelo nos mostrará qué fracción empieza un ciclo en un estado determinado y qué fracción termina en cada estado al final del ciclo. al final del ciclo.</li>
 </ul>
 </div>
 </section>
@@ -1137,12 +1105,12 @@
 <h2>3a. Definir la longitud del ciclo de Markov</h2>
 <div>
 <ul>
-<li class="fragment">Suppose we used a one-year cycle for the healthy-sick-dead model.</li>
-<li class="fragment">Think about the underlying (continuous time) disease process.
+<li class="fragment">Supongamos que utilizamos un ciclo de un año para el modelo sano-enfermo-muerto.</li>
+<li class="fragment">Pensemos en el proceso de enfermedad subyacente (en tiempo continuo).
 <ul>
-<li class="fragment">Recall that becoming sick substantially increases the likelihood of death.</li>
+<li class="fragment">Recordemos que enfermar aumenta sustancialmente la probabilidad de morir.</li>
 </ul></li>
-<li class="fragment">If we’re not careful, what are we (implicitly) assuming <em>can</em> and <em>can’t</em> happen in a single cycle?</li>
+<li class="fragment">Si no tenemos cuidado, ¿qué estamos suponiendo (implícitamente) que <em>puede</em> y <em>puede</em> y <em>no puede</em> ocurrir en un solo ciclo?</li>
 </ul>
 </div>
 </section>
@@ -1154,12 +1122,12 @@
 </section>
 <section id="a.-definir-la-longitud-del-ciclo-de-markov-3" class="slide level2 smaller">
 <h2>3a. Definir la longitud del ciclo de Markov</h2>
-<p>The challenge of selecting an appropriate cycle length boils down to how we deal with <strong>competing risks</strong>.</p>
+<p>El reto de seleccionar una longitud de ciclo adecuada se reduce a cómo tratamos los <strong>riesgos en competencia</strong>.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div>
 <ul>
-<li class="fragment">Competing risks: individuals can transition from their current health state to two or more other health states.</li>
+<li class="fragment">Riesgos concurrentes: los individuos pueden pasar de su estado de salud estado de salud actual a otros dos o más estados de salud.</li>
 </ul>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1238,13 +1206,13 @@
 </section>
 <section id="a.-definir-la-longitud-del-ciclo-de-markov-4" class="slide level2 smaller">
 <h2>3a. Definir la longitud del ciclo de Markov</h2>
-<p>The challenge of selecting an appropriate cycle length boils down to how we deal with <strong>competing risks</strong>.</p>
+<p>El reto de seleccionar una duración de ciclo adecuada se reduce a cómo los <strong>riesgos en competencia</strong>.</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div>
 <ul>
-<li class="fragment">If we’re not careful, we could effectively rule out the possibility of Healthy <i class="fa-solid fa-arrow-right-long" aria-label="arrow-right-long"></i> Sick<i class="fa-solid fa-arrow-right-long" aria-label="arrow-right-long"></i> Dead within a cycle.</li>
-<li class="fragment">The model would <em>look like</em> a basic Healthy <i class="fa-solid fa-arrow-right-long" aria-label="arrow-right-long"></i> Dead transition, but they took a detour through Sick along the way!</li>
+<li class="fragment">Si no tenemos cuidado, podríamos descartar la posibilidad… de la Salud <i class="fa-solid fa-arrow-right-long" aria-label="arrow-right-long"></i> Enfermo<i class="fa-solid fa-arrow-right-long" aria-label="arrow-right-long"></i> Muerto dentro de un ciclo.</li>
+<li class="fragment">El modelo sería <em>como</em> un sano básico <i class="fa-solid fa-flecha-derecha-larga" aria-label="flecha-derecha-larga"></i> Muerto, pero se desvió a través de Enfermo en el camino.</li>
 </ul>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1353,29 +1321,21 @@
 <section id="a.-definir-la-longitud-del-ciclo-de-markov-6" class="slide level2">
 <h2>3a. Definir la longitud del ciclo de Markov</h2>
 <ul>
-<li class="fragment">It may be tempting to simply shorten the cycle length (e.g., use 1 day cycle vs.&nbsp;1 year cycle).</li>
+<li class="fragment">Puede resultar tentador simplemente acortar la duración del ciclo (por ejemplo, utilizar un ciclo de 1 día frente a 1 año).</li>
 </ul>
-<div>
-<ul>
-<li class="fragment">For a 75 year horizon, how many cycles would that be?
-<ul>
-<li class="fragment">27,375!!!</li>
-</ul></li>
-<li class="fragment">Any possible issues with this?</li>
-</ul>
-</div>
+<p>incremental - Para un horizonte de 75 años, ¿cuántos ciclos serían? - ¡¡¡- 27,375!!! - ¿Hay algún problema? :::</p>
 </section>
 <section id="a.-definir-la-longitud-del-ciclo-de-markov-7" class="slide level2">
 <h2>3a. Definir la longitud del ciclo de Markov</h2>
 <ul>
-<li class="fragment">Shortening the cycle creates a computational challenge.</li>
+<li class="fragment">Acortar el ciclo supone un reto computacional.</li>
 </ul>
 <div>
 <ul>
-<li class="fragment">Base case requires 27,375 daily cycles.</li>
-<li class="fragment">Now suppose we want to run 2,000 probabilistic sensitivity analysis model runs.
+<li class="fragment">El caso base requiere 27.375 ciclos diarios.</li>
+<li class="fragment">Supongamos ahora que queremos realizar 2.000 análisis de sensibilidad probabilística probabilístico.
 <ul>
-<li class="fragment">We now have 57,750,000 cycle runs to contend with!</li>
+<li class="fragment">Ahora tenemos que hacer frente a 57.750.000 ciclos.</li>
 </ul></li>
 </ul>
 </div>
@@ -1415,21 +1375,21 @@
 </section>
 <section id="a.-definir-la-longitud-del-ciclo-de-markov-10" class="slide level2">
 <h2>3a. Definir la longitud del ciclo de Markov</h2>
-<p>More challenges …</p>
+<p>Más retos …</p>
 <ul>
-<li class="fragment">Markov models are “memoryless” – they don’t remember what happened before the current cycle.
+<li class="fragment">Los modelos de Markov carecen de memoria: no recuerdan lo que ocurrió antes del ciclo actual.
 <ul>
-<li class="fragment">If your risk of transition to a sicker health state depends on events that happened earlier in time, the model can’t explicitly account for this.</li>
+<li class="fragment">Si su riesgo de transición a un estado de salud más grave depende de de acontecimientos anteriores, el modelo no puede tenerlo en cuenta explícitamente. explícitamente.</li>
 </ul></li>
 </ul>
 </section>
 <section id="a.-definir-la-longitud-del-ciclo-de-markov-11" class="slide level2">
 <h2>3a. Definir la longitud del ciclo de Markov</h2>
-<p>More challenges …</p>
+<p>Más retos …</p>
 <ul>
-<li class="fragment">There are workarounds known as “tunnel states” to get around this problem, though these are difficult to do and present their own challenges
+<li class="fragment">Existen soluciones conocidas como “estados túnel” para evitar este problema, aunque son difíciles de hacer y presentan sus propios problemas
 <ul>
-<li class="fragment">We won’t cover them this week but we can provide references if you want to explore!</li>
+<li class="fragment">No los trataremos esta semana, pero podemos proporcionar referencias si explorar.</li>
 </ul></li>
 </ul>
 </section>
@@ -1468,12 +1428,12 @@
 <div class="column" style="width:50%;">
 <div>
 <ul>
-<li class="fragment">It’s also advisable to pick a cycle length that aligns with the clinical/disease timelines of the decision problem.
+<li class="fragment">También es aconsejable elegir una duración de ciclo que se alinee con los los plazos clínicos/enfermedad del problema de decisión.
 <ul>
-<li class="fragment">Treatment schedules.</li>
-<li class="fragment">Acute vs.&nbsp;chronic condition.</li>
+<li class="fragment">Esquemas de tratamiento.</li>
+<li class="fragment">Enfermedad aguda frente a crónica.</li>
 </ul></li>
-<li class="fragment">Another option is to incorporate “short-run” events that happen early in the course of a disease/intervention within the decision tree, then allow the Markov model to model longer-term health consequences.</li>
+<li class="fragment">Otra opción es incorporar los acontecimientos “a corto plazo” que se producen en el curso de una enfermedad/intervención dentro del árbol de decisión y de decisión y, a continuación, permitir que el modelo de Markov modele las consecuencias sanitarias a largo plazo.</li>
 </ul>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1550,196 +1510,196 @@
 </div>
 </div>
 </section>
-<section id="parameterize-the-model-3" class="slide level2">
-<h2>3. Parameterize the Model</h2>
-<h3 id="b.-curate-and-define-model-inputs-1"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b. Curate and define model inputs</h3>
+<section id="parametrizar-el-modelo-3" class="slide level2">
+<h2>3. Parametrizar el modelo</h2>
+<h3 id="b.-curar-y-definir-las-entradas-del-modelo-1"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b. Curar y definir las entradas del modelo</h3>
 <div class="nobullet">
 <ul>
-<li class="fragment"><p><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b.i. Source and define the base case values.</p></li>
-<li class="fragment"><p><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b.ii. Source and define sources of uncertainty.</p></li>
+<li class="fragment"><p><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b.i. Fuente y definir el caso base valores.</p></li>
+<li class="fragment"><p><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b.ii. Origen y definición de las fuentes de incertidumbre.</p></li>
 </ul>
 </div>
 </section>
-<section id="parameterize-the-model-4" class="slide level2">
-<h2>3. Parameterize the Model</h2>
-<h3 id="b.-curate-and-define-model-inputs-2"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b. Curate and define model inputs</h3>
+<section id="parametrizar-el-modelo-4" class="slide level2">
+<h2>3. Parametrizar el modelo</h2>
+<h3 id="b.-curar-y-definir-las-entradas-del-modelo-2"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b. Curar y definir las entradas del modelo</h3>
 <div>
 <ul>
-<li class="fragment">Rate of disease onset</li>
-<li class="fragment">Health state utilities and costs</li>
-<li class="fragment">Hazard ratios, odds ratios or relative risks for different strategies.</li>
-<li class="fragment">… and so on.</li>
+<li class="fragment">Tasa de aparición de la enfermedad</li>
+<li class="fragment">Utilidades y costes del estado de salud</li>
+<li class="fragment">Ratios de riesgo, odds ratios o riesgos relativos para diferentes estrategias. estrategias.</li>
+<li class="fragment">… y así sucesivamente.</li>
 </ul>
 </div>
 </section>
-<section id="parameterize-the-model-5" class="slide level2">
-<h2>3. Parameterize the Model</h2>
-<p>We defined many of the underlying parameters earlier in this lecture, so we’ll repeat them briefly here.</p>
+<section id="parametrizar-el-modelo-5" class="slide level2">
+<h2>3. Parametrizar el modelo</h2>
+<p>Hemos definido muchos de los parámetros subyacentes antes en esta conferencia, por lo que los repetiremos brevemente aquí.</p>
 </section>
-<section id="parameterize-the-model-6" class="slide level2">
-<h2>3. Parameterize the Model</h2>
+<section id="parametrizar-el-modelo-6" class="slide level2">
+<h2>3. Parametrizar el modelo</h2>
 <ul>
-<li class="fragment">We start with a healthy population of 25 year olds and follow them until age 100 (or death, if earlier).</li>
-</ul>
-<div>
-<ul>
-<li class="fragment">Remaining healthy carries no utility decrement (utility weight= 1.0)</li>
-<li class="fragment">Becoming sick carries a 0.25 utility decrement for the remainder of the person’s life (utility weight = 0.75)</li>
-<li class="fragment">Death carries a utility weight value of 0.</li>
-</ul>
-</div>
-</section>
-<section id="parameterize-the-model-7" class="slide level2">
-<h2>3. Parameterize the Model</h2>
-<ul>
-<li class="fragment">There is no cost associated with remaining healthy.</li>
+<li class="fragment">Comenzamos con una población sana de 25 años de edad y los seguimos hasta los 100 años (o la muerte, si es antes).</li>
 </ul>
 <div>
 <ul>
-<li class="fragment">Becoming sick incurs $1,000 / year in costs.</li>
-<li class="fragment">Becoming sick increases the risk of death by 300%.</li>
+<li class="fragment">Permanecer sano no conlleva ninguna disminución de la utilidad (peso de la utilidad= 1,0)</li>
+<li class="fragment">Enfermar conlleva una disminución de la utilidad de 0,25 durante el resto de la vida de la persona (peso de la utilidad= 1,0). vida de la persona (peso de utilidad = 0,75)</li>
+<li class="fragment">La muerte tiene un peso de utilidad de 0.</li>
 </ul>
 </div>
 </section>
-<section id="parameterize-the-model-8" class="slide level2">
-<h2>3. Parameterize the Model</h2>
-<p>Each strategy has a different cost and impact on the likelihood of becoming sick.</p>
+<section id="parametrizar-el-modelo-7" class="slide level2">
+<h2>3. Parametrizar el modelo</h2>
+<ul>
+<li class="fragment">No hay ningún coste asociado a mantenerse sano.</li>
+</ul>
+<div>
+<ul>
+<li class="fragment">Enfermar supone un coste de 1.000 $/año.</li>
+<li class="fragment">Enfermar aumenta el riesgo de muerte en un 300%.</li>
+</ul>
+</div>
+</section>
+<section id="parametrizar-el-modelo-8" class="slide level2">
+<h2>3. Parametrizar el modelo</h2>
+<p>Cada estrategia tiene un coste y un impacto diferentes en la probabilidad de enfermar. enfermar.</p>
 <table>
 <colgroup>
-<col style="width: 13%">
-<col style="width: 67%">
-<col style="width: 18%">
+<col style="width: 25%">
+<col style="width: 50%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Strategy</th>
-<th>Description</th>
-<th>Cost</th>
+<th>Estrategia</th>
+<th>Descripción</th>
+<th>Coste</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>A</td>
-<td>Standard of Care</td>
-<td>$25/year</td>
+<td>Normas de asistencia</td>
+<td>25 $/año</td>
 </tr>
 <tr class="even">
 <td>B</td>
-<td>Additional 4% reduction in risk of becoming sick</td>
-<td>$1,000/year</td>
+<td>Reducción adicional del 4% del riesgo de enfermar</td>
+<td>1,000 $/año</td>
 </tr>
 <tr class="odd">
 <td>C</td>
-<td>12% reduction in risk</td>
-<td>$3,100/year</td>
+<td>12% de reducción del riesgo</td>
+<td>3,100 $/año</td>
 </tr>
 <tr class="even">
 <td>D</td>
-<td>8% reduction in risk</td>
-<td>$1,550/year</td>
+<td>8% de reducción del riesgo</td>
+<td>1,550 $/año</td>
 </tr>
 <tr class="odd">
 <td>E</td>
-<td>8% reduction in risk</td>
-<td>$5,000/year</td>
+<td>8% de reducción del riesgo</td>
+<td>5,000 $/año</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="parameterize-the-model-9" class="slide level2">
-<h2>3. Parameterize the Model</h2>
+<section id="parametrizar-el-modelo-9" class="slide level2">
+<h2>3. Parametrizar el modelo</h2>
 <div class="callout callout-important callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>It is <strong>critical</strong> to follow a formal process for parameterizing your model.</p>
+<p>Es <strong>crítico</strong> seguir un proceso formal para parametrizar su modelo.</p>
 </div>
 </div>
 </div>
 <div>
 <ul>
-<li class="fragment">Often, parameters are drawn from the published literature, and it is important to track the source (published value, assumption, etc.) for each model parameter.
+<li class="fragment">A menudo, los parámetros se extraen de la literatura publicada, y es importante rastrear la fuente (valor publicado, suposición, etc.) de cada parámetro del modelo.
 <ul>
-<li class="fragment">For example, the percent risk reduction parameter for each strategy may come from different clinical trials.</li>
-<li class="fragment">The parameter governing death from background causes may be derived from mortality data.</li>
+<li class="fragment">Por ejemplo, el parámetro de reducción porcentual del riesgo de cada estrategia puede proceder de distintos ensayos clínicos. estrategia puede proceder de diferentes ensayos clínicos.</li>
+<li class="fragment">El parámetro que rige la muerte por causas de fondo puede derivarse de datos de mortalidad.</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="parameterize-the-model-10" class="slide level2 smaller">
-<h2>3. Parameterize the Model</h2>
+<section id="parametrizar-el-modelo-10" class="slide level2 smaller">
+<h2>3. Parametrizar el modelo</h2>
 <div class="callout callout-important callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>It is <strong>critical</strong> to follow a formal process for parameterizing your model.</p>
+<p>Es <strong>crítico</strong> seguir un proceso formal para parametrizar su modelo. modelo.</p>
 </div>
 </div>
 </div>
 <div>
 <ul>
-<li class="fragment">Some parameters may just be values (e.g., cost of Strategy A is $25/yr)</li>
-<li class="fragment">Some parameters may be functions of other parameters.
+<li class="fragment">Algunos parámetros pueden ser simplemente valores (por ejemplo, el coste de la estrategia A es de \25 $/año)</li>
+<li class="fragment">Algunos parámetros pueden ser funciones de otros parámetros.
 <ul>
-<li class="fragment">For example, suppose we want to follow a cohort of 25 year olds until age 100 or death, if it occurs earlier.</li>
-<li class="fragment">In that case we have two “fixed” parameters: the starting age, and the maximum age.</li>
-<li class="fragment">We can use these two parameters to infer the total number of cycles we need to run.</li>
+<li class="fragment">Por ejemplo, supongamos que queremos seguir a una cohorte de personas de 25 años hasta los 100 años o la muerte, si ésta se produce antes.</li>
+<li class="fragment">En ese caso tenemos dos parámetros “fijos”: la edad inicial y la edad máxima.</li>
+<li class="fragment">Podemos utilizar estos dos parámetros para deducir el número total de ciclos que necesitamos realizar. ciclos que necesitamos ejecutar.</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="parameterize-the-model-11" class="slide level2">
-<h2>3. Parameterize the Model</h2>
+<section id="parametrizar-el-modelo-11" class="slide level2">
+<h2>3. Parametrizar el modelo</h2>
 <div class="callout callout-important callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>It is <strong>critical</strong> to follow a formal process for parameterizing your model.</p>
+<p>Es <strong>crítico</strong> seguir un proceso formal para parametrizar su modelo. modelo.</p>
 </div>
 </div>
 </div>
 <div>
 <ul>
-<li class="fragment">Parameters also have various “flavors”:
+<li class="fragment">Los parámetros también tienen varios “sabores”:
 <ol type="1">
-<li class="fragment">Probabilities</li>
-<li class="fragment">Rates</li>
-<li class="fragment">Hazard ratios</li>
-<li class="fragment">Costs</li>
-<li class="fragment">Utilities</li>
+<li class="fragment">Probabilidades</li>
+<li class="fragment">Tasas</li>
+<li class="fragment">Razones de riesgo</li>
+<li class="fragment">Costes</li>
+<li class="fragment">Utilidades</li>
 <li class="fragment">etc.</li>
 </ol></li>
 </ul>
 </div>
 </section>
-<section id="parameterize-the-model-12" class="slide level2">
-<h2>3. Parameterize the Model</h2>
+<section id="parametrizar-el-modelo-12" class="slide level2">
+<h2>3. Parametrizar el modelo</h2>
 <div class="callout callout-important callout-style-simple">
 <div class="callout-body">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>It is <strong>critical</strong> to follow a formal process for parameterizing your model.</p>
+<p>Es <strong>crítico</strong> seguir un proceso formal para parametrizar su modelo. modelo.</p>
 </div>
 </div>
 </div>
 <div>
 <ul>
-<li class="fragment"><p>All of the above highlight the importance of adopting a formal process for naming and tracking the value, source, and uncertainty distribution of <strong>all</strong> model parameters in one place.</p></li>
-<li class="fragment"><p>We recommend a structured approach based on parameter naming conventions and parameter tables.</p></li>
+<li class="fragment"><p>Todo lo anterior resalta la importancia de adoptar un proceso formal para nombrar y rastrear el valor, la fuente y la distribución de incertidumbre de de <strong>todos</strong> los parámetros del modelo en un único lugar.</p></li>
+<li class="fragment"><p>Recomendamos un enfoque estructurado basado en convenciones de nomenclatura de parámetros y tablas de parámetros. y tablas de parámetros.</p></li>
 </ul>
 </div>
 </section>
-<section id="parameterize-the-model-13" class="slide level2">
-<h2>3. Parameterize the Model</h2>
-<p>Naming conventions:</p>
+<section id="parametrizar-el-modelo-13" class="slide level2">
+<h2>3. Parametrizar el modelo</h2>
+<p>Convenciones de nomenclatura:</p>
 <div class="cell">
 <div class="cell-output-display">
 <table>
@@ -1751,27 +1711,27 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Probability</td>
+<td style="text-align: left;">Probabilidad</td>
 <td style="text-align: left;">p_</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Rate</td>
+<td style="text-align: left;">Tasa (Rate)</td>
 <td style="text-align: left;">r_</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Matrix</td>
+<td style="text-align: left;">Matriz</td>
 <td style="text-align: left;">m_</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Cost</td>
+<td style="text-align: left;">Coste</td>
 <td style="text-align: left;">c_</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Utility</td>
+<td style="text-align: left;">Utilidad</td>
 <td style="text-align: left;">u_</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Hazard Ratio</td>
+<td style="text-align: left;">Razón de riesgo (hazard ratio)</td>
 <td style="text-align: left;">hr_</td>
 </tr>
 </tbody>
@@ -1779,31 +1739,29 @@
 </div>
 </div>
 </section>
-<section id="parameter-table" class="slide level2 smaller">
-<h2>Parameter Table</h2>
-<div class="footer">
-<p>Note: Only a subset of model parameters are shown in table.</p>
-</div>
+<section id="tabla-de-parámetros" class="slide level2 smaller">
+<h2>Tabla de parámetros</h2>
+<p>::: pie de página Nota: En la tabla sólo se muestra un subconjunto de parámetros del modelo. :::</p>
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="rcibbcmulu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rcibbcmulu table {
+<div id="exmmqfdjnl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#exmmqfdjnl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rcibbcmulu thead, #rcibbcmulu tbody, #rcibbcmulu tfoot, #rcibbcmulu tr, #rcibbcmulu td, #rcibbcmulu th {
+#exmmqfdjnl thead, #exmmqfdjnl tbody, #exmmqfdjnl tfoot, #exmmqfdjnl tr, #exmmqfdjnl td, #exmmqfdjnl th {
   border-style: none;
 }
 
-#rcibbcmulu p {
+#exmmqfdjnl p {
   margin: 0;
   padding: 0;
 }
 
-#rcibbcmulu .gt_table {
+#exmmqfdjnl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1829,12 +1787,12 @@
   border-left-color: #D3D3D3;
 }
 
-#rcibbcmulu .gt_caption {
+#exmmqfdjnl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rcibbcmulu .gt_title {
+#exmmqfdjnl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1846,7 +1804,7 @@
   border-bottom-width: 0;
 }
 
-#rcibbcmulu .gt_subtitle {
+#exmmqfdjnl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1858,7 +1816,7 @@
   border-top-width: 0;
 }
 
-#rcibbcmulu .gt_heading {
+#exmmqfdjnl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1870,13 +1828,13 @@
   border-right-color: #D3D3D3;
 }
 
-#rcibbcmulu .gt_bottom_border {
+#exmmqfdjnl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rcibbcmulu .gt_col_headings {
+#exmmqfdjnl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1891,7 +1849,7 @@
   border-right-color: #D3D3D3;
 }
 
-#rcibbcmulu .gt_col_heading {
+#exmmqfdjnl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1911,7 +1869,7 @@
   overflow-x: hidden;
 }
 
-#rcibbcmulu .gt_column_spanner_outer {
+#exmmqfdjnl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1923,15 +1881,15 @@
   padding-right: 4px;
 }
 
-#rcibbcmulu .gt_column_spanner_outer:first-child {
+#exmmqfdjnl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rcibbcmulu .gt_column_spanner_outer:last-child {
+#exmmqfdjnl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rcibbcmulu .gt_column_spanner {
+#exmmqfdjnl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1943,11 +1901,11 @@
   width: 100%;
 }
 
-#rcibbcmulu .gt_spanner_row {
+#exmmqfdjnl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rcibbcmulu .gt_group_heading {
+#exmmqfdjnl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1973,7 +1931,7 @@
   text-align: left;
 }
 
-#rcibbcmulu .gt_empty_group_heading {
+#exmmqfdjnl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1988,15 +1946,15 @@
   vertical-align: middle;
 }
 
-#rcibbcmulu .gt_from_md > :first-child {
+#exmmqfdjnl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rcibbcmulu .gt_from_md > :last-child {
+#exmmqfdjnl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rcibbcmulu .gt_row {
+#exmmqfdjnl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2015,7 +1973,7 @@
   overflow-x: hidden;
 }
 
-#rcibbcmulu .gt_stub {
+#exmmqfdjnl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2028,7 +1986,7 @@
   padding-right: 5px;
 }
 
-#rcibbcmulu .gt_stub_row_group {
+#exmmqfdjnl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2042,15 +2000,15 @@
   vertical-align: top;
 }
 
-#rcibbcmulu .gt_row_group_first td {
+#exmmqfdjnl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rcibbcmulu .gt_row_group_first th {
+#exmmqfdjnl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rcibbcmulu .gt_summary_row {
+#exmmqfdjnl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2060,16 +2018,16 @@
   padding-right: 5px;
 }
 
-#rcibbcmulu .gt_first_summary_row {
+#exmmqfdjnl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rcibbcmulu .gt_first_summary_row.thick {
+#exmmqfdjnl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rcibbcmulu .gt_last_summary_row {
+#exmmqfdjnl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2079,7 +2037,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#rcibbcmulu .gt_grand_summary_row {
+#exmmqfdjnl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2089,7 +2047,7 @@
   padding-right: 5px;
 }
 
-#rcibbcmulu .gt_first_grand_summary_row {
+#exmmqfdjnl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2099,7 +2057,7 @@
   border-top-color: #D3D3D3;
 }
 
-#rcibbcmulu .gt_last_grand_summary_row_top {
+#exmmqfdjnl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2109,11 +2067,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#rcibbcmulu .gt_striped {
+#exmmqfdjnl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rcibbcmulu .gt_table_body {
+#exmmqfdjnl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2122,7 +2080,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#rcibbcmulu .gt_footnotes {
+#exmmqfdjnl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2136,7 +2094,7 @@
   border-right-color: #D3D3D3;
 }
 
-#rcibbcmulu .gt_footnote {
+#exmmqfdjnl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2145,7 +2103,7 @@
   padding-right: 5px;
 }
 
-#rcibbcmulu .gt_sourcenotes {
+#exmmqfdjnl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2159,7 +2117,7 @@
   border-right-color: #D3D3D3;
 }
 
-#rcibbcmulu .gt_sourcenote {
+#exmmqfdjnl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2167,63 +2125,63 @@
   padding-right: 5px;
 }
 
-#rcibbcmulu .gt_left {
+#exmmqfdjnl .gt_left {
   text-align: left;
 }
 
-#rcibbcmulu .gt_center {
+#exmmqfdjnl .gt_center {
   text-align: center;
 }
 
-#rcibbcmulu .gt_right {
+#exmmqfdjnl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rcibbcmulu .gt_font_normal {
+#exmmqfdjnl .gt_font_normal {
   font-weight: normal;
 }
 
-#rcibbcmulu .gt_font_bold {
+#exmmqfdjnl .gt_font_bold {
   font-weight: bold;
 }
 
-#rcibbcmulu .gt_font_italic {
+#exmmqfdjnl .gt_font_italic {
   font-style: italic;
 }
 
-#rcibbcmulu .gt_super {
+#exmmqfdjnl .gt_super {
   font-size: 65%;
 }
 
-#rcibbcmulu .gt_footnote_marks {
+#exmmqfdjnl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rcibbcmulu .gt_asterisk {
+#exmmqfdjnl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rcibbcmulu .gt_indent_1 {
+#exmmqfdjnl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rcibbcmulu .gt_indent_2 {
+#exmmqfdjnl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rcibbcmulu .gt_indent_3 {
+#exmmqfdjnl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rcibbcmulu .gt_indent_4 {
+#exmmqfdjnl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rcibbcmulu .gt_indent_5 {
+#exmmqfdjnl .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2365,30 +2323,30 @@
 </section>
 <section id="section-3" class="slide level2 smaller">
 <h2></h2>
-<p><strong>param</strong> column is the short name of the parameter</p>
+<p><strong>param</strong> columna es el nombre corto del parámetro</p>
 <div class="footer">
-<p>Note: Only a subset of model parameters are shown in table.</p>
+<p>Nota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.</p>
 </div>
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="chftdqzsaj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#chftdqzsaj table {
+<div id="kbdadydnut" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kbdadydnut table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#chftdqzsaj thead, #chftdqzsaj tbody, #chftdqzsaj tfoot, #chftdqzsaj tr, #chftdqzsaj td, #chftdqzsaj th {
+#kbdadydnut thead, #kbdadydnut tbody, #kbdadydnut tfoot, #kbdadydnut tr, #kbdadydnut td, #kbdadydnut th {
   border-style: none;
 }
 
-#chftdqzsaj p {
+#kbdadydnut p {
   margin: 0;
   padding: 0;
 }
 
-#chftdqzsaj .gt_table {
+#kbdadydnut .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2414,12 +2372,12 @@
   border-left-color: #D3D3D3;
 }
 
-#chftdqzsaj .gt_caption {
+#kbdadydnut .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#chftdqzsaj .gt_title {
+#kbdadydnut .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2431,7 +2389,7 @@
   border-bottom-width: 0;
 }
 
-#chftdqzsaj .gt_subtitle {
+#kbdadydnut .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2443,7 +2401,7 @@
   border-top-width: 0;
 }
 
-#chftdqzsaj .gt_heading {
+#kbdadydnut .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2455,13 +2413,13 @@
   border-right-color: #D3D3D3;
 }
 
-#chftdqzsaj .gt_bottom_border {
+#kbdadydnut .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#chftdqzsaj .gt_col_headings {
+#kbdadydnut .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2476,7 +2434,7 @@
   border-right-color: #D3D3D3;
 }
 
-#chftdqzsaj .gt_col_heading {
+#kbdadydnut .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2496,7 +2454,7 @@
   overflow-x: hidden;
 }
 
-#chftdqzsaj .gt_column_spanner_outer {
+#kbdadydnut .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2508,15 +2466,15 @@
   padding-right: 4px;
 }
 
-#chftdqzsaj .gt_column_spanner_outer:first-child {
+#kbdadydnut .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#chftdqzsaj .gt_column_spanner_outer:last-child {
+#kbdadydnut .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#chftdqzsaj .gt_column_spanner {
+#kbdadydnut .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2528,11 +2486,11 @@
   width: 100%;
 }
 
-#chftdqzsaj .gt_spanner_row {
+#kbdadydnut .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#chftdqzsaj .gt_group_heading {
+#kbdadydnut .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2558,7 +2516,7 @@
   text-align: left;
 }
 
-#chftdqzsaj .gt_empty_group_heading {
+#kbdadydnut .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2573,15 +2531,15 @@
   vertical-align: middle;
 }
 
-#chftdqzsaj .gt_from_md > :first-child {
+#kbdadydnut .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#chftdqzsaj .gt_from_md > :last-child {
+#kbdadydnut .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#chftdqzsaj .gt_row {
+#kbdadydnut .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2600,7 +2558,7 @@
   overflow-x: hidden;
 }
 
-#chftdqzsaj .gt_stub {
+#kbdadydnut .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2613,7 +2571,7 @@
   padding-right: 5px;
 }
 
-#chftdqzsaj .gt_stub_row_group {
+#kbdadydnut .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2627,15 +2585,15 @@
   vertical-align: top;
 }
 
-#chftdqzsaj .gt_row_group_first td {
+#kbdadydnut .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#chftdqzsaj .gt_row_group_first th {
+#kbdadydnut .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#chftdqzsaj .gt_summary_row {
+#kbdadydnut .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2645,16 +2603,16 @@
   padding-right: 5px;
 }
 
-#chftdqzsaj .gt_first_summary_row {
+#kbdadydnut .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#chftdqzsaj .gt_first_summary_row.thick {
+#kbdadydnut .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#chftdqzsaj .gt_last_summary_row {
+#kbdadydnut .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2664,7 +2622,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#chftdqzsaj .gt_grand_summary_row {
+#kbdadydnut .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2674,7 +2632,7 @@
   padding-right: 5px;
 }
 
-#chftdqzsaj .gt_first_grand_summary_row {
+#kbdadydnut .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2684,7 +2642,7 @@
   border-top-color: #D3D3D3;
 }
 
-#chftdqzsaj .gt_last_grand_summary_row_top {
+#kbdadydnut .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2694,11 +2652,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#chftdqzsaj .gt_striped {
+#kbdadydnut .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#chftdqzsaj .gt_table_body {
+#kbdadydnut .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2707,7 +2665,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#chftdqzsaj .gt_footnotes {
+#kbdadydnut .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2721,7 +2679,7 @@
   border-right-color: #D3D3D3;
 }
 
-#chftdqzsaj .gt_footnote {
+#kbdadydnut .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2730,7 +2688,7 @@
   padding-right: 5px;
 }
 
-#chftdqzsaj .gt_sourcenotes {
+#kbdadydnut .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2744,7 +2702,7 @@
   border-right-color: #D3D3D3;
 }
 
-#chftdqzsaj .gt_sourcenote {
+#kbdadydnut .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2752,63 +2710,63 @@
   padding-right: 5px;
 }
 
-#chftdqzsaj .gt_left {
+#kbdadydnut .gt_left {
   text-align: left;
 }
 
-#chftdqzsaj .gt_center {
+#kbdadydnut .gt_center {
   text-align: center;
 }
 
-#chftdqzsaj .gt_right {
+#kbdadydnut .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#chftdqzsaj .gt_font_normal {
+#kbdadydnut .gt_font_normal {
   font-weight: normal;
 }
 
-#chftdqzsaj .gt_font_bold {
+#kbdadydnut .gt_font_bold {
   font-weight: bold;
 }
 
-#chftdqzsaj .gt_font_italic {
+#kbdadydnut .gt_font_italic {
   font-style: italic;
 }
 
-#chftdqzsaj .gt_super {
+#kbdadydnut .gt_super {
   font-size: 65%;
 }
 
-#chftdqzsaj .gt_footnote_marks {
+#kbdadydnut .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#chftdqzsaj .gt_asterisk {
+#kbdadydnut .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#chftdqzsaj .gt_indent_1 {
+#kbdadydnut .gt_indent_1 {
   text-indent: 5px;
 }
 
-#chftdqzsaj .gt_indent_2 {
+#kbdadydnut .gt_indent_2 {
   text-indent: 10px;
 }
 
-#chftdqzsaj .gt_indent_3 {
+#kbdadydnut .gt_indent_3 {
   text-indent: 15px;
 }
 
-#chftdqzsaj .gt_indent_4 {
+#kbdadydnut .gt_indent_4 {
   text-indent: 20px;
 }
 
-#chftdqzsaj .gt_indent_5 {
+#kbdadydnut .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2950,30 +2908,30 @@
 </section>
 <section id="section-4" class="slide level2 smaller">
 <h2></h2>
-<p><strong>base_case</strong> is the parameter value for the base case.</p>
+<p><strong>base_case</strong> es el valor del parámetro para el caso base.</p>
 <div class="footer">
-<p>Note: Only a subset of model parameters are shown in table.</p>
+<p>Nota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.</p>
 </div>
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="dxtaphubha" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dxtaphubha table {
+<div id="aqrdzhxrix" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#aqrdzhxrix table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dxtaphubha thead, #dxtaphubha tbody, #dxtaphubha tfoot, #dxtaphubha tr, #dxtaphubha td, #dxtaphubha th {
+#aqrdzhxrix thead, #aqrdzhxrix tbody, #aqrdzhxrix tfoot, #aqrdzhxrix tr, #aqrdzhxrix td, #aqrdzhxrix th {
   border-style: none;
 }
 
-#dxtaphubha p {
+#aqrdzhxrix p {
   margin: 0;
   padding: 0;
 }
 
-#dxtaphubha .gt_table {
+#aqrdzhxrix .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2999,12 +2957,12 @@
   border-left-color: #D3D3D3;
 }
 
-#dxtaphubha .gt_caption {
+#aqrdzhxrix .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dxtaphubha .gt_title {
+#aqrdzhxrix .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3016,7 +2974,7 @@
   border-bottom-width: 0;
 }
 
-#dxtaphubha .gt_subtitle {
+#aqrdzhxrix .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3028,7 +2986,7 @@
   border-top-width: 0;
 }
 
-#dxtaphubha .gt_heading {
+#aqrdzhxrix .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3040,13 +2998,13 @@
   border-right-color: #D3D3D3;
 }
 
-#dxtaphubha .gt_bottom_border {
+#aqrdzhxrix .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dxtaphubha .gt_col_headings {
+#aqrdzhxrix .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3061,7 +3019,7 @@
   border-right-color: #D3D3D3;
 }
 
-#dxtaphubha .gt_col_heading {
+#aqrdzhxrix .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3081,7 +3039,7 @@
   overflow-x: hidden;
 }
 
-#dxtaphubha .gt_column_spanner_outer {
+#aqrdzhxrix .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3093,15 +3051,15 @@
   padding-right: 4px;
 }
 
-#dxtaphubha .gt_column_spanner_outer:first-child {
+#aqrdzhxrix .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dxtaphubha .gt_column_spanner_outer:last-child {
+#aqrdzhxrix .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dxtaphubha .gt_column_spanner {
+#aqrdzhxrix .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3113,11 +3071,11 @@
   width: 100%;
 }
 
-#dxtaphubha .gt_spanner_row {
+#aqrdzhxrix .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dxtaphubha .gt_group_heading {
+#aqrdzhxrix .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3143,7 +3101,7 @@
   text-align: left;
 }
 
-#dxtaphubha .gt_empty_group_heading {
+#aqrdzhxrix .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3158,15 +3116,15 @@
   vertical-align: middle;
 }
 
-#dxtaphubha .gt_from_md > :first-child {
+#aqrdzhxrix .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dxtaphubha .gt_from_md > :last-child {
+#aqrdzhxrix .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dxtaphubha .gt_row {
+#aqrdzhxrix .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3185,7 +3143,7 @@
   overflow-x: hidden;
 }
 
-#dxtaphubha .gt_stub {
+#aqrdzhxrix .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3198,7 +3156,7 @@
   padding-right: 5px;
 }
 
-#dxtaphubha .gt_stub_row_group {
+#aqrdzhxrix .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3212,15 +3170,15 @@
   vertical-align: top;
 }
 
-#dxtaphubha .gt_row_group_first td {
+#aqrdzhxrix .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dxtaphubha .gt_row_group_first th {
+#aqrdzhxrix .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dxtaphubha .gt_summary_row {
+#aqrdzhxrix .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3230,16 +3188,16 @@
   padding-right: 5px;
 }
 
-#dxtaphubha .gt_first_summary_row {
+#aqrdzhxrix .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dxtaphubha .gt_first_summary_row.thick {
+#aqrdzhxrix .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dxtaphubha .gt_last_summary_row {
+#aqrdzhxrix .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3249,7 +3207,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#dxtaphubha .gt_grand_summary_row {
+#aqrdzhxrix .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3259,7 +3217,7 @@
   padding-right: 5px;
 }
 
-#dxtaphubha .gt_first_grand_summary_row {
+#aqrdzhxrix .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3269,7 +3227,7 @@
   border-top-color: #D3D3D3;
 }
 
-#dxtaphubha .gt_last_grand_summary_row_top {
+#aqrdzhxrix .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3279,11 +3237,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#dxtaphubha .gt_striped {
+#aqrdzhxrix .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dxtaphubha .gt_table_body {
+#aqrdzhxrix .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3292,7 +3250,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#dxtaphubha .gt_footnotes {
+#aqrdzhxrix .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3306,7 +3264,7 @@
   border-right-color: #D3D3D3;
 }
 
-#dxtaphubha .gt_footnote {
+#aqrdzhxrix .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3315,7 +3273,7 @@
   padding-right: 5px;
 }
 
-#dxtaphubha .gt_sourcenotes {
+#aqrdzhxrix .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3329,7 +3287,7 @@
   border-right-color: #D3D3D3;
 }
 
-#dxtaphubha .gt_sourcenote {
+#aqrdzhxrix .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3337,63 +3295,63 @@
   padding-right: 5px;
 }
 
-#dxtaphubha .gt_left {
+#aqrdzhxrix .gt_left {
   text-align: left;
 }
 
-#dxtaphubha .gt_center {
+#aqrdzhxrix .gt_center {
   text-align: center;
 }
 
-#dxtaphubha .gt_right {
+#aqrdzhxrix .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dxtaphubha .gt_font_normal {
+#aqrdzhxrix .gt_font_normal {
   font-weight: normal;
 }
 
-#dxtaphubha .gt_font_bold {
+#aqrdzhxrix .gt_font_bold {
   font-weight: bold;
 }
 
-#dxtaphubha .gt_font_italic {
+#aqrdzhxrix .gt_font_italic {
   font-style: italic;
 }
 
-#dxtaphubha .gt_super {
+#aqrdzhxrix .gt_super {
   font-size: 65%;
 }
 
-#dxtaphubha .gt_footnote_marks {
+#aqrdzhxrix .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dxtaphubha .gt_asterisk {
+#aqrdzhxrix .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dxtaphubha .gt_indent_1 {
+#aqrdzhxrix .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dxtaphubha .gt_indent_2 {
+#aqrdzhxrix .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dxtaphubha .gt_indent_3 {
+#aqrdzhxrix .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dxtaphubha .gt_indent_4 {
+#aqrdzhxrix .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dxtaphubha .gt_indent_5 {
+#aqrdzhxrix .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3535,30 +3493,30 @@
 </section>
 <section id="section-5" class="slide level2 smaller">
 <h2></h2>
-<p><strong>formula</strong> defines model parameter formulas for parameters that are functions of other model parameters.</p>
+<p><strong>formula</strong> define fórmulas de parámetros del modelo para parámetros que son funciones de otros parámetros del modelo.</p>
 <div class="footer">
-<p>Note: Only a subset of model parameters are shown in table.</p>
+<p>Nota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.</p>
 </div>
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="njdmctklcz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#njdmctklcz table {
+<div id="kkzwsmykut" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kkzwsmykut table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#njdmctklcz thead, #njdmctklcz tbody, #njdmctklcz tfoot, #njdmctklcz tr, #njdmctklcz td, #njdmctklcz th {
+#kkzwsmykut thead, #kkzwsmykut tbody, #kkzwsmykut tfoot, #kkzwsmykut tr, #kkzwsmykut td, #kkzwsmykut th {
   border-style: none;
 }
 
-#njdmctklcz p {
+#kkzwsmykut p {
   margin: 0;
   padding: 0;
 }
 
-#njdmctklcz .gt_table {
+#kkzwsmykut .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3584,12 +3542,12 @@
   border-left-color: #D3D3D3;
 }
 
-#njdmctklcz .gt_caption {
+#kkzwsmykut .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#njdmctklcz .gt_title {
+#kkzwsmykut .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3601,7 +3559,7 @@
   border-bottom-width: 0;
 }
 
-#njdmctklcz .gt_subtitle {
+#kkzwsmykut .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3613,7 +3571,7 @@
   border-top-width: 0;
 }
 
-#njdmctklcz .gt_heading {
+#kkzwsmykut .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3625,13 +3583,13 @@
   border-right-color: #D3D3D3;
 }
 
-#njdmctklcz .gt_bottom_border {
+#kkzwsmykut .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#njdmctklcz .gt_col_headings {
+#kkzwsmykut .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3646,7 +3604,7 @@
   border-right-color: #D3D3D3;
 }
 
-#njdmctklcz .gt_col_heading {
+#kkzwsmykut .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3666,7 +3624,7 @@
   overflow-x: hidden;
 }
 
-#njdmctklcz .gt_column_spanner_outer {
+#kkzwsmykut .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3678,15 +3636,15 @@
   padding-right: 4px;
 }
 
-#njdmctklcz .gt_column_spanner_outer:first-child {
+#kkzwsmykut .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#njdmctklcz .gt_column_spanner_outer:last-child {
+#kkzwsmykut .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#njdmctklcz .gt_column_spanner {
+#kkzwsmykut .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3698,11 +3656,11 @@
   width: 100%;
 }
 
-#njdmctklcz .gt_spanner_row {
+#kkzwsmykut .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#njdmctklcz .gt_group_heading {
+#kkzwsmykut .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3728,7 +3686,7 @@
   text-align: left;
 }
 
-#njdmctklcz .gt_empty_group_heading {
+#kkzwsmykut .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3743,15 +3701,15 @@
   vertical-align: middle;
 }
 
-#njdmctklcz .gt_from_md > :first-child {
+#kkzwsmykut .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#njdmctklcz .gt_from_md > :last-child {
+#kkzwsmykut .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#njdmctklcz .gt_row {
+#kkzwsmykut .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3770,7 +3728,7 @@
   overflow-x: hidden;
 }
 
-#njdmctklcz .gt_stub {
+#kkzwsmykut .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3783,7 +3741,7 @@
   padding-right: 5px;
 }
 
-#njdmctklcz .gt_stub_row_group {
+#kkzwsmykut .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3797,15 +3755,15 @@
   vertical-align: top;
 }
 
-#njdmctklcz .gt_row_group_first td {
+#kkzwsmykut .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#njdmctklcz .gt_row_group_first th {
+#kkzwsmykut .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#njdmctklcz .gt_summary_row {
+#kkzwsmykut .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3815,16 +3773,16 @@
   padding-right: 5px;
 }
 
-#njdmctklcz .gt_first_summary_row {
+#kkzwsmykut .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#njdmctklcz .gt_first_summary_row.thick {
+#kkzwsmykut .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#njdmctklcz .gt_last_summary_row {
+#kkzwsmykut .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3834,7 +3792,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#njdmctklcz .gt_grand_summary_row {
+#kkzwsmykut .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3844,7 +3802,7 @@
   padding-right: 5px;
 }
 
-#njdmctklcz .gt_first_grand_summary_row {
+#kkzwsmykut .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3854,7 +3812,7 @@
   border-top-color: #D3D3D3;
 }
 
-#njdmctklcz .gt_last_grand_summary_row_top {
+#kkzwsmykut .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3864,11 +3822,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#njdmctklcz .gt_striped {
+#kkzwsmykut .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#njdmctklcz .gt_table_body {
+#kkzwsmykut .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3877,7 +3835,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#njdmctklcz .gt_footnotes {
+#kkzwsmykut .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3891,7 +3849,7 @@
   border-right-color: #D3D3D3;
 }
 
-#njdmctklcz .gt_footnote {
+#kkzwsmykut .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3900,7 +3858,7 @@
   padding-right: 5px;
 }
 
-#njdmctklcz .gt_sourcenotes {
+#kkzwsmykut .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3914,7 +3872,7 @@
   border-right-color: #D3D3D3;
 }
 
-#njdmctklcz .gt_sourcenote {
+#kkzwsmykut .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3922,63 +3880,63 @@
   padding-right: 5px;
 }
 
-#njdmctklcz .gt_left {
+#kkzwsmykut .gt_left {
   text-align: left;
 }
 
-#njdmctklcz .gt_center {
+#kkzwsmykut .gt_center {
   text-align: center;
 }
 
-#njdmctklcz .gt_right {
+#kkzwsmykut .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#njdmctklcz .gt_font_normal {
+#kkzwsmykut .gt_font_normal {
   font-weight: normal;
 }
 
-#njdmctklcz .gt_font_bold {
+#kkzwsmykut .gt_font_bold {
   font-weight: bold;
 }
 
-#njdmctklcz .gt_font_italic {
+#kkzwsmykut .gt_font_italic {
   font-style: italic;
 }
 
-#njdmctklcz .gt_super {
+#kkzwsmykut .gt_super {
   font-size: 65%;
 }
 
-#njdmctklcz .gt_footnote_marks {
+#kkzwsmykut .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#njdmctklcz .gt_asterisk {
+#kkzwsmykut .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#njdmctklcz .gt_indent_1 {
+#kkzwsmykut .gt_indent_1 {
   text-indent: 5px;
 }
 
-#njdmctklcz .gt_indent_2 {
+#kkzwsmykut .gt_indent_2 {
   text-indent: 10px;
 }
 
-#njdmctklcz .gt_indent_3 {
+#kkzwsmykut .gt_indent_3 {
   text-indent: 15px;
 }
 
-#njdmctklcz .gt_indent_4 {
+#kkzwsmykut .gt_indent_4 {
   text-indent: 20px;
 }
 
-#njdmctklcz .gt_indent_5 {
+#kkzwsmykut .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4120,27 +4078,27 @@
 </section>
 <section id="section-6" class="slide level2 smaller">
 <h2></h2>
-<p><strong>description</strong> provides a text description of the parameter.</p>
+<p><strong>description</strong> proporciona una descripción de texto del parámetro.</p>
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="mqaorkcvjq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#mqaorkcvjq table {
+<div id="jsuwexhaww" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jsuwexhaww table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#mqaorkcvjq thead, #mqaorkcvjq tbody, #mqaorkcvjq tfoot, #mqaorkcvjq tr, #mqaorkcvjq td, #mqaorkcvjq th {
+#jsuwexhaww thead, #jsuwexhaww tbody, #jsuwexhaww tfoot, #jsuwexhaww tr, #jsuwexhaww td, #jsuwexhaww th {
   border-style: none;
 }
 
-#mqaorkcvjq p {
+#jsuwexhaww p {
   margin: 0;
   padding: 0;
 }
 
-#mqaorkcvjq .gt_table {
+#jsuwexhaww .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4166,12 +4124,12 @@
   border-left-color: #D3D3D3;
 }
 
-#mqaorkcvjq .gt_caption {
+#jsuwexhaww .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#mqaorkcvjq .gt_title {
+#jsuwexhaww .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4183,7 +4141,7 @@
   border-bottom-width: 0;
 }
 
-#mqaorkcvjq .gt_subtitle {
+#jsuwexhaww .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4195,7 +4153,7 @@
   border-top-width: 0;
 }
 
-#mqaorkcvjq .gt_heading {
+#jsuwexhaww .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4207,13 +4165,13 @@
   border-right-color: #D3D3D3;
 }
 
-#mqaorkcvjq .gt_bottom_border {
+#jsuwexhaww .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mqaorkcvjq .gt_col_headings {
+#jsuwexhaww .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4228,7 +4186,7 @@
   border-right-color: #D3D3D3;
 }
 
-#mqaorkcvjq .gt_col_heading {
+#jsuwexhaww .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4248,7 +4206,7 @@
   overflow-x: hidden;
 }
 
-#mqaorkcvjq .gt_column_spanner_outer {
+#jsuwexhaww .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4260,15 +4218,15 @@
   padding-right: 4px;
 }
 
-#mqaorkcvjq .gt_column_spanner_outer:first-child {
+#jsuwexhaww .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mqaorkcvjq .gt_column_spanner_outer:last-child {
+#jsuwexhaww .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mqaorkcvjq .gt_column_spanner {
+#jsuwexhaww .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4280,11 +4238,11 @@
   width: 100%;
 }
 
-#mqaorkcvjq .gt_spanner_row {
+#jsuwexhaww .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#mqaorkcvjq .gt_group_heading {
+#jsuwexhaww .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4310,7 +4268,7 @@
   text-align: left;
 }
 
-#mqaorkcvjq .gt_empty_group_heading {
+#jsuwexhaww .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4325,15 +4283,15 @@
   vertical-align: middle;
 }
 
-#mqaorkcvjq .gt_from_md > :first-child {
+#jsuwexhaww .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mqaorkcvjq .gt_from_md > :last-child {
+#jsuwexhaww .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mqaorkcvjq .gt_row {
+#jsuwexhaww .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4352,7 +4310,7 @@
   overflow-x: hidden;
 }
 
-#mqaorkcvjq .gt_stub {
+#jsuwexhaww .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4365,7 +4323,7 @@
   padding-right: 5px;
 }
 
-#mqaorkcvjq .gt_stub_row_group {
+#jsuwexhaww .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4379,15 +4337,15 @@
   vertical-align: top;
 }
 
-#mqaorkcvjq .gt_row_group_first td {
+#jsuwexhaww .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#mqaorkcvjq .gt_row_group_first th {
+#jsuwexhaww .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#mqaorkcvjq .gt_summary_row {
+#jsuwexhaww .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4397,16 +4355,16 @@
   padding-right: 5px;
 }
 
-#mqaorkcvjq .gt_first_summary_row {
+#jsuwexhaww .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#mqaorkcvjq .gt_first_summary_row.thick {
+#jsuwexhaww .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#mqaorkcvjq .gt_last_summary_row {
+#jsuwexhaww .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4416,7 +4374,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#mqaorkcvjq .gt_grand_summary_row {
+#jsuwexhaww .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4426,7 +4384,7 @@
   padding-right: 5px;
 }
 
-#mqaorkcvjq .gt_first_grand_summary_row {
+#jsuwexhaww .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4436,7 +4394,7 @@
   border-top-color: #D3D3D3;
 }
 
-#mqaorkcvjq .gt_last_grand_summary_row_top {
+#jsuwexhaww .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4446,11 +4404,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#mqaorkcvjq .gt_striped {
+#jsuwexhaww .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mqaorkcvjq .gt_table_body {
+#jsuwexhaww .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4459,7 +4417,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#mqaorkcvjq .gt_footnotes {
+#jsuwexhaww .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4473,7 +4431,7 @@
   border-right-color: #D3D3D3;
 }
 
-#mqaorkcvjq .gt_footnote {
+#jsuwexhaww .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4482,7 +4440,7 @@
   padding-right: 5px;
 }
 
-#mqaorkcvjq .gt_sourcenotes {
+#jsuwexhaww .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4496,7 +4454,7 @@
   border-right-color: #D3D3D3;
 }
 
-#mqaorkcvjq .gt_sourcenote {
+#jsuwexhaww .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4504,63 +4462,63 @@
   padding-right: 5px;
 }
 
-#mqaorkcvjq .gt_left {
+#jsuwexhaww .gt_left {
   text-align: left;
 }
 
-#mqaorkcvjq .gt_center {
+#jsuwexhaww .gt_center {
   text-align: center;
 }
 
-#mqaorkcvjq .gt_right {
+#jsuwexhaww .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mqaorkcvjq .gt_font_normal {
+#jsuwexhaww .gt_font_normal {
   font-weight: normal;
 }
 
-#mqaorkcvjq .gt_font_bold {
+#jsuwexhaww .gt_font_bold {
   font-weight: bold;
 }
 
-#mqaorkcvjq .gt_font_italic {
+#jsuwexhaww .gt_font_italic {
   font-style: italic;
 }
 
-#mqaorkcvjq .gt_super {
+#jsuwexhaww .gt_super {
   font-size: 65%;
 }
 
-#mqaorkcvjq .gt_footnote_marks {
+#jsuwexhaww .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#mqaorkcvjq .gt_asterisk {
+#jsuwexhaww .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#mqaorkcvjq .gt_indent_1 {
+#jsuwexhaww .gt_indent_1 {
   text-indent: 5px;
 }
 
-#mqaorkcvjq .gt_indent_2 {
+#jsuwexhaww .gt_indent_2 {
   text-indent: 10px;
 }
 
-#mqaorkcvjq .gt_indent_3 {
+#jsuwexhaww .gt_indent_3 {
   text-indent: 15px;
 }
 
-#mqaorkcvjq .gt_indent_4 {
+#jsuwexhaww .gt_indent_4 {
   text-indent: 20px;
 }
 
-#mqaorkcvjq .gt_indent_5 {
+#jsuwexhaww .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4700,35 +4658,35 @@
 </div>
 </div>
 <div class="footer">
-<p>Note: Only a subset of model parameters are shown in table.</p>
+<p>Nota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.</p>
 </div>
 </section>
 <section id="section-7" class="slide level2 smaller">
 <h2></h2>
-<p><strong>notes</strong> is an optional column where you add additional notes or context for the parameter.</p>
+<p><strong>notas</strong> es una columna opcional donde se añaden notas adicionales o contexto para el parámetro.</p>
 <div class="footer">
-<p>Note: Only a subset of model parameters are shown in table.</p>
+<p>Nota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.</p>
 </div>
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="xhvfsnmxcv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xhvfsnmxcv table {
+<div id="gjmelvtqzz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gjmelvtqzz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xhvfsnmxcv thead, #xhvfsnmxcv tbody, #xhvfsnmxcv tfoot, #xhvfsnmxcv tr, #xhvfsnmxcv td, #xhvfsnmxcv th {
+#gjmelvtqzz thead, #gjmelvtqzz tbody, #gjmelvtqzz tfoot, #gjmelvtqzz tr, #gjmelvtqzz td, #gjmelvtqzz th {
   border-style: none;
 }
 
-#xhvfsnmxcv p {
+#gjmelvtqzz p {
   margin: 0;
   padding: 0;
 }
 
-#xhvfsnmxcv .gt_table {
+#gjmelvtqzz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4754,12 +4712,12 @@
   border-left-color: #D3D3D3;
 }
 
-#xhvfsnmxcv .gt_caption {
+#gjmelvtqzz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xhvfsnmxcv .gt_title {
+#gjmelvtqzz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4771,7 +4729,7 @@
   border-bottom-width: 0;
 }
 
-#xhvfsnmxcv .gt_subtitle {
+#gjmelvtqzz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4783,7 +4741,7 @@
   border-top-width: 0;
 }
 
-#xhvfsnmxcv .gt_heading {
+#gjmelvtqzz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4795,13 +4753,13 @@
   border-right-color: #D3D3D3;
 }
 
-#xhvfsnmxcv .gt_bottom_border {
+#gjmelvtqzz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xhvfsnmxcv .gt_col_headings {
+#gjmelvtqzz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4816,7 +4774,7 @@
   border-right-color: #D3D3D3;
 }
 
-#xhvfsnmxcv .gt_col_heading {
+#gjmelvtqzz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4836,7 +4794,7 @@
   overflow-x: hidden;
 }
 
-#xhvfsnmxcv .gt_column_spanner_outer {
+#gjmelvtqzz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4848,15 +4806,15 @@
   padding-right: 4px;
 }
 
-#xhvfsnmxcv .gt_column_spanner_outer:first-child {
+#gjmelvtqzz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xhvfsnmxcv .gt_column_spanner_outer:last-child {
+#gjmelvtqzz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xhvfsnmxcv .gt_column_spanner {
+#gjmelvtqzz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4868,11 +4826,11 @@
   width: 100%;
 }
 
-#xhvfsnmxcv .gt_spanner_row {
+#gjmelvtqzz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xhvfsnmxcv .gt_group_heading {
+#gjmelvtqzz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4898,7 +4856,7 @@
   text-align: left;
 }
 
-#xhvfsnmxcv .gt_empty_group_heading {
+#gjmelvtqzz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4913,15 +4871,15 @@
   vertical-align: middle;
 }
 
-#xhvfsnmxcv .gt_from_md > :first-child {
+#gjmelvtqzz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xhvfsnmxcv .gt_from_md > :last-child {
+#gjmelvtqzz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xhvfsnmxcv .gt_row {
+#gjmelvtqzz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4940,7 +4898,7 @@
   overflow-x: hidden;
 }
 
-#xhvfsnmxcv .gt_stub {
+#gjmelvtqzz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4953,7 +4911,7 @@
   padding-right: 5px;
 }
 
-#xhvfsnmxcv .gt_stub_row_group {
+#gjmelvtqzz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4967,15 +4925,15 @@
   vertical-align: top;
 }
 
-#xhvfsnmxcv .gt_row_group_first td {
+#gjmelvtqzz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xhvfsnmxcv .gt_row_group_first th {
+#gjmelvtqzz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xhvfsnmxcv .gt_summary_row {
+#gjmelvtqzz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4985,16 +4943,16 @@
   padding-right: 5px;
 }
 
-#xhvfsnmxcv .gt_first_summary_row {
+#gjmelvtqzz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xhvfsnmxcv .gt_first_summary_row.thick {
+#gjmelvtqzz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xhvfsnmxcv .gt_last_summary_row {
+#gjmelvtqzz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5004,7 +4962,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#xhvfsnmxcv .gt_grand_summary_row {
+#gjmelvtqzz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5014,7 +4972,7 @@
   padding-right: 5px;
 }
 
-#xhvfsnmxcv .gt_first_grand_summary_row {
+#gjmelvtqzz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5024,7 +4982,7 @@
   border-top-color: #D3D3D3;
 }
 
-#xhvfsnmxcv .gt_last_grand_summary_row_top {
+#gjmelvtqzz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5034,11 +4992,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#xhvfsnmxcv .gt_striped {
+#gjmelvtqzz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xhvfsnmxcv .gt_table_body {
+#gjmelvtqzz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5047,7 +5005,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#xhvfsnmxcv .gt_footnotes {
+#gjmelvtqzz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5061,7 +5019,7 @@
   border-right-color: #D3D3D3;
 }
 
-#xhvfsnmxcv .gt_footnote {
+#gjmelvtqzz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5070,7 +5028,7 @@
   padding-right: 5px;
 }
 
-#xhvfsnmxcv .gt_sourcenotes {
+#gjmelvtqzz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5084,7 +5042,7 @@
   border-right-color: #D3D3D3;
 }
 
-#xhvfsnmxcv .gt_sourcenote {
+#gjmelvtqzz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5092,63 +5050,63 @@
   padding-right: 5px;
 }
 
-#xhvfsnmxcv .gt_left {
+#gjmelvtqzz .gt_left {
   text-align: left;
 }
 
-#xhvfsnmxcv .gt_center {
+#gjmelvtqzz .gt_center {
   text-align: center;
 }
 
-#xhvfsnmxcv .gt_right {
+#gjmelvtqzz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xhvfsnmxcv .gt_font_normal {
+#gjmelvtqzz .gt_font_normal {
   font-weight: normal;
 }
 
-#xhvfsnmxcv .gt_font_bold {
+#gjmelvtqzz .gt_font_bold {
   font-weight: bold;
 }
 
-#xhvfsnmxcv .gt_font_italic {
+#gjmelvtqzz .gt_font_italic {
   font-style: italic;
 }
 
-#xhvfsnmxcv .gt_super {
+#gjmelvtqzz .gt_super {
   font-size: 65%;
 }
 
-#xhvfsnmxcv .gt_footnote_marks {
+#gjmelvtqzz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xhvfsnmxcv .gt_asterisk {
+#gjmelvtqzz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xhvfsnmxcv .gt_indent_1 {
+#gjmelvtqzz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xhvfsnmxcv .gt_indent_2 {
+#gjmelvtqzz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xhvfsnmxcv .gt_indent_3 {
+#gjmelvtqzz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xhvfsnmxcv .gt_indent_4 {
+#gjmelvtqzz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xhvfsnmxcv .gt_indent_5 {
+#gjmelvtqzz .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -5290,30 +5248,30 @@
 </section>
 <section id="section-8" class="slide level2 smaller">
 <h2></h2>
-<p><strong>distribution</strong> specifies the uncertainty distribution for the parameter. It is used for probabilistic sensitivity analyses, which we cover in our intermediate (week-long) workshop.</p>
+<p><strong>distribución</strong> especifica la distribución de incertidumbre para el parámetro. Se utiliza para los análisis de sensibilidad probabilísticos, que trataremos en nuestro taller intermedio (de una semana de duración). cubrimos en nuestro taller intermedio (de una semana de duración).</p>
 <div class="footer">
-<p>Note: Only a subset of model parameters are shown in table.</p>
+<p>Nota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.</p>
 </div>
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="dyfmgypxjo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dyfmgypxjo table {
+<div id="iphklrpyei" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iphklrpyei table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dyfmgypxjo thead, #dyfmgypxjo tbody, #dyfmgypxjo tfoot, #dyfmgypxjo tr, #dyfmgypxjo td, #dyfmgypxjo th {
+#iphklrpyei thead, #iphklrpyei tbody, #iphklrpyei tfoot, #iphklrpyei tr, #iphklrpyei td, #iphklrpyei th {
   border-style: none;
 }
 
-#dyfmgypxjo p {
+#iphklrpyei p {
   margin: 0;
   padding: 0;
 }
 
-#dyfmgypxjo .gt_table {
+#iphklrpyei .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5339,12 +5297,12 @@
   border-left-color: #D3D3D3;
 }
 
-#dyfmgypxjo .gt_caption {
+#iphklrpyei .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dyfmgypxjo .gt_title {
+#iphklrpyei .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5356,7 +5314,7 @@
   border-bottom-width: 0;
 }
 
-#dyfmgypxjo .gt_subtitle {
+#iphklrpyei .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5368,7 +5326,7 @@
   border-top-width: 0;
 }
 
-#dyfmgypxjo .gt_heading {
+#iphklrpyei .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5380,13 +5338,13 @@
   border-right-color: #D3D3D3;
 }
 
-#dyfmgypxjo .gt_bottom_border {
+#iphklrpyei .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dyfmgypxjo .gt_col_headings {
+#iphklrpyei .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5401,7 +5359,7 @@
   border-right-color: #D3D3D3;
 }
 
-#dyfmgypxjo .gt_col_heading {
+#iphklrpyei .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5421,7 +5379,7 @@
   overflow-x: hidden;
 }
 
-#dyfmgypxjo .gt_column_spanner_outer {
+#iphklrpyei .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5433,15 +5391,15 @@
   padding-right: 4px;
 }
 
-#dyfmgypxjo .gt_column_spanner_outer:first-child {
+#iphklrpyei .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dyfmgypxjo .gt_column_spanner_outer:last-child {
+#iphklrpyei .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dyfmgypxjo .gt_column_spanner {
+#iphklrpyei .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5453,11 +5411,11 @@
   width: 100%;
 }
 
-#dyfmgypxjo .gt_spanner_row {
+#iphklrpyei .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dyfmgypxjo .gt_group_heading {
+#iphklrpyei .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5483,7 +5441,7 @@
   text-align: left;
 }
 
-#dyfmgypxjo .gt_empty_group_heading {
+#iphklrpyei .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5498,15 +5456,15 @@
   vertical-align: middle;
 }
 
-#dyfmgypxjo .gt_from_md > :first-child {
+#iphklrpyei .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dyfmgypxjo .gt_from_md > :last-child {
+#iphklrpyei .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dyfmgypxjo .gt_row {
+#iphklrpyei .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5525,7 +5483,7 @@
   overflow-x: hidden;
 }
 
-#dyfmgypxjo .gt_stub {
+#iphklrpyei .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5538,7 +5496,7 @@
   padding-right: 5px;
 }
 
-#dyfmgypxjo .gt_stub_row_group {
+#iphklrpyei .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5552,15 +5510,15 @@
   vertical-align: top;
 }
 
-#dyfmgypxjo .gt_row_group_first td {
+#iphklrpyei .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dyfmgypxjo .gt_row_group_first th {
+#iphklrpyei .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dyfmgypxjo .gt_summary_row {
+#iphklrpyei .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5570,16 +5528,16 @@
   padding-right: 5px;
 }
 
-#dyfmgypxjo .gt_first_summary_row {
+#iphklrpyei .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dyfmgypxjo .gt_first_summary_row.thick {
+#iphklrpyei .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dyfmgypxjo .gt_last_summary_row {
+#iphklrpyei .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5589,7 +5547,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#dyfmgypxjo .gt_grand_summary_row {
+#iphklrpyei .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5599,7 +5557,7 @@
   padding-right: 5px;
 }
 
-#dyfmgypxjo .gt_first_grand_summary_row {
+#iphklrpyei .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5609,7 +5567,7 @@
   border-top-color: #D3D3D3;
 }
 
-#dyfmgypxjo .gt_last_grand_summary_row_top {
+#iphklrpyei .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5619,11 +5577,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#dyfmgypxjo .gt_striped {
+#iphklrpyei .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dyfmgypxjo .gt_table_body {
+#iphklrpyei .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5632,7 +5590,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#dyfmgypxjo .gt_footnotes {
+#iphklrpyei .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5646,7 +5604,7 @@
   border-right-color: #D3D3D3;
 }
 
-#dyfmgypxjo .gt_footnote {
+#iphklrpyei .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5655,7 +5613,7 @@
   padding-right: 5px;
 }
 
-#dyfmgypxjo .gt_sourcenotes {
+#iphklrpyei .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5669,7 +5627,7 @@
   border-right-color: #D3D3D3;
 }
 
-#dyfmgypxjo .gt_sourcenote {
+#iphklrpyei .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5677,63 +5635,63 @@
   padding-right: 5px;
 }
 
-#dyfmgypxjo .gt_left {
+#iphklrpyei .gt_left {
   text-align: left;
 }
 
-#dyfmgypxjo .gt_center {
+#iphklrpyei .gt_center {
   text-align: center;
 }
 
-#dyfmgypxjo .gt_right {
+#iphklrpyei .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dyfmgypxjo .gt_font_normal {
+#iphklrpyei .gt_font_normal {
   font-weight: normal;
 }
 
-#dyfmgypxjo .gt_font_bold {
+#iphklrpyei .gt_font_bold {
   font-weight: bold;
 }
 
-#dyfmgypxjo .gt_font_italic {
+#iphklrpyei .gt_font_italic {
   font-style: italic;
 }
 
-#dyfmgypxjo .gt_super {
+#iphklrpyei .gt_super {
   font-size: 65%;
 }
 
-#dyfmgypxjo .gt_footnote_marks {
+#iphklrpyei .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dyfmgypxjo .gt_asterisk {
+#iphklrpyei .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dyfmgypxjo .gt_indent_1 {
+#iphklrpyei .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dyfmgypxjo .gt_indent_2 {
+#iphklrpyei .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dyfmgypxjo .gt_indent_3 {
+#iphklrpyei .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dyfmgypxjo .gt_indent_4 {
+#iphklrpyei .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dyfmgypxjo .gt_indent_5 {
+#iphklrpyei .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -5876,29 +5834,29 @@
 <section id="section-9" class="slide level2 smaller">
 <h2></h2>
 <div class="footer">
-<p>Note: Only a subset of model parameters are shown in table.</p>
+<p>Nota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.</p>
 </div>
-<p><strong>source</strong> provides the source for the parameter. It could be a published research article, an assumption, or just simply an unsourced modeling parameter (e.g., the starting age of the modeled cohort).</p>
+<p><strong>source</strong> proporciona la fuente del parámetro. Puede ser un artículo de investigación publicado, una hipótesis o simplemente un parámetro de modelización sin (por ejemplo, la edad inicial de la cohorte modelada).</p>
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="rjnonuzucw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rjnonuzucw table {
+<div id="fquefmadbl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fquefmadbl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rjnonuzucw thead, #rjnonuzucw tbody, #rjnonuzucw tfoot, #rjnonuzucw tr, #rjnonuzucw td, #rjnonuzucw th {
+#fquefmadbl thead, #fquefmadbl tbody, #fquefmadbl tfoot, #fquefmadbl tr, #fquefmadbl td, #fquefmadbl th {
   border-style: none;
 }
 
-#rjnonuzucw p {
+#fquefmadbl p {
   margin: 0;
   padding: 0;
 }
 
-#rjnonuzucw .gt_table {
+#fquefmadbl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5924,12 +5882,12 @@
   border-left-color: #D3D3D3;
 }
 
-#rjnonuzucw .gt_caption {
+#fquefmadbl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rjnonuzucw .gt_title {
+#fquefmadbl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5941,7 +5899,7 @@
   border-bottom-width: 0;
 }
 
-#rjnonuzucw .gt_subtitle {
+#fquefmadbl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5953,7 +5911,7 @@
   border-top-width: 0;
 }
 
-#rjnonuzucw .gt_heading {
+#fquefmadbl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5965,13 +5923,13 @@
   border-right-color: #D3D3D3;
 }
 
-#rjnonuzucw .gt_bottom_border {
+#fquefmadbl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rjnonuzucw .gt_col_headings {
+#fquefmadbl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5986,7 +5944,7 @@
   border-right-color: #D3D3D3;
 }
 
-#rjnonuzucw .gt_col_heading {
+#fquefmadbl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6006,7 +5964,7 @@
   overflow-x: hidden;
 }
 
-#rjnonuzucw .gt_column_spanner_outer {
+#fquefmadbl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6018,15 +5976,15 @@
   padding-right: 4px;
 }
 
-#rjnonuzucw .gt_column_spanner_outer:first-child {
+#fquefmadbl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rjnonuzucw .gt_column_spanner_outer:last-child {
+#fquefmadbl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rjnonuzucw .gt_column_spanner {
+#fquefmadbl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -6038,11 +5996,11 @@
   width: 100%;
 }
 
-#rjnonuzucw .gt_spanner_row {
+#fquefmadbl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rjnonuzucw .gt_group_heading {
+#fquefmadbl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6068,7 +6026,7 @@
   text-align: left;
 }
 
-#rjnonuzucw .gt_empty_group_heading {
+#fquefmadbl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6083,15 +6041,15 @@
   vertical-align: middle;
 }
 
-#rjnonuzucw .gt_from_md > :first-child {
+#fquefmadbl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rjnonuzucw .gt_from_md > :last-child {
+#fquefmadbl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rjnonuzucw .gt_row {
+#fquefmadbl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6110,7 +6068,7 @@
   overflow-x: hidden;
 }
 
-#rjnonuzucw .gt_stub {
+#fquefmadbl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6123,7 +6081,7 @@
   padding-right: 5px;
 }
 
-#rjnonuzucw .gt_stub_row_group {
+#fquefmadbl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6137,15 +6095,15 @@
   vertical-align: top;
 }
 
-#rjnonuzucw .gt_row_group_first td {
+#fquefmadbl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rjnonuzucw .gt_row_group_first th {
+#fquefmadbl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rjnonuzucw .gt_summary_row {
+#fquefmadbl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6155,16 +6113,16 @@
   padding-right: 5px;
 }
 
-#rjnonuzucw .gt_first_summary_row {
+#fquefmadbl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rjnonuzucw .gt_first_summary_row.thick {
+#fquefmadbl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rjnonuzucw .gt_last_summary_row {
+#fquefmadbl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6174,7 +6132,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#rjnonuzucw .gt_grand_summary_row {
+#fquefmadbl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6184,7 +6142,7 @@
   padding-right: 5px;
 }
 
-#rjnonuzucw .gt_first_grand_summary_row {
+#fquefmadbl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6194,7 +6152,7 @@
   border-top-color: #D3D3D3;
 }
 
-#rjnonuzucw .gt_last_grand_summary_row_top {
+#fquefmadbl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6204,11 +6162,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#rjnonuzucw .gt_striped {
+#fquefmadbl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rjnonuzucw .gt_table_body {
+#fquefmadbl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6217,7 +6175,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#rjnonuzucw .gt_footnotes {
+#fquefmadbl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6231,7 +6189,7 @@
   border-right-color: #D3D3D3;
 }
 
-#rjnonuzucw .gt_footnote {
+#fquefmadbl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6240,7 +6198,7 @@
   padding-right: 5px;
 }
 
-#rjnonuzucw .gt_sourcenotes {
+#fquefmadbl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6254,7 +6212,7 @@
   border-right-color: #D3D3D3;
 }
 
-#rjnonuzucw .gt_sourcenote {
+#fquefmadbl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6262,63 +6220,63 @@
   padding-right: 5px;
 }
 
-#rjnonuzucw .gt_left {
+#fquefmadbl .gt_left {
   text-align: left;
 }
 
-#rjnonuzucw .gt_center {
+#fquefmadbl .gt_center {
   text-align: center;
 }
 
-#rjnonuzucw .gt_right {
+#fquefmadbl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rjnonuzucw .gt_font_normal {
+#fquefmadbl .gt_font_normal {
   font-weight: normal;
 }
 
-#rjnonuzucw .gt_font_bold {
+#fquefmadbl .gt_font_bold {
   font-weight: bold;
 }
 
-#rjnonuzucw .gt_font_italic {
+#fquefmadbl .gt_font_italic {
   font-style: italic;
 }
 
-#rjnonuzucw .gt_super {
+#fquefmadbl .gt_super {
   font-size: 65%;
 }
 
-#rjnonuzucw .gt_footnote_marks {
+#fquefmadbl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rjnonuzucw .gt_asterisk {
+#fquefmadbl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rjnonuzucw .gt_indent_1 {
+#fquefmadbl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rjnonuzucw .gt_indent_2 {
+#fquefmadbl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rjnonuzucw .gt_indent_3 {
+#fquefmadbl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rjnonuzucw .gt_indent_4 {
+#fquefmadbl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rjnonuzucw .gt_indent_5 {
+#fquefmadbl .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -6459,23 +6417,23 @@
 </div>
 </section></section>
 <section>
-<section id="calculate-or-define-the-transition-probability-matrix" class="title-slide slide level1 center" data-background="#c2f0c2">
-<h1>4. Calculate or define the transition probability matrix</h1>
+<section id="calcular-o-definir-la-matriz-de-probabilidad-de-transición" class="title-slide slide level1 center" data-background="#c2f0c2">
+<h1>4. Calcular o definir la matriz de probabilidad de transición</h1>
 
 </section>
-<section id="defining-the-transition-probability-matrix" class="slide level2">
-<h2>Defining the Transition Probability Matrix</h2>
+<section id="definición-de-la-matriz-de-probabilidad-de-transición" class="slide level2">
+<h2>Definición de la matriz de probabilidad de transición</h2>
 <ul>
-<li class="fragment"><p>The transition probability matrix is a square matrix that defines the probability of transitioning from one health state to another health state in a single time step.</p></li>
-<li class="fragment"><p>Constructing the matrix is a fairly technical, but fairly straightforward process.</p>
+<li class="fragment"><p>La matriz de probabilidad de transición es una matriz cuadrada que define la probabilidad de transición de un estado de salud a otro estado de salud en un solo paso de tiempo.</p></li>
+<li class="fragment"><p>Construir la matriz es un proceso bastante técnico, pero bastante pero bastante sencillo.</p>
 <ul>
-<li class="fragment">We could spend an entire day of lecture and case studies on this alone (and we do in our weeklong intermediate course!)</li>
-<li class="fragment">However, in the interest of time, we’ll skip over these technical details today.</li>
+<li class="fragment">Podríamos dedicarle un día entero de clases y casos prácticos (y lo hacemos en nuestra semana). (¡y lo hacemos en nuestro curso intermedio de una semana!)</li>
+<li class="fragment">Sin embargo, en aras del tiempo, vamos a pasar por alto estos detalles técnicos de hoy.</li>
 </ul></li>
 </ul>
 </section>
-<section id="transition-probability-matrix" class="slide level2">
-<h2>Transition Probability Matrix</h2>
+<section id="matriz-de-probabilidades-de-transición" class="slide level2">
+<h2>Matriz de probabilidades de transición</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="cell" data-fig-width="4" data-layout-align="center">
@@ -6483,69 +6441,69 @@
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<svg width="384" height="480" viewbox="0.00 0.00 199.31 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<svg width="384" height="480" viewbox="0.00 0.00 204.67 188.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
 <title>G</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 195.31,-184 195.31,4 -4,4"></polygon>
-<!-- Healthy -->
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-184 200.67,-184 200.67,4 -4,4"></polygon>
+<!-- Sano -->
 <g id="node1" class="node">
-<title>Healthy</title>
-<ellipse fill="none" stroke="black" cx="41.61" cy="-90" rx="41.71" ry="18"></ellipse>
-<text text-anchor="middle" x="41.61" y="-85.8" font-family="Times,serif" font-size="14.00">Healthy</text>
+<title>Sano</title>
+<ellipse fill="none" stroke="black" cx="30.35" cy="-90" rx="30.2" ry="18"></ellipse>
+<text text-anchor="middle" x="30.35" y="-85.8" font-family="Times,serif" font-size="14.00">Sano</text>
 </g>
-<!-- Healthy&#45;&gt;Healthy -->
+<!-- Sano&#45;&gt;Sano -->
 <g id="edge1" class="edge">
-<title>Healthy-&gt;Healthy</title>
-<path fill="none" stroke="black" d="M80.3,-96.74C92.04,-96.57 101.21,-94.32 101.21,-90 101.21,-87.03 96.88,-85.04 90.35,-84.03"></path>
-<polygon fill="black" stroke="black" points="90.54,-80.53 80.3,-83.26 90.01,-87.51 90.54,-80.53"></polygon>
-<text text-anchor="middle" x="116.96" y="-85.8" font-family="Times,serif" font-size="14.00">0.856</text>
+<title>Sano-&gt;Sano</title>
+<path fill="none" stroke="black" d="M58.66,-96.72C69.6,-97.02 78.7,-94.78 78.7,-90 78.7,-86.86 74.78,-84.82 69,-83.87"></path>
+<polygon fill="black" stroke="black" points="68.84,-80.35 58.66,-83.28 68.44,-87.34 68.84,-80.35"></polygon>
+<text text-anchor="middle" x="94.45" y="-85.8" font-family="Times,serif" font-size="14.00">0,856</text>
 </g>
-<!-- Sick -->
+<!-- Enfermo -->
 <g id="node2" class="node">
-<title>Sick</title>
-<ellipse fill="none" stroke="black" cx="113.61" cy="-162" rx="28.41" ry="18"></ellipse>
-<text text-anchor="middle" x="113.61" y="-157.8" font-family="Times,serif" font-size="14.00">Sick</text>
+<title>Enfermo</title>
+<ellipse fill="none" stroke="black" cx="102.35" cy="-162" rx="44.64" ry="18"></ellipse>
+<text text-anchor="middle" x="102.35" y="-157.8" font-family="Times,serif" font-size="14.00">Enfermo</text>
 </g>
-<!-- Healthy&#45;&gt;Sick -->
+<!-- Sano&#45;&gt;Enfermo -->
 <g id="edge3" class="edge">
-<title>Healthy-&gt;Sick</title>
-<path fill="none" stroke="black" d="M58.31,-106.7C67.93,-116.33 80.17,-128.57 90.69,-139.09"></path>
-<polygon fill="black" stroke="black" points="88.44,-141.78 97.98,-146.38 93.39,-136.83 88.44,-141.78"></polygon>
-<text text-anchor="middle" x="58.75" y="-127.09" font-family="Times,serif" font-size="14.00">0.138</text>
+<title>Sano-&gt;Enfermo</title>
+<path fill="none" stroke="black" d="M45.97,-105.62C55.45,-115.1 67.73,-127.38 78.42,-138.07"></path>
+<polygon fill="black" stroke="black" points="75.96,-140.56 85.5,-145.15 80.91,-135.61 75.96,-140.56"></polygon>
+<text text-anchor="middle" x="46.45" y="-126.04" font-family="Times,serif" font-size="14.00">0.138</text>
 </g>
-<!-- Dead -->
+<!-- Muerto -->
 <g id="node3" class="node">
-<title>Dead</title>
-<ellipse fill="none" stroke="black" cx="113.61" cy="-18" rx="31.32" ry="18"></ellipse>
-<text text-anchor="middle" x="113.61" y="-13.8" font-family="Times,serif" font-size="14.00">Dead</text>
+<title>Muerto</title>
+<ellipse fill="none" stroke="black" cx="102.35" cy="-18" rx="39.43" ry="18"></ellipse>
+<text text-anchor="middle" x="102.35" y="-13.8" font-family="Times,serif" font-size="14.00">Muerto</text>
 </g>
-<!-- Healthy&#45;&gt;Dead -->
+<!-- Sano&#45;&gt;Muerto -->
 <g id="edge5" class="edge">
-<title>Healthy-&gt;Dead</title>
-<path fill="none" stroke="black" d="M58.31,-73.3C67.93,-63.67 80.17,-51.43 90.69,-40.91"></path>
-<polygon fill="black" stroke="black" points="93.39,-43.17 97.98,-33.62 88.44,-38.22 93.39,-43.17"></polygon>
-<text text-anchor="middle" x="58.75" y="-44.51" font-family="Times,serif" font-size="14.00">0.007</text>
+<title>Sano-&gt;Muerto</title>
+<path fill="none" stroke="black" d="M45.97,-74.38C55.52,-64.83 67.91,-52.44 78.64,-41.71"></path>
+<polygon fill="black" stroke="black" points="81.16,-44.14 85.76,-34.59 76.21,-39.19 81.16,-44.14"></polygon>
+<text text-anchor="middle" x="46.56" y="-45.44" font-family="Times,serif" font-size="14.00">0.007</text>
 </g>
-<!-- Sick&#45;&gt;Sick -->
+<!-- Enfermo&#45;&gt;Enfermo -->
 <g id="edge2" class="edge">
-<title>Sick-&gt;Sick</title>
-<path fill="none" stroke="black" d="M140.2,-168.71C150.86,-169.09 159.81,-166.85 159.81,-162 159.81,-158.82 155.96,-156.76 150.29,-155.83"></path>
-<polygon fill="black" stroke="black" points="150.37,-152.33 140.2,-155.29 150,-159.32 150.37,-152.33"></polygon>
-<text text-anchor="middle" x="175.56" y="-157.8" font-family="Times,serif" font-size="14.00">0.982</text>
+<title>Enfermo-&gt;Enfermo</title>
+<path fill="none" stroke="black" d="M144.04,-168.72C155.97,-168.46 165.17,-166.22 165.17,-162 165.17,-159.1 160.82,-157.13 154.23,-156.1"></path>
+<polygon fill="black" stroke="black" points="154.29,-152.6 144.04,-155.28 153.72,-159.57 154.29,-152.6"></polygon>
+<text text-anchor="middle" x="180.92" y="-157.8" font-family="Times,serif" font-size="14.00">0.982</text>
 </g>
-<!-- Sick&#45;&gt;Dead -->
+<!-- Enfermo&#45;&gt;Muerto -->
 <g id="edge4" class="edge">
-<title>Sick-&gt;Dead</title>
-<path fill="none" stroke="black" d="M113.61,-143.76C113.61,-119.2 113.61,-75.25 113.61,-46.35"></path>
-<polygon fill="black" stroke="black" points="117.11,-46.09 113.61,-36.09 110.11,-46.09 117.11,-46.09"></polygon>
-<text text-anchor="middle" x="97.86" y="-99.26" font-family="Times,serif" font-size="14.00">0.018</text>
+<title>Enfermo-&gt;Muerto</title>
+<path fill="none" stroke="black" d="M102.35,-143.76C102.35,-119.2 102.35,-75.25 102.35,-46.35"></path>
+<polygon fill="black" stroke="black" points="105.85,-46.09 102.35,-36.09 98.85,-46.09 105.85,-46.09"></polygon>
+<text text-anchor="middle" x="118.1" y="-99.26" font-family="Times,serif" font-size="14.00">0.018</text>
 </g>
-<!-- Dead&#45;&gt;Dead -->
+<!-- Muerto&#45;&gt;Muerto -->
 <g id="edge6" class="edge">
-<title>Dead-&gt;Dead</title>
-<path fill="none" stroke="black" d="M143.03,-24.74C153.99,-24.96 163.02,-22.71 163.02,-18 163.02,-14.91 159.13,-12.88 153.36,-11.91"></path>
-<polygon fill="black" stroke="black" points="153.23,-8.4 143.03,-11.26 152.79,-15.38 153.23,-8.4"></polygon>
-<text text-anchor="middle" x="171.77" y="-13.8" font-family="Times,serif" font-size="14.00">1.0</text>
+<title>Muerto-&gt;Muerto</title>
+<path fill="none" stroke="black" d="M139.1,-24.75C150.68,-24.64 159.82,-22.39 159.82,-18 159.82,-15.05 155.69,-13.06 149.48,-12.05"></path>
+<polygon fill="black" stroke="black" points="149.34,-8.53 139.1,-11.25 148.81,-15.51 149.34,-8.53"></polygon>
+<text text-anchor="middle" x="168.57" y="-13.8" font-family="Times,serif" font-size="14.00">1.0</text>
 </g>
 </g>
 </svg>
@@ -6559,26 +6517,26 @@
 <thead>
 <tr class="header">
 <th></th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerto</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Healthy</td>
+<td>Sano</td>
 <td>0.856</td>
 <td>0.138</td>
 <td>0.007</td>
 </tr>
 <tr class="even">
-<td>Sick</td>
+<td>Enfermo</td>
 <td>0</td>
 <td>0.982</td>
 <td>0.018</td>
 </tr>
 <tr class="odd">
-<td>Dead</td>
+<td>Muerto</td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
@@ -6589,18 +6547,18 @@
 </div>
 </section></section>
 <section>
-<section id="run-the-model" class="title-slide slide level1 center" data-background="#c2f0c2">
-<h1>5. Run the Model</h1>
+<section id="ejecutar-el-modelo" class="title-slide slide level1 center" data-background="#c2f0c2">
+<h1>5. Ejecutar el modelo</h1>
 
 </section>
-<section id="executing-the-model-requires-two-inputs" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
-<h2 data-id="quarto-animate-title">Executing the model requires two inputs</h2>
+<section id="ejecutar-el-modelo-requiere-dos-entradas" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Ejecutar el modelo requiere dos entradas</h2>
 <div class="r-vstack">
 <div data-id="occ">
-<p>Health State Occupancy at Beginning of Cycle</p>
+<p>Estado de salud Ocupación al inicio del ciclo</p>
 </div>
 <div data-id="m_P">
-<p>Transition Probability Matrix</p>
+<p>Matriz de probabilidad de transición</p>
 </div>
 </div>
 </section>
@@ -6608,10 +6566,10 @@
 <h2 data-id="quarto-animate-title"></h2>
 <div class="r-hstack">
 <div data-id="occ">
-<p>Health State Occupancy at Beginning of Cycle</p>
+<p>Ocupación del estado de salud al inicio del ciclo</p>
 </div>
 <div data-id="m_P">
-<p>Transition Probability Matrix</p>
+<p>Matriz de probabilidad de transición</p>
 </div>
 </div>
 </section>
@@ -6619,16 +6577,16 @@
 <h2 data-id="quarto-animate-title"></h2>
 <div class="r-hstack">
 <div data-id="occ">
-<p>Health State Occupancy at Beginning of Cycle</p>
+<p>Ocupación del estado de salud al inicio del ciclo</p>
 </div>
 <div data-id="m_P">
-<p>Transition Probability Matrix</p>
+<p>Matriz de probabilidad de transición</p>
 </div>
 <div data-id="occ1">
 <p><span class="math inline">\quad \quad \quad \quad \quad \quad \quad \quad</span></p>
 </div>
 </div>
-<div class="columns">
+<div class="columnas">
 <div class="column" style="width:33%;">
 <p><span class="math inline">s =</span></p>
 <div class="cell">
@@ -6637,7 +6595,8 @@
  1 0 0</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:33%;">
+</div>
+<div class="column" style="width:33%;">
 <p><span class="math inline">P =</span></p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -6647,7 +6606,8 @@ S 0.000 0.982 0.018
 D 0.000 0.000 1.000</code></pre>
 </div>
 </div>
-</div><div class="column" style="width:33%;">
+</div>
+<div class="column" style="width:33%;">
 <p><span class="math inline">\quad \quad \quad \quad</span></p>
 </div>
 </div>
@@ -6656,13 +6616,13 @@ D 0.000 0.000 1.000</code></pre>
 <h2 data-id="quarto-animate-title"></h2>
 <div class="r-hstack">
 <div data-id="occ">
-<p>Health State Occupancy at Beginning of Cycle</p>
+<p>Estado de salud Ocupación al inicio del ciclo</p>
 </div>
 <div data-id="m_P">
-<p>Transition Probability Matrix</p>
+<p>Matriz de probabilidades de transición</p>
 </div>
 <div data-id="occ1">
-<p>Health State Occupancy at End of Cycle</p>
+<p>Estado de salud Ocupación al final del ciclo</p>
 </div>
 </div>
 <div class="columns">
@@ -6699,13 +6659,13 @@ D 0.000 0.000 1.000</code></pre>
 <h2 data-id="quarto-animate-title"></h2>
 <div class="r-hstack">
 <div data-id="occ">
-<p>Health State Occupancy at Beginning of Cycle</p>
+<p>Estado de salud Ocupación al inicio del ciclo</p>
 </div>
 <div data-id="m_P">
-<p>Transition Probability Matrix</p>
+<p>Matriz de probabilidades de transición</p>
 </div>
 <div data-id="occ1">
-<p>Health State Occupancy at End of Cycle</p>
+<p>Estado de salud Ocupación al final del ciclo</p>
 </div>
 </div>
 <div class="columns">
@@ -6742,13 +6702,13 @@ D 0.000 0.000 1.000</code></pre>
 <h2 data-id="quarto-animate-title"></h2>
 <div class="r-hstack">
 <div data-id="occ">
-<p>Health State Occupancy at Beginning of Cycle</p>
+<p>Estado de salud Ocupación al inicio del ciclo</p>
 </div>
 <div data-id="m_P">
-<p>Transition Probability Matrix</p>
+<p>Matriz de probabilidades de transición</p>
 </div>
 <div data-id="occ1">
-<p>Health State Occupancy at End of Cycle</p>
+<p>Estado de salud Ocupación al final del ciclo</p>
 </div>
 </div>
 <div class="columns">
@@ -6813,13 +6773,13 @@ D 0.000 0.000 1.000</code></pre>
 <h2 data-id="quarto-animate-title"></h2>
 <div class="r-hstack">
 <div data-id="occ">
-<p>Health State Occupancy at Beginning of Cycle</p>
+<p>Estado de salud Ocupación al inicio del ciclo</p>
 </div>
 <div data-id="m_P">
-<p>Transition Probability Matrix</p>
+<p>Matriz de probabilidades de transición</p>
 </div>
 <div data-id="occ1">
-<p>Health State Occupancy at End of Cycle</p>
+<p>Estado de salud Ocupación al final del ciclo</p>
 </div>
 </div>
 <div class="columns">
@@ -6913,7 +6873,7 @@ D 0.000 0.000 1.000</code></pre>
 <section id="section-16" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
 <h2 data-id="quarto-animate-title"></h2>
 <div data-id="occ1">
-<p>Health State Occupancy at End of Cycle</p>
+<p>Estado de salud Ocupación al final del ciclo</p>
 </div>
 <div data-id="tr1">
 <div class="cell">
@@ -6940,10 +6900,10 @@ D 0.000 0.000 1.000</code></pre>
 </div>
 </div>
 </section>
-<section id="markov-trace" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
-<h2 data-id="quarto-animate-title">Markov Trace</h2>
+<section id="trazado-de-markov" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Trazado de Markov</h2>
 <div data-id="occ1">
-<p>Health State Occupancy Over Ten Cycles</p>
+<p>Estado de salud Ocupación durante diez ciclos</p>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -6966,23 +6926,23 @@ D 0.000 0.000 1.000</code></pre>
 
 </section>
 <section>
-<section id="calculate-cycles-by-hand" class="title-slide slide level1 center" data-background="#c2f0c2">
-<h1>Calculate cycles by hand</h1>
+<section id="calcular-ciclos-a-mano" class="title-slide slide level1 center" data-background="#c2f0c2">
+<h1>Calcular ciclos a mano</h1>
 
 </section>
-<section id="in-class-example" class="slide level2 smaller">
-<h2>In-class example</h2>
+<section id="ejemplo-en-clase" class="slide level2 smaller">
+<h2>Ejemplo en clase</h2>
 <div>
 <ul>
-<li class="fragment">A new drug was developed for cancer patients in remission to decrease their chance of relapse</li>
-<li class="fragment">This drug is $10,000 per year (2022 USD)</li>
-<li class="fragment">Research question: Is the new drug cost-effective compared to the current standard of care?</li>
-<li class="fragment">Let’s say we want to model this over a 4-year time horizon</li>
+<li class="fragment">Se ha desarrollado un nuevo fármaco para pacientes con cáncer en remisión para disminuir su probabilidad de recaída</li>
+<li class="fragment">Este medicamento cuesta $10,000 por año (2022 USD)</li>
+<li class="fragment">Pregunta de investigación: ¿Es el nuevo fármaco rentable en comparación con la comparado con el tratamiento estándar actual?</li>
+<li class="fragment">Supongamos que queremos modelizar esto en un horizonte temporal de 4 años</li>
 </ul>
 </div>
 </section>
-<section id="in-class-example-1" class="slide level2 smaller">
-<h2>In-class example</h2>
+<section id="ejemplo-en-clase-1" class="slide level2 smaller">
+<h2>Ejemplo en clase</h2>
 <p><br></p>
 <div style="font-size: 0.6em">
 <table>
@@ -7058,8 +7018,8 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="in-class-example-2" class="slide level2 smaller">
-<h2>In-class example</h2>
+<section id="ejemplo-en-clase-2" class="slide level2 smaller">
+<h2>Ejemplo en clase</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -7076,8 +7036,8 @@ D 0.000 0.000 1.000</code></pre>
 </div>
 </div>
 </section>
-<section id="in-class-example-3" class="slide level2 smaller">
-<h2>In-class example</h2>
+<section id="ejemplo-en-clase-3" class="slide level2 smaller">
+<h2>Ejemplo en clase</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -7094,8 +7054,8 @@ D 0.000 0.000 1.000</code></pre>
 </div>
 </div>
 </section>
-<section id="in-class-example-4" class="slide level2 smaller">
-<h2>In-class example</h2>
+<section id="ejemplo-en-clase-4" class="slide level2 smaller">
+<h2>Ejemplo en clase</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -7112,8 +7072,8 @@ D 0.000 0.000 1.000</code></pre>
 </div>
 </div>
 </section>
-<section id="in-class-example-5" class="slide level2 smaller">
-<h2>In-class example</h2>
+<section id="ejemplo-en-clase-5" class="slide level2 smaller">
+<h2>Ejemplo en clase</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -7130,8 +7090,8 @@ D 0.000 0.000 1.000</code></pre>
 </div>
 </div>
 </section>
-<section id="in-class-example-6" class="slide level2 smaller">
-<h2>In-class example</h2>
+<section id="ejemplo-en-clase-6" class="slide level2 smaller">
+<h2>Ejemplo en clase</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -7148,8 +7108,8 @@ D 0.000 0.000 1.000</code></pre>
 </div>
 </div>
 </section>
-<section id="in-class-example-7" class="slide level2 smaller">
-<h2>In-class example</h2>
+<section id="ejemplo-en-clase-7" class="slide level2 smaller">
+<h2>Ejemplo en clase</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
@@ -7170,12 +7130,12 @@ D 0.000 0.000 1.000</code></pre>
 <!-- Markov model be continued in class next week... -->
 </section></section>
 <section>
-<section id="calculating-outcomes" class="title-slide slide level1 center" data-background="#c2f0c2">
-<h1>Calculating Outcomes</h1>
+<section id="cálculo-de-resultados" class="title-slide slide level1 center" data-background="#c2f0c2">
+<h1>Cálculo de resultados</h1>
 
 </section>
-<section id="an-example-markov-trace-75-year-horizon" class="slide level2">
-<h2>An example Markov Trace (75 year horizon)</h2>
+<section id="un-ejemplo-de-trazado-de-markov-horizonte-de-75-años" class="slide level2">
+<h2>Un ejemplo de Trazado de Markov (horizonte de 75 años)</h2>
 <div style="font-size: 0.7em">
 <table>
 <thead>
@@ -7239,37 +7199,37 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="markov-traces" class="slide level2">
-<h2>Markov Traces</h2>
+<section id="trazos-de-markov" class="slide level2">
+<h2>Trazos de Markov</h2>
 <ul>
-<li class="fragment">Often we are modeling several competing strategies.</li>
-<li class="fragment">Each strategy has its own transition probability matrix.</li>
-<li class="fragment">Therefore, each strategy will have it’s own Markov trace.</li>
+<li class="fragment">A menudo modelamos varias estrategias que compiten entre sí.</li>
+<li class="fragment">Cada estrategia tiene su propia matriz de probabilidad de transición.</li>
+<li class="fragment">Por lo tanto, cada estrategia tendrá su propia traza de Markov.</li>
 </ul>
 </section>
-<section id="calculating-outcomes-1" class="slide level2">
-<h2>Calculating Outcomes</h2>
+<section id="cálculo-de-resultados-1" class="slide level2">
+<h2>Cálculo de resultados</h2>
 <ul>
-<li class="fragment">With our markov traces complete, we can calculate expected outcomes (e.g., costs, QALYs, DALYs, etc.).</li>
-<li class="fragment">Much like we did with decision trees, we need to define “payoffs” for each health state.</li>
+<li class="fragment">Con nuestras trazas de Markov completas, podemos calcular los resultados esperados (por ejemplo, costes, AVAC, AVAD, etc.).</li>
+<li class="fragment">Al igual que hicimos con los árboles de decisión, tenemos que definir los “pagos” para cada estado de salud. para cada estado de salud.</li>
 </ul>
 </section>
-<section id="defining-payoffs" class="slide level2">
-<h2>Defining Payoffs</h2>
+<section id="definición-de-los-resultados" class="slide level2">
+<h2>Definición de los resultados</h2>
 <ul>
-<li class="fragment">Cost outcomes: Cost of being healthy, sick, dead (including any additional costs of treatment/intervention, if applicable).</li>
-<li class="fragment">QALY outcomes: Utility weight of being healthy (usually 1.0), sick, dead (usually 0.0).</li>
-<li class="fragment">DALY outcomes: Disability weights of being sick (YLD) and remaining life expectancy based on reference life table (YLL)</li>
+<li class="fragment">Coste de los resultados: Coste de estar sano, enfermo, muerto (incluido cualquier costes adicionales del tratamiento/intervención, si procede).</li>
+<li class="fragment">Resultados QALY: Peso de la utilidad de estar sano (normalmente 1,0), enfermo muerto (normalmente 0,0).</li>
+<li class="fragment">Resultados AVAD: Pesos de discapacidad de estar enfermo (YLD) y esperanza de vida esperanza de vida restante basada en la tabla de vida de referencia (YLL)</li>
 </ul>
 </section>
-<section id="defining-payoffs-1" class="slide level2">
-<h2>Defining Payoffs</h2>
+<section id="definición-de-las-compensaciones" class="slide level2">
+<h2>Definición de las compensaciones</h2>
 <div>
 <ul>
-<li>We can calculate the total payoff for each cycle by multiplying the number or fraction of the cohort in each health state by its payoff value, and adding them together.</li>
+<li>Podemos calcular la retribución total de cada ciclo multiplicando el multiplicando el número o la fracción de la cohorte en cada estado de salud por su valor de compensación y sumándolos. y sumándolos.</li>
 </ul>
 </div>
-<p>Example Markov Trace (two cycles):</p>
+<p>Ejemplo de traza de Markov (dos ciclos):</p>
 <div style="font-size: 0.7em">
 <table>
 <thead>
@@ -7297,11 +7257,11 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="example-life-years" class="slide level2">
-<h2>Example: Life Years</h2>
+<section id="ejemplo-años-de-vida" class="slide level2">
+<h2>Ejemplo: Años de vida</h2>
 <ul>
-<li class="fragment">We’ll build our example using a simple outcome: expected life years under a given strategy.</li>
-<li class="fragment">Payoffs:
+<li class="fragment">Construiremos nuestro ejemplo utilizando un resultado simple: años de vida esperados bajo una estrategia dada.</li>
+<li class="fragment">Resultados:
 <ul>
 <li class="fragment">Healthy: <span style="color:green;">1.0</span></li>
 <li class="fragment">Sick: <span style="color:green;">1.0</span> [they’re still alive!]</li>
@@ -7309,11 +7269,11 @@ D 0.000 0.000 1.000</code></pre>
 </ul></li>
 </ul>
 </section>
-<section id="example-life-years-1" class="slide level2">
-<h2>Example: Life Years</h2>
+<section id="ejemplo-años-de-vida-1" class="slide level2">
+<h2>Ejemplo: Años de vida</h2>
 <ul>
-<li class="fragment">To get the total “payoff” for a given cycle, we multiply the fraction of the cohort in a given health state by the payoff associated with that health state.</li>
-<li class="fragment">Do this for each health state, and add them together to get the total.</li>
+<li class="fragment">Para obtener la “retribución” total de un ciclo determinado, multiplicamos la fracción de la cohorte en un estado de salud dado por la retribución asociado a ese estado de salud.</li>
+<li class="fragment">Haga esto para cada estado de salud y súmelos para obtener el total. total.</li>
 </ul>
 <div style="font-size: 0.7em">
 <table>
@@ -7345,8 +7305,8 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="example-life-years-2" class="slide level2">
-<h2>Example: Life Years</h2>
+<section id="ejemplo-años-de-vida-2" class="slide level2">
+<h2>Ejemplo: Años de vida</h2>
 <p>What is the LY “payoff” for Cycle 0?</p>
 <div style="font-size: 0.7em">
 <table>
@@ -7378,17 +7338,17 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="example-life-years-3" class="slide level2">
-<h2>Example: Life Years</h2>
+<section id="ejemplo-años-de-vida-3" class="slide level2">
+<h2>Ejemplo: Años de vida</h2>
 <p>What is the LY “payoff” for Cycle 0?</p>
 <div style="font-size: 0.7em">
 <table>
 <colgroup>
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -7418,17 +7378,17 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="example-life-years-4" class="slide level2">
-<h2>Example: Life Years</h2>
+<section id="ejemplo-años-de-vida-4" class="slide level2">
+<h2>Ejemplo: Años de vida</h2>
 <p>What is the LY “payoff” for Cycle 1?</p>
 <div style="font-size: 0.7em">
 <table>
 <colgroup>
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -7457,10 +7417,10 @@ D 0.000 0.000 1.000</code></pre>
 </tbody>
 </table>
 </div>
-<p>… and so on.</p>
+<p>… y así sucesivamente.</p>
 </section>
-<section id="example-life-years-5" class="slide level2">
-<h2>Example: Life Years</h2>
+<section id="ejemplo-años-de-vida-5" class="slide level2">
+<h2>Ejemplo: Años de vida</h2>
 <div style="font-size: 0.7em">
 <table>
 <thead>
@@ -7533,8 +7493,8 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="example-costs" class="slide level2">
-<h2>Example: Costs</h2>
+<section id="ejemplo-costes" class="slide level2">
+<h2>Ejemplo: Costes</h2>
 <ul>
 <li class="fragment">Now suppose we want to calculate costs.</li>
 <li class="fragment">Payoffs:
@@ -7545,9 +7505,9 @@ D 0.000 0.000 1.000</code></pre>
 </ul></li>
 </ul>
 </section>
-<section id="example-costs-1" class="slide level2">
-<h2>Example: Costs</h2>
-<p>What is the Cost “payoff” for Cycle 0?</p>
+<section id="ejemplo-costes-1" class="slide level2">
+<h2>Ejemplo: Costes</h2>
+<p>¿Cuál es el coste del ciclo 0?</p>
 <div style="font-size: 0.7em">
 <table>
 <thead>
@@ -7578,17 +7538,17 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="example-costs-2" class="slide level2">
-<h2>Example: Costs</h2>
-<p>What is the Cost “payoff” for Cycle 0?</p>
+<section id="ejemplo-costes-2" class="slide level2">
+<h2>Ejemplo: Costes</h2>
+<p>¿Cuál es el coste del ciclo 0?</p>
 <div style="font-size: 0.7em">
 <table>
 <colgroup>
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -7618,17 +7578,17 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="example-costs-3" class="slide level2">
-<h2>Example: Costs</h2>
-<p>What is the cost “payoff” for Cycle 1?</p>
+<section id="ejemplo-costes-3" class="slide level2">
+<h2>Ejemplo: Costes</h2>
+<p>¿Cuál es el coste “compensatorio” del Ciclo 1?</p>
 <div style="font-size: 0.7em">
 <table>
 <colgroup>
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 19%">
-<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -7657,25 +7617,25 @@ D 0.000 0.000 1.000</code></pre>
 </tbody>
 </table>
 </div>
-<p>… and so on.</p>
+<p>… y así sucesivamente.</p>
 </section>
-<section id="other-outcomes" class="slide level2">
-<h2>Other Outcomes</h2>
+<section id="otros-resultados" class="slide level2">
+<h2>Otros resultados</h2>
 <ul>
-<li class="fragment">We can repeat a similar process for health outcomes (e.g., QALYs, YLDs) by multiplying the “payoff” (e.g., utility weight, disability weight) for a given health state by the fraction of the cohort in that health state in the cycle.</li>
+<li class="fragment">Podemos repetir un proceso similar para los resultados sanitarios (por ejemplo, AVAC, YLD) multiplicando el “resultado” (por ejemplo, el peso de la utilidad, el peso de la discapacidad) para un estado de salud determinado por la fracción de la cohorte que se encuentra en un estado de salud determinado. discapacidad) de un determinado estado de salud por la fracción de la cohorte que se encuentra en ese estado de salud en el ciclo. ese estado de salud en el ciclo.</li>
 </ul>
 </section></section>
 <section>
-<section id="calculating-total-expected-outcomes" class="title-slide slide level1 center">
-<h1>Calculating Total Expected Outcomes</h1>
+<section id="cálculo-de-los-resultados-totales-esperados" class="title-slide slide level1 center">
+<h1>Cálculo de los resultados totales esperados</h1>
 
 </section>
-<section id="total-outcomes" class="slide level2">
-<h2>Total Outcomes</h2>
+<section id="resultados-totales" class="slide level2">
+<h2>Resultados totales</h2>
 </section>
-<section id="total-life-years" class="slide level2">
-<h2>Total Life Years</h2>
-<p>Let’s look at the Markov trace and cycle outcomes for the Life Year outcome.</p>
+<section id="total-de-años-de-vida" class="slide level2">
+<h2>Total de años de vida</h2>
+<p>Veamos la traza de Markov y los resultados del ciclo para el resultado Años de vida resultado.</p>
 <div style="font-size: 0.7em">
 <table>
 <thead>
@@ -7748,9 +7708,9 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="life-years" class="slide level2">
-<h2>Life years</h2>
-<p>We can create a new column that accumulates life years over each cycle.</p>
+<section id="años-de-vida" class="slide level2">
+<h2>Años de vida</h2>
+<p>Podemos crear una nueva columna que acumule los años de vida en cada ciclo.</p>
 <div style="font-size: 0.7em">
 <table style="width:100%;">
 <colgroup>
@@ -7840,8 +7800,8 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="life-years-1" class="slide level2">
-<h2>Life years</h2>
+<section id="años-de-vida-1" class="slide level2 smaller">
+<h2>Años de vida</h2>
 <div style="font-size: 0.7em">
 <table style="width:100%;">
 <colgroup>
@@ -7931,8 +7891,8 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="life-years-2" class="slide level2 smaller">
-<h2>Life years</h2>
+<section id="años-de-vida-2" class="slide level2 smaller">
+<h2>Años de vida</h2>
 <ul>
 <li class="fragment"><p>The cumulative LYs for an individual starting in the Healthy state is <strong>44.825</strong></p></li>
 <li class="fragment"><p>Note that this is within a 75 years time horizon</p></li>
@@ -8026,82 +7986,58 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="total-outcomes-1" class="slide level2">
-<h2>Total Outcomes</h2>
+<section id="resultados-totales-1" class="slide level2">
+<h2>Resultados totales</h2>
 <ul>
-<li class="fragment">We can do a similar exercise to get total costs, total QALYs, total DALYs, etc.</li>
-<li class="fragment">However, it’s not that simple. There are some extra complications we have to deal with.
+<li class="fragment">Podemos hacer un ejercicio similar para obtener los costes totales, los AVAC totales, los AVAD totales, etc. AVAD, etc.</li>
+<li class="fragment">Sin embargo, no es tan sencillo. Hay algunas complicaciones complicaciones adicionales.
 <ul>
-<li class="fragment">Discounting</li>
-<li class="fragment">Cycle correction</li>
+<li class="fragment">Descuentos</li>
+<li class="fragment">Corrección cíclica</li>
 </ul></li>
 </ul>
 </section></section>
 <section>
-<section id="cycle-correction" class="title-slide slide level1 center" data-background="#c2f0c2">
-<h1>Cycle correction</h1>
+<section id="corrección-de-ciclo" class="title-slide slide level1 center" data-background="#c2f0c2">
+<h1>Corrección de ciclo</h1>
 
 </section>
-<section id="the-problem" class="slide level2">
-<h2>The problem</h2>
+<section id="el-problema" class="slide level2">
+<h2>El problema</h2>
 <ul>
-<li class="fragment"><p>In real life, events could occur at any points in a given cycle, but a Markov model assumes all events occur either at the beginning or end of each cycle</p></li>
-<li class="fragment"><p>Time is continuous, so are survival/event-free survival curves</p></li>
-<li class="fragment"><p>When we discretize time by using a fixed cycle length, we can make two assumptions</p>
+<li class="fragment"><p>En la vida real, los eventos podrían ocurrir en cualquier punto de un ciclo dado, pero un modelo de Markov asume que todos los eventos ocurren al principio o al final de cada ciclo</p></li>
+<li class="fragment"><p>El tiempo es continuo, también lo son las curvas de supervivencia/supervivencia sin eventos</p></li>
+<li class="fragment"><p>Cuando discretizamos el tiempo utilizando una longitud de ciclo fija, podemos hacer dos supuestos</p>
 <ul>
-<li class="fragment">Suppose this is a simple Well <span class="math inline">\rightarrow</span> Dead process</li>
+<li class="fragment">Supongamos que se trata de un simple bien <span class="math inline">\arrow</span> proceso muerto</li>
 </ul></li>
 </ul>
 </section>
-<section id="the-problem-1" class="slide level2 smaller">
-<h2>The problem</h2>
+<section id="el-problema-1" class="slide level2 smaller">
+<h2>El problema</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="fragment">
-<p>Assuming death happens at the end of cycle (A)<img data-src="images/paste-48DC2C4B.png" class="quarto-figure quarto-figure-center" width="512"></p>
+<p>Asumiendo que la muerte ocurre al final del ciclo (A)<img data-src="images/paste-48DC2C4B.png" class="quarto-figure quarto-figure-center" width="512"></p>
 </div>
 <div class="fragment">
-<p>Overestimates state membership in Well</p>
+<p>Sobreestima la pertenencia a un estado en Well</p>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="fragment">
-<p>Assuming death happens at the start of cycle (B)<img data-src="images/paste-6C74F22E.png" class="quarto-figure quarto-figure-center" width="525"></p>
+<p>Asumiendo que la muerte ocurre al inicio del ciclo (B)<img data-src="images/paste-6C74F22E.png" class="quarto-figure quarto-figure-center" width="525"></p>
 </div>
 <div class="fragment">
-<p>Underestimates state membership in Well</p>
+<p>Subestima la pertenencia a un estado en Well</p>
 </div>
 </div>
 </div>
 <p><a href="https://doi.org/10.1177/0272989X08315241">Source</a></p>
 </section>
-<section id="the-problem-2" class="slide level2 smaller">
-<h2>The problem</h2>
+<section id="el-problema-2" class="slide level2 smaller">
+<h2>El problema</h2>
 
-<img data-src="images/half-cycle.png" width="513" class="r-stretch"><aside class="notes">
-<ol type="1">
-<li>When counting subjects at the END of cycle (top visual) (transition happens at beginning of cycle) - you would be underestimating LYs</li>
-</ol>
-<ul>
-<li>Say you have 10 people &amp; 5 die halfway through, you wouldn’t be counting the 5 that started that has accumulated SOME costs &amp; benefits in that cycle; you would only be counting the “end” survivors.</li>
-</ul>
-<ol start="2" type="1">
-<li>If you counted subjects at BEGINNING of cycle (the bottom visual) (transition happens at end of previous cycle), you would be overestimating LYs</li>
-</ol>
-<ul>
-<li>For example, for these 10 people, they die halfway through the cycle, but you already gave that person the full cycle’s benefits &amp; costs at the beginning (even though they shouldn’t get the full benefits &amp; costs because they died halfway through)</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
+<img data-src="images/half-cycle.png" width="513" class="r-stretch"></section>
 <section id="half-cycle-correction" class="slide level2">
 <h2>Half-cycle correction</h2>
 <div class="columns">
@@ -8130,9 +8066,9 @@ D 0.000 0.000 1.000</code></pre>
 <h2>Half-cycle correction</h2>
 
 <img data-src="images/paste-86501A0D.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
-<li class="fragment"><p>Multiply the outcomes by 1/2 in the first and last cycle.</p></li>
-<li class="fragment"><p>Shifting the computed, discrete state membership curve to the left by 1/2 cycle.</p></li>
-<li class="fragment"><p>Essentially assuming that events happen in the middle of cycle</p></li>
+<li class="fragment"><p>Multiplicar los resultados por 1/2 en el primer y último ciclo.</p></li>
+<li class="fragment"><p>Desplazar la curva calculada de pertenencia a un estado discreto hacia la izquierda en 1/2 ciclo.</p></li>
+<li class="fragment"><p>Esencialmente asumiendo que los eventos ocurren en la mitad del ciclo</p></li>
 </ul>
 <p><a href="https://doi.org/10.1177/0272989X08315241">Source</a></p>
 </section>
@@ -8140,24 +8076,7 @@ D 0.000 0.000 1.000</code></pre>
 <h2>Half-cycle correction</h2>
 <p><br></p>
 
-<img data-src="images/half-cycle2.png" class="r-stretch"><aside class="notes">
-<ol type="1">
-<li><p>Intuition behind it – the image to the left represents underestimation</p></li>
-<li><p>&amp; you can see if you line that up to the Y-AXIS (center figures), the triangular areas can be seen to be equal to a rectangle one-half cycle wide extending from 0 to 1.</p></li>
-<li><p>If you add back the original rectangles, the approximation is NOW BETTER – it has corrected for the underestimation.</p></li>
-</ol>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
+<img data-src="images/half-cycle2.png" class="r-stretch"></section></section>
 <section>
 <section id="apply-cycle-correction-methods-to-our-markov-trace" class="title-slide slide level1 center">
 <h1>Apply cycle correction methods to our markov trace…</h1>
@@ -8166,7 +8085,7 @@ D 0.000 0.000 1.000</code></pre>
 <section id="half-cycle-correction-4" class="slide level2 smaller">
 <h2>Half-cycle correction</h2>
 <ul>
-<li class="fragment">Multiply the outcomes by 1/2 in the first and last cycle.</li>
+<li class="fragment">Multiplicar los resultados por 1/2 en el primer y último ciclo.</li>
 </ul>
 <div class="fragment">
 <div style="font-size: 0.7em">
@@ -8265,7 +8184,7 @@ D 0.000 0.000 1.000</code></pre>
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>This number is smaller than our original estimate without half-cycle correction (44.825!)</strong></p>
+<p><strong>Este número es menor que nuestra estimación original sin corrección de medio ciclo (¡44,825!)</strong></p>
 </div>
 <div class="callout-content">
 
@@ -8274,11 +8193,10 @@ D 0.000 0.000 1.000</code></pre>
 </div>
 </div>
 </section>
-<section id="summary" class="slide level2">
-<h2>Summary</h2>
+<section id="resumen" class="slide level2">
+<h2>Resumen</h2>
 <ul>
-<li class="fragment">Once we have total (discounted, half-cycle corrected) outcomes for each strategy, we can turn to conducting incremental cost-effectiveness analysis.</li>
-<li class="fragment">We covered these methods yesterday!</li>
+<li class="fragment">Una vez que tenemos los resultados totales (descontados, corregidos por medio ciclo) para cada estrategia, podemos pasar a realizar un análisis análisis coste-eficacia incremental.</li>
 </ul>
 </section>
 <section id="markov-models" class="slide level2">
@@ -8291,27 +8209,24 @@ D 0.000 0.000 1.000</code></pre>
 <thead>
 <tr class="header">
 <th>Pros</th>
-<th>Cons</th>
+<th>Contras</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Can model repeated events</td>
-<td>Can only transition once in a given cycle</td>
+<td>Puede modelar sucesos repetidos</td>
+<td>Sólo puede transitar una vez por ciclo</td>
 </tr>
 <tr class="even">
-<td>Can model more complex + longitudinal clinical events</td>
-<td>Shortening the cycle can create computational challenges.</td>
+<td>Puede modelizar eventos clínicos más complejos y longitudinales</td>
+<td>Acortar el ciclo puede plantear retos informáticos.</td>
 </tr>
 <tr class="odd">
-<td>Not computationally intensive; efficient to model and debug</td>
-<td>Shortening cycle can cause “state explosion” if tunnel states are used</td>
+<td>No requiere muchos cálculos; es eficiente de modelar y depurar.</td>
+<td>Acortar el ciclo puede provocar una “explosión de estados” si se utilizan estados túnel</td>
 </tr>
 </tbody>
 </table>
-</section></section>
-<section id="next-up-markov-case-study" class="title-slide slide level1 center" data-background="#43464B">
-<h1>Next up: Markov Case Study</h1>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../vchem.png" class="slide-logo"></p>
@@ -8319,8 +8234,7 @@ D 0.000 0.000 1.000</code></pre>
 <p><a href="../index.html">Back to Website</a></p>
 </div>
 </div>
-</section>
-
+</section></section>
 
     </div>
   </div>

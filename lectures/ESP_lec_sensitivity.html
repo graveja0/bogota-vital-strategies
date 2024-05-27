@@ -7,12 +7,10 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.549">
 
-  <title>Taller de análisis de decisiones - Introducción al análisis de decisiones</title>
+  <title>Taller de análisis de decisiones - Análisis determinista y de escenarios</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -32,22 +30,6 @@
     }
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -343,373 +325,260 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introducción al análisis de decisiones</h1>
+  <h1 class="title">Análisis determinista y de escenarios</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="esquema" class="slide level2">
-<h2>Esquema <i class="fa-regular fa-clipboard" aria-label="clipboard"></i></h2>
-<div>
-<ol type="1">
-<li class="fragment">Presentaciones</li>
-<li class="fragment">Motivación</li>
-<li class="fragment">Ejemplos de análisis de decisiones</li>
-<li class="fragment">Objetivos del taller</li>
-</ol>
-</div>
-</section>
-<section id="curso-sitio-web" class="slide level2">
-<h2>Curso Sitio web</h2>
-<div style="font-size: 2.0em">
-<p>https://github.com/graveja0/bogota-vital-strategies</p>
-</div>
-<div>
-<ul>
-<li class="fragment">Todos los materiales del curso (diapositivas, casos prácticos) se publican aquí.</li>
-<li class="fragment">Nuestro calendario (que probablemente evolucione) también se publicará aquí y se actualizará periódicamente.</li>
-</ul>
-</div>
-</section>
-<section id="presentaciones" class="slide level2">
-<h2>Presentaciones</h2>
-<ul>
-<li class="fragment">Por favor, ¡preséntese!</li>
-</ul>
-</section>
 <section>
-<section id="motivación" class="title-slide slide level1 center" data-background="#43464B">
-<h1>Motivación</h1>
+<section id="objetivos-de-aprendizaje-y-esquema" class="title-slide slide level1 center">
+<h1>Objetivos de aprendizaje y esquema</h1>
 
 </section>
-<section id="las-dos-últimas-décadas" class="slide level2">
-<h2>Las dos últimas décadas …</h2>
-<div>
+<section id="objetivos-de-aprendizaje" class="slide level2">
+<h2>Objetivos de aprendizaje</h2>
 <ul>
-<li class="fragment">Hepatitis C curada</li>
-<li class="fragment">Reducción significativa de la incidencia del VIH</li>
-<li class="fragment">Posible cura de la leucemia y el linfoma recidivantes o refractarios</li>
-<li class="fragment">Vacunas perfeccionadas (por ejemplo, la vacuna contra el VPH) para prevenir enfermedades como el cáncer de cuello de útero y otros tipos de cáncer.</li>
-<li class="fragment">Avances en la prevención de enfermedades cardiovasculares</li>
-</ul>
-</div>
-</section>
-<section id="a-pesar-de-estos-avances" class="slide level2">
-<h2>A pesar de estos avances …</h2>
-<ul>
-<li class="fragment">La carga de enfermedades no transmisibles (ENT) como el cáncer, las enfermedades cardiovasculares y la diabetes va en aumento.</li>
-<li class="fragment">Son la causa del 74% de las muertes en el mundo, y la mayoría (86%) en los países de renta baja y media (PRMB).
-<ul>
-<li class="fragment">Fuente: <a href="https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases">OMS</a></li>
-</ul></li>
-<li class="fragment">Las tasas de malnutrición, necesidad insatisfecha de servicios de salud sexual y reproductiva y mortalidad materna también siguen siendo elevadas en muchas partes del mundo.</li>
+<li><p>Explicar el propósito del análisis de sensibilidad determinista y proporcionar ejemplos de análisis unidireccionales frente a bidireccionales.</p></li>
+<li><p>Detallar las ventajas/desventajas del análisis de sensibilidad determinista.</p></li>
 </ul>
 </section>
-<section id="section" class="slide level2" data-background-image="images/new_decision-analysis-overview.png" data-background-size="contain">
-<h2></h2>
-</section>
-<section id="section-1" class="slide level2" data-background-image="images/new_decision-analysis-overview_blank.png" data-background-size="contain">
-<h2></h2>
-<p><br><br></p>
-</section>
-<section id="ejemplos-de-análisis-de-decisiones" class="slide level2" data-background="#43464B">
-<h2>Ejemplos de Análisis de Decisiones</h2>
-</section>
-<section id="ej-1.-vih" class="slide level2">
-<h2>Ej 1. VIH</h2>
-<div class="callout callout-important no-icon callout-style-simple">
-<div class="callout-body">
-<div class="callout-content">
-<p>Ha sido nombrado director de un comité de asignación de fondos responsable de las iniciativas de prevención y tratamiento del VIH.</p>
-</div>
-</div>
-</div>
-<div>
+<section id="resumen" class="slide level2">
+<h2>Resumen</h2>
 <ol type="1">
-<li class="fragment"><p>Cómo decidirá el comité la proporción de fondos para las iniciativas de prevención frente a las de tratamiento?</p></li>
-<li class="fragment"><ol start="2" type="1">
-<li class="fragment">¿Debería destinarse parte de los fondos a la investigación?</li>
-</ol></li>
-<li class="fragment"><p>¿Cómo responder a un miembro que argumenta que los fondos están mejor gastados en vacunación infantil?</p></li>
+<li>Análisis de sensibilidad unidireccional.</li>
+<li>Ejemplos de publicaciones.</li>
+<li>Análisis de sensibilidad bidireccional.</li>
+<li>Ejemplos de publicaciones.</li>
+<li>Limitaciones y ampliaciones.</li>
+<li>Análisis de escenarios</li>
+<li>Análisis de umbrales</li>
 </ol>
-</div>
-</section>
-<section id="ej-2.-defectos-de-nacimiento" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Ej 2. Defectos de nacimiento</h2>
-<div>
-<ul>
-<li class="fragment"><p>Un hipotético defecto congénito está presente en 1 de cada 1.000 niños nacidos</p></li>
-<li class="fragment"><p>A menos que se trate, esta condición tiene una tasa de mortalidad del 50</p></li>
-</ul>
-</div>
-</section>
-<section id="ej-2.-defectos-de-nacimiento-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Ej 2. Defectos de nacimiento</h2>
-<div class="callout callout-important no-icon callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong><span style="color: verde bosque;"><strong>¿Deberíamos comprobar este hipotético defecto de nacimiento?</strong></span></strong></p>
-</div>
-<div class="callout-content">
+</section></section>
+<section>
+<section id="análisis-de-sensibilidad-unidireccional" class="title-slide slide level1 center" data-background="#43464B">
+<h1>Análisis de sensibilidad unidireccional</h1>
 
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment"><p>Un hipotético defecto congénito está presente en 1 de cada 1.000 niños nacidos.</p></li>
-<li class="fragment"><p>A menos que se trate, esta condición tiene una tasa de mortalidad del 50%.</p></li>
-</ul>
 </section>
-<section id="ej-2.-defectos-de-nacimiento-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Ej 2. Defectos de Nacimiento</h2>
-<div class="callout callout-important no-icon callout-titled callout-style-simple">
-<div class="callout-body">
-<div class="callout-title">
-<p><strong><span style="color: verde bosque;"><strong>¿Deberíamos probar este hipotético defecto de nacimiento?</strong></span></strong></p>
+<section id="análisis-de-sensibilidad-unidireccional-1" class="slide level2">
+<h2>Análisis de sensibilidad unidireccional</h2>
+<div>
+<ul>
+<li class="fragment">Suele ser el punto de partida de los análisis de sensibilidad</li>
+<li class="fragment">Probar secuencialmente una variable cada vez (es decir, edad, IMC, AVAC, otros parámetros clínicamente importantes), manteniendo todo lo demás constante.</li>
+<li class="fragment">Determinar cómo afecta esta variación a los resultados</li>
+<li class="fragment">Los análisis de sensibilidad unidireccionales suelen presentarse en un <strong>diagrama de tornado</strong>.
+<ul>
+<li class="fragment">Se utiliza para clasificar visualmente las distintas variables por orden de su influencia global en la magnitud de los resultados del modelo.</li>
+</ul></li>
+</ul>
 </div>
-<div class="callout-content">
+</section>
+<section id="un-árbol-de-decisión-simple" class="slide level2">
+<h2>Un árbol de decisión simple</h2>
 
-</div>
-</div>
-</div>
+<img data-src="images/Screen Shot 2022-09-27 at 3.43.43 PM.png" class="r-stretch"></section>
+<section id="un-árbol-de-decisión-simple-1" class="slide level2">
+<h2>Un árbol de decisión simple</h2>
+
+<img data-src="images/Screen Shot 2022-09-27 at 3.44.29 PM.png" class="r-stretch"></section>
+<section id="un-árbol-de-decisión-simple-2" class="slide level2">
+<h2>Un árbol de decisión simple</h2>
+
+<img data-src="images/Screen Shot 2022-09-27 at 3.45.20 PM.png" class="r-stretch"></section></section>
+<section>
+<section id="ejemplos-de-publicaciones" class="title-slide slide level1 center">
+<h1>Ejemplos de publicaciones</h1>
+
+</section>
+<section id="estudio-de-caso-sobre-rotavirus-de-capstone" class="slide level2">
+<h2>Estudio de caso sobre rotavirus de Capstone</h2>
+
+<img data-src="images/file_show.jpeg" class="r-stretch"></section>
+<section id="estudio-de-caso-sobre-el-rotavirus-en-capstone" class="slide level2">
+<h2>Estudio de caso sobre el rotavirus en Capstone</h2>
+
+<img data-src="images/file_show2.jpeg" class="r-stretch"></section>
+<section id="rotavirus-estudio-de-caso-de-capstone" class="slide level2">
+<h2>Rotavirus estudio de caso de Capstone</h2>
+
+<img data-src="images/file_show3.jpeg" class="r-stretch"></section>
+<section id="otros-ejemplos" class="slide level2">
+<h2>Otros ejemplos</h2>
+
+<img data-src="images/Screen Shot 2022-09-26 at 10.33.51 PM.png" class="r-stretch"></section>
+<section id="otros-ejemplos-1" class="slide level2">
+<h2>Otros ejemplos</h2>
+
+<img data-src="images/Screen Shot 2022-10-06 at 9.13.02 AM-01.png" class="r-stretch"></section>
+<section id="otros-ejemplos-2" class="slide level2">
+<h2>Otros ejemplos</h2>
+
+<img data-src="images/Screen Shot 2022-10-06 at 9.15.55 AM.png" width="759" class="r-stretch"></section>
+<section id="otros-ejemplos-3" class="slide level2">
+<h2>Otros ejemplos</h2>
+
+<img data-src="images/Screen Shot 2022-10-06 at 9.19.09 AM.png" width="777" class="r-stretch"></section></section>
+<section>
+<section id="análisis-de-sensibilidad-bidireccional" class="title-slide slide level1 center" data-background="#43464B">
+<h1>Análisis de sensibilidad bidireccional</h1>
+
+</section>
+<section id="two-way-sensitivity-analysis" class="slide level2">
+<h2>Two-way sensitivity analysis</h2>
 <div>
 <ul>
-<li class="fragment"><p>Prueba diagnóstica: Perfectamente preciso</p></li>
-<li class="fragment"><p>Todos los recién nacidos en los que se identifica el defecto pueden ser curados con éxito</p></li>
-<li class="fragment"><p>PERO la prueba en sí puede ser letal:</p>
-<ul>
-<li class="fragment"><strong>4 de cada 10.000</strong> bebés sometidos a la prueba morirán como resultado directo y observable del procedimiento de la prueba</li>
-</ul></li>
+<li class="fragment">Una forma de mapear los efectos de interacción entre dos parámetros en un modelo de análisis de decisión</li>
+<li class="fragment">Varía 2 parámetros a la vez</li>
+<li class="fragment">Explora la solidez de los resultados en mayor profundidad</li>
 </ul>
 </div>
+</section></section>
+<section>
+<section id="ejemplos-de-publicaciones-1" class="title-slide slide level1 center">
+<h1>Ejemplos de publicaciones</h1>
+
 </section>
-<section id="ej-2.-defectos-de-nacimiento-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Ej 2. Defectos de nacimiento</h2>
-<div class="callout callout-note no-icon callout-style-simple">
-<div class="callout-body">
-<div class="callout-content">
-<p><strong>Objetivo</strong>: Minimizar el total de muertes esperadas</p>
-</div>
-</div>
-</div>
-</section>
-<section id="ej-2.-defectos-de-nacimiento-4" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Ej 2. Defectos de Nacimiento</h2>
-<div class="callout callout-note no-icon callout-style-simple">
-<div class="callout-body">
-<div class="callout-content">
-<p><strong>Objetivo</strong>: Minimizar el total de muertes esperadas</p>
-</div>
-</div>
-</div>
+<section id="prevención-del-vih" class="slide level2">
+<h2>Prevención del VIH</h2>
+
+<img data-src="images/Screen Shot 2022-09-28 at 9.54.01 AM.png" width="517" class="r-stretch"></section>
+<section id="prevención-del-vih-1" class="slide level2">
+<h2>Prevención del VIH</h2>
 <div>
 <ul>
-<li class="fragment"><p>Considerar una población de <strong>100.000 recién nacidos</strong></p></li>
-<li class="fragment"><p><strong>La prueba</strong> produce: (0,0004 x 100.000) = <strong>40</strong> muertes esperadas</p></li>
-<li class="fragment"><p><strong>Sin pruebas</strong> produce: (0,001 x 0,5 x 100.000) = <strong>50</strong> muertes esperadas</p></li>
+<li class="fragment"><p>Modelo de Markov que examina las estrategias para la prevención del VIH entre parejas serodiscordantes que buscan la concepción (la mujer no tiene VIH y el hombre tiene VIH)</p></li>
+<li class="fragment"><p>Sabemos que si la <strong>pareja masculina toma sistemáticamente medicación para el VIH</strong> (es decir, con supresión virológica), el riesgo de transmisión es pequeño independientemente de que la mujer tome la PPrE (profilaxis preexposición).</p></li>
+<li class="fragment"><p>Y también sabemos que la PPrE ha sido tradicionalmente muy <strong>costosa</strong>.</p></li>
 </ul>
 </div>
 </section>
-<section id="ej-2.-defectos-de-nacimiento-5" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Ej 2. Defectos de nacimiento</h2>
-<div class="callout callout-note no-icon callout-style-simple">
-<div class="callout-body">
-<div class="callout-content">
-<p><strong>Objetivo</strong>: Minimizar el total de muertes esperadas</p>
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment"><p>Considere una población de <strong>100.000 recién nacidos</strong></p></li>
-<li class="fragment"><p><strong>La prueba</strong> produce: (0,0004 x 100.000) = <strong>40</strong> muertes esperadas</p></li>
-<li class="fragment"><p><strong>Sin pruebas</strong> produce: (0,001 x 0,5 x 100.000) = <strong>50</strong> muertes esperadas</p></li>
-</ul>
-<h4 id="parece-que-gana-la-prueba">¡Parece que GANA LA PRUEBA!</h4>
-</section>
-<section id="ej-2.-defectos-de-nacimiento-6" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">Ej 2. Defectos de nacimiento</h2>
-<div class="callout callout-note no-icon callout-style-simple">
-<div class="callout-body">
-<div class="callout-content">
-<p><strong>Objetivo</strong>: Minimizar el total de muertes esperadas</p>
-</div>
-</div>
-</div>
-<ul>
-<li class="fragment"><p>Considere una población de <strong>100.000 recién nacidos</strong></p></li>
-<li class="fragment"><p><strong>La prueba</strong> produce: (0,0004 x 100.000) = <strong>40</strong> muertes esperadas</p></li>
-<li class="fragment"><p><strong>Sin pruebas</strong> produce: (0,001 x 0,5 x 100.000) = <strong>50</strong> muertes esperadas</p></li>
-</ul>
-<h4 id="parece-que-gana-la-prueba-1">¡Parece que GANA LA PRUEBA!</h4>
-<h4 id="alguien-tiene-un-problema-con-esto"><span style="color: darkred;">¿Alguien tiene un problema con esto??</span></h4>
-</section>
-<section id="diferentes-vidas-se-pierden" class="slide level2">
-<h2><strong>Diferentes vidas se pierden</strong></h2>
+<section id="prevención-del-vih-2" class="slide level2">
+<h2>Prevención del VIH</h2>
+
+<img data-src="images/Screen Shot 2022-09-26 at 10.22.19 PM.png" class="r-stretch"></section>
+<section id="incentivos-económicos-para-la-atención-del-ictus-agudo" class="slide level2">
+<h2>Incentivos económicos para la atención del ictus agudo</h2>
+
+<img data-src="images/Screen Shot 2022-09-28 at 10.25.53 PM.png" width="543" class="r-stretch"></section>
+<section id="incentivos-financieros-para-la-atención-del-ictus-agudo" class="slide level2">
+<h2>Incentivos financieros para la atención del ictus agudo</h2>
 <div>
 <ul>
-<li class="fragment"><p>Con <strong>pruebas</strong>, prácticamente las 40 muertes ocurren en bebés nacidos sin la enfermedad mortal.</p></li>
-<li class="fragment"><p>Con <strong>sin pruebas</strong>, las 50 muertes previstas se producen por “causas naturales” (es decir, por un defecto congénito que no se puede prevenir).</p></li>
+<li class="fragment"><p>En el marco de las políticas de pago por resultados en EE.UU., <strong>se paga más a los médicos u hospitales por alcanzar objetivos de calidad basados en la evidencia</strong></p></li>
+<li class="fragment"><p>Objetivo del estudio: Ilustrar cómo los incentivos de pago por resultados pueden limitarse cuantitativamente mediante modelos de coste-efectividad, a través de la <strong>aplicación del reembolso a los hospitales por un tiempo más rápido hasta el ATP para el ictus isquémico agudo</strong>.</p></li>
 </ul>
 </div>
 </section>
-<section id="se-pierden-vidas-diferentes" class="slide level2">
-<h2><strong>Se pierden vidas diferentes</strong></h2>
-<div>
-<ul>
-<li class="fragment"><p>“Muertes inocentes” infligidas a niños que no tenían <strong>“nada que ganar”</strong> con el programa de pruebas</p></li>
-<li class="fragment"><p>Podemos tratar la muerte de un niño como más tolerable que la de otro, incluso cuando no tenemos forma, antes del hecho, de distinguir a un bebé del otro.</p></li>
-</ul>
-</div>
+<section id="incentivos-económicos-para-la-atención-del-ictus-agudo-1" class="slide level2">
+<h2>Incentivos económicos para la atención del ictus agudo</h2>
+<blockquote>
+<p>Cuando se administra rápidamente tras el inicio del ictus (en un plazo de tres horas, según lo aprobado por la FDA), el tPA ayuda a restablecer el flujo sanguíneo a las regiones cerebrales afectadas por un ictus, limitando así el riesgo de daños y deterioro funcional.</p>
+</blockquote>
 </section>
-<section id="ej-3.-cáncer-de-colon" class="slide level2">
-<h2>Ej 3. Cáncer de colon</h2>
-<div>
-<ul>
-<li class="fragment">3ª causa de muerte por cáncer.</li>
-<li class="fragment">Hombres, mujeres, todas las razas.</li>
-<li class="fragment">La detección precoz ayuda a prevenirlo y mejora la salud.</li>
-<li class="fragment"><span class="math inline">\sim80\%</span> prevenible.</li>
-</ul>
-</div>
+<section id="incentivos-económicos-para-la-atención-del-ictus-agudo-2" class="slide level2">
+<h2>Incentivos económicos para la atención del ictus agudo</h2>
+
+<img data-src="images/Screen Shot 2022-09-28 at 10.14.03 PM.png" width="520" class="r-stretch"></section></section>
+<section>
+<section id="limitaciones-de-los-análisis-de-sensibilidad-deterministas" class="title-slide slide level1 center" data-background="#43464B">
+<h1>Limitaciones de los análisis de sensibilidad deterministas</h1>
+
 </section>
-<section id="ej-3.-cáncer-de-colon-prevención" class="slide level2">
-<h2>Ej 3. Cáncer de colon – <strong>Prevención</strong></h2>
-<div>
+<section id="precaución-limitaciones" class="slide level2">
+<h2>Precaución: ¡Limitaciones!</h2>
 <ul>
-<li class="fragment">¿Cuándo realizar el tamizaje?</li>
-<li class="fragment">¿Qué prueba y con qué frecuencia?</li>
-<li class="fragment">Si se encuentra/extrae un pólipo, ¿cuándo repetir?</li>
-</ul>
-</div>
-</section>
-<section id="ej-3.-cáncer-de-colon-prevención-1" class="slide level2">
-<h2>Ej 3. Cáncer de colon – <strong>Prevención</strong></h2>
-<div>
-<ul>
-<li class="fragment">¿Coste-efectividad de pruebas de tamizaje alternativas?</li>
-<li class="fragment">¿Frecuencias alternativas de tamizaje?</li>
-<li class="fragment">¿Cómo debería variar el tamizaje según los grupos de riesgo?</li>
-</ul>
-</div>
-</section>
-<section id="ej-3.-cáncer-de-colon---estimación-de-probabilidades" class="slide level2">
-<h2>Ej 3. Cáncer de colon - <strong>Estimación de probabilidades</strong></h2>
-<div>
-<ul>
-<li class="fragment">Predecir el riesgo/incidencia del cáncer de colon
-<ul>
-<li class="fragment">Antecedentes familiares, pólipos anteriores, otros factores</li>
-<li class="fragment">Probabilidad de padecer cáncer de colon</li>
-</ul></li>
-<li class="fragment">Predecir el impacto del cáncer de colon
-<ul>
-<li class="fragment">Probabilidad de curación</li>
-<li class="fragment">Probabilidad de muerte</li>
-<li class="fragment">Probabilidad de morbilidad</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="ej-3.-cáncer-de-colon---estimación-de-probabilidades-1" class="slide level2">
-<h2>Ej 3. Cáncer de colon - <strong>Estimación de probabilidades</strong></h2>
-<div>
-<ul>
-<li class="fragment">Predecir el “beneficio” del tamizaje
-<ul>
-<li class="fragment">Todas las probabilidades anteriores</li>
-<li class="fragment">Probabilidad de detección precoz</li>
-<li class="fragment">Probabilidad de complicaciones derivadas de las pruebas</li>
-<li class="fragment">Probabilidad de falso positivo</li>
-<li class="fragment">Probabilidad de falsos negativos</li>
-<li class="fragment">Probabilidad de pruebas positivas = cáncer</li>
-<li class="fragment">Probabilidad de pruebas negativas = sin cáncer</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="la-estimación-de-probabilidades-es-fundamental-para-la-toma-de-decisiones" class="slide level2" data-background="#43464B">
-<h2>La estimación de probabilidades es fundamental para la toma de decisiones</h2>
-<div>
-<ul>
-<li class="fragment">No se pueden obtener fácilmente las probabilidades necesarias</li>
-<li class="fragment">Períodos de tiempo / duraciones variables</li>
-<li class="fragment">Métodos para estimar probabilidades</li>
-</ul>
-</div>
-<!-- TK Esto necesita ser una página completa -->
-</section>
-<section id="commonality-of-cases" class="slide level2" data-background="#43464B">
-<h2>Commonality of cases</h2>
-<div>
-<ul>
-<li class="fragment">Compromisos inevitables</li>
-<li class="fragment">Diferentes perspectivas pueden llevar a conclusiones diferentes</li>
-<li class="fragment">Múltiples objetivos contrapuestos</li>
-<li class="fragment">Complejidad</li>
-<li class="fragment">Incertidumbre</li>
-</ul>
-</div>
-</section>
-<section id="análisis-de-decisiones" class="slide level2" data-background="#43464B">
-<h2>Análisis de decisiones</h2>
-<p><br></p>
-<div>
-<ul>
-<li class="fragment"><p>Tiene como objetivo informar la elección bajo incertidumbre utilizando un enfoque explícito y cuantitativo</p></li>
-<li class="fragment"><p>Su objetivo es <span style="color: #169873;">identificar, medir y valorar las <strong>consecuencias de las decisiones</strong> en situaciones de incertidumbre</span> cuando hay que tomar una decisión, más apropiadamente a lo largo del tiempo.</p></li>
-</ul>
-</div>
-</section>
-<section id="diseño-del-taller" class="slide level2">
-<h2>Diseño del taller</h2>
-<ol type="1">
-<li class="fragment">Somos <em>flexibles</em> – si hay algún tema que no te queda claro, o que te gustaría que se ampliara, ¡háznoslo saber!</li>
-<li class="fragment">Contenido mixto</li>
-</ol>
-<ul>
-<li class="fragment">Conferencias</li>
-<li class="fragment">Casos prácticos en grupos reducidos</li>
-<li class="fragment">Casos prácticos en grupos grandes y ejercicios prácticos de Excel</li>
-</ul>
-</section>
-<section id="contenido-del-taller" class="slide level2">
-<h2>Contenido del taller</h2>
-<ol type="1">
-<li class="fragment">Fundamentos del análisis de decisiones (Días 1-2)</li>
-</ol>
-<ul>
-<li class="fragment">Árboles de decisión</li>
-<li class="fragment">Teorema de Bayes y umbrales de tratamiento</li>
-<li class="fragment">Incertidumbre y priorización de la investigación futura</li>
-</ul>
-</section>
-<section id="contenido-del-taller-1" class="slide level2">
-<h2>Contenido del taller</h2>
-<ol start="2" type="1">
-<li class="fragment">Fundamentos del análisis coste-eficacia (Días 3-4)</li>
-</ol>
-<ul>
-<li class="fragment">Valoración de costos y resultados sanitarios</li>
-<li class="fragment">Análisis coste-efectividad incremental</li>
-<li class="fragment">Introducción a los modelos de Markov</li>
-</ul>
-</section>
-<section id="contenido-del-taller-2" class="slide level2">
-<h2>Contenido del taller</h2>
-<ol start="3" type="1">
-<li class="fragment">Avance de temas avanzados (Día 5)</li>
-</ol>
-<ul>
-<li class="fragment">Análisis de sensibilidad</li>
-<li class="fragment">Marcos avanzados de modelización CEA.</li>
+<li>Limitado por la subjetividad de la elección de los parámetros a analizar</li>
+<li>Por eso también ejecutamos APS!, es decir, variando TODOS los parámetros de entrada al mismo tiempo, usando priors para reproducir una distribución alrededor de cada valor</li>
 </ul>
 </section></section>
-<section id="preguntas" class="title-slide slide level1 center" data-background="#43464B">
-<h1>¿Preguntas?</h1>
+<section id="oportunidad-de-practicar-en-el-ejercicio" class="title-slide slide level1 center">
+<h1>¡Oportunidad de practicar en el Ejercicio!</h1>
+
+</section>
+
+<section>
+<section id="análisis-de-escenarios" class="title-slide slide level1 center">
+<h1>Análisis de escenarios</h1>
+
+</section>
+<section id="análisis-de-escenarios-1" class="slide level2">
+<h2>Análisis de escenarios</h2>
+<ul>
+<li>Se centra más en las <strong>suposiciones</strong> del modelo que en la incertidumbre de los parámetros</li>
+<li>Podría incluir análisis separados sobre:</li>
+</ul>
+<blockquote>
+<p>Subgrupos/subpoblaciones, incluyendo diferentes cohortes de edad y niveles de riesgo.</p>
+</blockquote>
+<p><br></p>
+<blockquote>
+<p>Diferentes perspectivas (social; social modificada; etc)</p>
+</blockquote>
+</section>
+<section id="análisis-de-escenarios-2" class="slide level2">
+<h2>Análisis de escenarios</h2>
+<blockquote>
+<p>Escenarios hipotéticos (escenarios “optimistas” y “conservadores”; por ejemplo, si tenemos pocas pruebas de supervivencia a largo plazo asociadas a la medicación X, podríamos tener un escenario optimista frente a uno conservador)</p>
+</blockquote>
+<p><br></p>
+<blockquote>
+<p>Horizontes temporales</p>
+</blockquote>
+</section>
+<section id="ejemplos" class="slide level2">
+<h2>Ejemplos</h2>
+
+<img data-src="images/Screen Shot 2022-10-06 at 9.13.02 AM-02.png" class="r-stretch"></section>
+<section id="ejemplos-1" class="slide level2">
+<h2>Ejemplos</h2>
+
+<img data-src="images/Screen Shot 2022-10-06 at 9.25.20 AM.png" class="r-stretch"></section>
+<section id="ejemplos-2" class="slide level2">
+<h2>Ejemplos</h2>
+
+<img data-src="images/Screen Shot 2022-10-06 at 9.25.50 AM.png" class="r-stretch"></section>
+<section id="ejemplos-3" class="slide level2">
+<h2>Ejemplos</h2>
+
+<img data-src="images/Screen Shot 2022-10-06 at 9.26.44 AM.png" class="r-stretch"></section>
+<section id="ejemplos-4" class="slide level2">
+<h2>Ejemplos</h2>
+
+<img data-src="images/Screen Shot 2022-10-06 at 8.54.33 AM.png" class="r-stretch"></section>
+<section id="ejemplos-5" class="slide level2">
+<h2>Ejemplos</h2>
+
+<img data-src="images/Screen Shot 2022-10-06 at 9.11.39 AM.png" width="748" class="r-stretch"></section></section>
+<section>
+<section id="análisis-de-umbrales" class="title-slide slide level1 center">
+<h1>Análisis de umbrales</h1>
+
+</section>
+<section id="análisis-de-umbrales-1" class="slide level2">
+<h2>Análisis de umbrales</h2>
+<ul>
+<li>Responde a la pregunta Cuál debe ser el parámetro de entrada para alcanzar los umbrales por país de:
+<ul>
+<li>50.000 $/QALY ganado</li>
+<li>100.000 $/QALY ganados</li>
+<li>150.000 $/QALY ganados</li>
+<li>200.000 $/QALY ganados</li>
+</ul></li>
+</ul>
+</section>
+<section id="ejemplos-6" class="slide level2">
+<h2>Ejemplos</h2>
+
+<img data-src="images/Screen Shot 2022-10-06 at 9.13.02 AM.png" class="r-stretch"></section>
+<section id="ejemplos-7" class="slide level2">
+<h2>Ejemplos</h2>
+
+<img data-src="images/Screen Shot 2022-10-06 at 9.14.02 AM.png" class="r-stretch"></section></section>
+<section id="gracias" class="title-slide slide level1 center">
+<h1>¡Gracias!</h1>
 
 <div class="quarto-auto-generated-content">
-<p><img src="../vchem.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="../index.html">Back to Website</a></p>
 </div>
@@ -731,6 +600,7 @@
   <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
   <script src="../site_libs/revealjs/plugin/search/search.js"></script>
   <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -765,7 +635,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: false,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -870,7 +740,7 @@
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'fade',
+        transition: 'none',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
@@ -897,9 +767,27 @@
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
 
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
         // reveal.js plugins
         plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
+          RevealMath,
           RevealNotes,
           RevealSearch,
           RevealZoom
