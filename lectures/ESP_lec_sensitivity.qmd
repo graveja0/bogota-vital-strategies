@@ -1,0 +1,209 @@
+---
+title: "Análisis determinista y de escenarios"
+format: 
+  revealjs:
+      theme: slides.scss
+      background-transition: fade
+      highlight-style: ayu-mirage
+      footer: |
+        [Back to Website](../index.html)
+editor_options: 
+chunk_output_type: console
+bibliography: ../references.bib
+---
+
+# Objetivos de aprendizaje y esquema
+
+## Objetivos de aprendizaje
+
+- Explicar el propósito del análisis de sensibilidad determinista y proporcionar ejemplos de análisis unidireccionales frente a bidireccionales.
+
+- Detallar las ventajas/desventajas del análisis de sensibilidad determinista.
+
+## Resumen
+
+1.  Análisis de sensibilidad unidireccional.
+2.  Ejemplos de publicaciones.
+3.  Análisis de sensibilidad bidireccional.
+4.  Ejemplos de publicaciones.
+5.  Limitaciones y ampliaciones.
+6.  Análisis de escenarios
+7.  Análisis de umbrales
+
+# Análisis de sensibilidad unidireccional {background="#43464B"}
+
+## Análisis de sensibilidad unidireccional
+
+::: incremental
+- Suele ser el punto de partida de los análisis de sensibilidad
+- Probar secuencialmente una variable cada vez (es decir, edad, IMC, AVAC, otros parámetros clínicamente importantes), manteniendo todo lo demás constante.
+- Determinar cómo afecta esta variación a los resultados
+- Los análisis de sensibilidad unidireccionales suelen presentarse en un **diagrama de tornado**.
+    - Se utiliza para clasificar visualmente las distintas variables por orden de su influencia global en la magnitud de los resultados del modelo.
+:::
+
+## Un árbol de decisión simple
+
+![](images/Screen%20Shot%202022-09-27%20at%203.43.43%20PM.png)
+
+## Un árbol de decisión simple
+
+![](images/Screen%20Shot%202022-09-27%20at%203.44.29%20PM.png)
+
+## Un árbol de decisión simple
+
+![](images/Screen%20Shot%202022-09-27%20at%203.45.20%20PM.png)
+
+# Ejemplos de publicaciones
+
+## Estudio de caso sobre rotavirus de Capstone
+
+![](images/file_show.jpeg)
+
+## Estudio de caso sobre el rotavirus en Capstone
+
+![](images/file_show2.jpeg)
+
+## Rotavirus estudio de caso de Capstone
+
+![](images/file_show3.jpeg)
+
+## Otros ejemplos
+
+![](images/Screen%20Shot%202022-09-26%20at%2010.33.51%20PM.png)
+
+## Otros ejemplos
+
+![](images/Screen%20Shot%202022-10-06%20at%209.13.02%20AM-01.png)
+
+## Otros ejemplos
+
+![](images/Screen%20Shot%202022-10-06%20at%209.15.55%20AM.png){width="759"}
+
+## Otros ejemplos
+
+![](images/Screen%20Shot%202022-10-06%20at%209.19.09%20AM.png){width="777"}
+
+# Análisis de sensibilidad bidireccional {background="#43464B"}
+
+## Two-way sensitivity analysis
+
+::: incremental
+- Una forma de mapear los efectos de interacción entre dos parámetros en un modelo de análisis de decisión
+- Varía 2 parámetros a la vez
+- Explora la solidez de los resultados en mayor profundidad
+:::
+
+# Ejemplos de publicaciones
+
+## Prevención del VIH
+
+![](images/Screen%20Shot%202022-09-28%20at%209.54.01%20AM.png){width="517"}
+
+## Prevención del VIH
+
+::: incremental
+- Modelo de Markov que examina las estrategias para la prevención del VIH entre parejas serodiscordantes que buscan la concepción (la mujer no tiene VIH y el hombre tiene VIH)
+
+- Sabemos que si la **pareja masculina toma sistemáticamente medicación para el VIH** (es decir, con supresión virológica), el riesgo de transmisión es pequeño independientemente de que la mujer tome la PPrE (profilaxis preexposición).
+
+- Y también sabemos que la PPrE ha sido tradicionalmente muy **costosa**.
+:::
+
+## Prevención del VIH
+
+![](images/Screen%20Shot%202022-09-26%20at%2010.22.19%20PM.png)
+
+## Incentivos económicos para la atención del ictus agudo
+
+![](images/Screen%20Shot%202022-09-28%20at%2010.25.53%20PM.png){width="543"}
+
+## Incentivos financieros para la atención del ictus agudo
+
+::: incremental
+- En el marco de las políticas de pago por resultados en EE.UU., **se paga más a los médicos u hospitales por alcanzar objetivos de calidad basados en la evidencia**
+
+- Objetivo del estudio: Ilustrar cómo los incentivos de pago por resultados pueden limitarse cuantitativamente mediante modelos de coste-efectividad, a través de la **aplicación del reembolso a los hospitales por un tiempo más rápido hasta el ATP para el ictus isquémico agudo**.
+:::
+
+## Incentivos económicos para la atención del ictus agudo
+
+> Cuando se administra rápidamente tras el inicio del ictus (en un plazo de tres horas, según lo aprobado por la FDA), el tPA ayuda a restablecer el flujo sanguíneo a las regiones cerebrales afectadas por un ictus, limitando así el riesgo de daños y deterioro funcional.
+
+## Incentivos económicos para la atención del ictus agudo
+
+![](images/Screen%20Shot%202022-09-28%20at%2010.14.03%20PM.png){width="520"}
+
+# Limitaciones de los análisis de sensibilidad deterministas {background="#43464B"}
+
+## Precaución: ¡Limitaciones!
+
+- Limitado por la subjetividad de la elección de los parámetros a analizar
+- Por eso también ejecutamos APS!, es decir, variando TODOS los parámetros de entrada al mismo tiempo, usando priors para reproducir una distribución alrededor de cada valor
+
+# ¡Oportunidad de practicar en el Ejercicio!
+
+# Análisis de escenarios
+
+## Análisis de escenarios
+
+- Se centra más en las **suposiciones** del modelo que en la incertidumbre de los parámetros
+- Podría incluir análisis separados sobre:
+
+> Subgrupos/subpoblaciones, incluyendo diferentes cohortes de edad y niveles de riesgo.
+
+<br>
+
+> Diferentes perspectivas (social; social modificada; etc)
+
+## Análisis de escenarios
+
+> Escenarios hipotéticos (escenarios "optimistas" y "conservadores"; por ejemplo, si tenemos pocas pruebas de supervivencia a largo plazo asociadas a la medicación X, podríamos tener un escenario optimista frente a uno conservador)
+
+<br>
+
+> Horizontes temporales
+
+## Ejemplos
+
+![](images/Screen%20Shot%202022-10-06%20at%209.13.02%20AM-02.png)
+
+## Ejemplos
+
+![](images/Screen%20Shot%202022-10-06%20at%209.25.20%20AM.png)
+
+## Ejemplos
+
+![](images/Screen%20Shot%202022-10-06%20at%209.25.50%20AM.png)
+
+## Ejemplos
+
+![](images/Screen%20Shot%202022-10-06%20at%209.26.44%20AM.png)
+
+## Ejemplos
+
+![](images/Screen%20Shot%202022-10-06%20at%208.54.33%20AM.png)
+
+## Ejemplos
+
+![](images/Screen%20Shot%202022-10-06%20at%209.11.39%20AM.png){width="748"}
+
+# Análisis de umbrales
+
+## Análisis de umbrales
+
+- Responde a la pregunta Cuál debe ser el parámetro de entrada para alcanzar los umbrales por país de:
+    - 50.000 $/QALY ganado
+    - 100.000 $/QALY ganados
+    - 150.000 $/QALY ganados
+    - 200.000 $/QALY ganados
+
+## Ejemplos
+
+![](images/Screen%20Shot%202022-10-06%20at%209.13.02%20AM.png)
+
+## Ejemplos
+
+![](images/Screen%20Shot%202022-10-06%20at%209.14.02%20AM.png)
+
+# ¡Gracias!

@@ -34,97 +34,78 @@ source(here("_healthy-sick-dead/04_healthy-sick-dead_discounting-and-cycle-adjus
 source(here("_healthy-sick-dead/05_healthy-sick-dead_construct-transition-probability-matrices.r"))
 ```
 
-# Objetivos de aprendizaje y esquema
+# Learning Objectives and Outline
 
-## Objetivos de aprendizaje
-
-::: incremental
--   Discutir los pros y los contras de la modelización de decisiones
-    mediante árboles de decisión frente a un modelo determinista formal
-
--   Comprender los componentes y la estructura de los modelos de Markov
-    tiempo discreto
-
--   Calcular los ciclos de Markov a mano, utilizando el diagrama de
-    burbujas de Markov
-
--   Aplicar métodos de corrección de ciclos de Markov
-:::
-
-::: {.notes}
-- One
-- Two
-:::
-
-## Un proceso de enfermedad simple
+## Learning Objectives
 
 ::: incremental
--   Supongamos que queremos modelizar la relación coste-eficacia de
-    estrategias estrategias alternativas para prevenir la aparición de
-    una enfermedad.
--   Partimos de una población sana de 25 años y existen tres estados de
-    salud que pueden experimentar las personas:
-    1.  
+-   Discuss pros and cons of decision modeling using decision trees vs.
+    a formal deterministic model
 
-        1.  Permanecer **sano**.
+-   Understand the components and structure of discrete time Markov
+    models
 
-    2.  Enfermar\*\*.
+-   Calculate Markov cycles by hand, using Markov bubble diagram
 
-    3.  **Morir**
+-   Apply methods for Markov cycle correction
 :::
 
-## Un Simple Proceso de Enfermedad
+## A Simple Disease Process
 
 ::: incremental
--   Permanecer sano no conlleva disminución de utilidad (peso de
-    utilidad = 1.0 por ciclo en estado sano)
--   Enfermar conlleva una disminución de utilidad de 0,25 durante el
-    resto de la vida de la persona (peso de utilidad = 0,75). vida de la
-    persona (peso de la utilidad = 0,75)
--   La muerte conlleva un valor de utilidad de 0.
+-   Suppose we want to model the cost-effectiveness of alternative
+    strategies to prevent a disease from occurring.
+-   We start with a healthy population of 25 year olds and there are
+    three health states people can experience:
+    1.  Remain **Healthy**
+    2.  Become **Sick**
+    3.  **Death**
 :::
 
-
-::: {.notes}
-- note 1 
-- note 2
-:::
-
-## Un proceso de enfermedad simple
+## A Simple Disease Process
 
 ::: incremental
--   Permanecer sano no tiene ningún coste.
--   Enfermar supone un coste de 1.000 \$ al año.
--   Enfermar aumenta el riesgo de muerte en un 300%.
+-   Remaining healthy carries no utility decrement (utility weight = 1.0
+    per cycle in healthy state)
+-   Becoming sick carries a 0.25 utility decrement for the remainder of
+    the person's life (utility weight = 0.75)
+-   Death carries a utility value of 0.
 :::
 
-## Un proceso de enfermedad simple
+## A Simple Disease Process
 
-El Instituto de Salud de un país estudia cinco estrategias de prevención
-preventiva que reducen el riesgo de enfermar:
+::: incremental
+-   There is no cost associated with remaining healthy.
+-   Becoming sick incurs \$1,000 / year in costs.
+-   Becoming sick increases the risk of death by 300%.
+:::
 
-| Strategy | Description                                       | Cost         |
-|------------------|-------------------------------------|------------------|
-| A        | Normas de asistencia                              | 25 \$/año    |
-| B        | Reducción adicional del 4% del riesgo de enfermar | 1,000 \$/año |
-| C        | 12% de reducción del riesgo                       | 3,100 \$/año |
-| D        | 8% de reducción del riesgo                        | 1,550 \$/año |
-| E        | 8% de reducción del riesgo                        | 5,000 \$/año |
+## A Simple Disease Process
 
-## Opción de modelo 1: Árbol de decisión
+A country's health institute is considering five preventive care
+strategies that reduce the risk of becoming sick:
 
--   Una opción sería utilizar un árbol de decisión para modelar la
-    utilidad esperada y los costes asociados a cada estrategia. utilidad
-    esperada y los costes asociados a cada estrategia.
--   Horizonte temporal del modelo: 10 años
--   La siguiente diapositiva muestra el árbol de decisión para los
-    resultados experimentados en el primer año.
+| Strategy | Description                                      | Cost         |
+|----------|--------------------------------------------------|--------------|
+| A        | Standard of Care                                 | \$25/year    |
+| B        | Additional 4% reduction in risk of becoming sick | \$1,000/year |
+| C        | 12% reduction in risk                            | \$3,100/year |
+| D        | 8% reduction in risk                             | \$1,550/year |
+| E        | 8% reduction in risk                             | \$5,000/year |
+
+## Model Option 1: Decision Tree
+
+-   One option would be to use a decision tree to model the expected
+    utility and costs associated with each strategy.
+-   Model time horizon: 10 years
+-   The next slide shows the decision tree for outcomes experienced in
+    the first year.
 
 ##  {background-image="images/paste-01F7F5A9.png" data-background-size="contain"}
 
 <!-- Note: Data to construct are contained in media/decision_tree_markov_health_sick_dead_1y.Rdata -->
 
-## Opción de modelo 1: Árbol de decisión {background-image="images/paste-01F7F5A9.png" data-background-size="contain" background-opacity="0.4"}
+## Model Option 1: Decision Tree {background-image="images/paste-01F7F5A9.png" data-background-size="contain" background-opacity="0.4"}
 
 -   What limitations do you see?
 
@@ -140,126 +121,126 @@ Strategy A decision tree for 5 cycles.
 
 <!-- Note: Data to construct are contained in media/decision_tree_markov_health_sick_dead_5y.Rdata -->
 
-## Árboles de decisión
+## Decision Trees
 
-| Pros                                         | Contras |
-|----------------------------------------------|---------|
-| Sencillo, rápido y puede aportar información |         |
-
-: {tbl-colwidths="\[50, 50\]"}
-
-## Árboles de decisión
-
-| Pros                                         | Contras |
-|----------------------------------------------|---------|
-| Sencillo, rápido y puede aportar información |         |
-| Fácil de describir y comprender              |         |
+| Pros                                 | Cons |
+|--------------------------------------|------|
+| Simple, rapid & can provide insights |      |
 
 : {tbl-colwidths="\[50, 50\]"}
 
-## Árboles de decisión
+## Decision Trees
 
-| Pros                                             | Contras |
-|--------------------------------------------------|---------|
-| Sencillo, rápido y puede aportar información     |         |
-| Fácil de describir y comprender                  |         |
-| Funciona bien con un horizonte temporal limitado |         |
-
-: {tbl-colwidths="\[50, 50\]"}
-
-## Árboles de decisión
-
-| Pros                                             | Contras                           |
-|------------------------------|------------------------------------------|
-| Sencillo, rápido y puede aportar información     | Difícil incluir detalles clínicos |
-| Fácil de describir y comprender                  |                                   |
-| Funciona bien con un horizonte temporal limitado |                                   |
+| Pros                                 | Cons |
+|--------------------------------------|------|
+| Simple, rapid & can provide insights |      |
+| Easy to describe & understand        |      |
 
 : {tbl-colwidths="\[50, 50\]"}
 
-## Árboles de decisión
+## Decision Trees
 
-| Pros                                             | Contras                                      |
-|------------------------------|------------------------------------------|
-| Sencillo, rápido y puede aportar información     | Difícil incluir detalles clínicos            |
-| Fácil de describir y comprender                  | El paso del tiempo no es fácilmente evidente |
-| Funciona bien con un horizonte temporal limitado |                                              |
-
-: {tbl-colwidths="\[50, 50\]"}
-
-## Árboles de decisión
-
-| Pros                                             | Contras                                                        |
-|------------------------------|------------------------------------------|
-| Sencillo, rápido y puede aportar información     | Difícil incluir detalles clínicos                              |
-| Fácil de describir y comprender                  | El paso del tiempo no es fácilmente evidente                   |
-| Funciona bien con un horizonte temporal limitado | Difícil modelizar horizontes temporales más largos (\>1 ciclo) |
+| Pros                                 | Cons |
+|--------------------------------------|------|
+| Simple, rapid & can provide insights |      |
+| Easy to describe & understand        |      |
+| Works well with limited time horizon |      |
 
 : {tbl-colwidths="\[50, 50\]"}
 
-## Árboles de decisión
+## Decision Trees
+
+| Pros                                 | Cons                                 |
+|------------------------------------|------------------------------------|
+| Simple, rapid & can provide insights | Difficult to include clinical detail |
+| Easy to describe & understand        |                                      |
+| Works well with limited time horizon |                                      |
+
+: {tbl-colwidths="\[50, 50\]"}
+
+## Decision Trees
+
+| Pros                                 | Cons                                   |
+|------------------------------------|------------------------------------|
+| Simple, rapid & can provide insights | Difficult to include clinical detail   |
+| Easy to describe & understand        | Elapse of time is not readily evident. |
+| Works well with limited time horizon |                                        |
+
+: {tbl-colwidths="\[50, 50\]"}
+
+## Decision Trees
+
+| Pros                                 | Cons                                                |
+|------------------------------------|------------------------------------|
+| Simple, rapid & can provide insights | Difficult to include clinical detail                |
+| Easy to describe & understand        | Elapse of time is not readily evident.              |
+| Works well with limited time horizon | Difficult to model longer (\>1 cycle) time horizons |
+
+: {tbl-colwidths="\[50, 50\]"}
+
+## Decision Trees
 
 ![](images/markov1.png)
 
-## Próximos pasos
+## Next Steps
 
-- Idealmente, queremos un enfoque de modelado que pueda incorporar flexibilidad
-    y manejar las complejidades que hacen que los árboles de decisión
-    difíciles de manejar.
-    
-# Modelos de Markov {background="#43464B"}
+-   Ideally we want a modeling approach that can incorporate flexibility
+    and handle the complexities that make decision trees
+    difficult/unwieldy.
 
-## Modelos de Markov
+# Markov Models {background="#43464B"}
 
-Enfoque habitual en los análisis de decisiones que añade flexibilidad adicional.
+## Markov Models
 
-| Pros                            | Contras |
-|---------------------------------|---------|
-| Puede modelar sucesos repetidos |         |
-|                                 |         |
+Common approach in decision analyses that adds additional flexibility.
 
-: {tbl-colwidths="\[50, 50\]"}
-
-## Modelos de Markov
-
-Enfoque habitual en los análisis de decisiones que añade flexibilidad adicional.
-
-| Pros                                                            | Contras |
-|-----------------------------------------------------------|-------------|
-| Puede modelar sucesos repetidos                                 |         |
-| Puede modelizar eventos clínicos más complejos y longitudinales |         |
+| Pros                                  | Cons |
+|---------------------------------------|------|
+| Can model repeated events             |      |
+| $\quad \quad \quad \quad \quad \quad$ |      |
 
 : {tbl-colwidths="\[50, 50\]"}
 
-## Modelos de Markov
+## Markov Models
 
-Enfoque habitual en los análisis de decisiones que añade flexibilidad adicional.
+Common approach in decision analyses that adds additional flexibility.
 
-| Pros                                                            | Contras |
-|-----------------------------------------------------------|-------------|
-| Puede modelar sucesos repetidos                                 |         |
-| Puede modelizar eventos clínicos más complejos y longitudinales |         |
-| No requiere muchos cálculos; es eficiente de modelar y depurar. |         |
+| Pros                                                  | Cons |
+|-------------------------------------------------------|------|
+| Can model repeated events                             |      |
+| Can model more complex + longitudinal clinical events |      |
 
 : {tbl-colwidths="\[50, 50\]"}
 
-## Modelos de Markov
+## Markov Models
+
+Common approach in decision analyses that adds additional flexibility.
+
+| Pros                                                        | Cons |
+|-------------------------------------------------------------|------|
+| Can model repeated events                                   |      |
+| Can model more complex + longitudinal clinical events       |      |
+| Not computationally intensive; efficient to model and debug |      |
+
+: {tbl-colwidths="\[50, 50\]"}
+
+## Markov Models
 
 ::: incremental
-- Las ventajas de los modelos de Markov se derivan de su estructura en torno a
-    estados de enfermedad mutuamente excluyentes.
+-   The advantages of Markov models derive from their structure around
+    mutually exclusive disease states.
 
-- Estos estados de enfermedad representan los posibles estados o consecuencias
-    de las estrategias u opciones consideradas.
+-   These disease states represent the possible states or consequences
+    of strategies or options under consideration.
 
-- Como hay un número fijo de estados de enfermedad en los que puede encontrarse la población
-    la población, no es necesario modelar vías complejas, como vimos en la
-    como vimos en la "explosión" del árbol de decisión hace unas diapositivas.
+-   Because there are a fixed number of disease states the population
+    can be in, there is no need to model complex pathways, as we saw in
+    the decision tree "explosion" a few slides back.
 :::
 
-## Árboles de Markov
+## Markov Trees
 
-También es habitual emparejar un modelo de Markov con un árbol de decisión[^1].
+It is also common to pair a Markov model with a decision tree.[^1]
 
 [^1]: Gasauskas et al. 2022
 
@@ -273,9 +254,9 @@ style="padding-top: 100px;"}
 :::
 :::
 
-## Árboles de Markov
+## Markov Trees
 
-También es habitual emparejar un modelo de Markov con un árbol de decisión[^2].
+It is also common to pair a Markov model with a decision tree.[^2]
 
 [^2]: Gasauskas et al. 2022
 
@@ -290,20 +271,9 @@ style="padding-top: 100px;"}
 :::
 :::
 
-## Árboles de Markov {.smaller}
+## Markov Tree {.smaller}
 
-Un árbol de decisión simple está implícito en casi todos los análisis de decisiones.
-
-::: columns
-::: {.column width="50%"}
-![](images/paste-13DB786D.png){fig-align="center" height="500px"}
-:::
-
-::: {.column width="50%"}
-:::
-:::
-
-## Árbol de Markov: Ejemplo {.smaller}
+A simple decision tree is implicit in nearly every decision analysis.
 
 ::: columns
 ::: {.column width="50%"}
@@ -311,11 +281,22 @@ Un árbol de decisión simple está implícito en casi todos los análisis de de
 :::
 
 ::: {.column width="50%"}
-Tratamiento A:![](images/paste-BA42AD3E.png)
 :::
 :::
 
-## Árbol de Markov: Ejemplo {.smaller}
+## Markov Tree: Example {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](images/paste-13DB786D.png){fig-align="center" height="500px"}
+:::
+
+::: {.column width="50%"}
+Treatment A:![](images/paste-BA42AD3E.png)
+:::
+:::
+
+## Markov Tree: Example {.smaller}
 
 ::: columns
 ::: {.column width="50%"}
@@ -323,16 +304,33 @@ Tratamiento A:![](images/paste-BA42AD3E.png)
 :::
 
 ::: {.column width="50%"}
-Tratamiento A:![](images/caroline_model2.png)
+Treatment A:![](images/caroline_model2.png)
 :::
 :::
 
-## Al elegir una estructura de modelo...
+## When choosing a model structure...
 
 <br>
 
-> "Las cosas deben hacerse tan simples como sea posible, pero no más simples" -
+> "Things should be made as simple as possible, but not simpler" -
 > Albert Einstein
+
+::: notes
+(1) When choosing a model structure, you want to choose one that best
+    fits your research question & one that adequately represents the
+    clinical background/problem -- zeroing in on what's most important
+
+(2) You always want to first build the structure completely
+    independently & data free AND then see how hard it is to get data +
+    calibrate
+
+(3) **You never want to model based on the data**\* nor do you ever want
+    to make something complicated just to make it complicated\*\*
+
+(4) Just because a model is "super complicated/complex" doesn't mean
+    it's more publishable or better than something that's more
+    simplistic
+:::
 
 ```{r, eval = FALSE}
 #| echo = FALSE
@@ -539,7 +537,7 @@ Basic steps
 -   Define the time horizon (e.g., followed until age 100 or death)
 :::
 
-## 3a. Definir la longitud del ciclo de Markov
+## 3a. Define the Markov Cycle Length
 
 <!-- https://www.youtube.com/watch?v=bVlMq67HT48 -->
 
@@ -553,7 +551,7 @@ Basic steps
     the end of the cycle.
 :::
 
-## 3a. Definir la longitud del ciclo de Markov
+## 3a. Define the Markov cycle length
 
 ::: incremental
 -   Suppose we used a one-year cycle for the healthy-sick-dead model.
@@ -564,7 +562,7 @@ Basic steps
     *can't* happen in a single cycle?
 :::
 
-## 3a. Definir la longitud del ciclo de Markov
+## 3a. Define the Markov Cycle Length
 
 ::: {style="padding-top: 200px;"}
 ![](images/paste-9C03CB85.png)
@@ -584,7 +582,7 @@ gantt
 ```
 :::
 
-## 3a. Definir la longitud del ciclo de Markov {.smaller}
+## 3a. Define the Markov Cycle Length {.smaller}
 
 The challenge of selecting an appropriate cycle length boils down to how
 we deal with **competing risks**.
@@ -617,7 +615,7 @@ digraph G {
 :::
 :::
 
-## 3a. Definir la longitud del ciclo de Markov {.smaller}
+## 3a. Define the Markov Cycle Length {.smaller}
 
 The challenge of selecting an appropriate cycle length boils down to how
 we deal with **competing risks**.
@@ -654,15 +652,15 @@ digraph G {
 :::
 :::
 
-## 3a. Definir la longitud del ciclo de Markov {.smaller}
+## 3a. Define the Markov Cycle Length {.smaller}
 
-| Pros                                                            | Contras                                |
-|---------------------------------|---------------------------------------|
-| Puede modelar sucesos repetidos                                 | Sólo puede transitar una vez por ciclo |
-| Puede modelizar eventos clínicos más complejos y longitudinales |                                        |
-| No requiere muchos cálculos; es eficiente de modelar y depurar. |                                        |
+| Pros                                                        | Cons                            |
+|----------------------------------------------|--------------------------|
+| Can model repeated events                                   | Competing risks are a challenge |
+| Can model more complex + longitudinal clinical events       |                                 |
+| Not computationally intensive; efficient to model and debug |                                 |
 
-## 3a. Definir la longitud del ciclo de Markov
+## 3a. Define the Markov Cycle Length
 
 -   It may be tempting to simply shorten the cycle length (e.g., use 1
     day cycle vs. 1 year cycle).
@@ -673,7 +671,7 @@ digraph G {
 -   Any possible issues with this?
 :::
 
-## 3a. Definir la longitud del ciclo de Markov
+## 3a. Define the Markov Cycle Length
 
 -   Shortening the cycle creates a computational challenge.
 
@@ -684,19 +682,19 @@ digraph G {
     -   We now have 57,750,000 cycle runs to contend with!
 :::
 
-## 3a. Definir la longitud del ciclo de Markov {.smaller}
+## 3a. Define the Markov Cycle Length {.smaller}
 
-| Pros                                                            | Contras                                             |
-|---------------------------------|---------------------------------------|
-| Puede modelar sucesos repetidos                                 | Sólo puede transitar una vez por ciclo              |
-| Puede modelizar eventos clínicos más complejos y longitudinales | Acortar el ciclo puede plantear retos informáticos. |
-| No requiere muchos cálculos; es eficiente de modelar y depurar. |                                                     |
+| Pros                                                        | Cons                                                      |
+|------------------------------------|------------------------------------|
+| Can model repeated events                                   | Can only transition once in a given cycle                 |
+| Can model more complex + longitudinal clinical events       | Shortening the cycle can create computational challenges. |
+| Not computationally intensive; efficient to model and debug |                                                           |
 
-## 3a. Definir la longitud del ciclo de Markov
+## 3a. Define the Markov Cycle Length
 
 More challenges ...
 
-## 3a. Definir la longitud del ciclo de Markov
+## 3a. Define the Markov Cycle Length
 
 More challenges ...
 
@@ -706,7 +704,7 @@ More challenges ...
         events that happened earlier in time, the model can't explicitly
         account for this.
 
-## 3a. Definir la longitud del ciclo de Markov
+## 3a. Define the Markov Cycle Length
 
 More challenges ...
 
@@ -716,13 +714,13 @@ More challenges ...
     -   We won't cover them this week but we can provide references if
         you want to explore!
 
-## 3a. Definir la longitud del ciclo de Markov {.smaller}
+## 3a. Define the Markov Cycle Length {.smaller}
 
-| Pros                                                            | Contras                                                                                 |
-|---------------------------------|---------------------------------------|
-| Puede modelar sucesos repetidos                                 | Sólo puede transitar una vez por ciclo                                                  |
-| Puede modelizar eventos clínicos más complejos y longitudinales | Acortar el ciclo puede plantear retos informáticos.                                     |
-| No requiere muchos cálculos; es eficiente de modelar y depurar. | Acortar el ciclo puede provocar una "explosión de estados" si se utilizan estados túnel |
+| Pros                                                        | Cons                                                                   |
+|------------------------------------|------------------------------------|
+| Can model repeated events                                   | Can only transition once in a given cycle                              |
+| Can model more complex + longitudinal clinical events       | Shortening the cycle can create computational challenges.              |
+| Not computationally intensive; efficient to model and debug | Shortening cycle can cause "state explosion" if tunnel states are used |
 
 : {tbl-colwidths="\[50, 50\]"}
 
@@ -1171,7 +1169,7 @@ digraph G {
 |         | Healthy | Sick  | Dead  |
 |---------|---------|-------|-------|
 | Healthy | 0.856   | 0.138 | 0.007 |
-| Sick    | 0       | 0.982 | 0.018 |
+| Sick    | 0       | 0.982 | 0.018  |
 | Dead    | 0       | 0     | 1     |
 :::
 :::
@@ -1800,9 +1798,9 @@ Example Markov Trace (two cycles):
 -   We'll build our example using a simple outcome: expected life years
     under a given strategy.
 -   Payoffs:
-    -   Healthy: [1.0]{style="color:green;"}
-    -   Sick: [1.0]{style="color:green;"} \[they're still alive!\]
-    -   Dead: [0.0]{style="color:green;"}
+    -   Healthy: <span style="color:green;">1.0</span>
+    -   Sick: <span style="color:green;">1.0</span> \[they're still alive!\]
+    -   Dead: <span style="color:green;">0.0</span>
 
 ## Example: Life Years
 
@@ -1835,10 +1833,10 @@ What is the LY "payoff" for Cycle 0?
 What is the LY "payoff" for Cycle 0?
 
 ::: {style="font-size: 0.7em"}
-| Cycle | Healthy | Sick  | Dead  | LY                                                                                                                 |
-|--------------|--------------|--------------|--------------|----------------|
-| 0     | 1.000   | 0.000 | 0.000 | 1.0 = 1.0 \* [1.0]{style="color:green;"} + 0.0 \* [1.0]{style="color:green;"} + 0.0 \* [0.0]{style="color:green;"} |
-| 1     | 0.856   | 0.138 | 0.007 |                                                                                                                    |
+| Cycle | Healthy | Sick  | Dead  | LY  |
+|-------|---------|-------|-------|-----|
+| 0     | 1.000   | 0.000 | 0.000 | 1.0 = 1.0 \* <span style="color:green;">1.0</span> + 0.0 \* <span style="color:green;">1.0</span> + 0.0 \* <span style="color:green;">0.0</span>|
+| 1     | 0.856   | 0.138 | 0.007 |     |
 :::
 
 ## Example: Life Years
@@ -1846,10 +1844,10 @@ What is the LY "payoff" for Cycle 0?
 What is the LY "payoff" for Cycle 1?
 
 ::: {style="font-size: 0.7em"}
-| Cycle | Healthy | Sick  | Dead  | LY                                                                                                                         |
-|--------------|--------------|--------------|--------------|----------------|
-| 0     | 1.000   | 0.000 | 0.000 | 1.0                                                                                                                        |
-| 1     | 0.856   | 0.138 | 0.007 | 0.994 = 0.856 \* [1.0]{style="color:green;"} + 0.138 \* [1.0]{style="color:green;"} + 0.007 \* [0.0]{style="color:green;"} |
+| Cycle | Healthy | Sick  | Dead  | LY                                            |
+|---------------|---------------|---------------|---------------|---------------|
+| 0     | 1.000   | 0.000 | 0.000 | 1.0                                           |
+| 1     | 0.856   | 0.138 | 0.007 | 0.994 = 0.856 * <span style="color:green;">1.0</span> + 0.138 \* <span style="color:green;">1.0</span> + 0.007 \* <span style="color:green;">0.0</span> |
 :::
 
 ... and so on.
@@ -1857,25 +1855,26 @@ What is the LY "payoff" for Cycle 1?
 ## Example: Life Years
 
 ::: {style="font-size: 0.7em"}
-| Cycle    | Healthy | Sick  | Dead  | LY    |
-|----------|---------|-------|-------|-------|
-| 0        | 1.000   | 0.000 | 0.000 | 1     |
-| 1        | 0.856   | 0.138 | 0.007 | 0.993 |
-| 2        | 0.732   | 0.253 | 0.015 | 0.985 |
-| 3        | 0.626   | 0.349 | 0.025 | 0.975 |
-| 4        | 0.536   | 0.429 | 0.035 | 0.965 |
-| 5        | 0.458   | 0.495 | 0.046 | 0.954 |
-| ...      | ...     | ...   | ...   |       |
-| 75 (End) | 0       | 0.282 | 0.718 | 0.282 |
+| Cycle    | Healthy | Sick  | Dead  | LY                    |
+|----------|---------|-------|-------|-----------------------|
+| 0        | 1.000   | 0.000 | 0.000 | 1                     |
+| 1        | 0.856   | 0.138 | 0.007 | 0.993                 |
+| 2        | 0.732   | 0.253 | 0.015 | 0.985                 |
+| 3        | 0.626   | 0.349 | 0.025 | 0.975                 |
+| 4        | 0.536   | 0.429 | 0.035 | 0.965                 |
+| 5        | 0.458   | 0.495 | 0.046 | 0.954                 |
+| ...      | ...     | ...   | ...   |                       |
+| 75 (End) | 0       | 0.282 | 0.718 | 0.282                 |
 :::
+
 
 ## Example: Costs
 
 -   Now suppose we want to calculate costs.
 -   Payoffs:
-    -   Healthy: [\$0]{style="color:blue;"}
-    -   Sick: [\$1,000]{style="color:blue;"}
-    -   Dead: [\$0]{style="color:blue;"}
+    -   Healthy: <span style="color:blue;">\$0</span>
+    -   Sick: <span style="color:blue;">\$1,000</span>
+    -   Dead: <span style="color:blue;">\$0</span>
 
 ## Example: Costs
 
@@ -1893,10 +1892,10 @@ What is the Cost "payoff" for Cycle 0?
 What is the Cost "payoff" for Cycle 0?
 
 ::: {style="font-size: 0.7em"}
-| Cycle | Healthy | Sick  | Dead  | Cost                                                                                                        |
-|--------------|--------------|--------------|--------------|----------------|
-| 0     | 1.000   | 0.000 | 0.000 | 0 = 1.00 \* [0]{style="color:blue;"} + 0.0 \* [1000]{style="color:blue;"} + 0.0 \* [0]{style="color:blue;"} |
-| 1     | 0.856   | 0.138 | 0.007 |                                                                                                             |
+| Cycle | Healthy | Sick  | Dead  | Cost |
+|-------|---------|-------|-------|------|
+| 0     | 1.000   | 0.000 | 0.000 | 0 = 1.00 \* <span style="color:blue;">0</span> + 0.0 \* <span style="color:blue;">1000</span> + 0.0 \* <span style="color:blue;">0</span>   |
+| 1     | 0.856   | 0.138 | 0.007 |      |
 :::
 
 ## Example: Costs
@@ -1904,46 +1903,44 @@ What is the Cost "payoff" for Cycle 0?
 What is the cost "payoff" for Cycle 1?
 
 ::: {style="font-size: 0.7em"}
-| Cycle | Healthy | Sick  | Dead  | Cost                                                                                                     |
-|--------------|--------------|--------------|--------------|----------------|
-| 0     | 1.000   | 0.000 | 0.000 | 0                                                                                                        |
-| 1     | 0.856   | 0.138 | 0.007 | 138 = 0.856\*[0]{style="color:blue;"}+0.138\*[1000]{style="color:blue;"}+0.007\*[0]{style="color:blue;"} |
+| Cycle | Healthy | Sick  | Dead  | Cost                                |
+|-------|---------|-------|-------|-------------------------------------|
+| 0     | 1.000   | 0.000 | 0.000 | 0                                   |
+| 1     | 0.856   | 0.138 | 0.007 | 138 = 0.856\*<span style="color:blue;">0</span>+0.138\*<span style="color:blue;">1000</span>+0.007\*<span style="color:blue;">0</span> |
 :::
 
 ... and so on.
 
+
 ## Other Outcomes
 
--   We can repeat a similar process for health outcomes (e.g., QALYs,
-    YLDs) by multiplying the "payoff" (e.g., utility weight, disability
-    weight) for a given health state by the fraction of the cohort in
-    that health state in the cycle.
+- We can repeat a similar process for health outcomes (e.g., QALYs, YLDs) by multiplying the "payoff" (e.g., utility weight, disability weight) for a given health state by the fraction of the cohort in that health state in the cycle. 
 
 # Calculating Total Expected Outcomes
 
-## Total Outcomes
+## Total Outcomes 
 
-## Total Life Years
+## Total Life Years 
 
-Let's look at the Markov trace and cycle outcomes for the Life Year
-outcome.
+Let's look at the Markov trace and cycle outcomes for the Life Year outcome.
+
 
 ::: {style="font-size: 0.7em"}
-| Cycle    | Healthy | Sick  | Dead  | LY (single cycle) |
-|----------|---------|-------|-------|-------------------|
-| 0        | 1.000   | 0.000 | 0.000 | 1                 |
-| 1        | 0.856   | 0.138 | 0.007 | 0.993             |
-| 2        | 0.732   | 0.253 | 0.015 | 0.985             |
-| 3        | 0.626   | 0.349 | 0.025 | 0.975             |
-| 4        | 0.536   | 0.429 | 0.035 | 0.965             |
-| 5        | 0.458   | 0.495 | 0.046 | 0.954             |
-| ...      | ...     | ...   | ...   |                   |
-| 75 (End) | 0       | 0.282 | 0.718 | 0.282             |
+| Cycle    | Healthy | Sick  | Dead  | LY (single cycle)     |
+|----------|---------|-------|-------|-----------------------|
+| 0        | 1.000   | 0.000 | 0.000 | 1                     |
+| 1        | 0.856   | 0.138 | 0.007 | 0.993                 |
+| 2        | 0.732   | 0.253 | 0.015 | 0.985                 |
+| 3        | 0.626   | 0.349 | 0.025 | 0.975                 |
+| 4        | 0.536   | 0.429 | 0.035 | 0.965                 |
+| 5        | 0.458   | 0.495 | 0.046 | 0.954                 |
+| ...      | ...     | ...   | ...   |                       |
+| 75 (End) | 0       | 0.282 | 0.718 | 0.282                 |
 :::
 
 ## Life years
 
-We can create a new column that accumulates life years over each cycle.
+We can create a new column that accumulates life years over each cycle. 
 
 ::: {style="font-size: 0.7em"}
 | Cycle    | Healthy | Sick  | Dead  | LY (single cycle) | LY (cumulative)   |
@@ -1975,10 +1972,10 @@ We can create a new column that accumulates life years over each cycle.
 
 ## Life years {.smaller}
 
--   The cumulative LYs for an individual starting in the Healthy state
-    is **44.825**
+-   The cumulative LYs for an individual starting in the Healthy state is **44.825**
 
 -   Note that this is within a 75 years time horizon
+
 
 ::: {style="font-size: 0.7em"}
 | Cycle    | Healthy | Sick  | Dead  | LY (single cycle) | LY (cumulative) |
@@ -1993,28 +1990,25 @@ We can create a new column that accumulates life years over each cycle.
 | 75 (End) | 0       | 0.282 | 0.718 | 0.282             | **44.825**      |
 :::
 
+
 ## Total Outcomes
 
--   We can do a similar exercise to get total costs, total QALYs, total
-    DALYs, etc.
--   However, it's not that simple. There are some extra complications we
-    have to deal with.
-    -   Discounting
-    -   Cycle correction
+- We can do a similar exercise to get total costs, total QALYs, total DALYs, etc.
+- However, it's not that simple. There are some extra complications we have to deal with.
+  - Discounting 
+  - Cycle correction
 
 # Cycle correction {background="#c2f0c2"}
 
 ## The problem
 
 -   In real life, events could occur at any points in a given cycle, but
-    a Markov model assumes all events occur either at the beginning or
-    end of each cycle
-
+    a Markov model assumes all events occur either at the beginning
+    or end of each cycle
+    
 -   Time is continuous, so are survival/event-free survival curves
-
 -   When we discretize time by using a fixed cycle length, we can make
     two assumptions
-
     -   Suppose this is a simple Well $\rightarrow$ Dead process
 
 ## The problem {.smaller}
@@ -2157,15 +2151,13 @@ Underestimates state membership in Well
 
 ## Summary
 
--   Once we have total (discounted, half-cycle corrected) outcomes for
-    each strategy, we can turn to conducting incremental
-    cost-effectiveness analysis.
--   We covered these methods yesterday!
+- Once we have total (discounted, half-cycle corrected) outcomes for each strategy, we can turn to conducting incremental cost-effectiveness analysis.
+- We covered these methods yesterday!
 
 ## Markov Models
 
 | Pros                                                        | Cons                                                                   |
-|---------------------------------|---------------------------------------|
+|------------------------------------|------------------------------------|
 | Can model repeated events                                   | Can only transition once in a given cycle                              |
 | Can model more complex + longitudinal clinical events       | Shortening the cycle can create computational challenges.              |
 | Not computationally intensive; efficient to model and debug | Shortening cycle can cause "state explosion" if tunnel states are used |
