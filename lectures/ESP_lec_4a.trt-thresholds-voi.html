@@ -332,174 +332,71 @@
 
 </section>
 <section>
-<section id="learning-objectives-and-outline" class="title-slide slide level1 center">
-<h1>Learning Objectives and Outline</h1>
+<section id="objetivos-de-aprendizaje-y-esquema" class="title-slide slide level1 center">
+<h1>Objetivos de aprendizaje y esquema</h1>
 
 </section>
-<section id="learning-objectives" class="slide level2">
-<h2>Learning Objectives</h2>
+<section id="objetivos-de-aprendizaje" class="slide level2">
+<h2>Objetivos de aprendizaje</h2>
 <ul>
-<li><p>Define treatment thresholds within a decision tree &amp; examine different ways of interpretation</p></li>
-<li><p>Understand and calculate the value of information from a perfect vs. imperfect test</p></li>
+<li><p>Definir los umbrales de tratamiento en un árbol de decisión y examinar diferentes formas de interpretación</p></li>
+<li><p>Comprender y calcular el valor de la información de una prueba perfecta frente a una imperfecta prueba imperfecta</p></li>
 </ul>
 </section>
-<section id="outline" class="slide level2">
-<h2>Outline</h2>
+<section id="resumen" class="slide level2">
+<h2>Resumen</h2>
 <ul>
-<li><p>Treatment thresholds</p></li>
-<li><p>Testing &amp; Value of Information</p></li>
+<li><p>Umbrales de tratamiento</p></li>
+<li><p>Pruebas y valor de la información</p></li>
 </ul>
-</section></section>
-<section>
-<section id="treatment-thresholds" class="title-slide slide level1 center" data-background="#43464B">
-<h1>Treatment thresholds</h1>
+</section>
+<section id="umbrales-de-tratamiento" class="slide level2" data-background="#43464B">
+<h2>Umbrales de tratamiento</h2>
+</section>
+<section id="umbrales-de-tratamiento-1" class="slide level2" data-background="#43464B">
+<h2>Umbrales de tratamiento</h2>
 
-</section>
-<section id="treatment-thresholds-1" class="slide level2" data-background="#43464B">
-<h2>Treatment thresholds</h2>
-
-<img data-src="images/PE1.png" width="594" class="r-stretch"><aside class="notes">
-<ul>
-<li><p>Let’s start with the PULMONARY EMBOLISM example that we’ve looked at before &amp; in our text</p></li>
-<li><p>Pulmonary embolism (PE) during pregnancy is a life-threatening event. Treatment with anti-coagulation is effective in preventing further PE and hence in reducing the fatality probability.</p></li>
-<li><p>The choices here are either to ANTICOAGULATE OR TO NOT ANTICOAGULATE &amp; our main objective is to optimize survival</p></li>
-<li><p>When we calculate out the probabilities, the overall expected survival chances with ANTICOAGULATION is 99%, compared to 95% WITHOUT ANTICOAGULATION</p></li>
-<li><p>Therefore, we would, on average, choose to ANTICOAGULATE in this case because it has higher overall survival</p></li>
-<li><p>BUT to be confident about our decision, we need to explore HOW our assumptions will affect the decision in sensitivity analyses</p></li>
-</ul>
-<p>***We will cover more on SA’s later in the semester as it relates to cost-effectiveness analysis</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="treatment-thresholds-2" class="slide level2">
-<h2>Treatment thresholds</h2>
+<img data-src="images/PE1.png" width="594" class="r-stretch"></section>
+<section id="umbrales-de-tratamiento-2" class="slide level2">
+<h2>Umbrales de tratamiento</h2>
 <p><br></p>
 <div class="callout callout-important no-icon callout-style-simple">
 <div class="callout-body">
 <div class="callout-content">
-<p>What if the probability of recurrent PE were higher or lower than initially estimated?</p>
+<p>¿Qué ocurriría si la probabilidad de EP recurrente fuera mayor o menor que la estimada inicialmente? estimada inicialmente?</p>
 </div>
 </div>
 </div>
 <p><br></p>
 <ul>
-<li>Do we anticoagulate or not?</li>
-<li>At what point do we switch between “yes” versus “no”?</li>
+<li>¿Anticoagulamos o no?</li>
+<li>¿En qué momento pasamos del “sí” al “no”?</li>
 </ul>
-<aside class="notes">
-<ul>
-<li><p>I know we touched on this briefly in the last couple of lectures in various forms, but the key question that we always need to ask in any decision problem is AT WHAT POINT DO WE SWITCH BETWEEN OPTIONS?</p></li>
-<li><p>In this case, what IF the probability of recurrent PE were higher or lower than initially estimated? would we still choose to anticoagulate? &amp; at what point would we switch?</p></li>
-<li><p>(And from a cost-effectiveness perspective, at more of a higher population level - what variations will ultimately change our decision) – In this case, to anticoagulate versus not.</p></li>
-<li><p>Parameters will always have confidence intervals around them &amp; will also be uncertain depending on our assumptions in our model &amp; the information that we have.</p></li>
-<li><p>However, the more information we have on a certain disease/parameter, the more confidence we will have in our decisions.</p></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="treatment-thresholds-3" class="slide level2">
-<h2>Treatment thresholds</h2>
+<section id="umbrales-de-tratamiento-3" class="slide level2">
+<h2>Umbrales de tratamiento</h2>
 
-<img data-src="images/trt-threshold1.png" class="r-stretch"><aside class="notes">
-<ul>
-<li><p>From more of a clinical standpoint –</p></li>
-<li><p>Our THRESHOLD TO TREAT a patient is the point at which the expected value of treatment &amp; no treatment are exactly EQUAL</p>
-<ul>
-<li>Another way to look at this (which we’ll go over in the upcoming slides) is the RATIO of NET HARM of treating patients without the disease &amp; BENEFIT gained by treating patients with the disease.</li>
-</ul></li>
-<li><p>And if we incorporate DIAGNOSTIC TESTING as part of our decision-making, we can determine how a patient’s risk might change based on the result of a particular test</p>
-<ul>
-<li>For example, if the test has no chance of moving the patient’s risk above the treatment threshold, then the test should probably not be ordered. Because as we know, tests can also come with their own risks &amp; costs.</li>
-</ul></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="treatment-thresholds-4" class="slide level2">
-<h2>Treatment thresholds</h2>
+<img data-src="images/trt-threshold1.png" class="r-stretch"></section>
+<section id="umbrales-de-tratamiento-4" class="slide level2">
+<h2>Umbrales de tratamiento</h2>
 <p><br></p>
 <blockquote>
-<p>Perform a sensitivity analysis to find a treatment threshold</p>
+<p>Realizar un análisis de sensibilidad para hallar un umbral de tratamiento</p>
 </blockquote>
 <p><br></p>
-<p>(More on sensitivity analyses later in the workshop)</p>
-<aside class="notes">
-<ul>
-<li><p>We would need to perform a sensitivity analysis to find the treatment threshold</p>
-<ul>
-<li>Similar to the “beach” example in the second class</li>
-</ul></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p>(Más información sobre los análisis de sensibilidad más adelante en el taller)</p>
 </section>
-<section id="treatment-thresholds-5" class="slide level2">
-<h2>Treatment thresholds</h2>
+<section id="umbrales-de-tratamiento-5" class="slide level2">
+<h2>Umbrales de tratamiento</h2>
 
 <img data-src="images/trt-threshold3.png" width="344" class="r-stretch"><div style="font-size: 0.8em">
-<p><span style="color:green;">Expected value (AC) = 0.990 * pPE + 0.992 * (1-pPE)</span></p>
-<p><span style="color:blue;">Expected value (No AC) = 0.750 * pPE + 1.0 * (1-pPE)</span></p>
-<p>NOW, SET EQUAL TO EACH OTHER, to solve for unknown threshold probability</p>
+<p><span style="color:green;">Valor esperado (AC) = 0.990 * pPE + 0.992 * (1-pPE)</span></p>
+<p><span style="color:blue;">Valor esperado (No AC) = 0.750 * pPE + 1.0 * (1-pPE)</span></p>
+<p>AHORA, AJUSTAR IGUAL A CADA UNO, para resolver la probabilidad umbral desconocida</p>
 </div>
-<aside class="notes">
-<ul>
-<li><p>To go back to our PE example,</p></li>
-<li><p>A key parameter in our model is the probability of pulmonary embolism when we undergo anticoagulant treatment versus not.</p></li>
-<li><p>If we set the EXPECTED VALUE OF AC VERSUS NO AC equal to each other, like we’ve done in previous examples, we can solve for the unknown threshold probability</p>
-<ul>
-<li>which is the point where the expected value of treatment and withholding treatment are exactly equal for this specific decision problem.</li>
-</ul></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
-<section id="treatment-thresholds-6" class="slide level2">
-<h2>Treatment thresholds</h2>
+<section id="umbrales-de-tratamiento-6" class="slide level2">
+<h2>Umbrales de tratamiento</h2>
 
 <img data-src="images/trt-threshold3.png" width="344" class="r-stretch"><div style="font-size: 0.8em">
 <p><span style="color:green;">0.990 * pPE + 0.992 * (1-pPE)</span> = <span style="color:blue;">0.750 * pPE + 1.0 * (1-pPE)</span></p>
@@ -509,119 +406,47 @@
 <p>= .032</p>
 </div>
 </section>
-<section id="treatment-thresholds-7" class="slide level2">
-<h2>Treatment thresholds</h2>
+<section id="umbrales-de-tratamiento-7" class="slide level2">
+<h2>Umbrales de tratamiento</h2>
 <p><br></p>
 
-<img data-src="images/trt-threshold4.png" class="r-stretch"><aside class="notes">
-<ul>
-<li><p>So, what does this mean?</p></li>
-<li><p>If you put these probabilities for PE back into our model for each AC &amp; no AC, then you’ll get these survival probabilities</p></li>
-<li><p>You can see the point in which our decision would change</p></li>
-<li><p>If our pPE is EQUAL TO or LESS THAN .032, then we would prefer no AC to AC</p></li>
-<li><p>But, as displayed in the second row, if our pPE is GREATER than .032, then we would prefer AC to No AC - bc higher overall survival</p></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="treatment-thresholds-8" class="slide level2">
-<h2>Treatment thresholds</h2>
+<img data-src="images/trt-threshold4.png" class="r-stretch"></section>
+<section id="umbrales-de-tratamiento-8" class="slide level2">
+<h2>Umbrales de tratamiento</h2>
 
-<img data-src="images/trt-threshold5.png" class="r-stretch"><aside class="notes">
-<ul>
-<li><p>When we go back to thinking about testing &amp; how that might impact our decision to treat…</p></li>
-<li><p>No tests should be done UNLESS the result of the test will change the treatment plan</p>
-<ul>
-<li>So, on the top bar – the result of additional tests do not change our treatment plan</li>
-<li>Whereas, looking at the bar below, additional tests could in fact change our treatment plan</li>
-</ul></li>
-<li><p>A key question we should be asking is - Is the risk of the test worth the benefit of getting it **** &amp; this is something we can explore withing a decision analysis framework</p></li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="treatment-thresholds-9" class="slide level2">
-<h2>Treatment thresholds</h2>
+<img data-src="images/trt-threshold5.png" class="r-stretch"></section>
+<section id="umbrales-de-tratamiento-9" class="slide level2">
+<h2>Umbrales de tratamiento</h2>
 <p><br></p>
-<p>Performing a test to gain additional information is ONLY worthwhile IF: <br></p>
+<p>Realizar una prueba para obtener información adicional SÓLO merece la pena SI: <br></p>
 <ol type="1">
-<li>At least one decision would change given some test results, and/or<br>
-<br></li>
-<li>The risk to the patient associated with the test is less than the expected benefit gained from undergoing the test</li>
+<li>Al menos una decisión cambiaría dados algunos resultados de la prueba, y/o\. <br></li>
+<li>El riesgo para el paciente asociado a la prueba es menor que el beneficio esperado de someterse a la prueba</li>
 </ol>
 </section>
-<section id="treatment-thresholds-10" class="slide level2">
-<h2>Treatment thresholds</h2>
+<section id="umbrales-de-tratamiento-10" class="slide level2">
+<h2>Umbrales de tratamiento</h2>
 
-<img data-src="images/trt-threshold6.png" class="r-stretch"><aside class="notes">
-<p>Same as before, but here, the additional information you gain on the top bar, doesn’t change your decision NOT to treat</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="treatment-thresholds-11" class="slide level2">
-<h2>Treatment thresholds</h2>
+<img data-src="images/trt-threshold6.png" class="r-stretch"></section>
+<section id="umbrales-de-tratamiento-11" class="slide level2">
+<h2>Umbrales de tratamiento</h2>
 
-<img data-src="images/trt-threshold7.png" width="510" class="r-stretch"><aside class="notes">
-<p>You can look at test/treat thresholds the following way –</p>
-<ul>
-<li>DO NOT TREAT &amp; DO NOT TEST – when even a positive test result will not persuade us to treat Ex. 95 year old, testing says you need a hip replacement. You’re likely not going to get the surgery due to the risks regardless of the positive result.</li>
-<li>TEST – if the test will help us make a treatment decision</li>
-<li>TREAT &amp; DO NOT TEST – when even a negative test result will not dissuade us from treating Ex.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="treatment-thresholds-12" class="slide level2">
-<h2>Treatment thresholds</h2>
+<img data-src="images/trt-threshold7.png" width="510" class="r-stretch"></section>
+<section id="umbrales-de-tratamiento-12" class="slide level2">
+<h2>Umbrales de tratamiento</h2>
 <p><br></p>
-<p><strong>No Treat – Test Threshold</strong> <br> Probability of indifference between testing &amp; not treating</p>
+<p><strong>No tratar – Umbral de prueba</strong> <br> Probabilidad de indiferencia entre probar y no tratar</p>
 <p><br></p>
-<p><strong>Test – Treat Threshold</strong> <br> Probability of indifference between testing &amp; treatment</p>
+<p><strong>Umbral de prueba y tratamiento</strong> <br> Probabilidad de indiferencia entre prueba y tratamiento</p>
 </section>
 <section id="testing-expected-value-of-information" class="slide level2">
 <h2>Testing &amp; expected value of information</h2>
 <p><br></p>
 <div>
 <ul>
-<li class="fragment">Information can theoretically be perfect, free, &amp; without risk, but it’s usually NOT!</li>
-<li class="fragment">Information is almost always IMPERFECT</li>
-<li class="fragment">Getting information usually HAS A COST</li>
+<li class="fragment">En teoría, la información puede ser perfecta, gratuita y sin riesgos, pero ¡normalmente NO LO ES!</li>
+<li class="fragment">La información es casi siempre IMPERFECTA</li>
+<li class="fragment">Obtener información suele TENER UN COSTE</li>
 </ul>
 </div>
 </section>
@@ -629,85 +454,82 @@
 <h2>Testing &amp; expected value of information</h2>
 <p><br></p>
 <div class="fragment">
-<p>Value of information asks: <strong>what are we gaining by having this extra information?</strong></p>
+<p>El valor de la información pregunta: <strong>¿Qué ganamos con esta información adicional? adicional?</strong></p>
 </div>
 <p><br></p>
 <div class="fragment">
-<p>Value of information =</p>
-<p>|[expected value from the ‘gaining information’ strategy] –</p>
-<p>[expected value from the next best strategy]|</p>
+<p>Valor de la información =</p>
+<p>|[valor esperado de la estrategia “obtener información] –</p>
+<p>[valor esperado de la siguiente mejor estrategia]|</p>
 </div>
 </section>
 <section id="testing-expected-value-of-information-2" class="slide level2">
 <h2>Testing &amp; expected value of information</h2>
 <div class="fragment">
-<p>PERFECT tests give us an upper limit to the potential benefit from any test</p>
+<p>Las pruebas PERFECT nos dan un límite superior del beneficio potencial de cualquier prueba</p>
 </div>
 <p><br></p>
 <div class="fragment">
-<p>The gain from such an imaginary PERFECT test is the expected value of perfect information (EVPI)</p>
+<p>La ganancia de esta prueba PERFECTA imaginaria es el valor esperado de la información perfecta (EVPI)</p>
 </div>
 </section>
-<section id="testing-expected-value-of-information-3" class="slide level2">
-<h2>Testing &amp; expected value of information</h2>
+<section id="pruebas-y-valor-esperado-de-la-información" class="slide level2">
+<h2>Pruebas y valor esperado de la información</h2>
 </section>
-<section id="a-perfect-test-100-sens-and-spec-with-no-risk" class="slide level2">
-<h2>A perfect test (100% sens and spec) with no risk</h2>
+<section id="una-prueba-perfecta-100-sens-y-spec-sin-riesgo" class="slide level2">
+<h2>Una prueba perfecta (100% sens y spec) sin riesgo</h2>
 
 <img data-src="images/VOI2.png" class="r-stretch"></section>
-<section id="a-perfect-test-100-sens-and-spec-with-no-risk-1" class="slide level2">
-<h2>A perfect test (100% sens and spec) with no risk</h2>
+<section id="una-prueba-perfecta-100-sens-y-spec-sin-riesgo-1" class="slide level2">
+<h2>Una prueba perfecta (100% sens y spec) sin riesgo</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><img data-src="images/VOI3.png"></p>
 </div><div class="column" style="width:40%;">
 <div style="font-size: 0.6em">
 <ul>
-<li><p>EV(perfect test) = <span style="background-color: yellow;">0.12</span></p></li>
-<li><p>EV(treat strategy) = 0.16</p></li>
-<li><p>EV(no treat strategy) = 0.24 (worst EV)</p></li>
+<li><p>EV(prueba perfecta) = <span style="background-color: yellow;">0.12</span></p></li>
+<li><p>EV(estrategia de tratamiento) = 0.16</p></li>
+<li><p>EV(estrategia de no tratar) = 0.24 (worst EV)</p></li>
 </ul>
 <p>EVPI =</p>
-<p>|EV ‘perfect test’ – EV ‘next best strategy: treat all’|</p>
+<p>|EV ‘prueba perfecta’ – EV ‘siguiente mejor estrategia: tratar a todos’|</p>
 <p>=|0.12 – 0.16| = 0.04,</p>
-<p>or 4 deaths prevented per 100 tests because of the additional testing information</p>
+<p>o 4 muertes evitadas por cada 100 pruebas gracias a las pruebas adicionales información</p>
 </div>
 </div>
 </div>
 </section>
-<section id="an-imperfect-test-with-morbidity-risk" class="slide level2">
-<h2>An imperfect test with morbidity risk</h2>
+<section id="una-prueba-imperfecta-con-riesgo-de-morbilidad" class="slide level2">
+<h2>Una prueba imperfecta con riesgo de morbilidad</h2>
 
 <img data-src="images/VOI4.png" class="r-stretch"></section>
-<section id="an-imperfect-test-with-morbidity-risk-1" class="slide level2">
-<h2>An imperfect test with morbidity risk</h2>
+<section id="una-prueba-imperfecta-con-riesgo-de-morbilidad-1" class="slide level2">
+<h2>Una prueba imperfecta con riesgo de morbilidad</h2>
 
 <img data-src="images/VOI5.png" class="r-stretch"></section>
-<section id="an-imperfect-test-with-morbidity-risk-2" class="slide level2">
-<h2>An imperfect test with morbidity risk</h2>
+<section id="una-prueba-imperfecta-con-riesgo-de-morbilidad-2" class="slide level2">
+<h2>Una prueba imperfecta con riesgo de morbilidad</h2>
 <p><br></p>
 <div style="font-size: 0.8em">
-<p>When the test is imperfect, testing is still the best strategy (in this case, the lower EV, the better since our outcome values are the probability of a bad outcome), but not by much:</p>
+<p>Cuando la prueba es imperfecta, probar sigue siendo la mejor estrategia (en este caso, cuanto menor sea el VE, mejor, ya que nuestros valores de resultado son la probabilidad de un mal resultado), pero no por mucho:</p>
 </div>
 </section>
-<section id="testing-expected-value-of-information-4" class="slide level2 smaller">
-<h2>Testing &amp; expected value of information</h2>
+<section id="pruebas-y-valor-esperado-de-la-información-1" class="slide level2 smaller">
+<h2>Pruebas y valor esperado de la información</h2>
 <p><br></p>
-<p>When the test is IMPERFECT: <br></p>
+<p>Cuando la prueba es IMPERFECTA: <br></p>
 <ul>
-<li><p>EV(test strategy) = <span style="background-color: yellow;">0.157</span></p></li>
-<li><p>EV(treat strategy) = 0.16</p></li>
-<li><p>EV(no treat strategy) = 0.24 (worst EV)</p></li>
+<li><p>EV(estrategia de prueba) = <span style="color de fondo: amarillo;">0.157</span></p></li>
+<li><p>EV(estrategia de tratamiento) = 0,16</p></li>
+<li><p>EV(sin estrategia de tratamiento) = 0,24 (peor EV)</p></li>
 </ul>
 <p><br></p>
 <div class="fragment">
-<p>VOI = |EV ‘test’ – EV ‘next best strategy’|</p>
+<p>VOI = |EV ‘prueba’ – EV ‘siguiente mejor estrategia’||</p>
 <p>= |0.157 – 0.16| = 0.003,</p>
-<p>or 3 deaths prevented per 1000 tests because of the additional testing information</p>
+<p>o 3 muertes evitadas por cada 1000 pruebas gracias a la información adicional de las pruebas. información</p>
 </div>
-</section></section>
-<section id="next-case-studies" class="title-slide slide level1 center" data-background="#43464B">
-<h1>Next… case studies!</h1>
 
 <div class="quarto-auto-generated-content">
 <p><img src="../vchem.png" class="slide-logo"></p>
@@ -715,7 +537,7 @@
 <p><a href="../index.html">Back to Website</a></p>
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

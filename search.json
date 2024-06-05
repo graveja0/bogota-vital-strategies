@@ -1,171 +1,178 @@
 [
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#learning-objectives",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#learning-objectives",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#objetivos-de-aprendizaje",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#objetivos-de-aprendizaje",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nDefine treatment thresholds within a decision tree & examine different ways of interpretation\nUnderstand and calculate the value of information from a perfect vs. imperfect test"
+    "section": "Objetivos de aprendizaje",
+    "text": "Objetivos de aprendizaje\n\nDefinir los umbrales de tratamiento en un árbol de decisión y examinar diferentes formas de interpretación\nComprender y calcular el valor de la información de una prueba perfecta frente a una imperfecta prueba imperfecta"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#outline",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#outline",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#resumen",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#resumen",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Outline",
-    "text": "Outline\n\nTreatment thresholds\nTesting & Value of Information"
+    "section": "Resumen",
+    "text": "Resumen\n\nUmbrales de tratamiento\nPruebas y valor de la información"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-1",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-1",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\n\nLet’s start with the PULMONARY EMBOLISM example that we’ve looked at before & in our text\nPulmonary embolism (PE) during pregnancy is a life-threatening event. Treatment with anti-coagulation is effective in preventing further PE and hence in reducing the fatality probability.\nThe choices here are either to ANTICOAGULATE OR TO NOT ANTICOAGULATE & our main objective is to optimize survival\nWhen we calculate out the probabilities, the overall expected survival chances with ANTICOAGULATION is 99%, compared to 95% WITHOUT ANTICOAGULATION\nTherefore, we would, on average, choose to ANTICOAGULATE in this case because it has higher overall survival\nBUT to be confident about our decision, we need to explore HOW our assumptions will affect the decision in sensitivity analyses\n\n***We will cover more on SA’s later in the semester as it relates to cost-effectiveness analysis"
+    "section": "Umbrales de tratamiento",
+    "text": "Umbrales de tratamiento"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-2",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-2",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-1",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-1",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\n\n\nWhat if the probability of recurrent PE were higher or lower than initially estimated?\n\n\n\n\n\nDo we anticoagulate or not?\nAt what point do we switch between “yes” versus “no”?\n\n\n\nI know we touched on this briefly in the last couple of lectures in various forms, but the key question that we always need to ask in any decision problem is AT WHAT POINT DO WE SWITCH BETWEEN OPTIONS?\nIn this case, what IF the probability of recurrent PE were higher or lower than initially estimated? would we still choose to anticoagulate? & at what point would we switch?\n(And from a cost-effectiveness perspective, at more of a higher population level - what variations will ultimately change our decision) – In this case, to anticoagulate versus not.\nParameters will always have confidence intervals around them & will also be uncertain depending on our assumptions in our model & the information that we have.\nHowever, the more information we have on a certain disease/parameter, the more confidence we will have in our decisions."
+    "section": "Umbrales de tratamiento",
+    "text": "Umbrales de tratamiento"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-3",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-3",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-2",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-2",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\n\nFrom more of a clinical standpoint –\nOur THRESHOLD TO TREAT a patient is the point at which the expected value of treatment & no treatment are exactly EQUAL\n\nAnother way to look at this (which we’ll go over in the upcoming slides) is the RATIO of NET HARM of treating patients without the disease & BENEFIT gained by treating patients with the disease.\n\nAnd if we incorporate DIAGNOSTIC TESTING as part of our decision-making, we can determine how a patient’s risk might change based on the result of a particular test\n\nFor example, if the test has no chance of moving the patient’s risk above the treatment threshold, then the test should probably not be ordered. Because as we know, tests can also come with their own risks & costs."
+    "section": "Umbrales de tratamiento",
+    "text": "Umbrales de tratamiento\n\n\n\n\n¿Qué ocurriría si la probabilidad de EP recurrente fuera mayor o menor que la estimada inicialmente? estimada inicialmente?\n\n\n\n\n\n¿Anticoagulamos o no?\n¿En qué momento pasamos del “sí” al “no”?"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-4",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-4",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-3",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-3",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\nPerform a sensitivity analysis to find a treatment threshold\n\n\n(More on sensitivity analyses later in the workshop)\n\n\nWe would need to perform a sensitivity analysis to find the treatment threshold\n\nSimilar to the “beach” example in the second class"
+    "section": "Umbrales de tratamiento",
+    "text": "Umbrales de tratamiento"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-5",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-5",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-4",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-4",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\nExpected value (AC) = 0.990 * pPE + 0.992 * (1-pPE)\nExpected value (No AC) = 0.750 * pPE + 1.0 * (1-pPE)\nNOW, SET EQUAL TO EACH OTHER, to solve for unknown threshold probability\n\n\n\nTo go back to our PE example,\nA key parameter in our model is the probability of pulmonary embolism when we undergo anticoagulant treatment versus not.\nIf we set the EXPECTED VALUE OF AC VERSUS NO AC equal to each other, like we’ve done in previous examples, we can solve for the unknown threshold probability\n\nwhich is the point where the expected value of treatment and withholding treatment are exactly equal for this specific decision problem."
+    "section": "Umbrales de tratamiento",
+    "text": "Umbrales de tratamiento\n\n\nRealizar un análisis de sensibilidad para hallar un umbral de tratamiento\n\n\n(Más información sobre los análisis de sensibilidad más adelante en el taller)"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-6",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-6",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-5",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-5",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\n0.990 * pPE + 0.992 * (1-pPE) = 0.750 * pPE + 1.0 * (1-pPE)\n0.240 * pPE = 0.008 * (1-pPE)\n0.240 * pPE + 0.008 *pPE = 0.008\npPE = 0.008 / (0.240 + 0.008)\n= .032"
+    "section": "Umbrales de tratamiento",
+    "text": "Umbrales de tratamiento\n\n\nValor esperado (AC) = 0.990 * pPE + 0.992 * (1-pPE)\nValor esperado (No AC) = 0.750 * pPE + 1.0 * (1-pPE)\nAHORA, AJUSTAR IGUAL A CADA UNO, para resolver la probabilidad umbral desconocida"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-7",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-7",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-6",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-6",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\n\n\nSo, what does this mean?\nIf you put these probabilities for PE back into our model for each AC & no AC, then you’ll get these survival probabilities\nYou can see the point in which our decision would change\nIf our pPE is EQUAL TO or LESS THAN .032, then we would prefer no AC to AC\nBut, as displayed in the second row, if our pPE is GREATER than .032, then we would prefer AC to No AC - bc higher overall survival"
+    "section": "Umbrales de tratamiento",
+    "text": "Umbrales de tratamiento\n\n\n0.990 * pPE + 0.992 * (1-pPE) = 0.750 * pPE + 1.0 * (1-pPE)\n0.240 * pPE = 0.008 * (1-pPE)\n0.240 * pPE + 0.008 *pPE = 0.008\npPE = 0.008 / (0.240 + 0.008)\n= .032"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-8",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-8",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-7",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-7",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\n\nWhen we go back to thinking about testing & how that might impact our decision to treat…\nNo tests should be done UNLESS the result of the test will change the treatment plan\n\nSo, on the top bar – the result of additional tests do not change our treatment plan\nWhereas, looking at the bar below, additional tests could in fact change our treatment plan\n\nA key question we should be asking is - Is the risk of the test worth the benefit of getting it **** & this is something we can explore withing a decision analysis framework"
+    "section": "Umbrales de tratamiento",
+    "text": "Umbrales de tratamiento"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-9",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-9",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-8",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-8",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\nPerforming a test to gain additional information is ONLY worthwhile IF: \n\nAt least one decision would change given some test results, and/or\n\nThe risk to the patient associated with the test is less than the expected benefit gained from undergoing the test"
+    "section": "Umbrales de tratamiento",
+    "text": "Umbrales de tratamiento"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-10",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-10",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-9",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-9",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\nSame as before, but here, the additional information you gain on the top bar, doesn’t change your decision NOT to treat"
+    "section": "Umbrales de tratamiento",
+    "text": "Umbrales de tratamiento\n\nRealizar una prueba para obtener información adicional SÓLO merece la pena SI: \n\nAl menos una decisión cambiaría dados algunos resultados de la prueba, y/o\\. \nEl riesgo para el paciente asociado a la prueba es menor que el beneficio esperado de someterse a la prueba"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-11",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-11",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-10",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-10",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\nYou can look at test/treat thresholds the following way –\n\nDO NOT TREAT & DO NOT TEST – when even a positive test result will not persuade us to treat Ex. 95 year old, testing says you need a hip replacement. You’re likely not going to get the surgery due to the risks regardless of the positive result.\nTEST – if the test will help us make a treatment decision\nTREAT & DO NOT TEST – when even a negative test result will not dissuade us from treating Ex."
+    "section": "Umbrales de tratamiento",
+    "text": "Umbrales de tratamiento"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-12",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#treatment-thresholds-12",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-11",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-11",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\nNo Treat – Test Threshold  Probability of indifference between testing & not treating\n\nTest – Treat Threshold  Probability of indifference between testing & treatment"
+    "section": "Umbrales de tratamiento",
+    "text": "Umbrales de tratamiento"
+  },
+  {
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-12",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-12",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Umbrales de tratamiento",
+    "text": "Umbrales de tratamiento\n\nNo tratar – Umbral de prueba  Probabilidad de indiferencia entre probar y no tratar\n\nUmbral de prueba y tratamiento  Probabilidad de indiferencia entre prueba y tratamiento"
   },
   {
     "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information",
     "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information",
     "title": "Treatment Thresholds & Value of Information",
     "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information\n\n\n\nInformation can theoretically be perfect, free, & without risk, but it’s usually NOT!\nInformation is almost always IMPERFECT\nGetting information usually HAS A COST"
+    "text": "Testing & expected value of information\n\n\n\nEn teoría, la información puede ser perfecta, gratuita y sin riesgos, pero ¡normalmente NO LO ES!\nLa información es casi siempre IMPERFECTA\nObtener información suele TENER UN COSTE"
   },
   {
     "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-1",
     "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-1",
     "title": "Treatment Thresholds & Value of Information",
     "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information\n\n\nValue of information asks: what are we gaining by having this extra information?\n\n\n\nValue of information =\n|[expected value from the ‘gaining information’ strategy] –\n[expected value from the next best strategy]|"
+    "text": "Testing & expected value of information\n\n\nEl valor de la información pregunta: ¿Qué ganamos con esta información adicional? adicional?\n\n\n\nValor de la información =\n|[valor esperado de la estrategia “obtener información] –\n[valor esperado de la siguiente mejor estrategia]|"
   },
   {
     "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-2",
     "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-2",
     "title": "Treatment Thresholds & Value of Information",
     "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information\n\nPERFECT tests give us an upper limit to the potential benefit from any test\n\n\n\nThe gain from such an imaginary PERFECT test is the expected value of perfect information (EVPI)"
+    "text": "Testing & expected value of information\n\nLas pruebas PERFECT nos dan un límite superior del beneficio potencial de cualquier prueba\n\n\n\nLa ganancia de esta prueba PERFECTA imaginaria es el valor esperado de la información perfecta (EVPI)"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-3",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-3",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information"
+    "section": "Pruebas y valor esperado de la información",
+    "text": "Pruebas y valor esperado de la información"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#a-perfect-test-100-sens-and-spec-with-no-risk",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#a-perfect-test-100-sens-and-spec-with-no-risk",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-perfecta-100-sens-y-spec-sin-riesgo",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-perfecta-100-sens-y-spec-sin-riesgo",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "A perfect test (100% sens and spec) with no risk",
-    "text": "A perfect test (100% sens and spec) with no risk"
+    "section": "Una prueba perfecta (100% sens y spec) sin riesgo",
+    "text": "Una prueba perfecta (100% sens y spec) sin riesgo"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#a-perfect-test-100-sens-and-spec-with-no-risk-1",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#a-perfect-test-100-sens-and-spec-with-no-risk-1",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-perfecta-100-sens-y-spec-sin-riesgo-1",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-perfecta-100-sens-y-spec-sin-riesgo-1",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "A perfect test (100% sens and spec) with no risk",
-    "text": "A perfect test (100% sens and spec) with no risk\n\n\n\n\n\n\nEV(perfect test) = 0.12\nEV(treat strategy) = 0.16\nEV(no treat strategy) = 0.24 (worst EV)\n\nEVPI =\n|EV ‘perfect test’ – EV ‘next best strategy: treat all’|\n=|0.12 – 0.16| = 0.04,\nor 4 deaths prevented per 100 tests because of the additional testing information"
+    "section": "Una prueba perfecta (100% sens y spec) sin riesgo",
+    "text": "Una prueba perfecta (100% sens y spec) sin riesgo\n\n\n\n\n\n\nEV(prueba perfecta) = 0.12\nEV(estrategia de tratamiento) = 0.16\nEV(estrategia de no tratar) = 0.24 (worst EV)\n\nEVPI =\n|EV ‘prueba perfecta’ – EV ‘siguiente mejor estrategia: tratar a todos’|\n=|0.12 – 0.16| = 0.04,\no 4 muertes evitadas por cada 100 pruebas gracias a las pruebas adicionales información"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-imperfecta-con-riesgo-de-morbilidad",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-imperfecta-con-riesgo-de-morbilidad",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "An imperfect test with morbidity risk",
-    "text": "An imperfect test with morbidity risk"
+    "section": "Una prueba imperfecta con riesgo de morbilidad",
+    "text": "Una prueba imperfecta con riesgo de morbilidad"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk-1",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk-1",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-imperfecta-con-riesgo-de-morbilidad-1",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-imperfecta-con-riesgo-de-morbilidad-1",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "An imperfect test with morbidity risk",
-    "text": "An imperfect test with morbidity risk"
+    "section": "Una prueba imperfecta con riesgo de morbilidad",
+    "text": "Una prueba imperfecta con riesgo de morbilidad"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk-2",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk-2",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-imperfecta-con-riesgo-de-morbilidad-2",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-imperfecta-con-riesgo-de-morbilidad-2",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "An imperfect test with morbidity risk",
-    "text": "An imperfect test with morbidity risk\n\n\nWhen the test is imperfect, testing is still the best strategy (in this case, the lower EV, the better since our outcome values are the probability of a bad outcome), but not by much:"
+    "section": "Una prueba imperfecta con riesgo de morbilidad",
+    "text": "Una prueba imperfecta con riesgo de morbilidad\n\n\nCuando la prueba es imperfecta, probar sigue siendo la mejor estrategia (en este caso, cuanto menor sea el VE, mejor, ya que nuestros valores de resultado son la probabilidad de un mal resultado), pero no por mucho:"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-4",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-4",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información-1",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información-1",
     "title": "Treatment Thresholds & Value of Information",
-    "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information\n\nWhen the test is IMPERFECT: \n\nEV(test strategy) = 0.157\nEV(treat strategy) = 0.16\nEV(no treat strategy) = 0.24 (worst EV)\n\n\n\nVOI = |EV ‘test’ – EV ‘next best strategy’|\n= |0.157 – 0.16| = 0.003,\nor 3 deaths prevented per 1000 tests because of the additional testing information"
+    "section": "Pruebas y valor esperado de la información",
+    "text": "Pruebas y valor esperado de la información\n\nCuando la prueba es IMPERFECTA: \n\nEV(estrategia de prueba) = 0.157\nEV(estrategia de tratamiento) = 0,16\nEV(sin estrategia de tratamiento) = 0,24 (peor EV)\n\n\n\nVOI = |EV ‘prueba’ – EV ‘siguiente mejor estrategia’||\n= |0.157 – 0.16| = 0.003,\no 3 muertes evitadas por cada 1000 pruebas gracias a la información adicional de las pruebas. información\n\n\n\n\n\nBack to Website"
   },
   {
     "objectID": "lectures/lec_2.decision-trees-and-probabilities.html#learning-objectives",
@@ -4225,7 +4232,7 @@
     "href": "index.html",
     "title": "Taller de análisis de decisiones",
     "section": "",
-    "text": "Completion Certificates?\nStill need to translate VOI / thresholds lecture.\nGunpowder/Fireworks Case Studies\n\nDecision tree with life expectancy outcomes\nMarkov model with cost and QALY outcomes.\nPolicy scenarios?\n\nWeek of June 3: Finish slide and existing case study translations.\nWeek of June 10: Finalize gunpowder/firework case studies.\n\n\nCalendario de talleres\n\n\n\n\n\n\n\n\n\nFecha\nHora programada\nTema\nNotas\n\n\n\n\nMartes\n9:00 - 9:30 am\nBienvenida y presentaciones\nWelcome\n\n\n\n9:30 - 10:00\nIntroducción al análisis de decisiones\nEnglish slides\nIntroduction to Decision Analysis\n\n\n\n10:00-11:00\nÁrboles de decisión y probabilidades\nEnglish slides\nDecision Trees\n\n\n\n11:00-11:15\nCafé\nBreak\n\n\n\n11:15 - 12:00\nCaso de estudio: Probabilidades y árboles de decisión\nCase Study: Decision Trees\n\n\n\n12:00 - 1:15 pm\nCafé\nBreak\n\n\n\n1:45 - 2:45 pm\nCaso de estudio: Construir un árbol de decisión en Excel\nCase Study: Excel\n\n\n\n2:45 - 4:00 pm\nCaso de estudio: Construir un árbol de decisión en Amua\nCase Study: Amua\n\n\nMiércoles\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nUmbrales de tratamiento y valor de la información\nTreatment Thresholds and Value of Information\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:30\nFundamentos CEA 1: Costos\nEnglish slides\nCosts\n\n\n\n11:30 - 11:45\nCafé\nBreak\n\n\n\n11:45 - 1:00\nFundamentos CEA 2: Resultados sanitarios\nEnglish slides\nHealth Outcomes\n\n\n\n1:00 - 2:15\nAlmuerzo\nLunch\n\n\n\n2:15 - 3:15\nCaso de estudio: Lesiones por fuegos artificiales y pólvora\nFirework Case Study (Decision Tree)\n\n\n\n3:15 - 4:30\nFundamentos del ACE 3: Análisis coste-eficacia incremental\nEnglish slides\nICERs\n\n\n\n\n\n\n\n\nJueves\n9:00-9:15\nResumen diario\n\n\n\n\n9:15 - 10:30\nCaso de estudio: Análisis coste-eficacia incremental\nCase Study: ICERs\n\n\n\n10:30 - 12:00\nModelos de Markov\nEnglish slides\n\n\n\n12:00 - 1:15\nCafé\n\n\n\n\n1:15 - 4:00\nCaso de estudio: Modelos de Markov\nCase Study: Firework Injury Model (Markov)\n\n\n\n\n\n\n\n\nViernes\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nAnálisis determinista y de escenarios\nEnglish slides\nDeterministic and Sensitivity Analysis\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:15\nTécnicas avanzadas de modelización\nEnglish slides\nAdvanced modeling techniques\n\n\n\n11:15 - 11:45\nCeremonia de entrega de certificados\nClosing Ceremony"
+    "text": "Completion Certificates?\nStill need to translate VOI / thresholds lecture.\nGunpowder/Fireworks Case Studies\n\nDecision tree with life expectancy outcomes\nMarkov model with cost and QALY outcomes.\nPolicy scenarios?\n\nHeavily regulated\nBan fireworks completely\n\n\nWeek of June 3: Finish slide and existing case study translations.\nWeek of June 10: Finalize gunpowder/firework case studies.\n\n\nCalendario de talleres\n\n\n\n\n\n\n\n\n\nFecha\nHora programada\nTema\nNotas\n\n\n\n\nMartes\n9:00 - 9:30 am\nBienvenida y presentaciones\nWelcome\n\n\n\n9:30 - 10:00\nIntroducción al análisis de decisiones\nEnglish slides\nIntroduction to Decision Analysis\n\n\n\n10:00-11:00\nÁrboles de decisión y probabilidades\nEnglish slides\nDecision Trees\n\n\n\n11:00-11:15\nCafé\nBreak\n\n\n\n11:15 - 12:00\nCaso de estudio: Probabilidades y árboles de decisión\nCase Study: Decision Trees\n\n\n\n12:00 - 1:15 pm\nCafé\nBreak\n\n\n\n1:45 - 2:45 pm\nCaso de estudio: Construir un árbol de decisión en Excel\nCase Study: Excel\n\n\n\n2:45 - 4:00 pm\nCaso de estudio: Construir un árbol de decisión en Amua\nCase Study: Amua\n\n\nMiércoles\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nUmbrales de tratamiento y valor de la información\nTreatment Thresholds and Value of Information\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:30\nFundamentos CEA 1: Costos\nEnglish slides\nCosts\n\n\n\n11:30 - 11:45\nCafé\nBreak\n\n\n\n11:45 - 1:00\nFundamentos CEA 2: Resultados sanitarios\nEnglish slides\nHealth Outcomes\n\n\n\n1:00 - 2:15\nAlmuerzo\nLunch\n\n\n\n2:15 - 3:15\nCaso de estudio: Lesiones por fuegos artificiales y pólvora\nFirework Case Study (Decision Tree)\n\n\n\n3:15 - 4:30\nFundamentos del ACE 3: Análisis coste-eficacia incremental\nEnglish slides\nICERs\n\n\n\n\n\n\n\n\nJueves\n9:00-9:15\nResumen diario\n\n\n\n\n9:15 - 10:30\nCaso de estudio: Análisis coste-eficacia incremental\nCase Study: ICERs\n\n\n\n10:30 - 12:00\nModelos de Markov\nEnglish slides\n\n\n\n12:00 - 1:15\nCafé\n\n\n\n\n1:15 - 4:00\nCaso de estudio: Modelos de Markov\nCase Study: Firework Injury Model (Markov)\n\n\n\n\n\n\n\n\nViernes\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nAnálisis determinista y de escenarios\nEnglish slides\nDeterministic and Sensitivity Analysis\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:15\nTécnicas avanzadas de modelización\nEnglish slides\nAdvanced modeling techniques\n\n\n\n11:15 - 11:45\nCeremonia de entrega de certificados\nClosing Ceremony"
   },
   {
     "objectID": "case-studies/markov-injury.html",
