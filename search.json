@@ -32,7 +32,7 @@
     "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-2",
     "title": "Umbrales de tratamiento y valor de la información",
     "section": "Umbrales de tratamiento",
-    "text": "Umbrales de tratamiento\n\n\n\n\n¿Qué ocurriría si la probabilidad de EP recurrente fuera mayor o menor que la estimada inicialmente? estimada inicialmente?\n\n\n\n\n\n¿Anticoagulamos o no?\n¿En qué momento pasamos del “sí” al “no”?"
+    "text": "Umbrales de tratamiento\n\n\n\n\n¿Qué ocurriría si la probabilidad de EP recurrente fuera mayor o menor que la estimada inicialmente?\n\n\n\n\n\n¿Anticoagulamos o no?\n¿En qué momento pasamos del “sí” al “no”?"
   },
   {
     "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-3",
@@ -53,7 +53,7 @@
     "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-5",
     "title": "Umbrales de tratamiento y valor de la información",
     "section": "Umbrales de tratamiento",
-    "text": "Umbrales de tratamiento\n\n\nValor esperado (AC) = 0.990 * pPE + 0.992 * (1-pPE)\nValor esperado (No AC) = 0.750 * pPE + 1.0 * (1-pPE)\nAHORA, AJUSTAR IGUAL A CADA UNO, para resolver la probabilidad umbral desconocida"
+    "text": "Umbrales de tratamiento\n\n\nValor esperado (AC) = 0.990 * pPE + 0.992 * (1-pPE)\nValor esperado (No AC) = 0.750 * pPE + 1.0 * (1-pPE)\nAHORA, ESTABLECE IGUAL A LOS DOS, para resolver la probabilidad de un umbral desconocida"
   },
   {
     "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-6",
@@ -109,21 +109,21 @@
     "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information",
     "title": "Umbrales de tratamiento y valor de la información",
     "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information\n\n\n\nEn teoría, la información puede ser perfecta, gratuita y sin riesgos, pero ¡normalmente NO LO ES!\nLa información es casi siempre IMPERFECTA\nObtener información suele TENER UN COSTE"
+    "text": "Testing & expected value of information\n\n\n\nEn teoría, la información puede ser perfecta, gratuita y sin riesgos, pero ¡normalmente NO LO ES!\nLa información es casi siempre IMPERFECTA\nObtener información suele TENER UN COSTO"
   },
   {
     "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-1",
     "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-1",
     "title": "Umbrales de tratamiento y valor de la información",
     "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information\n\n\nEl valor de la información pregunta: ¿Qué ganamos con esta información adicional? adicional?\n\n\n\nValor de la información =\n|[valor esperado de la estrategia “obtener información] –\n[valor esperado de la siguiente mejor estrategia]|"
+    "text": "Testing & expected value of information\n\n\nEl valor de la información pregunta: ¿Qué ganamos con esta información adicional?\n\n\n\nValor de la información =\n|[valor esperado de la estrategia “obtener información] –\n[valor esperado de la siguiente mejor estrategia]|"
   },
   {
     "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-2",
     "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-2",
     "title": "Umbrales de tratamiento y valor de la información",
     "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information\n\nLas pruebas PERFECT nos dan un límite superior del beneficio potencial de cualquier prueba\n\n\n\nLa ganancia de esta prueba PERFECTA imaginaria es el valor esperado de la información perfecta (EVPI)"
+    "text": "Testing & expected value of information\n\nLas pruebas PERFECTAS nos dan un límite superior del beneficio potencial de cualquier prueba\n\n\n\nLa ganancia de esta prueba PERFECTA es el valor esperado de la información perfecta (EVPI)"
   },
   {
     "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información",
@@ -133,18 +133,18 @@
     "text": "Pruebas y valor esperado de la información"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-perfecta-100-sens-y-spec-sin-riesgo",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-perfecta-100-sens-y-spec-sin-riesgo",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-perfecta-100-sensitividad-y-specificidad-sin-riesgo",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-perfecta-100-sensitividad-y-specificidad-sin-riesgo",
     "title": "Umbrales de tratamiento y valor de la información",
-    "section": "Una prueba perfecta (100% sens y spec) sin riesgo",
-    "text": "Una prueba perfecta (100% sens y spec) sin riesgo"
+    "section": "Una prueba perfecta (100% sensitividad y specificidad) sin riesgo",
+    "text": "Una prueba perfecta (100% sensitividad y specificidad) sin riesgo"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-perfecta-100-sens-y-spec-sin-riesgo-1",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-perfecta-100-sens-y-spec-sin-riesgo-1",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-perfecta-100-sensitividad-y-specificidad-sin-riesgo-1",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-perfecta-100-sensitividad-y-specificidad-sin-riesgo-1",
     "title": "Umbrales de tratamiento y valor de la información",
-    "section": "Una prueba perfecta (100% sens y spec) sin riesgo",
-    "text": "Una prueba perfecta (100% sens y spec) sin riesgo\n\n\n\n\n\n\nEV(prueba perfecta) = 0.12\nEV(estrategia de tratamiento) = 0.16\nEV(estrategia de no tratar) = 0.24 (worst EV)\n\nEVPI =\n|EV ‘prueba perfecta’ – EV ‘siguiente mejor estrategia: tratar a todos’|\n=|0.12 – 0.16| = 0.04,\no 4 muertes evitadas por cada 100 pruebas gracias a las pruebas adicionales información"
+    "section": "Una prueba perfecta (100% sensitividad y specificidad) sin riesgo",
+    "text": "Una prueba perfecta (100% sensitividad y specificidad) sin riesgo\n\n\n\n\n\n\nEV(prueba perfecta) = 0.12\nEV(estrategia de tratamiento) = 0.16\nEV(estrategia de no tratar) = 0.24 (peor EV)\n\nEVPI =\n|EV ‘prueba perfecta’ – EV ‘siguiente mejor estrategia: tratar a todos’|\n=|0.12 – 0.16| = 0.04,\no 4 muertes evitadas por cada 100 pruebas gracias a la información adicional de la prueba"
   },
   {
     "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-imperfecta-con-riesgo-de-morbilidad",
@@ -172,7 +172,7 @@
     "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información-1",
     "title": "Umbrales de tratamiento y valor de la información",
     "section": "Pruebas y valor esperado de la información",
-    "text": "Pruebas y valor esperado de la información\n\nCuando la prueba es IMPERFECTA: \n\nEV(estrategia de prueba) = 0.157\nEV(estrategia de tratamiento) = 0,16\nEV(sin estrategia de tratamiento) = 0,24 (peor EV)\n\n\n\nVOI = |EV ‘prueba’ – EV ‘siguiente mejor estrategia’||\n= |0.157 – 0.16| = 0.003,\no 3 muertes evitadas por cada 1000 pruebas gracias a la información adicional de las pruebas. información\n\n\n\n\n\nVolver al sitio web"
+    "text": "Pruebas y valor esperado de la información\n\nCuando la prueba es IMPERFECTA: \n\nEV(estrategia de prueba) = 0,157\nEV(estrategia de tratamiento) = 0,16\nEV(estrategia de no tratar) = 0,24 (peor EV)\n\n\n\nVOI = |EV ‘prueba’ – EV ‘siguiente mejor estrategia’||\n= |0.157 – 0.16| = 0.003,\no 3 muertes evitadas por cada 1.000 pruebas gracias a la información adicional de las pruebas.\n\n\n\n\n\nVolver al sitio web"
   },
   {
     "objectID": "lectures/lec_2.decision-trees-and-probabilities.html#learning-objectives",
@@ -562,373 +562,373 @@
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#objetivos-de-aprendizaje",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#objetivos-de-aprendizaje",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Objetivos de aprendizaje",
-    "text": "Objetivos de aprendizaje\n\nIdentificar las diferencias teóricas y metodológicas entre diferentes técnicas de evaluación económica\nComprender los fundamentos del análisis coste-eficacia\nDescribir los pasos para valorar los costes en las evaluaciones económicas & Identificar las formas de curar los parámetros de costes"
+    "text": "Objetivos de aprendizaje\n\nIdentificar las diferencias teóricas y metodológicas entre diferentes técnicas de evaluación económica\nComprender los fundamentos del análisis costo-efectividad\nDescribir los pasos para valorar los costos en las evaluaciones económicas & identificar las formas de seleccionar los parámetros de costos"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#esquema",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#esquema",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Esquema",
-    "text": "Esquema\n\n\nIntroducción a las evaluaciones económicas\nValoración de costes"
+    "text": "Esquema\n\n\nIntroducción a las evaluaciones económicas\nValoración de costos"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#hasta-aquí",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#hasta-aquí",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Hasta aquí…",
     "text": "Hasta aquí…\nHemos tocado el marco básico del análisis de decisiones, centrándonos en: \n\n\n\n\n\n\nÁrboles de decisión y probabilidades\n\n\n\n\n\n\n\n\n\nTeorema de Bayes & la importancia de incorporar información en las pruebas, incluido el valor de esta información adicional\n\n\n\n\n\n\n\n\n\nUmbrales de tratamiento y construcción de árboles de decisión en distintos programas de software"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#today",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#today",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Today…",
-    "text": "Today…\n\n\nTocaremos algunos de los conceptos básicos para representar costes y beneficios para la salud en los problemas de decisión problemas de decisión"
+    "text": "Today…\n\n\nTocaremos algunos de los conceptos básicos para representar costos y beneficios para la salud en los problemas de decisión"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#evaluación-económica",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#evaluación-económica",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Evaluación económica",
-    "text": "Evaluación económica\n\n\n\nRelevante cuando las alternativas de decisión tienen diferentes costes y consecuencias para la salud. consecuencias para la salud.\nQueremos medir el valor relativo de una estrategia en comparación con otras.\nEsto puede ayudarnos a tomar decisiones de asignación de recursos ante restricciones (por ejemplo, presupuestarias)."
+    "text": "Evaluación económica\n\n\n\nRelevante cuando las alternativas de decisión tienen diferentes costos y consecuencias para la salud.\nQueremos medir el valor relativo de una estrategia en comparación con otras.\nEsto puede ayudarnos a tomar decisiones de asignación de recursos ante limitaciones (por ejemplo, presupuestarias)."
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#características-de-la-evaluación-económica",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#características-de-la-evaluación-económica",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Características de la evaluación económica",
-    "text": "Características de la evaluación económica\n\n\n Cuantificación sistemática de costes y consecuencias.\n\n\n\n Análisis comparativo de cursos de acción alternativos. de acción.\n\nNos centraremos en esto en la próxima clase."
+    "text": "Características de la evaluación económica\n\n\n Cuantificación sistemática de costos y consecuencias.\n\n\n\n Análisis comparativo de cursos de acción alternativos. de acción.\n\nNos centraremos en esto en la próxima sesión."
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#técnicas-de-evaluación-económica",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#técnicas-de-evaluación-económica",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Técnicas de evaluación económica",
-    "text": "Técnicas de evaluación económica\n\n\n\n\n\n\n\n\n\n\nTipo de estudio\nMedición/valoración de costes\nIdentificación de consecuencias\nMedición / valoración de consecuencias\n\n\n\n\nAnálisis de costes\nUnidades monetarias\nNinguno\nNinguno\n\n\n\n\nFuente: [@drummond2015a]"
+    "text": "Técnicas de evaluación económica\n\n\n\n\n\n\n\n\n\n\nTipo de estudio\nMedición/valoración de costos\nIdentificación de consecuencias\nMedición / valoración de consecuencias\n\n\n\n\nAnálisis de costos\nUnidades monetarias\nNinguno\nNinguno\n\n\n\n\nFuente: [@drummond2015a]"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-de-costes",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-de-costes",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Análisis de costes",
-    "text": "Análisis de costes\n\nSólo tiene en cuenta los costes sanitarios\nRelevante cuando las opciones alternativas son igual de eficaces (proporcionan beneficios iguales)\n\nRara vez es así en la realidad\n\nLos costes se valoran en términos monetarios (por ejemplo, dólares estadounidenses)\nCriterio de decisión: a menudo minimizar el coste"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-de-costos",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-de-costos",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Análisis de costos",
+    "text": "Análisis de costos\n\nSólo tiene en cuenta los costos sanitarios\nRelevante cuando las opciones alternativas son igual de eficaces (proporcionan beneficios iguales)\n\nRaras veces es así en la realidad\n\nLos costos se valoran en términos monetarios (por ejemplo, dólares estadounidenses)\nCriterio de decisión: normalmente, minimizar el costo"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#técnicas-de-evaluación-económica-1",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#técnicas-de-evaluación-económica-1",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Técnicas de evaluación económica",
-    "text": "Técnicas de evaluación económica\n\n\n\n\n\n\n\n\n\n\nTipo de estudio\nMedición/Valoración de costes ambas alternativas\nIdentificación de consecuencias\nMedición/Valoración de consecuencias\n\n\n\n\nAnálisis de costes\nUnidades monetarias\nNinguno\nNinguno\n\n\nAnálisis coste-efectividad\nUnidades monetarias\nEfecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados.\nUnidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.)\n\n\n\n\nFuente: [@drummond2015a]"
+    "text": "Técnicas de evaluación económica\n\n\n\n\n\n\n\n\n\n\nTipo de estudio\nMedición/Valoración de costos ambas alternativas\nIdentificación de consecuencias\nMedición/Valoración de consecuencias\n\n\n\n\nAnálisis de costos\nUnidades monetarias\nNinguno\nNinguno\n\n\nAnálisis costo-efectividad\nUnidades monetarias\nEfecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados.\nUnidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.)\n\n\n\n\nFuente: [@drummond2015a]"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-coste-efectividad-ace",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-coste-efectividad-ace",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Análisis Coste-Efectividad (ACE)",
-    "text": "Análisis Coste-Efectividad (ACE)\n\n\n\nMás útil cuando los responsables de la toma de decisiones consideran múltiples opciones dentro de un presupuesto, y el resultado relevante es común a todas las estrategias\n\n\n\n\nLos costes se valoran en términos monetarios ($)\nLos beneficios se valoran en términos de resultados clínicos (por ejemplo, casos prevenidos o curados, vidas salvadas, años de vida ganados, años de vida ganados ajustados a la calidad)\nLos resultados se presentan como una relación coste-eficacia"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-efectividad-ace",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-efectividad-ace",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Análisis Costo-Efectividad (ACE)",
+    "text": "Análisis Costo-Efectividad (ACE)\n\n\n\nMás útil cuando los responsables de la toma de decisiones consideran múltiples opciones dentro de un presupuesto, y el resultado relevante es común a todas las estrategias\n\n\n\n\nLos costos se valoran en términos monetarios ($)\nLos beneficios se valoran en términos de resultados clínicos (por ejemplo, casos prevenidos o curados, vidas salvadas, años de vida ganados, años de vida ganados ajustados a la calidad)\nLos resultados se presentan como una relación costo-efectividad"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-coste-efectividad",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-coste-efectividad",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Análisis Coste-Efectividad",
-    "text": "Análisis Coste-Efectividad\n\n\nSupongamos que nos interesa la prolongación de la vida tras una intervención.\nResultado de interés: años de vida ganados.\nEl resultado es común a las estrategias alternativas; sólo difieren en la magnitud de los años de vida ganados. en la magnitud de los años de vida ganados.\nPodemos presentar los resultados en términos de $/años de vida ganados"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-efectividad",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-efectividad",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Análisis Costo-Efectividad",
+    "text": "Análisis Costo-Efectividad\n\n\nSupongamos que nos interesa la prolongación de la vida tras una intervención.\nResultado de interés: años de vida ganados.\nEl resultado es común a las estrategias alternativas; sólo difieren en la magnitud de los años de vida ganados.\nPodemos presentar los resultados en términos de $/años de vida ganados"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#técnicas-de-evaluación-económica-2",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#técnicas-de-evaluación-económica-2",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Técnicas de evaluación económica",
-    "text": "Técnicas de evaluación económica\n\n\n\n\n\n\n\n\n\nTipo de estudio\nMedición/valoración de los costes de ambas alternativas\nIdentificación de las consecuencias\nMedición/valoración de las consecuencias\n\n\n\n\nAnálisis de costes\nUnidades monetarias\nNinguno\nNinguno\n\n\nAnálisis coste-eficacia\nUnidades monetarias\nEfecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados\nUnidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.)\n\n\nAnálisis coste-utilidad\nUnidades monetarias\nEfectos únicos o múltiples, no necesariamente comunes a ambas alternativas.\nAños de vida con buena salud (medidos normalmente como años de vida ajustados por calidad)\n\n\n\n\nFuente: [@drummond2015a]"
+    "text": "Técnicas de evaluación económica\n\n\n\n\n\n\n\n\n\nTipo de estudio\nMedición/valoración de los costos de ambas alternativas\nIdentificación de las consecuencias\nMedición/valoración de las consecuencias\n\n\n\n\nAnálisis de costos\nUnidades monetarias\nNinguno\nNinguno\n\n\nAnálisis costo-efectividad\nUnidades monetarias\nEfecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados\nUnidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.)\n\n\nAnálisis costo-utilidad\nUnidades monetarias\nEfectos únicos o múltiples, no necesariamente comunes a ambas alternativas.\nAños de vida con buena salud (medidos normalmente como años de vida ajustados por calidad)\n\n\n\n\nFuente: [@drummond2015a]"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-coste-utilidad",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-coste-utilidad",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Análisis Coste-Utilidad",
-    "text": "Análisis Coste-Utilidad\n\n\nEsencialmente una variante del análisis coste-efectividad.\nCaracterística principal: uso de medida genérica de salud.\nAño de vida ajustado por calidad (AVAC): Una métrica que refleja tanto como la calidad de vida (dolor, función o ambos). ambos).\nEs, con diferencia, la forma de evaluación económica más publicada.\n\n\n\n\n\n\n\n\n\nA lo largo del taller nos centraremos principalmente en el ACE (especialmente en el ACU)."
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-utilidad",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-utilidad",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Análisis Costo-Utilidad",
+    "text": "Análisis Costo-Utilidad\n\n\nEsencialmente una variante del análisis costo-efectividad.\nCaracterística principal: uso de medida genérica de salud.\nAño de vida ajustado por calidad (AVAC): Una métrica que refleja tanto como la calidad de vida (dolor, función o ambos).\nEs la forma de evaluación económica más publicada.\n\n\n\n\n\n\n\n\n\nA lo largo del taller nos centraremos principalmente en el ACE (especialmente en el ACU)."
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#técnicas-de-evaluación-económica-3",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#técnicas-de-evaluación-económica-3",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Técnicas de evaluación económica",
-    "text": "Técnicas de evaluación económica\n\n\n\n\n\n\n\n\n\n\nTipo de estudio\nMedición/valoración de costes ambas alternativas\nIdentificación de consecuencias\nMedición/valoración de consecuencias\n\n\n\n\nAnálisis de costes\nUnidades monetarias\nNinguno\nNinguno\n\n\nAnálisis coste-eficacia\nUnidades monetarias\nEfecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados\nUnidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.)\n\n\nAnálisis coste-utilidad\nUnidades monetarias\nEfectos únicos o múltiples, no necesariamente comunes a ambas alternativas\nAños de vida saludable (medidos normalmente como años de vida ajustados por calidad)\n\n\nAnálisis coste-beneficio Unidades monetarias Efectos únicos o múltiples, no necesariamente comunes a ambas alternativas Unidades monetarias"
+    "text": "Técnicas de evaluación económica\n\n\n\n\n\n\n\n\n\n\nTipo de estudio\nMedición/valoración de costos ambas alternativas\nIdentificación de consecuencias\nMedición/valoración de consecuencias\n\n\n\n\nAnálisis de costos\nUnidades monetarias\nNinguno\nNinguno\n\n\nAnálisis costo-efectividad\nUnidades monetarias\nEfecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados\nUnidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.)\n\n\nAnálisis costo-utilidad\nUnidades monetarias\nEfectos únicos o múltiples, no necesariamente comunes a ambas alternativas\nAños de vida saludable (medidos normalmente como años de vida ajustados por calidad)\n\n\nAnálisis costo-beneficio\nUnidades monetarias\nEfectos únicos o múltiples, no necesariamente comunes a ambas alternativas\nUnidades monetarias"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-coste-beneficio",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-coste-beneficio",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Análisis Coste-Beneficio",
-    "text": "Análisis Coste-Beneficio\n\nTambién conocido como Análisis Coste-Beneficio\nRelevante para la asignación de recursos entre sanidad y otras áreas (por ejemplo, la educación)\nLos costes y las consecuencias para la salud se valoran en términos monetarios (p. ej, dólares estadounidenses).\nLa valoración de las consecuencias sanitarias en términos monetarios ($) se obtiene se obtiene estimando la disposición de los individuos a pagar salvar vidas o mejorar la salud.\n\nPor ejemplo, en EE.UU. se estima que el valor por vida estadística es de 9 millones de dólares.\n\nCriterio coste-beneficio: los beneficios de un programa son superiores a sus costes.\n\nObsérvese que no estamos haciendo comparaciones *entre sólo comparaciones de costes y beneficios de la misma estrategia. estrategia]{style=“background-color: yellow;”}\n\nPara saber más: Robinson et al, 2019"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-beneficio",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-beneficio",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Análisis Costo-Beneficio",
+    "text": "Análisis Costo-Beneficio\n\nRelevante para la asignación de recursos entre sanidad y otras áreas (por ejemplo, la educación)\nLos costos y las consecuencias para la salud se valoran en términos monetarios (p. ej, dólares estadounidenses).\nLa valoración de las consecuencias sanitarias en términos monetarios ($) se obtiene estimando la disposición de los individuos a pagar para salvar vidas o mejorar la salud.\n\nPor ejemplo, en EE.UU. se estima que el valor por vida estadística es de 9 millones de dólares.\n\nCriterio costo-beneficio: los beneficios de un programa son superiores a sus costos.\n\nObsérvese que no estamos haciendo comparaciones entre estrategias, sólo comparaciones de costos y beneficios de la misma estrategia. estrategia]{style=“background-color: yellow;”}\n\nPara saber más: Robinson et al, 2019"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-coste-beneficio-1",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-coste-beneficio-1",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Análisis coste-beneficio",
-    "text": "Análisis coste-beneficio\n\nhttps://pubmed.ncbi.nlm.nih.gov/28183740/"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-beneficio-1",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-beneficio-1",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Análisis Costo-Beneficio",
+    "text": "Análisis Costo-Beneficio\n\nhttps://pubmed.ncbi.nlm.nih.gov/28183740/"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-coste-beneficio-2",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-coste-beneficio-2",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Análisis Coste-Beneficio",
-    "text": "Análisis Coste-Beneficio\n\nhttps://www.cambridge.org/core/product/identifier/S2194588818000271/type/journal_article"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-beneficio-2",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-beneficio-2",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Análisis Costo-Beneficio",
+    "text": "Análisis Costo-Beneficio\n\nhttps://www.cambridge.org/core/product/identifier/S2194588818000271/type/journal_article"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#volvemos-al-análisis-coste-efectividad",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#volvemos-al-análisis-coste-efectividad",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "¡Volvemos al Análisis Coste-Efectividad!",
-    "text": "¡Volvemos al Análisis Coste-Efectividad!\n\n\nRelevante cuando las alternativas sanitarias tienen diferentes costes y consecuencias para la salud consecuencias para la salud \n\n\n \\frac{\\text{(Coste Intervención A - Coste Intervención B)}}{\\text{(Beneficio A - Beneficio B)}}\n\n\nEl VALOR relativo de una intervención en comparación con su alternativa se expresa en forma de RATIO coste-eficacia (¡el tema central de la próxima conferencia)\n\n\n\nEl análisis coste-eficacia es pertinente cuando las alternativas sanitarias entre diferentes servicios/intervenciones tienen costes DIFERENTES Y consecuencias para la salud EJEMPLO: Diferentes tipos de quimioterapia\nUn RESULTADO CLAVE en los análisis coste-efectividad es lo que se denomina RCEI [o ratio coste-efectividad incremental], que nos da el valor relativo de una intervención frente a una alternativa.\nEn otras palabras, EL PRECIO POR UNIDAD DE BENEFICIO de una intervención sobre la otra\nEn las próximas semanas impartiremos 2 clases completas sobre los ICER y cómo interpretar estos ratios entre intervenciones. interpretar estos ratios entre intervenciones En lo que nos centraremos HOY en los componentes que forman el numerador (es decir, los COSTES) y el denominador (es decir, los BENEFICIOS). el denominador (es decir, los BENEFICIOS)\nLO IMPORTANTE: Al estimar la magnitud de los resultados y los costes de las intervenciones, los análisis de rentabilidad pueden mostrar las ventajas y desventajas de las distintas intervenciones y, por tanto, contribuir a mejorar la toma de decisiones"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#volvemos-al-análisis-costo-efectividad",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#volvemos-al-análisis-costo-efectividad",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "¡Volvemos al Análisis Costo-Efectividad!",
+    "text": "¡Volvemos al Análisis Costo-Efectividad!\n\n\nRelevante cuando las alternativas sanitarias tienen diferentes costos y consecuencias para la salud consecuencias para la salud \n\n\n \\frac{\\text{(Costo Intervención A - Costo Intervención B)}}{\\text{(Beneficio A - Beneficio B)}}\n\n\nEl VALOR relativo de una intervención en comparación con su alternativa se expresa en forma de RATIO costo-efectividad (¡el tema central de la próxima sesión)\n\n\n\nEl análisis costo-efectividad es pertinente cuando las alternativas sanitarias entre diferentes servicios/intervenciones tienen costos DIFERENTES Y consecuencias para la salud EJEMPLO: Diferentes tipos de quimioterapia\nUn RESULTADO CLAVE en los análisis costo-efectividad es lo que se denomina RCEI [o ratio costo-efectividad incremental], que nos da el valor relativo de una intervención frente a una alternativa.\nEn otras palabras, EL PRECIO POR UNIDAD DE BENEFICIO de una intervención sobre la otra\nEn las próximas semanas impartiremos 2 clases completas sobre los ICER y cómo interpretar estos ratios entre intervenciones. interpretar estos ratios entre intervenciones En lo que nos centraremos HOY en los componentes que forman el numerador (es decir, los COSTOS) y el denominador (es decir, los BENEFICIOS). el denominador (es decir, los BENEFICIOS)\nLO IMPORTANTE: Al estimar la magnitud de los resultados y los costos de las intervenciones, los análisis de rentabilidad pueden mostrar las ventajas y desventajas de las distintas intervenciones y, por tanto, contribuir a mejorar la toma de decisiones"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#quién-utiliza-las-evaluaciones-económicas",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#quién-utiliza-las-evaluaciones-económicas",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "¿Quién utiliza las evaluaciones económicas?",
-    "text": "¿Quién utiliza las evaluaciones económicas?\n\n\nComités Asesores de Tecnología Sanitaria\n\nNICE (The National Institute for Health and Care Excellence, REINO UNIDO)\nAgencia de Medicamentos y Tecnología Sanitaria de Canadá (Drug and Health Technology Agency)\nPBAC (Comité Asesor sobre Beneficios Farmacéuticos en Australia)\nInstituto de evaluación de tecnologías sanitarias de Brasil.\n\nGrupos que elaboran directrices clínicas\n\nOMS\nCDC\nOrganizaciones de enfermedades específicas: Sociedad Americana del Cáncer Asociación Americana del Corazón; Organización Europea del Ictus\n\nAgencias reguladoras:\n\nFDA (Administración de Alimentos y Medicamentos de EE.UU.)\nEPA (Agencia de Protección del Medio Ambiente de Estados Unidos)\n\n\n\n\nSi nos fijamos en cómo se utiliza la relación coste-eficacia en todo el mundo –\nA diferencia de Estados Unidos, los gobiernos de muchos países tienen sus propios que realizan evaluaciones formales de la relación coste-eficacia de los algunos de los cuales son\n\nEl Reino Unido - que es un sistema de pagador único conocido como el NHS & tiene un organismo independiente llamado NICE que evalúa la relación coste-eficacia NICE recomienda al NHS lo que debe cubrir en función de su VALOR. NICE recomienda al NHS lo que debe cubrir basándose en el VALOR (es decir, la rentabilidad).\n\n\nEl NHS está legalmente obligado a financiar los medicamentos y tratamientos recomendados por el NICE. recomendados por el NICE\n\n\nCanadá también tiene un organismo de evaluación de tecnologías sanitarias llamado Agencia Canadiense de Medicamentos y Tecnologías Sanitarias (CADTH), que funciona de forma similar al NICE\nY del mismo modo, Australia, así como Brasil, Alemania, Francia, Italia, Suecia, Países Bajos, etc., tienen instituciones gubernamentales similares. similares\nEntre los grupos que elaboran directrices clínicas sobre la ACE se encuentran…"
+    "text": "¿Quién utiliza las evaluaciones económicas?\n\n\nComités Asesores de Tecnología Sanitaria\n\nNICE (The National Institute for Health and Care Excellence, REINO UNIDO)\nAgencia de Medicamentos y Tecnología Sanitaria de Canadá (Drug and Health Technology Agency)\nPBAC (Comité Asesor sobre Beneficios Farmacéuticos en Australia)\nInstituto de evaluación de tecnologías sanitarias de Brasil.\n\nGrupos que elaboran directrices clínicas\n\nOMS\nCDC\nOrganizaciones de enfermedades específicas: Sociedad Americana del Cáncer Asociación Americana del Corazón; Organización Europea del Ictus\n\nAgencias reguladoras:\n\nFDA (Administración de Alimentos y Medicamentos de EE.UU.)\nEPA (Agencia de Protección del Medio Ambiente de Estados Unidos)\n\n\n\n\nSi nos fijamos en cómo se utiliza la relación costo-efectividad en todo el mundo –\nA diferencia de Estados Unidos, los gobiernos de muchos países tienen sus propios que realizan evaluaciones formales de la relación costo-efectividad de los algunos de los cuales son\n\nEl Reino Unido - que es un sistema de pagador único conocido como el NHS & tiene un organismo independiente llamado NICE que evalúa la relación costo-efectividad NICE recomienda al NHS lo que debe cubrir en función de su VALOR. NICE recomienda al NHS lo que debe cubrir basándose en el VALOR (es decir, la rentabilidad).\n\n\nEl NHS está legalmente obligado a financiar los medicamentos y tratamientos recomendados por el NICE. recomendados por el NICE\n\n\nCanadá también tiene un organismo de evaluación de tecnologías sanitarias llamado Agencia Canadiense de Medicamentos y Tecnologías Sanitarias (CADTH), que funciona de forma similar al NICE\nY del mismo modo, Australia, así como Brasil, Alemania, Francia, Italia, Suecia, Países Bajos, etc., tienen instituciones gubernamentales similares. similares\nEntre los grupos que elaboran directrices clínicas sobre la ACE se encuentran…"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#identificación-de-alternativas",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#identificación-de-alternativas",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Identificación de alternativas",
-    "text": "Identificación de alternativas\n\n\nLa modelización de decisiones/evaluación económica requiere identificar estrategias o cursos de acción alternativos.\nEstas alternativas podrían incluir diferentes terapias / políticas / tecnologías.\nO bien, nuestras alternativas podrían abarcar diferentes combinaciones o secuencias de tratamiento (por ejemplo, ¿qué dosis? ¿a qué edad empezar?).\n\n\n\n\n\n\n\n\n\nUna vez que hayamos identificado las alternativas, querremos cuantificar sus consecuencias asociadas en términos de:\n\nResultados sanitarios\nCostes"
+    "text": "Identificación de alternativas\n\n\nLa modelización de decisiones/evaluación económica requiere identificar estrategias o cursos de acción alternativos.\nEstas alternativas podrían incluir diferentes terapias / políticas / tecnologías.\nO bien, nuestras alternativas podrían abarcar diferentes combinaciones o secuencias de tratamiento (por ejemplo, ¿qué dosis? ¿a qué edad empezar?).\n\n\n\n\n\n\n\n\n\nUna vez que hayamos identificado las alternativas, queremos cuantificar sus consecuencias en términos de:\n\nResultados sanitarios\nCostos"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#componentes-del-ace",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#componentes-del-ace",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Componentes del ACE",
-    "text": "Componentes del ACE\n\n \\frac{\\text{(Coste Intervención A - Coste Intervención B)}}{\\text{(Beneficio A - Beneficio B)}}\n\n\nA continuación nos adentraremos en los componentes de los análisis coste-efectividad analizando en primer lugar lo que constituye el NUMERADOR de la relación coste-eficacia y, a continuación, profundizaremos en el DENOMINADOR"
+    "text": "Componentes del ACE\n\n \\frac{\\text{(Costo Intervención A - Costo Intervención B)}}{\\text{(Beneficio A - Beneficio B)}}\n\n\nA continuación nos adentraremos en los componentes de los análisis costo-efectividad analizando en primer lugar lo que constituye el NUMERADOR de la relación costo-efectividad y, a continuación, profundizaremos en el DENOMINADOR"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#valoración-de-costes-pasos",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#valoración-de-costes-pasos",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Valoración de costes: Pasos",
-    "text": "Valoración de costes: Pasos\nFuente: Gold 1996, Drummond 2015, Gray 2012) \n\nIdentificar – Estimar las diferentes categorías de recursos probablemente necesarios (por ejemplo, personal quirúrgico, equipo médico, complicaciones quirúrgicas, reingresos)  \nMedir – Estimar qué cantidad de cada categoría de recursos es categoría de recursos (por ejemplo, tipo de personal que realiza la intervención implicado, duración de la estancia postoperatoria, tasas de reingreso)  \nValor – Aplicar costes unitarios a cada categoría de recursos (por ejemplo, escalas salariales del hospital correspondiente o tarifas salariales nacionales para salarios del personal, coste por día de hospitalización para la estancia estancia)"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#valoración-de-costos-pasos",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#valoración-de-costos-pasos",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Valoración de costos: Pasos",
+    "text": "Valoración de costos: Pasos\nFuente: Gold 1996, Drummond 2015, Gray 2012) \n\nIdentificar – Estimar las diferentes categorías de recursos probablemente necesarios (por ejemplo, personal quirúrgico, equipo médico, complicaciones quirúrgicas, reingresos)  \nMedir – Estimar qué cantidad de cada categoría de recursos (por ejemplo, tipo de personal que realiza la intervención implicado, duración de la estancia postoperatoria, tasas de reingreso)  \nValor – Aplicar costos unitarios a cada categoría de recursos (por ejemplo, escalas salariales del hospital correspondiente o tarifas salariales nacionales para salarios del personal, costo por día de hospitalización para la estancia)"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#podemos-identificar-diferentes-tipos-de-costes-sanitarios",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#podemos-identificar-diferentes-tipos-de-costes-sanitarios",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Podemos identificar diferentes tipos de costes sanitarios",
-    "text": "Podemos identificar diferentes tipos de costes sanitarios\n\n\n\nCostes sanitarios directos\n\nHospital, consultorio, hogar, instalaciones\nMedicamentos, procedimientos, pruebas, honorarios profesionales\n\nCostes directos no sanitarios**]{style=“color: #57886C”}\n\nCuidado de niños, gastos de transporte\n\nCostes de tiempo**]{style=“color: #57886C”}\n\nTiempo del paciente recibiendo atención, coste de oportunidad del tiempo\n\nCostes de productividad (‘costes indirectos’)**]{style=“color: #57886C”}\n\n¿Pérdida de la capacidad laboral por morbilidad?\n¿Pérdida de productividad económica por fallecimiento?\n\nCostes sanitarios no relacionados**]{style=“color: #57886C”}\n\nTrayectoria acumulada de los costes sanitarios totales a lo largo del tiempo (no relacionados con intervenciones médicas)"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#podemos-identificar-diferentes-tipos-de-costos-sanitarios",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#podemos-identificar-diferentes-tipos-de-costos-sanitarios",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Podemos identificar diferentes tipos de costos sanitarios",
+    "text": "Podemos identificar diferentes tipos de costos sanitarios\n\n\n\nCostos sanitarios directos\n\nHospital, consultorio, hogar, instalaciones\nMedicamentos, procedimientos, pruebas, honorarios profesionales\n\nCostos directos no sanitarios**]{style=“color: #57886C”}\n\nCuidado de niños, gastos de transporte\n\nCostos de tiempo**]{style=“color: #57886C”}\n\nTiempo del paciente recibiendo atención, costo de oportunidad del tiempo\n\nCostos de productividad (‘costos indirectos’)**]{style=“color: #57886C”}\n\n¿Pérdida de la capacidad laboral por morbilidad?\n¿Pérdida de productividad económica por fallecimiento?\n\nCostos sanitarios no relacionados**]{style=“color: #57886C”}\n\nTrayectoria acumulada de los costos sanitarios totales a lo largo del tiempo (no relacionados con intervenciones médicas)"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#identificación-de-costes-continuación",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#identificación-de-costes-continuación",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Identificación de costes (continuación)",
-    "text": "Identificación de costes (continuación)\n\n\nEn la práctica, contamos lo que probablemente tenga importancia\n\nExcluimos lo que probablemente tenga poco efecto o efectos iguales en todas las alternativas\n\nHay que tener en cuenta cualquier exclusión y examinar los posibles sesgos\nEstamos limitados por los datos disponibles"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#identificación-de-costos-continuación",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#identificación-de-costos-continuación",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Identificación de costos (continuación)",
+    "text": "Identificación de costos (continuación)\n\n\nEn la práctica, contamos lo que probablemente tenga importancia\n\nExcluimos lo que probablemente tenga poco efecto o efectos iguales en todas las alternativas\n\nHay que tener en cuenta cualquier exclusión y examinar los posibles sesgos\nEstamos limitados por los datos disponibles"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#podemos-medir-los-costes-utilizando-diferentes-enfoques",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#podemos-medir-los-costes-utilizando-diferentes-enfoques",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Podemos medir los costes utilizando diferentes enfoques",
-    "text": "Podemos medir los costes utilizando diferentes enfoques\n\n\nMicrocostes (bottom-up)\n\nMedir todos los recursos utilizados por los pacientes individuales y, a continuación, asignar el coste unitario a cada tipo de recurso consumido para calcular el coste total\n\nCoste bruto (descendente)\n\nEstimar el coste para un volumen determinado de pacientes dividiendo el coste total por el volumen de uso del servicio\nEjemplo: Costes descendentes (por ejemplo, hospitalización por sobredosis de opiáceos) sobredosis de opiáceos)\n\nEnfoque basado en los ingredientes (P x Q x C)\n\nProbabilidad de ocurrencia (P)\nCantidad (Q)\nCostes unitarios (C)\n\n\n\n\n\nMicrocoste: el más preciso (es un enfoque ascendente en el que por ejemplo, todas las pruebas de laboratorio, camas hospitalarias tiempo del proveedor, pruebas de imagen, equipos utilizados, etc.)\nCoste bruto: Normalmente es lo que tenemos para cuantificar los “costes descendentes” – pero también podemos utilizar este método para calcular el coste de una intervención si no disponemos de datos para el enfoque del microcoste.\n\n\nPor ejemplo, si sabemos que 10 prótesis totales de rodilla nos costaron \\300.000 dólares el mes pasado, es decir, 30.000 dólares por intervención.\n\n\nEnfoque de ingredientes: Supongamos que sabemos que el 10% de las cirugías son complicadas, y las cirugías complicadas requieren un 50% más de cirujano tiempo del cirujano, y el tiempo del cirujano cuesta $500/hr"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#podemos-medir-los-costos-utilizando-diferentes-enfoques",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#podemos-medir-los-costos-utilizando-diferentes-enfoques",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Podemos medir los costos utilizando diferentes enfoques",
+    "text": "Podemos medir los costos utilizando diferentes enfoques\n\n\nMicrocostos (“bottom-up”)\n\nMedir todos los recursos utilizados por los pacientes individuales y, a continuación, asignar el costo unitario a cada tipo de recurso consumido para calcular el costo total\n\nCosto bruto (“top-down”)\n\nEstimar el costo para un volumen determinado de pacientes dividiendo el costo total por el volumen de uso del servicio\nEjemplo: Costos descendentes (por ejemplo, hospitalización por sobredosis de opiáceos) sobredosis de opiáceos)\n\nEnfoque basado en los ingredientes (P x Q x C)\n\nProbabilidad de ocurrencia (P)\nCantidad (Q)\nCostos unitarios (C)\n\n\n\n\n\nMicrocosto: el más preciso (es un enfoque ascendente en el que por ejemplo, todas las pruebas de laboratorio, camas hospitalarias tiempo del proveedor, pruebas de imagen, equipos utilizados, etc.)\nCosto bruto: Normalmente es lo que tenemos para cuantificar los “costos descendentes” – pero también podemos utilizar este método para calcular el costo de una intervención si no disponemos de datos para el enfoque del microcosto.\n\n\nPor ejemplo, si sabemos que 10 prótesis totales de rodilla nos costaron \\300.000 dólares el mes pasado, es decir, 30.000 dólares por intervención.\n\n\nEnfoque de ingredientes: Supongamos que sabemos que el 10% de las cirugías son complicadas, y las cirugías complicadas requieren un 50% más de cirujano tiempo del cirujano, y el tiempo del cirujano cuesta $500/hr"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#perspectiva-de-quién",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#perspectiva-de-quién",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "¿Perspectiva de quién?",
     "text": "¿Perspectiva de quién?\nSanders GD, Neumann PJ, Basu A, et al. Recommendations for Conduct, Methodological Practices, and Reporting of Cost-effectiveness Analyses: Second Panel on Cost-Effectiveness in Health and Medicine. JAMA. 2016;316:1093–1103.](images/paste-1BA51D60.png)"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#la-perspectiva-de-quién",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#la-perspectiva-de-quién",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "¿La perspectiva de quién?",
-    "text": "¿La perspectiva de quién?\n\n\nLA PERSPECTIVA IMPORTA –  \n\nSector sanitario formal: Los costes médicos corren a cargo de terceros pagadores y pagados de su bolsillo por los pacientes. Deben incluir los + &gt; costes actuales y futuros, relacionados y costes futuros, relacionados y no relacionados con la afección considerada.\n\n\nPerspectiva social: Representa el “interés público” más amplio & &gt; la distribución intersectorial de los recursos. y la distribución intersectorial de recursos que es importante tener en cuenta. refleja los costes de todas las partes afectadas.\n\n\n\n\nLa PERSPECTIVA es muy importante a la hora de decidir qué costes incluir en el análisis. incluir en el análisis; normalmente realizamos los ACE desde dos perspectivas diferentes:\n\n\n\nLa perspectiva del sector sanitario formal incluye los costes médicos sufragados por terceros pagadores y pagados de su bolsillo por los pacientes. Los modelizadores deben incluir los costes actuales y futuros, relacionados y no relacionados con la enfermedad considerada. con la enfermedad en cuestión.\n\n\nLos analistas han utilizado mayoritariamente esta perspectiva en los últimos 20 años.\nEs la perspectiva más útil para los responsables de la toma de decisiones dentro del sector sanitario\nComo ya se ha mencionado, en el Reino Unido el NICE suele adoptar la perspectiva de del pagador de la atención sanitaria, mientras que el ICER trata de hacer análisis tanto desde la perspectiva sector sanitario oficial y desde una perspectiva social más amplia\n\n\nLa perspectiva social incluye todo lo relacionado con el sector sanitario oficial Además de otros aspectos como los costes de tiempo de los pacientes que buscan y reciben los costes de tiempo de los cuidadores informales (no remunerados), los transporte, efectos en la productividad y el consumo futuros y otros costes y efectos fuera del sector sanitario.\n\n\n\nEl segundo panel sobre coste-eficacia en salud y medicina (el (el “patrón oro” de las recomendaciones sobre ACE en EE.UU.) recomienda que que los estudios se realicen tanto desde el punto de vista de la sanidad como de la sociedad. de la sociedad, para poder comprender mejor las implicaciones implicaciones de la toma de decisiones."
+    "text": "¿La perspectiva de quién?\n\n\nLA PERSPECTIVA IMPORTA –  \n\nSector sanitario formal: Los costos médicos cobrados a asugradores/pagadores y pagos del bolsillo por los pacientes. Deben incluir los costos actuales y futuros relacionados y no relacionados con la condición considerada.\n\n\nPerspectiva social: Representa el “interés público” más amplio y la distribución intersectorial de los recursos que es importante tener en cuenta. Refleja los costos de todas las partes afectadas.\n\n\n\n\nLa PERSPECTIVA es muy importante a la hora de decidir qué costos incluir en el análisis. incluir en el análisis; normalmente realizamos los ACE desde dos perspectivas diferentes:\n\n\n\nLa perspectiva del sector sanitario formal incluye los costos médicos sufragados por terceros pagadores y pagados de su bolsillo por los pacientes. Los modelizadores deben incluir los costos actuales y futuros, relacionados y no relacionados con la enfermedad considerada. con la enfermedad en cuestión.\n\n\nLos analistas han utilizado mayoritariamente esta perspectiva en los últimos 20 años.\nEs la perspectiva más útil para los responsables de la toma de decisiones dentro del sector sanitario\nComo ya se ha mencionado, en el Reino Unido el NICE suele adoptar la perspectiva de del pagador de la atención sanitaria, mientras que el ICER trata de hacer análisis tanto desde la perspectiva sector sanitario oficial y desde una perspectiva social más amplia\n\n\nLa perspectiva social incluye todo lo relacionado con el sector sanitario oficial Además de otros aspectos como los costos de tiempo de los pacientes que buscan y reciben los costos de tiempo de los cuidadores informales (no remunerados), los transporte, efectos en la productividad y el consumo futuros y otros costos y efectos fuera del sector sanitario.\n\n\n\nEl segundo panel sobre costo-efectividad en salud y medicina (el (el “patrón oro” de las recomendaciones sobre ACE en EE.UU.) recomienda que que los estudios se realicen tanto desde el punto de vista de la sanidad como de la sociedad. de la sociedad, para poder comprender mejor las implicaciones implicaciones de la toma de decisiones."
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#la-perspectiva-de-quién-1",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#la-perspectiva-de-quién-1",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "¿La perspectiva de quién? {}",
-    "text": "¿La perspectiva de quién? {}\n\nPerspectiva del sector sanitario\n\nMAMOGRAFÍA (Sector sanitario): \n\nCostes asociados al cribado en sí [procedimiento mamografía + tiempo del médico]\nCostes de las pruebas de seguimiento para falsos positivos y verdaderos positivos positivos verdaderos\nCostes (o ahorros) derivados de los casos de cáncer de mama cáncer de mama, como Hospitalización + costes de tratamiento\nCostes no relacionados con la intervención médica/enfermedad; de vivir más tiempo debido a la mamografía\n\n\n\nVeamos un ejemplo: mamografía para el cribado del cáncer de mama.\nSi tuviéramos que calcular el coste desde el punto de vista del sector sanitario sanitario, habría que tener en cuenta\n\n\nCostes asociados al propio cribado: costes del procedimiento costes del procedimiento + tiempo del médico\nCostes de las pruebas de seguimiento, tanto para los falsos positivos como para los verdaderos positivos. positivos verdaderos\nCostes (o ahorros) derivados de los casos de cáncer de mama cáncer de mama, incluidas hospitalizaciones y costes de tratamiento\n\n***EJEMPLO: Supongamos que queremos examinar la diferencia entre entre el cribado mamográfico rutinario a los 40 y a los 50 años. habrá costes iniciales más elevados a los 40 años, PERO si detectamos más casos de cáncer de mama que si esperamos, entonces eso podría potencialmente ahorrar mucho costes de tratamiento/hospitalización\nLISA, el LIBRO dice COSTES EVITADOS para los costes posteriores\n\nCostes no relacionados con la intervención médica debidos al hecho de vivir más tiempo (se tratarán en las próximas diapositivas). discutiremos en las próximas diapositivas)"
+    "text": "¿La perspectiva de quién? {}\n\nPerspectiva del sector sanitario\n\nMAMOGRAFÍA (Sector sanitario): \n\nCostos asociados al tamizaje en sí [procedimiento mamografía + tiempo del médico]\nCostos de las pruebas de seguimiento para falsos positivos y verdaderos positivos\nCostos (o ahorros) derivados de los casos de cáncer de mama, como hospitalización + costos de tratamiento\nCostos no relacionados con la intervención médica/enfermedad; de vivir más tiempo debido a la mamografía\n\n\n\nVeamos un ejemplo: mamografía para el tamizaje del cáncer de mama.\nSi tuviéramos que calcular el costo desde el punto de vista del sector sanitario sanitario, habría que tener en cuenta\n\n\nCostos asociados al propio tamizaje: costos del procedimiento costos del procedimiento + tiempo del médico\nCostos de las pruebas de seguimiento, tanto para los falsos positivos como para los verdaderos positivos. positivos verdaderos\nCostos (o ahorros) derivados de los casos de cáncer de mama cáncer de mama, incluidas hospitalizaciones y costos de tratamiento\n\n***EJEMPLO: Supongamos que queremos examinar la diferencia entre entre el tamizaje mamográfico rutinario a los 40 y a los 50 años. habrá costos iniciales más elevados a los 40 años, PERO si detectamos más casos de cáncer de mama que si esperamos, entonces eso podría potencialmente ahorrar mucho costos de tratamiento/hospitalización\nLISA, el LIBRO dice COSTOS EVITADOS para los costos posteriores\n\nCostos no relacionados con la intervención médica debidos al hecho de vivir más tiempo (se tratarán en las próximas diapositivas). discutiremos en las próximas diapositivas)"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#perspectiva-de-quién-1",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#perspectiva-de-quién-1",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "¿Perspectiva de quién?",
-    "text": "¿Perspectiva de quién?\n\nPerspectiva social\n\nMAMOGRAFÍA (Perspectiva social): \n\nCostes asociados al cribado en sí [procedimiento de mamografía + tiempo del médico]\nCostes de las pruebas de seguimiento tanto para falsos positivos como para verdaderos positivos positivos verdaderos\nCostes (o ahorros) derivados de los casos de cáncer de mama cáncer de mama, como Hospitalización + costes de tratamiento\nCostes no relacionados con la intervención médica/enfermedad; de vivir más tiempo debido a la mamografía\nPérdidas de productividad de los pacientes asociadas al cribado o al tratamiento del cáncer]{style=“background-color: yellow;”}\nCostes de guardería/transporte]{style=“background-color: yellow;”}"
+    "text": "¿Perspectiva de quién?\n\nPerspectiva social\n\nMAMOGRAFÍA (Perspectiva social): \n\nCostos asociados al tamizaje en sí [procedimiento de mamografía + tiempo del médico]\nCostos de las pruebas de seguimiento tanto para falsos positivos como para verdaderos positivos\nCostos (o ahorros) derivados de los casos de cáncer de mama, como hospitalización + costos de tratamiento\nCostos no relacionados con la intervención médica/enfermedad; de vivir más tiempo debido a la mamografía\nPérdidas de productividad de los pacientes asociadas al tamizaje o al tratamiento del cáncer]{style=“background-color: yellow;”}\nCostos de guardería/transporte]{style=“background-color: yellow;”}"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#dos-enfoques",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#dos-enfoques",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Dos enfoques:",
     "text": "Dos enfoques:\n (1) Junto a ensayos clínicos  (2) Utilizando datos secundarios"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-datos-secundarios",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-datos-secundarios",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Costes (datos secundarios)",
-    "text": "Costes (datos secundarios)\n\n\nInternacional frente a EE.UU. tendrá diferentes enfoques"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-datos-secundarios",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-datos-secundarios",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Costos (datos secundarios)",
+    "text": "Costos (datos secundarios)\n\n\nInternacional frente a EE.UU. tendrá diferentes enfoques"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-internacionales",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-internacionales",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Costes (internacionales)",
-    "text": "Costes (internacionales)\n\n\nEn los registros de datos de países/hospitales/donantes - la clave es acercarse lo más posible al coste “real” asociado a cada procedimiento por paciente. al coste “real” asociado a cada procedimiento por paciente.\n\nP. ej., “La atención sanitaria y el diagnóstico de la tuberculosis proceden de la lista oficial de precios del Servicio Nacional de Laboratorios Sanitarios de Sudáfrica; los costes de seguimiento reflejan la clínica local y el cribado basado en cultivos de tuberculosis activa”.\n\nRevisión de la literatura publicada.\nRegistro CEA de Tufts\nDCP3: Prioridades de Control de Enfermedades"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-internacionales",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-internacionales",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Costos (internacionales)",
+    "text": "Costos (internacionales)\n\n\nEn los registros de datos de países/hospitales/donantes - la clave es acercarse lo más posible al costo “real” asociado a cada procedimiento por paciente.\n\nP. ej., “La atención sanitaria y el diagnóstico de la tuberculosis proceden de la lista oficial de precios del Servicio Nacional de Laboratorios Sanitarios de Sudáfrica; los costos de seguimiento reflejan la clínica local y el tamizaje basado en cultivos de tuberculosis activa”.\n\nRevisión de la literatura publicada.\nRegistro CEA de Tufts\nDCP3: Prioridades de Control de Enfermedades"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-literatura-publicada",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-literatura-publicada",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Costes (Literatura publicada)",
-    "text": "Costes (Literatura publicada)"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-literatura-publicada",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-literatura-publicada",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Costos (Literatura publicada)",
+    "text": "Costos (Literatura publicada)"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-bibliografía-publicada",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-bibliografía-publicada",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Costes (bibliografía publicada)",
-    "text": "Costes (bibliografía publicada)"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-bibliografía-publicada",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-bibliografía-publicada",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Costos (bibliografía publicada)",
+    "text": "Costos (bibliografía publicada)"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-tufts-cevr",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-tufts-cevr",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Costes (Tufts CEVR)",
-    "text": "Costes (Tufts CEVR)\n\nhttps://cevr.tuftsmedicalcenter.org/databases/cea-registry"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-tufts-cevr",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-tufts-cevr",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Costos (Tufts CEVR)",
+    "text": "Costos (Tufts CEVR)\n\nhttps://cevr.tuftsmedicalcenter.org/databases/cea-registry"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-tufts-cevr-1",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-tufts-cevr-1",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Costes (Tufts CEVR)",
-    "text": "Costes (Tufts CEVR)"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-tufts-cevr-1",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-tufts-cevr-1",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Costos (Tufts CEVR)",
+    "text": "Costos (Tufts CEVR)"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-tufts-cevr-2",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-tufts-cevr-2",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Costes (Tufts CEVR)",
-    "text": "Costes (Tufts CEVR)"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-tufts-cevr-2",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-tufts-cevr-2",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Costos (Tufts CEVR)",
+    "text": "Costos (Tufts CEVR)"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-tufts-cevr-3",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-tufts-cevr-3",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Costes (Tufts CEVR)",
-    "text": "Costes (Tufts CEVR)\n\nhttp://ghcearegistry.org/ghcearegistry/"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-tufts-cevr-3",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-tufts-cevr-3",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Costos (Tufts CEVR)",
+    "text": "Costos (Tufts CEVR)\n\nhttp://ghcearegistry.org/ghcearegistry/"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-tufts-cevr-4",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-tufts-cevr-4",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Costes (Tufts CEVR)",
-    "text": "Costes (Tufts CEVR)"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-tufts-cevr-4",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-tufts-cevr-4",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Costos (Tufts CEVR)",
+    "text": "Costos (Tufts CEVR)"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-dcp3",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costes-dcp3",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Costes (DCP3)",
-    "text": "Costes (DCP3)\n\n\n\nLas Prioridades de Control de Enfermedades es un proyecto plurianual financiado en 2010 por la Fundación Bill y Melinda Gates.\nDe 2010 a 2017, estuvo dirigido por la Universidad de Washington, que trabajó con organizaciones locales para promover y apoyar el uso de evaluación económica (ACE) para el establecimiento de prioridades tanto a nivel mundial como nacionales\nLa DCP3 se encuentra ahora alojada en la London School of Hygiene and Tropical Tropical de Londres (LSHTM). Actualmente colabora con varios países piloto en el ámbito del establecimiento de prioridades, el desarrollo y la de paquetes esenciales de servicios sanitarios."
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-dcp3",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#costos-dcp3",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Costos (DCP3)",
+    "text": "Costos (DCP3)\n\n\n\nLas Prioridades de Control de Enfermedades es un proyecto plurianual financiado en 2010 por la Fundación Bill y Melinda Gates.\nDe 2010 a 2017, estuvo dirigido por la Universidad de Washington, que trabajó con organizaciones locales para promover y apoyar el uso de evaluación económica (ACE) para el establecimiento de prioridades tanto a nivel mundial como nacionales\nLa DCP3 se encuentra ahora alojada en la London School of Hygiene and Tropical Tropical de Londres (LSHTM). Actualmente colabora con varios países piloto en el ámbito del establecimiento de prioridades, el desarrollo y la de paquetes esenciales de servicios sanitarios."
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajustes-necesarios-para-valorar-costes",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajustes-necesarios-para-valorar-costes",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Ajustes necesarios para Valorar Costes",
-    "text": "Ajustes necesarios para Valorar Costes\n\n\nAjuste por moneda y año monetario\nDescuento"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajustes-necesarios-para-valorar-costos",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajustes-necesarios-para-valorar-costos",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Ajustes necesarios para valorar costos",
+    "text": "Ajustes necesarios para valorar costos\n\n\nAjuste por moneda y año monetario\nDescuento"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajuste-por-inflación",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajuste-por-inflación",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Ajuste por inflación",
     "text": "Ajuste por inflación"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajuste-por-inflación-motivación",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajuste-por-inflación-motivación",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Ajuste por Inflación Motivación",
-    "text": "Ajuste por Inflación Motivación\n\n\n100 $ en 2000 no equivalen a 100 $ en 2020\n\n ¡100 $ podían comprar mucho más en 2000!\n\nEs importante ajustar la diferencia de precios a lo largo del tiempo, especialmente cuando se trabaja con fuentes de costes de varios años"
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Ajuste por inflación motivación",
+    "text": "Ajuste por inflación motivación\n\n\n100 $ en 2000 no equivalen a 100 $ en 2020\n\n ¡100 $ podían comprar mucho más en 2000!\n\nEs importante ajustar la diferencia de precios a lo largo del tiempo, especialmente cuando se trabaja con fuentes de costos de varios años"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajuste-por-inflación-ejemplo",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajuste-por-inflación-ejemplo",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Ajuste por inflación: Ejemplo",
     "text": "Ajuste por inflación: Ejemplo"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajuste-de-la-inflación-método",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajuste-de-la-inflación-método",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Ajuste de la inflación: Método",
-    "text": "Ajuste de la inflación: Método\n\nElija un año de referencia (normalmente el año actual de análisis)\nConvertir todos los costes al año de referencia\n\n\nConvertir el coste del año X al año Y (año de referencia):\n\n    \\textbf{Coste(Año Y)} = \\textbf{Coste(Año X)} \\times \\frac{\\textbf{Índice de precios(Año Y)}}{\\textbf{Índice de precios(Año X)}}"
+    "text": "Ajuste de la inflación: Método\n\nElija un año de referencia (normalmente el año actual de análisis)\nConvertir todos los costos al año de referencia\n\n\nConvertir el costo del año X al año Y (año de referencia):\n\n    \\textbf{Costo(Año Y)} = \\textbf{Costo(Año X)} \\times \\frac{\\textbf{Índice de precios(Año Y)}}{\\textbf{Índice de precios(Año X)}}"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajuste-por-inflación-ejemplo-1",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajuste-por-inflación-ejemplo-1",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Ajuste por Inflación: Ejemplo",
-    "text": "Ajuste por Inflación: Ejemplo\n\n\nEl coste de hospitalización por ictus leve en EEUU fue de ~15.000 USD en 2016. Qué pasa si queremos convertir este número a 2020 USD?\n\n\nPCE (Personal Consumption Expenditure Health Price Index) en 2016: 105,430 (segunda columna de la Tabla 3 (PCE, salud)\nPCE en 2020: 112,978\n\n\n\n\\textbf{Coste(2020)} = \\textbf{Coste(2016)} \\times \\frac{\\textbf{PCE(2020)}}{\\textbf{PCE(2016)}} \\\\\n= 15.000 veces frac {112,978} {105,430} \\\\\n= 16.674 ¤ (2020 USD)"
+    "text": "Ajuste por Inflación: Ejemplo\n\n\nEl costo de hospitalización por ictus leve en EEUU fue de ~15.000 USD en 2016. Qué pasa si queremos convertir este número a 2020 USD?\n\n\nPCE (Personal Consumption Expenditure Health Price Index) en 2016: 105,430 (segunda columna de la Tabla 3 (PCE, salud)\nPCE en 2020: 112,978\n\n\n\n\\textbf{Costo(2020)} = \\textbf{Costo(2016)} \\times \\frac{\\textbf{PCE(2020)}}{\\textbf{PCE(2016)}} \\\\\n= 15.000 veces frac {112,978} {105,430} \\\\\n= 16.674 ¤ (2020 USD)"
   },
   {
-    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#conversión-de-divisas-1",
-    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#conversión-de-divisas-1",
-    "title": "Fundamentos del CEA: Valoración de costes",
-    "section": "Conversión de divisas",
-    "text": "Conversión de divisas\n\n\nNo es necesario para CEA pero puede ser útil en algunas situaciones:\n\nEjemplo: puede ser necesario convertir la moneda local a USD porque porque los umbrales de coste-efectividad suelen estimarse en USD por AVAD.\n\n¿Cómo se convierten 1.000 Nairas a USD?\nTipo de cambio actual en 2023: 1 Naira = ~0,0013 USD\n1.000 Nairas = 1,3 USD"
+    "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#conversión-de-monedas-1",
+    "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#conversión-de-monedas-1",
+    "title": "Fundamentos del CEA: Valoración de costos",
+    "section": "Conversión de monedas",
+    "text": "Conversión de monedas\n\n\nNo es necesario para CEA pero puede ser útil en algunas situaciones:\n\nEjemplo: puede ser necesario convertir la moneda local a USD porque porque los umbrales de costo-efectividad suelen estimarse en USD por AVAD.\n\n¿Cómo se convierten 1.000 Nairas a USD?\nTipo de cambio actual en 2023: 1 Naira = ~0,0013 USD\n1.000 Nairas = 1,3 USD"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#por-qué-descontar",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#por-qué-descontar",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "¿Por qué descontar?",
-    "text": "¿Por qué descontar?\n\nAjustar los costes a la tasa de descuento social para reflejar la “tasa de preferencia temporal” social. preferencia”\n\nPura preferencia temporal (“inpaciencia”)\nRiesgo potencial de catástrofe en el futuro\nCrecimiento económico/rentabilidad"
+    "text": "¿Por qué descontar?\n\nAjustar los costos a la tasa de descuento social para reflejar la “tasa de preferencia temporal” social.\n\nPura preferencia temporal (“inpaciencia”)\nRiesgo potencial de catástrofe en el futuro\nCrecimiento económico/rentabilidad"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#descuento-1",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#descuento-1",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Descuento",
     "text": "Descuento\n\n\n\n\nSi ahora dispone de $100, podría consumirlos o invertirlos en la alternativa más rentable (por ejemplo, deuda pública sin riesgo)\nSupongamos que la rentabilidad neta del bono es del 2%, lo que significa que el año que viene los $100 actuales han pasado a $102\nEl “valor actual” de 102 $ el año que viene es 100 $ hoy.\nDel mismo modo, 100 $ el año que viene = 98,04 $ hoy."
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#descuento-2",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#descuento-2",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Descuento",
-    "text": "Descuento\n\n\n\n\nInflación: Convertimos el coste PASADO a valores actuales\n\n\n\n\n\n\nDescuento: Convertimos los costes FUTUROS en valores actuales"
+    "text": "Descuento\n\n\n\n\nInflación: Convertimos el costo PASADO a valores actuales\n\n\n\n\n\n\nDescuento: Convertimos los costos FUTUROS en valores actuales"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#cómo-descontamos",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#cómo-descontamos",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "¿Cómo descontamos?",
-    "text": "¿Cómo descontamos?\n\n\nValor actual: VP = FV/(1+r)^t\n\nVF = valor futuro, el coste nominal incurrido en el futuro\nr = tipo de descuento anual (análogo al tipo de interés)\nt = número de años en el futuro en que se incurre en el coste\n\nConsenso razonable en torno al 3% anual\nPuede variar según las directrices de cada país\n\n\n\n\n\n\n\n\nAjustar primero por inflación y moneda, luego descontar"
+    "text": "¿Cómo descontamos?\n\n\nValor actual: VP = FV/(1+r)^t\n\nVF = valor futuro, el costo nominal incurrido en el futuro\nr = tipo de descuento anual (análogo al tipo de interés)\nt = número de años en el futuro en que se incurre en el costo\n\nConsenso razonable en torno al 3% anual\nPuede variar según las directrices de cada país\n\n\n\n\n\n\n\n\nAjustar primero por inflación y moneda, luego descontar"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#intuición",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#intuición",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Intuición",
-    "text": "Intuición\n\n\nr = 0.03\nRecordemos que PV = FV/(1+r)^t, y estamos en el Año 0:\n\n$1 en el año 0 se valora como 1/1.03^0 = \\$ 1\n$1 en el año 1 se valora como 1/1.03^1 = \\$0.97\n1$ en el año 2 se valora como 1/1,03^2 = 0,94$$.\n1$ en el año 3 se valora como 1/1,03^3 = 0,92$$.\n…\nEs decir, estamos convirtiendo lo que sería un $1 en el Año 2, por ejemplo, al VALOR PRESENTE de hoy. Hoy será 0.94.\n\n\n\n\n\nGeneralmente valoramos menos los costes y efectos futuros que los costes y efectos actuales y efectos Y su valor disminuye cuanto más lejos en el en el futuro\nPorque podemos invertir en un dólar hoy para obtener un mayor rendimiento de la inversión más adelante"
+    "text": "Intuición\n\n\nr = 0.03\nRecordemos que PV = FV/(1+r)^t, y estamos en el Año 0:\n\n$1 en el año 0 se valora como 1/1.03^0 = \\$ 1\n\n$1 en el año 1 se valora como 1/1.03^1 = \\$0,97\n\n1$ en el año 2 se valora como 1/1,03^2 = $0,94\n1$ en el año 3 se valora como 1/1,03^3 = $0,92.\n…\nEs decir, estamos convirtiendo lo que sería un $1 en el Año 2, por ejemplo, al VALOR PRESENTE de hoy. Hoy será 0,94.\n\n\n\n\n\nGeneralmente valoramos menos los costos y efectos futuros que los costos y efectos actuales y efectos Y su valor disminuye cuanto más lejos en el\nPorque podemos invertir en un dólar hoy para obtener un mayor rendimiento de la inversión más adelante"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#ejemplo",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#ejemplo",
-    "title": "Fundamentos del CEA: Valoración de costes",
+    "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Ejemplo",
-    "text": "Ejemplo\n\n\nSupongamos que en el año 5, un paciente desarrolla una enfermedad, y hay un coste del tratamiento de 500\n\nEste es el valor futuro (VF) del coste\n\nValor actual PV = PV = FV/(1+r)^t = 500/(1+0.03)^5 = \\$ 431.3"
+    "text": "Ejemplo\n\n\nSupongamos que en el año 5, un paciente desarrolla una enfermedad, y hay un costo del tratamiento de 500\n\nEste es el valor futuro (VF) del costo\n\nValor actual PV = PV = FV/(1+r)^t = 500/(1+0.03)^5 = \\$ 431.3"
   },
   {
     "objectID": "lectures/lec_6.ICERs.html#learning-objectives",
@@ -2552,7 +2552,7 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#recapitulación-análisis-de-decisión",
     "title": "Árboles de decisión y probabilidades",
     "section": "Recapitulación: Análisis de decisión",
-    "text": "Recapitulación: Análisis de decisión\n\n\n\nTiene como objetivo informar la elección bajo incertidumbre utilizando un enfoque explícito, enfoque cuantitativo\nTiene como objetivo identificar, medir y valorar las consecuencias de las decisiones (riesgos/beneficios) y la incertidumbre cuando hay que tomar una decisión, más apropiadamente a lo largo del tiempo"
+    "text": "Recapitulación: Análisis de decisión\n\n\n\nTiene como objetivo informar la elección bajo incertidumbre utilizando un enfoque explícito y cuantitativo\nTiene como objetivo identificar, medir y valorar las consecuencias de las decisiones (riesgos/beneficios) y la incertidumbre cuando hay que tomar una decisión adecuada a lo largo del tiempo"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#debo-ir-a-la-playa-o-quedarme-en-casa-1",
@@ -2587,21 +2587,21 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#árboles-de-decisión",
     "title": "Árboles de decisión y probabilidades",
     "section": "Árboles de decisión",
-    "text": "Árboles de decisión\n\n\n\n\nUn nodo de decisión cuadrado indica un punto de decisión entre opciones alternativas.\nUn nodo de azar circular indica un punto en el que son posibles dos o más alternativas para un paciente."
+    "text": "Árboles de decisión\n\n\n\n\nUn nodo de decisión cuadrado indica un punto de decisión entre opciones alternativas.\nUn nodo de azar circular indica un punto en el que son posibles dos o más alternativas al azar."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#árboles-de-decisión-1",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#árboles-de-decisión-1",
     "title": "Árboles de decisión y probabilidades",
     "section": "Árboles de decisión",
-    "text": "Árboles de decisión\n\n\n\nUn nodo de decisión cuadrado indica un punto de decisión entre opciones alternativas.\nUn nodo de azar circular indica un punto en el que son posibles dos o más alternativas para un paciente.\n\n\n\n\n\n\n\nEmpezamos con un nodo de decisión – que sólo muestra visualmente el punto de decisión (por lo que no se adjuntan probabilidades aquí)\nA partir de nuestro nodo de decisión, crearemos nodos de azar, o nodos de probabilidad, para modelar las probabilidades de nuestras diferentes opciones\nLos sucesos correspondientes de los nodos de azar deben sumar 1 según según la “ley de la probabilidad total”"
+    "text": "Árboles de decisión\n\n\n\nUn nodo de decisión cuadrado indica un punto de decisión entre opciones alternativas.\nUn nodo de azar circular indica un punto en el que son posibles dos o más alternativas al azar.\n\n\n\n\n\n\n\nEmpezamos con un nodo de decisión – que sólo muestra visualmente el punto de decisión (por lo que no se adjuntan probabilidades aquí)\nA partir de nuestro nodo de decisión, crearemos nodos de azar, o nodos de probabilidad, para modelar las probabilidades de nuestras diferentes opciones\nLas ramas correspondientes de los nodos de azar deben sumar a 1 según la “ley de la probabilidad total”"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#árboles-de-decisión-2",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#árboles-de-decisión-2",
     "title": "Árboles de decisión y probabilidades",
     "section": "Árboles de decisión",
-    "text": "Árboles de decisión\n\n\nLos caminos son secuencias de sucesos mutuamente excluyentes y son las rutas a través del árbol.\nLas probabilidades muestran la probabilidad de que ocurra un suceso concreto en un nodo de azar."
+    "text": "Árboles de decisión\n\n\nLas ramas son secuencias de sucesos mutuamente excluyentes y son las rutas a través del árbol.\nLas probabilidades muestran la probabilidad de que ocurra un suceso concreto en un nodo de azar."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#debería-ir-a-la-playa-o-quedarme-en-casa-3",
@@ -2615,14 +2615,14 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#debería-ir-a-la-playa-o-quedarme-en-casa-4",
     "title": "Árboles de decisión y probabilidades",
     "section": "¿Debería ir a la playa o quedarme en casa?",
-    "text": "¿Debería ir a la playa o quedarme en casa?\nÁrbol de decisión:\n\n\n\nLa probabilidad de lluvia es del 30% - tanto si te quedas en casa como si vas a la playa & sabemos que las ramas tienen que sumar 1 debido a la ley de la probabilidad total\nSin embargo, no hemos terminado todavía, ya que sería útil si tuviéramos alguna manera de VALORAR los resultados - en términos de decir, la lluvia en la playa, frente a si lloviera en casa, etc.\nSi no le das valor a los diferentes resultados, entonces estamos diciendo esencialmente que valoramos la LLUVIA. esencialmente diciendo que valoramos igual la LLUVIA frente a la NO LLUVIA entre las opciones playa y casa\nPero si tuviera que adivinar, esto probablemente no es cierto a menos que usted es el que le guste tanto la lluvia en la playa como en casa). casa)"
+    "text": "¿Debería ir a la playa o quedarme en casa?\nÁrbol de decisión:\n\n\n\nLa probabilidad de lluvia es del 30% - tanto si te quedes en casa como si te vayas a la playa & sabemos que las ramas tienen que sumar a 1 debido a la ley de la probabilidad total\nSin embargo, no hemos terminado todavía, ya que sería útil si tuviéramos alguna manera de VALORAR los resultados - es decir, la lluvia en la playa, frente a lluvia en casa, etc.\nSi no le das valor a los diferentes resultados, entonces estamos diciendo esencialmente que valoramos la LLUVIA. esencialmente diciendo que valoramos igual la LLUVIA frente a la NO LLUVIA entre las opciones playa y casa\nPero si tuviera que adivinar, esto probablemente no es cierto a menos que usted le guste tanto la lluvia en la playa como en casa."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#debería-ir-a-la-playa-o-quedarme-en-casa-5",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#debería-ir-a-la-playa-o-quedarme-en-casa-5",
     "title": "Árboles de decisión y probabilidades",
     "section": "¿Debería ir a la playa o quedarme en casa?",
-    "text": "¿Debería ir a la playa o quedarme en casa?\nPayoffs\n\n\n\nEscenario\nPayoff\n\n\n\n\nEn la playa, sin lluvia 1.0\n\n\n\nEn la playa, lluvia 0.4\n\n\n\nEn casa, sin lluvia 0,8\n\n\n\nEn casa, lluvia 0,6\n\n\n\n\n\nEn la playa, no llueve &gt; En casa, no llueve &gt; En casa, llueve &gt; En la playa, llueve\n\n\n\nEntraremos en esto más adelante, pero las utilidades se miden entre 0 y 1.\nPara los estados de salud, por ejemplo, 0 = peor salud y 1 = perfecta salud\nAquí, estamos valorando “playa, sin lluvia” como el “estado más ideal” en el que queremos estar. en el que queremos estar"
+    "text": "¿Debería ir a la playa o quedarme en casa?\nPayoffs\n\n\n\nEscenario\nPayoff\n\n\n\n\nEn la playa, sin lluvia 1,0\n\n\n\nEn la playa, lluvia 0,4\n\n\n\nEn casa, sin lluvia 0,8\n\n\n\nEn casa, lluvia 0,6\n\n\n\n\n\nEn la playa, no llueve &gt; En casa, no llueve &gt; En casa, llueve &gt; En la playa, llueve\n\n\n\nEntraremos en esto más adelante, pero las utilidades se miden entre 0 y 1.\nPara los estados de salud, por ejemplo, 0 = peor salud y 1 = perfecta salud\nAquí, estamos valorando “playa, sin lluvia” como el “estado más ideal” en el que queremos estar."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#debo-ir-a-la-playa-o-quedarme-en-casa-2",
@@ -2643,7 +2643,7 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#cuál-es-el-valor-esperado-de-quedarse-en-casa",
     "title": "Árboles de decisión y probabilidades",
     "section": "¿Cuál es el valor esperado de quedarse en casa?",
-    "text": "¿Cuál es el valor esperado de quedarse en casa?\n\n\n0,74 = 0,3. }_{} + …rojo, 0,7… ...sin lluvia…\n\nProbabilidades en rojo.\nPagos en azul.\nValor esperado en verde."
+    "text": "¿Cuál es el valor esperado de quedarse en casa?\n\n\n0,74 = 0,3. }_{} + …rojo, 0,7… …sin lluvia…\n\nProbabilidades en rojo.\nPagos en azul.\nValor esperado en verde."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#valores-esperados",
@@ -2657,14 +2657,14 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#valores-esperados-1",
     "title": "Árboles de decisión y probabilidades",
     "section": "Valores Esperados",
-    "text": "Valores Esperados\n\n\n\nEl valor esperado en el contexto de los árboles de decisión son los “payoffs” ponderados por sus probabilidades precedentes\nLo que obtenemos es: el resultado que se espera EN PROMEDIO para cualquier alternativa de decisión (por ejemplo, duración de la vida, calidad de vida, costes vida)\n\nEjemplo: Por término medio, los pacientes que reciban el tratamiento A vivirán 0,30 años más que los pacientes que reciban el tratamiento B\n\n\n\n\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección ante perspectivas inciertas; aunque no necesariamente promete los mejores resultados para un individuo."
+    "text": "Valores Esperados\n\n\n\nEl valor esperado en el contexto de los árboles de decisión son los “payoffs” ponderados por sus probabilidades precedentes\nLo que obtenemos es: el resultado que se espera EN PROMEDIO para cualquier alternativa de decisión (por ejemplo, duración de la vida, calidad de vida, costo de vida)\n\nEjemplo: Por término medio, los pacientes que reciban el tratamiento A vivirán 0,30 años más que los pacientes que reciban el tratamiento B\n\n\n\n\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección ante perspectivas inciertas; aunque no necesariamente promete los mejores resultados para un individuo."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p-son-iguales-las-dos-opciones",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p-son-iguales-las-dos-opciones",
     "title": "Árboles de decisión y probabilidades",
     "section": "¿A qué probabilidad p son iguales las dos opciones?",
-    "text": "¿A qué probabilidad p son iguales las dos opciones?\n\nSupongamos que queremos saber a qué probabilidad de lluvia p nos es indiferentes entre ir a la playa o quedarnos en casa…\n\n\n\nEscribe la ecuación para cada elección utilizando una variable, p, para la probabilidad en cuestión\nEstablece las ecuaciones iguales entre sí y resuelve para p."
+    "text": "¿A qué probabilidad p son iguales las dos opciones?\n\nSupongamos que queremos saber a qué probabilidad de lluvia p estaríamos indiferentes entre ir a la playa o quedarnos en casa…\n\n\n\nEscribe la ecuación para cada elección utilizando una variable, p, para la probabilidad en cuestión\nEstablece las ecuaciones iguales entre sí y resuelve para p."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p-son-iguales-las-dos-opciones-1",
@@ -2709,60 +2709,60 @@
     "text": "¿A qué probabilidad p son iguales las dos opciones?\n\nCuando la probabilidad de lluvia es del 50% TANTO en la playa como en casa, dado cómo hemos ponderado los resultados, ir a la playa sería lo mismo que quedarse en casa\n\n\n\nEn otras palabras, usted sería indiferente entre los dos – permanecer en casa o ir a la playa"
   },
   {
-    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-le-es-indiferente-entre-las-dos-opciones",
-    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-le-es-indiferente-entre-las-dos-opciones",
+    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-estaríamos-indiferente-entre-las-dos-opciones",
+    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-estaríamos-indiferente-entre-las-dos-opciones",
     "title": "Árboles de decisión y probabilidades",
-    "section": "¿A qué probabilidad (p_B) de lluvia para la playa le es indiferente entre las dos opciones?",
-    "text": "¿A qué probabilidad (p_B) de lluvia para la playa le es indiferente entre las dos opciones?"
+    "section": "¿A qué probabilidad (p_B) de lluvia para la playa estaríamos indiferente entre las dos opciones?",
+    "text": "¿A qué probabilidad (p_B) de lluvia para la playa estaríamos indiferente entre las dos opciones?"
   },
   {
-    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-le-es-indiferente-una-de-las-dos-opciones",
-    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-le-es-indiferente-una-de-las-dos-opciones",
+    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-estaríamos-indiferente-entre-las-dos-opciones-1",
+    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-estaríamos-indiferente-entre-las-dos-opciones-1",
     "title": "Árboles de decisión y probabilidades",
-    "section": "¿A qué probabilidad (p_B) de lluvia para la playa le es indiferente una de las dos opciones?",
-    "text": "¿A qué probabilidad (p_B) de lluvia para la playa le es indiferente una de las dos opciones?\n\n\n\nAntes hemos calculado el beneficio esperado de quedarse en casa: 0,74 (que era un valor esperado menor que ir a la playa cuando la probabilidad de lluvia en ambos era del 30%) \n¿Cuál tendría que ser** p_B para obtener una recompensa esperada en la playa playa de 0,74?\n\nEn otras palabras, ¿con qué probabilidad de lluvia en la playa ¿le resultaría indiferente quedarse en casa o ir a la playa?\n\n\n\n\n\n\nFormulemos ahora una pregunta ligeramente distinta. probabilidad….\nSupongamos ahora que la probabilidad de lluvia para la opción CASA no cambia (por lo que se mantiene en 0,3)\nDIFERENCIA CLAVE CON RESPECTO AL ÚLTIMO EJEMPLO: En el último ejemplo, las probabilidades eran las mismas y queríamos obtener nuestro umbral de indiferencia entre la playa y quedarse en casa\n**Ahora estamos suponiendo que todavía hay una probabilidad del 30% de que que llueva si te quedas en casa, pero ¿a qué probabilidad de lluvia en la playa te sería indiferente entre las dos opciones? (Puesto que elegimos la playa cuando ambas probabilidades eran iguales al 30%)\n\n\nEn otras palabras, ¿con qué probabilidad de LLOVER EN LA PLAYA sería indiferente entre la playa y su casa"
+    "section": "¿A qué probabilidad (p_B) de lluvia para la playa estaríamos indiferente entre las dos opciones?",
+    "text": "¿A qué probabilidad (p_B) de lluvia para la playa estaríamos indiferente entre las dos opciones?\n\n\n\nAntes hemos calculado el beneficio esperado de quedarse en casa: 0,74 (que era un valor esperado menor que ir a la playa cuando la probabilidad de lluvia en ambos era del 30%) \n¿Cuál tendría que ser** p_B para obtener una recompensa esperada en la playa playa de 0,74?\n\nEn otras palabras, ¿con qué probabilidad de lluvia en la playa ¿le resultaría indiferente quedarse en casa o ir a la playa?\n\n\n\n\n\n\nFormulemos ahora una pregunta ligeramente distinta. probabilidad….\nSupongamos ahora que la probabilidad de lluvia para la opción CASA no cambia (por lo que se mantiene en 0,3)\nDIFERENCIA CLAVE CON RESPECTO AL ÚLTIMO EJEMPLO: En el último ejemplo, las probabilidades eran las mismas y queríamos obtener nuestro umbral de indiferencia entre la playa y quedarse en casa\n**Ahora estamos suponiendo que todavía hay una probabilidad del 30% de que que llueva si te quedas en casa, pero ¿a qué probabilidad de lluvia en la playa te sería indiferente entre las dos opciones? (Puesto que elegimos la playa cuando ambas probabilidades eran iguales al 30%)\n\n\nEn otras palabras, ¿con qué probabilidad de LLOVER EN LA PLAYA sería indiferente entre la playa y su casa"
   },
   {
-    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-te-es-indiferente-entre-las-dos-opciones",
-    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-te-es-indiferente-entre-las-dos-opciones",
+    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-estaríamos-indiferente-entre-las-dos-opciones-2",
+    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-estaríamos-indiferente-entre-las-dos-opciones-2",
     "title": "Árboles de decisión y probabilidades",
-    "section": "¿A qué probabilidad (p_B) de lluvia para la playa te es indiferente entre las dos opciones?",
-    "text": "¿A qué probabilidad (p_B) de lluvia para la playa te es indiferente entre las dos opciones?\nFije 0,74 (valor esperado de quedarse en casa) igual a la playa y resuelva para p_B.\n\npB * 0.4 + (1 - pB) * 1.0 = 0.74"
+    "section": "¿A qué probabilidad (p_B) de lluvia para la playa estaríamos indiferente entre las dos opciones?",
+    "text": "¿A qué probabilidad (p_B) de lluvia para la playa estaríamos indiferente entre las dos opciones?\nFije 0,74 (valor esperado de quedarse en casa) igual a la playa y resuelva para p_B.\n\npB * 0.4 + (1 - pB) * 1.0 = 0.74"
   },
   {
-    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-le-es-indiferente-una-de-las-dos-opciones-1",
-    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-le-es-indiferente-una-de-las-dos-opciones-1",
+    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-estaríamos-indiferente-entre-las-dos-opciones-3",
+    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-estaríamos-indiferente-entre-las-dos-opciones-3",
     "title": "Árboles de decisión y probabilidades",
-    "section": "¿A qué probabilidad (p_B) de lluvia para la playa le es indiferente una de las dos opciones?",
-    "text": "¿A qué probabilidad (p_B) de lluvia para la playa le es indiferente una de las dos opciones?\n\npB * 0.4 + (1 - pB) * 1.0 = 0.74\n\n\npB * 0.4 + 1 - pB = 0.74"
+    "section": "¿A qué probabilidad (p_B) de lluvia para la playa estaríamos indiferente entre las dos opciones?",
+    "text": "¿A qué probabilidad (p_B) de lluvia para la playa estaríamos indiferente entre las dos opciones?\n\npB * 0.4 + (1 - pB) * 1.0 = 0.74\n\n\npB * 0.4 + 1 - pB = 0.74"
   },
   {
-    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-le-es-indiferente-entre-las-dos-opciones-1",
-    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-le-es-indiferente-entre-las-dos-opciones-1",
+    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-estaríamos-indiferente-entre-las-dos-opciones-4",
+    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-estaríamos-indiferente-entre-las-dos-opciones-4",
     "title": "Árboles de decisión y probabilidades",
-    "section": "¿A qué probabilidad (p_B) de lluvia para la playa le es indiferente entre las dos opciones?",
-    "text": "¿A qué probabilidad (p_B) de lluvia para la playa le es indiferente entre las dos opciones?\n\npB * 0.4 + 1 - pB = 0.74\n\n\npB * -0.6 = -0.26"
+    "section": "¿A qué probabilidad (p_B) de lluvia para la playa estaríamos indiferente entre las dos opciones?",
+    "text": "¿A qué probabilidad (p_B) de lluvia para la playa estaríamos indiferente entre las dos opciones?\n\npB * 0.4 + 1 - pB = 0.74\n\n\npB * -0.6 = -0.26"
   },
   {
-    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-le-es-indiferente-entre-las-dos-opciones-2",
-    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-le-es-indiferente-entre-las-dos-opciones-2",
+    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-estaríamos-indiferente-entre-las-dos-opciones-5",
+    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-estaríamos-indiferente-entre-las-dos-opciones-5",
     "title": "Árboles de decisión y probabilidades",
-    "section": "¿A qué probabilidad (p_B) de lluvia para la playa le es indiferente entre las dos opciones?",
-    "text": "¿A qué probabilidad (p_B) de lluvia para la playa le es indiferente entre las dos opciones?\n\npB * -0.6 = -0.26\n\n\npB = -0.26 / -0.6 = 0.43"
+    "section": "¿A qué probabilidad (p_B) de lluvia para la playa estaríamos indiferente entre las dos opciones?",
+    "text": "¿A qué probabilidad (p_B) de lluvia para la playa estaríamos indiferente entre las dos opciones?\n\npB * -0.6 = -0.26\n\n\npB = -0.26 / -0.6 = 0.43"
   },
   {
-    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-te-es-indiferente-entre-las-dos-opciones-1",
-    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-te-es-indiferente-entre-las-dos-opciones-1",
+    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-estaríamos-indiferente-entre-las-dos-opciones-6",
+    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p_b-de-lluvia-para-la-playa-estaríamos-indiferente-entre-las-dos-opciones-6",
     "title": "Árboles de decisión y probabilidades",
-    "section": "¿A qué probabilidad (p_B) de lluvia para la playa te es indiferente entre las dos opciones?",
-    "text": "¿A qué probabilidad (p_B) de lluvia para la playa te es indiferente entre las dos opciones?\n\nCuando la probabilidad de lluvia en la playa es del 43% (la probabilidad de lluvia en casa se mantiene en el 30%), nos sería indiferente quedarnos en casa e ir a la playa.\n\n\nSi la probabilidad de que llueva en la playa es &gt; &gt; del 43%, nos quedaríamos en &gt; casa. casa"
+    "section": "¿A qué probabilidad (p_B) de lluvia para la playa estaríamos indiferente entre las dos opciones?",
+    "text": "¿A qué probabilidad (p_B) de lluvia para la playa estaríamos indiferente entre las dos opciones?\n\nCuando la probabilidad de lluvia en la playa es del 43% (la probabilidad de lluvia en casa se mantiene en el 30%), nos resulta igual quedarnos en casa e ir a la playa.\n\n\nSi la probabilidad de que llueva en la playa es &gt; &gt; del 43%, nos quedaríamos en casa."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#probabilidades-en-árboles-de-decisión",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#probabilidades-en-árboles-de-decisión",
     "title": "Árboles de decisión y probabilidades",
     "section": "Probabilidades en Árboles de Decisión",
-    "text": "Probabilidades en Árboles de Decisión\nEventos mutuamente excluyentes\n\n\n2 cosas que no pueden ocurrir juntas (un suceso no puede ocurrir al mismo mismo tiempo que el otro)\n\nEjemplo: 2 sucesos, sobrevivir o morir; mutuamente excluyentes porque una persona no puede ser ambas cosas a la vez\nEjemplo: 2 sucesos, curado o no curado"
+    "text": "Probabilidades en Árboles de Decisión\nEventos mutuamente excluyentes\n\n\n2 cosas que no pueden ocurrir juntas (un suceso no puede ocurrir al mismo tiempo que el otro)\n\nEjemplo: 2 sucesos, sobrevivir o morir; mutuamente excluyentes porque una persona no puede ser ambas cosas a la vez\nEjemplo: 2 sucesos, curado o no curado"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#probabilidades-dentro-de-los-árboles-de-decisión",
@@ -2776,21 +2776,21 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#probabilidades-dentro-de-los-árboles-de-decisión-1",
     "title": "Árboles de decisión y probabilidades",
     "section": "Probabilidades dentro de los árboles de decisión",
-    "text": "Probabilidades dentro de los árboles de decisión\nSucesos mutuamente excluyentes\n\nSuponiendo que los sucesos sean mutuamente excluyentes, la probabilidad de que ocurran 2 2 sucesos es la suma de las probabilidades de cada suceso ocurra individualmente\n\n\nP(A o B) = P(A) + P(B)"
+    "text": "Probabilidades dentro de los árboles de decisión\nSucesos mutuamente excluyentes\n\nSuponiendo que los sucesos sean mutuamente excluyentes, la probabilidad de que ocurran 2 sucesos es la suma de las probabilidades de que cada suceso ocurra individualmente\n\n\nP(A o B) = P(A) + P(B)"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#probabilidades-en-árboles-de-decisión-1",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#probabilidades-en-árboles-de-decisión-1",
     "title": "Árboles de decisión y probabilidades",
     "section": "Probabilidades en árboles de decisión",
-    "text": "Probabilidades en árboles de decisión\n\n\n\n\n\n\nProbabilidad conjunta\n\n\nP(A y B): La probabilidad de que dos eventos ocurran al mismo tiempo.\n\n\n\n\n\n\n\n\n\nProbabilidad condicional\n\n\nP(A|B): La probabilidad de un suceso A dado que se sabe que ha ocurrido un suceso B. ha ocurrido."
+    "text": "Probabilidades en árboles de decisión\n\n\n\n\n\n\nProbabilidad conjunta\n\n\nP(A y B): La probabilidad de que dos eventos ocurran al mismo tiempo.\n\n\n\n\n\n\n\n\n\nProbabilidad condicional\n\n\nP(A|B): La probabilidad de un suceso A dado que se sabe que ha ocurrido un suceso B."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#probabilidades",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#probabilidades",
     "title": "Árboles de decisión y probabilidades",
     "section": "Probabilidades",
-    "text": "Probabilidades\n\n\nDesplazándose de izquierda a derecha, las primeras probabilidades del árbol muestran la probabilidad de un suceso.\nLas probabilidades siguientes son condicionales.\n\nLa probabilidad de un suceso dado que un suceso anterior ocurrió o no haya ocurrido.\n\nAl multiplicar las probabilidades a lo largo de las rutas se calcula la probabilidad de la ruta que es una probabilidad conjunta."
+    "text": "Probabilidades\n\n\nDesplazándose de izquierda a derecha, las primeras probabilidades del árbol muestran la probabilidad de un suceso.\nLas probabilidades siguientes son condicionales.\n\nLa probabilidad de un suceso dado que un suceso anterior ocurrió o no ocurrió.\n\nAl multiplicar las probabilidades a lo largo de los caminos se calcula la probabilidad del camino que es una probabilidad conjunta."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#caminos",
@@ -2811,14 +2811,14 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#probabilidad-condicional-1",
     "title": "Árboles de decisión y probabilidades",
     "section": "Probabilidad condicional",
-    "text": "Probabilidad condicional\nEjemplo: ¿Cuál es la probabilidad condicional de muerte al año de nacimiento, dado que el bebé tiene una madre fumadora?\n(Probabilidad de que ocurra un suceso (B) dado que ha ocurrido otro suceso (A))\n\nP(A|B) = P(A y B) / P(B)"
+    "text": "Probabilidad condicional\nEjemplo: ¿Cuál es la probabilidad condicional de muerte dentro de un año de nacimiento, dado que el bebé tiene una madre fumadora?\n(Probabilidad de que ocurra un suceso (B) dado que ha ocurrido otro suceso (A))\n\nP(A|B) = P(A y B) / P(B)"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#probabilidad-condicional-revisión-2x2",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#probabilidad-condicional-revisión-2x2",
     "title": "Árboles de decisión y probabilidades",
     "section": "Probabilidad condicional, revisión 2x2",
-    "text": "Probabilidad condicional, revisión 2x2\n\n¿Cuál es la probabilidad condicional de muerte al año de nacer, dado que el bebé tiene una madre fumadora?\n\n*A= muerte en el primer año; B= madre fumadora.\nP(A|B) = 16.712 / (1.197.142 + 16.712)  = 14 por cada 1.000 nacimientos"
+    "text": "Probabilidad condicional, revisión 2x2\n\n¿Cuál es la probabilidad condicional de muerte dentro de un año de nacer, dado que el bebé tiene una madre fumadora?\n\n*A= muerte en el primer año; B= madre fumadora.\nP(A|B) = 16.712 / (1.197.142 + 16.712)  = 14 por cada 1.000 nacimientos"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#probabilidad-condicional-revisión-2x2-1",
@@ -2853,49 +2853,49 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#probabilidad-condicional-revisión-2x2-4",
     "title": "Árboles de decisión y probabilidades",
     "section": "Probabilidad condicional, revisión 2x2",
-    "text": "Probabilidad condicional, revisión 2x2\n\nPor otra parte, la probabilidad condicional de P(B|A) es la probabilidad de que un bebé tenga un peso normal al nacer, dado que el murió en el plazo de 1 año desde su nacimiento\n\nB=bebé con peso normal al nacer; A = muerte en el primer año."
+    "text": "Probabilidad condicional, revisión 2x2\n\nPor otra parte, la probabilidad condicional de P(B|A) es la probabilidad de que un bebé tenga un peso normal al nacer, dado que el murió en el primer año\n\nB=bebé con peso normal al nacer; A = muerte en el primer año."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#probabilidad-condicional-revisión-2x2-5",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#probabilidad-condicional-revisión-2x2-5",
     "title": "Árboles de decisión y probabilidades",
     "section": "Probabilidad condicional, revisión 2x2",
-    "text": "Probabilidad condicional, revisión 2x2\nResuelve P(B|A) – la probabilidad de que un infante tuviera peso normal al nacer dado que el bebé murió en el primer año desde su nacimiento\n\nP(B|A) = 14,442 / (14,442+ 21,054) = 0.41"
+    "text": "Probabilidad condicional, revisión 2x2\nResuelve P(B|A) – la probabilidad de que un infante tuviera peso normal al nacer dado que el bebé murió en el primer año\n\nP(B|A) = 14,442 / (14,442+ 21,054) = 0.41"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión",
     "title": "Árboles de decisión y probabilidades",
-    "section": "Filosofías de Decisión",
-    "text": "Filosofías de Decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección dadas perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nMínimo-máximo arrepentimiento\nMáximo\nUtilidad esperada"
+    "section": "Filosofías de decisión",
+    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección dadas perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nMínimo-máximo arrepentimiento\nMáximo\nUtilidad esperada"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión-1",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión-1",
     "title": "Árboles de decisión y probabilidades",
     "section": "Filosofías de decisión",
-    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección dadas perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento minimáximo\n\nNunca vayas a la playa si no llueve 0%.\n\nUtilidad máxima\nUtilidad esperada\n\n\n\nVeamos rápidamente las filosofías de decisión en lo que respecta a la ponderación de las preferencias. ponderación de preferencias. Existen diferentes niveles de aversión al riesgo & hay diferentes filosofías de decisión para estos comportamientos\nLa filosofía del arrepentimiento mini-max significa esencialmente que nunca irías a la playa si no llueve al 0%.\n\n\nPor ejemplo, los médicos pueden tener aversión al riesgo y, por tanto, minimizar el arrepentimiento máximo. pesar"
+    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección dadas perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento minimáximo\n\nNunca vayas a la playa si haya posibilidad de lluvia.\n\nUtilidad máxima\nUtilidad esperada\n\n\n\nVeamos rápidamente las filosofías de decisión con respecto a la ponderación de las preferencias. Existen diferentes niveles de aversión al riesgo & hay diferentes filosofías de decisión para estos comportamientos\nLa filosofía del arrepentimiento mini-max significa esencialmente que nunca irías a la playa si hay posbilidad de lluvia &gt;0%.\n\n\nPor ejemplo, los médicos pueden tener aversión al riesgo y, por tanto, minimizar el arrepentimiento máximo."
   },
   {
-    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#decision-philosophies",
-    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#decision-philosophies",
+    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión-2",
+    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión-2",
     "title": "Árboles de decisión y probabilidades",
-    "section": "Decision Philosophies",
-    "text": "Decision Philosophies\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección dadas perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento minimáximo\n\nNunca vayas a la playa si no llueve 0%.\n\nMaxi-max\n\nIr siempre a la playa a menos que llueva al 100%.\n\nUtilidad esperada\n\n\n(3)(a) La utilidad maxi-max es la inversa – donde siempre irías a la playa a menos que lloviera al 100% – buscas el riesgo – te gusta tanto la playa tanto que vas a intentarlo.\n(3)(b) Otro ejemplo de esto en un contexto médico es el ejemplo del paciente desesperado. desesperado: vas a morir de todos modos, así que te vamos a dar este este tratamiento, pero tiene efectos secundarios desagradables – cáncer – quimioterapias, incluso trasplantes de médula ósea, de segunda o tercera línea. alta probabilidad de un mal resultado, pero si no haces nada entonces vas a a morir."
+    "section": "Filosofías de decisión",
+    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección dadas perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento minimáximo\n\nNunca vayas a la playa si haya posibilidad de lluvia.\n\nMaxi-max\n\nIr siempre a la playa a menos que llueva al 100%.\n\nUtilidad esperada\n\n\n(3)(a) La utilidad maxi-max es la inversa – donde siempre irías a la playa a menos que lloviera al 100% – buscas el riesgo – te gusta tanto la playa tanto que vas a intentarlo.\n(3)(b) Otro ejemplo de esto en un contexto médico es el ejemplo del paciente desesperado: vas a morir de todos modos, así que te vamos a dar este tratamiento, pero tiene efectos secundarios desagradables – cáncer – quimioterapias, incluso trasplantes de médula ósea, de segunda o tercera línea. Alta probabilidad de un mal resultado, pero si no haces nada entonces vas a a morir."
   },
   {
-    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#decision-philosophies-1",
-    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#decision-philosophies-1",
+    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión-3",
+    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión-3",
     "title": "Árboles de decisión y probabilidades",
-    "section": "Decision Philosophies",
-    "text": "Decision Philosophies\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección ante perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento minimáximo\n\nNunca vayas a la playa si no llueve 0%.\n\nMaxi-max\n\nIr siempre a la playa a menos que llueva al 100%.\n\nUtilidad esperada\n\nDepende del tiempo.\n\n\nNotas (4) Si vas a basar tu decisión en la utilidad esperada, entonces tu depende del tiempo y del valor que le des a ciertos resultados. resultados – este es el enfoque del pensador racional – cuánto valoras la pérdida de utilidad de no disfrutar de la playa, por ejemplo. experiencia de ir a la playa, por ejemplo. :::"
+    "section": "Filosofías de decisión",
+    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección ante perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento minimáximo\n\nNunca vayas a la playa si haya posibilidad de lluvia.\n\nMaxi-max\n\nIr siempre a la playa a menos que llueva al 100%.\n\nUtilidad esperada\n\nDepende del clima.\n\n\nNotas (4) Si vas a basar tu decisión en la utilidad esperada, entonces depende del clima y del valor que le des a ciertos resultados – este es el enfoque del pensador racional – cuánto valoras la pérdida de utilidad de no disfrutar de la playa, y la experiencia de ir a la playa, por ejemplo. :::"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#payoffs-1",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#payoffs-1",
     "title": "Árboles de decisión y probabilidades",
     "section": "Payoffs",
-    "text": "Payoffs\n\n\nA cada estado del mundo se le asigna un coste o resultado.\nNuestro objetivo suele ser calcular el valor esperado de estos resultados.\nEn las próximas clases profundizaremos en las teorías y marcos que subyacen a los distintos resultados en las próximas clases"
+    "text": "Payoffs\n\n\nA cada estado del mundo se le asigna un costo o resultado.\nNuestro objetivo suele ser calcular el valor esperado de estos resultados.\nEn las próximas sesiones profundizaremos en las teorías y marcos que subyacen a los distintos resultados"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#puntos-fuertes",
@@ -2909,7 +2909,7 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#limitaciones",
     "title": "Árboles de decisión y probabilidades",
     "section": "Limitaciones",
-    "text": "Limitaciones\n\n\nNo tienen en cuenta explícitamente el paso del tiempo.\n\nLos sucesos recurrentes deben incorporarse por separado al modelo.\nEstá bien para ciclos de tiempo cortos (por ejemplo, 12 meses), pero a menudo queremos modelizar a lo largo de toda la vida.\n\nEs difícil incorporar detalles clínicos reales. La estructura de árbol puede volverse compleja rápidamente."
+    "text": "Limitaciones\n\n\nNo toman en cuenta explícitamente el paso del tiempo.\n\nLos sucesos recurrentes deben incorporarse por separado al modelo.\nEstá bien para ciclos de tiempo cortos (por ejemplo, 12 meses), pero a menudo queremos modelizar a lo largo de toda la vida.\n\nEs difícil incorporar detalles clínicos reales. La estructura de árbol puede volverse compleja rápidamente."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#avance-de-lo-que-está-por-venir",
@@ -4316,7 +4316,14 @@
     "href": "case-studies/cs_injury-decision-tree.html",
     "title": "Gunpowder Injury Decision Tree",
     "section": "",
-    "text": "Introduction and Learning Objectives \nThis case study is designed to get you familiar with constructing a decision tree in Amua. Specific learning objectives are as follows:\n\nParameterize and structure a decision tree model.\nEstimate survival and cost outcomes from the decision tree model in the Amua software."
+    "text": "In Columbia, the issue of gunpowder-related injuries, particularly during festive seasons, remains a significant public health concern. Fireworks, while culturally ingrained and a source of celebration, pose substantial risks, especially to children. This has led policymakers to consider various strategies to mitigate these risks and enhance public safety.\nThe decision problem we will consider revolves around identifying the most effective approach to reducing injuries and fatalities caused by fireworks. Two primary strategies under consideration are (1) a complete ban on fireworks and (2) heavy regulation, such as restricted sales licenses and stringent enforcement.\nA complete ban aims to eliminate the root cause of injuries by prohibiting the sale, storage, and use of fireworks. This approach seeks to protect public health directly but may face resistance due to its impact on cultural traditions and the livelihoods of vendors.\nOn the other hand, heavy regulation involves implementing strict controls over the sale and use of fireworks. This strategy includes measures such as issuing sales licenses only to authorized vendors, enforcing age restrictions, and conducting public education campaigns about the dangers of fireworks. This approach aims to reduce injuries while allowing for controlled, safe use of fireworks.\nOur case studies will explore these strategies through two decision modeling approaches. This case study will utilize a decision tree model to evaluate the immediate outcomes and costs associated with each strategy.\nLater, we will employ a Markov cohort model to examine the long-term health and economic impacts, considering factors such as injury rates, healthcare costs, and compliance levels.\nBy analyzing these models, we aim to provide a comprehensive assessment of the most cost-effective and sustainable approach to reducing gunpowder-related injuries in Bogotá today.\n\n\nIn Amua, on the menu at the top, go to Model -&gt; New -&gt;  Decision Tree. This will create a new model with a single decision node  on the left side of the screen.\n\nDecision Node \nPlus \nAlign right \nRun Model \nCheck Model \nClear"
+  },
+  {
+    "objectID": "case-studies/cs_injury-decision-tree.html#scratch",
+    "href": "case-studies/cs_injury-decision-tree.html#scratch",
+    "title": "Gunpowder Injury Decision Tree",
+    "section": "",
+    "text": "In Amua, on the menu at the top, go to Model -&gt; New -&gt;  Decision Tree. This will create a new model with a single decision node  on the left side of the screen.\n\nDecision Node \nPlus \nAlign right \nRun Model \nCheck Model \nClear"
   },
   {
     "objectID": "case-studies/cs_decision-tree-amua.html",
@@ -6618,50 +6625,50 @@
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#curso-sitio-web",
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#curso-sitio-web",
     "title": "Introducción al análisis de decisiones",
-    "section": "Curso Sitio web",
-    "text": "Curso Sitio web\n\nhttps://github.com/graveja0/bogota-vital-strategies\n\n\n\nTodos los materiales del curso (diapositivas, casos prácticos) se publican aquí.\nNuestro calendario (que probablemente evolucione) también se publicará aquí y se actualizará periódicamente."
+    "section": "Curso sitio web",
+    "text": "Curso sitio web\n\nhttps://github.com/graveja0/bogota-vital-strategies\n\n\n\nTodos los materiales del taller (diapositivas, casos de estudio) se publican aquí.\nNuestro calendario (que probablemente evolucione) también se publicará aquí y se actualizará periódicamente."
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#presentaciones",
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#presentaciones",
     "title": "Introducción al análisis de decisiones",
     "section": "Presentaciones",
-    "text": "Presentaciones\n\nPor favor, ¡preséntese!"
+    "text": "Presentaciones\n\nPor favor, ¡preséntense!"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#las-dos-últimas-décadas",
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#las-dos-últimas-décadas",
     "title": "Introducción al análisis de decisiones",
     "section": "Las dos últimas décadas …",
-    "text": "Las dos últimas décadas …\n\n\nHepatitis C curada\nReducción significativa de la incidencia del VIH\nPosible cura de la leucemia y el linfoma recidivantes o refractarios\nVacunas perfeccionadas (por ejemplo, la vacuna contra el VPH) para prevenir enfermedades como el cáncer de cuello de útero y otros tipos de cáncer.\nAvances en la prevención de enfermedades cardiovasculares"
+    "text": "Las dos últimas décadas …\n\n\nHepatitis C curada\nReducción significativa de la incidencia del VIH\nPosible cura de la leucemia y el linfoma recidivantes o refractarios\nVacunas perfeccionadas (por ejemplo, la vacuna contra el VPH) para prevenir enfermedades como el cáncer de cuello uterino y otros tipos de cáncer.\nAvances en la prevención de enfermedades cardiovasculares"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#a-pesar-de-estos-avances",
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#a-pesar-de-estos-avances",
     "title": "Introducción al análisis de decisiones",
     "section": "A pesar de estos avances …",
-    "text": "A pesar de estos avances …\n\nLa carga de enfermedades no transmisibles (ENT) como el cáncer, las enfermedades cardiovasculares y la diabetes va en aumento.\nSon la causa del 74% de las muertes en el mundo, y la mayoría (86%) en los países de renta baja y media (PRMB).\n\nFuente: OMS\n\nLas tasas de malnutrición, necesidad insatisfecha de servicios de salud sexual y reproductiva y mortalidad materna también siguen siendo elevadas en muchas partes del mundo."
+    "text": "A pesar de estos avances …\n\nLa carga de enfermedades no transmisibles (ENT) como el cáncer, las enfermedades cardiovasculares y la diabetes va en aumento.\nSon la causa del 74% de las muertes en el mundo, y la mayoría (86%) en los países de bajos y medios ingresos.\n\nFuente: OMS\n\nLas tasas de desnutrición, necesidad insatisfecha de servicios de salud sexual y reproductiva y mortalidad materna también siguen siendo elevadas en muchas partes del mundo."
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ejemplos-de-análisis-de-decisiones",
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ejemplos-de-análisis-de-decisiones",
     "title": "Introducción al análisis de decisiones",
-    "section": "Ejemplos de Análisis de Decisiones",
-    "text": "Ejemplos de Análisis de Decisiones"
+    "section": "Ejemplos de análisis de decisiones",
+    "text": "Ejemplos de análisis de decisiones"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-1.-vih",
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-1.-vih",
     "title": "Introducción al análisis de decisiones",
     "section": "Ej 1. VIH",
-    "text": "Ej 1. VIH\n\n\n\nHa sido nombrado director de un comité de asignación de fondos responsable de las iniciativas de prevención y tratamiento del VIH.\n\n\n\n\n\nCómo decidirá el comité la proporción de fondos para las iniciativas de prevención frente a las de tratamiento?\n\n¿Debería destinarse parte de los fondos a la investigación?\n\n¿Cómo responder a un miembro que argumenta que los fondos están mejor gastados en vacunación infantil?"
+    "text": "Ej 1. VIH\n\n\n\nHa sido nombrado director de un comité de asignación de fondos responsable de las iniciativas de prevención y tratamiento del VIH.\n\n\n\n\n\nCómo decidirá el comité la proporción de fondos para las iniciativas de prevención frente a las de tratamiento?\n¿Debería alocar parte de los fondos para la investigación?\n¿Cómo responder a un miembro que argumenta que los fondos están mejor gastados en vacunación infantil?"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-2.-defectos-de-nacimiento",
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-2.-defectos-de-nacimiento",
     "title": "Introducción al análisis de decisiones",
     "section": "Ej 2. Defectos de nacimiento",
-    "text": "Ej 2. Defectos de nacimiento\n\n\nUn hipotético defecto congénito está presente en 1 de cada 1.000 niños nacidos\nA menos que se trate, esta condición tiene una tasa de mortalidad del 50"
+    "text": "Ej 2. Defectos de nacimiento\n\n\nUn hipotético defecto congénito está presente en 1 de cada 1.000 niños nacidos\nA menos que se trate, esta condición tiene una tasa de mortalidad del 50%"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-2.-defectos-de-nacimiento-1",
@@ -6674,8 +6681,8 @@
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-2.-defectos-de-nacimiento-2",
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-2.-defectos-de-nacimiento-2",
     "title": "Introducción al análisis de decisiones",
-    "section": "Ej 2. Defectos de Nacimiento",
-    "text": "Ej 2. Defectos de Nacimiento\n\n\n\n¿Deberíamos probar este hipotético defecto de nacimiento?\n\n\n\n\n\n\n\n\nPrueba diagnóstica: Perfectamente preciso\nTodos los recién nacidos en los que se identifica el defecto pueden ser curados con éxito\nPERO la prueba en sí puede ser letal:\n\n4 de cada 10.000 bebés sometidos a la prueba morirán como resultado directo y observable del procedimiento de la prueba"
+    "section": "Ej 2. Defectos de nacimiento",
+    "text": "Ej 2. Defectos de nacimiento\n\n\n\n¿Deberíamos probar este hipotético defecto de nacimiento?\n\n\n\n\n\n\n\n\nPrueba diagnóstica: Perfectamente preciso\nTodos los recién nacidos en los que se identifica el defecto pueden ser curados con éxito\nPERO la prueba en sí puede ser letal:\n\n4 de cada 10.000 bebés sometidos a la prueba morirán como resultado directo y observable del procedimiento de la prueba"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-2.-defectos-de-nacimiento-3",
@@ -6688,8 +6695,8 @@
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-2.-defectos-de-nacimiento-4",
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-2.-defectos-de-nacimiento-4",
     "title": "Introducción al análisis de decisiones",
-    "section": "Ej 2. Defectos de Nacimiento",
-    "text": "Ej 2. Defectos de Nacimiento\n\n\n\nObjetivo: Minimizar el total de muertes esperadas\n\n\n\n\n\nConsiderar una población de 100.000 recién nacidos\nLa prueba produce: (0,0004 x 100.000) = 40 muertes esperadas\nSin pruebas produce: (0,001 x 0,5 x 100.000) = 50 muertes esperadas"
+    "section": "Ej 2. Defectos de nacimiento",
+    "text": "Ej 2. Defectos de nacimiento\n\n\n\nObjetivo: Minimizar el total de muertes esperadas\n\n\n\n\n\nConsiderar una población de 100.000 recién nacidos\nLa prueba produce: (0,0004 x 100.000) = 40 muertes esperadas\nSin pruebas produce: (0,001 x 0,5 x 100.000) = 50 muertes esperadas"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-2.-defectos-de-nacimiento-5",
@@ -6710,7 +6717,7 @@
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#diferentes-vidas-se-pierden",
     "title": "Introducción al análisis de decisiones",
     "section": "Diferentes vidas se pierden",
-    "text": "Diferentes vidas se pierden\n\n\nCon pruebas, prácticamente las 40 muertes ocurren en bebés nacidos sin la enfermedad mortal.\nCon sin pruebas, las 50 muertes previstas se producen por “causas naturales” (es decir, por un defecto congénito que no se puede prevenir)."
+    "text": "Diferentes vidas se pierden\n\n\nCon pruebas, casi todas las 40 muertes ocurren en bebés nacidos sin la enfermedad mortal.\nSin pruebas, las 50 muertes previstas se producen por “causas naturales” (es decir, por un defecto congénito que no se puede prevenir)."
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#se-pierden-vidas-diferentes",
@@ -6731,7 +6738,7 @@
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-3.-cáncer-de-colon-prevención",
     "title": "Introducción al análisis de decisiones",
     "section": "Ej 3. Cáncer de colon – Prevención",
-    "text": "Ej 3. Cáncer de colon – Prevención\n\n\n¿Cuándo realizar el tamizaje?\n¿Qué prueba y con qué frecuencia?\nSi se encuentra/extrae un pólipo, ¿cuándo repetir?"
+    "text": "Ej 3. Cáncer de colon – Prevención\n\n\n¿Cuándo realizar el tamizaje?\n¿Qué prueba y con qué frecuencia?\nSi se encuentra/extrae un pólipo ¿cuándo repetir?"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-3.-cáncer-de-colon-prevención-1",
@@ -6752,7 +6759,7 @@
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-3.-cáncer-de-colon---estimación-de-probabilidades-1",
     "title": "Introducción al análisis de decisiones",
     "section": "Ej 3. Cáncer de colon - Estimación de probabilidades",
-    "text": "Ej 3. Cáncer de colon - Estimación de probabilidades\n\n\nPredecir el “beneficio” del tamizaje\n\nTodas las probabilidades anteriores\nProbabilidad de detección precoz\nProbabilidad de complicaciones derivadas de las pruebas\nProbabilidad de falso positivo\nProbabilidad de falsos negativos\nProbabilidad de pruebas positivas = cáncer\nProbabilidad de pruebas negativas = sin cáncer"
+    "text": "Ej 3. Cáncer de colon - Estimación de probabilidades\n\n\nPredecir el “beneficio” del tamizaje\n\nTodas las probabilidades anteriores\nProbabilidad de detección precoz\nProbabilidad de complicaciones derivadas de las pruebas\nProbabilidad de falso positivo\nProbabilidad de falso negativo\nProbabilidad de que prueba positiva = cáncer\nProbabilidad de que prueba negativa = sin cáncer"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#la-estimación-de-probabilidades-es-fundamental-para-la-toma-de-decisiones",
@@ -6766,7 +6773,7 @@
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#commonality-of-cases",
     "title": "Introducción al análisis de decisiones",
     "section": "Commonality of cases",
-    "text": "Commonality of cases\n\n\nCompromisos inevitables\nDiferentes perspectivas pueden llevar a conclusiones diferentes\nMúltiples objetivos contrapuestos\nComplejidad\nIncertidumbre"
+    "text": "Commonality of cases\n\n\nTradeoffs inevitables\nDiferentes perspectivas pueden llevar a conclusiones diferentes\nMúltiples objetivos contrapuestos\nComplejidad\nIncertidumbre"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#análisis-de-decisiones",
@@ -6780,7 +6787,7 @@
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#diseño-del-taller",
     "title": "Introducción al análisis de decisiones",
     "section": "Diseño del taller",
-    "text": "Diseño del taller\n\nSomos flexibles – si hay algún tema que no te queda claro, o que te gustaría que se ampliara, ¡háznoslo saber!\nContenido mixto\n\n\nConferencias\nCasos prácticos en grupos reducidos\nCasos prácticos en grupos grandes y ejercicios prácticos de Excel"
+    "text": "Diseño del taller\n\nSomos flexibles – si hay algún tema que no te queda claro, o que te gustaría que se ampliara, ¡háznoslo saber!\nContenido mixto\n\n\nConferencias\nCasos de estudio en grupos reducidos\nCasos de estudio en grupos grandes y ejercicios prácticos de Excel"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#contenido-del-taller",
@@ -6794,7 +6801,7 @@
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#contenido-del-taller-1",
     "title": "Introducción al análisis de decisiones",
     "section": "Contenido del taller",
-    "text": "Contenido del taller\n\nFundamentos del análisis coste-eficacia (Días 3-4)\n\n\nValoración de costos y resultados sanitarios\nAnálisis coste-efectividad incremental\nIntroducción a los modelos de Markov"
+    "text": "Contenido del taller\n\nFundamentos del análisis costo-efectividad (Días 3-4)\n\n\nValoración de costos y resultados sanitarios\nAnálisis costo-efectividad incremental\nIntroducción a los modelos de Markov"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#contenido-del-taller-2",

@@ -363,7 +363,7 @@
 <div class="callout callout-important no-icon callout-style-simple">
 <div class="callout-body">
 <div class="callout-content">
-<p>¿Qué ocurriría si la probabilidad de EP recurrente fuera mayor o menor que la estimada inicialmente? estimada inicialmente?</p>
+<p>¿Qué ocurriría si la probabilidad de EP recurrente fuera mayor o menor que la estimada inicialmente?</p>
 </div>
 </div>
 </div>
@@ -392,7 +392,7 @@
 <img data-src="images/trt-threshold3.png" width="344" class="r-stretch"><div style="font-size: 0.8em">
 <p><span style="color:green;">Valor esperado (AC) = 0.990 * pPE + 0.992 * (1-pPE)</span></p>
 <p><span style="color:blue;">Valor esperado (No AC) = 0.750 * pPE + 1.0 * (1-pPE)</span></p>
-<p>AHORA, AJUSTAR IGUAL A CADA UNO, para resolver la probabilidad umbral desconocida</p>
+<p>AHORA, ESTABLECE IGUAL A LOS DOS, para resolver la probabilidad de un umbral desconocida</p>
 </div>
 </section>
 <section id="umbrales-de-tratamiento-6" class="slide level2">
@@ -446,7 +446,7 @@
 <ul>
 <li class="fragment">En teoría, la información puede ser perfecta, gratuita y sin riesgos, pero ¡normalmente NO LO ES!</li>
 <li class="fragment">La información es casi siempre IMPERFECTA</li>
-<li class="fragment">Obtener información suele TENER UN COSTE</li>
+<li class="fragment">Obtener información suele TENER UN COSTO</li>
 </ul>
 </div>
 </section>
@@ -454,7 +454,7 @@
 <h2>Testing &amp; expected value of information</h2>
 <p><br></p>
 <div class="fragment">
-<p>El valor de la información pregunta: <strong>¿Qué ganamos con esta información adicional? adicional?</strong></p>
+<p>El valor de la información pregunta: <strong>¿Qué ganamos con esta información adicional?</strong></p>
 </div>
 <p><br></p>
 <div class="fragment">
@@ -466,22 +466,22 @@
 <section id="testing-expected-value-of-information-2" class="slide level2">
 <h2>Testing &amp; expected value of information</h2>
 <div class="fragment">
-<p>Las pruebas PERFECT nos dan un límite superior del beneficio potencial de cualquier prueba</p>
+<p>Las pruebas PERFECTAS nos dan un límite superior del beneficio potencial de cualquier prueba</p>
 </div>
 <p><br></p>
 <div class="fragment">
-<p>La ganancia de esta prueba PERFECTA imaginaria es el valor esperado de la información perfecta (EVPI)</p>
+<p>La ganancia de esta prueba PERFECTA es el valor esperado de la información perfecta (EVPI)</p>
 </div>
 </section>
 <section id="pruebas-y-valor-esperado-de-la-información" class="slide level2">
 <h2>Pruebas y valor esperado de la información</h2>
 </section>
-<section id="una-prueba-perfecta-100-sens-y-spec-sin-riesgo" class="slide level2">
-<h2>Una prueba perfecta (100% sens y spec) sin riesgo</h2>
+<section id="una-prueba-perfecta-100-sensitividad-y-specificidad-sin-riesgo" class="slide level2">
+<h2>Una prueba perfecta (100% sensitividad y specificidad) sin riesgo</h2>
 
 <img data-src="images/VOI2.png" class="r-stretch"></section>
-<section id="una-prueba-perfecta-100-sens-y-spec-sin-riesgo-1" class="slide level2">
-<h2>Una prueba perfecta (100% sens y spec) sin riesgo</h2>
+<section id="una-prueba-perfecta-100-sensitividad-y-specificidad-sin-riesgo-1" class="slide level2">
+<h2>Una prueba perfecta (100% sensitividad y specificidad) sin riesgo</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p><img data-src="images/VOI3.png"></p>
@@ -490,12 +490,12 @@
 <ul>
 <li><p>EV(prueba perfecta) = <span style="background-color: yellow;">0.12</span></p></li>
 <li><p>EV(estrategia de tratamiento) = 0.16</p></li>
-<li><p>EV(estrategia de no tratar) = 0.24 (worst EV)</p></li>
+<li><p>EV(estrategia de no tratar) = 0.24 (peor EV)</p></li>
 </ul>
 <p>EVPI =</p>
 <p>|EV ‘prueba perfecta’ – EV ‘siguiente mejor estrategia: tratar a todos’|</p>
 <p>=|0.12 – 0.16| = 0.04,</p>
-<p>o 4 muertes evitadas por cada 100 pruebas gracias a las pruebas adicionales información</p>
+<p>o 4 muertes evitadas por cada 100 pruebas gracias a la información adicional de la prueba</p>
 </div>
 </div>
 </div>
@@ -520,15 +520,15 @@
 <p><br></p>
 <p>Cuando la prueba es IMPERFECTA: <br></p>
 <ul>
-<li><p>EV(estrategia de prueba) = <span style="color de fondo: amarillo;">0.157</span></p></li>
+<li><p>EV(estrategia de prueba) = <span style="color de fondo: amarillo;">0,157</span></p></li>
 <li><p>EV(estrategia de tratamiento) = 0,16</p></li>
-<li><p>EV(sin estrategia de tratamiento) = 0,24 (peor EV)</p></li>
+<li><p>EV(estrategia de no tratar) = 0,24 (peor EV)</p></li>
 </ul>
 <p><br></p>
 <div class="fragment">
 <p>VOI = |EV ‘prueba’ – EV ‘siguiente mejor estrategia’||</p>
 <p>= |0.157 – 0.16| = 0.003,</p>
-<p>o 3 muertes evitadas por cada 1000 pruebas gracias a la información adicional de las pruebas. información</p>
+<p>o 3 muertes evitadas por cada 1.000 pruebas gracias a la información adicional de las pruebas.</p>
 </div>
 
 <div class="quarto-auto-generated-content">
