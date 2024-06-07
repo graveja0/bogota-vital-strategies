@@ -4137,11 +4137,186 @@
     "text": "Markov Models\n\n\n\n\n\n\n\nPros\nCons\n\n\n\n\nCan model repeated events\nCan only transition once in a given cycle\n\n\nCan model more complex + longitudinal clinical events\nShortening the cycle can create computational challenges.\n\n\nNot computationally intensive; efficient to model and debug\nShortening cycle can cause “state explosion” if tunnel states are used"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Instructores",
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#learning-objectives",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#learning-objectives",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nDefine treatment thresholds within a decision tree & examine different ways of interpretation\nUnderstand and calculate the value of information from a perfect vs. imperfect test"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#outline",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#outline",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Outline",
+    "text": "Outline\n\nTreatment thresholds\nTesting & Value of Information"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-1",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-1",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Treatment thresholds",
+    "text": "Treatment thresholds\n\n\n\nLet’s start with the PULMONARY EMBOLISM example that we’ve looked at before & in our text\nPulmonary embolism (PE) during pregnancy is a life-threatening event. Treatment with anti-coagulation is effective in preventing further PE and hence in reducing the fatality probability.\nThe choices here are either to ANTICOAGULATE OR TO NOT ANTICOAGULATE & our main objective is to optimize survival\nWhen we calculate out the probabilities, the overall expected survival chances with ANTICOAGULATION is 99%, compared to 95% WITHOUT ANTICOAGULATION\nTherefore, we would, on average, choose to ANTICOAGULATE in this case because it has higher overall survival\nBUT to be confident about our decision, we need to explore HOW our assumptions will affect the decision in sensitivity analyses\n\n***We will cover more on SA’s later in the semester as it relates to cost-effectiveness analysis"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-2",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-2",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Treatment thresholds",
+    "text": "Treatment thresholds\n\n\n\n\nWhat if the probability of recurrent PE were higher or lower than initially estimated?\n\n\n\n\n\nDo we anticoagulate or not?\nAt what point do we switch between “yes” versus “no”?\n\n\n\nI know we touched on this briefly in the last couple of lectures in various forms, but the key question that we always need to ask in any decision problem is AT WHAT POINT DO WE SWITCH BETWEEN OPTIONS?\nIn this case, what IF the probability of recurrent PE were higher or lower than initially estimated? would we still choose to anticoagulate? & at what point would we switch?\n(And from a cost-effectiveness perspective, at more of a higher population level - what variations will ultimately change our decision) – In this case, to anticoagulate versus not.\nParameters will always have confidence intervals around them & will also be uncertain depending on our assumptions in our model & the information that we have.\nHowever, the more information we have on a certain disease/parameter, the more confidence we will have in our decisions."
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-3",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-3",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Treatment thresholds",
+    "text": "Treatment thresholds\n\n\n\nFrom more of a clinical standpoint –\nOur THRESHOLD TO TREAT a patient is the point at which the expected value of treatment & no treatment are exactly EQUAL\n\nAnother way to look at this (which we’ll go over in the upcoming slides) is the RATIO of NET HARM of treating patients without the disease & BENEFIT gained by treating patients with the disease.\n\nAnd if we incorporate DIAGNOSTIC TESTING as part of our decision-making, we can determine how a patient’s risk might change based on the result of a particular test\n\nFor example, if the test has no chance of moving the patient’s risk above the treatment threshold, then the test should probably not be ordered. Because as we know, tests can also come with their own risks & costs."
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-4",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-4",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Treatment thresholds",
+    "text": "Treatment thresholds\n\n\nPerform a sensitivity analysis to find a treatment threshold\n\n\n(More on sensitivity analyses later in the workshop)\n\n\nWe would need to perform a sensitivity analysis to find the treatment threshold\n\nSimilar to the “beach” example in the second class"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-5",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-5",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Treatment thresholds",
+    "text": "Treatment thresholds\n\n\nExpected value (AC) = 0.990 * pPE + 0.992 * (1-pPE)\nExpected value (No AC) = 0.750 * pPE + 1.0 * (1-pPE)\nNOW, SET EQUAL TO EACH OTHER, to solve for unknown threshold probability\n\n\n\nTo go back to our PE example,\nA key parameter in our model is the probability of pulmonary embolism when we undergo anticoagulant treatment versus not.\nIf we set the EXPECTED VALUE OF AC VERSUS NO AC equal to each other, like we’ve done in previous examples, we can solve for the unknown threshold probability\n\nwhich is the point where the expected value of treatment and withholding treatment are exactly equal for this specific decision problem."
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-6",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-6",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Treatment thresholds",
+    "text": "Treatment thresholds\n\n\n0.990 * pPE + 0.992 * (1-pPE) = 0.750 * pPE + 1.0 * (1-pPE)\n0.240 * pPE = 0.008 * (1-pPE)\n0.240 * pPE + 0.008 *pPE = 0.008\npPE = 0.008 / (0.240 + 0.008)\n= .032"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-7",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-7",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Treatment thresholds",
+    "text": "Treatment thresholds\n\n\n\n\nSo, what does this mean?\nIf you put these probabilities for PE back into our model for each AC & no AC, then you’ll get these survival probabilities\nYou can see the point in which our decision would change\nIf our pPE is EQUAL TO or LESS THAN .032, then we would prefer no AC to AC\nBut, as displayed in the second row, if our pPE is GREATER than .032, then we would prefer AC to No AC - bc higher overall survival"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-8",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-8",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Treatment thresholds",
+    "text": "Treatment thresholds\n\n\n\nWhen we go back to thinking about testing & how that might impact our decision to treat…\nNo tests should be done UNLESS the result of the test will change the treatment plan\n\nSo, on the top bar – the result of additional tests do not change our treatment plan\nWhereas, looking at the bar below, additional tests could in fact change our treatment plan\n\nA key question we should be asking is - Is the risk of the test worth the benefit of getting it **** & this is something we can explore withing a decision analysis framework"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-9",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-9",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Treatment thresholds",
+    "text": "Treatment thresholds\n\nPerforming a test to gain additional information is ONLY worthwhile IF: \n\nAt least one decision would change given some test results, and/or\n\nThe risk to the patient associated with the test is less than the expected benefit gained from undergoing the test"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-10",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-10",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Treatment thresholds",
+    "text": "Treatment thresholds\n\n\nSame as before, but here, the additional information you gain on the top bar, doesn’t change your decision NOT to treat"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-11",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-11",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Treatment thresholds",
+    "text": "Treatment thresholds\n\n\nYou can look at test/treat thresholds the following way –\n\nDO NOT TREAT & DO NOT TEST – when even a positive test result will not persuade us to treat Ex. 95 year old, testing says you need a hip replacement. You’re likely not going to get the surgery due to the risks regardless of the positive result.\nTEST – if the test will help us make a treatment decision\nTREAT & DO NOT TEST – when even a negative test result will not dissuade us from treating Ex."
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-12",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-12",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Treatment thresholds",
+    "text": "Treatment thresholds\n\nNo Treat – Test Threshold  Probability of indifference between testing & not treating\n\nTest – Treat Threshold  Probability of indifference between testing & treatment"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Testing & expected value of information",
+    "text": "Testing & expected value of information\n\n\n\nInformation can theoretically be perfect, free, & without risk, but it’s usually NOT!\nInformation is almost always IMPERFECT\nGetting information usually HAS A COST"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-1",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-1",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Testing & expected value of information",
+    "text": "Testing & expected value of information\n\n\nValue of information asks: what are we gaining by having this extra information?\n\n\n\nValue of information =\n|[expected value from the ‘gaining information’ strategy] –\n[expected value from the next best strategy]|"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-2",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-2",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Testing & expected value of information",
+    "text": "Testing & expected value of information\n\nPERFECT tests give us an upper limit to the potential benefit from any test\n\n\n\nThe gain from such an imaginary PERFECT test is the expected value of perfect information (EVPI)"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-3",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-3",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Testing & expected value of information",
+    "text": "Testing & expected value of information"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#a-perfect-test-100-sens-and-spec-with-no-risk",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#a-perfect-test-100-sens-and-spec-with-no-risk",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "A perfect test (100% sens and spec) with no risk",
+    "text": "A perfect test (100% sens and spec) with no risk"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#a-perfect-test-100-sens-and-spec-with-no-risk-1",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#a-perfect-test-100-sens-and-spec-with-no-risk-1",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "A perfect test (100% sens and spec) with no risk",
+    "text": "A perfect test (100% sens and spec) with no risk\n\n\n\n\n\n\nEV(perfect test) = 0.12\nEV(treat strategy) = 0.16\nEV(no treat strategy) = 0.24 (worst EV)\n\nEVPI =\n|EV ‘perfect test’ – EV ‘next best strategy: treat all’|\n=|0.12 – 0.16| = 0.04,\nor 4 deaths prevented per 100 tests because of the additional testing information"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "An imperfect test with morbidity risk",
+    "text": "An imperfect test with morbidity risk"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk-1",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk-1",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "An imperfect test with morbidity risk",
+    "text": "An imperfect test with morbidity risk"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk-2",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk-2",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "An imperfect test with morbidity risk",
+    "text": "An imperfect test with morbidity risk\n\n\nWhen the test is imperfect, testing is still the best strategy (in this case, the lower EV, the better since our outcome values are the probability of a bad outcome), but not by much:"
+  },
+  {
+    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-4",
+    "href": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-4",
+    "title": "Treatment Thresholds & Value of Information",
+    "section": "Testing & expected value of information",
+    "text": "Testing & expected value of information\n\nWhen the test is IMPERFECT: \n\nEV(test strategy) = 0.157\nEV(treat strategy) = 0.16\nEV(no treat strategy) = 0.24 (worst EV)\n\n\n\nVOI = |EV ‘test’ – EV ‘next best strategy’|\n= |0.157 – 0.16| = 0.003,\nor 3 deaths prevented per 1000 tests because of the additional testing information"
+  },
+  {
+    "objectID": "case-studies/ESP_cs_prob-decision.html",
+    "href": "case-studies/ESP_cs_prob-decision.html",
+    "title": "Case Study: Probabilities & Decision Trees",
     "section": "",
-    "text": "John Graves (Vanderbilt University)\n\n\n\n\n\nJohn A. Graves, Ph.D. es catedrático de Política Sanitaria y Medicina en la Facultad de Medicina de la Universidad de Vanderbilt, y catedrático de Gestión en la Vanderbilt Owen Graduate School of Management de Nashville (Tennessee, EE.UU.). Dirige el Centro de Modelización Económica Sanitaria del Centro Médico de la Universidad de Vanderbilt y es miembro del profesorado del Instituto Vanderbilt de Salud Global (VIGH) y del Centro Oncológico Vanderbilt Ingram.\nEl Dr. Graves tiene más de veinte años de experiencia en la intersección de la investigación y la formulación de políticas, habiendo contribuido a los esfuerzos de modelado de políticas que informaron el diseño y la ejecución de la legislación de la reforma sanitaria de Massachusetts de 2006 y la Ley de Asistencia Asequible de 2010, para la que se desempeñó como modelador principal de la Oficina de Reforma Sanitaria de la Casa Blanca. Desde que se incorporó a la facultad de Vanderbilt en 2011, el Dr. Graves ha dirigido grandes proyectos de investigación centrados en el diseño de seguros de salud, los rendimientos del gasto y la calidad de la atención sanitaria, y la rentabilidad de las pruebas genéticas en diversas poblaciones del sistema sanitario.\nEl Dr. Graves imparte cursos de econometría, estadística y política sanitaria a estudiantes de máster y doctorado de toda la Universidad de Vanderbilt, y es director del curso de contenidos de política y economía sanitaria para estudiantes de medicina de la Facultad de Medicina de Vanderbilt. También codirige el Health Care Valuation Lab, un novedoso curso de colaboración entre la Owen Graduate School of Management, la Facultad de Medicina de Vanderbilt y la iniciativa [Project Healthcare] del Nashville Entrepreneur Center (https://www.ec.co/programs/project-healthcare/). Antes de incorporarse a Vanderbilt, impartió clases en el Máster de Administración Pública en Desarrollo Internacional de la Harvard Kennedy School, y está afiliado al Abdul Latif Jameel Poverty Action Lab del MIT.\nEl Dr. Graves es Doctor en Política Sanitaria por la Universidad de Harvard y licenciado en Economía y Literatura Inglesa por la Universidad del Sur en Sewanee, Tennessee. Es miembro electo de la Academia Nacional de Seguros Sociales, y su trabajo ha sido reconocido con becas y premios del Instituto Nacional de Gestión Sanitaria, la Oficina Nacional de Investigación Económica y la Asociación Estadística Americana."
+    "text": "Important\n\n\n\nPuede descargar las versiones en PDF y Microsoft Word de este de este estudio de caso utilizando los enlaces de la derecha.\n\n\n\nCaso 1\nEn una comunidad hipotética, el 60% de las personas consumen al menos 6 bebidas alcohólicas a la semana y el 50% tiene sobrepeso. El porcentaje de personas que tienen sobrepeso y consumen esta cantidad de alcohol es del 40%. Construye una tabla de 2x2 para responder a las partes (a)-(c). Para la parte (d), construya un árbol de decisión.\n\n¿Qué porcentaje de personas consumen al menos 6 bebidas alcohólicas a la semana, tienen sobrepeso o entran en ambas categorías?.\n\n\n\n\n\n\n\n\n\n\n\n\nSe toma una muestra al azar de una persona de la comunidad y se descubre que consumen al menos 6 bebidas alcohólicas a la semana. ¿Cuál es la probabilidad de que tenga sobrepeso? probabilidad de que tenga sobrepeso?\n\n\n\n\n\n\n\n\n\n\n\n\n\n¿Cuál es la probabilidad de que alguien de esta comunidad consuma al menos 6 bebidas alcohólicas a la semana si tiene sobrepeso?.\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaso 2\nUn nuevo procedimiento de cribado puede detectar el 80% de las mujeres diagnosticadas de cáncer de mama, pero detectará erróneamente un 2% de mujeres sin cáncer de mama. cáncer de mama, pero identificará falsamente a un 2% sin cáncer de mama. La prevalencia del cáncer de mama en la población es de 1,6 en 100\n\n¿Cuál es la probabilidad de que una mujer no tenga cáncer de mama si la prueba es negativa?\n\n\n\n\n\n\n\n\n\n\n\n\n¿Cuál es la probabilidad de que una mujer tenga cáncer de mama si la prueba es positiva?\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaso 3\nA un paciente se le detecta un aneurisma aórtico abdominal (AAA) de 5 cm de de tamaño. Si se le opera ahora y sobrevive, tendrá una esperanza de vida de 3 años más. En una serie de 100 pacientes similares de su hospital, 6 murieron inmediatamente después de la operación. Si eliges vigilar al paciente, el 60% romperá su AAA en casa (supongamos que una media de 1 año después). De los que rompen su AAA, el 30% morirá, mientras que el otro % se someterá a cirugía de urgencia y sobrevivirá, permitiendo al paciente sobreviva los 3 años de esperanza de vida.\n\nDibujar un árbol de decisión para el problema de elegir si se opera electiva. Recuerde que debe considerar la esperanza de vida como un resultado. como un resultado. ¿Cuál es la opción preferida?\n\n\n\n\n\n\n\n\n\n\n\n\nUn intervalo de confianza del 95% para la tasa de mortalidad de la cirugía electiva en su hospital oscila entre el 1,4 y el 12,7%. en su hospital oscila entre el 1,4 y el 12,7%. ¿Influye esto su opinión? ¿Por qué? ¿Necesita más información sobre su estimación de la mortalidad? ¿Por qué? (Nota: Para esto último, calcule la tasa de mortalidad para la que es indiferente entre las dos opciones).\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaso 4\nUn paciente acude a Urgencias con dolor abdominal. Según el médico de urgencias, usted estima que la probabilidad de apendicitis del paciente es de 0,16. Si el paciente tiene realmente apendicitis, la probabilidad de que el apéndice ya estuviera perforado en el momento en que el paciente acude a Urgencias es de 0,1875. También puede observar al paciente durante 6 horas para estar seguro de que su diagnóstico es correcto. Si su diagnóstico acaba siendo correcto, el 24% de apéndice perforado al cabo de 6 horas (Nota: esta cifra no es la que se número no es el que entra en su árbol. Debe tener en cuenta el 18,75% apéndice perforado cuando el paciente ingresó en el hospital). hospital).\nSi el apéndice está perforado en el momento en que el paciente se presenta en urgencias o al cabo de 6 horas, hay un 0,84 de probabilidades de que los síntomas empeoren y un 0,16 de que permanezcan igual. Si el paciente tiene apendicitis pero el apéndice no revienta al cabo de 6 horas, hay una probabilidad de 0,8 de que los síntomas empeoren y una probabilidad de 0,2 de que permanezcan igual. Si el apéndice no está enfermo, hay un 0,39 de probabilidad de que los síntomas sigan igual en 6 horas, un 0,61 probabilidad de que mejoren y ninguna probabilidad de que empeoren.\n\nCalcular la probabilidad de que un paciente tenga un apéndice perforado al cabo de 6 horas, dado que tenía apendicitis pero no estaba perforado en el momento de ingresar en el hospital\n\n\n\n\n\n\n\n\n\n\n\nDibuje un árbol de decisión para calcular las probabilidades planteadas en las preguntas 3-6.\n\nCalcular la probabilidad de que el paciente tenga un apéndice perforado a las 6 horas. apéndice al comienzo de las 6 horas.\n\n\n\n\n\n\n\n\n\n\n\nP(Perforación al comienzo de las seis horas) = 0,1600 * 0,1875 = 0.0300. Esta es la proporción de pacientes con apendicitis multiplicada por la probabilidad condicional de perforación dada la apendicitis en el en el momento en que el paciente ingresa en el hospital.\n\nCalcular la probabilidad de que el paciente tenga una perforación de apendicitis si espera 6 horas.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*Calcule la probabilidad de que los síntomas del paciente 1) empeoren, 2) permanezcan igual y 3) mejoren. empeoren, 2) permanezcan igual y 3) mejoren.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalcular la probabilidad condicional de que el paciente tenga una apéndice perforado si los síntomas 1) empeoran; 2) permanecen igual o 3) mejoran.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalcular la probabilidad condicional de que el paciente tenga apendicitis si 1) los síntomas empeoran, 2) permanecen igual, o 3) mejoran."
+  },
+  {
+    "objectID": "case-studies/cs_injury-decision-tree.html",
+    "href": "case-studies/cs_injury-decision-tree.html",
+    "title": "Exercise: Decision Tree in Amua",
+    "section": "",
+    "text": "Introduction and Learning Objectives \nThis case study is designed to get you familiar with constructing a decision tree in Amua. Specific learning objectives are as follows:\n\nParameterize and structure a decision tree model.\nEstimate survival and cost outcomes from the decision tree model in the Amua software."
   },
   {
     "objectID": "case-studies/cs_decision-tree-amua.html",
@@ -4382,179 +4557,18 @@
     "text": "Important\n\n\n\nPlease note that you can download PDF and Microsoft Word versions of this case study using the links on the right.\n\n\n\nCase 1\nIn a hypothetical community, 60% of all people consume at least 6 alcoholic beverages per week and 50% are overweight. The percentage of people who are both overweight and consume this much alcohol is 40%. Construct a 2x2 table to answer (a)-(c) below. For part (d), construct a decision tree.\n\nWhat percentage of people consume at least 6 alcoholic beverages per week, are overweight, or fall into both categories?\n\n\n\n\n\n\n\n\n\n\n\n\nYou sample at random a person from the community and find that they consume at least 6 alcoholic beverages per week. What is the probability that they are overweight?\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is the probability that someone from this community consumes at least 6 alcoholic beverages per week if they are overweight?\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase 2\nA new screening procedure can detect 80% of women diagnosed with breast cancer but will falsely identify 2% without breast cancer. The prevalence of breast cancer in the population is 1.6 in 100\n\nWhat is the probability that a woman does not have breast cancer if the test is negative?\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is the probability that a woman has breast cancer if the test is positive?\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase 3\nA patient is found to have an abdominal aortic aneurysm (AAA) 5 cm in size. If you operate now and he survives, he will have a life expectancy of 3 additional years. In a series of 100 similar patients from your hospital, 6 died immediately after surgery. If you elect to watch the patient, 60% will rupture their AAA at home (assume at an average of 1 year later). Of those who rupture their AAA, 30% will die, while the other % will undergo emergency surgery and survive, allowing the patient to survive the full 3-years of life expectancy\n\nDraw a decision tree for the problem of choosing whether to operate electively. Remember that you must consider the life expectancies as an outcome here. What is the preferred choice?\n\n\n\n\n\n\n\n\n\n\n\n\nA 95% confidence interval for the mortality rate of elective surgery at your hospital ranges from 1.4-12.7%. Does this influence your thoughts? Why? Do you need better information about your estimate of mortality? Why? (Note: For the latter, calculate the mortality rate for which you are indifferent between the two choices)\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase 4\nA patient presents to the ER with abdominal pain. As per the ER doc, you estimate that the patient’s appendicitis probability is 0.16. If the patient truly has appendicitis, the probability that the appendix was already perforated at the time the patient presents to the ER is 0.1875. You can also observe the patient for 6 hours to be certain that your diagnosis is correct. If your diagnosis ends up being correct, 24% of individuals will have a perforated appendix after 6 hours (Note: this number is not what goes into your tree. You must account for the 18.75% who already had a perforated appendix at the time the patient entered the hospital).\nIf the appendix is perforated at the time the patient presents to the ER or at the end of 6 hours, there is a 0.84 chance that the symptoms will become worse and a 0.16 chance they will remain the same. If the patient has appendicitis but the appendix does not burst at the end of 6 hours, there is a 0.8 chance the symptoms will worsen and a 0.2 chance that they will remain the same. If the appendix is not diseased, there is a 0.39 chance that the symptoms will remain the same in 6 hours, a 0.61 chance that this will improve, and no chance that they will worsen.\n\nCalculate the probability that a patient has a perforated appendix by the end of 6 hours given that he had appendicitis but was not perforated at the time he entered the hospital\n\n\n\n\n\n\n\n\n\n\n\nDraw a decision tree to calculate the probabilities asked in questions 3-6.\n\nCalculate the probability that the patient has a perforated appendix at the beginning of 6 hours.\n\n\n\n\n\n\n\n\n\n\n\nP(Perforation at the beginning of the six hours) = 0.1600 * 0.1875 = 0.0300. This is the proportion of patients with appendicitis multiplied by the conditional probability of perforation given appendicitis at the time the patient enters the hospital.\n\nCalculate the probability that the patient will have a perforated appendix if you wait 6 hours\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalculate the probability that the patient’s symptoms will 1) get worse, 2) stay the same, and 3) get better.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalculate the conditional probability that the patient has a perforated appendix if the symptoms 1) get worse; 2) stay the same or 3) get better.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalculate the conditional probability that the patient has appendicitis if 1) the symptoms get worse, 2) stay the same, or 3) get better"
   },
   {
-    "objectID": "case-studies/ESP_cs_prob-decision.html",
-    "href": "case-studies/ESP_cs_prob-decision.html",
-    "title": "Case Study: Probabilities & Decision Trees",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Instructores",
     "section": "",
-    "text": "Important\n\n\n\nPuede descargar las versiones en PDF y Microsoft Word de este de este estudio de caso utilizando los enlaces de la derecha.\n\n\n\nCaso 1\nEn una comunidad hipotética, el 60% de las personas consumen al menos 6 bebidas alcohólicas a la semana y el 50% tiene sobrepeso. El porcentaje de personas que tienen sobrepeso y consumen esta cantidad de alcohol es del 40%. Construye una tabla de 2x2 para responder a las partes (a)-(c). Para la parte (d), construya un árbol de decisión.\n\n¿Qué porcentaje de personas consumen al menos 6 bebidas alcohólicas a la semana, tienen sobrepeso o entran en ambas categorías?.\n\n\n\n\n\n\n\n\n\n\n\n\nSe toma una muestra al azar de una persona de la comunidad y se descubre que consumen al menos 6 bebidas alcohólicas a la semana. ¿Cuál es la probabilidad de que tenga sobrepeso? probabilidad de que tenga sobrepeso?\n\n\n\n\n\n\n\n\n\n\n\n\n\n¿Cuál es la probabilidad de que alguien de esta comunidad consuma al menos 6 bebidas alcohólicas a la semana si tiene sobrepeso?.\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaso 2\nUn nuevo procedimiento de cribado puede detectar el 80% de las mujeres diagnosticadas de cáncer de mama, pero detectará erróneamente un 2% de mujeres sin cáncer de mama. cáncer de mama, pero identificará falsamente a un 2% sin cáncer de mama. La prevalencia del cáncer de mama en la población es de 1,6 en 100\n\n¿Cuál es la probabilidad de que una mujer no tenga cáncer de mama si la prueba es negativa?\n\n\n\n\n\n\n\n\n\n\n\n\n¿Cuál es la probabilidad de que una mujer tenga cáncer de mama si la prueba es positiva?\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaso 3\nA un paciente se le detecta un aneurisma aórtico abdominal (AAA) de 5 cm de de tamaño. Si se le opera ahora y sobrevive, tendrá una esperanza de vida de 3 años más. En una serie de 100 pacientes similares de su hospital, 6 murieron inmediatamente después de la operación. Si eliges vigilar al paciente, el 60% romperá su AAA en casa (supongamos que una media de 1 año después). De los que rompen su AAA, el 30% morirá, mientras que el otro % se someterá a cirugía de urgencia y sobrevivirá, permitiendo al paciente sobreviva los 3 años de esperanza de vida.\n\nDibujar un árbol de decisión para el problema de elegir si se opera electiva. Recuerde que debe considerar la esperanza de vida como un resultado. como un resultado. ¿Cuál es la opción preferida?\n\n\n\n\n\n\n\n\n\n\n\n\nUn intervalo de confianza del 95% para la tasa de mortalidad de la cirugía electiva en su hospital oscila entre el 1,4 y el 12,7%. en su hospital oscila entre el 1,4 y el 12,7%. ¿Influye esto su opinión? ¿Por qué? ¿Necesita más información sobre su estimación de la mortalidad? ¿Por qué? (Nota: Para esto último, calcule la tasa de mortalidad para la que es indiferente entre las dos opciones).\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaso 4\nUn paciente acude a Urgencias con dolor abdominal. Según el médico de urgencias, usted estima que la probabilidad de apendicitis del paciente es de 0,16. Si el paciente tiene realmente apendicitis, la probabilidad de que el apéndice ya estuviera perforado en el momento en que el paciente acude a Urgencias es de 0,1875. También puede observar al paciente durante 6 horas para estar seguro de que su diagnóstico es correcto. Si su diagnóstico acaba siendo correcto, el 24% de apéndice perforado al cabo de 6 horas (Nota: esta cifra no es la que se número no es el que entra en su árbol. Debe tener en cuenta el 18,75% apéndice perforado cuando el paciente ingresó en el hospital). hospital).\nSi el apéndice está perforado en el momento en que el paciente se presenta en urgencias o al cabo de 6 horas, hay un 0,84 de probabilidades de que los síntomas empeoren y un 0,16 de que permanezcan igual. Si el paciente tiene apendicitis pero el apéndice no revienta al cabo de 6 horas, hay una probabilidad de 0,8 de que los síntomas empeoren y una probabilidad de 0,2 de que permanezcan igual. Si el apéndice no está enfermo, hay un 0,39 de probabilidad de que los síntomas sigan igual en 6 horas, un 0,61 probabilidad de que mejoren y ninguna probabilidad de que empeoren.\n\nCalcular la probabilidad de que un paciente tenga un apéndice perforado al cabo de 6 horas, dado que tenía apendicitis pero no estaba perforado en el momento de ingresar en el hospital\n\n\n\n\n\n\n\n\n\n\n\nDibuje un árbol de decisión para calcular las probabilidades planteadas en las preguntas 3-6.\n\nCalcular la probabilidad de que el paciente tenga un apéndice perforado a las 6 horas. apéndice al comienzo de las 6 horas.\n\n\n\n\n\n\n\n\n\n\n\nP(Perforación al comienzo de las seis horas) = 0,1600 * 0,1875 = 0.0300. Esta es la proporción de pacientes con apendicitis multiplicada por la probabilidad condicional de perforación dada la apendicitis en el en el momento en que el paciente ingresa en el hospital.\n\nCalcular la probabilidad de que el paciente tenga una perforación de apendicitis si espera 6 horas.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*Calcule la probabilidad de que los síntomas del paciente 1) empeoren, 2) permanezcan igual y 3) mejoren. empeoren, 2) permanezcan igual y 3) mejoren.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalcular la probabilidad condicional de que el paciente tenga una apéndice perforado si los síntomas 1) empeoran; 2) permanecen igual o 3) mejoran.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalcular la probabilidad condicional de que el paciente tenga apendicitis si 1) los síntomas empeoran, 2) permanecen igual, o 3) mejoran."
+    "text": "John Graves (Vanderbilt University)\n\n\n\n\n\nJohn A. Graves, Ph.D. es catedrático de Política Sanitaria y Medicina en la Facultad de Medicina de la Universidad de Vanderbilt, y catedrático de Gestión en la Vanderbilt Owen Graduate School of Management de Nashville (Tennessee, EE.UU.). Dirige el Centro de Modelización Económica Sanitaria del Centro Médico de la Universidad de Vanderbilt y es miembro del profesorado del Instituto Vanderbilt de Salud Global (VIGH) y del Centro Oncológico Vanderbilt Ingram.\nEl Dr. Graves tiene más de veinte años de experiencia en la intersección de la investigación y la formulación de políticas, habiendo contribuido a los esfuerzos de modelado de políticas que informaron el diseño y la ejecución de la legislación de la reforma sanitaria de Massachusetts de 2006 y la Ley de Asistencia Asequible de 2010, para la que se desempeñó como modelador principal de la Oficina de Reforma Sanitaria de la Casa Blanca. Desde que se incorporó a la facultad de Vanderbilt en 2011, el Dr. Graves ha dirigido grandes proyectos de investigación centrados en el diseño de seguros de salud, los rendimientos del gasto y la calidad de la atención sanitaria, y la rentabilidad de las pruebas genéticas en diversas poblaciones del sistema sanitario.\nEl Dr. Graves imparte cursos de econometría, estadística y política sanitaria a estudiantes de máster y doctorado de toda la Universidad de Vanderbilt, y es director del curso de contenidos de política y economía sanitaria para estudiantes de medicina de la Facultad de Medicina de Vanderbilt. También codirige el Health Care Valuation Lab, un novedoso curso de colaboración entre la Owen Graduate School of Management, la Facultad de Medicina de Vanderbilt y la iniciativa [Project Healthcare] del Nashville Entrepreneur Center (https://www.ec.co/programs/project-healthcare/). Antes de incorporarse a Vanderbilt, impartió clases en el Máster de Administración Pública en Desarrollo Internacional de la Harvard Kennedy School, y está afiliado al Abdul Latif Jameel Poverty Action Lab del MIT.\nEl Dr. Graves es Doctor en Política Sanitaria por la Universidad de Harvard y licenciado en Economía y Literatura Inglesa por la Universidad del Sur en Sewanee, Tennessee. Es miembro electo de la Academia Nacional de Seguros Sociales, y su trabajo ha sido reconocido con becas y premios del Instituto Nacional de Gestión Sanitaria, la Oficina Nacional de Investigación Económica y la Asociación Estadística Americana."
   },
   {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#learning-objectives",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#learning-objectives",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\n\nDefine treatment thresholds within a decision tree & examine different ways of interpretation\nUnderstand and calculate the value of information from a perfect vs. imperfect test"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#outline",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#outline",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Outline",
-    "text": "Outline\n\nTreatment thresholds\nTesting & Value of Information"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-1",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-1",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\n\nLet’s start with the PULMONARY EMBOLISM example that we’ve looked at before & in our text\nPulmonary embolism (PE) during pregnancy is a life-threatening event. Treatment with anti-coagulation is effective in preventing further PE and hence in reducing the fatality probability.\nThe choices here are either to ANTICOAGULATE OR TO NOT ANTICOAGULATE & our main objective is to optimize survival\nWhen we calculate out the probabilities, the overall expected survival chances with ANTICOAGULATION is 99%, compared to 95% WITHOUT ANTICOAGULATION\nTherefore, we would, on average, choose to ANTICOAGULATE in this case because it has higher overall survival\nBUT to be confident about our decision, we need to explore HOW our assumptions will affect the decision in sensitivity analyses\n\n***We will cover more on SA’s later in the semester as it relates to cost-effectiveness analysis"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-2",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-2",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\n\n\nWhat if the probability of recurrent PE were higher or lower than initially estimated?\n\n\n\n\n\nDo we anticoagulate or not?\nAt what point do we switch between “yes” versus “no”?\n\n\n\nI know we touched on this briefly in the last couple of lectures in various forms, but the key question that we always need to ask in any decision problem is AT WHAT POINT DO WE SWITCH BETWEEN OPTIONS?\nIn this case, what IF the probability of recurrent PE were higher or lower than initially estimated? would we still choose to anticoagulate? & at what point would we switch?\n(And from a cost-effectiveness perspective, at more of a higher population level - what variations will ultimately change our decision) – In this case, to anticoagulate versus not.\nParameters will always have confidence intervals around them & will also be uncertain depending on our assumptions in our model & the information that we have.\nHowever, the more information we have on a certain disease/parameter, the more confidence we will have in our decisions."
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-3",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-3",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\n\nFrom more of a clinical standpoint –\nOur THRESHOLD TO TREAT a patient is the point at which the expected value of treatment & no treatment are exactly EQUAL\n\nAnother way to look at this (which we’ll go over in the upcoming slides) is the RATIO of NET HARM of treating patients without the disease & BENEFIT gained by treating patients with the disease.\n\nAnd if we incorporate DIAGNOSTIC TESTING as part of our decision-making, we can determine how a patient’s risk might change based on the result of a particular test\n\nFor example, if the test has no chance of moving the patient’s risk above the treatment threshold, then the test should probably not be ordered. Because as we know, tests can also come with their own risks & costs."
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-4",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-4",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\nPerform a sensitivity analysis to find a treatment threshold\n\n\n(More on sensitivity analyses later in the workshop)\n\n\nWe would need to perform a sensitivity analysis to find the treatment threshold\n\nSimilar to the “beach” example in the second class"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-5",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-5",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\nExpected value (AC) = 0.990 * pPE + 0.992 * (1-pPE)\nExpected value (No AC) = 0.750 * pPE + 1.0 * (1-pPE)\nNOW, SET EQUAL TO EACH OTHER, to solve for unknown threshold probability\n\n\n\nTo go back to our PE example,\nA key parameter in our model is the probability of pulmonary embolism when we undergo anticoagulant treatment versus not.\nIf we set the EXPECTED VALUE OF AC VERSUS NO AC equal to each other, like we’ve done in previous examples, we can solve for the unknown threshold probability\n\nwhich is the point where the expected value of treatment and withholding treatment are exactly equal for this specific decision problem."
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-6",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-6",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\n0.990 * pPE + 0.992 * (1-pPE) = 0.750 * pPE + 1.0 * (1-pPE)\n0.240 * pPE = 0.008 * (1-pPE)\n0.240 * pPE + 0.008 *pPE = 0.008\npPE = 0.008 / (0.240 + 0.008)\n= .032"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-7",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-7",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\n\n\nSo, what does this mean?\nIf you put these probabilities for PE back into our model for each AC & no AC, then you’ll get these survival probabilities\nYou can see the point in which our decision would change\nIf our pPE is EQUAL TO or LESS THAN .032, then we would prefer no AC to AC\nBut, as displayed in the second row, if our pPE is GREATER than .032, then we would prefer AC to No AC - bc higher overall survival"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-8",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-8",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\n\nWhen we go back to thinking about testing & how that might impact our decision to treat…\nNo tests should be done UNLESS the result of the test will change the treatment plan\n\nSo, on the top bar – the result of additional tests do not change our treatment plan\nWhereas, looking at the bar below, additional tests could in fact change our treatment plan\n\nA key question we should be asking is - Is the risk of the test worth the benefit of getting it **** & this is something we can explore withing a decision analysis framework"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-9",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-9",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\nPerforming a test to gain additional information is ONLY worthwhile IF: \n\nAt least one decision would change given some test results, and/or\n\nThe risk to the patient associated with the test is less than the expected benefit gained from undergoing the test"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-10",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-10",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\nSame as before, but here, the additional information you gain on the top bar, doesn’t change your decision NOT to treat"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-11",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-11",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\n\nYou can look at test/treat thresholds the following way –\n\nDO NOT TREAT & DO NOT TEST – when even a positive test result will not persuade us to treat Ex. 95 year old, testing says you need a hip replacement. You’re likely not going to get the surgery due to the risks regardless of the positive result.\nTEST – if the test will help us make a treatment decision\nTREAT & DO NOT TEST – when even a negative test result will not dissuade us from treating Ex."
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-12",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#treatment-thresholds-12",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Treatment thresholds",
-    "text": "Treatment thresholds\n\nNo Treat – Test Threshold  Probability of indifference between testing & not treating\n\nTest – Treat Threshold  Probability of indifference between testing & treatment"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information\n\n\n\nInformation can theoretically be perfect, free, & without risk, but it’s usually NOT!\nInformation is almost always IMPERFECT\nGetting information usually HAS A COST"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-1",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-1",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information\n\n\nValue of information asks: what are we gaining by having this extra information?\n\n\n\nValue of information =\n|[expected value from the ‘gaining information’ strategy] –\n[expected value from the next best strategy]|"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-2",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-2",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information\n\nPERFECT tests give us an upper limit to the potential benefit from any test\n\n\n\nThe gain from such an imaginary PERFECT test is the expected value of perfect information (EVPI)"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-3",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-3",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#a-perfect-test-100-sens-and-spec-with-no-risk",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#a-perfect-test-100-sens-and-spec-with-no-risk",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "A perfect test (100% sens and spec) with no risk",
-    "text": "A perfect test (100% sens and spec) with no risk"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#a-perfect-test-100-sens-and-spec-with-no-risk-1",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#a-perfect-test-100-sens-and-spec-with-no-risk-1",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "A perfect test (100% sens and spec) with no risk",
-    "text": "A perfect test (100% sens and spec) with no risk\n\n\n\n\n\n\nEV(perfect test) = 0.12\nEV(treat strategy) = 0.16\nEV(no treat strategy) = 0.24 (worst EV)\n\nEVPI =\n|EV ‘perfect test’ – EV ‘next best strategy: treat all’|\n=|0.12 – 0.16| = 0.04,\nor 4 deaths prevented per 100 tests because of the additional testing information"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "An imperfect test with morbidity risk",
-    "text": "An imperfect test with morbidity risk"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk-1",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk-1",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "An imperfect test with morbidity risk",
-    "text": "An imperfect test with morbidity risk"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk-2",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#an-imperfect-test-with-morbidity-risk-2",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "An imperfect test with morbidity risk",
-    "text": "An imperfect test with morbidity risk\n\n\nWhen the test is imperfect, testing is still the best strategy (in this case, the lower EV, the better since our outcome values are the probability of a bad outcome), but not by much:"
-  },
-  {
-    "objectID": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-4",
-    "href": "lectures/lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-4",
-    "title": "Treatment Thresholds & Value of Information",
-    "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information\n\nWhen the test is IMPERFECT: \n\nEV(test strategy) = 0.157\nEV(treat strategy) = 0.16\nEV(no treat strategy) = 0.24 (worst EV)\n\n\n\nVOI = |EV ‘test’ – EV ‘next best strategy’|\n= |0.157 – 0.16| = 0.003,\nor 3 deaths prevented per 1000 tests because of the additional testing information"
+    "objectID": "lectures/creating-custom-fontawesome-icons.html",
+    "href": "lectures/creating-custom-fontawesome-icons.html",
+    "title": "Creating Custom Inline Icons",
+    "section": "",
+    "text": "Take a screenshot and save it as a .png file.\nBring it into Adobe Illustrator then load up the “Image Trace” toolbar. Make sure to unclick the preview button, then press Trace once the right settings are there. \nGo to Object -&gt; Artboards -&gt; Fit to Artwork Bounds to resize the canvas.\nExport to an .svg file.\n\nDecision Node:"
   },
   {
     "objectID": "lectures/lec_5a.cea-fundamentals1.html#learning-objectives",

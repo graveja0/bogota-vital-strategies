@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85 84">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #000;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #fefefe;
+      }
+
+      .cls-3 {
+        fill: #fe0000;
+      }
+    </style>
+  </defs>
+  <g id="TkGrnD.tif">
+    <g>
+      <path class="cls-2" d="M0,0c28.33,0,56.67,0,85,0,0,28,0,56,0,84-28.33,0-56.67,0-85,0C0,56,0,28,0,0ZM80.6,77.98v-36.8h3.8c.06-.72.28-1.29-.28-1.98h-3.66V2.59H5.19v75.39h75.42Z"/>
+      <path class="cls-1" d="M80.6,77.98H5.19V2.59h75.29v36.61h3.66c.56.69.34,1.25.28,1.98h-3.8v36.8ZM6.79,75.88h71.57V4.67H6.79v71.21Z"/>
+      <path class="cls-3" d="M6.79,75.88V4.67h71.57v71.21H6.79Z"/>
+    </g>
+  </g>
+</svg>
