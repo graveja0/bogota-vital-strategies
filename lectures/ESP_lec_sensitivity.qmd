@@ -6,7 +6,7 @@ format:
       background-transition: fade
       highlight-style: ayu-mirage
       footer: |
-        [Back to Website](../index.html)
+        [Volver al sitio web](../index.html)
 editor_options: 
 chunk_output_type: console
 bibliography: ../references.bib

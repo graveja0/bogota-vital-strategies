@@ -1,0 +1,17 @@
+---
+title: "Creating Custom Inline Icons"
+css: slides.scss
+---
+
+1.  Take a screenshot and save it as a .png file.
+2.  Bring it into Adobe Illustrator then load up the "Image Trace" toolbar. Make sure to unclick the preview button, then press Trace once the right settings are there.
+![](images/clipboard-1719382083.png)
+
+3. Go to Object -> Artboards -> Fit to Artwork Bounds to resize the canvas.
+4. Export to an .svg file. 
+
+Decision Node: <img src="custom-fa-images/decision-node.svg" alt="Custom Icon" width="20" height="20"/>
+
+<img src="custom-fa-images/markov-icon.png" alt="Custom Icon" width="50" height="50"/>
+
+

@@ -11,7 +11,7 @@ format:
     background-transition: fade
     highlight-style: ayu-mirage
     footer: |
-      [Back to Website](../index.html)
+      [Volver al sitio web](../index.html)
 editor_options: 
   chunk_output_type: console
 editor: 
@@ -254,133 +254,133 @@ Se pueden resolver a mano o utilizando softwares (por ejemplo, el paquete deSolv
 ## Comparación de tipos de modelos
 
 ::: {style="font-size: 0.58em; line-height: 1"}
-+--------------------+--------------------------------+--------------------------------+
-| Tipo de modelo     | Puntos fuertes                 | Limitaciones                   |
-+====================+================================+================================+
-| Árbol de decisión  | Transparente                   | Dificultad para captar la      |
-|                    |                                | progresión en el tiempo o los  |
-|                    | Cálculos sencillos             | sucesos repetidos.             |
-+--------------------+--------------------------------+--------------------------------+
-| Cohorte de Markov  | Captura de sucesos repetidos a | Dificultad para captar la      |
-|                    | lo largo del tiempo            | heterogeneidad individual o    |
-|                    |                                | seguir el historial de         |
-|                    | Rápida velocidad de ejecución  | eventos.                       |
-|                    |                                |                                |
-|                    |                                | Difícil de manejar un proceso  |
-|                    |                                | de enfermedad complicado       |
-|                    |                                | (sujeto a explosión de         |
-|                    |                                | estados)                       |
-+--------------------+--------------------------------+--------------------------------+
++---------------------+--------------------------------+--------------------------------+
+| Tipo de modelo      | Puntos fuertes                 | Limitaciones                   |
++=====================+================================+================================+
+| Árbol de decisión   | Transparente                   | Dificultad para captar la      |
+|                     |                                | progresión en el tiempo o los  |
+|                     | Cálculos sencillos             | sucesos repetidos.             |
++---------------------+--------------------------------+--------------------------------+
+| Cohorte de Markov   | Captura de sucesos repetidos a | Dificultad para captar la      |
+|                     | lo largo del tiempo            | heterogeneidad individual o    |
+|                     |                                | seguir el historial de         |
+|                     | Rápida velocidad de ejecución  | eventos.                       |
+|                     |                                |                                |
+|                     |                                | Difícil de manejar un proceso  |
+|                     |                                | de enfermedad complicado       |
+|                     |                                | (sujeto a explosión de         |
+|                     |                                | estados)                       |
++---------------------+--------------------------------+--------------------------------+
 :::
 
 ## Comparison of model types
 
 ::: {style="font-size: 0.58em; line-height: 1"}
-+--------------------+--------------------------------+--------------------------------+
-| Tipo de modelo     | Puntos fuertes                 | Limitaciones                   |
-+====================+================================+================================+
-| Árbol de decisión  | Transparente                   | Dificultad para captar la      |
-|                    |                                | progresión en el tiempo o los  |
-|                    | Cálculos sencillos             | sucesos repetidos.             |
-+--------------------+--------------------------------+--------------------------------+
-| Cohorte de Markov  | Captura de sucesos repetidos a | Dificultad para captar la      |
-|                    | lo largo del tiempo            | heterogeneidad individual o    |
-|                    |                                | seguir el historial de         |
-|                    | Rápida velocidad de ejecución  | eventos.                       |
-|                    |                                |                                |
-|                    |                                | Difícil de manejar un proceso  |
-|                    |                                | de enfermedad complicado       |
-|                    |                                | (sujeto a explosión de         |
-|                    |                                | estados)                       |
-+--------------------+--------------------------------+--------------------------------+
-| *                  | **Fácil seguimiento del        | **Requiere un gran número de   |
-| *Microsimulación** | historial**                    | ejecuciones para converger**   |
-|                    |                                |                                |
-|                    | **Muy potente y flexible**     | **Velocidad de ejecución más   |
-|                    |                                | lenta**                        |
-+--------------------+--------------------------------+--------------------------------+
++---------------------+--------------------------------+--------------------------------+
+| Tipo de modelo      | Puntos fuertes                 | Limitaciones                   |
++=====================+================================+================================+
+| Árbol de decisión   | Transparente                   | Dificultad para captar la      |
+|                     |                                | progresión en el tiempo o los  |
+|                     | Cálculos sencillos             | sucesos repetidos.             |
++---------------------+--------------------------------+--------------------------------+
+| Cohorte de Markov   | Captura de sucesos repetidos a | Dificultad para captar la      |
+|                     | lo largo del tiempo            | heterogeneidad individual o    |
+|                     |                                | seguir el historial de         |
+|                     | Rápida velocidad de ejecución  | eventos.                       |
+|                     |                                |                                |
+|                     |                                | Difícil de manejar un proceso  |
+|                     |                                | de enfermedad complicado       |
+|                     |                                | (sujeto a explosión de         |
+|                     |                                | estados)                       |
++---------------------+--------------------------------+--------------------------------+
+| -   \*              | **Fácil seguimiento del        | **Requiere un gran número de   |
+| Microsimulación\*\* | historial**                    | ejecuciones para converger**   |
+|                     |                                |                                |
+|                     | **Muy potente y flexible**     | **Velocidad de ejecución más   |
+|                     |                                | lenta**                        |
++---------------------+--------------------------------+--------------------------------+
 :::
 
 ## Comparison of model types
 
 ::: {style="font-size: 0.58em; line-height: 1"}
-+--------------------+--------------------------------+--------------------------------+
-| Tipo de modelo     | Puntos fuertes                 | Limitaciones                   |
-+====================+================================+================================+
-| Árbol de decisión  | Transparente                   | Dificultad para captar la      |
-|                    |                                | progresión en el tiempo o los  |
-|                    | Cálculos sencillos             | sucesos repetidos.             |
-+--------------------+--------------------------------+--------------------------------+
-| Cohorte de Markov  | Captura de sucesos repetidos a | Dificultad para captar la      |
-|                    | lo largo del tiempo            | heterogeneidad individual o    |
-|                    |                                | seguir el historial de         |
-|                    | Rápida velocidad de ejecución  | eventos.                       |
-|                    |                                |                                |
-|                    |                                | Difícil de manejar un proceso  |
-|                    |                                | de enfermedad complicado       |
-|                    |                                | (sujeto a explosión de         |
-|                    |                                | estados)                       |
-+--------------------+--------------------------------+--------------------------------+
-| Microsimulación    | Fácil seguimiento del          | Requiere un gran número de     |
-|                    | historial                      | ejecuciones para converger     |
-|                    |                                |                                |
-|                    | Muy potente y flexible         | Velocidad de ejecución más     |
-|                    |                                | lenta                          |
-+--------------------+--------------------------------+--------------------------------+
-| **Simulación de    | **Fácil seguimiento            | **Requiere un gran número de   |
-| eventos            | histórico**                    | ejecuciones para converger**   |
-| discretos**        |                                |                                |
-|                    | **Más rápido que la            | **Las distribuciones           |
-|                    | microsimulación**              | tiempo-acontecimiento son      |
-|                    |                                | menos intuitivas y más         |
-|                    |                                | difíciles de obtener que las   |
-|                    |                                | tasas/probabilidades de los    |
-|                    |                                | acontecimientos.**             |
-+--------------------+--------------------------------+--------------------------------+
++---------------------+--------------------------------+--------------------------------+
+| Tipo de modelo      | Puntos fuertes                 | Limitaciones                   |
++=====================+================================+================================+
+| Árbol de decisión   | Transparente                   | Dificultad para captar la      |
+|                     |                                | progresión en el tiempo o los  |
+|                     | Cálculos sencillos             | sucesos repetidos.             |
++---------------------+--------------------------------+--------------------------------+
+| Cohorte de Markov   | Captura de sucesos repetidos a | Dificultad para captar la      |
+|                     | lo largo del tiempo            | heterogeneidad individual o    |
+|                     |                                | seguir el historial de         |
+|                     | Rápida velocidad de ejecución  | eventos.                       |
+|                     |                                |                                |
+|                     |                                | Difícil de manejar un proceso  |
+|                     |                                | de enfermedad complicado       |
+|                     |                                | (sujeto a explosión de         |
+|                     |                                | estados)                       |
++---------------------+--------------------------------+--------------------------------+
+| Microsimulación     | Fácil seguimiento del          | Requiere un gran número de     |
+|                     | historial                      | ejecuciones para converger     |
+|                     |                                |                                |
+|                     | Muy potente y flexible         | Velocidad de ejecución más     |
+|                     |                                | lenta                          |
++---------------------+--------------------------------+--------------------------------+
+| **Simulación de     | **Fácil seguimiento            | **Requiere un gran número de   |
+| eventos discretos** | histórico**                    | ejecuciones para converger**   |
+|                     |                                |                                |
+|                     | **Más rápido que la            | **Las distribuciones           |
+|                     | microsimulación**              | tiempo-acontecimiento son      |
+|                     |                                | menos intuitivas y más         |
+|                     |                                | difíciles de obtener que las   |
+|                     |                                | tasas/probabilidades de los    |
+|                     |                                | acontecimientos.**             |
++---------------------+--------------------------------+--------------------------------+
 :::
 
 ## Comparison of model types
 
 ::: {style="font-size: 0.50em; line-height: 1"}
-+--------------------+--------------------------------+--------------------------------+
-| Tipo de modelo     | Puntos fuertes                 | Limitaciones                   |
-+====================+================================+================================+
-| Árbol de decisión  | Transparente                   | Dificultad para captar la      |
-|                    |                                | progresión en el tiempo o los  |
-|                    | Cálculos sencillos             | sucesos repetidos.             |
-+--------------------+--------------------------------+--------------------------------+
-| Cohorte de Markov  | Captura de sucesos repetidos a | Dificultad para captar la      |
-|                    | lo largo del tiempo            | heterogeneidad individual o    |
-|                    |                                | seguir el historial de         |
-|                    | Rápida velocidad de ejecución  | eventos.                       |
-|                    |                                |                                |
-|                    |                                | Difícil de manejar un proceso  |
-|                    |                                | de enfermedad complicado       |
-|                    |                                | (sujeto a explosión de         |
-|                    |                                | estados)                       |
-+--------------------+--------------------------------+--------------------------------+
-| Microsimulación    | Fácil seguimiento del          | Requiere un gran número de     |
-|                    | historial                      | ejecuciones para converger     |
-|                    |                                |                                |
-|                    | Muy potente y flexible         | Velocidad de ejecución más     |
-|                    |                                | lenta                          |
-+--------------------+--------------------------------+--------------------------------+
-| Simulación de      | Fácil seguimiento histórico    | Requiere un gran número de     |
-| eventos discretos  |                                | ejecuciones para converger     |
-|                    | Más rápido que la              |                                |
-|                    | microsimulación                | Las distribuciones             |
-|                    |                                | tiempo-acontecimiento son      |
-|                    |                                | menos intuitivas y más         |
-|                    |                                | difíciles de obtener que las   |
-|                    |                                | tasas/probabilidades de los    |
-|                    |                                | acontecimientos.               |
-+--------------------+--------------------------------+--------------------------------+
-| **Dinámico**       | **Capaz de captar la           | **Más requisitos de datos (por |
-|                    | transmisión de enfermedades**  | ejemplo, patrones de contacto  |
-|                    |                                | en la población)**             |
-|                    |                                |                                |
-|                    |                                | **Más caja negra**             |
-+--------------------+--------------------------------+--------------------------------+
++---------------------+--------------------------------+--------------------------------+
+| Tipo de modelo      | Puntos fuertes                 | Limitaciones                   |
++=====================+================================+================================+
+| Árbol de decisión   | Transparente                   | Dificultad para captar la      |
+|                     |                                | progresión en el tiempo o los  |
+|                     | Cálculos sencillos             | sucesos repetidos.             |
++---------------------+--------------------------------+--------------------------------+
+| Cohorte de Markov   | Captura de sucesos repetidos a | Dificultad para captar la      |
+|                     | lo largo del tiempo            | heterogeneidad individual o    |
+|                     |                                | seguir el historial de         |
+|                     | Rápida velocidad de ejecución  | eventos.                       |
+|                     |                                |                                |
+|                     |                                | Difícil de manejar un proceso  |
+|                     |                                | de enfermedad complicado       |
+|                     |                                | (sujeto a explosión de         |
+|                     |                                | estados)                       |
++---------------------+--------------------------------+--------------------------------+
+| Microsimulación     | Fácil seguimiento del          | Requiere un gran número de     |
+|                     | historial                      | ejecuciones para converger     |
+|                     |                                |                                |
+|                     | Muy potente y flexible         | Velocidad de ejecución más     |
+|                     |                                | lenta                          |
++---------------------+--------------------------------+--------------------------------+
+| Simulación de       | Fácil seguimiento histórico    | Requiere un gran número de     |
+| eventos discretos   |                                | ejecuciones para converger     |
+|                     | Más rápido que la              |                                |
+|                     | microsimulación                | Las distribuciones             |
+|                     |                                | tiempo-acontecimiento son      |
+|                     |                                | menos intuitivas y más         |
+|                     |                                | difíciles de obtener que las   |
+|                     |                                | tasas/probabilidades de los    |
+|                     |                                | acontecimientos.               |
++---------------------+--------------------------------+--------------------------------+
+| **Dinámico**        | **Capaz de captar la           | **Más requisitos de datos (por |
+|                     | transmisión de enfermedades**  | ejemplo, patrones de contacto  |
+|                     |                                | en la población)**             |
+|                     |                                |                                |
+|                     |                                | **Más caja negra**             |
++---------------------+--------------------------------+--------------------------------+
 :::
 
 ## ¿Cómo elegir el modelo adecuado?

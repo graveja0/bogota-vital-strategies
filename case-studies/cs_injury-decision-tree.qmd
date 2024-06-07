@@ -1,0 +1,48 @@
+---
+title: "Gunpowder Injury Decision Tree"
+format: 
+  html:
+    link-external-newwindow: true
+editor_options: 
+  chunk_output_type: console
+self-contained: true
+editor: source
+---
+
+
+# Introduction
+
+In Columbia, the issue of gunpowder-related injuries, particularly during festive seasons, remains a significant public health concern. Fireworks, while culturally ingrained and a source of celebration, pose substantial risks, especially to children. This has led policymakers to consider various strategies to mitigate these risks and enhance public safety.
+
+The decision problem we will consider revolves around identifying the most effective approach to reducing injuries and fatalities caused by fireworks. Two primary strategies under consideration are **(1) a complete ban on fireworks** and **(2) heavy regulation**, such as restricted sales licenses and stringent enforcement. 
+
+A complete ban aims to eliminate the root cause of injuries by prohibiting the sale, storage, and use of fireworks. This approach seeks to protect public health directly but may face resistance due to its impact on cultural traditions and the livelihoods of vendors.
+
+On the other hand, heavy regulation involves implementing strict controls over the sale and use of fireworks. This strategy includes measures such as issuing sales licenses only to authorized vendors, enforcing age restrictions, and conducting public education campaigns about the dangers of fireworks. This approach aims to reduce injuries while allowing for controlled, safe use of fireworks.
+
+Our case studies will explore these strategies through two decision modeling approaches. This case study will utilize a decision tree model to evaluate the immediate outcomes and costs associated with each strategy. 
+
+Later, we will employ a Markov cohort model to examine the long-term health and economic impacts, considering factors such as injury rates, healthcare costs, and compliance levels. 
+
+By analyzing these models, we aim to provide a comprehensive assessment of the most cost-effective and sustainable approach to reducing gunpowder-related injuries in Bogotá today.
+
+
+## Scratch
+
+
+
+
+In Amua, on the menu at the top, go to **Model** -\> **New** -\>  **Decision Tree**. This will create a new model with a single decision node <img src="../amua-images/decisionNode_24.png" alt="Custom Icon" width="20" height="20"/> on the left side of the screen.
+
+-   Decision Node <img src="../amua-images/decisionNode_24.png" alt="Custom Icon" width="20" height="20"/>
+
+-   Plus <img src="../amua-images/add_128.png" alt="Custom Icon" width="20" height="20"/>
+
+-   Align right <img src="../amua-images/alignRight_128.png" alt="Custom Icon" width="20" height="20"/>
+
+-   Run Model <img src="../amua-images/runModel_24.png" alt="Custom Icon" width="20" height="20"/>
+
+-   Check Model <img src="../amua-images/checkModel_24.png" alt="Custom Icon" width="20" height="20"/>
+
+-   Clear <img src="../amua-images/clear_24.png" alt="Custom Icon" width="20" height="20"/>
+

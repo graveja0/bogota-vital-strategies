@@ -68,3 +68,29 @@ ul {
 }
 
 
+@font-face {
+  font-family: 'icomoon';
+  src:  url('custom-fa-images/icomoon/fonts/icomoon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-custom:before {
+  content: "\e900"; /* Replace with your icon's Unicode value */
+}
+
+
