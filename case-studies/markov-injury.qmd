@@ -1,5 +1,7 @@
 ---
 title: "Injury Markov Model"
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{dot}
@@ -226,6 +228,207 @@ This document provides proposed injury incidence rates based on real-world data 
 
 6. **Death**
    - Utility Value: 0.0
+   
+```{r}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(survival)
+library(flexsurv)
+library(haven)
+library(dampack)
+library(Matrix)
+library(here)
+library(demography)
+library(MortalityLaws)
+library(demography)
+library(MASS)
+library(directlabels)
+library(ggthemes)
+library(expm)
+library(gt)
+library(directlabels)
+library(glue)
+library(ggsci)
+theme_set(hrbrthemes::theme_ipsum(base_family = "Arial"))
+
+
+options("scipen" = 100, "digits" = 5)
+
+select <- dplyr::select
+
+
+# Columbia Life Tables
+# Source: https://apps.who.int/gho/data/view.searo.LT62020?lang=en
+
+lt_lut <- c(
+  "Tx - person-years lived above age x" = "Tx",
+  "ex - expectation of life at age x" = "ex",
+  "lx - number of people left alive at age x" = "lx",
+  "nLx - person-years lived between ages x and x+n" = "Lx",
+  "nMx - age-specific death rate between ages x and x+n" = "mx",
+  "ndx - number of people dying between ages x and x+n" = "dx",
+  "nqx - probability of dying between ages x and x+n" = "qx"
+)
+
+x_lut <- c(
+  " &lt;1 year" = "0", 
+  " 1-4 years" = "1", 
+  " 10-14 years" = "10",
+  " 15-19  years" = "15",
+  " 20-24 years" = "20",
+  " 25-29 years" = "25",
+  " 30-34 years"  = "30",
+ " 35-39 years" = "35",
+ " 40-44 years" = "40",
+ " 45-49 years" = "45",
+ " 5-9 years" = "5",
+ " 50-54 years"  = "50",
+ " 55-59 years" = "55",
+ " 60-64 years"   = "60",
+ " 65-69 years" = "65",
+ " 70-74 years" = "70", 
+ " 75-79 years" = "75",
+ " 80-84 years" = "80",
+ " 85+ years"   = "85"
+) 
+
+lt <- 
+  read.csv(here("case-studies/columbia-who-life-table_2024-06-06.csv"),skip =1) %>% 
+  as_tibble() %>% 
+  janitor::clean_names() %>% 
+  mutate(indicator2 = lt_lut[indicator]) %>% 
+  mutate(x = x_lut[age_group]) %>% 
+  filter(indicator2 %in% c("mx","Tx","ex","lx","Lx","dx","qx"))   %>% 
+  select(x,both_sexes, indicator2) %>% 
+  spread(indicator2,both_sexes) %>% 
+  select(age = x,mx,qx,lx,dx,Lx,Tx) %>% 
+  mutate(age = as.numeric(paste0(age))) %>% 
+  arrange(age)
+
+ages     <- lt$age[lt$age<100]
+deaths   <- lt$dx[lt$age<100]
+exposure <- lt$Lx[lt$age<100]
+
+hp_fit <- MortalityLaw(
+                x  = ages,      # vector with ages
+                Dx  = deaths,   # vector with death counts
+                Ex  = exposure, # vector containing exposures
+                law = "HP2",
+                opt.method = "LF2")
+plot(hp_fit)
+
+# Save the mortality rate
+
+df_p_Die <- tibble(index = 0:110, p_die = 1-exp(-HP2(x = 0:110, par = hp_fit$coefficients)$hx)) %>% 
+  as.data.frame() 
+rownames(df_p_Die) = NULL
+df_p_Die %>% write.csv(here("case-studies/columbia-life-table-death-probabilities.csv"))
+
+
+
+
+cbind.data.frame(hp = HP2(x = lt$age, par = hp_fit$coefficients)$hx, lt = lt$mx)
+
+# # A tibble: 101 × 11
+#     year     x       mx       qx      lx    dx    Lx    Tx    ex country   age
+#    <dbl> <dbl>    <dbl>    <dbl>   <dbl> <dbl> <dbl> <dbl> <dbl> <chr>   <dbl>
+#  1  2019     0 0.00556  0.00553  100000  553.  0.995  79.0  79.0 USA         0
+#  2  2019     1 0.000384 0.000384  99447.  38.2 0.994  78.0  78.4 USA         1
+#  3  2019     2 0.000233 0.000233  99409.  23.2 0.994  77.0  77.4 USA         2
+#  4  2019     3 0.000178 0.000178  99385.  17.7 0.994  76.0  76.4 USA         3
+#  5  2019     4 0.000143 0.000143  99368.  14.2 0.994  75.0  75.5 USA         4
+#  6  2019     5 0.000133 0.000133  99354.  13.2 0.993  74.0  74.5 USA         5
+```
+
+```{r}
+params = 
+  list(
+    t_names = c(          # Strategy names
+                "heligman-pollard",
+                "foo"),          
+    n_treatments = 2,                 # Number of treatments
+    s_names  = c("Alive", "Dead"),    # State names
+    n_states = 2,                     # Number of states
+    n_cohort = 1,                # Cohort size
+    initial_age = 0,                 # Cohort starting age    
+    n_cycles = 110,                   # Number of cycles in model.  
+    cycle = 1,                        # Cycle length
+    hp_fit = hp_fit                   # Fitted Heligman-Pollard model object
+  )
+```
+
+
+```{r}
+#| echo: true
+fn_mPt <- function(t, params) {
+  with(params, {
+    h = cycle # Time step
+    lapply(t, function(tt){
+       # Life table method
+        current_age_lt = pmin(initial_age  + (tt)*h - 1,max(lt$age))
+        #p_death <- lt[lt$age==current_age_lt,"qx"]
+        # parametric mortality methods
+        current_age = initial_age  + (tt)*h - 1
+        #r_death_gompertz <- gompertz(current_age,params$gom_fit$coefficients)$hx
+        #p_death_gompertz <- 1 - exp(-r_death_gompertz)
+        r_death_hp <- HP(current_age, params$hp_fit$coefficients)$hx
+        p_death_hp <- 1 - exp(-r_death_hp)
+        
+        array(data = c(
+                 1 - p_death_hp, 0, 
+                 p_death_hp,1,
+                 
+                 1 - p_death_hp, 0, 
+                 p_death_hp,1
+                 ),
+              
+              dim = c(n_states, n_states, n_treatments),
+              dimnames = list(from = s_names,
+                              to = s_names,
+                              t_names)) 
+    })
+  })
+}
+
+params$mP <- 
+  fn_mPt(1:params$n_cycles, params)
+
+
+sim_cohort <- function(params) {
+ params$t_names %>% map(~({ 
+    tr_ <- t(c("alive" = params$n_cohort, "dead" = 0))
+    
+    res <- do.call(rbind,lapply(params$mP, function(tp) {
+        tr_ <<- tr_ %*% matrix(unlist(tp[,,.x]),nrow=params$n_state)
+    }))
+    res <- rbind(c(params$n_cohort,0),res) 
+    dimnames(res) <- list(paste0(c(0:params$n_cycles)), params$s_names)
+    res
+  })) %>% 
+    set_names(params$t_names)
+}
+
+# Construct the Markov trace. 
+trace <- 
+  sim_cohort(params)
+
+payoff_life_exp = c("Alive" = 1, "Dead" = 0) # <1>
+
+sum((trace[[1]] %*% payoff_life_exp) * c(0.5,rep(1,nrow(trace[[1]])-2),0.5))
+
+# Calculate alive years in each cycle
+life_exp_cycle = lapply(trace, function(tr) (tr*(1 / params$n_cohort)) %*%
+                 payoff_life_exp)  # <2>
+
+# Integration via alternative Simpson's method (cycle correction)
+alt_simp_coef <- function(i) c(17, 59, 43, 49, rep(48, i-8),
+                               49, 43, 59, 17) / 48
+cycle_adj     <- function(x) sum(alt_simp_coef(length(x)) * x)
+
+total_life_exp = lapply(life_exp_cycle,cycle_adj)
+
+```
 
 <!-- ### Sources  -->
 

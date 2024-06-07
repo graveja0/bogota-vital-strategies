@@ -1,0 +1,135 @@
+---
+title: "Case Study: ICERs"
+format:
+  html:
+    toc: false
+  pdf:
+    toc: false
+  docx:
+    toc: false
+---
+
+::: callout-important
+Please note that you can download PDF and Microsoft Word versions of this case study using the links on the right.
+:::
+
+
+# Case 1 Description
+
+You seek to explore different drug strategies to treat HIV infection. Single agent therapy with retrocyclovir at 200mg per day has a mean discounted lifetime cost of \$20,000 and results in a quality-adjusted life expectancy of 70 years. Single agent therapy with retrocyclovir at 400mg per day has a mean discounted lifetime cost of \$22,000 and a quality adjusted life expectancy of 65 years (given the increased incidence of side effects with the higher dose). Another drug, centroflexavir (which comes only in one dose of 250 mg/day) has a mean total lifetime cost of \$10,000 and a quality-adjusted life expectancy of 50 years. The combination of centroflexavir with low-dose retrocyclovir has a mean-life time cost of \$40,000 and an average quality adjusted life expectancy of 80 years, while the combination of centroflexavir with high-dose retrocyclovir has a mean lifetime cost of \$35,000 and a quality-adjusted life expectancy of 75 years.
+
+Newer ARTs are also available and their lifetime costs/QALYs are detailed below:
+
+|         | Cost   | QALY  |
+|---------|--------|-------|
+| ART 1/2 | 11,000 | 63.4  |
+| ART 1   | 15,525 | 73.52 |
+
+: Cost and QALY Outcomes for ARTs
+
+## Instructions
+
+*Perform a cost-effectiveness analysis of the treatment options using QALYs as the measure of health effects. Which strategy would you choose and why, if the willingness-to-pay threshold is \$50,000 per quality-adjusted life year?*
+
+| Treatment          | Costs  | QALYs |
+|--------------------|--------|-------|
+| Do nothing         | 36,000 | 43.8  |
+| ART 1              | 15,525 | 73.52 |
+| ART 1/2            | 11,000 | 63.4  |
+| Retro 200          | 20,000 | 70.0  |
+| Retro 400          | 22,000 | 65.0  |
+| Centro             | 10,000 | 50.0  |
+| Centro / Retro 200 | 40,000 | 80.0  |
+| Centro / Retro 400 | 35,000 | 75.0  |
+
+<!-- ![](images/cs_icer_ans_1.1.png)    -->
+
+<!-- ![](images/cs_icer_ans_1.1.2.png)   -->
+
+<!-- ![](images/cs_icer_ans_1.1.3.png)    -->
+
+<!-- ![](images/cs_icer_ans_1.1.4.png)    -->
+
+
+: Treatment Options
+
+| Strategy | Discounted Costs | Discounted QALYs | Incremental Costs | Incremental QALYs | ICER (\$/QALY) |
+|------------|------------|------------|------------|------------|------------|
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+
+: ICER Calculation Table 1 {tbl-colwidths="\[20,20,20,20,20,20\]"}
+
+| Strategy | Discounted Costs | Discounted QALYs | Incremental Costs | Incremental QALYs | ICER (\$/QALY) |
+|------------|------------|------------|------------|------------|------------|
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+
+: ICER Calculation Table 2 {tbl-colwidths="\[20,20,20,20,20,20\]"}
+
+| Strategy | Discounted Costs | Discounted QALYs | Incremental Costs | Incremental QALYs | ICER (\$/QALY) |
+|------------|------------|------------|------------|------------|------------|
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+
+: ICER Calculation Table 3 {tbl-colwidths="\[20,20,20,20,20,20\]"}
+
+# Case 2 Description
+
+You are interested in performing a cost-effectiveness analysis of different cancer screening recommendations for anal squamous intraepithelial lesions and anal cancer in men.
+
+Below is a table of the costs and quality-adjusted life years gained associated with different screening strategies over a six-year time span.
+
+## Instructions
+
+*Calculate incremental cost-effectiveness ratios for each strategy and determine which screening strategy you would choose if, as a decision maker, you were prepared to pay \$50,000/QALY (using discounted quality-adjusted life years)*
+
+<!-- ![](images/cs_icer_ans_2.1.png) -->
+
+| Screening Strategy | Discounted QALYs | Discounted Costs (\$2022) |
+|--------------------|------------------|---------------------------|
+| No screening       | 10.05            | 4,130                     |
+| Every 3 years      | 10.798           | 5,178                     |
+| Every 2 years      | 10.830           | 5,583                     |
+| Every 1 year       | 10.973           | 6,417                     |
+| Every 6 months     | 10.988           | 8,744                     |
+
+: Cost and QALY Outcomes, by Strategy
+
+| Strategy | Discounted Costs | Discounted QALYs | Incremental Costs | Incremental QALYs | ICER (\$/QALY) |
+|------------|------------|------------|------------|------------|------------|
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+
+: ICER Calculation Table 1 {tbl-colwidths="\[20,20,20,20,20,20\]"}
+
+| Strategy | Discounted Costs | Discounted QALYs | Incremental Costs | Incremental QALYs | ICER (\$/QALY) |
+|------------|------------|------------|------------|------------|------------|
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+
+: ICER Calculation Table 2 {tbl-colwidths="\[20,20,20,20,20,20\]"}

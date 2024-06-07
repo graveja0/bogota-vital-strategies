@@ -1,0 +1,15 @@
+
+::: {.cell}
+```{=latex}
+% LaTeX-specific content here
+\vspace{3cm}
+```
+:::
+
+::: {.cell}
+```{=html}
+<!-- Only shows up in HTML output -->
+<div style="margin-top: 100px;"></div>
+```
+:::
+

@@ -1,0 +1,246 @@
+---
+title: "Exercise: Decision Tree in Amua"
+format: 
+  html:
+    link-external-newwindow: true
+editor_options: 
+  chunk_output_type: console
+self-contained: true
+editor: source
+---
+
+# Introduction and Learning Objectives {{< fa regular clipboard >}}
+
+This case study is designed to get you familiar with constructing a decision tree in Amua. Specific learning objectives are as follows:
+
+1.  Parameterize and structure a decision tree model.
+
+2.  Estimate survival and cost outcomes from the decision tree model in the Amua software.
+
+::: {.callout-note appearance="simple"}
+Please note that this case study is based on the Amua tuturial [here](https://s3.amazonaws.com/amua-tutorials/Amua+-+Tutorial+-+Decision+Tree+20190117.pdf). We have modified the tutorial to make it more relevant to the workshop.
+:::
+
+# Overview of Decision Problem
+
+In this example problem, you must decide whether or not to implement a screening program for a certain disease (Dx). Assume that persons testing positive will be treated, which improves their life expectancy. For disease-positive individuals who are not screened, assume that treatment will be delayed until they become symptomatic and that they have a lower life expectancy than those who receive immediate treatment. For disease-negative individuals who are inappropriately treated, assume that there is a decrease in their life expectancy due to drug toxicity. The screening test is imperfect with a sensitivity of 0.97 and a specificity of 0.9988. The prevalence of the disease in this population is 0.05. The objective is to maximize life expectancy. As alternative strategies, you could not screen anyone, or you could simply treat everyone without screening first.
+
+# Amua
+
+[Amua](https://github.com/zward/Amua/wiki) is an open source/free modeling framework & probabilistic programming language.
+
+The program allows modeling of Decision Trees and Markov Models. - Models can be run as cohort or individual-level simulations (ie., microsimulation)
+
+## Getting started
+
+You will first need to install Java (1.8 or later) & download Amua. Follow the directions [here](https://github.com/zward/Amua/wiki/Getting-Started)
+
+Here is a comprehensive [tutorial](https://s3.amazonaws.com/amua-tutorials/Amua+-+Tutorial+-+Decision+Tree+20190117.pdf) to get you started. We review some highlights below:
+
+# Step 1: Define Strategies
+
+-   Create a new model in Amua and define the following three strategies
+    1.  No screening
+    2.  Screen
+    3.  Treat all
+
+::: {.callout-tip appearance="minimal"}
+## Adding Branches
+
+To add branches to this decision node (the root of the tree) you have a few options:
+
+-   Double-click: Double-click on the node to add two branches with chance nodes <i class="fa-solid fa-circle fa-xs" style="color: #00ff00;"></i> . Note that if the node already has branches, double-clicking will add one branch.
+-   Right-click: Right-click on the node to display the pop-up menu. Select Add -\> and choose the node\
+    type you wish to add.
+-   Toolbar: Select the node and click on a node type in the toolbar at the top to add it to the tree.
+
+For the example in this tutorial, double-click on the root decision node <i class="fa-solid fa-square" style="color: #ff0000;"></i> , which will add two branches.
+
+[Source](https://s3.amazonaws.com/amua-tutorials/Amua+-+Tutorial+-+Decision+Tree+20190117.pdf)
+
+<!-- <i class="fa-solid fa-circle" style="color: #28d025;"></i>  -->
+:::
+
+::: {.callout-tip appearance="minimal"}
+## Labeling Branches
+
+New branches are called Name by default. To give branches more informative labels, click on Name above the branch. A text-box above the branch will appear outlined in [blue]{style="color: blue;"}. You can now edit the text that appears in this field. Label the top branch No Screen. You can hit Enter on the keyboard or click outside of the textbox on the canvas to accept the new label. Now, click the label above the lower branch and rename it "Screen."
+
+[Source](https://s3.amazonaws.com/amua-tutorials/Amua+-+Tutorial+-+Decision+Tree+20190117.pdf)
+:::
+
+![](images/amua-define-strategies.png)
+
+# Step 2: Add Terminal Nodes
+
+1.  Double-click on the No Screen chance node <i class="fa-solid fa-circle fa-xs" style="color: #00ff00;"></i> to add 2 branches.\
+2.  Click the Optimize Current Display (OCD) button on the toolbar to arrange the branches and ensure even spacing.
+3.  Right-click on each of the child nodes <i class="fa-solid fa-circle fa-xs" style="color: #00ff00;"></i> and select <i class="fa-solid fa-caret-left" style="color: #0000ff;"></i> **Change to Terminal Node**. You may also change node types on the toolbar or add a new terminal node <i class="fa-solid fa-caret-left" style="color: #0000ff;"></i> using the toolbar or pop-up menu.
+4.  Name the top branch D+ and the bottom branch D-.
+
+Your tree should look like this:
+
+![](images/amua-terminal.png)
+
+# Step 3: Build Out the Screen Strategy
+
+Adapt the Screen strategy to include a chance node indicating the probability of a positive test result.
+
+-   Double-click on the Screen chance node <i class="fa-solid fa-circle fa-xs" style="color: #00ff00;"></i> to add two more branches. Name these "Test +" and "Test -".
+
+-   Add in terminal nodes for "D+" and "D-", as in Step 2 above.
+
+Your decision tree should now look like this:
+
+![](images/amua-terminal2.png)
+
+# Step 4: Complete the Structure
+
+You can now complete the structure of the decision tree by adding in the remaining terminal nodes for the Treat All strategy.
+
+![](images/amua-terminal3.png)
+
+::: {.callout-tip appearance="minimal"}
+## Additional Editing Functions
+
+-   Nodes and sub-trees can be removed by selecting the node/root of the sub-tree and pressing Delete on the keyboard, or <i class="fa-solid fa-xmark" style="color: #7f0000;"></i> **Delete** from the pop-up menu.
+-   Nodes/sub-trees can also be cut and pasted elsewhere using the Edit menu, pop-up menu, or keyboard shortcuts (Windows: Ctrl-X, Ctrl-V. Mac: Cmd-X, Cmd-V).
+-   Alternatively, you can always Undo or\
+    Redo actions using the Edit menu or keyboard shortcuts (Windows: Ctrl-Z, Ctrl-Y. Mac: Cmd-Z, Cmd-Y).
+
+[Source](https://s3.amazonaws.com/amua-tutorials/Amua+-+Tutorial+-+Decision+Tree+20190117.pdf)
+:::
+
+# Step 5: Save
+
+-   You can save at any time by clicking on Model -\> Save or using the keyboard shortcut (Windows: Ctrl-S. Mac: CmdS).
+-   When saving for the first time, a dialog box will appear asking for the name of the model.
+-   Choose the location where you want to save the model, enter `Dx_Screen` as the file name, and click Save.
+
+# Step 6: Define Model Outcomes
+
+By default, model outcomes (called model ‘dimensions’ in Amua) track Costs, denoted by the \$ symbol inside\
+parentheses. In this model, our outcome of interest will be Life Expectancy.
+
+-   To change the outcome of interest, go to the menu bar and click `Model ->   Properties` and select the `Analysis` tab.
+-   In this tab, rename the dimension from **Cost** to **Life Expectancy**, change the symbol to LE, and choose 2 decimal places for precision.
+-   Make sure that you hit Enter once you change the value in a table cell. The cell border will turn [light blue]{style="color: #118aef;"} once the cell is updated.
+
+![](images/amua-properties.png) ![](images/amua-le.png)
+
+# Step 7: Define Probabilities
+
+Now we will assign probabilities to the branches of chance nodes <i class="fa-solid fa-circle fa-xs" style="color: #00ff00;"></i> .
+
+## Disease Prevalence
+
+-   For the branch `No Screen`, click underneath the branch labeled **D+** (next to the label p:). A text-entry box will now be outlined in [blue]{style="color: blue;"}. This is where you enter the probability for this branch.
+
+-   Type `prev` which we will define as the *prevalence* of the disease. Hit Enter or click outside the text-box to accept the probability.
+
+-   The text will now turn [red]{style="color: red;"} because Amua does not recognize prev as a model object, so we will have to\
+    define it later.
+
+![](images/amua-prob1.png)
+
+## Complementary Probabilities
+
+-   Now enter the probability for the **D-** branch for `No Screen`.
+
+-   Because the probabilities for all branches of a chance node must sum to 1.0, we could enter `1-prev` as the probability.
+
+    -   This is called a ‘complementary’ probability as it provides the complement to sum to 1.0.
+
+-In Amua you can type `C` or `c` to indicate a complementary probability. - Note that there can only be one complementary probability per chance node.
+
+-Enter `C` for the probability of **D-**.
+
+![](images/amua-prob2.png)
+
+## Define Probabilities for `Screen` Strategy
+
+-   For the Test + branch enter `pTPos` as the probability of testing positive, which will be a function of the disease prevalence and test characteristics (sensitivity and specificity).
+
+-   Enter `C` for the probability of Test -.
+
+-   Next, we'll define the probability of having the disease given each test result in the Screen strategy.
+
+    1.  On the **Test +** branch, click under the **D+** branch and type `pD_TPos`. This will be the probability of having the disease given a positive test.
+    2.  Click under **D-** and type `C` to indicate a complementary probability.
+    3.  For the **Test -** branch, click under the **D+** branch and type `pD_TNeg`, which is the probability of having the disease given a negative test.
+    4.  Click under **D-** below and type `C` again.
+
+![](images/amua-prob3.png) - Finally, define teh probability of having the disease in the `Treat All` strategy. 1. Click under **D+** and type `prev`, which is the prevalence of the disease. 2. Enter **C** for the probability of **D-**.
+
+# Step 8: Defining Payoffs
+
+Now we will define the payoffs for each terminal node to model the consequences of each possible outcome.
+
+-   To enter a payoff, click to the right of the <i class="fa-solid fa-caret-left" style="color: #0000ff;"></i> terminal node. A text-box will appear outlined in [blue]{style="color: blue;"}. By default, the payoffs are set to 0, so we need to update these values.
+
+-   In the `No Screen` strategy for **D +**, enter `LateRx` as the payoff, which we will define as the life expectancy for people who receive treatment late.
+
+    -   For **D -**, enter `NoDx` as the payoff, which will be the life expectancy for people without the disease.
+
+-   In the Screen strategy, only people who test positive will be treated.
+
+    -   On the **Test +** branch, enter `Rx` as the payoff for **D +** to indicate that these people will be treated.
+    -   For **D-**, enter `Tox` as the payoff since these people are false positives and are negatively affected by the treatment toxicity.
+    -   On the **Test-** branch, enter `LateRx` as the payoff for **D +** since these people have the disease but were not identified by the screening test.
+    -   For **D -**, enter `NoDx` since these people are true negatives.
+
+-   Everyone will be treated in the `Treat  All` strategy. This is good for those with the disease, but not for those\
+    without the disease.
+
+    -   For **D +**, enter `Rx` as the payoff and for **D -** enter `Tox`.
+
+Your decision tree should now look like this:
+
+![](images/amua-payoffs.png)
+
+# Step 9: Defining Parameters
+
+We’ve entered the names of all of the probabilities and payoffs in the tree, but we haven’t yet defined the values for these parameters. We could have entered numeric values directly in the tree, but defining them as Parameters is more flexible and lets us perform sensitivity analyses later. Parameters are global in the model, which means that they can only be defined once and have the same value wherever they are used in the model.
+
+1.  In the upper right-hand box of the program, you will see a blue <i class="fa-solid fa-plus" style="color: #1c67e9;"></i> sign:
+
+![](images/adding_params1.png){width="355"}
+
+2\. Add each parameter, one-by-one, with its corresponding value as detailed below:
+
+::: {.callout-tip appearance="minimal"}
+To [delete a variable]{style="color: #D65C41;"}, click on the variable and click on the red <i class="fa-solid fa-x" style="color: #d03216;"></i> next to the pencil image in the variable dialogue.
+:::
+
+
+| Parameter | Description                                                                      | Value                                                    |
+|-----------------|---------------------------------|----------------------|
+| prev      | Disease prevalence                                                               | 0.05                                                     |
+| sens      | Sensitivity of test                                                              | 0.97                                                     |
+| spec      | Specificity of test                                                              | 0.9988                                                   |
+| pTPos     | Probability of testing positive (based on Bayes' theorem–more on this tomorrow!) | prev \* sens + (1 - prev) \* (1 - spec)                  |
+| pD_TPos   | Probability of having the disease given a *positive* test.                       | prev \* sens / (prev \* sens + (1 - prev) \* (1 - spec)) |
+| pD_TNeg   | Probability of having the disease given a *negative* test.                       | prev\*(1 - sens)/(prev \* (1 - sens)+(1 - prev) \* spec) |
+| LateRx    | Life expectancy if disease treated late                                          | 25.2                                                     |
+| NoDx      | Life expectancy if no disease                                                    | 40.3                                                     |
+| Rx        | Life expectancy if treated                                                       | 35.8                                                     |
+| Tox       | Life expectancy if treated, but do not have disease (due to Rx toxicity)         | 39.4                                                     |
+
+![](images/amua-addparam1.png){width="511"}
+
+
+
+# Step 10: Run the Model
+
+-   While developing models you can click <i class="fa-solid fa-check" style="color: #1862e2;"></i> Check Model on the toolbar at any time to highlight any errors found.
+
+-   When you are ready to run the model you can click <i class="fa-solid fa-circle-play" style="color: #18af59;"></i> Run Model, which will evaluate the model and display the results on the canvas and the console.
+
+For this model we get the following results:
+
+| Strategy  | Life Expectancy |
+|-----------|-----------------|
+| No Screen | 39.54           |
+| Screen    | 40.06           |
+| Treat All | 39.22           |
+

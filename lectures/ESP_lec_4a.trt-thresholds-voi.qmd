@@ -1,0 +1,274 @@
+---
+title: "Umbrales de tratamiento y valor de la información"
+format:
+  revealjs:
+    theme: slides.scss
+    incremental: false
+    slide-number: true
+    logo: ../vchem.png
+    html-math-method: katex
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    footer: |
+      [Back to Website](../index.html)
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Objetivos de aprendizaje y esquema
+
+## Objetivos de aprendizaje
+
+- Definir los umbrales de tratamiento en un árbol de decisión y examinar
+    diferentes formas de interpretación
+
+- Comprender y calcular el valor de la información de una prueba perfecta frente a una imperfecta
+    prueba imperfecta
+
+## Resumen
+
+- Umbrales de tratamiento
+
+- Pruebas y valor de la información
+
+## Umbrales de tratamiento {background="#43464B"}
+
+## Umbrales de tratamiento {background="#43464B"}
+
+
+![](images/PE1.png){width="594"}
+
+
+## Umbrales de tratamiento
+
+<br>
+
+::: {.callout-important appearance="minimal" icon="false"}
+¿Qué ocurriría si la probabilidad de EP recurrente fuera mayor o menor que la estimada inicialmente?
+estimada inicialmente?
+:::
+
+<br>
+
+- ¿Anticoagulamos o no?
+- ¿En qué momento pasamos del "sí" al "no"?
+
+
+## Umbrales de tratamiento
+
+![](images/trt-threshold1.png)
+
+
+## Umbrales de tratamiento
+
+<br>
+
+> Realizar un análisis de sensibilidad para hallar un umbral de tratamiento
+
+<br>
+
+(Más información sobre los análisis de sensibilidad más adelante en el taller)
+
+
+## Umbrales de tratamiento
+
+![](images/trt-threshold3.png){width="344"}
+
+::: {style="font-size: 0.8em"}
+[Valor esperado (AC) = 0.990 \* pPE + 0.992 \*
+(1-pPE)]{style="color:green;"}
+
+[Valor esperado (No AC) = 0.750 \* pPE + 1.0 \*
+(1-pPE)]{style="color:blue;"}
+
+AHORA, AJUSTAR IGUAL A CADA UNO, para resolver la probabilidad umbral desconocida
+:::
+
+
+
+## Umbrales de tratamiento
+
+![](images/trt-threshold3.png){width="344"}
+
+::: {style="font-size: 0.8em"}
+[0.990 \* pPE + 0.992 \* (1-pPE)]{style="color:green;"} = [0.750 \*
+pPE + 1.0 \* (1-pPE)]{style="color:blue;"}
+
+[0.240 \* pPE]{style="color:green;"} = [0.008 \*
+(1-pPE)]{style="color:blue;"}
+
+0.240 \* pPE + 0.008 \*pPE = 0.008
+
+pPE = 0.008 / (0.240 + 0.008)
+
+= .032
+:::
+
+## Umbrales de tratamiento
+
+<br>
+
+![](images/trt-threshold4.png)
+
+
+
+## Umbrales de tratamiento
+
+![](images/trt-threshold5.png)
+
+
+## Umbrales de tratamiento
+
+<br>
+
+Realizar una prueba para obtener información adicional SÓLO merece la pena SI:
+<br>
+
+(1) Al menos una decisión cambiaría dados algunos resultados de la prueba, y/o\\.
+    <br>
+(2) El riesgo para el paciente asociado a la prueba es menor que el
+    beneficio esperado de someterse a la prueba
+
+## Umbrales de tratamiento
+
+![](images/trt-threshold6.png)
+
+## Umbrales de tratamiento
+
+![](images/trt-threshold7.png){width="510"}
+
+
+## Umbrales de tratamiento
+
+<br>
+
+**No tratar -- Umbral de prueba** <br> Probabilidad de indiferencia entre
+probar y no tratar
+
+<br>
+
+**Umbral de prueba y tratamiento** <br> Probabilidad de indiferencia entre
+prueba y tratamiento
+
+## Testing & expected value of information
+
+<br>
+
+::: incremental
+- En teoría, la información puede ser perfecta, gratuita y sin riesgos, pero
+    ¡normalmente NO LO ES!
+- La información es casi siempre IMPERFECTA
+- Obtener información suele TENER UN COSTE
+:::
+
+## Testing & expected value of information
+
+<br>
+
+::: fragment
+El valor de la información pregunta: **¿Qué ganamos con esta información adicional?
+adicional?**
+:::
+
+<br>
+
+::: fragment
+Valor de la información =
+
+\|\[valor esperado de la estrategia "obtener información\] --
+
+\[valor esperado de la siguiente mejor estrategia\]\|
+:::
+
+## Testing & expected value of information
+
+::: fragment
+Las pruebas PERFECT nos dan un límite superior del beneficio potencial de cualquier
+prueba
+:::
+
+<br>
+
+::: fragment
+La ganancia de esta prueba PERFECTA imaginaria es el valor esperado de la
+información perfecta (EVPI)
+:::
+
+## Pruebas y valor esperado de la información
+
+## Una prueba perfecta (100% sens y spec) sin riesgo
+
+![](images/VOI2.png)
+
+## Una prueba perfecta (100% sens y spec) sin riesgo
+
+::: columns
+::: {.column width="60%"}
+![](images/VOI3.png)
+:::
+
+::: {.column width="40%"}
+::: {style="font-size: 0.6em"}
+-   EV(prueba perfecta) = [0.12]{style="background-color: yellow;"}
+
+-   EV(estrategia de tratamiento) = 0.16
+
+-   EV(estrategia de no tratar) = 0.24 (worst EV)
+
+EVPI =
+
+\|EV 'prueba perfecta' -- EV 'siguiente mejor estrategia: tratar a todos'\|
+
+=\|0.12 -- 0.16\| = 0.04,
+
+o 4 muertes evitadas por cada 100 pruebas gracias a las pruebas adicionales
+información
+:::
+:::
+:::
+
+## Una prueba imperfecta con riesgo de morbilidad
+
+![](images/VOI4.png)
+
+## Una prueba imperfecta con riesgo de morbilidad
+
+![](images/VOI5.png)
+
+## Una prueba imperfecta con riesgo de morbilidad
+
+<br>
+
+::: {style="font-size: 0.8em"}
+Cuando la prueba es imperfecta, probar sigue siendo la mejor estrategia (en este
+caso, cuanto menor sea el VE, mejor, ya que nuestros valores de resultado son la
+probabilidad de un mal resultado), pero no por mucho:
+:::
+
+## Pruebas y valor esperado de la información {.smaller}
+
+<br>
+
+Cuando la prueba es IMPERFECTA: <br>
+
+- EV(estrategia de prueba) = [0.157]{style="color de fondo: amarillo;"}
+
+- EV(estrategia de tratamiento) = 0,16
+
+- EV(sin estrategia de tratamiento) = 0,24 (peor EV)
+
+<br>
+
+::: fragment
+VOI = |EV 'prueba' -- EV 'siguiente mejor estrategia'||
+
+= \|0.157 -- 0.16\| = 0.003,
+
+o 3 muertes evitadas por cada 1000 pruebas gracias a la información adicional de las pruebas.
+información
+:::
+

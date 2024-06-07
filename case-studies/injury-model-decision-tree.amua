@@ -7,18 +7,21 @@
         <dateCreated>Wed May 15 13:18:31 CDT 2024</dateCreated>
         <versionCreated>0.3.1</versionCreated>
         <modifier>johngraves</modifier>
-        <dateModified>Wed May 22 07:03:19 CDT 2024</dateModified>
+        <dateModified>Thu Jun 06 10:34:08 CDT 2024</dateModified>
         <versionModified>0.3.1</versionModified>
     </Metadata>
     <DimInfo>
-        <dimNames>Cost</dimNames>
-        <dimNames>QALY</dimNames>
-        <dimSymbols>$</dimSymbols>
-        <dimSymbols>QALY</dimSymbols>
-        <decimals>4</decimals>
-        <decimals>4</decimals>
+        <dimNames>MajorInj</dimNames>
+        <dimNames>AnyInjury</dimNames>
+        <dimNames>ModMajInf</dimNames>
+        <dimSymbols>MajInj</dimSymbols>
+        <dimSymbols>Inj</dimSymbols>
+        <dimSymbols>ModMajInf</dimSymbols>
+        <decimals>12</decimals>
+        <decimals>12</decimals>
+        <decimals>12</decimals>
         <analysisType>0</analysisType>
-        <objective>0</objective>
+        <objective>1</objective>
         <objectiveDim>0</objectiveDim>
         <costDim>0</costDim>
         <effectDim>0</effectDim>
@@ -28,38 +31,23 @@
     <scale>157</scale>
     <alignRight>false</alignRight>
     <Parameter>
-        <name>uHealthy</name>
-        <expression>1</expression>
-        <notes></notes>
-    </Parameter>
-    <Parameter>
-        <name>cHealthy</name>
-        <expression>0</expression>
-        <notes></notes>
-    </Parameter>
-    <Parameter>
         <name>pMinor</name>
-        <expression>0.07</expression>
+        <expression>0.15</expression>
         <notes></notes>
     </Parameter>
     <Parameter>
         <name>pModerate</name>
-        <expression>0.02</expression>
+        <expression>0.3</expression>
         <notes></notes>
     </Parameter>
     <Parameter>
         <name>pMajor</name>
-        <expression>0.01</expression>
+        <expression>0.5</expression>
         <notes></notes>
     </Parameter>
     <Parameter>
         <name>pFatal</name>
-        <expression>0.005</expression>
-        <notes></notes>
-    </Parameter>
-    <Parameter>
-        <name>uMinorFull</name>
-        <expression>0.95</expression>
+        <expression>.05</expression>
         <notes></notes>
     </Parameter>
     <Parameter>
@@ -69,82 +57,37 @@
     </Parameter>
     <Parameter>
         <name>pFullRecoveryModerate</name>
-        <expression>0</expression>
+        <expression>0.5</expression>
         <notes></notes>
     </Parameter>
     <Parameter>
         <name>pFullRecoveryMajor</name>
-        <expression>1</expression>
+        <expression>0.25</expression>
         <notes></notes>
     </Parameter>
     <Parameter>
-        <name>cFatal</name>
-        <expression>0</expression>
+        <name>rrMinorBan</name>
+        <expression>0.5</expression>
         <notes></notes>
     </Parameter>
     <Parameter>
-        <name>uFatal</name>
-        <expression>0</expression>
+        <name>rrModerateBan</name>
+        <expression>0.75</expression>
         <notes></notes>
     </Parameter>
     <Parameter>
-        <name>cMinorFullRecovery</name>
-        <expression>0</expression>
+        <name>rrMajorBan</name>
+        <expression>0.9</expression>
         <notes></notes>
     </Parameter>
     <Parameter>
-        <name>uMinorFullRecovery</name>
-        <expression>0</expression>
+        <name>rrFatalBan</name>
+        <expression>0.95</expression>
         <notes></notes>
     </Parameter>
     <Parameter>
-        <name>cMinorSequelae</name>
-        <expression>0</expression>
-        <notes></notes>
-    </Parameter>
-    <Parameter>
-        <name>uMinorSequelae</name>
-        <expression>0</expression>
-        <notes></notes>
-    </Parameter>
-    <Parameter>
-        <name>cModerateFullRecovery</name>
-        <expression>0</expression>
-        <notes></notes>
-    </Parameter>
-    <Parameter>
-        <name>uModerateFullRecovery</name>
-        <expression>0</expression>
-        <notes></notes>
-    </Parameter>
-    <Parameter>
-        <name>cModerateSequelae</name>
-        <expression>0</expression>
-        <notes></notes>
-    </Parameter>
-    <Parameter>
-        <name>uModerateSequelae</name>
-        <expression>0</expression>
-        <notes></notes>
-    </Parameter>
-    <Parameter>
-        <name>cMajorFullRecovery</name>
-        <expression>0</expression>
-        <notes></notes>
-    </Parameter>
-    <Parameter>
-        <name>uMajorFullRecovery</name>
-        <expression>0</expression>
-        <notes></notes>
-    </Parameter>
-    <Parameter>
-        <name>cMajorSequelae</name>
-        <expression>0</expression>
-        <notes></notes>
-    </Parameter>
-    <Parameter>
-        <name>uMajorSequelae</name>
-        <expression>0</expression>
+        <name>pInjury</name>
+        <expression>.00292</expression>
         <notes></notes>
     </Parameter>
     <simParamSets>false</simParamSets>
@@ -175,6 +118,7 @@
             <cost>0</cost>
             <payoff>0</payoff>
             <payoff>0</payoff>
+            <payoff>0</payoff>
         </Node>
         <Node>
             <type>1</type>
@@ -199,6 +143,8 @@
             <prob>0</prob>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
         </Node>
@@ -220,8 +166,10 @@
             <prob>C</prob>
             <cost>0</cost>
             <cost>0</cost>
-            <payoff>cHealthy</payoff>
-            <payoff>uHealthy</payoff>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
         </Node>
         <Node>
             <type>1</type>
@@ -240,9 +188,11 @@
             <hasVarUpdates>false</hasVarUpdates>
             <visible>true</visible>
             <collapsed>false</collapsed>
-            <prob>pMinor</prob>
+            <prob>pInjury * pMinor</prob>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
         </Node>
@@ -263,9 +213,11 @@
             <hasVarUpdates>false</hasVarUpdates>
             <visible>true</visible>
             <collapsed>false</collapsed>
-            <prob>pModerate</prob>
+            <prob>pInjury * pModerate</prob>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
         </Node>
@@ -286,9 +238,11 @@
             <hasVarUpdates>false</hasVarUpdates>
             <visible>true</visible>
             <collapsed>false</collapsed>
-            <prob>pMajor</prob>
+            <prob>pInjury * pMajor</prob>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
         </Node>
@@ -307,11 +261,13 @@
             <hasVarUpdates>false</hasVarUpdates>
             <visible>true</visible>
             <collapsed>false</collapsed>
-            <prob>pFatal</prob>
+            <prob>pInjury * pFatal</prob>
             <cost>0</cost>
             <cost>0</cost>
-            <payoff>cFatal</payoff>
-            <payoff>uFatal</payoff>
+            <cost>0</cost>
+            <payoff>1</payoff>
+            <payoff>1</payoff>
+            <payoff>1</payoff>
         </Node>
         <Node>
             <type>2</type>
@@ -331,8 +287,10 @@
             <prob>pFullRecoveryMinor</prob>
             <cost>0</cost>
             <cost>0</cost>
-            <payoff>cMinorFullRecovery</payoff>
-            <payoff>uMinorFullRecovery</payoff>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
         </Node>
         <Node>
             <type>2</type>
@@ -352,8 +310,10 @@
             <prob>C</prob>
             <cost>0</cost>
             <cost>0</cost>
-            <payoff>cMinorSequelae</payoff>
-            <payoff>uMinorSequelae</payoff>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
         </Node>
         <Node>
             <type>2</type>
@@ -373,8 +333,10 @@
             <prob>pFullRecoveryModerate</prob>
             <cost>0</cost>
             <cost>0</cost>
-            <payoff>cModerateFullRecovery</payoff>
-            <payoff>uModerateFullRecovery</payoff>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>1</payoff>
+            <payoff>1</payoff>
         </Node>
         <Node>
             <type>2</type>
@@ -394,8 +356,10 @@
             <prob>C</prob>
             <cost>0</cost>
             <cost>0</cost>
-            <payoff>cModerateSequelae</payoff>
-            <payoff>uModerateSequelae</payoff>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>1</payoff>
+            <payoff>1</payoff>
         </Node>
         <Node>
             <type>2</type>
@@ -415,8 +379,10 @@
             <prob>pFullRecoveryMajor</prob>
             <cost>0</cost>
             <cost>0</cost>
-            <payoff>cMajorFullRecovery</payoff>
-            <payoff>uMajorFullRecovery</payoff>
+            <cost>0</cost>
+            <payoff>1</payoff>
+            <payoff>1</payoff>
+            <payoff>1</payoff>
         </Node>
         <Node>
             <type>2</type>
@@ -436,8 +402,10 @@
             <prob>C</prob>
             <cost>0</cost>
             <cost>0</cost>
-            <payoff>cMajorSequelae</payoff>
-            <payoff>uMajorSequelae</payoff>
+            <cost>0</cost>
+            <payoff>1</payoff>
+            <payoff>1</payoff>
+            <payoff>1</payoff>
         </Node>
     </tree>
 </Model>
