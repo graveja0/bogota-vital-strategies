@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -679,6 +713,279 @@ ul.task-list li input[type="checkbox"] {
 <li>Utility Value: 0.0</li>
 </ul></li>
 </ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.0
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'kableExtra'
+
+The following object is masked from 'package:dplyr':
+
+    group_rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(survival)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(flexsurv)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dampack)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'Matrix'
+
+The following objects are masked from 'package:tidyr':
+
+    expand, pack, unpack</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>here() starts at /Users/johngraves/Dropbox/teaching/bogota-vital-strategies</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(demography)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: forecast
+Registered S3 method overwritten by 'quantmod':
+  method            from
+  as.zoo.data.frame zoo 
+Registered S3 methods overwritten by 'demography':
+  method      from 
+  print.lca   e1071
+  summary.lca e1071
+This is demography 2.0 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MortalityLaws)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(demography)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'MASS'
+
+The following object is masked from 'package:dplyr':
+
+    select</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(directlabels)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(expm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'expm'
+
+The following object is masked from 'package:Matrix':
+
+    expm</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(directlabels)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggsci)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(hrbrthemes<span class="sc">::</span><span class="fu">theme_ipsum</span>(<span class="at">base_family =</span> <span class="st">"Arial"</span>))</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="st">"scipen"</span> <span class="ot">=</span> <span class="dv">100</span>, <span class="st">"digits"</span> <span class="ot">=</span> <span class="dv">5</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>select <span class="ot">&lt;-</span> dplyr<span class="sc">::</span>select</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Columbia Life Tables</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Source: https://apps.who.int/gho/data/view.searo.LT62020?lang=en</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>lt_lut <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Tx - person-years lived above age x"</span> <span class="ot">=</span> <span class="st">"Tx"</span>,</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ex - expectation of life at age x"</span> <span class="ot">=</span> <span class="st">"ex"</span>,</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"lx - number of people left alive at age x"</span> <span class="ot">=</span> <span class="st">"lx"</span>,</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"nLx - person-years lived between ages x and x+n"</span> <span class="ot">=</span> <span class="st">"Lx"</span>,</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"nMx - age-specific death rate between ages x and x+n"</span> <span class="ot">=</span> <span class="st">"mx"</span>,</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"ndx - number of people dying between ages x and x+n"</span> <span class="ot">=</span> <span class="st">"dx"</span>,</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>  <span class="st">"nqx - probability of dying between ages x and x+n"</span> <span class="ot">=</span> <span class="st">"qx"</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>x_lut <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>  <span class="st">" &amp;lt;1 year"</span> <span class="ot">=</span> <span class="st">"0"</span>, </span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>  <span class="st">" 1-4 years"</span> <span class="ot">=</span> <span class="st">"1"</span>, </span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>  <span class="st">" 10-14 years"</span> <span class="ot">=</span> <span class="st">"10"</span>,</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>  <span class="st">" 15-19  years"</span> <span class="ot">=</span> <span class="st">"15"</span>,</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>  <span class="st">" 20-24 years"</span> <span class="ot">=</span> <span class="st">"20"</span>,</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>  <span class="st">" 25-29 years"</span> <span class="ot">=</span> <span class="st">"25"</span>,</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>  <span class="st">" 30-34 years"</span>  <span class="ot">=</span> <span class="st">"30"</span>,</span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a> <span class="st">" 35-39 years"</span> <span class="ot">=</span> <span class="st">"35"</span>,</span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a> <span class="st">" 40-44 years"</span> <span class="ot">=</span> <span class="st">"40"</span>,</span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a> <span class="st">" 45-49 years"</span> <span class="ot">=</span> <span class="st">"45"</span>,</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a> <span class="st">" 5-9 years"</span> <span class="ot">=</span> <span class="st">"5"</span>,</span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a> <span class="st">" 50-54 years"</span>  <span class="ot">=</span> <span class="st">"50"</span>,</span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a> <span class="st">" 55-59 years"</span> <span class="ot">=</span> <span class="st">"55"</span>,</span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a> <span class="st">" 60-64 years"</span>   <span class="ot">=</span> <span class="st">"60"</span>,</span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a> <span class="st">" 65-69 years"</span> <span class="ot">=</span> <span class="st">"65"</span>,</span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a> <span class="st">" 70-74 years"</span> <span class="ot">=</span> <span class="st">"70"</span>, </span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a> <span class="st">" 75-79 years"</span> <span class="ot">=</span> <span class="st">"75"</span>,</span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a> <span class="st">" 80-84 years"</span> <span class="ot">=</span> <span class="st">"80"</span>,</span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a> <span class="st">" 85+ years"</span>   <span class="ot">=</span> <span class="st">"85"</span></span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>) </span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>lt <span class="ot">&lt;-</span> </span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read.csv</span>(<span class="fu">here</span>(<span class="st">"case-studies/columbia-who-life-table_2024-06-06.csv"</span>),<span class="at">skip =</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">indicator2 =</span> lt_lut[indicator]) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">x =</span> x_lut[age_group]) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(indicator2 <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"mx"</span>,<span class="st">"Tx"</span>,<span class="st">"ex"</span>,<span class="st">"lx"</span>,<span class="st">"Lx"</span>,<span class="st">"dx"</span>,<span class="st">"qx"</span>))   <span class="sc">%&gt;%</span> </span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(x,both_sexes, indicator2) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">spread</span>(indicator2,both_sexes) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">age =</span> x,mx,qx,lx,dx,Lx,Tx) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">age =</span> <span class="fu">as.numeric</span>(<span class="fu">paste0</span>(age))) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(age)</span>
+<span id="cb15-60"><a href="#cb15-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-61"><a href="#cb15-61" aria-hidden="true" tabindex="-1"></a>ages     <span class="ot">&lt;-</span> lt<span class="sc">$</span>age[lt<span class="sc">$</span>age<span class="sc">&lt;</span><span class="dv">100</span>]</span>
+<span id="cb15-62"><a href="#cb15-62" aria-hidden="true" tabindex="-1"></a>deaths   <span class="ot">&lt;-</span> lt<span class="sc">$</span>dx[lt<span class="sc">$</span>age<span class="sc">&lt;</span><span class="dv">100</span>]</span>
+<span id="cb15-63"><a href="#cb15-63" aria-hidden="true" tabindex="-1"></a>exposure <span class="ot">&lt;-</span> lt<span class="sc">$</span>Lx[lt<span class="sc">$</span>age<span class="sc">&lt;</span><span class="dv">100</span>]</span>
+<span id="cb15-64"><a href="#cb15-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-65"><a href="#cb15-65" aria-hidden="true" tabindex="-1"></a>hp_fit <span class="ot">&lt;-</span> <span class="fu">MortalityLaw</span>(</span>
+<span id="cb15-66"><a href="#cb15-66" aria-hidden="true" tabindex="-1"></a>                <span class="at">x  =</span> ages,      <span class="co"># vector with ages</span></span>
+<span id="cb15-67"><a href="#cb15-67" aria-hidden="true" tabindex="-1"></a>                <span class="at">Dx  =</span> deaths,   <span class="co"># vector with death counts</span></span>
+<span id="cb15-68"><a href="#cb15-68" aria-hidden="true" tabindex="-1"></a>                <span class="at">Ex  =</span> exposure, <span class="co"># vector containing exposures</span></span>
+<span id="cb15-69"><a href="#cb15-69" aria-hidden="true" tabindex="-1"></a>                <span class="at">law =</span> <span class="st">"HP2"</span>,</span>
+<span id="cb15-70"><a href="#cb15-70" aria-hidden="true" tabindex="-1"></a>                <span class="at">opt.method =</span> <span class="st">"LF2"</span>)</span>
+<span id="cb15-71"><a href="#cb15-71" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(hp_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="markov-injury_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind.data.frame</span>(<span class="at">hp =</span> <span class="fu">HP2</span>(<span class="at">x =</span> lt<span class="sc">$</span>age, <span class="at">par =</span> hp_fit<span class="sc">$</span>coefficients)<span class="sc">$</span>hx, <span class="at">lt =</span> lt<span class="sc">$</span>mx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           hp         lt
+1  0.01142097 0.01142101
+2  0.00048104 0.00047666
+3  0.00021015 0.00021911
+4  0.00031204 0.00027794
+5  0.00075860 0.00087991
+6  0.00117540 0.00123863
+7  0.00136183 0.00120281
+8  0.00138903 0.00131325
+9  0.00140379 0.00136937
+10 0.00154789 0.00163671
+11 0.00197028 0.00211614
+12 0.00287671 0.00307737
+13 0.00460372 0.00503838
+14 0.00772997 0.00769663
+15 0.01325164 0.01147761
+16 0.02285523 0.01977460
+17 0.03930889 0.03638906
+18 0.06691615 0.05818927
+19 0.11174029 0.13535387</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># # A tibble: 101 × 11</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#     year     x       mx       qx      lx    dx    Lx    Tx    ex country   age</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">#    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  1  2019     0 0.00556  0.00553  100000  553.  0.995  79.0  79.0 USA         0</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">#  2  2019     1 0.000384 0.000384  99447.  38.2 0.994  78.0  78.4 USA         1</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co">#  3  2019     2 0.000233 0.000233  99409.  23.2 0.994  77.0  77.4 USA         2</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  4  2019     3 0.000178 0.000178  99385.  17.7 0.994  76.0  76.4 USA         3</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co">#  5  2019     4 0.000143 0.000143  99368.  14.2 0.994  75.0  75.5 USA         4</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co">#  6  2019     5 0.000133 0.000133  99354.  13.2 0.993  74.0  74.5 USA         5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>params <span class="ot">=</span> </span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">t_names =</span> <span class="fu">c</span>(          <span class="co"># Strategy names</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                <span class="st">"heligman-pollard"</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                <span class="st">"foo"</span>),          </span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_treatments =</span> <span class="dv">2</span>,                 <span class="co"># Number of treatments</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">s_names  =</span> <span class="fu">c</span>(<span class="st">"Alive"</span>, <span class="st">"Dead"</span>),    <span class="co"># State names</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_states =</span> <span class="dv">2</span>,                     <span class="co"># Number of states</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_cohort =</span> <span class="dv">1</span>,                <span class="co"># Cohort size</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">initial_age =</span> <span class="dv">0</span>,                 <span class="co"># Cohort starting age    </span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_cycles =</span> <span class="dv">110</span>,                   <span class="co"># Number of cycles in model.  </span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">cycle =</span> <span class="dv">1</span>,                        <span class="co"># Cycle length</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">hp_fit =</span> hp_fit                   <span class="co"># Fitted Heligman-Pollard model object</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-12"><pre class="sourceCode r code-annotation-code code-with-copy"><code class="sourceCode r"><span id="annotated-cell-12-1"><a href="#annotated-cell-12-1" aria-hidden="true" tabindex="-1"></a>fn_mPt <span class="ot">&lt;-</span> <span class="cf">function</span>(t, params) {</span>
+<span id="annotated-cell-12-2"><a href="#annotated-cell-12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">with</span>(params, {</span>
+<span id="annotated-cell-12-3"><a href="#annotated-cell-12-3" aria-hidden="true" tabindex="-1"></a>    h <span class="ot">=</span> cycle <span class="co"># Time step</span></span>
+<span id="annotated-cell-12-4"><a href="#annotated-cell-12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lapply</span>(t, <span class="cf">function</span>(tt){</span>
+<span id="annotated-cell-12-5"><a href="#annotated-cell-12-5" aria-hidden="true" tabindex="-1"></a>       <span class="co"># Life table method</span></span>
+<span id="annotated-cell-12-6"><a href="#annotated-cell-12-6" aria-hidden="true" tabindex="-1"></a>        current_age_lt <span class="ot">=</span> <span class="fu">pmin</span>(initial_age  <span class="sc">+</span> (tt)<span class="sc">*</span>h <span class="sc">-</span> <span class="dv">1</span>,<span class="fu">max</span>(lt<span class="sc">$</span>age))</span>
+<span id="annotated-cell-12-7"><a href="#annotated-cell-12-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">#p_death &lt;- lt[lt$age==current_age_lt,"qx"]</span></span>
+<span id="annotated-cell-12-8"><a href="#annotated-cell-12-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># parametric mortality methods</span></span>
+<span id="annotated-cell-12-9"><a href="#annotated-cell-12-9" aria-hidden="true" tabindex="-1"></a>        current_age <span class="ot">=</span> initial_age  <span class="sc">+</span> (tt)<span class="sc">*</span>h <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="annotated-cell-12-10"><a href="#annotated-cell-12-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">#r_death_gompertz &lt;- gompertz(current_age,params$gom_fit$coefficients)$hx</span></span>
+<span id="annotated-cell-12-11"><a href="#annotated-cell-12-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">#p_death_gompertz &lt;- 1 - exp(-r_death_gompertz)</span></span>
+<span id="annotated-cell-12-12"><a href="#annotated-cell-12-12" aria-hidden="true" tabindex="-1"></a>        r_death_hp <span class="ot">&lt;-</span> <span class="fu">HP</span>(current_age, params<span class="sc">$</span>hp_fit<span class="sc">$</span>coefficients)<span class="sc">$</span>hx</span>
+<span id="annotated-cell-12-13"><a href="#annotated-cell-12-13" aria-hidden="true" tabindex="-1"></a>        p_death_hp <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">exp</span>(<span class="sc">-</span>r_death_hp)</span>
+<span id="annotated-cell-12-14"><a href="#annotated-cell-12-14" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="annotated-cell-12-15"><a href="#annotated-cell-12-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">array</span>(<span class="at">data =</span> <span class="fu">c</span>(</span>
+<span id="annotated-cell-12-16"><a href="#annotated-cell-12-16" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">1</span> <span class="sc">-</span> p_death_hp, <span class="dv">0</span>, </span>
+<span id="annotated-cell-12-17"><a href="#annotated-cell-12-17" aria-hidden="true" tabindex="-1"></a>                 p_death_hp,<span class="dv">1</span>,</span>
+<span id="annotated-cell-12-18"><a href="#annotated-cell-12-18" aria-hidden="true" tabindex="-1"></a>                 </span>
+<span id="annotated-cell-12-19"><a href="#annotated-cell-12-19" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">1</span> <span class="sc">-</span> p_death_hp, <span class="dv">0</span>, </span>
+<span id="annotated-cell-12-20"><a href="#annotated-cell-12-20" aria-hidden="true" tabindex="-1"></a>                 p_death_hp,<span class="dv">1</span></span>
+<span id="annotated-cell-12-21"><a href="#annotated-cell-12-21" aria-hidden="true" tabindex="-1"></a>                 ),</span>
+<span id="annotated-cell-12-22"><a href="#annotated-cell-12-22" aria-hidden="true" tabindex="-1"></a>              </span>
+<span id="annotated-cell-12-23"><a href="#annotated-cell-12-23" aria-hidden="true" tabindex="-1"></a>              <span class="at">dim =</span> <span class="fu">c</span>(n_states, n_states, n_treatments),</span>
+<span id="annotated-cell-12-24"><a href="#annotated-cell-12-24" aria-hidden="true" tabindex="-1"></a>              <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="at">from =</span> s_names,</span>
+<span id="annotated-cell-12-25"><a href="#annotated-cell-12-25" aria-hidden="true" tabindex="-1"></a>                              <span class="at">to =</span> s_names,</span>
+<span id="annotated-cell-12-26"><a href="#annotated-cell-12-26" aria-hidden="true" tabindex="-1"></a>                              t_names)) </span>
+<span id="annotated-cell-12-27"><a href="#annotated-cell-12-27" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="annotated-cell-12-28"><a href="#annotated-cell-12-28" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="annotated-cell-12-29"><a href="#annotated-cell-12-29" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="annotated-cell-12-30"><a href="#annotated-cell-12-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-12-31"><a href="#annotated-cell-12-31" aria-hidden="true" tabindex="-1"></a>params<span class="sc">$</span>mP <span class="ot">&lt;-</span> </span>
+<span id="annotated-cell-12-32"><a href="#annotated-cell-12-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fn_mPt</span>(<span class="dv">1</span><span class="sc">:</span>params<span class="sc">$</span>n_cycles, params)</span>
+<span id="annotated-cell-12-33"><a href="#annotated-cell-12-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-12-34"><a href="#annotated-cell-12-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-12-35"><a href="#annotated-cell-12-35" aria-hidden="true" tabindex="-1"></a>sim_cohort <span class="ot">&lt;-</span> <span class="cf">function</span>(params) {</span>
+<span id="annotated-cell-12-36"><a href="#annotated-cell-12-36" aria-hidden="true" tabindex="-1"></a> params<span class="sc">$</span>t_names <span class="sc">%&gt;%</span> <span class="fu">map</span>(<span class="sc">~</span>({ </span>
+<span id="annotated-cell-12-37"><a href="#annotated-cell-12-37" aria-hidden="true" tabindex="-1"></a>    tr_ <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">c</span>(<span class="st">"alive"</span> <span class="ot">=</span> params<span class="sc">$</span>n_cohort, <span class="st">"dead"</span> <span class="ot">=</span> <span class="dv">0</span>))</span>
+<span id="annotated-cell-12-38"><a href="#annotated-cell-12-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="annotated-cell-12-39"><a href="#annotated-cell-12-39" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind,<span class="fu">lapply</span>(params<span class="sc">$</span>mP, <span class="cf">function</span>(tp) {</span>
+<span id="annotated-cell-12-40"><a href="#annotated-cell-12-40" aria-hidden="true" tabindex="-1"></a>        tr_ <span class="ot">&lt;&lt;-</span> tr_ <span class="sc">%*%</span> <span class="fu">matrix</span>(<span class="fu">unlist</span>(tp[,,.x]),<span class="at">nrow=</span>params<span class="sc">$</span>n_state)</span>
+<span id="annotated-cell-12-41"><a href="#annotated-cell-12-41" aria-hidden="true" tabindex="-1"></a>    }))</span>
+<span id="annotated-cell-12-42"><a href="#annotated-cell-12-42" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="fu">c</span>(params<span class="sc">$</span>n_cohort,<span class="dv">0</span>),res) </span>
+<span id="annotated-cell-12-43"><a href="#annotated-cell-12-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dimnames</span>(res) <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">paste0</span>(<span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span>params<span class="sc">$</span>n_cycles)), params<span class="sc">$</span>s_names)</span>
+<span id="annotated-cell-12-44"><a href="#annotated-cell-12-44" aria-hidden="true" tabindex="-1"></a>    res</span>
+<span id="annotated-cell-12-45"><a href="#annotated-cell-12-45" aria-hidden="true" tabindex="-1"></a>  })) <span class="sc">%&gt;%</span> </span>
+<span id="annotated-cell-12-46"><a href="#annotated-cell-12-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set_names</span>(params<span class="sc">$</span>t_names)</span>
+<span id="annotated-cell-12-47"><a href="#annotated-cell-12-47" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="annotated-cell-12-48"><a href="#annotated-cell-12-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-12-49"><a href="#annotated-cell-12-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Construct the Markov trace. </span></span>
+<span id="annotated-cell-12-50"><a href="#annotated-cell-12-50" aria-hidden="true" tabindex="-1"></a>trace <span class="ot">&lt;-</span> </span>
+<span id="annotated-cell-12-51"><a href="#annotated-cell-12-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sim_cohort</span>(params)</span>
+<span id="annotated-cell-12-52"><a href="#annotated-cell-12-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-12-53"><a href="#annotated-cell-12-53" aria-hidden="true" tabindex="-1"></a>payoff_life_exp <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Alive"</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"Dead"</span> <span class="ot">=</span> <span class="dv">0</span>)</span>
+<span id="annotated-cell-12-54"><a href="#annotated-cell-12-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-12-55"><a href="#annotated-cell-12-55" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(trace[[<span class="dv">1</span>]] <span class="sc">%*%</span> payoff_life_exp)</span>
+<span id="annotated-cell-12-56"><a href="#annotated-cell-12-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-12-57"><a href="#annotated-cell-12-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate alive years in each cycle</span></span>
+<span id="annotated-cell-12-58"><a href="#annotated-cell-12-58" aria-hidden="true" tabindex="-1"></a>life_exp_cycle <span class="ot">=</span> <span class="fu">lapply</span>(trace, <span class="cf">function</span>(tr) (tr<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">/</span> params<span class="sc">$</span>n_cohort)) <span class="sc">%*%</span></span>
+<span id="annotated-cell-12-59"><a href="#annotated-cell-12-59" aria-hidden="true" tabindex="-1"></a>                 payoff_life_exp)</span>
+<span id="annotated-cell-12-60"><a href="#annotated-cell-12-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-12-61"><a href="#annotated-cell-12-61" aria-hidden="true" tabindex="-1"></a><span class="co"># Integration via alternative Simpson's method (cycle correction)</span></span>
+<span id="annotated-cell-12-62"><a href="#annotated-cell-12-62" aria-hidden="true" tabindex="-1"></a>alt_simp_coef <span class="ot">&lt;-</span> <span class="cf">function</span>(i) <span class="fu">c</span>(<span class="dv">17</span>, <span class="dv">59</span>, <span class="dv">43</span>, <span class="dv">49</span>, <span class="fu">rep</span>(<span class="dv">48</span>, i<span class="dv">-8</span>),</span>
+<span id="annotated-cell-12-63"><a href="#annotated-cell-12-63" aria-hidden="true" tabindex="-1"></a>                               <span class="dv">49</span>, <span class="dv">43</span>, <span class="dv">59</span>, <span class="dv">17</span>) <span class="sc">/</span> <span class="dv">48</span></span>
+<span id="annotated-cell-12-64"><a href="#annotated-cell-12-64" aria-hidden="true" tabindex="-1"></a>cycle_adj     <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">sum</span>(<span class="fu">alt_simp_coef</span>(<span class="fu">length</span>(x)) <span class="sc">*</span> x)</span>
+<span id="annotated-cell-12-65"><a href="#annotated-cell-12-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-12-66"><a href="#annotated-cell-12-66" aria-hidden="true" tabindex="-1"></a>total_life_exp <span class="ot">=</span> <span class="fu">lapply</span>(life_exp_cycle,cycle_adj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 77.56</code></pre>
+</div>
+</div>
 <!-- ### Sources  -->
 <!-- 1. **Tengs TO, Wallace A. One thousand health-related quality-of-life estimates. Medical Care. 2000;38(6):583-637.** -->
 <!--    - Provides a comprehensive list of health-related quality-of-life estimates across a range of conditions. -->
