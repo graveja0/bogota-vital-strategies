@@ -172,7 +172,7 @@
     "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información-1",
     "title": "Umbrales de tratamiento y valor de la información",
     "section": "Pruebas y valor esperado de la información",
-    "text": "Pruebas y valor esperado de la información\n\nCuando la prueba es IMPERFECTA: \n\nEV(estrategia de prueba) = 0.157\nEV(estrategia de tratamiento) = 0,16\nEV(sin estrategia de tratamiento) = 0,24 (peor EV)\n\n\n\nVOI = |EV ‘prueba’ – EV ‘siguiente mejor estrategia’||\n= |0.157 – 0.16| = 0.003,\no 3 muertes evitadas por cada 1000 pruebas gracias a la información adicional de las pruebas. información\n\n\n\n\n\nBack to Website"
+    "text": "Pruebas y valor esperado de la información\n\nCuando la prueba es IMPERFECTA: \n\nEV(estrategia de prueba) = 0.157\nEV(estrategia de tratamiento) = 0,16\nEV(sin estrategia de tratamiento) = 0,24 (peor EV)\n\n\n\nVOI = |EV ‘prueba’ – EV ‘siguiente mejor estrategia’||\n= |0.157 – 0.16| = 0.003,\no 3 muertes evitadas por cada 1000 pruebas gracias a la información adicional de las pruebas. información\n\n\n\n\n\nVolver al sitio web"
   },
   {
     "objectID": "lectures/lec_2.decision-trees-and-probabilities.html#learning-objectives",
@@ -2531,7 +2531,7 @@
     "href": "lectures/ESP_lec_7.MarkovModels1.html#markov-models",
     "title": "Markov Models",
     "section": "Markov Models",
-    "text": "Markov Models\n\n\n\n\n\n\n\nPros\nContras\n\n\n\n\nPuede modelar sucesos repetidos\nSólo puede transitar una vez por ciclo\n\n\nPuede modelizar eventos clínicos más complejos y longitudinales\nAcortar el ciclo puede plantear retos informáticos.\n\n\nNo requiere muchos cálculos; es eficiente de modelar y depurar.\nAcortar el ciclo puede provocar una “explosión de estados” si se utilizan estados túnel\n\n\n\n\n\n\n\nBack to Website"
+    "text": "Markov Models\n\n\n\n\n\n\n\nPros\nContras\n\n\n\n\nPuede modelar sucesos repetidos\nSólo puede transitar una vez por ciclo\n\n\nPuede modelizar eventos clínicos más complejos y longitudinales\nAcortar el ciclo puede plantear retos informáticos.\n\n\nNo requiere muchos cálculos; es eficiente de modelar y depurar.\nAcortar el ciclo puede provocar una “explosión de estados” si se utilizan estados túnel\n\n\n\n\n\n\n\nVolver al sitio web"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#objetivos-de-aprendizaje",
@@ -6570,7 +6570,7 @@
     "href": "lectures/ESP_lec_advanced-modeling-techniques.html#comparison-of-model-types",
     "title": "Técnicas avanzadas de modelización",
     "section": "Comparison of model types",
-    "text": "Comparison of model types\n\n\n\n\n\n\n\n\n\nTipo de modelo\nPuntos fuertes\nLimitaciones\n\n\n\n\nÁrbol de decisión\nTransparente\nCálculos sencillos\nDificultad para captar la progresión en el tiempo o los sucesos repetidos.\n\n\nCohorte de Markov\nCaptura de sucesos repetidos a lo largo del tiempo\nRápida velocidad de ejecución\nDificultad para captar la heterogeneidad individual o seguir el historial de eventos.\nDifícil de manejar un proceso de enfermedad complicado (sujeto a explosión de estados)\n\n\n\n*Microsimulación**\n\nFácil seguimiento del historial\nMuy potente y flexible\nRequiere un gran número de ejecuciones para converger\nVelocidad de ejecución más lenta"
+    "text": "Comparison of model types\n\n\n\n\n\n\n\n\n\nTipo de modelo\nPuntos fuertes\nLimitaciones\n\n\n\n\nÁrbol de decisión\nTransparente\nCálculos sencillos\nDificultad para captar la progresión en el tiempo o los sucesos repetidos.\n\n\nCohorte de Markov\nCaptura de sucesos repetidos a lo largo del tiempo\nRápida velocidad de ejecución\nDificultad para captar la heterogeneidad individual o seguir el historial de eventos.\nDifícil de manejar un proceso de enfermedad complicado (sujeto a explosión de estados)\n\n\n\n* Microsimulación**\n\nFácil seguimiento del historial\nMuy potente y flexible\nRequiere un gran número de ejecuciones para converger\nVelocidad de ejecución más lenta"
   },
   {
     "objectID": "lectures/ESP_lec_advanced-modeling-techniques.html#comparison-of-model-types-1",
@@ -6591,7 +6591,7 @@
     "href": "lectures/ESP_lec_advanced-modeling-techniques.html#cómo-elegir-el-modelo-adecuado-1",
     "title": "Técnicas avanzadas de modelización",
     "section": "¿Cómo elegir el modelo adecuado?",
-    "text": "¿Cómo elegir el modelo adecuado?\nFactores a tener en cuenta:\n\nCuestión política/intervenciones\nDisponibilidad de datos\nHistoria natural de la enfermedad\nRecursos informáticos disponibles\n\n\n\n\n\nBack to Website"
+    "text": "¿Cómo elegir el modelo adecuado?\nFactores a tener en cuenta:\n\nCuestión política/intervenciones\nDisponibilidad de datos\nHistoria natural de la enfermedad\nRecursos informáticos disponibles\n\n\n\n\n\nVolver al sitio web"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#esquema",
