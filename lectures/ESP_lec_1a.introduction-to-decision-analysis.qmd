@@ -26,47 +26,47 @@ editor: source
 4.  Objetivos del taller
 :::
 
-## Curso Sitio web
+## Curso sitio web
 
 ::: {style="font-size: 2.0em"}
 https://github.com/graveja0/bogota-vital-strategies
 :::
 
 ::: incremental
-- Todos los materiales del curso (diapositivas, casos prácticos) se publican aquí.
-- Nuestro calendario (que probablemente evolucione) también se publicará aquí y se actualizará periódicamente.
+-   Todos los materiales del taller (diapositivas, casos de estudio) se publican aquí.
+-   Nuestro calendario (que probablemente evolucione) también se publicará aquí y se actualizará periódicamente.
 :::
 
 ## Presentaciones
 
-- Por favor, ¡preséntese!
+-   Por favor, ¡preséntense!
 
 # Motivación {background="#43464B"}
 
 ## Las dos últimas décadas ...
 
 ::: incremental
-- Hepatitis C curada
-- Reducción significativa de la incidencia del VIH
-- Posible cura de la leucemia y el linfoma recidivantes o refractarios
-- Vacunas perfeccionadas (por ejemplo, la vacuna contra el VPH) para prevenir enfermedades como el cáncer de cuello de útero y otros tipos de cáncer.
-- Avances en la prevención de enfermedades cardiovasculares
+-   Hepatitis C curada
+-   Reducción significativa de la incidencia del VIH
+-   Posible cura de la leucemia y el linfoma recidivantes o refractarios
+-   Vacunas perfeccionadas (por ejemplo, la vacuna contra el VPH) para prevenir enfermedades como el cáncer de cuello uterino y otros tipos de cáncer.
+-   Avances en la prevención de enfermedades cardiovasculares
 :::
 
 ## A pesar de estos avances ...
 
-- La carga de enfermedades no transmisibles (ENT) como el cáncer, las enfermedades cardiovasculares y la diabetes va en aumento.
-- Son la causa del 74% de las muertes en el mundo, y la mayoría (86%) en los países de renta baja y media (PRMB).
-    - Fuente: [OMS](https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases)
-- Las tasas de malnutrición, necesidad insatisfecha de servicios de salud sexual y reproductiva y mortalidad materna también siguen siendo elevadas en muchas partes del mundo.
+-   La carga de enfermedades no transmisibles (ENT) como el cáncer, las enfermedades cardiovasculares y la diabetes va en aumento.
+-   Son la causa del 74% de las muertes en el mundo, y la mayoría (86%) en los países de bajos y medios ingresos.
+    -   Fuente: [OMS](https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases)
+-   Las tasas de desnutrición, necesidad insatisfecha de servicios de salud sexual y reproductiva y mortalidad materna también siguen siendo elevadas en muchas partes del mundo.
 
-## {background-image="images/new_decision-analysis-overview.png" data-background-size="contain"}
+##  {background-image="images/new_decision-analysis-overview.png" data-background-size="contain"}
 
-## {background-image="images/new_decision-analysis-overview_blank.png" data-background-size="contain"}
+##  {background-image="images/new_decision-analysis-overview_blank.png" data-background-size="contain"}
 
 <br><br>
 
-## Ejemplos de Análisis de Decisiones {background="#43464B"}
+## Ejemplos de análisis de decisiones {background="#43464B"}
 
 ## Ej 1. VIH
 
@@ -77,7 +77,7 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 ::: incremental
 1.  Cómo decidirá el comité la proporción de fondos para las iniciativas de prevención frente a las de tratamiento?
 
-2.  2. ¿Debería destinarse parte de los fondos a la investigación?
+2.  ¿Debería alocar parte de los fondos para la investigación?
 
 3.  ¿Cómo responder a un miembro que argumenta que los fondos están mejor gastados en vacunación infantil?
 :::
@@ -85,9 +85,9 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 ## Ej 2. Defectos de nacimiento {auto-animate="true"}
 
 ::: incremental
-- Un hipotético defecto congénito está presente en 1 de cada 1.000 niños nacidos
+-   Un hipotético defecto congénito está presente en 1 de cada 1.000 niños nacidos
 
-- A menos que se trate, esta condición tiene una tasa de mortalidad del 50
+-   A menos que se trate, esta condición tiene una tasa de mortalidad del 50%
 :::
 
 ## Ej 2. Defectos de nacimiento {auto-animate="true"}
@@ -96,24 +96,24 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 ### [**¿Deberíamos comprobar este hipotético defecto de nacimiento?**]{style="color: verde bosque;"}
 :::
 
-- Un hipotético defecto congénito está presente en 1 de cada 1.000 niños nacidos.
+-   Un hipotético defecto congénito está presente en 1 de cada 1.000 niños nacidos.
 
-- A menos que se trate, esta condición tiene una tasa de mortalidad del 50%.
+-   A menos que se trate, esta condición tiene una tasa de mortalidad del 50%.
 
-## Ej 2. Defectos de Nacimiento {auto-animate="true"}
+## Ej 2. Defectos de nacimiento {auto-animate="true"}
 
 ::: {.callout-important appearance="minimal" icon="false"}
 ### [**¿Deberíamos probar este hipotético defecto de nacimiento?**]{style="color: verde bosque;"}
 :::
 
 ::: incremental
-- Prueba diagnóstica: Perfectamente preciso
+-   Prueba diagnóstica: Perfectamente preciso
 
-- Todos los recién nacidos en los que se identifica el defecto pueden ser curados con éxito
+-   Todos los recién nacidos en los que se identifica el defecto pueden ser curados con éxito
 
-- PERO la prueba en sí puede ser letal:
+-   PERO la prueba en sí puede ser letal:
 
-    - **4 de cada 10.000** bebés sometidos a la prueba morirán como resultado directo y observable del procedimiento de la prueba
+    -   **4 de cada 10.000** bebés sometidos a la prueba morirán como resultado directo y observable del procedimiento de la prueba
 :::
 
 ## Ej 2. Defectos de nacimiento {auto-animate="true"}
@@ -122,18 +122,18 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 **Objetivo**: Minimizar el total de muertes esperadas
 :::
 
-## Ej 2. Defectos de Nacimiento {auto-animate="true"}
+## Ej 2. Defectos de nacimiento {auto-animate="true"}
 
 ::: {.callout-note appearance="minimal"}
 **Objetivo**: Minimizar el total de muertes esperadas
 :::
 
 ::: incremental
-- Considerar una población de **100.000 recién nacidos**
+-   Considerar una población de **100.000 recién nacidos**
 
-- **La prueba** produce: (0,0004 x 100.000) = **40** muertes esperadas
+-   **La prueba** produce: (0,0004 x 100.000) = **40** muertes esperadas
 
-- **Sin pruebas** produce: (0,001 x 0,5 x 100.000) = **50** muertes esperadas
+-   **Sin pruebas** produce: (0,001 x 0,5 x 100.000) = **50** muertes esperadas
 :::
 
 ## Ej 2. Defectos de nacimiento {auto-animate="true"}
@@ -142,11 +142,11 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 **Objetivo**: Minimizar el total de muertes esperadas
 :::
 
-- Considere una población de **100.000 recién nacidos**
+-   Considere una población de **100.000 recién nacidos**
 
-- **La prueba** produce: (0,0004 x 100.000) = **40** muertes esperadas
+-   **La prueba** produce: (0,0004 x 100.000) = **40** muertes esperadas
 
-- **Sin pruebas** produce: (0,001 x 0,5 x 100.000) = **50** muertes esperadas
+-   **Sin pruebas** produce: (0,001 x 0,5 x 100.000) = **50** muertes esperadas
 
 #### ¡Parece que GANA LA PRUEBA!
 
@@ -156,11 +156,11 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 **Objetivo**: Minimizar el total de muertes esperadas
 :::
 
-- Considere una población de **100.000 recién nacidos**
+-   Considere una población de **100.000 recién nacidos**
 
-- **La prueba** produce: (0,0004 x 100.000) = **40** muertes esperadas
+-   **La prueba** produce: (0,0004 x 100.000) = **40** muertes esperadas
 
-- **Sin pruebas** produce: (0,001 x 0,5 x 100.000) = **50** muertes esperadas
+-   **Sin pruebas** produce: (0,001 x 0,5 x 100.000) = **50** muertes esperadas
 
 #### ¡Parece que GANA LA PRUEBA!
 
@@ -169,75 +169,75 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 ## **Diferentes vidas se pierden**
 
 ::: incremental
-- Con **pruebas**, prácticamente las 40 muertes ocurren en bebés nacidos sin la enfermedad mortal.
+-   **Con** **pruebas**, casi todas las 40 muertes ocurren en bebés nacidos sin la enfermedad mortal.
 
-- Con **sin pruebas**, las 50 muertes previstas se producen por "causas naturales" (es decir, por un defecto congénito que no se puede prevenir).
+-   **Sin pruebas**, las 50 muertes previstas se producen por "causas naturales" (es decir, por un defecto congénito que no se puede prevenir).
 :::
 
 ## **Se pierden vidas diferentes**
 
 ::: incremental
-- "Muertes inocentes" infligidas a niños que no tenían **"nada que ganar "** con el programa de pruebas
+-   "Muertes inocentes" infligidas a niños que no tenían **"nada que ganar"** con el programa de pruebas
 
-- Podemos tratar la muerte de un niño como más tolerable que la de otro, incluso cuando no tenemos forma, antes del hecho, de distinguir a un bebé del otro.
+-   Podemos tratar la muerte de un niño como más tolerable que la de otro, incluso cuando no tenemos forma, antes del hecho, de distinguir a un bebé del otro.
 :::
 
 ## Ej 3. Cáncer de colon
 
 ::: incremental
-- 3ª causa de muerte por cáncer.
-- Hombres, mujeres, todas las razas.
-- La detección precoz ayuda a prevenirlo y mejora la salud.
-- $\sim80\%$ prevenible.
+-   3ª causa de muerte por cáncer.
+-   Hombres, mujeres, todas las razas.
+-   La detección precoz ayuda a prevenirlo y mejora la salud.
+-   $\sim80\%$ prevenible.
 :::
 
 ## Ej 3. Cáncer de colon -- **Prevención**
 
 ::: incremental
-- ¿Cuándo realizar el tamizaje?
-- ¿Qué prueba y con qué frecuencia?
-- Si se encuentra/extrae un pólipo, ¿cuándo repetir?
+-   ¿Cuándo realizar el tamizaje?
+-   ¿Qué prueba y con qué frecuencia?
+-   Si se encuentra/extrae un pólipo ¿cuándo repetir?
 :::
 
 ## Ej 3. Cáncer de colon -- **Prevención**
 
 ::: incremental
-- ¿Coste-efectividad de pruebas de tamizaje alternativas?
-- ¿Frecuencias alternativas de tamizaje?
-- ¿Cómo debería variar el tamizaje según los grupos de riesgo?
+-   ¿Coste-efectividad de pruebas de tamizaje alternativas?
+-   ¿Frecuencias alternativas de tamizaje?
+-   ¿Cómo debería variar el tamizaje según los grupos de riesgo?
 :::
 
 ## Ej 3. Cáncer de colon - **Estimación de probabilidades**
 
 ::: incremental
-- Predecir el riesgo/incidencia del cáncer de colon
-    - Antecedentes familiares, pólipos anteriores, otros factores
-    - Probabilidad de padecer cáncer de colon
-- Predecir el impacto del cáncer de colon
-    - Probabilidad de curación
-    - Probabilidad de muerte
-    - Probabilidad de morbilidad
+-   Predecir el riesgo/incidencia del cáncer de colon
+    -   Antecedentes familiares, pólipos anteriores, otros factores
+    -   Probabilidad de padecer cáncer de colon
+-   Predecir el impacto del cáncer de colon
+    -   Probabilidad de curación
+    -   Probabilidad de muerte
+    -   Probabilidad de morbilidad
 :::
 
 ## Ej 3. Cáncer de colon - **Estimación de probabilidades**
 
 ::: incremental
-- Predecir el "beneficio" del tamizaje
-    - Todas las probabilidades anteriores
-    - Probabilidad de detección precoz
-    - Probabilidad de complicaciones derivadas de las pruebas
-    - Probabilidad de falso positivo
-    - Probabilidad de falsos negativos
-    - Probabilidad de pruebas positivas = cáncer
-    - Probabilidad de pruebas negativas = sin cáncer
+-   Predecir el "beneficio" del tamizaje
+    -   Todas las probabilidades anteriores
+    -   Probabilidad de detección precoz
+    -   Probabilidad de complicaciones derivadas de las pruebas
+    -   Probabilidad de falso positivo
+    -   Probabilidad de falso negativo
+    -   Probabilidad de que prueba positiva = cáncer
+    -   Probabilidad de que prueba negativa = sin cáncer
 :::
 
 ## La estimación de probabilidades es fundamental para la toma de decisiones {background="#43464B"}
 
 ::: incremental
-- No se pueden obtener fácilmente las probabilidades necesarias
-- Períodos de tiempo / duraciones variables
-- Métodos para estimar probabilidades
+-   No se pueden obtener fácilmente las probabilidades necesarias
+-   Períodos de tiempo / duraciones variables
+-   Métodos para estimar probabilidades
 :::
 
 <!-- TK Esto necesita ser una página completa -->
@@ -245,11 +245,11 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 ## Commonality of cases {background="#43464B"}
 
 ::: incremental
-- Compromisos inevitables
-- Diferentes perspectivas pueden llevar a conclusiones diferentes
-- Múltiples objetivos contrapuestos
-- Complejidad
-- Incertidumbre
+-   *Tradeoffs* inevitables
+-   Diferentes perspectivas pueden llevar a conclusiones diferentes
+-   Múltiples objetivos contrapuestos
+-   Complejidad
+-   Incertidumbre
 :::
 
 ## Análisis de decisiones {background="#43464B"}
@@ -257,9 +257,9 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 <br>
 
 ::: incremental
-- Tiene como objetivo informar la elección bajo incertidumbre utilizando un enfoque explícito y cuantitativo
+-   Tiene como objetivo informar la elección bajo incertidumbre utilizando un enfoque explícito y cuantitativo
 
-- Su objetivo es [identificar, medir y valorar las **consecuencias de las decisiones** en situaciones de incertidumbre]{style="color: #169873;"} cuando hay que tomar una decisión, más apropiadamente a lo largo del tiempo.
+-   Su objetivo es [identificar, medir y valorar las **consecuencias de las decisiones** en situaciones de incertidumbre]{style="color: #169873;"} cuando hay que tomar una decisión, más apropiadamente a lo largo del tiempo.
 :::
 
 ## Diseño del taller
@@ -267,31 +267,31 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 1.  Somos *flexibles* -- si hay algún tema que no te queda claro, o que te gustaría que se ampliara, ¡háznoslo saber!
 2.  Contenido mixto
 
-- Conferencias
-- Casos prácticos en grupos reducidos
-- Casos prácticos en grupos grandes y ejercicios prácticos de Excel
+-   Conferencias
+-   Casos de estudio en grupos reducidos
+-   Casos de estudio en grupos grandes y ejercicios prácticos de Excel
 
 ## Contenido del taller
 
 1.  Fundamentos del análisis de decisiones (Días 1-2)
 
-- Árboles de decisión
-- Teorema de Bayes y umbrales de tratamiento
-- Incertidumbre y priorización de la investigación futura
+-   Árboles de decisión
+-   Teorema de Bayes y umbrales de tratamiento
+-   Incertidumbre y priorización de la investigación futura
 
 ## Contenido del taller
 
-2.  Fundamentos del análisis coste-eficacia (Días 3-4)
+2.  Fundamentos del análisis costo-efectividad (Días 3-4)
 
-- Valoración de costos y resultados sanitarios
-- Análisis coste-efectividad incremental
-- Introducción a los modelos de Markov
+-   Valoración de costos y resultados sanitarios
+-   Análisis costo-efectividad incremental
+-   Introducción a los modelos de Markov
 
 ## Contenido del taller
 
 3.  Avance de temas avanzados (Día 5)
 
-- Análisis de sensibilidad
-- Marcos avanzados de modelización CEA.
+-   Análisis de sensibilidad
+-   Marcos avanzados de modelización CEA.
 
 # ¿Preguntas? {background="#43464B"}

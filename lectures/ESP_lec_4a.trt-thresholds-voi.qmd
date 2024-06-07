@@ -23,56 +23,53 @@ editor:
 
 ## Objetivos de aprendizaje
 
-- Definir los umbrales de tratamiento en un árbol de decisión y examinar
-    diferentes formas de interpretación
+-   Definir los umbrales de tratamiento en un árbol de decisión y
+    examinar diferentes formas de interpretación
 
-- Comprender y calcular el valor de la información de una prueba perfecta frente a una imperfecta
-    prueba imperfecta
+-   Comprender y calcular el valor de la información de una prueba
+    perfecta frente a una imperfecta prueba imperfecta
 
 ## Resumen
 
-- Umbrales de tratamiento
+-   Umbrales de tratamiento
 
-- Pruebas y valor de la información
-
-## Umbrales de tratamiento {background="#43464B"}
+-   Pruebas y valor de la información
 
 ## Umbrales de tratamiento {background="#43464B"}
 
+## Umbrales de tratamiento {background="#43464B"}
 
 ![](images/PE1.png){width="594"}
-
 
 ## Umbrales de tratamiento
 
 <br>
 
 ::: {.callout-important appearance="minimal" icon="false"}
-¿Qué ocurriría si la probabilidad de EP recurrente fuera mayor o menor que la estimada inicialmente?
-estimada inicialmente?
+¿Qué ocurriría si la probabilidad de EP recurrente fuera mayor o menor
+que la estimada inicialmente?
 :::
 
 <br>
 
-- ¿Anticoagulamos o no?
-- ¿En qué momento pasamos del "sí" al "no"?
-
+-   ¿Anticoagulamos o no?
+-   ¿En qué momento pasamos del "sí" al "no"?
 
 ## Umbrales de tratamiento
 
 ![](images/trt-threshold1.png)
 
-
 ## Umbrales de tratamiento
 
 <br>
 
-> Realizar un análisis de sensibilidad para hallar un umbral de tratamiento
+> Realizar un análisis de sensibilidad para hallar un umbral de
+> tratamiento
 
 <br>
 
-(Más información sobre los análisis de sensibilidad más adelante en el taller)
-
+(Más información sobre los análisis de sensibilidad más adelante en el
+taller)
 
 ## Umbrales de tratamiento
 
@@ -85,10 +82,9 @@ estimada inicialmente?
 [Valor esperado (No AC) = 0.750 \* pPE + 1.0 \*
 (1-pPE)]{style="color:blue;"}
 
-AHORA, AJUSTAR IGUAL A CADA UNO, para resolver la probabilidad umbral desconocida
+AHORA, ESTABLECE IGUAL A LOS DOS, para resolver la probabilidad de un
+umbral desconocida
 :::
-
-
 
 ## Umbrales de tratamiento
 
@@ -114,22 +110,19 @@ pPE = 0.008 / (0.240 + 0.008)
 
 ![](images/trt-threshold4.png)
 
-
-
 ## Umbrales de tratamiento
 
 ![](images/trt-threshold5.png)
 
-
 ## Umbrales de tratamiento
 
 <br>
 
-Realizar una prueba para obtener información adicional SÓLO merece la pena SI:
-<br>
+Realizar una prueba para obtener información adicional SÓLO merece la
+pena SI: <br>
 
-(1) Al menos una decisión cambiaría dados algunos resultados de la prueba, y/o\\.
-    <br>
+(1) Al menos una decisión cambiaría dados algunos resultados de la
+    prueba, y/o\\. <br>
 (2) El riesgo para el paciente asociado a la prueba es menor que el
     beneficio esperado de someterse a la prueba
 
@@ -141,28 +134,27 @@ Realizar una prueba para obtener información adicional SÓLO merece la pena SI:
 
 ![](images/trt-threshold7.png){width="510"}
 
-
 ## Umbrales de tratamiento
 
 <br>
 
-**No tratar -- Umbral de prueba** <br> Probabilidad de indiferencia entre
-probar y no tratar
+**No tratar -- Umbral de prueba** <br> Probabilidad de indiferencia
+entre probar y no tratar
 
 <br>
 
-**Umbral de prueba y tratamiento** <br> Probabilidad de indiferencia entre
-prueba y tratamiento
+**Umbral de prueba y tratamiento** <br> Probabilidad de indiferencia
+entre prueba y tratamiento
 
 ## Testing & expected value of information
 
 <br>
 
 ::: incremental
-- En teoría, la información puede ser perfecta, gratuita y sin riesgos, pero
-    ¡normalmente NO LO ES!
-- La información es casi siempre IMPERFECTA
-- Obtener información suele TENER UN COSTE
+-   En teoría, la información puede ser perfecta, gratuita y sin
+    riesgos, pero ¡normalmente NO LO ES!
+-   La información es casi siempre IMPERFECTA
+-   Obtener información suele TENER UN COSTO
 :::
 
 ## Testing & expected value of information
@@ -170,7 +162,7 @@ prueba y tratamiento
 <br>
 
 ::: fragment
-El valor de la información pregunta: **¿Qué ganamos con esta información adicional?
+El valor de la información pregunta: **¿Qué ganamos con esta información
 adicional?**
 :::
 
@@ -187,24 +179,24 @@ Valor de la información =
 ## Testing & expected value of information
 
 ::: fragment
-Las pruebas PERFECT nos dan un límite superior del beneficio potencial de cualquier
-prueba
+Las pruebas PERFECTAS nos dan un límite superior del beneficio potencial
+de cualquier prueba
 :::
 
 <br>
 
 ::: fragment
-La ganancia de esta prueba PERFECTA imaginaria es el valor esperado de la
+La ganancia de esta prueba PERFECTA es el valor esperado de la
 información perfecta (EVPI)
 :::
 
 ## Pruebas y valor esperado de la información
 
-## Una prueba perfecta (100% sens y spec) sin riesgo
+## Una prueba perfecta (100% sensitividad y specificidad) sin riesgo
 
 ![](images/VOI2.png)
 
-## Una prueba perfecta (100% sens y spec) sin riesgo
+## Una prueba perfecta (100% sensitividad y specificidad) sin riesgo
 
 ::: columns
 ::: {.column width="60%"}
@@ -217,16 +209,17 @@ información perfecta (EVPI)
 
 -   EV(estrategia de tratamiento) = 0.16
 
--   EV(estrategia de no tratar) = 0.24 (worst EV)
+-   EV(estrategia de no tratar) = 0.24 (peor EV)
 
 EVPI =
 
-\|EV 'prueba perfecta' -- EV 'siguiente mejor estrategia: tratar a todos'\|
+\|EV 'prueba perfecta' -- EV 'siguiente mejor estrategia: tratar a
+todos'\|
 
 =\|0.12 -- 0.16\| = 0.04,
 
-o 4 muertes evitadas por cada 100 pruebas gracias a las pruebas adicionales
-información
+o 4 muertes evitadas por cada 100 pruebas gracias a la información
+adicional de la prueba
 :::
 :::
 :::
@@ -244,9 +237,9 @@ información
 <br>
 
 ::: {style="font-size: 0.8em"}
-Cuando la prueba es imperfecta, probar sigue siendo la mejor estrategia (en este
-caso, cuanto menor sea el VE, mejor, ya que nuestros valores de resultado son la
-probabilidad de un mal resultado), pero no por mucho:
+Cuando la prueba es imperfecta, probar sigue siendo la mejor estrategia
+(en este caso, cuanto menor sea el VE, mejor, ya que nuestros valores de
+resultado son la probabilidad de un mal resultado), pero no por mucho:
 :::
 
 ## Pruebas y valor esperado de la información {.smaller}
@@ -255,20 +248,20 @@ probabilidad de un mal resultado), pero no por mucho:
 
 Cuando la prueba es IMPERFECTA: <br>
 
-- EV(estrategia de prueba) = [0.157]{style="color de fondo: amarillo;"}
+-   EV(estrategia de prueba) =
+    [0,157]{style="color de fondo: amarillo;"}
 
-- EV(estrategia de tratamiento) = 0,16
+-   EV(estrategia de tratamiento) = 0,16
 
-- EV(sin estrategia de tratamiento) = 0,24 (peor EV)
+-   EV(estrategia de no tratar) = 0,24 (peor EV)
 
 <br>
 
 ::: fragment
-VOI = |EV 'prueba' -- EV 'siguiente mejor estrategia'||
+VOI = \|EV 'prueba' -- EV 'siguiente mejor estrategia'\|\|
 
 = \|0.157 -- 0.16\| = 0.003,
 
-o 3 muertes evitadas por cada 1000 pruebas gracias a la información adicional de las pruebas.
-información
+o 3 muertes evitadas por cada 1.000 pruebas gracias a la información
+adicional de las pruebas.
 :::
-

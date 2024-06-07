@@ -1,5 +1,5 @@
 ---
-title: "Fundamentos del CEA: Valoración de costes"
+title: "Fundamentos del CEA: Valoración de costos"
 format:
   revealjs:
     theme: slides.scss
@@ -23,48 +23,49 @@ editor:
 
 ## Objetivos de aprendizaje
 
-- Identificar las diferencias teóricas y metodológicas entre
+-   Identificar las diferencias teóricas y metodológicas entre
     diferentes técnicas de evaluación económica
 
-- Comprender los fundamentos del análisis coste-eficacia
+-   Comprender los fundamentos del análisis costo-efectividad
 
-- Describir los pasos para valorar los costes en las evaluaciones económicas &
-    Identificar las formas de curar los parámetros de costes
+-   Describir los pasos para valorar los costos en las evaluaciones
+    económicas & identificar las formas de seleccionar los parámetros de
+    costos
 
 ## Esquema
 
 <br>
 
 1.  Introducción a las evaluaciones económicas
-2.  Valoración de costes
+2.  Valoración de costos
 
-# Introducción a las evluaciones económicas {background="#43464B"}
+# Introducción a las evaluaciones económicas {background="#43464B"}
 
 ## Hasta aquí... {background="#43464B"}
 
-Hemos tocado el marco básico del análisis de decisiones, centrándonos en:
-<br>
+Hemos tocado el marco básico del análisis de decisiones, centrándonos
+en: <br>
 
 ::: {.callout-note appearance="simple"}
 Árboles de decisión y probabilidades
 :::
 
 ::: {.callout-note appearance="simple"}
-Teorema de Bayes & la importancia de incorporar información en las pruebas,
-incluido el valor de esta información adicional
+Teorema de Bayes & la importancia de incorporar información en las
+pruebas, incluido el valor de esta información adicional
 :::
 
 ::: {.callout-note appearance="simple"}
-Umbrales de tratamiento y construcción de árboles de decisión en distintos
-programas de software
+Umbrales de tratamiento y construcción de árboles de decisión en
+distintos programas de software
 :::
 
 ## Today... {background="#43464B"}
 
 <br>
 
-- Tocaremos algunos de los conceptos básicos para representar [costes
-    y beneficios para la salud]{style="color: #FF8966;"} en los problemas de decisión
+-   Tocaremos algunos de los conceptos básicos para representar [costos
+    y beneficios para la salud]{style="color: #FF8966;"} en los
     problemas de decisión
 
 ::: notes
@@ -74,14 +75,14 @@ programas de software
 
 ::: {style="font-size: 0.8em"}
 ::: incremental
-- Relevante cuando las alternativas de decisión tienen diferentes costes y consecuencias para la salud.
-    consecuencias para la salud.
+-   Relevante cuando las alternativas de decisión tienen diferentes
+    costos y consecuencias para la salud.
 
-- Queremos medir el valor relativo de una estrategia en comparación
+-   Queremos medir el valor relativo de una estrategia en comparación
     con otras.
 
-- Esto puede ayudarnos a tomar decisiones de asignación de recursos ante
-    restricciones (por ejemplo, presupuestarias).
+-   Esto puede ayudarnos a tomar decisiones de asignación de recursos
+    ante limitaciones (por ejemplo, presupuestarias).
 
 ![](images/noun-coste-y-beneficio-4664704.jpeg){.fragment
 fig-align="center" width="255"}
@@ -91,13 +92,13 @@ fig-align="center" width="255"}
 ## Características de la evaluación económica
 
 ::: nobullet
-- {{< fa check-circle >}} Cuantificación sistemática de costes y
+-   {{< fa check-circle >}} Cuantificación sistemática de costos y
     consecuencias.
 
 ::: {.fragment .fade-in-then-semi-out}
-- {{< fa check-circle >}} Análisis comparativo de cursos de acción alternativos.
-    de acción.
-    - Nos centraremos en esto en la próxima clase.
+-   {{< fa check-circle >}} Análisis comparativo de cursos de acción
+    alternativos. de acción.
+    -   Nos centraremos en esto en la próxima sesión.
 :::
 :::
 
@@ -105,226 +106,240 @@ fig-align="center" width="255"}
 
 <br>
 
-| Tipo de estudio | Medición/valoración de costes | Identificación de consecuencias | Medición / valoración de consecuencias |
-|----------------|-----------------|-----------------|----------------------|
-| Análisis de costes | Unidades monetarias | Ninguno | Ninguno | Ninguno
+| Tipo de estudio    | Medición/valoración de costos | Identificación de consecuencias | Medición / valoración de consecuencias |
+|-----------------|-----------------|-----------------|--------------------|
+| Análisis de costos | Unidades monetarias           | Ninguno                         | Ninguno                                |
 
 ::: footer
 Fuente: [@drummond2015a]
 :::
 
-## Análisis de costes
+## Análisis de costos
 
-- Sólo tiene en cuenta los costes sanitarios
+-   Sólo tiene en cuenta los costos sanitarios
 
-- Relevante cuando las opciones alternativas son igual de eficaces (proporcionan
-    beneficios iguales)
+-   Relevante cuando las opciones alternativas son igual de eficaces
+    (proporcionan beneficios iguales)
 
-    - Rara vez es así en la realidad
+    -   Raras veces es así en la realidad
 
-- Los costes se valoran en términos monetarios (por ejemplo, dólares estadounidenses)
+-   Los costos se valoran en términos monetarios (por ejemplo, dólares
+    estadounidenses)
 
-- Criterio de decisión: a menudo minimizar el coste
+-   Criterio de decisión: normalmente, minimizar el costo
 
 ## Técnicas de evaluación económica {.smaller}
 
 <br>
 
-| Tipo de estudio | Medición/Valoración de costes ambas alternativas | Identificación de consecuencias | Medición/Valoración de consecuencias | Medición/Valoración de consecuencias.
-|---------------|---------------|--------------------|-----------------------|
-| [Análisis de costes]{style="color: gris;"} | [Unidades monetarias]{style="color: grey;"}          | [Ninguno]{style="color: grey;"}                                                               | [Ninguno]{style="color: grey;"}                                                                             |
-| Análisis coste-efectividad | Unidades monetarias | Efecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados. | Unidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.) |
+| Tipo de estudio                            | Medición/Valoración de costos ambas alternativas | Identificación de consecuencias                                                           | Medición/Valoración de consecuencias                                                                                                    |
+|------------------|------------------|------------------|--------------------|
+| [Análisis de costos]{style="color: gris;"} | [Unidades monetarias]{style="color: grey;"}      | [Ninguno]{style="color: grey;"}                                                           | [Ninguno]{style="color: grey;"}                                                                                                         |
+| Análisis costo-efectividad                 | Unidades monetarias                              | Efecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados. | Unidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.) |
 
 ::: footer
 Fuente: [@drummond2015a]
 :::
 
-## Análisis Coste-Efectividad (ACE)
+## Análisis Costo-Efectividad (ACE)
 
 ::: {.callout-tip appearance="minimal"}
-Más útil cuando los responsables de la toma de decisiones consideran múltiples opciones dentro de un
-presupuesto, y el resultado relevante es común a todas las estrategias
+Más útil cuando los responsables de la toma de decisiones consideran
+múltiples opciones dentro de un presupuesto, y el resultado relevante es
+común a todas las estrategias
 :::
 
-- Los costes se valoran en términos monetarios (\$)
-- Los beneficios se valoran en términos de resultados clínicos (por ejemplo, casos
-    prevenidos o curados, vidas salvadas, años de vida ganados,
-    años de vida ganados ajustados a la calidad)
-- Los resultados se presentan como una relación coste-eficacia
+-   Los costos se valoran en términos monetarios (\$)
+-   Los beneficios se valoran en términos de resultados clínicos (por
+    ejemplo, casos prevenidos o curados, vidas salvadas, años de vida
+    ganados, años de vida ganados ajustados a la calidad)
+-   Los resultados se presentan como una relación costo-efectividad
 
-## Análisis Coste-Efectividad
+## Análisis Costo-Efectividad
 
 ::: incremental
-- Supongamos que nos interesa la prolongación de la vida tras una
+-   Supongamos que nos interesa la prolongación de la vida tras una
     intervención.
 
-- Resultado de interés: años de vida ganados.
+-   Resultado de interés: años de vida ganados.
 
-- El resultado es común a las estrategias alternativas; sólo difieren en la magnitud de los años de vida ganados.
+-   El resultado es común a las estrategias alternativas; sólo difieren
     en la magnitud de los años de vida ganados.
 
-- Podemos presentar los resultados en términos de \$/años de vida ganados
+-   Podemos presentar los resultados en términos de \$/años de vida
+    ganados
 :::
 
 ## Técnicas de evaluación económica {.smaller}
 
-| Tipo de estudio | Medición/valoración de los costes de ambas alternativas | Identificación de las consecuencias | Medición/valoración de las consecuencias | Medición/valoración de las consecuencias | Medición/valoración de las consecuencias.
-|---------------|---------------|--------------------|-----------------------|
-| [Análisis de costes]{style="color: gris;"}               | [Unidades monetarias]{style="color: grey;"}          | [Ninguno]{style="color: grey;"}                                                                                       | [Ninguno]{style="color: grey;"}                                                                                                     |
-| [Análisis coste-eficacia]{style="color: grey;"} | [Unidades monetarias]{style="color: grey;"}          | [Efecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados]{style="color: grey;"} | [Unidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.)]{style="color: grey;"} |
-| Análisis coste-utilidad | Unidades monetarias | Efectos únicos o múltiples, no necesariamente comunes a ambas alternativas.                                           | Años de vida con buena salud (medidos normalmente como años de vida ajustados por calidad) | Años de vida con buena salud (medidos normalmente como años de vida ajustados por calidad)
+| Tipo de estudio                                    | Medición/valoración de los costos de ambas alternativas | Identificación de las consecuencias                                                                              | Medición/valoración de las consecuencias                                                                                                                        |
+|------------------|------------------|------------------|--------------------|
+| [Análisis de costos]{style="color: gris;"}         | [Unidades monetarias]{style="color: grey;"}             | [Ninguno]{style="color: grey;"}                                                                                  | [Ninguno]{style="color: grey;"}                                                                                                                                 |
+| [Análisis costo-e]{style="color: grey;"}fectividad | [Unidades monetarias]{style="color: grey;"}             | [Efecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados]{style="color: grey;"} | [Unidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.)]{style="color: grey;"} |
+| Análisis costo-utilidad                            | Unidades monetarias                                     | Efectos únicos o múltiples, no necesariamente comunes a ambas alternativas.                                      | Años de vida con buena salud (medidos normalmente como años de vida ajustados por calidad)                                                                      |
 
 ::: footer
 Fuente: [@drummond2015a]
 :::
 
-## Análisis Coste-Utilidad
+## Análisis Costo-Utilidad
 
 ::: incremental
-- Esencialmente una variante del análisis coste-efectividad.
-- **Característica principal:** uso de medida genérica de salud.
-- Año de vida ajustado por calidad (AVAC): Una métrica que refleja tanto
-    como la calidad de vida (dolor, función o ambos).
-    ambos).
-- Es, con diferencia, la forma de evaluación económica más publicada.
+-   Esencialmente una variante del análisis costo-efectividad.
+-   **Característica principal:** uso de medida genérica de salud.
+-   Año de vida ajustado por calidad (AVAC): Una métrica que refleja
+    tanto como la calidad de vida (dolor, función o ambos).
+-   Es la forma de evaluación económica más publicada.
 :::
 
 ::: fragment
 ::: {.callout-note appearance="simple"}
-A lo largo del taller nos centraremos principalmente en el ACE (especialmente en el ACU).
+A lo largo del taller nos centraremos principalmente en el ACE
+(especialmente en el ACU).
 :::
 :::
 
 ## Técnicas de evaluación económica {.smaller}
 
 ::: {style="font-size: 0.8em"}
-| Tipo de estudio | Medición/valoración de costes ambas alternativas | Identificación de consecuencias | Medición/valoración de consecuencias | Evaluación económica
-|---------------|---------------|--------------------|-----------------------|
-| [Análisis de costes]{style="color: gris;"}               | [Unidades monetarias]{style="color: grey;"}          | [Ninguno]{style="color: grey;"}                                                                                       | [Ninguno]{style="color: grey;"}                                                                                                     |
-| [Análisis coste-eficacia]{style="color: grey;"} | [Unidades monetarias]{style="color: grey;"}          | [Efecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados]{style="color: grey;"} | [Unidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.)]{style="color: grey;"} |
-| [Análisis coste-utilidad]{style="color: grey;"}       | [Unidades monetarias]{style="color: grey;"}          | [Efectos únicos o múltiples, no necesariamente comunes a ambas alternativas]{style="color: grey;"}                   | [Años de vida saludable (medidos normalmente como años de vida ajustados por calidad)]{style="color: grey;"}                                        |
-| Análisis coste-beneficio Unidades monetarias Efectos únicos o múltiples, no necesariamente comunes a ambas alternativas Unidades monetarias
+| Tipo de estudio                                    | Medición/valoración de costos ambas alternativas | Identificación de consecuencias                                                                                  | Medición/valoración de consecuencias                                                                                                                            |
+|------------------|------------------|------------------|--------------------|
+| [Análisis de costos]{style="color: gris;"}         | [Unidades monetarias]{style="color: grey;"}      | [Ninguno]{style="color: grey;"}                                                                                  | [Ninguno]{style="color: grey;"}                                                                                                                                 |
+| [Análisis costo-e]{style="color: grey;"}fectividad | [Unidades monetarias]{style="color: grey;"}      | [Efecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados]{style="color: grey;"} | [Unidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.)]{style="color: grey;"} |
+| [Análisis costo-utilidad]{style="color: grey;"}    | [Unidades monetarias]{style="color: grey;"}      | [Efectos únicos o múltiples, no necesariamente comunes a ambas alternativas]{style="color: grey;"}               | [Años de vida saludable (medidos normalmente como años de vida ajustados por calidad)]{style="color: grey;"}                                                    |
+| Análisis costo-beneficio                           | Unidades monetarias                              | Efectos únicos o múltiples, no necesariamente comunes a ambas alternativas                                       | Unidades monetarias                                                                                                                                             |
 :::
 
-## Análisis Coste-Beneficio {.smaller}
+## Análisis Costo-Beneficio {.smaller}
 
-- También conocido como Análisis Coste-Beneficio
-- Relevante para la asignación de recursos entre sanidad y otras áreas
+-   Relevante para la asignación de recursos entre sanidad y otras áreas
     (por ejemplo, la educación)
-- **Los costes y las consecuencias para la salud se valoran en términos monetarios (p. ej,
-    dólares estadounidenses)**.
-- La valoración de las consecuencias sanitarias en términos monetarios (\$) se obtiene
-    se obtiene estimando la disposición de los individuos a pagar
-    salvar vidas o mejorar la salud.
-    - Por ejemplo, en EE.UU. se estima que el valor por vida estadística es de 9 millones de dólares.
-- Criterio coste-beneficio: los beneficios de un programa son superiores a sus costes.
-    - Obsérvese que no estamos haciendo comparaciones *entre
-        sólo comparaciones de costes y beneficios de la misma estrategia.
-        estrategia]{style="background-color: yellow;"}
-- Para saber más: [Robinson et al,
+-   **Los costos y las consecuencias para la salud se valoran en
+    términos monetarios (p. ej, dólares estadounidenses)**.
+-   La valoración de las consecuencias sanitarias en términos monetarios
+    (\$) se obtiene estimando la disposición de los individuos a pagar
+    para salvar vidas o mejorar la salud.
+    -   Por ejemplo, en EE.UU. se estima que el valor por vida
+        estadística es de 9 millones de dólares.
+-   Criterio costo-beneficio: los beneficios de un programa son
+    superiores a sus costos.
+    -   Obsérvese que no estamos haciendo comparaciones entre
+        estrategias, sólo comparaciones de costos y beneficios de la
+        misma estrategia. estrategia\]{style="background-color:
+        yellow;"}
+-   Para saber más: [Robinson et al,
     2019](https://www.cambridge.org/core/product/identifier/S2194588819000046/type/journal_article)
 
-## Análisis coste-beneficio
+## Análisis Costo-Beneficio
 
 ![https://pubmed.ncbi.nlm.nih.gov/28183740/](images/paste-8DC909EB.png)
 
-## Análisis Coste-Beneficio
+## Análisis Costo-Beneficio
 
 ![https://www.cambridge.org/core/product/identifier/S2194588818000271/type/journal_article](images/paste-3B67CFB1.png)
 
-## ¡Volvemos al Análisis Coste-Efectividad!
+## ¡Volvemos al Análisis Costo-Efectividad!
 
 <br>
 
-- Relevante cuando las alternativas sanitarias tienen diferentes costes y consecuencias para la salud
-    consecuencias para la salud <br>
+-   Relevante cuando las alternativas sanitarias tienen diferentes
+    costos y consecuencias para la salud consecuencias para la salud
+    <br>
 
 ::: fragment
-$$ \frac{\text{(Coste Intervención A - Coste Intervención B)}}{\text{(Beneficio A - Beneficio B)}}$$
+$$ \frac{\text{(Costo Intervención A - Costo Intervención B)}}{\text{(Beneficio A - Beneficio B)}}$$
 :::
 
-- El VALOR relativo de una intervención en comparación con su alternativa
-    se expresa en forma de RATIO coste-eficacia (¡el tema central de la próxima
-    conferencia)
+-   El VALOR relativo de una intervención en comparación con su
+    alternativa se expresa en forma de RATIO costo-efectividad (¡el tema
+    central de la próxima sesión)
 
 ::: notes
-(1) El análisis coste-eficacia es pertinente cuando las alternativas sanitarias
-    entre diferentes servicios/intervenciones tienen costes DIFERENTES Y
-    consecuencias para la salud EJEMPLO: Diferentes tipos de quimioterapia
+(1) El análisis costo-efectividad es pertinente cuando las alternativas
+    sanitarias entre diferentes servicios/intervenciones tienen costos
+    DIFERENTES Y consecuencias para la salud EJEMPLO: Diferentes tipos
+    de quimioterapia
 
-(2) Un RESULTADO CLAVE en los análisis coste-efectividad es lo que se denomina
-    RCEI [o ratio coste-efectividad incremental], que nos da el
-    valor relativo de una intervención frente a una alternativa.
+(2) Un RESULTADO CLAVE en los análisis costo-efectividad es lo que se
+    denomina RCEI \[o ratio costo-efectividad incremental\], que nos da
+    el valor relativo de una intervención frente a una alternativa.
 
-(3) En otras palabras, EL PRECIO POR UNIDAD DE BENEFICIO de una intervención sobre
-    la otra
+(3) En otras palabras, EL PRECIO POR UNIDAD DE BENEFICIO de una
+    intervención sobre la otra
 
-(4) En las próximas semanas impartiremos 2 clases completas sobre los ICER y cómo interpretar estos ratios entre intervenciones.
-    interpretar estos ratios entre intervenciones En lo que nos centraremos
-    HOY en los componentes que forman el numerador (es decir, los COSTES) y el denominador (es decir, los BENEFICIOS).
-    el denominador (es decir, los BENEFICIOS)
+(4) En las próximas semanas impartiremos 2 clases completas sobre los
+    ICER y cómo interpretar estos ratios entre intervenciones.
+    interpretar estos ratios entre intervenciones En lo que nos
+    centraremos HOY en los componentes que forman el numerador (es
+    decir, los COSTOS) y el denominador (es decir, los BENEFICIOS). el
+    denominador (es decir, los BENEFICIOS)
 
-(5) LO IMPORTANTE: Al estimar la magnitud de los resultados
-    y los costes de las intervenciones, los análisis de rentabilidad pueden
-    mostrar las ventajas y desventajas de las distintas intervenciones y, por tanto,
-    contribuir a mejorar la toma de decisiones
+(5) LO IMPORTANTE: Al estimar la magnitud de los resultados y los costos
+    de las intervenciones, los análisis de rentabilidad pueden mostrar
+    las ventajas y desventajas de las distintas intervenciones y, por
+    tanto, contribuir a mejorar la toma de decisiones
 :::
 
 ## ¿Quién utiliza las evaluaciones económicas? {.smaller}
 
 ::: {style="font-size: 0.8em"}
-- Comités Asesores de Tecnología Sanitaria
+-   Comités Asesores de Tecnología Sanitaria
 
-    - NICE (The National Institute for Health and Care Excellence,
+    -   NICE (The National Institute for Health and Care Excellence,
         **REINO UNIDO**)
 
-    - Agencia de Medicamentos y Tecnología Sanitaria de **Canadá** (Drug and Health Technology Agency)
+    -   Agencia de Medicamentos y Tecnología Sanitaria de **Canadá**
+        (Drug and Health Technology Agency)
 
-    - PBAC (Comité Asesor sobre Beneficios Farmacéuticos en
+    -   PBAC (Comité Asesor sobre Beneficios Farmacéuticos en
         **Australia**)
 
-    - Instituto de evaluación de tecnologías sanitarias de **Brasil**.
+    -   Instituto de evaluación de tecnologías sanitarias de **Brasil**.
 
-- Grupos que elaboran directrices clínicas
+-   Grupos que elaboran directrices clínicas
 
-    - OMS
+    -   OMS
 
-    - CDC
+    -   CDC
 
-    - Organizaciones de enfermedades específicas: Sociedad Americana del Cáncer
-        Asociación Americana del Corazón; Organización Europea del Ictus
+    -   Organizaciones de enfermedades específicas: Sociedad Americana
+        del Cáncer Asociación Americana del Corazón; Organización
+        Europea del Ictus
 
-- Agencias reguladoras:
+-   Agencias reguladoras:
 
-    - FDA (Administración de Alimentos y Medicamentos de EE.UU.)
+    -   FDA (Administración de Alimentos y Medicamentos de EE.UU.)
 
-    - EPA (Agencia de Protección del Medio Ambiente de Estados Unidos)
+    -   EPA (Agencia de Protección del Medio Ambiente de Estados Unidos)
 :::
 
 ::: notes
-Si nos fijamos en cómo se utiliza la relación coste-eficacia en todo el mundo --
+Si nos fijamos en cómo se utiliza la relación costo-efectividad en todo
+el mundo --
 
-A diferencia de Estados Unidos, los gobiernos de muchos países tienen sus propios
-que realizan evaluaciones formales de la relación coste-eficacia de los
-algunos de los cuales son
+A diferencia de Estados Unidos, los gobiernos de muchos países tienen
+sus propios que realizan evaluaciones formales de la relación
+costo-efectividad de los algunos de los cuales son
 
-(1) El Reino Unido - que es un sistema de pagador único conocido como el NHS & tiene un
-    organismo independiente llamado NICE que evalúa la relación coste-eficacia
-    NICE recomienda al NHS lo que debe cubrir en función de su VALOR.
-    NICE recomienda al NHS lo que debe cubrir basándose en el VALOR (es decir, la rentabilidad).
+(1) El Reino Unido - que es un sistema de pagador único conocido como el
+    NHS & tiene un organismo independiente llamado NICE que evalúa la
+    relación costo-efectividad NICE recomienda al NHS lo que debe cubrir
+    en función de su VALOR. NICE recomienda al NHS lo que debe cubrir
+    basándose en el VALOR (es decir, la rentabilidad).
 
-- El NHS está legalmente obligado a financiar los medicamentos y tratamientos recomendados por el NICE.
-    recomendados por el NICE
+-   El NHS está legalmente obligado a financiar los medicamentos y
+    tratamientos recomendados por el NICE. recomendados por el NICE
 
-(2) Canadá también tiene un organismo de evaluación de tecnologías sanitarias llamado
-    Agencia Canadiense de Medicamentos y Tecnologías Sanitarias (CADTH), que
-    funciona de forma similar al NICE
+(2) Canadá también tiene un organismo de evaluación de tecnologías
+    sanitarias llamado Agencia Canadiense de Medicamentos y Tecnologías
+    Sanitarias (CADTH), que funciona de forma similar al NICE
 
-(3) Y del mismo modo, Australia, así como Brasil, Alemania, Francia, Italia,
-    Suecia, Países Bajos, etc., tienen instituciones gubernamentales similares.
-    similares
+(3) Y del mismo modo, Australia, así como Brasil, Alemania, Francia,
+    Italia, Suecia, Países Bajos, etc., tienen instituciones
+    gubernamentales similares. similares
 
-(4) Entre los grupos que elaboran directrices clínicas sobre la ACE se encuentran...
+(4) Entre los grupos que elaboran directrices clínicas sobre la ACE se
+    encuentran...
 :::
 
 # CEAs: Identificación de alternativas
@@ -332,24 +347,25 @@ algunos de los cuales son
 ## Identificación de alternativas {.smaller}
 
 ::: incremental
-- La modelización de decisiones/evaluación económica requiere identificar
-    estrategias o cursos de acción alternativos.
+-   La modelización de decisiones/evaluación económica requiere
+    identificar estrategias o cursos de acción alternativos.
 
-- Estas alternativas podrían incluir diferentes terapias / políticas /
+-   Estas alternativas podrían incluir diferentes terapias / políticas /
     tecnologías.
 
-- O bien, nuestras alternativas podrían abarcar diferentes combinaciones o
-    secuencias de tratamiento (por ejemplo, ¿qué dosis? ¿a qué edad empezar?).
+-   O bien, nuestras alternativas podrían abarcar diferentes
+    combinaciones o secuencias de tratamiento (por ejemplo, ¿qué dosis?
+    ¿a qué edad empezar?).
 :::
 
 ::: fragment
 ::: {.callout-note appearance="simple"}
-Una vez que hayamos identificado las alternativas, querremos cuantificar sus
-consecuencias asociadas en términos de:
+Una vez que hayamos identificado las alternativas, queremos cuantificar
+sus consecuencias en términos de:
 
-- Resultados sanitarios
+-   Resultados sanitarios
 
-- Costes
+-   Costos
 :::
 :::
 
@@ -357,117 +373,125 @@ consecuencias asociadas en términos de:
 
 <br>
 
-$$ \frac{\text{(Coste Intervención A - Coste Intervención B)}}{\text{(Beneficio A - Beneficio B)}}$$
+$$ \frac{\text{(Costo Intervención A - Costo Intervención B)}}{\text{(Beneficio A - Beneficio B)}}$$
 
 ::: notes
-(1) A continuación nos adentraremos en los componentes de los análisis coste-efectividad
-    analizando en primer lugar lo que constituye el NUMERADOR de la
-    relación coste-eficacia y, a continuación, profundizaremos en el DENOMINADOR
+(1) A continuación nos adentraremos en los componentes de los análisis
+    costo-efectividad analizando en primer lugar lo que constituye el
+    NUMERADOR de la relación costo-efectividad y, a continuación,
+    profundizaremos en el DENOMINADOR
 :::
 
-# Valoración de costes
+# Valoración de costos
 
-## Valoración de costes: Pasos {.smaller}
+## Valoración de costos: Pasos {.smaller}
 
 Fuente: Gold 1996, Drummond 2015, Gray 2012) <br>
 
 1.  **Identificar** -- Estimar las diferentes categorías de recursos
-    probablemente necesarios (por ejemplo, personal quirúrgico, equipo médico,
-    complicaciones quirúrgicas, reingresos) <br> <br>
+    probablemente necesarios (por ejemplo, personal quirúrgico, equipo
+    médico, complicaciones quirúrgicas, reingresos) <br> <br>
 
-2.  **Medir** -- Estimar qué cantidad de cada categoría de recursos es
-    categoría de recursos (por ejemplo, tipo de personal que realiza la intervención
-    implicado, duración de la estancia postoperatoria, tasas de reingreso) <br> <br>
+2.  **Medir** -- Estimar qué cantidad de cada categoría de recursos (por
+    ejemplo, tipo de personal que realiza la intervención implicado,
+    duración de la estancia postoperatoria, tasas de reingreso) <br>
+    <br>
 
-3.  **Valor** -- Aplicar costes unitarios a cada categoría de recursos (por ejemplo,
-    escalas salariales del hospital correspondiente o tarifas salariales nacionales para
-    salarios del personal, coste por día de hospitalización para la estancia
-    estancia)
+3.  **Valor** -- Aplicar costos unitarios a cada categoría de recursos
+    (por ejemplo, escalas salariales del hospital correspondiente o
+    tarifas salariales nacionales para salarios del personal, costo por
+    día de hospitalización para la estancia)
 
-## Podemos [identificar]{.underline} diferentes tipos de costes sanitarios {.smaller}
+## Podemos [identificar]{.underline} diferentes tipos de costos sanitarios {.smaller}
 
 ::: {style="font-size: 0.8em"}
 ::: incrementales
-- [**Costes sanitarios directos**]{style="color: #57886C"}
+-   **Costos sanitarios directos**
 
-    - Hospital, consultorio, hogar, instalaciones
+    -   Hospital, consultorio, hogar, instalaciones
 
-    - Medicamentos, procedimientos, pruebas, honorarios profesionales
+    -   Medicamentos, procedimientos, pruebas, honorarios profesionales
 
-- Costes directos no sanitarios**]{style="color: #57886C"}
+-   Costos directos no sanitarios\*\*\]{style="color: #57886C"}
 
-    - Cuidado de niños, gastos de transporte
+    -   Cuidado de niños, gastos de transporte
 
-- Costes de tiempo**]{style="color: #57886C"}
+-   Costos de tiempo\*\*\]{style="color: #57886C"}
 
-    - Tiempo del paciente recibiendo atención, coste de oportunidad del tiempo
+    -   Tiempo del paciente recibiendo atención, costo de oportunidad
+        del tiempo
 
-- Costes de productividad ('costes indirectos')**]{style="color: #57886C"}
+-   Costos de productividad ('costos indirectos')\*\*\]{style="color:
+    #57886C"}
 
-    - ¿Pérdida de la capacidad laboral por morbilidad?
+    -   ¿Pérdida de la capacidad laboral por morbilidad?
 
-    - ¿Pérdida de productividad económica por fallecimiento?
+    -   ¿Pérdida de productividad económica por fallecimiento?
 
-- Costes sanitarios no relacionados**]{style="color: #57886C"}
+-   Costos sanitarios no relacionados\*\*\]{style="color: #57886C"}
 
-    - Trayectoria acumulada de los costes sanitarios totales a lo largo del tiempo
-        (no relacionados con intervenciones médicas)
+    -   Trayectoria acumulada de los costos sanitarios totales a lo
+        largo del tiempo (no relacionados con intervenciones médicas)
 :::
 :::
 
-## Identificación de costes (continuación)
+## Identificación de costos (continuación)
 
 <br>
 
-- En la práctica, contamos lo que probablemente tenga importancia
+-   En la práctica, contamos lo que probablemente tenga importancia
 
-    - Excluimos lo que probablemente tenga poco efecto o efectos iguales
-        en todas las alternativas
+    -   Excluimos lo que probablemente tenga poco efecto o efectos
+        iguales en todas las alternativas
 
-- Hay que tener en cuenta cualquier exclusión y examinar los posibles sesgos
+-   Hay que tener en cuenta cualquier exclusión y examinar los posibles
+    sesgos
 
-- Estamos limitados por los datos disponibles
+-   Estamos limitados por los datos disponibles
 
-## Podemos [medir]{.underline} los costes utilizando diferentes enfoques {.smaller}
+## Podemos [medir]{.underline} los costos utilizando diferentes enfoques {.smaller}
 
 ::: incremental
-- **Microcostes (bottom-up)**
+-   **Microcostos ("bottom-up")**
 
-    - Medir todos los recursos utilizados por los pacientes individuales y, a continuación, asignar
-        el coste unitario a cada tipo de recurso consumido para calcular
-        el coste total
+    -   Medir todos los recursos utilizados por los pacientes
+        individuales y, a continuación, asignar el costo unitario a cada
+        tipo de recurso consumido para calcular el costo total
 
-- **Coste bruto (descendente)**
+-   **Costo bruto ("top-down")**
 
-    - Estimar el coste para un volumen determinado de pacientes dividiendo el
-        coste total por el volumen de uso del servicio
-    - Ejemplo: Costes descendentes (por ejemplo, hospitalización por sobredosis de opiáceos)
-        sobredosis de opiáceos)
+    -   Estimar el costo para un volumen determinado de pacientes
+        dividiendo el costo total por el volumen de uso del servicio
+    -   Ejemplo: Costos descendentes (por ejemplo, hospitalización por
+        sobredosis de opiáceos) sobredosis de opiáceos)
 
-- **Enfoque basado en los ingredientes (P x Q x C)**
+-   **Enfoque basado en los ingredientes (P x Q x C)**
 
-    - Probabilidad de ocurrencia (P)
+    -   Probabilidad de ocurrencia (P)
 
-    - Cantidad (Q)
+    -   Cantidad (Q)
 
-    - Costes unitarios (C)
+    -   Costos unitarios (C)
 :::
 
 ::: notes
-(1) Microcoste: el más preciso (es un enfoque ascendente en el que
-    por ejemplo, todas las pruebas de laboratorio, camas hospitalarias
+(1) Microcosto: el más preciso (es un enfoque ascendente en el que por
+    ejemplo, todas las pruebas de laboratorio, camas hospitalarias
     tiempo del proveedor, pruebas de imagen, equipos utilizados, etc.)
 
-(2) Coste bruto: Normalmente es lo que tenemos para cuantificar los "costes descendentes"
-    -- pero también podemos utilizar este método para calcular el coste de una intervención
-    si no disponemos de datos para el enfoque del microcoste.
+(2) Costo bruto: Normalmente es lo que tenemos para cuantificar los
+    "costos descendentes" -- pero también podemos utilizar este método
+    para calcular el costo de una intervención si no disponemos de datos
+    para el enfoque del microcosto.
 
-- Por ejemplo, si sabemos que 10 prótesis totales de rodilla nos costaron
-    \300.000 dólares el mes pasado, es decir, 30.000 dólares por intervención.
+-   Por ejemplo, si sabemos que 10 prótesis totales de rodilla nos
+    costaron \\300.000 dólares el mes pasado, es decir, 30.000 dólares
+    por intervención.
 
-(3) Enfoque de ingredientes: Supongamos que sabemos que el 10% de las cirugías son
-    complicadas, y las cirugías complicadas requieren un 50% más de cirujano
-    tiempo del cirujano, y el tiempo del cirujano cuesta \$500/hr
+(3) Enfoque de ingredientes: Supongamos que sabemos que el 10% de las
+    cirugías son complicadas, y las cirugías complicadas requieren un
+    50% más de cirujano tiempo del cirujano, y el tiempo del cirujano
+    cuesta \$500/hr
 :::
 
 ## ¿Perspectiva de quién?
@@ -475,7 +499,7 @@ Fuente: Gold 1996, Drummond 2015, Gray 2012) <br>
 Sanders GD, Neumann PJ, Basu A, et al. Recommendations for Conduct,
 Methodological Practices, and Reporting of Cost-effectiveness Analyses:
 Second Panel on Cost-Effectiveness in Health and Medicine. JAMA.
-2016;316:1093--1103.](images/paste-1BA51D60.png)
+2016;316:1093--1103.\](images/paste-1BA51D60.png)
 
 ## ¿La perspectiva de quién?
 
@@ -484,47 +508,52 @@ Second Panel on Cost-Effectiveness in Health and Medicine. JAMA.
 ::: {style="font-size: 0.8em"}
 LA PERSPECTIVA IMPORTA -- <br> <br>
 
-> **Sector sanitario formal:** Los costes médicos corren a cargo de terceros
-> pagadores y pagados de su bolsillo por los pacientes. Deben incluir los + > costes actuales y futuros, relacionados y
-> costes futuros, relacionados y no relacionados con la afección considerada.
+> **Sector sanitario formal:** Los costos médicos cobrados a
+> asugradores/pagadores y pagos del bolsillo por los pacientes. Deben
+> incluir los costos actuales y futuros relacionados y no relacionados
+> con la condición considerada.
 
-> **Perspectiva social:** Representa el "interés público" más amplio & > la distribución intersectorial de los recursos.
-> y la distribución intersectorial de recursos que es importante tener en cuenta.
-> refleja los costes de todas las partes afectadas.
+> **Perspectiva social:** Representa el "interés público" más amplio y
+> la distribución intersectorial de los recursos que es importante tener
+> en cuenta. Refleja los costos de todas las partes afectadas.
 :::
 
 ::: notes
-(1) La PERSPECTIVA es muy importante a la hora de decidir qué costes incluir en el análisis.
-    incluir en el análisis; normalmente realizamos los ACE desde dos
-    perspectivas diferentes:
+(1) La PERSPECTIVA es muy importante a la hora de decidir qué costos
+    incluir en el análisis. incluir en el análisis; normalmente
+    realizamos los ACE desde dos perspectivas diferentes:
 
 <!-- -->
 
-(a) La perspectiva del sector sanitario formal incluye los costes médicos
-    sufragados por terceros pagadores y pagados de su bolsillo por los pacientes.
-    Los modelizadores deben incluir los costes actuales y futuros, relacionados y no relacionados con la enfermedad considerada.
-    con la enfermedad en cuestión.
+(a) La perspectiva del sector sanitario formal incluye los costos
+    médicos sufragados por terceros pagadores y pagados de su bolsillo
+    por los pacientes. Los modelizadores deben incluir los costos
+    actuales y futuros, relacionados y no relacionados con la enfermedad
+    considerada. con la enfermedad en cuestión.
 
-- Los analistas han utilizado mayoritariamente esta perspectiva en los últimos 20 años.
-- Es la perspectiva más útil para los responsables de la toma de decisiones dentro del
-    sector sanitario
-- Como ya se ha mencionado, en el Reino Unido el NICE suele adoptar la perspectiva de
-    del pagador de la atención sanitaria, mientras que el ICER trata de hacer análisis tanto desde la perspectiva
-    sector sanitario oficial y desde una perspectiva social más amplia
+-   Los analistas han utilizado mayoritariamente esta perspectiva en los
+    últimos 20 años.
+-   Es la perspectiva más útil para los responsables de la toma de
+    decisiones dentro del sector sanitario
+-   Como ya se ha mencionado, en el Reino Unido el NICE suele adoptar la
+    perspectiva de del pagador de la atención sanitaria, mientras que el
+    ICER trata de hacer análisis tanto desde la perspectiva sector
+    sanitario oficial y desde una perspectiva social más amplia
 
-(b) La perspectiva social incluye todo lo relacionado con el sector sanitario oficial
-    Además de otros aspectos como los costes de tiempo de los pacientes que buscan y reciben
-    los costes de tiempo de los cuidadores informales (no remunerados), los
-    transporte, efectos en la productividad y el consumo futuros y otros
-    costes y efectos fuera del sector sanitario.
+(b) La perspectiva social incluye todo lo relacionado con el sector
+    sanitario oficial Además de otros aspectos como los costos de tiempo
+    de los pacientes que buscan y reciben los costos de tiempo de los
+    cuidadores informales (no remunerados), los transporte, efectos en
+    la productividad y el consumo futuros y otros costos y efectos fuera
+    del sector sanitario.
 
 <!-- -->
 
-(2) El segundo panel sobre coste-eficacia en salud y medicina (el
-    (el "patrón oro" de las recomendaciones sobre ACE en EE.UU.) recomienda que
-    que los estudios se realicen tanto desde el punto de vista de la sanidad como de la sociedad.
-    de la sociedad, para poder comprender mejor las implicaciones
-    implicaciones de la toma de decisiones.
+(2) El segundo panel sobre costo-efectividad en salud y medicina (el (el
+    "patrón oro" de las recomendaciones sobre ACE en EE.UU.) recomienda
+    que que los estudios se realicen tanto desde el punto de vista de la
+    sanidad como de la sociedad. de la sociedad, para poder comprender
+    mejor las implicaciones implicaciones de la toma de decisiones.
 :::
 
 ## ¿La perspectiva de quién? {<br>}
@@ -537,42 +566,43 @@ LA PERSPECTIVA IMPORTA -- <br> <br>
 
 MAMOGRAFÍA (Sector sanitario): <br>
 
-- Costes asociados al cribado en sí \[procedimiento mamografía +
+-   Costos asociados al tamizaje en sí \[procedimiento mamografía +
     tiempo del médico\]
 
-- Costes de las pruebas de seguimiento para falsos positivos y verdaderos positivos
-    positivos verdaderos
+-   Costos de las pruebas de seguimiento para falsos positivos y
+    verdaderos positivos
 
-- Costes (o ahorros) derivados de los casos de cáncer de mama
-    cáncer de mama, como Hospitalización + costes de tratamiento
+-   Costos (o ahorros) derivados de los casos de cáncer de mama, como
+    hospitalización + costos de tratamiento
 
-- Costes no relacionados con la intervención médica/enfermedad; de vivir más tiempo
-    debido a la mamografía
+-   Costos no relacionados con la intervención médica/enfermedad; de
+    vivir más tiempo debido a la mamografía
 
 ::: notes
-(1) Veamos un ejemplo: mamografía para el cribado del cáncer de mama.
+(1) Veamos un ejemplo: mamografía para el tamizaje del cáncer de mama.
 
-(2) Si tuviéramos que calcular el coste desde el punto de vista del sector sanitario
-    sanitario, habría que tener en cuenta
+(2) Si tuviéramos que calcular el costo desde el punto de vista del
+    sector sanitario sanitario, habría que tener en cuenta
 
-- Costes asociados al propio cribado: costes del procedimiento
-    costes del procedimiento + tiempo del médico
+-   Costos asociados al propio tamizaje: costos del procedimiento costos
+    del procedimiento + tiempo del médico
 
-- Costes de las pruebas de seguimiento, tanto para los falsos positivos como para los verdaderos positivos.
-    positivos verdaderos
+-   Costos de las pruebas de seguimiento, tanto para los falsos
+    positivos como para los verdaderos positivos. positivos verdaderos
 
-- Costes (o ahorros) derivados de los casos de cáncer de mama
-    cáncer de mama, incluidas hospitalizaciones y costes de tratamiento
+-   Costos (o ahorros) derivados de los casos de cáncer de mama cáncer
+    de mama, incluidas hospitalizaciones y costos de tratamiento
 
 \*\*\*EJEMPLO: Supongamos que queremos examinar la diferencia entre
-entre el cribado mamográfico rutinario a los 40 y a los 50 años.
-habrá costes iniciales más elevados a los 40 años, PERO si detectamos más casos de
-cáncer de mama que si esperamos, entonces eso podría potencialmente ahorrar mucho
-costes de tratamiento/hospitalización
+entre el tamizaje mamográfico rutinario a los 40 y a los 50 años. habrá
+costos iniciales más elevados a los 40 años, PERO si detectamos más
+casos de cáncer de mama que si esperamos, entonces eso podría
+potencialmente ahorrar mucho costos de tratamiento/hospitalización
 
-LISA, el LIBRO dice COSTES EVITADOS para los costes posteriores
+LISA, el LIBRO dice COSTOS EVITADOS para los costos posteriores
 
-(3) Costes no relacionados con la intervención médica debidos al hecho de vivir más tiempo (se tratarán en las próximas diapositivas).
+(3) Costos no relacionados con la intervención médica debidos al hecho
+    de vivir más tiempo (se tratarán en las próximas diapositivas).
     discutiremos en las próximas diapositivas)
 :::
 
@@ -586,22 +616,22 @@ LISA, el LIBRO dice COSTES EVITADOS para los costes posteriores
 
 MAMOGRAFÍA (Perspectiva social): <br>
 
-- Costes asociados al cribado en sí \[procedimiento de mamografía +
-    tiempo del médico]
+-   Costos asociados al tamizaje en sí \[procedimiento de mamografía +
+    tiempo del médico\]
 
-- Costes de las pruebas de seguimiento tanto para falsos positivos como para verdaderos positivos
-    positivos verdaderos
+-   Costos de las pruebas de seguimiento tanto para falsos positivos
+    como para verdaderos positivos
 
-- Costes (o ahorros) derivados de los casos de cáncer de mama
-    cáncer de mama, como Hospitalización + costes de tratamiento
+-   Costos (o ahorros) derivados de los casos de cáncer de mama, como
+    hospitalización + costos de tratamiento
 
-- Costes no relacionados con la intervención médica/enfermedad; de vivir más tiempo
-    debido a la mamografía
+-   Costos no relacionados con la intervención médica/enfermedad; de
+    vivir más tiempo debido a la mamografía
 
-- Pérdidas de productividad de los pacientes asociadas al cribado o al
-    tratamiento del cáncer]{style="background-color: yellow;"}
+-   Pérdidas de productividad de los pacientes asociadas al tamizaje o
+    al tratamiento del cáncer\]{style="background-color: yellow;"}
 
-- Costes de guardería/transporte]{style="background-color: yellow;"}
+-   Costos de guardería/transporte\]{style="background-color: yellow;"}
 
 # Recogida de datos {background="#43464B"}
 
@@ -610,95 +640,99 @@ MAMOGRAFÍA (Perspectiva social): <br>
 <br> (1) Junto a [**ensayos clínicos**]{style="color: #00589b;"} <br>
 (2) Utilizando [**datos secundarios**]{style="color: #00589b;"}
 
-## Costes (datos secundarios)
+## Costos (datos secundarios)
 
 <br>
 
 > Internacional frente a EE.UU. tendrá diferentes enfoques
 
-## Costes (internacionales)
+## Costos (internacionales)
 
 ::: {style="font-size: 0.8em"}
-1.  **En los registros de datos de países/hospitales/donantes** - la clave es acercarse lo más posible al coste "real" asociado a cada procedimiento por paciente.
-    al coste "real" asociado a cada procedimiento por paciente.
-    - P. ej., "La atención sanitaria y el diagnóstico de la tuberculosis proceden de la lista oficial de precios
-        del Servicio Nacional de Laboratorios Sanitarios de Sudáfrica; los costes
-        de seguimiento reflejan la clínica local y el cribado basado en cultivos
-        de tuberculosis activa".
+1.  **En los registros de datos de países/hospitales/donantes** - la
+    clave es acercarse lo más posible al costo "real" asociado a cada
+    procedimiento por paciente.
+    -   P. ej., "La atención sanitaria y el diagnóstico de la
+        tuberculosis proceden de la lista oficial de precios del
+        Servicio Nacional de Laboratorios Sanitarios de Sudáfrica; los
+        costos de seguimiento reflejan la clínica local y el tamizaje
+        basado en cultivos de tuberculosis activa".
 2.  **Revisión de la literatura publicada**.
 3.  **Registro CEA de Tufts**
 4.  **DCP3: Prioridades de Control de Enfermedades**
 :::
 
-## Costes (Literatura publicada)
+## Costos (Literatura publicada)
 
 ![](images/file_show-01.jpeg)
 
-## Costes (bibliografía publicada)
+## Costos (bibliografía publicada)
 
 ![](images/screenshot_cea_SA2.jpeg)
 
-## Costes (Tufts CEVR)
+## Costos (Tufts CEVR)
 
 ![](images/cevr1.png)
 
 https://cevr.tuftsmedicalcenter.org/databases/cea-registry
 
-## Costes (Tufts CEVR)
+## Costos (Tufts CEVR)
 
 ![](images/cevr3.jpeg)
 
-## Costes (Tufts CEVR)
+## Costos (Tufts CEVR)
 
 ![](images/cevr5.jpeg)
 
-## Costes (Tufts CEVR)
+## Costos (Tufts CEVR)
 
 ![](images/global1.png)
 
 http://ghcearegistry.org/ghcearegistry/
 
-## Costes (Tufts CEVR)
+## Costos (Tufts CEVR)
 
 ![](images/global2.png)
 
-## Costes (DCP3)
+## Costos (DCP3)
 
 ![](images/dp3.png)
 
 ::: notes
-- Las Prioridades de Control de Enfermedades es un proyecto plurianual financiado en
-    2010 por la Fundación Bill y Melinda Gates.
-- De 2010 a 2017, estuvo dirigido por la Universidad de Washington, que
-    trabajó con organizaciones locales para promover y apoyar el uso de
-    evaluación económica (ACE) para el establecimiento de prioridades tanto a nivel mundial como
-    nacionales
-- La DCP3 se encuentra ahora alojada en la London School of Hygiene and Tropical
-    Tropical de Londres (LSHTM). Actualmente colabora con varios
-    países piloto en el ámbito del establecimiento de prioridades, el desarrollo y la
-    de paquetes esenciales de servicios sanitarios.
+-   Las Prioridades de Control de Enfermedades es un proyecto plurianual
+    financiado en 2010 por la Fundación Bill y Melinda Gates.
+-   De 2010 a 2017, estuvo dirigido por la Universidad de Washington,
+    que trabajó con organizaciones locales para promover y apoyar el uso
+    de evaluación económica (ACE) para el establecimiento de prioridades
+    tanto a nivel mundial como nacionales
+-   La DCP3 se encuentra ahora alojada en la London School of Hygiene
+    and Tropical Tropical de Londres (LSHTM). Actualmente colabora con
+    varios países piloto en el ámbito del establecimiento de
+    prioridades, el desarrollo y la de paquetes esenciales de servicios
+    sanitarios.
 :::
 
-## Ajustes necesarios para [Valorar]{.subrayado} Costes
+## Ajustes necesarios para [valorar]{.subrayado} costos
 
 <br>
 
-- Ajuste por moneda y año monetario
+-   Ajuste por moneda y año monetario
 
-- Descuento
+-   Descuento
 
 ## Ajuste por inflación
 
-## Ajuste por Inflación Motivación
+## Ajuste por inflación motivación
 
 <br>
 
-- 100 $ en 2000 no equivalen a 100 $ en 2020
+-   100 \$ en 2000 no equivalen a 100 \$ en 2020
 
-    - <br> ¡100 $ podían comprar mucho más en 2000!
+    -   <br> ¡100 \$ podían comprar mucho más en 2000!
 
-- Es importante ajustar la diferencia de precios a lo largo del tiempo, especialmente
-    cuando se trabaja con fuentes de costes de varios años
+-   Es importante ajustar la diferencia de precios a lo largo del
+    tiempo, especialmente cuando se trabaja con fuentes de costos de
+    varios años
 
 ## Ajuste por inflación: Ejemplo
 
@@ -706,15 +740,15 @@ http://ghcearegistry.org/ghcearegistry/
 
 ## Ajuste de la inflación: Método {.smaller}
 
-- Elija un año de referencia (normalmente el año actual de análisis)
+-   Elija un año de referencia (normalmente el año actual de análisis)
 
-- Convertir todos los costes al año de referencia
+-   Convertir todos los costos al año de referencia
 
 ::: fragment
-Convertir el coste del año X al año Y (año de referencia):
+Convertir el costo del año X al año Y (año de referencia):
 
 $$
-    \textbf{Coste(Año Y)} = \textbf{Coste(Año X)} \times \frac{\textbf{Índice de precios(Año Y)}}{\textbf{Índice de precios(Año X)}}
+    \textbf{Costo(Año Y)} = \textbf{Costo(Año X)} \times \frac{\textbf{Índice de precios(Año Y)}}{\textbf{Índice de precios(Año X)}}
 $$
 :::
 
@@ -722,53 +756,53 @@ $$
 
 <br>
 
-> El coste de hospitalización por ictus leve en EEUU fue de \~15.000 USD en
-> 2016. Qué pasa si queremos convertir este número a 2020 USD?
+> El costo de hospitalización por ictus leve en EEUU fue de \~15.000 USD
+> en 2016. Qué pasa si queremos convertir este número a 2020 USD?
 
-- PCE (Personal Consumption Expenditure Health Price Index) en 2016:
+-   PCE (Personal Consumption Expenditure Health Price Index) en 2016:
     105,430 [(segunda columna de la Tabla 3 (PCE,
     salud)](https://meps.ahrq.gov/about_meps/Price_Index.shtml)
 
-- PCE en 2020: 112,978
+-   PCE en 2020: 112,978
 
 ::: fragment
 $$
-\textbf{Coste(2020)} = \textbf{Coste(2016)} \times \frac{\textbf{PCE(2020)}}{\textbf{PCE(2016)}} \\
+\textbf{Costo(2020)} = \textbf{Costo(2016)} \times \frac{\textbf{PCE(2020)}}{\textbf{PCE(2016)}} \\
 = 15.000 veces frac {112,978} {105,430} \\
 = 16.674 ¤ (2020 USD)
 $$
 :::
 
-# Conversión de divisas
+# Conversión de monedas
 
-## Conversión de divisas
+## Conversión de monedas
 
 ::: {style="font-size: 0.8em"}
-- No es necesario para CEA pero puede ser útil en algunas situaciones:
+-   No es necesario para CEA pero puede ser útil en algunas situaciones:
 
-    - Ejemplo: puede ser necesario convertir la moneda local a USD porque
-        porque los umbrales de coste-efectividad suelen estimarse en
-        USD por AVAD.
+    -   Ejemplo: puede ser necesario convertir la moneda local a USD
+        porque porque los umbrales de costo-efectividad suelen estimarse
+        en USD por AVAD.
 
-- ¿Cómo se convierten 1.000 Nairas a USD?
+-   ¿Cómo se convierten 1.000 Nairas a USD?
 
-- Tipo de cambio actual en 2023: 1 Naira = \~0,0013 USD
+-   Tipo de cambio actual en 2023: 1 Naira = \~0,0013 USD
 
-- 1.000 Nairas = 1,3 USD
+-   1.000 Nairas = 1,3 USD
 :::
 
 # Descuento
 
 ## ¿Por qué descontar?
 
-- Ajustar los costes a la tasa de descuento social para reflejar la "tasa de preferencia temporal" social.
-    preferencia"
+-   Ajustar los costos a la tasa de descuento social para reflejar la
+    "tasa de preferencia temporal" social.
 
-    - Pura preferencia temporal ("inpaciencia")
+    -   Pura preferencia temporal ("inpaciencia")
 
-    - Riesgo potencial de catástrofe en el futuro
+    -   Riesgo potencial de catástrofe en el futuro
 
-    - Crecimiento económico/rentabilidad
+    -   Crecimiento económico/rentabilidad
 
 ## Descuento
 
@@ -777,15 +811,15 @@ $$
 ![](images/discount.png)
 
 ::: notes
-(1) Si ahora dispone de \$100, podría consumirlos o invertirlos en
-    la alternativa más rentable (por ejemplo, deuda pública sin riesgo)
+(1) Si ahora dispone de \$100, podría consumirlos o invertirlos en la
+    alternativa más rentable (por ejemplo, deuda pública sin riesgo)
 
-(2) Supongamos que la rentabilidad neta del bono es del 2%, lo que significa que
-    el año que viene los \$100 actuales han pasado a \$102
+(2) Supongamos que la rentabilidad neta del bono es del 2%, lo que
+    significa que el año que viene los \$100 actuales han pasado a \$102
 
-(3) El "valor actual" de 102 $ el año que viene es 100 $ hoy.
+(3) El "valor actual" de 102 \$ el año que viene es 100 \$ hoy.
 
-(4) Del mismo modo, 100 $ el año que viene = 98,04 $ hoy.
+(4) Del mismo modo, 100 \$ el año que viene = 98,04 \$ hoy.
 :::
 
 ## Descuento
@@ -793,27 +827,27 @@ $$
 <br>
 
 ::: {.callout-important appearance="minimal" icon="false"}
-Inflación: Convertimos el coste PASADO a valores actuales
+Inflación: Convertimos el costo PASADO a valores actuales
 :::
 
 ::: {.callout-important appearance="minimal" icon="false"}
-Descuento: Convertimos los costes FUTUROS en valores actuales
+Descuento: Convertimos los costos FUTUROS en valores actuales
 :::
 
 ## ¿Cómo descontamos?
 
 ::: {style="font-size: 0.8em"}
-- Valor actual: $VP = FV/(1+r)^t$
+-   Valor actual: $VP = FV/(1+r)^t$
 
-    - VF = valor futuro, el coste nominal incurrido en el futuro
+    -   VF = valor futuro, el costo nominal incurrido en el futuro
 
-    - r = **tipo de descuento anual** (análogo al tipo de interés)
+    -   r = **tipo de descuento anual** (análogo al tipo de interés)
 
-    - t = número de años en el futuro en que se incurre en el coste
+    -   t = número de años en el futuro en que se incurre en el costo
 
-- Consenso razonable en torno al 3% anual
+-   Consenso razonable en torno al 3% anual
 
-- Puede variar según las directrices de cada país
+-   Puede variar según las directrices de cada país
 
 ::: fragment
 ::: {.callout-important appearance="simple"}
@@ -825,41 +859,40 @@ Ajustar primero por inflación y moneda, luego descontar
 ## Intuición
 
 ::: {style="font-size: 0.8em"}
-- $r = 0.03$
+-   $r = 0.03$
 
-- Recordemos que $PV = FV/(1+r)^t$, y estamos en el Año 0:
+-   Recordemos que $PV = FV/(1+r)^t$, y estamos en el Año 0:
 
-    - \$1 en el año 0 se valora como $1/1.03^0 = \$ 1$
+    -   \$1 en el año 0 se valora como $1/1.03^0 = \$ 1$
 
-    - \$1 en el año 1 se valora como $1/1.03^1 = \$0.97$
+        -   \$1 en el año 1 se valora como $1/1.03^1 = \$0,97$
 
-    - 1$ en el año 2 se valora como 1$/1,03^2$ = 0,94$$.
+    -   1\$ en el año 2 se valora como 1$/1,03^2$ = \$0,94
 
-    - 1$ en el año 3 se valora como 1$/1,03^3$ = 0,92$$.
+    -   1\$ en el año 3 se valora como 1$/1,03^3$ = \$0,92.
 
-    - ...
+    -   ...
 
-    - Es decir, estamos convirtiendo lo que sería un \$1 en el Año 2,
-        por ejemplo, al VALOR PRESENTE de hoy. Hoy será
-        0.94.
+    -   Es decir, estamos convirtiendo lo que sería un \$1 en el Año 2,
+        por ejemplo, al VALOR PRESENTE de hoy. Hoy será 0,94.
 :::
 
 ::: notes
-(1) Generalmente valoramos menos los costes y efectos futuros que los costes y efectos actuales
-    y efectos Y su valor disminuye cuanto más lejos en el
-    en el futuro
+(1) Generalmente valoramos menos los costos y efectos futuros que los
+    costos y efectos actuales y efectos Y su valor disminuye cuanto más
+    lejos en el
 
-(2) Porque podemos invertir en un dólar hoy para obtener un mayor rendimiento de la
-    inversión más adelante
+(2) Porque podemos invertir en un dólar hoy para obtener un mayor
+    rendimiento de la inversión más adelante
 :::
 
 ## Ejemplo
 
 <br>
 
-- Supongamos que en el año 5, un paciente desarrolla una enfermedad, y hay un
-    coste del tratamiento de 500
-    - Este es el valor futuro (VF) del coste
-- Valor actual PV = $PV = FV/(1+r)^t = 500/(1+0.03)^5 = \$ 431.3$
+-   Supongamos que en el año 5, un paciente desarrolla una enfermedad, y
+    hay un costo del tratamiento de 500
+    -   Este es el valor futuro (VF) del costo
+-   Valor actual PV = $PV = FV/(1+r)^t = 500/(1+0.03)^5 = \$ 431.3$
 
 # A continuación: ¡Beneficios! (el denominador)
