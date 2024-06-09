@@ -357,7 +357,7 @@
 <ul>
 <li><p>Comprender los conceptos de medidas resumidas de la salud, en concreto años de vida ajustados por calidad (AVAC)</p></li>
 <li><p>Describir las diferencias generales entre los métodos directos e indirectos para estimar las utilidades del estado de salud</p></li>
-<li><p>Curar los parámetros del modelo para cuantificar los “beneficios” (el denominador en el cociente CEA)</p></li>
+<li><p>Seleccionar los parámetros del modelo para cuantificar los “beneficios” (el denominador en el cociente CEA)</p></li>
 </ul>
 </section>
 <section id="esquema" class="slide level2">
@@ -366,7 +366,7 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <ol type="1">
-<li>Valoración de los resultados sanitarios: AVAC/AVD</li>
+<li>Valoración de los resultados sanitarios: AVAC/AVAD</li>
 <li>Pesos de utilidad / instrumentos</li>
 </ol>
 </div><div class="column" style="width:50%;">
@@ -383,8 +383,8 @@
 \frac{C_1 - C_0 \quad (\Delta C)}{E_1 - E_0 \quad (\Delta E)}
 </span></p>
 </section>
-<section id="numerador-costes" class="slide level2">
-<h2>Numerador (costes)</h2>
+<section id="numerador-costos" class="slide level2">
+<h2>Numerador (costos)</h2>
 <p>Valorados en términos monetarios</p>
 <p><br> - Por ejemplo, <br> <span style="color: #016301">$USD / ₦NGN / KES / R</span></p>
 </section>
@@ -393,9 +393,9 @@
 <p>Valorado en términos de <strong>resultados clínicos</strong>.</p>
 <p><br> - Por ejemplo, <br> <span style="color: #016301"># de casos de VIH prevenidos</span> <br> <span style="color: #016301"># de niños sin convulsiones</span> <br> <span style="color: #016301"># de años de vida ajustados por calidad ganados</span> <br></p>
 <ul>
-<li>Lo important para la cuestión que nos ocupa</li>
-<li>La mayoría de los análisis informan de varios resultados diferentes</li>
-<li>Los AVAC/AVD permiten la comparación entre áreas de enfermedad</li>
+<li>Lo importante para la cuestión que nos ocupa</li>
+<li>La mayoría de los análisis reportan varios resultados diferentes</li>
+<li>Los AVAC/AVAD permiten la comparación entre áreas de enfermedad</li>
 </ul>
 </section></section>
 <section>
@@ -437,8 +437,8 @@
 <p>AVAC: métrica que refleja tanto los cambios en la esperanza de vida como en la calidad de vida (dolor, función o ambos)</p>
 </blockquote>
 </section>
-<section id="qalys" class="slide level2 smaller">
-<h2>QALYs</h2>
+<section id="avac-2" class="slide level2 smaller">
+<h2>AVAC</h2>
 
 <img data-src="images/qaly.png" class="r-stretch"></section>
 <section id="ejemplo-paciente-con-cardiopatía-coronaria-con-cirugía" class="slide level2">
@@ -476,7 +476,7 @@
 <li><p>Métodos directos</p>
 <ul>
 <li><p>Apuesta estándar</p></li>
-<li><p>Compromiso de tiempo</p></li>
+<li><p>Intercambio de tiempo (“time trade-off”)</p></li>
 <li><p>Escalas de valoración</p></li>
 </ul></li>
 <li><p>Métodos indirectos:</p>
@@ -486,11 +486,11 @@
 </ul></li>
 </ul>
 </section>
-<section id="métodos-directos-standard-gamble-sg" class="slide level2 smaller">
-<h2>Métodos directos: Standard Gamble (SG)</h2>
+<section id="métodos-directos-apuesta-estándar" class="slide level2 smaller">
+<h2>Métodos directos: Apuesta estándar</h2>
 <div class="fragment">
 <blockquote>
-<p>“¿Qué riesgo de muerte aceptaría para evitar [vivir con vivir el resto de su vida con una pierna amputada]? vida en perfecto estado de salud?”</p>
+<p>“¿Qué riesgo de muerte aceptaría para evitar [vivir el resto de su vida con una pierna amputada] y vivir su vida en perfecto estado de salud?”</p>
 </blockquote>
 </div>
 <div class="columns">
@@ -508,11 +508,11 @@
 
 </div>
 </section>
-<section id="métodos-directos---standard-gamble-sg" class="slide level2 smaller">
-<h2>Métodos directos - Standard Gamble (SG)</h2>
+<section id="métodos-directos---apuesta-estándar" class="slide level2 smaller">
+<h2>Métodos directos - Apuesta estándar</h2>
 <div>
 <blockquote>
-<p>“¿Qué riesgo de muerte aceptaría para evitar [vivir con una pierna amputada el resto de su vida] y vivir el resto de su vida en perfecto estado de salud?”</p>
+<p>“¿Qué riesgo de muerte aceptaría para evitar [vivir el resto de su vida con una pierna amputada] y vivir su vida en perfecto estado de salud?”</p>
 </blockquote>
 </div>
 <div class="columns">
@@ -528,13 +528,13 @@
 <ul>
 <li>Encuentre el umbral <span class="math inline">p</span> que establece EV(A) = EV(B)</li>
 <li>Supongamos que el encuestado responde que le es indiferente A y B en un umbral de <span class="math inline">pMuerte</span> = 0,10</li>
-<li>Entonces <strong>U(Amputación)</strong> = <span class="math inline">p</span>*U(Muerte) + <span class="math inline">(1-p)</span>*U(Salud perfecta) = 0,10*0 + (1-0,10)*1 = <strong>0,9</strong> = <span style="color: #E0A458;">umbral de indiferencia entre operarse y no operarse (viviré con esto antes que tener un alto riesgo de morir”***)</span></li>
+<li>Entonces <strong>U(Amputación)</strong> = <span class="math inline">p</span>*U(Muerte) + <span class="math inline">(1-p)</span>*U(Salud perfecta) = 0,10*0 + (1-0,10)*1 = <strong>0,9</strong> = <span style="color: #E0A458;">umbral de indiferencia entre operarse y no operarse (viviré con esto en vez de tener un alto riesgo de morir”***)</span></li>
 </ul>
 </div>
 </div>
 <aside class="notes">
 <ol type="1">
-<li><p>La técnica GAMBLE ESTÁNDAR pregunta a los pacientes (POR EJEMPLO) - QUIERO QUIERO QUE IMAGINE</p></li>
+<li><p>La técnica APUESTA ESTÁNDAR pregunta a los pacientes (POR EJEMPLO) - QUIERO QUIERO QUE IMAGINE</p></li>
 <li><p>Le amputan la pierna por encima de la rodilla</p></li>
 <li><p>Esto no afecta a su esperanza de vida, pero ahora vive su vida con una pierna amputada</p></li>
 <li><p>Ahora, hay un NUEVO TRATAMIENTO disponible donde se puede volver a colocar su pierna</p></li>
@@ -549,7 +549,7 @@
 <ol start="8" type="1">
 <li>Vale, viviré con esto antes que tener un alto riesgo de morir”***</li>
 </ol>
-<p>Esta es la TÉCNICA ESTÁNDAR DE GAMBLE</p>
+<p>Esta es la TÉCNICA APUESTA ESTÁNDAR</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -562,18 +562,18 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="métodos-directos---standard-gamble-sg-1" class="slide level2 smaller">
-<h2>Métodos directos - Standard Gamble (SG)</h2>
+<section id="métodos-directos---apuesta-estándar-1" class="slide level2 smaller">
+<h2>Métodos directos - Apuesta estándar</h2>
 <blockquote>
-<p>¿Qué riesgo de muerte aceptaría para evitar vivir con una pierna amputada el resto de su vida? una pierna amputada el resto de su vida] y vivir el resto de su vida en perfecto estado de salud?”</p>
+<p>¿Qué riesgo de muerte aceptaría para evitar [vivir el resto de su vida con una pierna amputada] y vivir su vida en perfecto estado de salud?”</p>
 </blockquote>
 
 <img data-src="images/amputation2.png" class="r-stretch"></section>
-<section id="métodos-directos---standard-gamble-sg-2" class="slide level2 smaller">
-<h2>Métodos directos - Standard Gamble (SG)</h2>
+<section id="métodos-directos---apuesta-estándar-2" class="slide level2 smaller">
+<h2>Métodos directos - Apuesta estándar</h2>
 <div class="fragment">
 <blockquote>
-<p>“¿Qué riesgo de muerte aceptaría para evitar [vivir con ictus el resto de su vida] y vivir el resto de su vida en perfecta salud?”</p>
+<p>“¿Qué riesgo de muerte aceptaría para evitar [vivir con derrame cerebral el resto de su vida] y vivir el resto de su vida en perfecta salud?”</p>
 </blockquote>
 </div>
 <div class="columns">
@@ -607,16 +607,16 @@
 
 - Puede trabajar, con algunas modificaciones
 
-- Necesita ayuda para hacer la compra, las tareas domésticas y los recados.
+- Necesita ayuda para hacer compras, las tareas domésticas y los recados.
 
 - A veces se siente ansioso y deprimido</code></pre>
 </div>
 </section>
-<section id="métodos-directos---standard-gamble-sg-3" class="slide level2 smaller">
-<h2>Métodos directos - Standard Gamble (SG)</h2>
+<section id="métodos-directos---apuesta-estándar-3" class="slide level2 smaller">
+<h2>Métodos directos - Apuesta estándar</h2>
 <div>
 <blockquote>
-<p>“¿Qué riesgo de muerte aceptaría para evitar [vivir con ictus el resto de su vida] y vivir el resto de su vida en perfecta salud?”</p>
+<p>“¿Qué riesgo de muerte aceptaría para evitar [vivir con derrame cerebral el resto de su vida] y vivir el resto de su vida en perfecta salud?”</p>
 </blockquote>
 </div>
 <div class="columns">
@@ -643,14 +643,14 @@
 <li><p>Una alternativa a la apuesta estándar</p></li>
 <li><p>En lugar del riesgo de muerte, el TTO utiliza el tiempo de vida para valorar los estados de salud</p></li>
 <li><p>No implica incertidumbre en las elecciones</p></li>
-<li><p>La tarea puede resultar más fácil para algunos encuestados que la apuesta estándar estándar</p></li>
+<li><p>La tarea puede resultar más fácil para algunos encuestados que la apuesta estándar</p></li>
 </ul>
 </section>
 <section id="métodos-directos---time-trade-off-tto-1" class="slide level2 smaller">
 <h2>Métodos Directos - Time Trade-Off (TTO)</h2>
 <div class="fragment">
 <blockquote>
-<p>“¿A qué parte de su esperanza de vida actual de 40 años renunciaría para mejorar su estado de salud actual? a qué parte de su esperanza de vida actual de 40 años renunciaría para mejorar su estado de salud actual (ictus) hasta alcanzar la”salud perfecta”? salud’?”</p>
+<p>“¿A qué parte de su esperanza de vida actual de 40 años renunciaría para mejorar su estado de salud actual (derrame cerebral) hasta alcanzar la”salud perfecta”?</p>
 </blockquote>
 </div>
 <div class="fragment">
@@ -661,22 +661,22 @@
 </div>
 </div>
 <div class="fragment">
-<p>U(Post-ictus) * 40 años = U(Salud perfecta) * 25 años + U(Muerto) * 15 años</p>
+<p>U(Post-derrame cerebral) * 40 años = U(Salud perfecta) * 25 años + U(Muerto) * 15 años</p>
 <p>U(Después de la apoplejía) * 40 años = 1 * 25 años + 0 * 15 años</p>
 <p>U(Después de la apoplejía) = 25/40 = 0,625</p>
 </div>
 </section>
-<section id="sg-vs-tto" class="slide level2">
-<h2>SG vs TTO</h2>
+<section id="apuesta-estándar-ae-vs-tto" class="slide level2">
+<h2>Apuesta estándar (AE) vs TTO</h2>
 <ul>
-<li><p>La SG representa la toma de decisiones bajo incertidumbre; la TTO es la toma de decisiones con certeza</p></li>
-<li><p>La TTO podría captar inadvertidamente la preferencia temporal (es decir, podríamos valorar menos la salud en el futuro que hoy), en lugar de valorar únicamente los estados de salud en el futuro. los estados de salud</p></li>
-<li><p>La postura ante el riesgo se recoge en la SG (aversión al riesgo de muerte), pero no en la TTO</p></li>
-<li><p>Los valores de utilidad de la SG suelen ser superiores a los de la TTO para el mismo estado.</p></li>
+<li><p>La AE representa la toma de decisiones bajo incertidumbre; la TTO es la toma de decisiones con certeza</p></li>
+<li><p>La TTO podría captar la preferencia temporal (es decir, podríamos valorar menos la salud en el futuro que hoy), en lugar de valorar únicamente los estados de salud en el futuro.</p></li>
+<li><p>La postura ante el riesgo se recoge en la AE (aversión al riesgo de muerte), pero no en la TTO</p></li>
+<li><p>Los valores de utilidad de la AE suelen ser superiores a los de la TTO para el mismo estado.</p></li>
 </ul>
 </section>
 <section id="métodos-directos-escalas-de-valoración" class="slide level2">
-<h2>Métodos directos: escalas de valoración</h2>
+<h2>Métodos directos: Escalas de valoración</h2>
 <blockquote>
 <p>“En una escala en la que 0 representa la muerte y 100 representa la perfecta salud, ¿qué número diría que describe mejor su estado de salud durante las últimas 2 semanas?”</p>
 </blockquote>
@@ -695,10 +695,10 @@
 </div>
 </section>
 <section id="métodos-directos-escalas-de-valoración-1" class="slide level2">
-<h2>Métodos directos – Escalas de valoración</h2>
+<h2>Métodos directos: Escalas de valoración</h2>
 <ul>
 <li>Fáciles de utilizar: Las escalas de valoración suelen utilizarse cuando el tiempo o la capacidad cognitiva/alfabetización impide el uso de otros métodos</li>
-<li>Muy subjetivos y propensos a respuestas extremas. Generalmente, utilidades para <strong>VAS &lt; TTO &lt; SG</strong></li>
+<li>Muy subjetivos y propensos a respuestas extremas. Generalmente, utilidades para <strong>EVA &lt; TTO &lt; AE</strong></li>
 </ul>
 </section>
 <section id="cuestión-práctica-vigilar-a-los-tramposos" class="slide level2 smaller">
@@ -706,17 +706,17 @@
 <p><span class="subrayado">Ejemplo hipotético de “trampa”:</span></p>
 <ul>
 <li><p>La compañía farmacéutica X ha descubierto un medicamento que previene la diabetes pero causa migrañas (efecto secundario)</p></li>
-<li><p>Utilizan la EAV para estimar la utilidad de la diabetes en su modelo de decisión y la SG para estimar la utilidad de la migraña. y SG para estimar la utilidad de las migrañas.</p></li>
+<li><p>Utilizan la EVA para estimar la utilidad de la diabetes en su modelo de decisión y la AE para estimar la utilidad de las migrañas.</p></li>
 <li><p>¿Hay algún problema? (¡sí, lo hay!)</p>
 <ul>
-<li><p>Recordemos que, por lo general, la utilidad de la EVA es menor que la de la TTO y menor que la de la SG.</p></li>
-<li><p>Por lo tanto, <strong>este enfoque exagera la utilidad al utilizar una U(Diabetes) y mayor U(migrañas)</strong></p></li>
+<li><p>Recordemos que, por lo general, la utilidad de la EVA es menor que la de la TTO y menor que la de la AE.</p></li>
+<li><p>Por lo tanto, <strong>este enfoque exagera el beneficio del tratamiento al utilizar una U(Diabetes) más baja</strong> <strong>y U(migrañas) más alta</strong></p></li>
 </ul></li>
 </ul>
 <aside class="notes">
 <ul>
-<li><p>SG suele tener una mayor utilidad (por tanto, mejor calidad de vida), por lo que se resta importancia al efecto secundario de la migraña.</p></li>
-<li><p>Mientras que VAS suele tener una utilidad más baja, por lo que ganarán MÁS con la prevención de la diabetes, ya que una utilidad más baja = peor situación.</p></li>
+<li><p>AE suele tener una mayor utilidad (por tanto, mejor calidad de vida), por lo que se resta importancia al efecto secundario de la migraña.</p></li>
+<li><p>Mientras que EVA suele tener una utilidad más baja, por lo que ganarán MÁS con la prevención de la diabetes, ya que una utilidad más baja = peor situación.</p></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -730,8 +730,8 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="métodos-indirectos---eq-5d" class="slide level2 smaller">
-<h2>Métodos indirectos - EQ-5D</h2>
+<section id="métodos-indirectos-eq-5d" class="slide level2 smaller">
+<h2>Métodos indirectos: EQ-5D</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -842,15 +842,14 @@
 <li>Estudios de utilidad a gran escala</li>
 <li>Equilibrio entre diferentes medidas - Análisis de sensibilidad</li>
 <li>Registro de ACE de Tufts</li>
-<li>Junto con los ECA</li>
+<li>Junto con los ensayos controlados aleatorios</li>
 </ul>
 </section>
-<section id="dalys" class="slide level2">
-<h2>DALYs</h2>
-<p>Usted, además, no será evaluado en DALYs, pero para su referencia/interés:</p>
+<section id="avad" class="slide level2">
+<h2>AVAD</h2>
 <p><br></p>
 <ul>
-<li><p>Historia de origen: Estudio sobre la carga mundial de morbilidad</p></li>
+<li><p>Historia de origen: Estudio sobre la carga de enfermedad mundial</p></li>
 <li><p>Deliberadamente una medida de salud, no de bienestar/utilidad</p></li>
 <li><p>Similar a los AVAC, dos dimensiones de interés:</p>
 <ul>
@@ -859,25 +858,25 @@
 </ul></li>
 </ul>
 </section>
-<section id="dalys-1" class="slide level2">
-<h2>DALYs</h2>
+<section id="avad-1" class="slide level2">
+<h2>AVAD</h2>
 <p><a href="https://en.wikipedia.org/wiki/Disability-adjusted_life_year"><img data-src="images/DALY_disability_affected_life_year_infographic.svg" width="1500"></a></p>
 <div class="fragment">
-<p><strong>DALYs = YLL + YLD</strong></p>
+<p><strong>AVAD = AVP + AVD</strong></p>
 <ul>
 <li>AVP (Años de vida perdidos)</li>
-<li>YLD (Años vividos con discapacidad)</li>
+<li>AVD (Años vividos con discapacidad)</li>
 </ul>
 </div>
 </section>
-<section id="dalys-yll-yld" class="slide level2">
-<h2>DALYs = <span style="color: red;">YLL</span> + YLD</h2>
+<section id="dalys-avp-avd" class="slide level2">
+<h2>DALYs = AVP + AVD</h2>
 <ul>
 <li><p><strong>Años de vida perdidos (AVP):</strong> cambios en la esperanza de vida, calculados a partir de la comparación con la tabla de vida sintética</p></li>
-<li><p>Ejemplo de YLL: El tratamiento del VIH retrasa la muerte de los 30 a los 50</p>
+<li><p>Ejemplo de AVP : El tratamiento del VIH retrasa la muerte de los 30 a los 50</p>
 <ul>
 <li><p>Años de vida ganados = 20 años</p></li>
-<li><p>¿YLL?</p></li>
+<li><p>¿AVP?</p></li>
 </ul></li>
 </ul>
 </section>
@@ -1049,12 +1048,12 @@
 <p>Fuente: http://ghdx.healthdata.org/record/ihme-data/global-burden-disease-study-2019-gbd-2019-reference-life-table</p>
 </div>
 </section>
-<section id="dalys-yll-yld-1" class="slide level2">
-<h2>DALYs = <span style="color: red;">YLL</span> + YLD</h2>
+<section id="dalys-avp-avd-1" class="slide level2">
+<h2>DALYs = AVP + AVD</h2>
 <div>
 <ul>
 <li><p>Años de vida perdidos (AVP): cambios en la esperanza de vida, calculados a partir de la comparación con la tabla de vida sintética</p></li>
-<li><p>Ejemplo de YLL: El tratamiento del VIH retrasa la muerte de los 30 a los 50</p>
+<li><p>Ejemplo de AVP : El tratamiento del VIH retrasa la muerte de los 30 a los 50</p>
 <ul>
 <li><p>Años de vida ganados: 20 años</p></li>
 <li><p>AVAD: AV(50) - AV(30) = 39,6 - 59,2 = -19,6 AVAD = <strong>19,6 AVAD evitados</strong></p></li>
@@ -1071,17 +1070,17 @@
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
-<p>YLL (medidos como AVAD evitados) <span class="math inline">\neq</span> ¡AJ ganados!</p>
+<p>¡AVP (medidos como AVAD evitados) <span class="math inline">\neq</span> Años de vida ganados!</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="dalys-yll-yld-2" class="slide level2">
-<h2>DALYs = YLL + <span style="color: red;">YLD</span></h2>
+<section id="dalys-avp-avd-2" class="slide level2">
+<h2>DALYs = AVP + AVD</h2>
 <ul>
-<li><p>Años vividos con discapacidad (AVAD): calculados de forma similar a los AVAC, peso de la utilidad ≈ 1 - peso de la discapacidad</p></li>
-<li><p>Ejemplo de AVLD: Control efectivo del asma durante 10 años</p>
+<li><p>Años vividos con discapacidad (AVD): calculados de forma similar a los AVAC, peso de la utilidad ≈ 1 - peso de la discapacidad</p></li>
+<li><p>Ejemplo de AVD: Control efectivo del asma durante 10 años</p>
 <ul>
 <li><p>Peso de la discapacidad (asma no controlada) = ?</p></li>
 <li><p>Peso de la discapacidad (asma controlada) = ?</p></li>
@@ -1109,25 +1108,25 @@
 </div>
 </div>
 </section>
-<section id="dalys-yll-yld-3" class="slide level2">
-<h2>DALYs = YLL + <span style="color: red;">YLD</span></h2>
+<section id="avad-avp-avd" class="slide level2">
+<h2>AVAD = AVP + AVD</h2>
 <div>
 <ul>
-<li><p>Años Vividos con Discapacidad (AVLD): calculados de forma similar a los AVAC, peso de la utilidad ≈ 1 - peso de la discapacidad</p></li>
-<li><p>Ejemplo de AVLD: Control efectivo del asma durante 10 años</p>
+<li><p>Años Vividos con Discapacidad (AVD): calculados de forma similar a los AVAC, peso de la utilidad ≈ 1 - peso de la discapacidad</p></li>
+<li><p>Ejemplo de AVD: Control efectivo del asma durante 10 años</p>
 <ul>
 <li><p>Peso de la discapacidad (asma no controlada) = 0,133</p></li>
 <li><p>Peso de la discapacidad (asma controlada) = 0,015</p></li>
-<li><p>YLD = 10 * 0.015 - 10 * 0.133 = -1.18 DALYs = <strong>1.18 DALYs evitados</strong></p></li>
+<li><p>AVD = 10 * 0,015 - 10 * 0,133 = -1,18 AVADs= <strong>1,18 AVADs evitados</strong></p></li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="dalys-for-cea" class="slide level2 smaller">
-<h2>DALYs for CEA</h2>
+<section id="avad-para-ace" class="slide level2 smaller">
+<h2>AVAD para ACE</h2>
 <div style="font-size: 0.9em">
 <ul>
-<li>El método de cálculo recomendado ha cambiado con el tiempo (ponderación ponderación por edad, descuento, ahora ambos)</li>
+<li>El método de cálculo recomendado ha cambiado con el tiempo (ponderación por edad, descuento, ahora sin ambos)</li>
 <li>Algunos calculan un AVAD “similar al AVAC”, utilizando la ponderación de utilidad = 1- peso de la discapacidad</li>
 <li>En general, el descuento se sigue realizando para el ACE</li>
 </ul>
@@ -1136,8 +1135,8 @@
 <div class="important">
 <p><strong>Práctica común</strong></p>
 <ul>
-<li>Entorno de altos ingresos: AVAC</li>
-<li>Entorno de renta baja y media = AVAD*****Puesto que la discapacidad discapacidad están disponibles libre y públicamente (estas ponderaciones son necesarias para calcular los AVAD), puede reducir los costes/tiempo/recursos en comparación con la recopilación de estimaciones de AVAC</li>
+<li>Contextos de altos ingresos: AVAC</li>
+<li>Contextos de de renta baja y media = AVAD*****Puesto que los pesos de discapacidad están disponibles públicamente (estas ponderaciones son necesarias para calcular los AVAD), puede reducir los costos/tiempo/recursos en comparación con la recopilación de estimaciones de AVAC</li>
 </ul>
 </div>
 </div>

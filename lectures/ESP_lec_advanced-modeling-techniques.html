@@ -356,7 +356,6 @@
 <h2>Objetivos de aprendizaje</h2>
 <ul>
 <li class="fragment"><p>Ser capaz de comprender los conceptos básicos e identificar los puntos fuertes y las limitaciones de técnicas de modelización alternativas, incluyendo:</p>
-<p>::: nonincremental</p>
 <ul>
 <li class="fragment"><p>Microsimulación (simulación Monte Carlo)</p></li>
 <li class="fragment"><p>Simulación de eventos discretos</p></li>
@@ -381,12 +380,12 @@
 <ul>
 <li class="fragment"><p>Simulación de Markov</p>
 <ul>
-<li class="fragment">Se centra en la media: esencialmente supone una cohorte infinita de individuos transiciones a través del modelo simultáneamente para obtener los valores esperados</li>
+<li class="fragment">Se centra en la media: esencialmente supone una cohorte infinita de transiciones individuos a través del modelo simultáneamente para obtener los valores esperados</li>
 </ul></li>
 <li class="fragment"><p>Microsimulación</p>
 <ul>
-<li class="fragment"><p>Sinónimos = microsimulación estocástica, modelo basado en el individuo, simulación Monte Carlo de 1er orden Carlo de 1er orden</p></li>
-<li class="fragment"><p>Los individuos hipotéticos transitan por el modelo, de uno en uno</p></li>
+<li class="fragment"><p>Sinónimos = microsimulación estocástica, modelo basado en el individuo, simulación Monte Carlo de 1er orden</p></li>
+<li class="fragment"><p>Los individuos hipotéticos transitan por el modelo, uno por uno</p></li>
 </ul></li>
 </ul>
 </section>
@@ -395,16 +394,14 @@
 <ol type="1">
 <li class="fragment"><p>Determinar el estado inicial, utilizando la distribución de probabilidades de inicio</p>
 <ul>
-<li class="fragment">por ejemplo, probabilidad de empezar en enfermo/sano</li>
+<li class="fragment">Por ejemplo, probabilidad de empezar en enfermo/sano</li>
 </ul></li>
-<li class="fragment"><p>Simular la trayectoria individual a través de los estados de salud, utilizando <strong>números aleatorios</strong> para para determinar las transiciones reales (sí/no) a partir de las probabilidades de transición.</p></li>
+<li class="fragment"><p>Simular la trayectoria individual a través de los estados de salud, utilizando <strong>números aleatorios</strong> para determinar las transiciones reales (sí/no) a partir de las probabilidades de transición.</p></li>
 <li class="fragment"><p>Registrar el número de ciclos en cada estado</p></li>
-<li class="fragment"><p>Repita los pasos 1-3 muchas veces (N)</p></li>
-<li class="fragment"><ol start="5" type="1">
-<li class="fragment">Calcular la media de ciclos a partir de una muestra de N</li>
-</ol>
+<li class="fragment"><p>Repitar los pasos 1-3 muchas veces (N)</p></li>
+<li class="fragment"><p>Calcular el promedio de ciclos a partir de una muestra de N</p>
 <ul>
-<li class="fragment">Puede ponderar los estados por utilidad, coste, factor de descuento (igual que con los modelos de Markov)</li>
+<li class="fragment">Puede ponderar los estados por utilidad, costo, factor de descuento (igual que con los modelos de Markov)</li>
 </ul></li>
 </ol>
 </section>
@@ -435,8 +432,8 @@
 <ul>
 <li class="fragment"><p>La tuberculosis es responsable del &gt;25% de las muertes entre las personas que viven con el VIH</p></li>
 <li class="fragment"><p>La terapia preventiva con isoniazida (TPI) puede prevenir la tuberculosis entre las personas que reciben terapia antirretrovírica (TAR)</p></li>
-<li class="fragment"><p>En la actualidad, los programas de VIH inician la terapia antirretrovírica en pacientes con recuentos medios de CD4 más elevados y un menor riesgo de tuberculosis según las directrices de prueba y tratamiento.</p></li>
-<li class="fragment"><p>El objetivo era investigar cómo ha afectado este cambio al impacto sanitario y a la rentabilidad del TPI. la rentabilidad del TPI</p></li>
+<li class="fragment"><p>En la actualidad, los programas de VIH inician la terapia antirretrovírica en pacientes con recuentos medios de CD4 más elevados y un menor riesgo de tuberculosis según las guias de práctica clínica.</p></li>
+<li class="fragment"><p>El objetivo era investigar cómo ha afectado este cambio al impacto sanitario y a la rentabilidad del TPI.</p></li>
 </ul>
 </section>
 <section id="ejemplo-2" class="slide level2">
@@ -458,7 +455,7 @@
 </div>
 </div>
 <ul>
-<li class="fragment"><p>Características a nivel individual sobre edad, sexo, recuento de células CD4</p></li>
+<li class="fragment"><p>Características a nivel individual como edad, sexo, recuento de células CD4</p></li>
 <li class="fragment"><p>El seguimiento de la trayectoria individual es crucial para esta cuestión</p>
 <ul>
 <li class="fragment"><p>El recuento de células CD4 cambia con el tratamiento del VIH</p></li>
@@ -468,12 +465,12 @@
 </ul>
 </section></section>
 <section>
-<section id="simulación-de-eventos-discretos" class="title-slide slide level1 center">
-<h1>Simulación de eventos discretos</h1>
+<section id="simulación-de-eventos-discretos-sed" class="title-slide slide level1 center">
+<h1>Simulación de eventos discretos (SED)</h1>
 
 </section>
-<section id="microsimulación-vs-des" class="slide level2 smaller">
-<h2>Microsimulación vs DES</h2>
+<section id="microsimulación-vs-simulación-de-eventos-discretos" class="slide level2 smaller">
+<h2>Microsimulación vs simulación de eventos discretos</h2>
 <div class="fragment">
 <div style="color: blue">
 <p>Microsimulación</p>
@@ -495,20 +492,20 @@
 </div>
 </div>
 </section>
-<section id="des" class="slide level2 smaller">
-<h2>DES</h2>
+<section id="simulación-de-eventos-discretos" class="slide level2 smaller">
+<h2>Simulación de eventos discretos</h2>
 <div style="font-size: 0.95em">
 <ul>
-<li class="fragment"><p><strong>Similar a la microsimulación,</strong> DES simula un individuo a la vez <span class="math inline">\rightarrow</span> Sujeto a estocasticidad</p></li>
+<li class="fragment"><p><strong>Similar a la microsimulación,</strong> SED simula un individuo a la vez <span class="math inline">\rightarrow</span> Sujeto a estocasticidad</p></li>
 <li class="fragment"><p>A diferencia de la microsimulación** (donde el tiempo está discretizado), el DES modela el tiempo continuamente</p></li>
 <li class="fragment"><p>Ventajas</p>
 <ul>
 <li class="fragment"><p>Más rápido: Omite los ciclos innecesarios en los que no se produce ningún evento</p></li>
-<li class="fragment"><p>Más natural de aplicar cuando los datos se presentan como distribuciones de tiempo-acontecimiento (tiempo de espera, duración de la estancia en el hospital, tiempo desde el inicio hasta el tratamiento de enfermedades agudas). agudas)</p></li>
+<li class="fragment"><p>Más natural de aplicar cuando los datos se presentan como distribuciones de tiempo-acontecimiento (tiempo de espera, duración de la estancia en el hospital, tiempo desde el inicio hasta el tratamiento de enfermedades agudas).</p></li>
 </ul></li>
 <li class="fragment"><p>Desventajas</p>
 <ul>
-<li class="fragment"><p>Menos intuitivo: “el tiempo hasta la muerte se muestrea a partir de una distribución de Weibull de forma = 2,72, escala = 58,5” (DES) frente a “la probabilidad de muerte en el año 1 es de 0,038”. (Microsim)</p></li>
+<li class="fragment"><p>Menos intuitivo: “el tiempo hasta la muerte se muestrea a partir de una distribución de Weibull de forma = 2,72, escala = 58,5” (SED) frente a “la probabilidad de muerte en el año 1 es de 0,038” (Microsim)</p></li>
 <li class="fragment"><p>Estos pasos temporales pueden ser útiles aunque no se produzca ningún evento. (En el ejemplo VIH/TB, el recuento de células CD4 se actualiza cada ciclo para recalcular los riesgos de tuberculosis y muerte)</p></li>
 </ul></li>
 </ul>
@@ -532,7 +529,7 @@
 <ul>
 <li class="fragment">Suposición adecuada para la mayoría de los modelos de enfermedades crónicas</li>
 </ul></li>
-<li class="fragment"><p>Pero, ¿qué ocurre con las enfermedades infecciosas (por ejemplo, COVID) en las que los individuos interactúan entre sí? entre sí?</p>
+<li class="fragment"><p>Pero, ¿qué ocurre con las enfermedades infecciosas (por ejemplo, COVID) en las que los individuos interactúan entre sí?</p>
 <ul>
 <li class="fragment">Por ejemplo, el riesgo de contraer COVID para un individuo sano (susceptible) depende de cuántos individuos tienen actualmente COVID en la población</li>
 </ul></li>
@@ -540,7 +537,7 @@
 </section>
 <section id="el-modelo-sir" class="slide level2">
 <h2>El modelo SIR</h2>
-<p>El modelo más clásico en epidemiología de enfermedades infecciosas. Apropiado para muchas enfermedades enfermedades infecciosas comunes (por ejemplo, la gripe).</p>
+<p>El modelo más clásico en epidemiología de enfermedades infecciosas. Apropiado para muchas enfermedades infecciosas comunes (por ejemplo, la gripe).</p>
 
 <img data-src="images/SIR.svg" class="r-stretch"></section>
 <section id="el-modelo-sir-1" class="slide level2">
@@ -613,8 +610,8 @@
 </table>
 </div>
 </section>
-<section id="comparison-of-model-types" class="slide level2">
-<h2>Comparison of model types</h2>
+<section id="comparación-de-tipos-de-modelos-1" class="slide level2">
+<h2>Comparación de tipos de modelos</h2>
 <div style="font-size: 0.58em; line-height: 1">
 <table style="width:99%;">
 <colgroup>
@@ -645,8 +642,9 @@
 </tr>
 <tr class="odd">
 <td><ul>
-<li class="fragment">* Microsimulación**</li>
-</ul></td>
+<li class="fragment">*</li>
+</ul>
+<p>Microsimulación**</p></td>
 <td><p><strong>Fácil seguimiento del historial</strong></p>
 <p><strong>Muy potente y flexible</strong></p></td>
 <td><p><strong>Requiere un gran número de ejecuciones para converger</strong></p>
@@ -656,8 +654,8 @@
 </table>
 </div>
 </section>
-<section id="comparison-of-model-types-1" class="slide level2">
-<h2>Comparison of model types</h2>
+<section id="comparación-de-tipos-de-modelos-2" class="slide level2">
+<h2>Comparación de tipos de modelos</h2>
 <div style="font-size: 0.58em; line-height: 1">
 <table style="width:99%;">
 <colgroup>
@@ -704,8 +702,8 @@
 </table>
 </div>
 </section>
-<section id="comparison-of-model-types-2" class="slide level2">
-<h2>Comparison of model types</h2>
+<section id="comparación-de-tipos-de-modelos-3" class="slide level2">
+<h2>Comparación de tipos de modelos</h2>
 <div style="font-size: 0.50em; line-height: 1">
 <table style="width:99%;">
 <colgroup>
