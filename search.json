@@ -2202,7 +2202,7 @@
     "href": "lectures/ESP_lec_6.ICERs.html#esquema",
     "title": "Análisis coste-eficacia incremental",
     "section": "Esquema",
-    "text": "Esquema\n\n\n\n\nRevisión del coeficiente de ACE\nCEA no competidores frente a CEA competidores\nCEA incremental\n\n\n\n\nDominancia y dominancia ampliada\nComparadores\nUmbrales CEA"
+    "text": "Esquema\n\n\n\n\nRevisión del coeficiente de ACE\nCEA no competidores frente a CEA competidores\nCEA incremental\n\n\n\nDominancia y dominancia ampliada\nComparadores\nUmbrales CEA"
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#análisis-coste-efectividad-1",
@@ -2237,14 +2237,14 @@
     "href": "lectures/ESP_lec_6.ICERs.html#relación-coste-eficacia",
     "title": "Análisis coste-eficacia incremental",
     "section": "Relación coste-eficacia",
-    "text": "Relación coste-eficacia\n\n\n\nCoste de la intervención\n\n \\quad - \\quad \n\nCoste de la alternativa\n\n\n\\frac{\\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad {\\quad}{\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad}\n\n\nBeneficio de la intervención\n\n \\quad - \\quad \n\nBeneficio de la alternativa"
+    "text": "Relación coste-eficacia\n\n\n\nCoste de la intervención\n\n \\quad - \\quad \n\nCoste de la alternativa\n\n\n\\frac{\\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad}{\\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad}\n\n\nBeneficio de la intervención\n\n \\quad - \\quad \n\nBeneficio de la alternativa"
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#relación-coste-eficacia-1",
     "href": "lectures/ESP_lec_6.ICERs.html#relación-coste-eficacia-1",
     "title": "Análisis coste-eficacia incremental",
     "section": "Relación coste-eficacia",
-    "text": "Relación coste-eficacia\n\n\n\nC_1\n\n \\quad - \\quad \n\nC_0\n\n\n\\frac{\\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad {\\quad}{\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad\\quad}\n\n\nE_0\n\n \\quad - \\quad \n\nE_1"
+    "text": "Relación coste-eficacia\n\n\n\nC_1\n\n \\quad - \\quad \n\nC_0\n\n\n\\frac{\\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad}{\\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad}\n\n\nE_0\n\n \\quad - \\quad \n\nE_1"
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#relación-coste-eficacia-2",
@@ -2258,7 +2258,7 @@
     "href": "lectures/ESP_lec_6.ICERs.html#relación-coste-efectividad-incremental",
     "title": "Análisis coste-eficacia incremental",
     "section": "Relación coste-efectividad incremental",
-    "text": "Relación coste-efectividad incremental\nEl más utilizado, ya que para la mayoría de las enfermedades ya existe algún tratamiento disponible. tratamiento disponible.\n\n\n\n\nC_1: valor actual neto de los costes totales a lo largo de la vida del nuevo tratamiento\nC_0: valor actual neto de los costes totales a lo largo de la vida del tratamiento por defecto tratamiento por defecto\nE_1: eficacia del nuevo tratamiento, medida en esperanza de vida esperada esperanza de vida esperada, años de vida ajustados por calidad (AVAC) o años de vida ajustados por discapacidad (AVAD), o algún resultado sanitario relevante para la decisión.\nE_0: eficacia del tratamiento por defecto\n\n\n\n\n\n\\frac{C_1 - C_0 \\quad (\\Delta C)}{E_1 - E_0 \\quad (\\Delta E)}"
+    "text": "Relación coste-efectividad incremental\nEl más utilizado, ya que para la mayoría de las enfermedades ya existe algún tratamiento disponible. tratamiento disponible.\n\n\n\n\nC_1: valor actual neto de los costes totales a lo largo de la vida del nuevo tratamiento\nC_0: valor actual neto de los costes totales a lo largo de la vida del tratamiento por defecto tratamiento por defecto\nE_1: eficacia del nuevo tratamiento, medida en esperanza de vida esperada esperanza de vida esperada, años de vida ajustados por calidad (AVAC) o años de vida ajustados por discapacidad (AVAD), o algún resultado sanitario relevante para la decisión.\nE_0: eficacia del tratamiento por defecto\n\n\n\n\n\\frac{C_1 - C_0 \\quad (\\Delta C)}{E_1 - E_0 \\quad (\\Delta E)}"
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#árbol-de-decisión-de-enfermedades-neurológicas",
@@ -2279,7 +2279,7 @@
     "href": "lectures/ESP_lec_6.ICERs.html#resultados-1",
     "title": "Análisis coste-eficacia incremental",
     "section": "Resultados",
-    "text": "Resultados\n\nC_{treat} = coste esperado de la estrategia tratar a todos.\nC_{no treat} = coste esperado de la estrategia “no tratar a nadie”.\nC_{biopsy} = coste esperado de la estrategia de biopsia.\nE_{treat} = esperanza de vida esperada de la estrategia de tratar a todos.\nE_{no tratar} = esperanza de vida esperada de la estrategia “no tratar a nadie”.\nE_{biopsy} = esperanza de vida esperada de la estrategia de biopsia."
+    "text": "Resultados\n\n\nC_{treat} = coste esperado de la estrategia tratar a todos.\nC_{no treat} = coste esperado de la estrategia “no tratar a nadie”.\nC_{biopsy} = coste esperado de la estrategia de biopsia.\nE_{treat} = esperanza de vida esperada de la estrategia de tratar a todos.\nE_{no tratar} = esperanza de vida esperada de la estrategia “no tratar a nadie”.\nE_{biopsy} = esperanza de vida esperada de la estrategia de biopsia."
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#resultados-en-amua",
@@ -2314,7 +2314,7 @@
     "href": "lectures/ESP_lec_6.ICERs.html#relación-coste-eficacia-media",
     "title": "Análisis coste-eficacia incremental",
     "section": "Relación coste-eficacia media",
-    "text": "Relación coste-eficacia media\nCaso especial en el que se supone que C_0 y E_0 son cero.\n\n\n\nC_1: valor actual neto de los costes totales a lo largo de la vida del nuevo tratamiento\nC_0: Se supone cero\nE_1: eficacia del nuevo tratamiento, medida en esperanza de vida esperada esperanza de vida esperada, años de vida ajustados por calidad (AVAC) o años de vida ajustados por discapacidad (AVAD), o algún resultado sanitario relevante para la decisión.\nE_0: Se supone cero\n\n\n\n\n\nICER &= \\frac{C_1 - 0}{E_1 - 0}\nICER &= \\frac{C_1 - 0}{E_1 - 0} \\\\\\frac{C_1}{E_1 - 0}\n&= \\frac{C_1}{E_1 }\n\\fin{alineado}"
+    "text": "Relación coste-eficacia media\nCaso especial en el que se supone que C_0 y E_0 son cero.\n\n\n\nC_1: valor actual neto de los costes totales a lo largo de la vida del nuevo tratamiento\nC_0: Se supone cero\nE_1: eficacia del nuevo tratamiento, medida en esperanza de vida esperada esperanza de vida esperada, años de vida ajustados por calidad (AVAC) o años de vida ajustados por discapacidad (AVAD), o algún resultado sanitario relevante para la decisión.\nE_0: Se supone cero\n\n\n\n\n\\begin{aligned}\nICER &=  \\frac{C_1 - 0}{E_1 - 0} \\\\\n&= \\frac{C_1}{E_1 }\n\\end{aligned}"
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#uso-de-cea-en-dos-situaciones",
@@ -2335,7 +2335,7 @@
     "href": "lectures/ESP_lec_6.ICERs.html#problema-de-decisión-no-competitiva-de-compra",
     "title": "Análisis coste-eficacia incremental",
     "section": "Problema de decisión no competitiva (de compra)",
-    "text": "Problema de decisión no competitiva (de compra)\n**¿Cómo podemos medir la prioridad relativa de varios programas sanitarios que compiten por unos recursos limitados? que compiten por unos recursos limitados?\n\n\nPrograma de enfermedades cardiovasculares\nPrograma de maternidad segura\nIniciativa de prevención del VIH\nVacunación infantil\n\nDetección de la depresión"
+    "text": "Problema de decisión no competitiva (de compra)\n¿Cómo podemos medir la prioridad relativa de varios programas sanitarios que compiten por unos recursos limitados? que compiten por unos recursos limitados?\n\n\nPrograma de enfermedades cardiovasculares\nPrograma de maternidad segura\nIniciativa de prevención del VIH\nVacunación infantil\nDetección de la depresión"
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#supuestos",
@@ -2384,7 +2384,7 @@
     "href": "lectures/ESP_lec_6.ICERs.html#el-problema-de-las-compras-compulsivas-4",
     "title": "Análisis coste-eficacia incremental",
     "section": "El problema de las compras compulsivas",
-    "text": "El problema de las compras compulsivas\n\n\n\n\nPresupuesto inicial: $80\nAhorro presupuestario: $20.\nPresupuesto total: \\80 dólares + 20 dólares: #a8d4a7;“} = $100\n\n\n\n\n\n\n\n\nProgram\nCost\nQALYs\nStatus\n\n\n\n\nA\n27\n30\n\n\n\nB\n30\n20\n\n\n\nC\n56\n70\n\n\n\nD\n20\n40\n\n\n\nE\n30\n50\n\n\n\nF\n50\n75\n\n\n\nG\n40\n-30\nRuled Out\n\n\nH\n-20\n20\nAdopted"
+    "text": "El problema de las compras compulsivas\n\n\n\n\nPresupuesto inicial: $80\nAhorro presupuestario: $20.\nPresupuesto total: $80 + $20 = $100\n\n\n\n\n\n\n\n\nProgram\nCost\nQALYs\nStatus\n\n\n\n\nA\n27\n30\n\n\n\nB\n30\n20\n\n\n\nC\n56\n70\n\n\n\nD\n20\n40\n\n\n\nE\n30\n50\n\n\n\nF\n50\n75\n\n\n\nG\n40\n-30\nRuled Out\n\n\nH\n-20\n20\nAdopted"
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#el-problema-de-las-compras-compulsivas-5",
@@ -2475,7 +2475,7 @@
     "href": "lectures/ESP_lec_6.ICERs.html#cuál-es-la-diferencia",
     "title": "Análisis coste-eficacia incremental",
     "section": "¿Cuál es la diferencia?",
-    "text": "¿Cuál es la diferencia?\n\n\nJuerga de compras\n\nPuede seleccionar varios programas\nDiferentes costes y efectos asociados a cada uno\nRequiere el cálculo de una Relación coste-eficacia media.\n\n\nElección competidora\n\nLos programas se excluyen mutuamente.\nDiferentes costes y efectos asociados a cada uno.\n\nRequiere el cálculo de una Relación Coste-Efectividad Incremental (RCEI). (ICER)"
+    "text": "¿Cuál es la diferencia?\n\n\nJuerga de compras\n\nPuede seleccionar varios programas\nDiferentes costes y efectos asociados a cada uno\nRequiere el cálculo de una Relación coste-eficacia media.\n\n\nElección competidora\n\nLos programas se excluyen mutuamente.\nDiferentes costes y efectos asociados a cada uno.\nRequiere el cálculo de una Relación Coste-Efectividad Incremental (RCEI). (ICER)"
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#calcular-costes-y-efectos-incrementales",
@@ -2580,7 +2580,7 @@
     "href": "lectures/ESP_lec_6.ICERs.html#frontera-de-eficiencia",
     "title": "Análisis coste-eficacia incremental",
     "section": "Frontera de Eficiencia",
-    "text": "Frontera de Eficiencia\n::: no incremental - La frontera de eficiencia es el conjunto de estrategias no dominadas. :::"
+    "text": "Frontera de Eficiencia\n\n\nLa frontera de eficiencia es el conjunto de estrategias no dominadas."
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#icers",
@@ -2615,7 +2615,7 @@
     "href": "lectures/ESP_lec_6.ICERs.html#cea-incremental-3",
     "title": "Análisis coste-eficacia incremental",
     "section": "CEA incremental",
-    "text": "CEA incremental\n\n\n\nCalcular costes y efectos para cada estrategia.\n\n2. Ordenar la tabla por costes en orden ascendente.1\n\n\n\n\n\n\n\n\n\n\nStrategy\nCost\nQALYs\n\n\n\n\nA\n16,454\n17.332\n\n\nB\n21,457\n17.409\n\n\nD\n24,504\n17.491\n\n\nC\n33,443\n17.580\n\n\nE\n43,332\n17.491\n\n\n\n\n\n\n\nMenos costoso primero, más costoso último"
+    "text": "CEA incremental\n\n\n\nCalcular costes y efectos para cada estrategia.\n\n2. Ordenar la tabla por costes en orden ascendente.1\n\n\n\n\n\n\n\n\n\nStrategy\nCost\nQALYs\n\n\n\n\nA\n16,454\n17.332\n\n\nB\n21,457\n17.409\n\n\nD\n24,504\n17.491\n\n\nC\n33,443\n17.580\n\n\nE\n43,332\n17.491\n\n\n\n\n\n\n\nMenos costoso primero, más costoso último"
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#cea-incremental-4",
@@ -2671,21 +2671,21 @@
     "href": "lectures/ESP_lec_6.ICERs.html#incremental-cea-2",
     "title": "Análisis coste-eficacia incremental",
     "section": "Incremental CEA",
-    "text": "Incremental CEA\n\n\n\nCalcular costes y efectos para cada estrategia.\nOrdena la tabla por costes en orden ascendente1.\n\nCalcular la ICER en función de la diferencia de costes y efectos.\n\n\n\n\n4. Determinar estrategias dominadas (ICER&lt;0)\n\n\n\n\n\n\n\nStrategy\nCost\ndCost\nQALYs\ndQALYs\nICER\n\n\n\n\n\nA\n16,454\n\n17.332\n\n\n\n\n\nB\n21,457\n5,003\n17.409\n0.077\n64,895\n\n\n\nD\n24,504\n3,048\n17.491\n0.082\n36,989\n\n\n\nC\n33,443\n8,939\n17.580\n0.088\n101,292\n\n\n\nE\n43,332\n9,888\n17.491\n-0.088\n-112,048\nDominated\n\n\n\n\n\n\n\nLa menos costosa primero, la más costosa después"
+    "text": "Incremental CEA\n\n\n\nCalcular costes y efectos para cada estrategia.\nOrdena la tabla por costes en orden ascendente1.\n\nCalcular la ICER en función de la diferencia de costes y efectos.\n\n\n\n4. Determinar estrategias dominadas (ICER&lt;0)\n\n\n\n\n\n\n\nStrategy\nCost\ndCost\nQALYs\ndQALYs\nICER\n\n\n\n\n\nA\n16,454\n\n17.332\n\n\n\n\n\nB\n21,457\n5,003\n17.409\n0.077\n64,895\n\n\n\nD\n24,504\n3,048\n17.491\n0.082\n36,989\n\n\n\nC\n33,443\n8,939\n17.580\n0.088\n101,292\n\n\n\nE\n43,332\n9,888\n17.491\n-0.088\n-112,048\nDominated\n\n\n\n\n\n\n\nLa menos costosa primero, la más costosa después"
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#incremental-cea-3",
     "href": "lectures/ESP_lec_6.ICERs.html#incremental-cea-3",
     "title": "Análisis coste-eficacia incremental",
     "section": "Incremental CEA",
-    "text": "Incremental CEA\n\n\n\nCalcular costes y efectos para cada estrategia.\nOrdena la tabla por costes en orden ascendente1.\n\nCalcular la ICER en función de la diferencia de costes y efectos.\n\n\n\n\n\nDeterminar estrategias dominadas (ICER&lt;0).\n\n5. 5. Volver a calcular las RCEI tras eliminar las estrategias dominadas. dominadas.\n\n\n\n\n\n\n\nStrategy\nCost\ndCost\nQALYs\ndQALYs\nICER\n\n\n\n\n\nA\n16,454\n\n17.332\n\n\n\n\n\nB\n21,457\n5,003\n17.409\n0.077\n64,895\n\n\n\nD\n24,504\n3,048\n17.491\n0.082\n36,989\n\n\n\nC\n33,443\n8,939\n17.580\n0.088\n101,292\n\n\n\nE\n43,332\n\n17.491\n\n-112,048\nDominated\n\n\n\n\n\n\n\nLa menos costosa primero, la más costosa después"
+    "text": "Incremental CEA\n\n\n\nCalcular costes y efectos para cada estrategia.\nOrdena la tabla por costes en orden ascendente1.\n\nCalcular la ICER en función de la diferencia de costes y efectos.\n\n\n\n\nDeterminar estrategias dominadas (ICER&lt;0).\n\n5. 5. Volver a calcular las RCEI tras eliminar las estrategias dominadas. dominadas.\n\n\n\n\n\n\n\nStrategy\nCost\ndCost\nQALYs\ndQALYs\nICER\n\n\n\n\n\nA\n16,454\n\n17.332\n\n\n\n\n\nB\n21,457\n5,003\n17.409\n0.077\n64,895\n\n\n\nD\n24,504\n3,048\n17.491\n0.082\n36,989\n\n\n\nC\n33,443\n8,939\n17.580\n0.088\n101,292\n\n\n\nE\n43,332\n\n17.491\n\n-112,048\nDominated\n\n\n\n\n\n\n\nLa menos costosa primero, la más costosa después"
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#incremental-cea-4",
     "href": "lectures/ESP_lec_6.ICERs.html#incremental-cea-4",
     "title": "Análisis coste-eficacia incremental",
     "section": "Incremental CEA",
-    "text": "Incremental CEA\n\n\n\nCalcular costes y efectos para cada estrategia.\nOrdena la tabla por costes en orden ascendente1.\n\nCalcular la ICER en función de la diferencia de costes y efectos.\n\n\n\n\n\nDeterminar las estrategias dominadas (ICER&lt;0).\nVuelva a calcular los ICER tras eliminar las estrategias dominadas.\n\n\n\n\n\n\n\n\nStrategy\nCost\ndCost\nQALYs\ndQALYs\nICER\n\n\n\n\n\nA\n16,454\n\n17.332\n\n\n\n\n\nB\n21,457\n5,003\n17.409\n0.077\n64,895\n\n\n\nD\n24,504\n3,048\n17.491\n0.082\n36,989\n\n\n\nC\n33,443\n8,939\n17.580\n0.088\n101,292\n\n\n\nE\n43,332\n\n17.491\n\n\n\n\n\n\n\n\n\n\nLa menos costosa primero, la más costosa después"
+    "text": "Incremental CEA\n\n\n\nCalcular costes y efectos para cada estrategia.\nOrdena la tabla por costes en orden ascendente1.\n\nCalcular la ICER en función de la diferencia de costes y efectos.\n\n\n\n\nDeterminar las estrategias dominadas (ICER&lt;0).\nVuelva a calcular los ICER tras eliminar las estrategias dominadas.\n\n\n\n\n\n\n\n\nStrategy\nCost\ndCost\nQALYs\ndQALYs\nICER\n\n\n\n\n\nA\n16,454\n\n17.332\n\n\n\n\n\nB\n21,457\n5,003\n17.409\n0.077\n64,895\n\n\n\nD\n24,504\n3,048\n17.491\n0.082\n36,989\n\n\n\nC\n33,443\n8,939\n17.580\n0.088\n101,292\n\n\n\nE\n43,332\n\n17.491\n\n\n\n\n\n\n\n\n\n\nLa menos costosa primero, la más costosa después"
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#determinar-estrategias-dominadas-2",
@@ -2713,14 +2713,14 @@
     "href": "lectures/ESP_lec_6.ICERs.html#cea-incremental-5",
     "title": "Análisis coste-eficacia incremental",
     "section": "CEA incremental",
-    "text": "CEA incremental\n\n\n\nCalcular costes y efectos para cada estrategia.\nOrdena la tabla por costes en orden ascendente1.\n\nCalcular la ICER en función de la diferencia de costes y efectos.\n\n\n\n\n\nDeterminar las estrategias dominadas (ICER&lt;0).\n\nVolver a calcular los ICER tras eliminar las estrategias dominadas.\n\n\n6. Determinar las estrategias descartadas por dominancia extendida.\n\n\n\n\n\n\n\nStrategy\nCost\ndCost\nQALYs\ndQALYs\nICER\n\n\n\n\n\nA\n16,454\n\n17.332\n\n\n\n\n\nB\n21,457\n5,003\n17.409\n0.077\n64,895\nDominated (Extended)\n\n\nD\n24,504\n3,048\n17.491\n0.082\n36,989\n\n\n\nC\n33,443\n8,939\n17.580\n0.088\n101,292\n\n\n\nE\n43,332\n\n17.491\n\n\nDominated\n\n\n\n\n\n\n\nLa menos costosa primero, la más costosa al final"
+    "text": "CEA incremental\n\n\n\nCalcular costes y efectos para cada estrategia.\nOrdena la tabla por costes en orden ascendente1.\n\nCalcular la ICER en función de la diferencia de costes y efectos.\n\n\n\n\nDeterminar las estrategias dominadas (ICER&lt;0).\n\nVolver a calcular los ICER tras eliminar las estrategias dominadas.\n\n\n6. Determinar las estrategias descartadas por dominancia extendida.\n\n\n\n\n\n\n\nStrategy\nCost\ndCost\nQALYs\ndQALYs\nICER\n\n\n\n\n\nA\n16,454\n\n17.332\n\n\n\n\n\nB\n21,457\n5,003\n17.409\n0.077\n64,895\nDominated (Extended)\n\n\nD\n24,504\n3,048\n17.491\n0.082\n36,989\n\n\n\nC\n33,443\n8,939\n17.580\n0.088\n101,292\n\n\n\nE\n43,332\n\n17.491\n\n\nDominated\n\n\n\n\n\n\n\nLa menos costosa primero, la más costosa al final"
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#incremental-cea-5",
     "href": "lectures/ESP_lec_6.ICERs.html#incremental-cea-5",
     "title": "Análisis coste-eficacia incremental",
     "section": "Incremental CEA",
-    "text": "Incremental CEA\n\n\n7. Vuelva a calcular los ICER después de descartar todas las estrategias dominadas. dominadas.\n\n\n\n\n\n\n\n\n\n\nStrategy\nCost\ndCost\nQALYs\ndQALYs\nICER\n\n\n\n\n\nA\n16,454\n\n17.332\n\n\n\n\n\nD\n24,504\n8,050\n17.491\n0.159\n50,478\n\n\n\nC\n33,443\n8,939\n17.580\n0.088\n101,292\n\n\n\nE\n43,332\n\n17.491\n\n\nDominated\n\n\nB\n21,457\n\n17.409\n\n\nDominated (Extended)\n\n\n\n\n\n\n\n\n\nLa Estrategia D es más cara que la Estrategia B, pero la Estrategia D está gana salud DE FORMA MÁS EFICAZ que la Estrategia B"
+    "text": "Incremental CEA\n\n\n7. Vuelva a calcular los ICER después de descartar todas las estrategias dominadas. dominadas.\n\n\n\n\n\n\n\n\n\nStrategy\nCost\ndCost\nQALYs\ndQALYs\nICER\n\n\n\n\n\nA\n16,454\n\n17.332\n\n\n\n\n\nD\n24,504\n8,050\n17.491\n0.159\n50,478\n\n\n\nC\n33,443\n8,939\n17.580\n0.088\n101,292\n\n\n\nE\n43,332\n\n17.491\n\n\nDominated\n\n\nB\n21,457\n\n17.409\n\n\nDominated (Extended)\n\n\n\n\n\n\n\n\n\nLa Estrategia D es más cara que la Estrategia B, pero la Estrategia D está gana salud DE FORMA MÁS EFICAZ que la Estrategia B"
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#in-class-practice-dalys",
@@ -2867,7 +2867,7 @@
     "href": "lectures/ESP_lec_6.ICERs.html#cea-thresholds-3",
     "title": "Análisis coste-eficacia incremental",
     "section": "CEA Thresholds",
-    "text": "CEA Thresholds\n\nSe han estimado los umbrales de diferentes maneras: - “del lado de la oferta” (Reino Unido y Europa) - “del lado de la demanda” (EE.UU.) - consumo per cápita (EE.UU./LMICs)\nNotas (1) Hay diferentes formas de determinar un umbral rentable & se hace de forma un poco diferente en todo el mundo, de lo que hablamos en un artículo reciente en el que colaboré con colegas del Reino Unido, en el que se analiza la evolución de estos umbrales.\n\nAlgunos países, como el Reino Unido, utilizan lo que se ha dado en llamar “umbral de la oferta”. “umbral de la oferta”, que representa la noción de coste de oportunidad. coste de oportunidad: si la salud generada por una intervención intervención del NICE, por ejemplo, es mayor que la salud si el dinero se hubiera gastado en otra cosa. otra cosa, con un presupuesto fijo.\nOtra forma en que países como EE.UU. han definido los umbrales de EC es lo que se denomina una perspectiva del “lado de la demanda”, o la la “disposición a pagar” de la sociedad por las mejoras sanitarias. Sigue habiendo un coste de oportunidad pero desde la perspectiva de los bienes y servicios que estaríamos y servicios a los que estaríamos dispuestos a renunciar por esos beneficios salud.\nAsimismo, otra forma en que los países han considerado el umbral en términos de consumo per cápita, de acuerdo con la idea de que de que las personas que viven en países con mayores ingresos pueden y están dispuestas a pagar más por la salud. pagar más por la salud, lo que tiene un sentido intuitivo. :::"
+    "text": "CEA Thresholds\n\nSe han estimado los umbrales de diferentes maneras: - “del lado de la oferta” (Reino Unido y Europa) - “del lado de la demanda” (EE.UU.) - consumo per cápita (EE.UU./LMICs)\n\n\nHay diferentes formas de determinar un umbral rentable & se hace de forma un poco diferente en todo el mundo, de lo que hablamos en un artículo reciente en el que colaboré con colegas del Reino Unido, en el que se analiza la evolución de estos umbrales.\nAlgunos países, como el Reino Unido, utilizan lo que se ha dado en llamar “umbral de la oferta”. “umbral de la oferta”, que representa la noción de coste de oportunidad. coste de oportunidad: si la salud generada por una intervención intervención del NICE, por ejemplo, es mayor que la salud si el dinero se hubiera gastado en otra cosa. otra cosa, con un presupuesto fijo.\nOtra forma en que países como EE.UU. han definido los umbrales de EC es lo que se denomina una perspectiva del “lado de la demanda”, o la la “disposición a pagar” de la sociedad por las mejoras sanitarias. Sigue habiendo un coste de oportunidad pero desde la perspectiva de los bienes y servicios que estaríamos y servicios a los que estaríamos dispuestos a renunciar por esos beneficios salud.\nAsimismo, otra forma en que los países han considerado el umbral en términos de consumo per cápita, de acuerdo con la idea de que de que las personas que viven en países con mayores ingresos pueden y están dispuestas a pagar más por la salud. pagar más por la salud, lo que tiene un sentido intuitivo."
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#coste-de-oportunidad-del-lado-de-la-oferta",
@@ -2909,7 +2909,7 @@
     "href": "lectures/ESP_lec_6.ICERs.html#cea-thresholds-in-lmics-.smaller-umbrales-de-cea-en-pibm",
     "title": "Análisis coste-eficacia incremental",
     "section": "CEA Thresholds in LMICs {.smaller} (Umbrales de CEA en PIBM)",
-    "text": "CEA Thresholds in LMICs {.smaller} (Umbrales de CEA en PIBM)\n\n\n\nLas anteriores directrices de la OMS recomendaban a los países utilizar las siguientes pautas: Una intervención es coste-efectiva si el coste/ AVAD evitado es inferior a 1-3 veces el PIB per cápita del país\nAlgunos han argumentado que las directrices de la OMS pueden ser demasiado altas y dar lugar a la adopción de intervenciones que desplacen a servicios que proporcionan mayores beneficios sanitarios.\nSugieren que 0,5 PIBpc es un valor de referencia más apropiado para los países de renta baja y 0,71 PIBpc para los de renta media. bajos y 0,71 PIBpc para los países de ingresos medios (véase Woods et al 2016)\n\n\n\n\nLos analistas también han argumentado que el umbral debería ser más bajo para estos países basándose en una perspectiva de presupuesto sanitario\nEn Perú, por ejemplo, un estudio halló que la adición de un tratamiento del cáncer de mama de mama podría ser rentable según el criterio general de 1 a 3 veces el PIB per cápita. per cápita; sin embargo, el coste de añadir el nuevo fármaco superaría el presupuesto total de Perú para el cáncer de mama. superaría todo el presupuesto de Perú para el tratamiento del cáncer de mama."
+    "text": "CEA Thresholds in LMICs {.smaller} (Umbrales de CEA en PIBM)\n\n\n\n\nLas anteriores directrices de la OMS recomendaban a los países utilizar las siguientes pautas: Una intervención es coste-efectiva si el coste/ AVAD evitado es inferior a 1-3 veces el PIB per cápita del país\nAlgunos han argumentado que las directrices de la OMS pueden ser demasiado altas y dar lugar a la adopción de intervenciones que desplacen a servicios que proporcionan mayores beneficios sanitarios.\nSugieren que 0,5 PIBpc es un valor de referencia más apropiado para los países de renta baja y 0,71 PIBpc para los de renta media. bajos y 0,71 PIBpc para los países de ingresos medios (véase Woods et al 2016)\n\n\n\n\n\nLos analistas también han argumentado que el umbral debería ser más bajo para estos países basándose en una perspectiva de presupuesto sanitario\nEn Perú, por ejemplo, un estudio halló que la adición de un tratamiento del cáncer de mama de mama podría ser rentable según el criterio general de 1 a 3 veces el PIB per cápita. per cápita; sin embargo, el coste de añadir el nuevo fármaco superaría el presupuesto total de Perú para el cáncer de mama. superaría todo el presupuesto de Perú para el tratamiento del cáncer de mama."
   },
   {
     "objectID": "lectures/ESP_lec_6.ICERs.html#umbrales-de-ace-en-pibm",
@@ -2930,7 +2930,7 @@
     "href": "lectures/ESP_lec_6.ICERs.html#vih-ejemplo-anterior-1",
     "title": "Análisis coste-eficacia incremental",
     "section": "VIH Ejemplo anterior",
-    "text": "VIH Ejemplo anterior\n\n\nSi nuestro umbral de CE fuera 2 veces el PIB (PIB = $2.500), ¿qué opción elegiríamos elegiríamos como responsables de la toma de decisiones?\nSi nuestro umbral de EC fuera 1x PIB (PIB = $2.500), ¿qué opción elegiríamos como responsables de la toma de decisiones?"
+    "text": "VIH Ejemplo anterior\n\n\nSi nuestro umbral de CE fuera 2 veces el PIB (PIB = $2.500), ¿qué opción elegiríamos elegiríamos como responsables de la toma de decisiones?\nSi nuestro umbral de EC fuera 1x PIB (PIB = $2.500), ¿qué opción elegiríamos como responsables de la toma de decisiones?\n\n\n\n\n\nVolver al sitio web"
   },
   {
     "objectID": "lectures/ESP_lec_sensitivity.html#objetivos-de-aprendizaje",
@@ -5289,14 +5289,14 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#cuál-es-el-valor-esperado-de-ir-a-la-playa",
     "title": "Árboles de decisión y probabilidades",
     "section": "¿Cuál es el valor esperado de ir a la playa?",
-    "text": "¿Cuál es el valor esperado de ir a la playa?\n\n\n\\color{verde}{0,82} = \\color{rojo}{0,3} * \\color{blue}{0.4}}_{\\text{Rain}} + \\underbrace {color{rojo} {0,7} * \\color{azul} {1,0} {{texto{sin lluvia}}\n\nProbabilidades en rojo.\nPagos en azul.\nValor esperado en verde."
+    "text": "¿Cuál es el valor esperado de ir a la playa?\n\n\n\\color{green}{0.82} = \\underbrace{\\color{red}{0.3} * \\color{blue}{0.4}}_{\\text{Lluvia}} + \\underbrace{\\color{red}{0.7} * \\color{blue}{1.0}}_{\\text{Sin lluvia}}\n\nProbabilidades en rojo.\nPagos en azul.\nValor esperado en verde."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#cuál-es-el-valor-esperado-de-quedarse-en-casa",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#cuál-es-el-valor-esperado-de-quedarse-en-casa",
     "title": "Árboles de decisión y probabilidades",
     "section": "¿Cuál es el valor esperado de quedarse en casa?",
-    "text": "¿Cuál es el valor esperado de quedarse en casa?\n\n\n0,74 = 0,3. }_{} + …rojo, 0,7… …sin lluvia…\n\nProbabilidades en rojo.\nPagos en azul.\nValor esperado en verde."
+    "text": "¿Cuál es el valor esperado de quedarse en casa?\n\n\n\\color{green}{0.74} = \\underbrace{\\color{red}{0.3} \\cdot \\color{blue}{0.6}}_{\\text{Lluvia}} + \\underbrace{\\color{red}{0.7} \\cdot \\color{blue}{0.8}}_{\\text{Sin Lluvia}}\n\nProbabilidades en rojo.\nPagos en azul.\nValor esperado en verde."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#valores-esperados",
@@ -5331,14 +5331,14 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p-son-iguales-las-dos-opciones-2",
     "title": "Árboles de decisión y probabilidades",
     "section": "¿A qué probabilidad p son iguales las dos opciones?",
-    "text": "¿A qué probabilidad p son iguales las dos opciones?\n{underbrace{0.3 * 0.4 + 0.7 * 1.0}_{\\text{Playa}} = \\underbrace{0.3 * 0.6 + 0.7 * 0.8}_{\\text{Casa}}"
+    "text": "¿A qué probabilidad p son iguales las dos opciones?\n\\underbrace{0.3 * 0.4 + 0.7 * 1.0}_{\\text{Playa}} = \\underbrace{0.3 * 0.6 + 0.7 * 0.8}_{\\text{Casa}}"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p-son-iguales-las-dos-opciones-3",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p-son-iguales-las-dos-opciones-3",
     "title": "Árboles de decisión y probabilidades",
     "section": "¿A qué probabilidad p son iguales las dos opciones?",
-    "text": "¿A qué probabilidad p son iguales las dos opciones?\nSustituya la probabilidad de lluvia por P y 1-P y resuelva para “P”\n\np * 0.4 + (1-p) * 1.0 = p * 0.6 + (1-p) * 0.8\n\n\\underbrace{0,3 * 0,4 + 0,7 * 1,0}_{texto{Playa}} = \\underbrace{0,3 * 0,6 + 0,7 * 0,8}_{texto{Casa}}"
+    "text": "¿A qué probabilidad p son iguales las dos opciones?\nSustituya la probabilidad de lluvia por P y 1-P y resuelva para “P”\n\np * 0.4 + (1-p) * 1.0 = p * 0.6 + (1-p) * 0.8\n\n\\underbrace{0.3 * 0.4 + 0.7 * 1,0}_{\\text{Playa}} = \\underbrace{0.3 * 0.6 + 0.7 * 0.8}_{\\text{Casa}}"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p-son-iguales-las-dos-opciones-4",
@@ -7501,7 +7501,7 @@
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-3.-cáncer-de-colon---estimación-de-probabilidades-1",
     "title": "Introducción al análisis de decisiones",
     "section": "Ej 3. Cáncer de colon - Estimación de probabilidades",
-    "text": "Ej 3. Cáncer de colon - Estimación de probabilidades\n\n\nPredecir el “beneficio” del tamizaje\n\nTodas las probabilidades anteriores\nProbabilidad de detección precoz\nProbabilidad de complicaciones derivadas de las pruebas\nProbabilidad de falso positivo\nProbabilidad de falso negativo\nProbabilidad de que prueba positiva = cáncer\nProbabilidad de que prueba negativa = sin cáncer"
+    "text": "Ej 3. Cáncer de colon - Estimación de probabilidades\n\n\n\nPredecir el “beneficio” del tamizaje\n\nTodas las probabilidades anteriores\nProbabilidad de detección precoz\nProbabilidad de complicaciones derivadas de las pruebas\nProbabilidad de falso positivo\nProbabilidad de falso negativo\nProbabilidad de que prueba positiva = cáncer\nProbabilidad de que prueba negativa = sin cáncer"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#la-estimación-de-probabilidades-es-fundamental-para-la-toma-de-decisiones",
@@ -7511,11 +7511,11 @@
     "text": "La estimación de probabilidades es fundamental para la toma de decisiones\n\n\nNo se pueden obtener fácilmente las probabilidades necesarias\nPeríodos de tiempo / duraciones variables\nMétodos para estimar probabilidades"
   },
   {
-    "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#commonality-of-cases",
-    "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#commonality-of-cases",
+    "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#casos-comunes",
+    "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#casos-comunes",
     "title": "Introducción al análisis de decisiones",
-    "section": "Commonality of cases",
-    "text": "Commonality of cases\n\n\nTradeoffs inevitables\nDiferentes perspectivas pueden llevar a conclusiones diferentes\nMúltiples objetivos contrapuestos\nComplejidad\nIncertidumbre"
+    "section": "Casos comunes",
+    "text": "Casos comunes\n\n\nTradeoffs inevitables\nDiferentes perspectivas pueden llevar a conclusiones diferentes\nMúltiples objetivos contrapuestos\nComplejidad\nIncertidumbre"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#análisis-de-decisiones",
