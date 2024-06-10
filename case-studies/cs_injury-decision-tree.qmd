@@ -46,3 +46,4 @@ In Amua, on the menu at the top, go to **Model** -\> **New** -\>  **Decision Tr
 
 -   Clear <img src="../amua-images/clear_24.png" alt="Custom Icon" width="20" height="20"/>
 
+- Change <img src="../amua-images/changeTypeTrans_24.png" alt="Custom Icon" width="20" height="20"/> 

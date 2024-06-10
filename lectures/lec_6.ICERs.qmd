@@ -286,6 +286,7 @@ $C_0$
 
 $$\frac{\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad}{\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad}$$
 
+
 ::: r-hstack
 ::: {data-id="benefitA" style="color: #3FA090;"}
 $E_0$

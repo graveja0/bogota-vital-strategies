@@ -401,7 +401,8 @@ width="50%"}
 
 ::: columns
 ::: {.column width="50%"}
-$\color{verde}{0,82} = \color{rojo}{0,3} * \color{blue}{0.4}}_{\text{Rain}} + \underbrace {color{rojo} {0,7} * \color{azul} {1,0} {{texto{sin lluvia}}$
+$\color{green}{0.82} = \underbrace{\color{red}{0.3} * \color{blue}{0.4}}_{\text{Lluvia}} + \underbrace{\color{red}{0.7} * \color{blue}{1.0}}_{\text{Sin lluvia}}$
+
 
 -   Probabilidades en [rojo]{style="color: rojo;"}.
 -   Pagos en [azul]{style="color: blue;"}.
@@ -417,8 +418,8 @@ $\color{verde}{0,82} = \color{rojo}{0,3} * \color{blue}{0.4}}_{\text{Rain}} + \u
 
 ::: columns
 ::: {.column width="50%"}
-0,74 = 0,3. \cdot \color{blue}{0.6}}\_{\text{Rain}} + ...rojo, 0,7...
-...sin lluvia...
+$\color{green}{0.74} = \underbrace{\color{red}{0.3} \cdot \color{blue}{0.6}}_{\text{Lluvia}} + \underbrace{\color{red}{0.7} \cdot \color{blue}{0.8}}_{\text{Sin Lluvia}}$
+
 
 -   Probabilidades en [rojo]{style="color: rojo;"}.
 -   Pagos en [azul]{style="color: blue;"}.
@@ -495,11 +496,11 @@ estaríamos indiferentes entre ir a la playa o quedarnos en casa...
 
 **Playa:** [0.82]{style="color:green;"} = 0.3 x 0.4 + 0.7 x 1.0
 
-**Casa:** [0.74]{style="color:verde;"} = 0.3 x 0.6 + 0.7 x 0.8
+**Casa:** [0.74]{style="color:green;"} = 0.3 x 0.6 + 0.7 x 0.8
 
 ## ¿A qué probabilidad $p$ son iguales las dos opciones? {auto-animate="true"}
 
-${underbrace{0.3 * 0.4 + 0.7 * 1.0}_{\text{Playa}} = \underbrace{0.3 * 0.6 + 0.7 * 0.8}_{\text{Casa}}$
+$\underbrace{0.3 * 0.4 + 0.7 * 1.0}_{\text{Playa}} = \underbrace{0.3 * 0.6 + 0.7 * 0.8}_{\text{Casa}}$
 
 ## ¿A qué probabilidad $p$ son iguales las dos opciones? {auto-animate="true"}
 
@@ -512,7 +513,7 @@ p \* 0.4 + (1-p) \* 1.0 = p \* 0.6 + (1-p) \* 0.8
 
 <br>
 
-$\underbrace{0,3 * 0,4 + 0,7 * 1,0}_{texto{Playa}} = \underbrace{0,3 * 0,6 + 0,7 * 0,8}_{texto{Casa}}$
+$\underbrace{0.3 * 0.4 + 0.7 * 1,0}_{\text{Playa}} = \underbrace{0.3 * 0.6 + 0.7 * 0.8}_{\text{Casa}}$
 
 ## ¿A qué probabilidad $p$ son iguales las dos opciones? {auto-animate="true"}
 

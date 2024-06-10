@@ -251,8 +251,8 @@ $$ \frac{\text{(Costo Intervención A - Costo Intervención B)}}{\text{(Benefici
 :::
 
 -   El VALOR relativo de una intervención en comparación con su
-    alternativa se expresa en forma de RATIO costo-efectividad (¡el tema
-    central de la próxima sesión)
+    alternativa se expresa en forma de RELACION costo-efectividad (¡el
+    tema central de la próxima sesión)
 
 ::: notes
 (1) El análisis costo-efectividad es pertinente cuando las alternativas
@@ -261,15 +261,15 @@ $$ \frac{\text{(Costo Intervención A - Costo Intervención B)}}{\text{(Benefici
     de quimioterapia
 
 (2) Un RESULTADO CLAVE en los análisis costo-efectividad es lo que se
-    denomina RCEI \[o ratio costo-efectividad incremental\], que nos da
-    el valor relativo de una intervención frente a una alternativa.
+    denomina RCEI \[o relación costo-efectividad incremental\], que nos
+    da el valor relativo de una intervención frente a una alternativa.
 
 (3) En otras palabras, EL PRECIO POR UNIDAD DE BENEFICIO de una
     intervención sobre la otra
 
 (4) En las próximas semanas impartiremos 2 clases completas sobre los
-    ICER y cómo interpretar estos ratios entre intervenciones.
-    interpretar estos ratios entre intervenciones En lo que nos
+    ICER y cómo interpretar estos relaciónes entre intervenciones.
+    interpretar estos relaciónes entre intervenciones En lo que nos
     centraremos HOY en los componentes que forman el numerador (es
     decir, los COSTOS) y el denominador (es decir, los BENEFICIOS). el
     denominador (es decir, los BENEFICIOS)

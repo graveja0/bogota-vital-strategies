@@ -12,7 +12,7 @@ self-contained: true
 library(downloadthis)
 ## Link in Github repo
 download_link(
-  link = "https://graveja0.github.io/v-brch-nigeria-2023/case-studies/cs1_PE_v1_BLANK.xlsx",
+  link = "https://graveja0.github.io/bogota-vital-strategies/case-studies/cs1_PE_v1_BLANK.xlsx",
   button_label = "Download Decision Tree Excel File",
   button_type = "primary",
   has_icon = TRUE,
@@ -54,8 +54,8 @@ We will consider two possible strategies to treat these women:
 
 | Strategy                     | Costs                                 | Health Effects                          |
 |--------------------|--------------------------|---------------------------|
-| 1\. Anticoagulant therapy    | Cost of anticoagulant therapy = 1,000 | Probability of recurrent PE = 0.01      |
-|                              |                                       | Probability of fatal hemorrhage = 0.008 |
+| 1\. Anticoagulant therapy    | Cost of anticoagulant therapy = 1,000 | Probability of recurrent PE = 0.05     |
+|                              |                                       | Probability of fatal hemorrhage = 0.04 |
 | 2\. No Anticoagulant therapy |                                       | Probability of recurrent PE = 0.25      |
 
 # Excel-for-CEA: Assigning Variable Names

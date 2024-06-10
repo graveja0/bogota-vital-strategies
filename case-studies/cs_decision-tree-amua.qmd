@@ -18,12 +18,14 @@ This case study is designed to get you familiar with constructing a decision tre
 2.  Estimate survival and cost outcomes from the decision tree model in the Amua software.
 
 ::: {.callout-note appearance="simple"}
-Please note that this case study is based on the Amua tuturial [here](https://s3.amazonaws.com/amua-tutorials/Amua+-+Tutorial+-+Decision+Tree+20190117.pdf). We have modified the tutorial to make it more relevant to the workshop.
+Please note that this case study is based on the Amua tutorial [here](https://s3.amazonaws.com/amua-tutorials/Amua+-+Tutorial+-+Decision+Tree+20190117.pdf). We have modified the tutorial to make it more relevant to the workshop.
 :::
 
 # Overview of Decision Problem
 
-In this example problem, you must decide whether or not to implement a screening program for a certain disease (Dx). Assume that persons testing positive will be treated, which improves their life expectancy. For disease-positive individuals who are not screened, assume that treatment will be delayed until they become symptomatic and that they have a lower life expectancy than those who receive immediate treatment. For disease-negative individuals who are inappropriately treated, assume that there is a decrease in their life expectancy due to drug toxicity. The screening test is imperfect with a sensitivity of 0.97 and a specificity of 0.9988. The prevalence of the disease in this population is 0.05. The objective is to maximize life expectancy. As alternative strategies, you could not screen anyone, or you could simply treat everyone without screening first.
+In this example problem, you must decide whether or not to implement a screening program for a certain disease (Dx). Assume that persons testing positive will be treated, which improves their life expectancy. For disease-positive individuals who are not screened, assume that treatment will be delayed until they become symptomatic and that they have a lower life expectancy than those who receive immediate treatment. 
+
+For disease-negative individuals who are inappropriately treated, assume that there is a decrease in their life expectancy due to drug toxicity. The screening test is imperfect with a sensitivity of 0.97 and a specificity of 0.9988. The prevalence of the disease in this population is 0.05. The objective is to maximize life expectancy. As alternative strategies, you could not screen anyone, or you could simply treat everyone without screening first.
 
 # Amua
 
@@ -75,7 +77,7 @@ New branches are called Name by default. To give branches more informative label
 
 1.  Double-click on the No Screen chance node <i class="fa-solid fa-circle fa-xs" style="color: #00ff00;"></i> to add 2 branches.\
 2.  Click the Optimize Current Display (OCD) button on the toolbar to arrange the branches and ensure even spacing.
-3.  Right-click on each of the child nodes <i class="fa-solid fa-circle fa-xs" style="color: #00ff00;"></i> and select <i class="fa-solid fa-caret-left" style="color: #0000ff;"></i> **Change to Terminal Node**. You may also change node types on the toolbar or add a new terminal node <i class="fa-solid fa-caret-left" style="color: #0000ff;"></i> using the toolbar or pop-up menu.
+3.  Right-click on each of the child nodes <i class="fa-solid fa-circle fa-xs" style="color: #00ff00;"></i> and select <img src="../amua-images/changeTypeTrans_24.png" alt="Custom Icon" width="20" height="20"/>  **Change to Terminal Node**. You may also change node types on the toolbar or add a new terminal node <i class="fa-solid fa-caret-left" style="color: #0000ff;"></i> using the toolbar or pop-up menu.
 4.  Name the top branch D+ and the bottom branch D-.
 
 Your tree should look like this:

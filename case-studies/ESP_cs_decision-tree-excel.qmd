@@ -1,0 +1,175 @@
+---
+title: "Exercise: Decision Tree in Excel"
+format: 
+  html:
+    link-external-newwindow: true
+editor_options: 
+  chunk_output_type: console
+self-contained: true
+---
+
+```{r, echo=FALSE, include=knitr::opts_knit$get('rmarkdown.pandoc.to') == 'html'}
+library(downloadthis)
+## Link in Github repo
+download_link(
+  link = "https://graveja0.github.io/bogota-vital-strategies/case-studies/cs1_PE_v1_BLANK.xlsx",
+  button_label = "Descargar archivo Excel de árbol de decisión",
+  button_type = "primary",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  self_contained = FALSE
+)
+```
+
+```{=html}
+<style>
+.nobullet li {
+  list-style-type: none;
+}
+</style>
+```
+# Introducción y objetivos de aprendizaje
+
+Este caso práctico está diseñado para que se familiarice con la construcción de un árbol de decisión en Excel. Los objetivos específicos de aprendizaje son los siguientes
+
+1.  Parametrizar y estructurar un modelo de árbol de decisión.
+
+2.  
+
+    2.  Estimar los resultados de supervivencia y coste a partir de un modelo de árbol de decisión.
+
+# Descripción general del problema de decisión
+
+La embolia pulmonar (EP) durante el embarazo es un acontecimiento potencialmente mortal. El tratamiento con anticoagulantes es eficaz para prevenir nuevas embolias pulmonares y, por tanto, para reducir la probabilidad de mortalidad.
+
+Sin embargo, el tratamiento anticoagulante conlleva un riesgo de hemorragia grave, que también puede ser mortal. Por lo tanto, es preferible evitar la anticoagulación a menos que sea absolutamente necesario.
+
+Nuestro objetivo principal es estimar los costes y la supervivencia esperados. Consideraremos una población de 100.000 mujeres embarazadas para las que la **probabilidad de una PE inicial es de 0,19.** Para reducir la complejidad, supondremos que todos los episodios de PE recurrentes acaban en muerte.
+
+Además,
+
+-   El coste de una EP/hemorragia recurrente mortal es de 10.000.
+-   El coste de una EP/hemorragia recurrente no mortal es de 5.000.
+
+Consideraremos dos posibles estrategias para tratar a estas mujeres:
+
+| Strategy                       | Costs                                      | Health Effects                           |
+|--------------------|--------------------------|---------------------------|
+| 1\. Terapia anticoagulante     | Coste de la terapia anticoagulante = 1.000 | Probabilidad de EP recurrente = 0,05     |
+|                                |                                            | Probabilidad de hemorragia mortal = 0,04 |
+| 2\. Sin terapia anticoagulante |                                            | Probabilidad de EP recurrente = 0,25     |
+
+# Excel-para-CEA: Asignación de nombres de variables
+
+## Asignación de nombres de variables
+
+Nuestro primer paso es asignar a cada valor del caso base su nombre de variable. Hay dos maneras de hacerlo:
+
+1.  1. Utilizando el cuadro de asignación de nombres situado en la parte superior izquierda de la hoja de cálculo. Esto es útil para nombrar un elemento a la vez.
+2.  2. Nombrando por lotes utilizando una selección de tabla.
+
+Veamos primero la opción 1. En la siguiente figura, asignaremos el nombre "variable1" al valor de la celda C5. Para ello, utilizaremos el cuadro de asignación de nombres resaltado en la parte superior izquierda. Simplemente sustituye allí "C5" por el nombre que quieras darle al valor de esa celda, es decir, "variable1".
+
+Asigna el nombre de variable "variable1" al valor de la celda C5.](images/paste-9EE923C4.png)
+
+Puedes ver este proceso en acción en el siguiente vídeo.
+
+{{< video src="https://www.youtube.com/watch?v=J4h-9OFEnsE" >}}
+
+## Asignación de nombres de variables por lotes
+
+A menudo es más eficiente asignar grupos de variables, en lugar de hacerlo una a una. Para ello simplemente seleccionamos la "tabla" que queremos utilizar, y luego vamos a la pestaña `Formulas` y seleccionamos `Crear a partir de selección.`
+
+::: {.callout-important appearance="simple"}
+Asegúrese de que el nombre de la variable que desea asignar se encuentra en la fila de la izquierda o en la fila superior (véase más abajo). Asegúrate también de que el valor que quieres asignar a esa variable está en la segunda columna, como se muestra en la figura.
+:::
+
+![](images/paste-B6FE7C65.png)
+
+Suponiendo que haya estructurado su tabla de parámetros como se indica más arriba, y utilizando la guía anterior, cuando Excel le pida "Crear nombres" puede decirle que los nombres de las variables están en la columna de la izquierda:
+
+![](images/paste-99B8ACB3.png)
+
+Una vez hecho esto, puede seleccionar el `Administrador de nombres` de la cinta Fórmulas para confirmar que se han asignado los nuevos nombres y realizar cambios.
+
+::: {.callout-important appearance="simple"}
+También puede editar, eliminar o reasignar los valores/rangos de celda en el Gestor de nombres.
+:::
+
+![](images/paste-74E2CF5F.png)
+
+A continuación se muestra un vídeo explicativo de este proceso.
+
+{{< video src="https://youtu.be/6H7teHB9ElY" >}}
+
+Si los nombres de sus parámetros están organizados como cabeceras de columna, puede utilizar el mismo proceso, como se muestra en el siguiente vídeo.
+
+{{< video src="https://youtu.be/18KwsCoJKyY" >}}
+
+# Paso 1: Parametrizar el problema de decisión
+
+La primera hoja de trabajo que encontrará en el caso práctico de Excel se llama "parámetros". Esta es la hoja de trabajo que utilizaremos para parametrizar el árbol de decisión:
+
+![](images/paste-80B50DF7.png)
+
+Ya se han proporcionado los nombres de los parámetros relevantes. Sin embargo, ahora tenemos que rellenar los valores del caso base basándonos en la información proporcionada en la sección anterior "Visión general del problema de decisión".
+
+::: {.callout-tip appearance="simple"}
+## Ejercicio 1.1
+
+{{< fa file-excel >}} Utilice nombres de variables para asignar valores a cada parámetro del documento Excel.
+:::
+
+# Paso 2: Parametrizar el Árbol de Decisión
+
+Una vez definidos los nombres de las variables, podemos rellenar el árbol, que se encuentra en la hoja de cálculo "Árbol de decisión":
+
+![](images/paste-28ED1A14.png)
+
+Debajo de cada rama del árbol verá una casilla en blanco; aquí es donde se colocarán los valores de los parámetros:
+
+![](images/paste-7FDAA39E.png){width="500"}
+
+::: {.callout-tip appearance="simple"}
+## Ejercicio 1.2
+
+{{< fa file-excel >}} Parametrice las ramas del árbol de decisión utilizando los nombres de los parámetros que definió en el Ejercicio 1.1.
+:::
+
+::: column-margin
+**SUGERENCIA**: Algunas de las ramas del árbol de decisión requerirán fórmulas simples basadas en las variables de los parámetros. Por ejemplo, la supervivencia se calcula a menudo como (1-Pr(Muerte)).
+:::
+
+# Paso 3: Calcular los resultados de cada rama del árbol
+
+Nuestro siguiente paso es calcular los resultados de salud y coste para cada rama del árbol. En el extremo derecho verá tres cuadros:
+
+![](images/paste-64D89A83.png){width="500"}
+
+- La columna **Resultado** puede utilizarse para insertar texto que describa el resultado de esa rama. Por ejemplo, el primer resultado es para un evento PE recurrente fatal.
+
+- La columna **Costes** registra los costes totales de un resultado. En el ejemplo anterior, la columna de coste debe rellenarse para reflejar el coste total de un evento de EP recurrente mortal en el caso de que la mujer reciba tratamiento anticoagulante.
+
+- La columna **Eficacia (Supervivencia)** registra los resultados de supervivencia. A efectos de este estudio de caso, sólo hacemos un seguimiento de la supervivencia, no de los años de vida ajustados por calidad. Por lo tanto, puede introducir un valor de "0" si el resultado para la rama dada es la muerte, y "1" si el resultado es la supervivencia.
+
+::: {.callout-tip appearance="simple"}
+## Ejercicio 1.3
+
+{{< fa file-excel >}} Rellene los resultados para cada rama del árbol de decisión. Para este ejercicio, debe rellenar las tres columnas de cada fila.
+:::
+
+## Paso 4: Calcular los resultados esperados
+
+El último paso consiste en "replegar" el árbol de decisión para resumir los resultados esperados de coste y supervivencia de cada estrategia considerada. Encontrará una tabla resumen de resultados en la hoja de cálculo titulada "Resumen".
+
+![](images/paste-E8AE8F49.png)
+
+::: {.callout-tip appearance="simple"}
+## Ejercicio 1.4
+
+{{< fa file-excel >}} Calcule los resultados esperados para cada estrategia.
+:::
+
+::: column-margin
+**SUGERENCIA**: Para el resultado esperado de muertes, puede utilizar el tamaño total de la población y el resultado esperado de supervivencia.
+:::

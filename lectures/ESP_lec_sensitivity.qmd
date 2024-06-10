@@ -16,9 +16,9 @@ bibliography: ../references.bib
 
 ## Objetivos de aprendizaje
 
-- Explicar el propósito del análisis de sensibilidad determinista y proporcionar ejemplos de análisis unidireccionales frente a bidireccionales.
+-   Explicar el propósito del análisis de sensibilidad determinista y proporcionar ejemplos de análisis unidireccionales frente a bidireccionales.
 
-- Detallar las ventajas/desventajas del análisis de sensibilidad determinista.
+-   Detallar las ventajas/desventajas del análisis de sensibilidad determinista.
 
 ## Resumen
 
@@ -35,11 +35,11 @@ bibliography: ../references.bib
 ## Análisis de sensibilidad unidireccional
 
 ::: incremental
-- Suele ser el punto de partida de los análisis de sensibilidad
-- Probar secuencialmente una variable cada vez (es decir, edad, IMC, AVAC, otros parámetros clínicamente importantes), manteniendo todo lo demás constante.
-- Determinar cómo afecta esta variación a los resultados
-- Los análisis de sensibilidad unidireccionales suelen presentarse en un **diagrama de tornado**.
-    - Se utiliza para clasificar visualmente las distintas variables por orden de su influencia global en la magnitud de los resultados del modelo.
+-   Suele ser el punto de partida de los análisis de sensibilidad
+-   Probar secuencialmente una variable a la vez (es decir, edad, IMC, AVAC, otros parámetros clínicamente importantes), manteniendo todo lo demás constante.
+-   Determinar cómo afecta esta variación a los resultados
+-   Los análisis de sensibilidad unidireccionales suelen presentarse en un **diagrama de tornado**.
+    -   Se utiliza para clasificar visualmente las distintas variables por orden de su influencia global en la magnitud de los resultados del modelo.
 :::
 
 ## Un árbol de decisión simple
@@ -60,11 +60,11 @@ bibliography: ../references.bib
 
 ![](images/file_show.jpeg)
 
-## Estudio de caso sobre el rotavirus en Capstone
+## Estudio de caso sobre rotavirus de Capstone
 
 ![](images/file_show2.jpeg)
 
-## Rotavirus estudio de caso de Capstone
+## Estudio de caso sobre rotavirus de Capstone
 
 ![](images/file_show3.jpeg)
 
@@ -86,12 +86,12 @@ bibliography: ../references.bib
 
 # Análisis de sensibilidad bidireccional {background="#43464B"}
 
-## Two-way sensitivity analysis
+## Análisis de sensibilidad bidireccional
 
 ::: incremental
-- Una forma de mapear los efectos de interacción entre dos parámetros en un modelo de análisis de decisión
-- Varía 2 parámetros a la vez
-- Explora la solidez de los resultados en mayor profundidad
+-   Una forma de mapear los efectos de interacción entre dos parámetros en un modelo de análisis de decisión
+-   Varía 2 parámetros a la vez
+-   Explora la solidez de los resultados en mayor profundidad
 :::
 
 # Ejemplos de publicaciones
@@ -103,34 +103,34 @@ bibliography: ../references.bib
 ## Prevención del VIH
 
 ::: incremental
-- Modelo de Markov que examina las estrategias para la prevención del VIH entre parejas serodiscordantes que buscan la concepción (la mujer no tiene VIH y el hombre tiene VIH)
+-   Modelo de Markov que examina las estrategias para la prevención del VIH entre parejas serodiscordantes que buscan la concepción (la mujer no tiene VIH y el hombre tiene VIH)
 
-- Sabemos que si la **pareja masculina toma sistemáticamente medicación para el VIH** (es decir, con supresión virológica), el riesgo de transmisión es pequeño independientemente de que la mujer tome la PPrE (profilaxis preexposición).
+-   Sabemos que si la **pareja masculina toma sistemáticamente medicación para el VIH** (es decir, con supresión virológica), el riesgo de transmisión es pequeño independientemente de que la mujer tome la PPrE (profilaxis preexposición).
 
-- Y también sabemos que la PPrE ha sido tradicionalmente muy **costosa**.
+-   Y también sabemos que la PPrE ha sido tradicionalmente muy **costosa**.
 :::
 
 ## Prevención del VIH
 
 ![](images/Screen%20Shot%202022-09-26%20at%2010.22.19%20PM.png)
 
-## Incentivos económicos para la atención del ictus agudo
+## Incentivos económicos para la atención del derrame cerebral
 
 ![](images/Screen%20Shot%202022-09-28%20at%2010.25.53%20PM.png){width="543"}
 
-## Incentivos financieros para la atención del ictus agudo
+## Incentivos financieros para la atención del derrame cerebral
 
 ::: incremental
-- En el marco de las políticas de pago por resultados en EE.UU., **se paga más a los médicos u hospitales por alcanzar objetivos de calidad basados en la evidencia**
+-   En el marco de las políticas de pago por resultados en EE.UU., **se paga más a los médicos u hospitales por alcanzar objetivos de calidad basados en la evidencia**
 
-- Objetivo del estudio: Ilustrar cómo los incentivos de pago por resultados pueden limitarse cuantitativamente mediante modelos de coste-efectividad, a través de la **aplicación del reembolso a los hospitales por un tiempo más rápido hasta el ATP para el ictus isquémico agudo**.
+-   Objetivo del estudio: Ilustrar cómo los incentivos de pago por resultados pueden limitarse cuantitativamente mediante modelos de costo-efectividad, a través de la **aplicación del reembolso a los hospitales por un tiempo más rápido hasta el ATP para el derrame cerebral**.
 :::
 
-## Incentivos económicos para la atención del ictus agudo
+## Incentivos económicos para la atención del derrame cerebral
 
-> Cuando se administra rápidamente tras el inicio del ictus (en un plazo de tres horas, según lo aprobado por la FDA), el tPA ayuda a restablecer el flujo sanguíneo a las regiones cerebrales afectadas por un ictus, limitando así el riesgo de daños y deterioro funcional.
+> Cuando se administra rápidamente tras el inicio del derrame (en un plazo de tres horas, según lo aprobado por la FDA), el ATP ayuda a restablecer el flujo sanguíneo a las regiones cerebrales afectadas por un derrame, limitando así el riesgo de daños y deterioro funcional.
 
-## Incentivos económicos para la atención del ictus agudo
+## Incentivos económicos para la atención del derrame cerebral
 
 ![](images/Screen%20Shot%202022-09-28%20at%2010.14.03%20PM.png){width="520"}
 
@@ -138,8 +138,8 @@ bibliography: ../references.bib
 
 ## Precaución: ¡Limitaciones!
 
-- Limitado por la subjetividad de la elección de los parámetros a analizar
-- Por eso también ejecutamos APS!, es decir, variando TODOS los parámetros de entrada al mismo tiempo, usando priors para reproducir una distribución alrededor de cada valor
+-   Limitado por la subjetividad de la elección de los parámetros a analizar
+-   Por eso también ejecutamos APS!, es decir, variando TODOS los parámetros de entrada al mismo tiempo, usando priors para reproducir una distribución alrededor de cada valor
 
 # ¡Oportunidad de practicar en el Ejercicio!
 
@@ -147,8 +147,8 @@ bibliography: ../references.bib
 
 ## Análisis de escenarios
 
-- Se centra más en las **suposiciones** del modelo que en la incertidumbre de los parámetros
-- Podría incluir análisis separados sobre:
+-   Se centra más en las **suposiciones** del modelo que en la incertidumbre de los parámetros
+-   Podría incluir análisis separados sobre:
 
 > Subgrupos/subpoblaciones, incluyendo diferentes cohortes de edad y niveles de riesgo.
 
@@ -192,11 +192,11 @@ bibliography: ../references.bib
 
 ## Análisis de umbrales
 
-- Responde a la pregunta Cuál debe ser el parámetro de entrada para alcanzar los umbrales por país de:
-    - 50.000 $/QALY ganado
-    - 100.000 $/QALY ganados
-    - 150.000 $/QALY ganados
-    - 200.000 $/QALY ganados
+-   Responde a la pregunta cuál debe ser el parámetro de entrada para alcanzar los umbrales por país de:
+    -   50.000 \$/AVAC ganado
+    -   100.000 \$/AVAC ganado
+    -   150.000 \$/AVAC ganado
+    -   200.000 \$/AVAC ganado
 
 ## Ejemplos
 

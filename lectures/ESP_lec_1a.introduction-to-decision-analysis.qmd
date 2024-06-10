@@ -28,7 +28,7 @@ editor: source
 
 ## Curso sitio web
 
-::: {style="font-size: 2.0em"}
+::: {style="font-size: 1.0em"}
 https://github.com/graveja0/bogota-vital-strategies
 :::
 
@@ -220,7 +220,7 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 :::
 
 ## Ej 3. Cáncer de colon - **Estimación de probabilidades**
-
+::: {style="font-size: 0.8em"}
 ::: incremental
 -   Predecir el "beneficio" del tamizaje
     -   Todas las probabilidades anteriores
@@ -231,6 +231,8 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
     -   Probabilidad de que prueba positiva = cáncer
     -   Probabilidad de que prueba negativa = sin cáncer
 :::
+:::
+
 
 ## La estimación de probabilidades es fundamental para la toma de decisiones {background="#43464B"}
 
@@ -242,7 +244,7 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 
 <!-- TK Esto necesita ser una página completa -->
 
-## Commonality of cases {background="#43464B"}
+## Casos comunes {background="#43464B"}
 
 ::: incremental
 -   *Tradeoffs* inevitables
