@@ -4615,6 +4615,69 @@ vertical-align: -.125em;
     "search-label": "Search"
   }
 }</script>
+<style type="text/css">.tabwid {
+font-size: initial;
+padding-bottom: 1em;
+}
+.tabwid table{
+border-spacing:0px !important;
+border-collapse:collapse;
+line-height:1;
+margin-left:auto;
+margin-right:auto;
+border-width: 0;
+border-color: transparent;
+caption-side: top;
+}
+.tabwid-caption-bottom table{
+caption-side: bottom;
+}
+.tabwid_left table{
+margin-left:0;
+}
+.tabwid_right table{
+margin-right:0;
+}
+.tabwid td, .tabwid th {
+padding: 0;
+}
+.tabwid a {
+text-decoration: none;
+}
+.tabwid thead {
+background-color: transparent;
+}
+.tabwid tfoot {
+background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+.katex-display {
+margin: 0 0 !important;
+}
+</style>
+<script>document.addEventListener("DOMContentLoaded", function(event) {
+  var els = document.querySelectorAll(".tabwid");
+  var tabwid_link = document.querySelector('link[href*="tabwid.css"]')
+  if (tabwid_link === null) {
+    const tabwid_styles = document.evaluate("//style[contains(., 'tabwid')]", document, null, XPathResult.ANY_TYPE, null );
+    tabwid_link = tabwid_styles.iterateNext();
+  }
+
+  Array.prototype.forEach.call(els, function(template) {
+      const dest = document.createElement("div");
+      template.parentNode.insertBefore(dest, template.nextSibling)
+      dest.setAttribute("class", "flextable-shadow-host");
+      const fantome = dest.attachShadow({mode: 'open'});
+      fantome.appendChild(template);
+      if (tabwid_link !== null) {
+        fantome.appendChild(tabwid_link.cloneNode(true));
+      }
+  });
+});
+
+</script>
 
 
 <style type="text/css">
@@ -4658,17 +4721,7 @@ vertical-align: -.125em;
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#scratch" id="toc-scratch" class="nav-link" data-scroll-target="#scratch">Scratch</a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="cs_injury-decision-tree.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="cs_injury-decision-tree.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -4700,6 +4753,206 @@ vertical-align: -.125em;
 <p>Our case studies will explore these strategies through two decision modeling approaches. This case study will utilize a decision tree model to evaluate the immediate outcomes and costs associated with each strategy.</p>
 <p>Later, we will employ a Markov cohort model to examine the long-term health and economic impacts, considering factors such as injury rates, healthcare costs, and compliance levels.</p>
 <p>By analyzing these models, we aim to provide a comprehensive assessment of the most cost-effective and sustainable approach to reducing gunpowder-related injuries in Bogotá today.</p>
+</section>
+<section id="model-inputs-and-parameters" class="level1">
+<h1>Model Inputs and Parameters</h1>
+<p>We will assume that reported injuries fall into three major categories:</p>
+<ul>
+<li><p><strong>Minor Injury</strong>: first-degree burns, which may cause pain, redness, and minor swelling</p></li>
+<li><p><strong>Moderate Injury</strong>: second-degree burns that cover a more significant portion of the body and involve blisters, pain, and potential infection risk</p></li>
+<li><p><strong>Major Injury</strong>: third-degree burns or severe trauma that affects deeper tissues and can lead to significant complications.</p></li>
+</ul>
+<p>There are very likely many minor or even moderate injuries that go unreported. For this reason, we will assume that minor injuries are a low percentage of <strong>reported</strong> injuries, but remain the most common type of injury overall.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Description</th>
+<th>Base Case Value</th>
+<th>Parameter Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Probability of Injury</td>
+<td>0.00292</td>
+<td>pInjury</td>
+</tr>
+<tr class="even">
+<td>Probability Injury is Mild</td>
+<td>0.15</td>
+<td>pMinor</td>
+</tr>
+<tr class="odd">
+<td>Probability Injury is Moderate</td>
+<td>0.3</td>
+<td>pModerate</td>
+</tr>
+<tr class="even">
+<td>Probability Injury is Major</td>
+<td>0.5</td>
+<td>pMajor</td>
+</tr>
+<tr class="odd">
+<td>Probability Injury is Fatal</td>
+<td>0.05</td>
+<td>pFatal</td>
+</tr>
+</tbody>
+</table>
+<p>We will also assume that nearly all individuals who experience minor injuries recover fully in the year they are injured, while moderate and major injuries have some probability of long-term sequalae with some annual probability of recurrence.</p>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Description</th>
+<th>Base Case Value</th>
+<th>Parameter Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Probability of Recovery: Minor Injury</td>
+<td>0.99</td>
+<td>pFullRecoveryMinor</td>
+</tr>
+<tr class="even">
+<td>Probability of Recovery: Moderate Injury</td>
+<td>0.50</td>
+<td>pFullRecoveryModerate</td>
+</tr>
+<tr class="odd">
+<td>Probability of Recovery: Major Injury</td>
+<td>0.20</td>
+<td>pFullRecoveryMajor</td>
+</tr>
+</tbody>
+</table>
+<div class="cell">
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-2784357a{}.cl-278181f4{font-family:'Helvetica';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-27829b20{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-27829b21{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-2782a32c{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-2782a32d{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-2782a32e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-2782a336{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-2782a337{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-2782a338{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-2784357a"><thead><tr style="overflow-wrap:break-word;"><th class="cl-2782a32c"><p class="cl-27829b20"><span class="cl-278181f4">Year</span></p></th><th class="cl-2782a32d"><p class="cl-27829b21"><span class="cl-278181f4">Cases</span></p></th><th class="cl-2782a32d"><p class="cl-27829b21"><span class="cl-278181f4">Population</span></p></th><th class="cl-2782a32d"><p class="cl-27829b21"><span class="cl-278181f4">Rate.per.100.000</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-2782a32e"><p class="cl-27829b20"><span class="cl-278181f4">2017</span></p></td><td class="cl-2782a336"><p class="cl-27829b21"><span class="cl-278181f4">1,778</span></p></td><td class="cl-2782a336"><p class="cl-27829b21"><span class="cl-278181f4">47,419,000</span></p></td><td class="cl-2782a336"><p class="cl-27829b21"><span class="cl-278181f4">3.75</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-2782a32e"><p class="cl-27829b20"><span class="cl-278181f4">2018</span></p></td><td class="cl-2782a336"><p class="cl-27829b21"><span class="cl-278181f4">1,477</span></p></td><td class="cl-2782a336"><p class="cl-27829b21"><span class="cl-278181f4">48,259,442</span></p></td><td class="cl-2782a336"><p class="cl-27829b21"><span class="cl-278181f4">3.06</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-2782a32e"><p class="cl-27829b20"><span class="cl-278181f4">2019</span></p></td><td class="cl-2782a336"><p class="cl-27829b21"><span class="cl-278181f4">1,378</span></p></td><td class="cl-2782a336"><p class="cl-27829b21"><span class="cl-278181f4">49,269,676</span></p></td><td class="cl-2782a336"><p class="cl-27829b21"><span class="cl-278181f4">2.80</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-2782a32e"><p class="cl-27829b20"><span class="cl-278181f4">2020</span></p></td><td class="cl-2782a336"><p class="cl-27829b21"><span class="cl-278181f4">1,504</span></p></td><td class="cl-2782a336"><p class="cl-27829b21"><span class="cl-278181f4">50,407,437</span></p></td><td class="cl-2782a336"><p class="cl-27829b21"><span class="cl-278181f4">2.98</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-2782a32e"><p class="cl-27829b20"><span class="cl-278181f4">2021</span></p></td><td class="cl-2782a336"><p class="cl-27829b21"><span class="cl-278181f4">1,694</span></p></td><td class="cl-2782a336"><p class="cl-27829b21"><span class="cl-278181f4">51,177,378</span></p></td><td class="cl-2782a336"><p class="cl-27829b21"><span class="cl-278181f4">3.31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-2782a337"><p class="cl-27829b20"><span class="cl-278181f4">2022</span></p></td><td class="cl-2782a338"><p class="cl-27829b21"><span class="cl-278181f4">1,510</span></p></td><td class="cl-2782a338"><p class="cl-27829b21"><span class="cl-278181f4">51,826,932</span></p></td><td class="cl-2782a338"><p class="cl-27829b21"><span class="cl-278181f4">2.92</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+<table class="table">
+<caption>Decision Tree Parameters</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 24%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Description</th>
+<th>Base Case Value</th>
+<th>Parameter Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Firework Ban: Relative Risk of Minor Injury</td>
+<td>0.5</td>
+<td>rrMinorBan</td>
+</tr>
+<tr class="even">
+<td>Firework Ban: Relative Risk of Moderate Injury</td>
+<td>0.2</td>
+<td>rrModerateBan</td>
+</tr>
+<tr class="odd">
+<td>Firework Ban: Relative Risk of Major Injury</td>
+<td>0.9</td>
+<td>rrMajorBan</td>
+</tr>
+<tr class="even">
+<td>Firework Ban: Relative Risk of Fatal Injury</td>
+<td>0.95</td>
+<td>rrFatalBan</td>
+</tr>
+<tr class="odd">
+<td>Firework Regulation: Relative Risk of Minor Injury</td>
+<td>0.7</td>
+<td>rrMinorBan</td>
+</tr>
+<tr class="even">
+<td>Firework Regulation: Relative Risk of Moderate Injury</td>
+<td>0.5</td>
+<td>rrModerateBan</td>
+</tr>
+<tr class="odd">
+<td>Firework Regulation: Relative Risk of Major Injury</td>
+<td>0.95</td>
+<td>rrMajorBan</td>
+</tr>
+<tr class="even">
+<td>Firework Regulation: Relative Risk of Fatal Injury</td>
+<td>0.98</td>
+<td>rrFatalBan</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Minor Injuries</strong></p>
+<ul>
+<li>Up-front: $100 (simple first aid) to $500 (doctor visits and medications)</li>
+<li>Annual: $0</li>
+</ul>
+<p><strong>Moderate Injuries</strong></p>
+<ul>
+<li>Up-front: $1,000 (outpatient treatment) to $5,000 (minor surgery, stitches)</li>
+<li>Annual: $0</li>
+</ul>
+<p><strong>Major Injuries</strong></p>
+<ul>
+<li>Up-front: $10,000 (initial hospitalization) to $50,000+ (multiple surgeries, ICU)</li>
+<li>Annual: $1,000 - $10,000 for rehabilitation, follow-up surgeries, and long-term care</li>
+</ul>
 <section id="scratch" class="level2">
 <h2 class="anchored" data-anchor-id="scratch">Scratch</h2>
 <p>In Amua, on the menu at the top, go to <strong>Model</strong> -&gt; <strong>New</strong> -&gt;  <strong>Decision Tree</strong>. This will create a new model with a single decision node <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAABCSURBVEhLY2RgYPgPxDQDYAveyqhAeFQGwk/uMDBB2TQDoxYQBKMWEASjFhAEoxYQBKMWEASjFhAEQ98CGjdbGBgAYSgGK4PE2QEAAAAASUVORK5CYII=" alt="Custom Icon" width="20" height="20"> on the left side of the screen.</p>
@@ -4797,24 +5050,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/graveja0\.github\.io\/bogota-vital-strategies\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
-    var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
-          }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,

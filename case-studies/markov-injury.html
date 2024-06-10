@@ -866,7 +866,17 @@ The following object is masked from 'package:Matrix':
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind.data.frame</span>(<span class="at">hp =</span> <span class="fu">HP2</span>(<span class="at">x =</span> lt<span class="sc">$</span>age, <span class="at">par =</span> hp_fit<span class="sc">$</span>coefficients)<span class="sc">$</span>hx, <span class="at">lt =</span> lt<span class="sc">$</span>mx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the mortality rate</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>df_p_Die <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">index =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">110</span>, <span class="at">p_die =</span> <span class="dv">1</span><span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span><span class="fu">HP2</span>(<span class="at">x =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">110</span>, <span class="at">par =</span> hp_fit<span class="sc">$</span>coefficients)<span class="sc">$</span>hx)) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.data.frame</span>() </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(df_p_Die) <span class="ot">=</span> <span class="cn">NULL</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>df_p_Die <span class="sc">%&gt;%</span> <span class="fu">write.csv</span>(<span class="fu">here</span>(<span class="st">"case-studies/columbia-life-table-death-probabilities.csv"</span>))</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind.data.frame</span>(<span class="at">hp =</span> <span class="fu">HP2</span>(<span class="at">x =</span> lt<span class="sc">$</span>age, <span class="at">par =</span> hp_fit<span class="sc">$</span>coefficients)<span class="sc">$</span>hx, <span class="at">lt =</span> lt<span class="sc">$</span>mx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           hp         lt
 1  0.01142097 0.01142101
@@ -970,7 +980,7 @@ The following object is masked from 'package:Matrix':
 <span id="annotated-cell-12-52"><a href="#annotated-cell-12-52" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-12-53"><a href="#annotated-cell-12-53" aria-hidden="true" tabindex="-1"></a>payoff_life_exp <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Alive"</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"Dead"</span> <span class="ot">=</span> <span class="dv">0</span>)</span>
 <span id="annotated-cell-12-54"><a href="#annotated-cell-12-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-12-55"><a href="#annotated-cell-12-55" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(trace[[<span class="dv">1</span>]] <span class="sc">%*%</span> payoff_life_exp)</span>
+<span id="annotated-cell-12-55"><a href="#annotated-cell-12-55" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((trace[[<span class="dv">1</span>]] <span class="sc">%*%</span> payoff_life_exp) <span class="sc">*</span> <span class="fu">c</span>(<span class="fl">0.5</span>,<span class="fu">rep</span>(<span class="dv">1</span>,<span class="fu">nrow</span>(trace[[<span class="dv">1</span>]])<span class="sc">-</span><span class="dv">2</span>),<span class="fl">0.5</span>))</span>
 <span id="annotated-cell-12-56"><a href="#annotated-cell-12-56" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-12-57"><a href="#annotated-cell-12-57" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate alive years in each cycle</span></span>
 <span id="annotated-cell-12-58"><a href="#annotated-cell-12-58" aria-hidden="true" tabindex="-1"></a>life_exp_cycle <span class="ot">=</span> <span class="fu">lapply</span>(trace, <span class="cf">function</span>(tr) (tr<span class="sc">*</span>(<span class="dv">1</span> <span class="sc">/</span> params<span class="sc">$</span>n_cohort)) <span class="sc">%*%</span></span>
@@ -983,7 +993,7 @@ The following object is masked from 'package:Matrix':
 <span id="annotated-cell-12-65"><a href="#annotated-cell-12-65" aria-hidden="true" tabindex="-1"></a></span>
 <span id="annotated-cell-12-66"><a href="#annotated-cell-12-66" aria-hidden="true" tabindex="-1"></a>total_life_exp <span class="ot">=</span> <span class="fu">lapply</span>(life_exp_cycle,cycle_adj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 77.56</code></pre>
+<pre><code>[1] 77.06</code></pre>
 </div>
 </div>
 <!-- ### Sources  -->
