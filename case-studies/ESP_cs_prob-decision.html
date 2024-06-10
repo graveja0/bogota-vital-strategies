@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Taller de análisis de decisiones - Case Study: Probabilities &amp; Decision Trees</title>
+<title>Taller de análisis de decisiones - Caso de estudio: Probabilidades y árboles de decisión</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -114,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Case Study: Probabilities &amp; Decision Trees</h1>
+<h1 class="title">Caso de estudio: Probabilidades y árboles de decisión</h1>
 </div>
 
 
@@ -141,12 +141,12 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Puede descargar las versiones en PDF y Microsoft Word de este de este estudio de caso utilizando los enlaces de la derecha.</p>
+<p>Puede descargar las versiones en PDF y Microsoft Word de este estudio de caso utilizando los enlaces de la derecha.</p>
 </div>
 </div>
 <section id="caso-1" class="level1">
 <h1>Caso 1</h1>
-<p>En una comunidad hipotética, el 60% de las personas consumen al menos 6 bebidas alcohólicas a la semana y el 50% tiene sobrepeso. El porcentaje de personas que tienen sobrepeso y consumen esta cantidad de alcohol es del 40%. Construye una tabla de 2x2 para responder a las partes (a)-(c). Para la parte (d), construya un árbol de decisión.</p>
+<p>En una comunidad hipotética, el 60% de las personas consumen al menos 6 bebidas alcohólicas a la semana y el 50% tiene sobrepeso. El porcentaje de personas que tienen sobrepeso y consumen esta cantidad de alcohol es del 40%. Construye una tabla de 2x2 para responder a las preguntas (a)-(c) siguientes. Para la parte (d), construya un árbol de decisión.</p>
 <ul>
 <li><em>¿Qué porcentaje de personas consumen al menos 6 bebidas alcohólicas a la semana, tienen sobrepeso o entran en ambas categorías?</em>.</li>
 </ul>
@@ -157,11 +157,8 @@ Important
 <!-- Only shows up in HTML output -->
 <div style="margin-top: 100px;"></div>
 </div>
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- ![](images/cs_decision-tree_ans_1.1.png)  -->
-<!-- ::: -->
 <ul>
-<li><em>Se toma una muestra al azar de una persona de la comunidad y se descubre que consumen al menos 6 bebidas alcohólicas a la semana. ¿Cuál es la probabilidad de que tenga sobrepeso? probabilidad de que tenga sobrepeso?</em></li>
+<li>*Toma una muestra aleatoria de una persona de la comunidad y descubre que consume al menos 6 bebidas alcohólicas a la semana. ¿Cuál es la probabilidad de que tenga sobrepeso? ¿Cuál es la probabilidad de que tenga sobrepeso?</li>
 </ul>
 <div class="cell">
 
@@ -170,12 +167,8 @@ Important
 <!-- Only shows up in HTML output -->
 <div style="margin-top: 100px;"></div>
 </div>
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- P(Overweight \| Drinker) = 0.4 / -->
-<!-- 0.6 = 0.667 -->
-<!-- ::: -->
 <ul>
-<li><em>¿Cuál es la probabilidad de que alguien de esta comunidad consuma al menos 6 bebidas alcohólicas a la semana si tiene sobrepeso?</em>.</li>
+<li><em>¿Cuál es la probabilidad de que alguien de esta comunidad consuma al menos 6 bebidas alcohólicas a la semana si tiene sobrepeso?</em></li>
 </ul>
 <div class="cell">
 
@@ -184,13 +177,10 @@ Important
 <!-- Only shows up in HTML output -->
 <div style="margin-top: 100px;"></div>
 </div>
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- P(Drinker \| Overweight) = 0.4 / 0.5 = 0.8 -->
-<!-- ::: -->
 </section>
 <section id="caso-2" class="level1">
 <h1>Caso 2</h1>
-<p>Un nuevo procedimiento de cribado puede detectar el 80% de las mujeres diagnosticadas de cáncer de mama, pero detectará erróneamente un 2% de mujeres sin cáncer de mama. cáncer de mama, pero identificará falsamente a un 2% sin cáncer de mama. La prevalencia del cáncer de mama en la población es de 1,6 en 100</p>
+<p>Un nuevo procedimiento de cribado puede detectar el 80% de las mujeres diagnosticadas de cáncer de mama cáncer de mama pero identificará falsamente al 2% sin cáncer de mama. La prevalencia del cáncer de mama en la población es de 1,6 en 100</p>
 <ul>
 <li><em>¿Cuál es la probabilidad de que una mujer no tenga cáncer de mama si la prueba es negativa?</em></li>
 </ul>
@@ -201,9 +191,6 @@ Important
 <!-- Only shows up in HTML output -->
 <div style="margin-top: 100px;"></div>
 </div>
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- ![](images/cs_decision-tree_ans_2.1.png) -->
-<!-- ::: -->
 <ul>
 <li><em>¿Cuál es la probabilidad de que una mujer tenga cáncer de mama si la prueba es positiva?</em></li>
 </ul>
@@ -214,15 +201,12 @@ Important
 <!-- Only shows up in HTML output -->
 <div style="margin-top: 100px;"></div>
 </div>
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- ![](images/cs_decision-tree_ans_2.2.png) -->
-<!-- ::: -->
 </section>
 <section id="caso-3" class="level1">
 <h1>Caso 3</h1>
 <p>A un paciente se le detecta un aneurisma aórtico abdominal (AAA) de 5 cm de de tamaño. Si se le opera ahora y sobrevive, tendrá una esperanza de vida de 3 años más. En una serie de 100 pacientes similares de su hospital, 6 murieron inmediatamente después de la operación. Si eliges vigilar al paciente, el 60% romperá su AAA en casa (supongamos que una media de 1 año después). De los que rompen su AAA, el 30% morirá, mientras que el otro % se someterá a cirugía de urgencia y sobrevivirá, permitiendo al paciente sobreviva los 3 años de esperanza de vida.</p>
 <ul>
-<li><em>Dibujar un árbol de decisión para el problema de elegir si se opera electiva. Recuerde que debe considerar la esperanza de vida como un resultado. como un resultado. ¿Cuál es la opción preferida?</em></li>
+<li>*Dibujar un árbol de decisión para el problema de elegir si se opera electiva. Recuerde que debe considerar la esperanza de vida como un resultado. como un resultado. ¿Cuál es la opción preferida?</li>
 </ul>
 <div class="cell">
 
@@ -231,11 +215,8 @@ Important
 <!-- Only shows up in HTML output -->
 <div style="margin-top: 100px;"></div>
 </div>
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- ![](images/cs_decision-tree_ans_3.1.png) -->
-<!-- ::: -->
 <ul>
-<li><em>Un intervalo de confianza del 95% para la tasa de mortalidad de la cirugía electiva en su hospital oscila entre el 1,4 y el 12,7%. en su hospital oscila entre el 1,4 y el 12,7%. ¿Influye esto su opinión? ¿Por qué? ¿Necesita más información sobre su estimación de la mortalidad? ¿Por qué? (Nota: Para esto último, calcule la tasa de mortalidad para la que es indiferente entre las dos opciones)</em>.</li>
+<li><em>Un intervalo de confianza del 95% para la tasa de mortalidad de la cirugía electiva electiva en su hospital oscila entre el 1,4 y el 12,7%. ¿Influye esto sus pensamientos? ¿Por qué? ¿Necesita más información sobre su estimación de la mortalidad? ¿Por qué? (Nota: Para esto último, calcule la tasa de mortalidad para la que es indiferente entre las dos opciones)</em></li>
 </ul>
 <div class="cell">
 
@@ -244,16 +225,13 @@ Important
 <!-- Only shows up in HTML output -->
 <div style="margin-top: 100px;"></div>
 </div>
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- ![](images/cs_decision-tree_ans_3.2.png) -->
-<!-- ::: -->
 </section>
 <section id="caso-4" class="level1">
 <h1>Caso 4</h1>
 <p>Un paciente acude a Urgencias con dolor abdominal. Según el médico de urgencias, usted estima que la probabilidad de apendicitis del paciente es de 0,16. Si el paciente tiene realmente apendicitis, la probabilidad de que el apéndice ya estuviera perforado en el momento en que el paciente acude a Urgencias es de 0,1875. También puede observar al paciente durante 6 horas para estar seguro de que su diagnóstico es correcto. Si su diagnóstico acaba siendo correcto, el 24% de apéndice perforado al cabo de 6 horas (Nota: esta cifra no es la que se número no es el que entra en su árbol. Debe tener en cuenta el 18,75% apéndice perforado cuando el paciente ingresó en el hospital). hospital).</p>
 <p>Si el apéndice está perforado en el momento en que el paciente se presenta en urgencias o al cabo de 6 horas, hay un 0,84 de probabilidades de que los síntomas empeoren y un 0,16 de que permanezcan igual. Si el paciente tiene apendicitis pero el apéndice no revienta al cabo de 6 horas, hay una probabilidad de 0,8 de que los síntomas empeoren y una probabilidad de 0,2 de que permanezcan igual. Si el apéndice no está enfermo, hay un 0,39 de probabilidad de que los síntomas sigan igual en 6 horas, un 0,61 probabilidad de que mejoren y ninguna probabilidad de que empeoren.</p>
 <ul>
-<li><em>Calcular la probabilidad de que un paciente tenga un apéndice perforado al cabo de 6 horas, dado que tenía apendicitis pero no estaba perforado en el momento de ingresar en el hospital</em></li>
+<li>Calcular la probabilidad de que un paciente tenga un apéndice perforado al cabo de 6 horas, dado que tenía apendicitis pero no estaba perforado en el momento de ingresar en el hospital</li>
 </ul>
 <div class="cell">
 
@@ -262,12 +240,9 @@ Important
 <!-- Only shows up in HTML output -->
 <div style="margin-top: 100px;"></div>
 </div>
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- ![](images/cs_decision-tree_ans_4.1.png)     -->
-<!-- ::: -->
-<p>Dibuje un árbol de decisión para calcular las probabilidades planteadas en las preguntas 3-6.</p>
+<p>Dibuja un árbol de decisión para calcular las probabilidades planteadas en las preguntas 3-6.</p>
 <ul>
-<li><em>Calcular la probabilidad de que el paciente tenga un apéndice perforado a las 6 horas. apéndice al comienzo de las 6 horas.</em></li>
+<li><em>Calcule la probabilidad de que el paciente tenga un apéndice perforado apéndice al principio de las 6 horas.</em></li>
 </ul>
 <div class="cell">
 
@@ -276,12 +251,9 @@ Important
 <!-- Only shows up in HTML output -->
 <div style="margin-top: 100px;"></div>
 </div>
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- ![](images/cs_decision-tree_ans_4.2.png) -->
-<!-- ::: -->
 <p>P(Perforación al comienzo de las seis horas) = 0,1600 * 0,1875 = 0.0300. Esta es la proporción de pacientes con apendicitis multiplicada por la probabilidad condicional de perforación dada la apendicitis en el en el momento en que el paciente ingresa en el hospital.</p>
 <ul>
-<li><em>Calcular la probabilidad de que el paciente tenga una perforación de apendicitis si espera 6 horas</em>.</li>
+<li><em>Calcular la probabilidad de que el paciente tenga una perforación de apéndice si espera 6 horas</em></li>
 </ul>
 <div class="cell">
 
@@ -290,14 +262,8 @@ Important
 <!-- Only shows up in HTML output -->
 <div style="margin-top: 100px;"></div>
 </div>
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- P(Perforation after six hours) = 0.0300 + 0.1600 \* 0.8125 \* 0.0646 = -->
-<!-- 0.0384 P(Perforation after six hours) = 0.1600 \* 0.2400 = 0.0384. This -->
-<!-- is the proportion of patients with appendicitis times the proportion of -->
-<!-- patients with a perforated appendix. -->
-<!-- ::: -->
 <ul>
-<li>*Calcule la probabilidad de que los síntomas del paciente 1) empeoren, 2) permanezcan igual y 3) mejoren. empeoren, 2) permanezcan igual y 3) mejoren.</li>
+<li>Calcule la probabilidad de que los síntomas del paciente 1) empeoren empeoren, 2) permanezcan igual, y 3) mejoren.*</li>
 </ul>
 <div class="cell">
 
@@ -306,14 +272,8 @@ Important
 <!-- Only shows up in HTML output -->
 <div style="margin-top: 100px;"></div>
 </div>
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- You can find these probabilities by adding up the probabilities at the -->
-<!-- ends of the branches of the decision tree. P(Symptoms worse) = 0.0252 + -->
-<!-- 0.0071 + 0.0973 = 0.1296 P(Symptoms the same) = 0.0048 + 0.0013 + -->
-<!-- 0.0243 + 0.3276 = 0.3580 P(Symptoms improve) = 0.5124 -->
-<!-- ::: -->
 <ul>
-<li><em>Calcular la probabilidad condicional de que el paciente tenga una apéndice perforado si los síntomas 1) empeoran; 2) permanecen igual o 3) mejoran</em>.</li>
+<li><em>Calcule la probabilidad condicional de que el paciente tenga una apéndice perforado si los síntomas 1) empeoran; 2) permanecen igual o 3) mejoran</em>.</li>
 </ul>
 <div class="cell">
 
@@ -322,19 +282,8 @@ Important
 <!-- Only shows up in HTML output -->
 <div style="margin-top: 100px;"></div>
 </div>
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- By using probability definitions, we can calculate the conditional -->
-<!-- probabilities. P(E,F) = P(E \| F) \* P(F) P(E,F): Joint probability of E -->
-<!-- and F together P(E \| F): Conditional probability of E, given F P(F): -->
-<!-- Probability of F P(E \| F) = (E,F) / P(F) P(Perforation \| Symptoms -->
-<!-- worse) = P(Perforation and Symptoms worse) / P(Symptoms worse) = -->
-<!-- (0.0252 + 0.0071) / 0.1296 = 0.2492 P(Perforation \| Symptoms same) = -->
-<!-- P(Perforation and Symptoms same) / P(Symptoms same) = (0.0048+ 0.0013) / -->
-<!-- 0.3593 = 0.0170 P(Perforation \| Symptoms improve) = P(Perforation and -->
-<!-- Symptoms improve) / P(Symptoms improve) = 0 / 0.5124 = 0 -->
-<!-- ::: -->
 <ul>
-<li><em>Calcular la probabilidad condicional de que el paciente tenga apendicitis si 1) los síntomas empeoran, 2) permanecen igual, o 3) mejoran</em>.</li>
+<li><em>Calcule la probabilidad condicional de que el paciente tenga apendicitis si 1) los síntomas empeoran, 2) permanecen igual, o 3) mejoran</em></li>
 </ul>
 <div class="cell">
 
@@ -343,13 +292,6 @@ Important
 <!-- Only shows up in HTML output -->
 <div style="margin-top: 100px;"></div>
 </div>
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- Using the same probability notations as in question f, we can calculate -->
-<!-- the following probabilities: P(Appendicitis \| Symptoms worse) = -->
-<!-- (0.0252 + 0.0071 + 0.0973) / 0.1296 = 1 P(Appendicitis \| Symptoms same) -->
-<!-- = (0.0048 + 0.0013 + 0.0243) / 0.3580 = 0.0849 P(Appendicitis \| -->
-<!-- Symptoms improve) = 0 / 0.5124 = 0 -->
-<!-- ::: -->
 
 
 </section>
