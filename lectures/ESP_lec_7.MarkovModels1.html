@@ -365,7 +365,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Markov Models</h1>
+  <h1 class="title">Modelos de Markov</h1>
 
 <div class="quarto-title-authors">
 </div>
@@ -381,7 +381,7 @@
 <div>
 <ul>
 <li class="fragment"><p>Discutir los pros y los contras de la modelización de decisiones mediante árboles de decisión frente a un modelo determinista formal</p></li>
-<li class="fragment"><p>Comprender los componentes y la estructura de los modelos de Markov tiempo discreto</p></li>
+<li class="fragment"><p>Comprender los componentes y la estructura de los modelos de Markov de tiempo discreto</p></li>
 <li class="fragment"><p>Calcular los ciclos de Markov a mano, utilizando el diagrama de burbujas de Markov</p></li>
 <li class="fragment"><p>Aplicar métodos de corrección de ciclos de Markov</p></li>
 </ul>
@@ -391,25 +391,13 @@
 <h2>Un proceso de enfermedad simple</h2>
 <div>
 <ul>
-<li class="fragment">Supongamos que queremos modelizar la relación coste-eficacia de estrategias estrategias alternativas para prevenir la aparición de una enfermedad.</li>
+<li class="fragment">Supongamos que queremos modelizar la relación costo-efectividad de estrategias alternativas para prevenir una enfermedad.</li>
 <li class="fragment">Partimos de una población sana de 25 años y existen tres estados de salud que pueden experimentar las personas:
 <ol type="1">
-<li class="fragment"><ol type="1">
-<li class="fragment">Permanecer <strong>sano</strong>.</li>
-</ol></li>
-<li class="fragment"><p>Enfermar**.</p></li>
+<li class="fragment"><p>Permanecer <strong>sano</strong>.</p></li>
+<li class="fragment"><p>Enfermarse**.</p></li>
 <li class="fragment"><p><strong>Morir</strong></p></li>
 </ol></li>
-</ul>
-</div>
-</section>
-<section id="un-simple-proceso-de-enfermedad" class="slide level2">
-<h2>Un Simple Proceso de Enfermedad</h2>
-<div>
-<ul>
-<li class="fragment">Permanecer sano no conlleva disminución de utilidad (peso de utilidad = 1.0 por ciclo en estado sano)</li>
-<li class="fragment">Enfermar conlleva una disminución de utilidad de 0,25 durante el resto de la vida de la persona (peso de utilidad = 0,75). vida de la persona (peso de la utilidad = 0,75)</li>
-<li class="fragment">La muerte conlleva un valor de utilidad de 0.</li>
 </ul>
 </div>
 </section>
@@ -417,26 +405,36 @@
 <h2>Un proceso de enfermedad simple</h2>
 <div>
 <ul>
-<li class="fragment">Permanecer sano no tiene ningún coste.</li>
-<li class="fragment">Enfermar supone un coste de 1.000 $ al año.</li>
-<li class="fragment">Enfermar aumenta el riesgo de muerte en un 300%.</li>
+<li class="fragment">Permanecer sano no conlleva disminución de utilidad (peso de utilidad = 1,0 por ciclo en estado sano)</li>
+<li class="fragment">Enfermarse conlleva una disminución de utilidad de 0,25 durante el resto de la vida de la persona (peso de utilidad = 0,75).</li>
+<li class="fragment">La muerte conlleva un valor de utilidad de 0.</li>
 </ul>
 </div>
 </section>
 <section id="un-proceso-de-enfermedad-simple-2" class="slide level2">
 <h2>Un proceso de enfermedad simple</h2>
-<p>El Instituto de Salud de un país estudia cinco estrategias de prevención preventiva que reducen el riesgo de enfermar:</p>
+<div>
+<ul>
+<li class="fragment">Permanecer sano no tiene ningún costo.</li>
+<li class="fragment">Enfermarse supone un costo de 1.000 $ al año.</li>
+<li class="fragment">Enfermarse aumenta el riesgo de muerte en un 300%.</li>
+</ul>
+</div>
+</section>
+<section id="un-proceso-de-enfermedad-simple-3" class="slide level2">
+<h2>Un proceso de enfermedad simple</h2>
+<p>El Instituto de Salud de un país estudia cinco estrategias de prevención que reducen el riesgo de enfermarse:</p>
 <table>
 <colgroup>
-<col style="width: 25%">
-<col style="width: 50%">
-<col style="width: 25%">
+<col style="width: 20%">
+<col style="width: 58%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Estrategia</th>
 <th>Descripción</th>
-<th>Coste</th>
+<th>Costo</th>
 </tr>
 </thead>
 <tbody>
@@ -447,7 +445,7 @@
 </tr>
 <tr class="even">
 <td>B</td>
-<td>Reducción adicional del 4% del riesgo de enfermar</td>
+<td>Reducción adicional del 4% del riesgo de enfermarse</td>
 <td>1,000 $/año</td>
 </tr>
 <tr class="odd">
@@ -471,7 +469,7 @@
 <section id="opción-de-modelo-1-árbol-de-decisión" class="slide level2">
 <h2>Opción de modelo 1: Árbol de decisión</h2>
 <ul>
-<li class="fragment">Una opción sería utilizar un árbol de decisión para modelar la utilidad esperada y los costes asociados a cada estrategia. utilidad esperada y los costes asociados a cada estrategia.</li>
+<li class="fragment">Una opción sería utilizar un árbol de decisión para modelar la utilidad esperada y los costos asociados a cada estrategia.</li>
 <li class="fragment">Horizonte temporal del modelo: 10 años</li>
 <li class="fragment">La siguiente diapositiva muestra el árbol de decisión para los resultados experimentados en el primer año.</li>
 </ul>
@@ -665,7 +663,7 @@
 <section id="próximos-pasos" class="slide level2">
 <h2>Próximos pasos</h2>
 <ul>
-<li class="fragment">Idealmente, queremos un enfoque de modelado que pueda incorporar flexibilidad y manejar las complejidades que hacen que los árboles de decisión difíciles de manejar.</li>
+<li class="fragment">Idealmente, queremos un enfoque de modelado que pueda incorporar flexibilidad y manejar las complejidades que hacen que los árboles de decisión sean difíciles de manejar.</li>
 </ul>
 </section></section>
 <section>
@@ -761,7 +759,7 @@
 <ul>
 <li class="fragment"><p>Las ventajas de los modelos de Markov se derivan de su estructura en torno a estados de enfermedad mutuamente excluyentes.</p></li>
 <li class="fragment"><p>Estos estados de enfermedad representan los posibles estados o consecuencias de las estrategias u opciones consideradas.</p></li>
-<li class="fragment"><p>Como hay un número fijo de estados de enfermedad en los que puede encontrarse la población la población, no es necesario modelar vías complejas, como vimos en la como vimos en la “explosión” del árbol de decisión hace unas diapositivas.</p></li>
+<li class="fragment"><p>Como hay un número fijo de estados de enfermedad en los que puede encontrarse la población, no es necesario modelar vías complejas, como vimos en la “explosión” del árbol de decisión hace unas diapositivas.</p></li>
 </ul>
 </div>
 </section>
@@ -850,24 +848,24 @@
 </blockquote>
 </section></section>
 <section>
-<section id="constructing-a-markov-model" class="title-slide slide level1 center" data-background="#43464B">
-<h1>Constructing a Markov Model</h1>
+<section id="construyendo-un-modelo-markov" class="title-slide slide level1 center" data-background="#43464B">
+<h1>Construyendo un Modelo Markov</h1>
 
 </section>
-<section id="key-characteristics" class="slide level2 smaller">
-<h2>Key characteristics</h2>
+<section id="características-principales" class="slide level2 smaller">
+<h2>Características principales</h2>
 <div>
 <ul>
 <li class="fragment">Permite transiciones de estado de salud <span style="color de fondo: amarillo;">en tiempo</span></li>
-<li class="fragment">Los individuos sólo pueden existir en un estado a la vez (estados de salud mutuamente estados de salud mutuamente excluyentes)</li>
-<li class="fragment">Al principio o al final de cada ciclo, los pacientes pasan por estados de salud mediante probabilidades de transición y los individuos permanecen en estado de salud <span style="color de fondo: amarillo;">durante todo el ciclo length</span></li>
+<li class="fragment">Los individuos sólo pueden existir en un estado a la vez (estados de salud mutuamente excluyentes)</li>
+<li class="fragment">Al principio o al final de cada ciclo, los pacientes pasan por estados de salud mediante probabilidades de transición y los individuos permanecen en estado de salud <span style="color de fondo: amarillo;">durante el largo del ciclo</span></li>
 <li class="fragment">La probabilidad de transición depende del estado actual (“sin memoria”); (los estados túnel pueden tener en cuenta esta posible limitación)</li>
 <li class="fragment">Las probabilidades de transición permanecen constantes a lo largo del tiempo (aparte de las tablas de vida integradas)</li>
 <li class="fragment">Los resultados indican la “media” de la cohorte</li>
 </ul>
 </div>
 </section>
-<section id="características-principales" class="slide level2 smaller">
+<section id="características-principales-1" class="slide level2 smaller">
 <h2>Características principales</h2>
 <p><br></p>
 <blockquote>
@@ -894,22 +892,22 @@
 </section>
 <section id="paso-1-definir-el-problema-de-decisión" class="slide level2">
 <h2>Paso 1: Definir el problema de decisión</h2>
-<p>Ya hemos definido el problema de decisión anteriormente en esta clase, así que repetiremos los objetivos básicos brevemente aquí.</p>
+<p>Ya hemos definido el problema de decisión anteriormente en este taller, así que repetiremos los objetivos básicos brevemente aquí.</p>
 </section>
 <section id="paso-1-definir-el-problema-de-decisión-1" class="slide level2">
 <h2>Paso 1: Definir el problema de decisión</h2>
 <p><strong>Objetivo:</strong> modelar la rentabilidad de estrategias alternativas para para prevenir la aparición de una enfermedad.</p>
 <table>
 <colgroup>
-<col style="width: 25%">
-<col style="width: 50%">
-<col style="width: 25%">
+<col style="width: 20%">
+<col style="width: 58%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Estrategia</th>
 <th>Descripción</th>
-<th>Coste</th>
+<th>Costo</th>
 </tr>
 </thead>
 <tbody>
@@ -920,7 +918,7 @@
 </tr>
 <tr class="even">
 <td>B</td>
-<td>Reducción adicional del 4% del riesgo de enfermar</td>
+<td>Reducción adicional del 4% del riesgo de enfermarse</td>
 <td>1,000 $/año</td>
 </tr>
 <tr class="odd">
@@ -964,7 +962,7 @@
 <li class="fragment">Las personas pueden experimentar tres estados de salud:
 <ol type="1">
 <li class="fragment">Permanecer <strong>Sano</strong></li>
-<li class="fragment">Enfermar**.</li>
+<li class="fragment">Enfermarse**.</li>
 <li class="fragment"><strong>Morir</strong></li>
 </ol></li>
 </ul>
@@ -978,7 +976,7 @@
 <li>Las personas pueden experimentar tres estados de salud:
 <ol type="1">
 <li>Permanecer <strong>Sano</strong></li>
-<li>Enfermar**.</li>
+<li>Enfermarse**.</li>
 <li><strong>Morir</strong></li>
 </ol></li>
 </ul>
@@ -1097,7 +1095,7 @@
 <ul>
 <li class="fragment">Fundamentalmente, estamos modelando un proceso de tiempo continuo (por ejemplo, progresión de la enfermedad).</li>
 <li class="fragment">Un modelo de Markov de tiempo discreto “divide” el tiempo en “trozos” (es decir, “ciclos”).</li>
-<li class="fragment">Una consecuencia es que el modelo nos mostrará qué fracción empieza un ciclo en un estado determinado y qué fracción termina en cada estado al final del ciclo. al final del ciclo.</li>
+<li class="fragment">Una consecuencia es que el modelo nos mostrará qué fracción empieza un ciclo en un estado determinado y qué fracción termina en cada estado al final del ciclo.</li>
 </ul>
 </div>
 </section>
@@ -1127,7 +1125,7 @@
 <div class="column" style="width:50%;">
 <div>
 <ul>
-<li class="fragment">Riesgos concurrentes: los individuos pueden pasar de su estado de salud estado de salud actual a otros dos o más estados de salud.</li>
+<li class="fragment">Riesgos concurrentes: los individuos pueden pasar de su estado de salud actual a otros dos o más estados de salud.</li>
 </ul>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1293,8 +1291,8 @@
 <h2>3a. Definir la longitud del ciclo de Markov</h2>
 <table>
 <colgroup>
-<col style="width: 45%">
-<col style="width: 54%">
+<col style="width: 61%">
+<col style="width: 38%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1344,8 +1342,8 @@
 <h2>3a. Definir la longitud del ciclo de Markov</h2>
 <table>
 <colgroup>
-<col style="width: 45%">
 <col style="width: 54%">
+<col style="width: 45%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1379,7 +1377,7 @@
 <ul>
 <li class="fragment">Los modelos de Markov carecen de memoria: no recuerdan lo que ocurrió antes del ciclo actual.
 <ul>
-<li class="fragment">Si su riesgo de transición a un estado de salud más grave depende de de acontecimientos anteriores, el modelo no puede tenerlo en cuenta explícitamente. explícitamente.</li>
+<li class="fragment">Si su riesgo de transición a un estado de salud más grave depende de de acontecimientos anteriores, el modelo no puede tenerlo en cuenta explícitamente.</li>
 </ul></li>
 </ul>
 </section>
@@ -1389,7 +1387,7 @@
 <ul>
 <li class="fragment">Existen soluciones conocidas como “estados túnel” para evitar este problema, aunque son difíciles de hacer y presentan sus propios problemas
 <ul>
-<li class="fragment">No los trataremos esta semana, pero podemos proporcionar referencias si explorar.</li>
+<li class="fragment">No los trataremos esta semana, pero podemos proporcionar referencias si quieren explorar.</li>
 </ul></li>
 </ul>
 </section>
@@ -1433,7 +1431,7 @@
 <li class="fragment">Esquemas de tratamiento.</li>
 <li class="fragment">Enfermedad aguda frente a crónica.</li>
 </ul></li>
-<li class="fragment">Otra opción es incorporar los acontecimientos “a corto plazo” que se producen en el curso de una enfermedad/intervención dentro del árbol de decisión y de decisión y, a continuación, permitir que el modelo de Markov modele las consecuencias sanitarias a largo plazo.</li>
+<li class="fragment">Otra opción es incorporar los acontecimientos “a corto plazo” que se producen en el curso de una enfermedad/intervención dentro del árbol de decisión y, a continuación, permitir que el modelo de Markov modele las consecuencias sanitarias a largo plazo.</li>
 </ul>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1512,7 +1510,7 @@
 </section>
 <section id="parametrizar-el-modelo-3" class="slide level2">
 <h2>3. Parametrizar el modelo</h2>
-<h3 id="b.-curar-y-definir-las-entradas-del-modelo-1"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b. Curar y definir las entradas del modelo</h3>
+<h3 id="b.-identificar-y-definir-las-entradas-del-modelo"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b. Identificar y definir las entradas del modelo</h3>
 <div class="nobullet">
 <ul>
 <li class="fragment"><p><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b.i. Fuente y definir el caso base valores.</p></li>
@@ -1522,19 +1520,19 @@
 </section>
 <section id="parametrizar-el-modelo-4" class="slide level2">
 <h2>3. Parametrizar el modelo</h2>
-<h3 id="b.-curar-y-definir-las-entradas-del-modelo-2"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b. Curar y definir las entradas del modelo</h3>
+<h3 id="b.-identificar-y-definir-las-entradas-del-modelo-1"><i class="fa-solid fa-check-circle" aria-label="check-circle"></i> 3b. Identificar y definir las entradas del modelo</h3>
 <div>
 <ul>
-<li class="fragment">Tasa de aparición de la enfermedad</li>
-<li class="fragment">Utilidades y costes del estado de salud</li>
-<li class="fragment">Ratios de riesgo, odds ratios o riesgos relativos para diferentes estrategias. estrategias.</li>
+<li class="fragment">Tasa de incidencia de la enfermedad</li>
+<li class="fragment">Utilidades y costos del estado de salud</li>
+<li class="fragment">Relaciones de riesgo, odds ratios o riesgos relativos para diferentes estrategias.</li>
 <li class="fragment">… y así sucesivamente.</li>
 </ul>
 </div>
 </section>
 <section id="parametrizar-el-modelo-5" class="slide level2">
 <h2>3. Parametrizar el modelo</h2>
-<p>Hemos definido muchos de los parámetros subyacentes antes en esta conferencia, por lo que los repetiremos brevemente aquí.</p>
+<p>Hemos definido muchos de los parámetros subyacentes antes en este taller, por lo que los repetiremos brevemente aquí.</p>
 </section>
 <section id="parametrizar-el-modelo-6" class="slide level2">
 <h2>3. Parametrizar el modelo</h2>
@@ -1544,7 +1542,7 @@
 <div>
 <ul>
 <li class="fragment">Permanecer sano no conlleva ninguna disminución de la utilidad (peso de la utilidad= 1,0)</li>
-<li class="fragment">Enfermar conlleva una disminución de la utilidad de 0,25 durante el resto de la vida de la persona (peso de la utilidad= 1,0). vida de la persona (peso de utilidad = 0,75)</li>
+<li class="fragment">Enfermarse conlleva una disminución de la utilidad de 0,25 durante el resto de la vida de la persona (peso de utilidad = 0,75)</li>
 <li class="fragment">La muerte tiene un peso de utilidad de 0.</li>
 </ul>
 </div>
@@ -1552,29 +1550,29 @@
 <section id="parametrizar-el-modelo-7" class="slide level2">
 <h2>3. Parametrizar el modelo</h2>
 <ul>
-<li class="fragment">No hay ningún coste asociado a mantenerse sano.</li>
+<li class="fragment">No hay ningún costo asociado a mantenerse sano.</li>
 </ul>
 <div>
 <ul>
-<li class="fragment">Enfermar supone un coste de 1.000 $/año.</li>
+<li class="fragment">Enfermar supone un costo de 1.000 $/año.</li>
 <li class="fragment">Enfermar aumenta el riesgo de muerte en un 300%.</li>
 </ul>
 </div>
 </section>
 <section id="parametrizar-el-modelo-8" class="slide level2">
 <h2>3. Parametrizar el modelo</h2>
-<p>Cada estrategia tiene un coste y un impacto diferentes en la probabilidad de enfermar. enfermar.</p>
+<p>Cada estrategia tiene un costo y un impacto diferente en la probabilidad de enfermar.</p>
 <table>
 <colgroup>
-<col style="width: 25%">
-<col style="width: 50%">
-<col style="width: 25%">
+<col style="width: 20%">
+<col style="width: 58%">
+<col style="width: 20%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Estrategia</th>
 <th>Descripción</th>
-<th>Coste</th>
+<th>Costo</th>
 </tr>
 </thead>
 <tbody>
@@ -1622,7 +1620,7 @@
 <ul>
 <li class="fragment">A menudo, los parámetros se extraen de la literatura publicada, y es importante rastrear la fuente (valor publicado, suposición, etc.) de cada parámetro del modelo.
 <ul>
-<li class="fragment">Por ejemplo, el parámetro de reducción porcentual del riesgo de cada estrategia puede proceder de distintos ensayos clínicos. estrategia puede proceder de diferentes ensayos clínicos.</li>
+<li class="fragment">Por ejemplo, el parámetro de reducción porcentual del riesgo de cada estrategia puede proceder de distintos ensayos clínicos.</li>
 <li class="fragment">El parámetro que rige la muerte por causas de fondo puede derivarse de datos de mortalidad.</li>
 </ul></li>
 </ul>
@@ -1636,18 +1634,18 @@
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>Es <strong>crítico</strong> seguir un proceso formal para parametrizar su modelo. modelo.</p>
+<p>Es <strong>crítico</strong> seguir un proceso formal para parametrizar su modelo.</p>
 </div>
 </div>
 </div>
 <div>
 <ul>
-<li class="fragment">Algunos parámetros pueden ser simplemente valores (por ejemplo, el coste de la estrategia A es de \25 $/año)</li>
+<li class="fragment">Algunos parámetros pueden ser simplemente valores (por ejemplo, el costo de la estrategia A es de \25 $/año)</li>
 <li class="fragment">Algunos parámetros pueden ser funciones de otros parámetros.
 <ul>
 <li class="fragment">Por ejemplo, supongamos que queremos seguir a una cohorte de personas de 25 años hasta los 100 años o la muerte, si ésta se produce antes.</li>
 <li class="fragment">En ese caso tenemos dos parámetros “fijos”: la edad inicial y la edad máxima.</li>
-<li class="fragment">Podemos utilizar estos dos parámetros para deducir el número total de ciclos que necesitamos realizar. ciclos que necesitamos ejecutar.</li>
+<li class="fragment">Podemos utilizar estos dos parámetros para deducir el número total de ciclos que necesitamos realizar.</li>
 </ul></li>
 </ul>
 </div>
@@ -1660,7 +1658,7 @@
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>Es <strong>crítico</strong> seguir un proceso formal para parametrizar su modelo. modelo.</p>
+<p>Es <strong>crítico</strong> seguir un proceso formal para parametrizar su modelo.</p>
 </div>
 </div>
 </div>
@@ -1670,8 +1668,8 @@
 <ol type="1">
 <li class="fragment">Probabilidades</li>
 <li class="fragment">Tasas</li>
-<li class="fragment">Razones de riesgo</li>
-<li class="fragment">Costes</li>
+<li class="fragment">Relaciones de riesgo</li>
+<li class="fragment">Costos</li>
 <li class="fragment">Utilidades</li>
 <li class="fragment">etc.</li>
 </ol></li>
@@ -1686,14 +1684,14 @@
 <i class="callout-icon"></i>
 </div>
 <div class="callout-content">
-<p>Es <strong>crítico</strong> seguir un proceso formal para parametrizar su modelo. modelo.</p>
+<p>Es <strong>crítico</strong> seguir un proceso formal para parametrizar su modelo.</p>
 </div>
 </div>
 </div>
 <div>
 <ul>
 <li class="fragment"><p>Todo lo anterior resalta la importancia de adoptar un proceso formal para nombrar y rastrear el valor, la fuente y la distribución de incertidumbre de de <strong>todos</strong> los parámetros del modelo en un único lugar.</p></li>
-<li class="fragment"><p>Recomendamos un enfoque estructurado basado en convenciones de nomenclatura de parámetros y tablas de parámetros. y tablas de parámetros.</p></li>
+<li class="fragment"><p>Recomendamos un enfoque estructurado basado en convenciones de nomenclatura de parámetros y tablas de parámetros.</p></li>
 </ul>
 </div>
 </section>
@@ -1723,7 +1721,7 @@
 <td style="text-align: left;">m_</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Coste</td>
+<td style="text-align: left;">Costo</td>
 <td style="text-align: left;">c_</td>
 </tr>
 <tr class="odd">
@@ -1745,23 +1743,23 @@
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="xpugsdtbtz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#xpugsdtbtz table {
+<div id="kzounpdnhd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kzounpdnhd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#xpugsdtbtz thead, #xpugsdtbtz tbody, #xpugsdtbtz tfoot, #xpugsdtbtz tr, #xpugsdtbtz td, #xpugsdtbtz th {
+#kzounpdnhd thead, #kzounpdnhd tbody, #kzounpdnhd tfoot, #kzounpdnhd tr, #kzounpdnhd td, #kzounpdnhd th {
   border-style: none;
 }
 
-#xpugsdtbtz p {
+#kzounpdnhd p {
   margin: 0;
   padding: 0;
 }
 
-#xpugsdtbtz .gt_table {
+#kzounpdnhd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1787,12 +1785,12 @@
   border-left-color: #D3D3D3;
 }
 
-#xpugsdtbtz .gt_caption {
+#kzounpdnhd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#xpugsdtbtz .gt_title {
+#kzounpdnhd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1804,7 +1802,7 @@
   border-bottom-width: 0;
 }
 
-#xpugsdtbtz .gt_subtitle {
+#kzounpdnhd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1816,7 +1814,7 @@
   border-top-width: 0;
 }
 
-#xpugsdtbtz .gt_heading {
+#kzounpdnhd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1828,13 +1826,13 @@
   border-right-color: #D3D3D3;
 }
 
-#xpugsdtbtz .gt_bottom_border {
+#kzounpdnhd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xpugsdtbtz .gt_col_headings {
+#kzounpdnhd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1849,7 +1847,7 @@
   border-right-color: #D3D3D3;
 }
 
-#xpugsdtbtz .gt_col_heading {
+#kzounpdnhd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1869,7 +1867,7 @@
   overflow-x: hidden;
 }
 
-#xpugsdtbtz .gt_column_spanner_outer {
+#kzounpdnhd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1881,15 +1879,15 @@
   padding-right: 4px;
 }
 
-#xpugsdtbtz .gt_column_spanner_outer:first-child {
+#kzounpdnhd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xpugsdtbtz .gt_column_spanner_outer:last-child {
+#kzounpdnhd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xpugsdtbtz .gt_column_spanner {
+#kzounpdnhd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1901,11 +1899,11 @@
   width: 100%;
 }
 
-#xpugsdtbtz .gt_spanner_row {
+#kzounpdnhd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#xpugsdtbtz .gt_group_heading {
+#kzounpdnhd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1931,7 +1929,7 @@
   text-align: left;
 }
 
-#xpugsdtbtz .gt_empty_group_heading {
+#kzounpdnhd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1946,15 +1944,15 @@
   vertical-align: middle;
 }
 
-#xpugsdtbtz .gt_from_md > :first-child {
+#kzounpdnhd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xpugsdtbtz .gt_from_md > :last-child {
+#kzounpdnhd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xpugsdtbtz .gt_row {
+#kzounpdnhd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1973,7 +1971,7 @@
   overflow-x: hidden;
 }
 
-#xpugsdtbtz .gt_stub {
+#kzounpdnhd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1986,7 +1984,7 @@
   padding-right: 5px;
 }
 
-#xpugsdtbtz .gt_stub_row_group {
+#kzounpdnhd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2000,15 +1998,15 @@
   vertical-align: top;
 }
 
-#xpugsdtbtz .gt_row_group_first td {
+#kzounpdnhd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#xpugsdtbtz .gt_row_group_first th {
+#kzounpdnhd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#xpugsdtbtz .gt_summary_row {
+#kzounpdnhd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2018,16 +2016,16 @@
   padding-right: 5px;
 }
 
-#xpugsdtbtz .gt_first_summary_row {
+#kzounpdnhd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#xpugsdtbtz .gt_first_summary_row.thick {
+#kzounpdnhd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#xpugsdtbtz .gt_last_summary_row {
+#kzounpdnhd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2037,7 +2035,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#xpugsdtbtz .gt_grand_summary_row {
+#kzounpdnhd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2047,7 +2045,7 @@
   padding-right: 5px;
 }
 
-#xpugsdtbtz .gt_first_grand_summary_row {
+#kzounpdnhd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2057,7 +2055,7 @@
   border-top-color: #D3D3D3;
 }
 
-#xpugsdtbtz .gt_last_grand_summary_row_top {
+#kzounpdnhd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2067,11 +2065,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#xpugsdtbtz .gt_striped {
+#kzounpdnhd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xpugsdtbtz .gt_table_body {
+#kzounpdnhd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2080,7 +2078,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#xpugsdtbtz .gt_footnotes {
+#kzounpdnhd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2094,7 +2092,7 @@
   border-right-color: #D3D3D3;
 }
 
-#xpugsdtbtz .gt_footnote {
+#kzounpdnhd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2103,7 +2101,7 @@
   padding-right: 5px;
 }
 
-#xpugsdtbtz .gt_sourcenotes {
+#kzounpdnhd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2117,7 +2115,7 @@
   border-right-color: #D3D3D3;
 }
 
-#xpugsdtbtz .gt_sourcenote {
+#kzounpdnhd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2125,63 +2123,63 @@
   padding-right: 5px;
 }
 
-#xpugsdtbtz .gt_left {
+#kzounpdnhd .gt_left {
   text-align: left;
 }
 
-#xpugsdtbtz .gt_center {
+#kzounpdnhd .gt_center {
   text-align: center;
 }
 
-#xpugsdtbtz .gt_right {
+#kzounpdnhd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xpugsdtbtz .gt_font_normal {
+#kzounpdnhd .gt_font_normal {
   font-weight: normal;
 }
 
-#xpugsdtbtz .gt_font_bold {
+#kzounpdnhd .gt_font_bold {
   font-weight: bold;
 }
 
-#xpugsdtbtz .gt_font_italic {
+#kzounpdnhd .gt_font_italic {
   font-style: italic;
 }
 
-#xpugsdtbtz .gt_super {
+#kzounpdnhd .gt_super {
   font-size: 65%;
 }
 
-#xpugsdtbtz .gt_footnote_marks {
+#kzounpdnhd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#xpugsdtbtz .gt_asterisk {
+#kzounpdnhd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#xpugsdtbtz .gt_indent_1 {
+#kzounpdnhd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#xpugsdtbtz .gt_indent_2 {
+#kzounpdnhd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#xpugsdtbtz .gt_indent_3 {
+#kzounpdnhd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#xpugsdtbtz .gt_indent_4 {
+#kzounpdnhd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#xpugsdtbtz .gt_indent_5 {
+#kzounpdnhd .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2198,7 +2196,7 @@
 </colgroup>
 <thead>
 <tr class="header gt_heading">
-<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Parameter Table</th>
+<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Tabla de parámetros</th>
 </tr>
 <tr class="odd gt_col_headings">
 <th id="param" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">param</th>
@@ -2330,23 +2328,23 @@
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="hcyuarqooa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hcyuarqooa table {
+<div id="gtivhcgavz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gtivhcgavz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hcyuarqooa thead, #hcyuarqooa tbody, #hcyuarqooa tfoot, #hcyuarqooa tr, #hcyuarqooa td, #hcyuarqooa th {
+#gtivhcgavz thead, #gtivhcgavz tbody, #gtivhcgavz tfoot, #gtivhcgavz tr, #gtivhcgavz td, #gtivhcgavz th {
   border-style: none;
 }
 
-#hcyuarqooa p {
+#gtivhcgavz p {
   margin: 0;
   padding: 0;
 }
 
-#hcyuarqooa .gt_table {
+#gtivhcgavz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2372,12 +2370,12 @@
   border-left-color: #D3D3D3;
 }
 
-#hcyuarqooa .gt_caption {
+#gtivhcgavz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hcyuarqooa .gt_title {
+#gtivhcgavz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2389,7 +2387,7 @@
   border-bottom-width: 0;
 }
 
-#hcyuarqooa .gt_subtitle {
+#gtivhcgavz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2401,7 +2399,7 @@
   border-top-width: 0;
 }
 
-#hcyuarqooa .gt_heading {
+#gtivhcgavz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2413,13 +2411,13 @@
   border-right-color: #D3D3D3;
 }
 
-#hcyuarqooa .gt_bottom_border {
+#gtivhcgavz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hcyuarqooa .gt_col_headings {
+#gtivhcgavz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2434,7 +2432,7 @@
   border-right-color: #D3D3D3;
 }
 
-#hcyuarqooa .gt_col_heading {
+#gtivhcgavz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2454,7 +2452,7 @@
   overflow-x: hidden;
 }
 
-#hcyuarqooa .gt_column_spanner_outer {
+#gtivhcgavz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2466,15 +2464,15 @@
   padding-right: 4px;
 }
 
-#hcyuarqooa .gt_column_spanner_outer:first-child {
+#gtivhcgavz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hcyuarqooa .gt_column_spanner_outer:last-child {
+#gtivhcgavz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hcyuarqooa .gt_column_spanner {
+#gtivhcgavz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2486,11 +2484,11 @@
   width: 100%;
 }
 
-#hcyuarqooa .gt_spanner_row {
+#gtivhcgavz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hcyuarqooa .gt_group_heading {
+#gtivhcgavz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2516,7 +2514,7 @@
   text-align: left;
 }
 
-#hcyuarqooa .gt_empty_group_heading {
+#gtivhcgavz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2531,15 +2529,15 @@
   vertical-align: middle;
 }
 
-#hcyuarqooa .gt_from_md > :first-child {
+#gtivhcgavz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hcyuarqooa .gt_from_md > :last-child {
+#gtivhcgavz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hcyuarqooa .gt_row {
+#gtivhcgavz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2558,7 +2556,7 @@
   overflow-x: hidden;
 }
 
-#hcyuarqooa .gt_stub {
+#gtivhcgavz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2571,7 +2569,7 @@
   padding-right: 5px;
 }
 
-#hcyuarqooa .gt_stub_row_group {
+#gtivhcgavz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2585,15 +2583,15 @@
   vertical-align: top;
 }
 
-#hcyuarqooa .gt_row_group_first td {
+#gtivhcgavz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hcyuarqooa .gt_row_group_first th {
+#gtivhcgavz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hcyuarqooa .gt_summary_row {
+#gtivhcgavz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2603,16 +2601,16 @@
   padding-right: 5px;
 }
 
-#hcyuarqooa .gt_first_summary_row {
+#gtivhcgavz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hcyuarqooa .gt_first_summary_row.thick {
+#gtivhcgavz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hcyuarqooa .gt_last_summary_row {
+#gtivhcgavz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2622,7 +2620,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#hcyuarqooa .gt_grand_summary_row {
+#gtivhcgavz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2632,7 +2630,7 @@
   padding-right: 5px;
 }
 
-#hcyuarqooa .gt_first_grand_summary_row {
+#gtivhcgavz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2642,7 +2640,7 @@
   border-top-color: #D3D3D3;
 }
 
-#hcyuarqooa .gt_last_grand_summary_row_top {
+#gtivhcgavz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2652,11 +2650,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#hcyuarqooa .gt_striped {
+#gtivhcgavz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hcyuarqooa .gt_table_body {
+#gtivhcgavz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2665,7 +2663,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#hcyuarqooa .gt_footnotes {
+#gtivhcgavz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2679,7 +2677,7 @@
   border-right-color: #D3D3D3;
 }
 
-#hcyuarqooa .gt_footnote {
+#gtivhcgavz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2688,7 +2686,7 @@
   padding-right: 5px;
 }
 
-#hcyuarqooa .gt_sourcenotes {
+#gtivhcgavz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2702,7 +2700,7 @@
   border-right-color: #D3D3D3;
 }
 
-#hcyuarqooa .gt_sourcenote {
+#gtivhcgavz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2710,63 +2708,63 @@
   padding-right: 5px;
 }
 
-#hcyuarqooa .gt_left {
+#gtivhcgavz .gt_left {
   text-align: left;
 }
 
-#hcyuarqooa .gt_center {
+#gtivhcgavz .gt_center {
   text-align: center;
 }
 
-#hcyuarqooa .gt_right {
+#gtivhcgavz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hcyuarqooa .gt_font_normal {
+#gtivhcgavz .gt_font_normal {
   font-weight: normal;
 }
 
-#hcyuarqooa .gt_font_bold {
+#gtivhcgavz .gt_font_bold {
   font-weight: bold;
 }
 
-#hcyuarqooa .gt_font_italic {
+#gtivhcgavz .gt_font_italic {
   font-style: italic;
 }
 
-#hcyuarqooa .gt_super {
+#gtivhcgavz .gt_super {
   font-size: 65%;
 }
 
-#hcyuarqooa .gt_footnote_marks {
+#gtivhcgavz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hcyuarqooa .gt_asterisk {
+#gtivhcgavz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hcyuarqooa .gt_indent_1 {
+#gtivhcgavz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hcyuarqooa .gt_indent_2 {
+#gtivhcgavz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hcyuarqooa .gt_indent_3 {
+#gtivhcgavz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hcyuarqooa .gt_indent_4 {
+#gtivhcgavz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hcyuarqooa .gt_indent_5 {
+#gtivhcgavz .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2783,7 +2781,7 @@
 </colgroup>
 <thead>
 <tr class="header gt_heading">
-<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Parameter Table</th>
+<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Tabla de parámetros</th>
 </tr>
 <tr class="odd gt_col_headings">
 <th id="param" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">param</th>
@@ -2915,23 +2913,23 @@
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="ekkxlzcnkm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ekkxlzcnkm table {
+<div id="mvrpkhxgie" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mvrpkhxgie table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ekkxlzcnkm thead, #ekkxlzcnkm tbody, #ekkxlzcnkm tfoot, #ekkxlzcnkm tr, #ekkxlzcnkm td, #ekkxlzcnkm th {
+#mvrpkhxgie thead, #mvrpkhxgie tbody, #mvrpkhxgie tfoot, #mvrpkhxgie tr, #mvrpkhxgie td, #mvrpkhxgie th {
   border-style: none;
 }
 
-#ekkxlzcnkm p {
+#mvrpkhxgie p {
   margin: 0;
   padding: 0;
 }
 
-#ekkxlzcnkm .gt_table {
+#mvrpkhxgie .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2957,12 +2955,12 @@
   border-left-color: #D3D3D3;
 }
 
-#ekkxlzcnkm .gt_caption {
+#mvrpkhxgie .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ekkxlzcnkm .gt_title {
+#mvrpkhxgie .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2974,7 +2972,7 @@
   border-bottom-width: 0;
 }
 
-#ekkxlzcnkm .gt_subtitle {
+#mvrpkhxgie .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2986,7 +2984,7 @@
   border-top-width: 0;
 }
 
-#ekkxlzcnkm .gt_heading {
+#mvrpkhxgie .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2998,13 +2996,13 @@
   border-right-color: #D3D3D3;
 }
 
-#ekkxlzcnkm .gt_bottom_border {
+#mvrpkhxgie .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ekkxlzcnkm .gt_col_headings {
+#mvrpkhxgie .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3019,7 +3017,7 @@
   border-right-color: #D3D3D3;
 }
 
-#ekkxlzcnkm .gt_col_heading {
+#mvrpkhxgie .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3039,7 +3037,7 @@
   overflow-x: hidden;
 }
 
-#ekkxlzcnkm .gt_column_spanner_outer {
+#mvrpkhxgie .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3051,15 +3049,15 @@
   padding-right: 4px;
 }
 
-#ekkxlzcnkm .gt_column_spanner_outer:first-child {
+#mvrpkhxgie .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ekkxlzcnkm .gt_column_spanner_outer:last-child {
+#mvrpkhxgie .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ekkxlzcnkm .gt_column_spanner {
+#mvrpkhxgie .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3071,11 +3069,11 @@
   width: 100%;
 }
 
-#ekkxlzcnkm .gt_spanner_row {
+#mvrpkhxgie .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ekkxlzcnkm .gt_group_heading {
+#mvrpkhxgie .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3101,7 +3099,7 @@
   text-align: left;
 }
 
-#ekkxlzcnkm .gt_empty_group_heading {
+#mvrpkhxgie .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3116,15 +3114,15 @@
   vertical-align: middle;
 }
 
-#ekkxlzcnkm .gt_from_md > :first-child {
+#mvrpkhxgie .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ekkxlzcnkm .gt_from_md > :last-child {
+#mvrpkhxgie .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ekkxlzcnkm .gt_row {
+#mvrpkhxgie .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3143,7 +3141,7 @@
   overflow-x: hidden;
 }
 
-#ekkxlzcnkm .gt_stub {
+#mvrpkhxgie .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3156,7 +3154,7 @@
   padding-right: 5px;
 }
 
-#ekkxlzcnkm .gt_stub_row_group {
+#mvrpkhxgie .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3170,15 +3168,15 @@
   vertical-align: top;
 }
 
-#ekkxlzcnkm .gt_row_group_first td {
+#mvrpkhxgie .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ekkxlzcnkm .gt_row_group_first th {
+#mvrpkhxgie .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ekkxlzcnkm .gt_summary_row {
+#mvrpkhxgie .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3188,16 +3186,16 @@
   padding-right: 5px;
 }
 
-#ekkxlzcnkm .gt_first_summary_row {
+#mvrpkhxgie .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ekkxlzcnkm .gt_first_summary_row.thick {
+#mvrpkhxgie .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ekkxlzcnkm .gt_last_summary_row {
+#mvrpkhxgie .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3207,7 +3205,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#ekkxlzcnkm .gt_grand_summary_row {
+#mvrpkhxgie .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3217,7 +3215,7 @@
   padding-right: 5px;
 }
 
-#ekkxlzcnkm .gt_first_grand_summary_row {
+#mvrpkhxgie .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3227,7 +3225,7 @@
   border-top-color: #D3D3D3;
 }
 
-#ekkxlzcnkm .gt_last_grand_summary_row_top {
+#mvrpkhxgie .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3237,11 +3235,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#ekkxlzcnkm .gt_striped {
+#mvrpkhxgie .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ekkxlzcnkm .gt_table_body {
+#mvrpkhxgie .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3250,7 +3248,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#ekkxlzcnkm .gt_footnotes {
+#mvrpkhxgie .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3264,7 +3262,7 @@
   border-right-color: #D3D3D3;
 }
 
-#ekkxlzcnkm .gt_footnote {
+#mvrpkhxgie .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3273,7 +3271,7 @@
   padding-right: 5px;
 }
 
-#ekkxlzcnkm .gt_sourcenotes {
+#mvrpkhxgie .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3287,7 +3285,7 @@
   border-right-color: #D3D3D3;
 }
 
-#ekkxlzcnkm .gt_sourcenote {
+#mvrpkhxgie .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3295,63 +3293,63 @@
   padding-right: 5px;
 }
 
-#ekkxlzcnkm .gt_left {
+#mvrpkhxgie .gt_left {
   text-align: left;
 }
 
-#ekkxlzcnkm .gt_center {
+#mvrpkhxgie .gt_center {
   text-align: center;
 }
 
-#ekkxlzcnkm .gt_right {
+#mvrpkhxgie .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ekkxlzcnkm .gt_font_normal {
+#mvrpkhxgie .gt_font_normal {
   font-weight: normal;
 }
 
-#ekkxlzcnkm .gt_font_bold {
+#mvrpkhxgie .gt_font_bold {
   font-weight: bold;
 }
 
-#ekkxlzcnkm .gt_font_italic {
+#mvrpkhxgie .gt_font_italic {
   font-style: italic;
 }
 
-#ekkxlzcnkm .gt_super {
+#mvrpkhxgie .gt_super {
   font-size: 65%;
 }
 
-#ekkxlzcnkm .gt_footnote_marks {
+#mvrpkhxgie .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ekkxlzcnkm .gt_asterisk {
+#mvrpkhxgie .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ekkxlzcnkm .gt_indent_1 {
+#mvrpkhxgie .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ekkxlzcnkm .gt_indent_2 {
+#mvrpkhxgie .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ekkxlzcnkm .gt_indent_3 {
+#mvrpkhxgie .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ekkxlzcnkm .gt_indent_4 {
+#mvrpkhxgie .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ekkxlzcnkm .gt_indent_5 {
+#mvrpkhxgie .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3368,7 +3366,7 @@
 </colgroup>
 <thead>
 <tr class="header gt_heading">
-<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Parameter Table</th>
+<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Tabla de parámetros</th>
 </tr>
 <tr class="odd gt_col_headings">
 <th id="param" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">param</th>
@@ -3500,23 +3498,23 @@
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="rzlbvmkbxk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#rzlbvmkbxk table {
+<div id="zqgsqlzyvx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zqgsqlzyvx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rzlbvmkbxk thead, #rzlbvmkbxk tbody, #rzlbvmkbxk tfoot, #rzlbvmkbxk tr, #rzlbvmkbxk td, #rzlbvmkbxk th {
+#zqgsqlzyvx thead, #zqgsqlzyvx tbody, #zqgsqlzyvx tfoot, #zqgsqlzyvx tr, #zqgsqlzyvx td, #zqgsqlzyvx th {
   border-style: none;
 }
 
-#rzlbvmkbxk p {
+#zqgsqlzyvx p {
   margin: 0;
   padding: 0;
 }
 
-#rzlbvmkbxk .gt_table {
+#zqgsqlzyvx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3542,12 +3540,12 @@
   border-left-color: #D3D3D3;
 }
 
-#rzlbvmkbxk .gt_caption {
+#zqgsqlzyvx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rzlbvmkbxk .gt_title {
+#zqgsqlzyvx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3559,7 +3557,7 @@
   border-bottom-width: 0;
 }
 
-#rzlbvmkbxk .gt_subtitle {
+#zqgsqlzyvx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3571,7 +3569,7 @@
   border-top-width: 0;
 }
 
-#rzlbvmkbxk .gt_heading {
+#zqgsqlzyvx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3583,13 +3581,13 @@
   border-right-color: #D3D3D3;
 }
 
-#rzlbvmkbxk .gt_bottom_border {
+#zqgsqlzyvx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rzlbvmkbxk .gt_col_headings {
+#zqgsqlzyvx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3604,7 +3602,7 @@
   border-right-color: #D3D3D3;
 }
 
-#rzlbvmkbxk .gt_col_heading {
+#zqgsqlzyvx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3624,7 +3622,7 @@
   overflow-x: hidden;
 }
 
-#rzlbvmkbxk .gt_column_spanner_outer {
+#zqgsqlzyvx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3636,15 +3634,15 @@
   padding-right: 4px;
 }
 
-#rzlbvmkbxk .gt_column_spanner_outer:first-child {
+#zqgsqlzyvx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rzlbvmkbxk .gt_column_spanner_outer:last-child {
+#zqgsqlzyvx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rzlbvmkbxk .gt_column_spanner {
+#zqgsqlzyvx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3656,11 +3654,11 @@
   width: 100%;
 }
 
-#rzlbvmkbxk .gt_spanner_row {
+#zqgsqlzyvx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rzlbvmkbxk .gt_group_heading {
+#zqgsqlzyvx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3686,7 +3684,7 @@
   text-align: left;
 }
 
-#rzlbvmkbxk .gt_empty_group_heading {
+#zqgsqlzyvx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3701,15 +3699,15 @@
   vertical-align: middle;
 }
 
-#rzlbvmkbxk .gt_from_md > :first-child {
+#zqgsqlzyvx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rzlbvmkbxk .gt_from_md > :last-child {
+#zqgsqlzyvx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rzlbvmkbxk .gt_row {
+#zqgsqlzyvx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3728,7 +3726,7 @@
   overflow-x: hidden;
 }
 
-#rzlbvmkbxk .gt_stub {
+#zqgsqlzyvx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3741,7 +3739,7 @@
   padding-right: 5px;
 }
 
-#rzlbvmkbxk .gt_stub_row_group {
+#zqgsqlzyvx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3755,15 +3753,15 @@
   vertical-align: top;
 }
 
-#rzlbvmkbxk .gt_row_group_first td {
+#zqgsqlzyvx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rzlbvmkbxk .gt_row_group_first th {
+#zqgsqlzyvx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rzlbvmkbxk .gt_summary_row {
+#zqgsqlzyvx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3773,16 +3771,16 @@
   padding-right: 5px;
 }
 
-#rzlbvmkbxk .gt_first_summary_row {
+#zqgsqlzyvx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rzlbvmkbxk .gt_first_summary_row.thick {
+#zqgsqlzyvx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rzlbvmkbxk .gt_last_summary_row {
+#zqgsqlzyvx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3792,7 +3790,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#rzlbvmkbxk .gt_grand_summary_row {
+#zqgsqlzyvx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3802,7 +3800,7 @@
   padding-right: 5px;
 }
 
-#rzlbvmkbxk .gt_first_grand_summary_row {
+#zqgsqlzyvx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3812,7 +3810,7 @@
   border-top-color: #D3D3D3;
 }
 
-#rzlbvmkbxk .gt_last_grand_summary_row_top {
+#zqgsqlzyvx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3822,11 +3820,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#rzlbvmkbxk .gt_striped {
+#zqgsqlzyvx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rzlbvmkbxk .gt_table_body {
+#zqgsqlzyvx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3835,7 +3833,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#rzlbvmkbxk .gt_footnotes {
+#zqgsqlzyvx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3849,7 +3847,7 @@
   border-right-color: #D3D3D3;
 }
 
-#rzlbvmkbxk .gt_footnote {
+#zqgsqlzyvx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3858,7 +3856,7 @@
   padding-right: 5px;
 }
 
-#rzlbvmkbxk .gt_sourcenotes {
+#zqgsqlzyvx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3872,7 +3870,7 @@
   border-right-color: #D3D3D3;
 }
 
-#rzlbvmkbxk .gt_sourcenote {
+#zqgsqlzyvx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3880,63 +3878,63 @@
   padding-right: 5px;
 }
 
-#rzlbvmkbxk .gt_left {
+#zqgsqlzyvx .gt_left {
   text-align: left;
 }
 
-#rzlbvmkbxk .gt_center {
+#zqgsqlzyvx .gt_center {
   text-align: center;
 }
 
-#rzlbvmkbxk .gt_right {
+#zqgsqlzyvx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rzlbvmkbxk .gt_font_normal {
+#zqgsqlzyvx .gt_font_normal {
   font-weight: normal;
 }
 
-#rzlbvmkbxk .gt_font_bold {
+#zqgsqlzyvx .gt_font_bold {
   font-weight: bold;
 }
 
-#rzlbvmkbxk .gt_font_italic {
+#zqgsqlzyvx .gt_font_italic {
   font-style: italic;
 }
 
-#rzlbvmkbxk .gt_super {
+#zqgsqlzyvx .gt_super {
   font-size: 65%;
 }
 
-#rzlbvmkbxk .gt_footnote_marks {
+#zqgsqlzyvx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rzlbvmkbxk .gt_asterisk {
+#zqgsqlzyvx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rzlbvmkbxk .gt_indent_1 {
+#zqgsqlzyvx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rzlbvmkbxk .gt_indent_2 {
+#zqgsqlzyvx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rzlbvmkbxk .gt_indent_3 {
+#zqgsqlzyvx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rzlbvmkbxk .gt_indent_4 {
+#zqgsqlzyvx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rzlbvmkbxk .gt_indent_5 {
+#zqgsqlzyvx .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -3953,7 +3951,7 @@
 </colgroup>
 <thead>
 <tr class="header gt_heading">
-<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Parameter Table</th>
+<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Tabla de parámetros</th>
 </tr>
 <tr class="odd gt_col_headings">
 <th id="param" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">param</th>
@@ -4082,23 +4080,23 @@
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="gtulhqdzvm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gtulhqdzvm table {
+<div id="zdqyojpwlx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zdqyojpwlx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gtulhqdzvm thead, #gtulhqdzvm tbody, #gtulhqdzvm tfoot, #gtulhqdzvm tr, #gtulhqdzvm td, #gtulhqdzvm th {
+#zdqyojpwlx thead, #zdqyojpwlx tbody, #zdqyojpwlx tfoot, #zdqyojpwlx tr, #zdqyojpwlx td, #zdqyojpwlx th {
   border-style: none;
 }
 
-#gtulhqdzvm p {
+#zdqyojpwlx p {
   margin: 0;
   padding: 0;
 }
 
-#gtulhqdzvm .gt_table {
+#zdqyojpwlx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4124,12 +4122,12 @@
   border-left-color: #D3D3D3;
 }
 
-#gtulhqdzvm .gt_caption {
+#zdqyojpwlx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gtulhqdzvm .gt_title {
+#zdqyojpwlx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4141,7 +4139,7 @@
   border-bottom-width: 0;
 }
 
-#gtulhqdzvm .gt_subtitle {
+#zdqyojpwlx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4153,7 +4151,7 @@
   border-top-width: 0;
 }
 
-#gtulhqdzvm .gt_heading {
+#zdqyojpwlx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4165,13 +4163,13 @@
   border-right-color: #D3D3D3;
 }
 
-#gtulhqdzvm .gt_bottom_border {
+#zdqyojpwlx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gtulhqdzvm .gt_col_headings {
+#zdqyojpwlx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4186,7 +4184,7 @@
   border-right-color: #D3D3D3;
 }
 
-#gtulhqdzvm .gt_col_heading {
+#zdqyojpwlx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4206,7 +4204,7 @@
   overflow-x: hidden;
 }
 
-#gtulhqdzvm .gt_column_spanner_outer {
+#zdqyojpwlx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4218,15 +4216,15 @@
   padding-right: 4px;
 }
 
-#gtulhqdzvm .gt_column_spanner_outer:first-child {
+#zdqyojpwlx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gtulhqdzvm .gt_column_spanner_outer:last-child {
+#zdqyojpwlx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gtulhqdzvm .gt_column_spanner {
+#zdqyojpwlx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4238,11 +4236,11 @@
   width: 100%;
 }
 
-#gtulhqdzvm .gt_spanner_row {
+#zdqyojpwlx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gtulhqdzvm .gt_group_heading {
+#zdqyojpwlx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4268,7 +4266,7 @@
   text-align: left;
 }
 
-#gtulhqdzvm .gt_empty_group_heading {
+#zdqyojpwlx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4283,15 +4281,15 @@
   vertical-align: middle;
 }
 
-#gtulhqdzvm .gt_from_md > :first-child {
+#zdqyojpwlx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gtulhqdzvm .gt_from_md > :last-child {
+#zdqyojpwlx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gtulhqdzvm .gt_row {
+#zdqyojpwlx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4310,7 +4308,7 @@
   overflow-x: hidden;
 }
 
-#gtulhqdzvm .gt_stub {
+#zdqyojpwlx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4323,7 +4321,7 @@
   padding-right: 5px;
 }
 
-#gtulhqdzvm .gt_stub_row_group {
+#zdqyojpwlx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4337,15 +4335,15 @@
   vertical-align: top;
 }
 
-#gtulhqdzvm .gt_row_group_first td {
+#zdqyojpwlx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gtulhqdzvm .gt_row_group_first th {
+#zdqyojpwlx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gtulhqdzvm .gt_summary_row {
+#zdqyojpwlx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4355,16 +4353,16 @@
   padding-right: 5px;
 }
 
-#gtulhqdzvm .gt_first_summary_row {
+#zdqyojpwlx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gtulhqdzvm .gt_first_summary_row.thick {
+#zdqyojpwlx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gtulhqdzvm .gt_last_summary_row {
+#zdqyojpwlx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4374,7 +4372,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#gtulhqdzvm .gt_grand_summary_row {
+#zdqyojpwlx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4384,7 +4382,7 @@
   padding-right: 5px;
 }
 
-#gtulhqdzvm .gt_first_grand_summary_row {
+#zdqyojpwlx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4394,7 +4392,7 @@
   border-top-color: #D3D3D3;
 }
 
-#gtulhqdzvm .gt_last_grand_summary_row_top {
+#zdqyojpwlx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4404,11 +4402,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#gtulhqdzvm .gt_striped {
+#zdqyojpwlx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gtulhqdzvm .gt_table_body {
+#zdqyojpwlx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4417,7 +4415,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#gtulhqdzvm .gt_footnotes {
+#zdqyojpwlx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4431,7 +4429,7 @@
   border-right-color: #D3D3D3;
 }
 
-#gtulhqdzvm .gt_footnote {
+#zdqyojpwlx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4440,7 +4438,7 @@
   padding-right: 5px;
 }
 
-#gtulhqdzvm .gt_sourcenotes {
+#zdqyojpwlx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4454,7 +4452,7 @@
   border-right-color: #D3D3D3;
 }
 
-#gtulhqdzvm .gt_sourcenote {
+#zdqyojpwlx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4462,63 +4460,63 @@
   padding-right: 5px;
 }
 
-#gtulhqdzvm .gt_left {
+#zdqyojpwlx .gt_left {
   text-align: left;
 }
 
-#gtulhqdzvm .gt_center {
+#zdqyojpwlx .gt_center {
   text-align: center;
 }
 
-#gtulhqdzvm .gt_right {
+#zdqyojpwlx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gtulhqdzvm .gt_font_normal {
+#zdqyojpwlx .gt_font_normal {
   font-weight: normal;
 }
 
-#gtulhqdzvm .gt_font_bold {
+#zdqyojpwlx .gt_font_bold {
   font-weight: bold;
 }
 
-#gtulhqdzvm .gt_font_italic {
+#zdqyojpwlx .gt_font_italic {
   font-style: italic;
 }
 
-#gtulhqdzvm .gt_super {
+#zdqyojpwlx .gt_super {
   font-size: 65%;
 }
 
-#gtulhqdzvm .gt_footnote_marks {
+#zdqyojpwlx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gtulhqdzvm .gt_asterisk {
+#zdqyojpwlx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gtulhqdzvm .gt_indent_1 {
+#zdqyojpwlx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gtulhqdzvm .gt_indent_2 {
+#zdqyojpwlx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gtulhqdzvm .gt_indent_3 {
+#zdqyojpwlx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gtulhqdzvm .gt_indent_4 {
+#zdqyojpwlx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gtulhqdzvm .gt_indent_5 {
+#zdqyojpwlx .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -4535,7 +4533,7 @@
 </colgroup>
 <thead>
 <tr class="header gt_heading">
-<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Parameter Table</th>
+<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Tabla de parámetros</th>
 </tr>
 <tr class="odd gt_col_headings">
 <th id="param" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">param</th>
@@ -4670,23 +4668,23 @@
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="omgkjestmf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#omgkjestmf table {
+<div id="pktyywazje" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pktyywazje table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#omgkjestmf thead, #omgkjestmf tbody, #omgkjestmf tfoot, #omgkjestmf tr, #omgkjestmf td, #omgkjestmf th {
+#pktyywazje thead, #pktyywazje tbody, #pktyywazje tfoot, #pktyywazje tr, #pktyywazje td, #pktyywazje th {
   border-style: none;
 }
 
-#omgkjestmf p {
+#pktyywazje p {
   margin: 0;
   padding: 0;
 }
 
-#omgkjestmf .gt_table {
+#pktyywazje .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4712,12 +4710,12 @@
   border-left-color: #D3D3D3;
 }
 
-#omgkjestmf .gt_caption {
+#pktyywazje .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#omgkjestmf .gt_title {
+#pktyywazje .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4729,7 +4727,7 @@
   border-bottom-width: 0;
 }
 
-#omgkjestmf .gt_subtitle {
+#pktyywazje .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4741,7 +4739,7 @@
   border-top-width: 0;
 }
 
-#omgkjestmf .gt_heading {
+#pktyywazje .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4753,13 +4751,13 @@
   border-right-color: #D3D3D3;
 }
 
-#omgkjestmf .gt_bottom_border {
+#pktyywazje .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#omgkjestmf .gt_col_headings {
+#pktyywazje .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4774,7 +4772,7 @@
   border-right-color: #D3D3D3;
 }
 
-#omgkjestmf .gt_col_heading {
+#pktyywazje .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4794,7 +4792,7 @@
   overflow-x: hidden;
 }
 
-#omgkjestmf .gt_column_spanner_outer {
+#pktyywazje .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4806,15 +4804,15 @@
   padding-right: 4px;
 }
 
-#omgkjestmf .gt_column_spanner_outer:first-child {
+#pktyywazje .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#omgkjestmf .gt_column_spanner_outer:last-child {
+#pktyywazje .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#omgkjestmf .gt_column_spanner {
+#pktyywazje .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4826,11 +4824,11 @@
   width: 100%;
 }
 
-#omgkjestmf .gt_spanner_row {
+#pktyywazje .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#omgkjestmf .gt_group_heading {
+#pktyywazje .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4856,7 +4854,7 @@
   text-align: left;
 }
 
-#omgkjestmf .gt_empty_group_heading {
+#pktyywazje .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4871,15 +4869,15 @@
   vertical-align: middle;
 }
 
-#omgkjestmf .gt_from_md > :first-child {
+#pktyywazje .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#omgkjestmf .gt_from_md > :last-child {
+#pktyywazje .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#omgkjestmf .gt_row {
+#pktyywazje .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4898,7 +4896,7 @@
   overflow-x: hidden;
 }
 
-#omgkjestmf .gt_stub {
+#pktyywazje .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4911,7 +4909,7 @@
   padding-right: 5px;
 }
 
-#omgkjestmf .gt_stub_row_group {
+#pktyywazje .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4925,15 +4923,15 @@
   vertical-align: top;
 }
 
-#omgkjestmf .gt_row_group_first td {
+#pktyywazje .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#omgkjestmf .gt_row_group_first th {
+#pktyywazje .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#omgkjestmf .gt_summary_row {
+#pktyywazje .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4943,16 +4941,16 @@
   padding-right: 5px;
 }
 
-#omgkjestmf .gt_first_summary_row {
+#pktyywazje .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#omgkjestmf .gt_first_summary_row.thick {
+#pktyywazje .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#omgkjestmf .gt_last_summary_row {
+#pktyywazje .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4962,7 +4960,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#omgkjestmf .gt_grand_summary_row {
+#pktyywazje .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4972,7 +4970,7 @@
   padding-right: 5px;
 }
 
-#omgkjestmf .gt_first_grand_summary_row {
+#pktyywazje .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4982,7 +4980,7 @@
   border-top-color: #D3D3D3;
 }
 
-#omgkjestmf .gt_last_grand_summary_row_top {
+#pktyywazje .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4992,11 +4990,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#omgkjestmf .gt_striped {
+#pktyywazje .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#omgkjestmf .gt_table_body {
+#pktyywazje .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5005,7 +5003,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#omgkjestmf .gt_footnotes {
+#pktyywazje .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5019,7 +5017,7 @@
   border-right-color: #D3D3D3;
 }
 
-#omgkjestmf .gt_footnote {
+#pktyywazje .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5028,7 +5026,7 @@
   padding-right: 5px;
 }
 
-#omgkjestmf .gt_sourcenotes {
+#pktyywazje .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5042,7 +5040,7 @@
   border-right-color: #D3D3D3;
 }
 
-#omgkjestmf .gt_sourcenote {
+#pktyywazje .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5050,63 +5048,63 @@
   padding-right: 5px;
 }
 
-#omgkjestmf .gt_left {
+#pktyywazje .gt_left {
   text-align: left;
 }
 
-#omgkjestmf .gt_center {
+#pktyywazje .gt_center {
   text-align: center;
 }
 
-#omgkjestmf .gt_right {
+#pktyywazje .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#omgkjestmf .gt_font_normal {
+#pktyywazje .gt_font_normal {
   font-weight: normal;
 }
 
-#omgkjestmf .gt_font_bold {
+#pktyywazje .gt_font_bold {
   font-weight: bold;
 }
 
-#omgkjestmf .gt_font_italic {
+#pktyywazje .gt_font_italic {
   font-style: italic;
 }
 
-#omgkjestmf .gt_super {
+#pktyywazje .gt_super {
   font-size: 65%;
 }
 
-#omgkjestmf .gt_footnote_marks {
+#pktyywazje .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#omgkjestmf .gt_asterisk {
+#pktyywazje .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#omgkjestmf .gt_indent_1 {
+#pktyywazje .gt_indent_1 {
   text-indent: 5px;
 }
 
-#omgkjestmf .gt_indent_2 {
+#pktyywazje .gt_indent_2 {
   text-indent: 10px;
 }
 
-#omgkjestmf .gt_indent_3 {
+#pktyywazje .gt_indent_3 {
   text-indent: 15px;
 }
 
-#omgkjestmf .gt_indent_4 {
+#pktyywazje .gt_indent_4 {
   text-indent: 20px;
 }
 
-#omgkjestmf .gt_indent_5 {
+#pktyywazje .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -5123,7 +5121,7 @@
 </colgroup>
 <thead>
 <tr class="header gt_heading">
-<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Parameter Table</th>
+<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Tabla de parámetros</th>
 </tr>
 <tr class="odd gt_col_headings">
 <th id="param" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">param</th>
@@ -5248,30 +5246,30 @@
 </section>
 <section id="section-8" class="slide level2 smaller">
 <h2></h2>
-<p><strong>distribución</strong> especifica la distribución de incertidumbre para el parámetro. Se utiliza para los análisis de sensibilidad probabilísticos, que trataremos en nuestro taller intermedio (de una semana de duración). cubrimos en nuestro taller intermedio (de una semana de duración).</p>
+<p><strong>distribución</strong> especifica la distribución de incertidumbre para el parámetro. Se utiliza para los análisis de sensibilidad probabilísticos.</p>
 <div class="footer">
 <p>Nota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.</p>
 </div>
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="gsvacwmjar" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gsvacwmjar table {
+<div id="zaumufkepf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zaumufkepf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gsvacwmjar thead, #gsvacwmjar tbody, #gsvacwmjar tfoot, #gsvacwmjar tr, #gsvacwmjar td, #gsvacwmjar th {
+#zaumufkepf thead, #zaumufkepf tbody, #zaumufkepf tfoot, #zaumufkepf tr, #zaumufkepf td, #zaumufkepf th {
   border-style: none;
 }
 
-#gsvacwmjar p {
+#zaumufkepf p {
   margin: 0;
   padding: 0;
 }
 
-#gsvacwmjar .gt_table {
+#zaumufkepf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5297,12 +5295,12 @@
   border-left-color: #D3D3D3;
 }
 
-#gsvacwmjar .gt_caption {
+#zaumufkepf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gsvacwmjar .gt_title {
+#zaumufkepf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5314,7 +5312,7 @@
   border-bottom-width: 0;
 }
 
-#gsvacwmjar .gt_subtitle {
+#zaumufkepf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5326,7 +5324,7 @@
   border-top-width: 0;
 }
 
-#gsvacwmjar .gt_heading {
+#zaumufkepf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5338,13 +5336,13 @@
   border-right-color: #D3D3D3;
 }
 
-#gsvacwmjar .gt_bottom_border {
+#zaumufkepf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gsvacwmjar .gt_col_headings {
+#zaumufkepf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5359,7 +5357,7 @@
   border-right-color: #D3D3D3;
 }
 
-#gsvacwmjar .gt_col_heading {
+#zaumufkepf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5379,7 +5377,7 @@
   overflow-x: hidden;
 }
 
-#gsvacwmjar .gt_column_spanner_outer {
+#zaumufkepf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5391,15 +5389,15 @@
   padding-right: 4px;
 }
 
-#gsvacwmjar .gt_column_spanner_outer:first-child {
+#zaumufkepf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gsvacwmjar .gt_column_spanner_outer:last-child {
+#zaumufkepf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gsvacwmjar .gt_column_spanner {
+#zaumufkepf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5411,11 +5409,11 @@
   width: 100%;
 }
 
-#gsvacwmjar .gt_spanner_row {
+#zaumufkepf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gsvacwmjar .gt_group_heading {
+#zaumufkepf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5441,7 +5439,7 @@
   text-align: left;
 }
 
-#gsvacwmjar .gt_empty_group_heading {
+#zaumufkepf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5456,15 +5454,15 @@
   vertical-align: middle;
 }
 
-#gsvacwmjar .gt_from_md > :first-child {
+#zaumufkepf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gsvacwmjar .gt_from_md > :last-child {
+#zaumufkepf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gsvacwmjar .gt_row {
+#zaumufkepf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5483,7 +5481,7 @@
   overflow-x: hidden;
 }
 
-#gsvacwmjar .gt_stub {
+#zaumufkepf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5496,7 +5494,7 @@
   padding-right: 5px;
 }
 
-#gsvacwmjar .gt_stub_row_group {
+#zaumufkepf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5510,15 +5508,15 @@
   vertical-align: top;
 }
 
-#gsvacwmjar .gt_row_group_first td {
+#zaumufkepf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gsvacwmjar .gt_row_group_first th {
+#zaumufkepf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gsvacwmjar .gt_summary_row {
+#zaumufkepf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5528,16 +5526,16 @@
   padding-right: 5px;
 }
 
-#gsvacwmjar .gt_first_summary_row {
+#zaumufkepf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gsvacwmjar .gt_first_summary_row.thick {
+#zaumufkepf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gsvacwmjar .gt_last_summary_row {
+#zaumufkepf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5547,7 +5545,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#gsvacwmjar .gt_grand_summary_row {
+#zaumufkepf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5557,7 +5555,7 @@
   padding-right: 5px;
 }
 
-#gsvacwmjar .gt_first_grand_summary_row {
+#zaumufkepf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5567,7 +5565,7 @@
   border-top-color: #D3D3D3;
 }
 
-#gsvacwmjar .gt_last_grand_summary_row_top {
+#zaumufkepf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5577,11 +5575,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#gsvacwmjar .gt_striped {
+#zaumufkepf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gsvacwmjar .gt_table_body {
+#zaumufkepf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5590,7 +5588,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#gsvacwmjar .gt_footnotes {
+#zaumufkepf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5604,7 +5602,7 @@
   border-right-color: #D3D3D3;
 }
 
-#gsvacwmjar .gt_footnote {
+#zaumufkepf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5613,7 +5611,7 @@
   padding-right: 5px;
 }
 
-#gsvacwmjar .gt_sourcenotes {
+#zaumufkepf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5627,7 +5625,7 @@
   border-right-color: #D3D3D3;
 }
 
-#gsvacwmjar .gt_sourcenote {
+#zaumufkepf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5635,63 +5633,63 @@
   padding-right: 5px;
 }
 
-#gsvacwmjar .gt_left {
+#zaumufkepf .gt_left {
   text-align: left;
 }
 
-#gsvacwmjar .gt_center {
+#zaumufkepf .gt_center {
   text-align: center;
 }
 
-#gsvacwmjar .gt_right {
+#zaumufkepf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gsvacwmjar .gt_font_normal {
+#zaumufkepf .gt_font_normal {
   font-weight: normal;
 }
 
-#gsvacwmjar .gt_font_bold {
+#zaumufkepf .gt_font_bold {
   font-weight: bold;
 }
 
-#gsvacwmjar .gt_font_italic {
+#zaumufkepf .gt_font_italic {
   font-style: italic;
 }
 
-#gsvacwmjar .gt_super {
+#zaumufkepf .gt_super {
   font-size: 65%;
 }
 
-#gsvacwmjar .gt_footnote_marks {
+#zaumufkepf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gsvacwmjar .gt_asterisk {
+#zaumufkepf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gsvacwmjar .gt_indent_1 {
+#zaumufkepf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gsvacwmjar .gt_indent_2 {
+#zaumufkepf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gsvacwmjar .gt_indent_3 {
+#zaumufkepf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gsvacwmjar .gt_indent_4 {
+#zaumufkepf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gsvacwmjar .gt_indent_5 {
+#zaumufkepf .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -5708,7 +5706,7 @@
 </colgroup>
 <thead>
 <tr class="header gt_heading">
-<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Parameter Table</th>
+<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Tabla de parámetros</th>
 </tr>
 <tr class="odd gt_col_headings">
 <th id="param" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">param</th>
@@ -5840,23 +5838,23 @@
 <div style="font-size: 0.6em">
 <div class="cell">
 <div class="cell-output-display">
-<div id="btvuibpvxc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#btvuibpvxc table {
+<div id="hmoocrgrcl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hmoocrgrcl table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#btvuibpvxc thead, #btvuibpvxc tbody, #btvuibpvxc tfoot, #btvuibpvxc tr, #btvuibpvxc td, #btvuibpvxc th {
+#hmoocrgrcl thead, #hmoocrgrcl tbody, #hmoocrgrcl tfoot, #hmoocrgrcl tr, #hmoocrgrcl td, #hmoocrgrcl th {
   border-style: none;
 }
 
-#btvuibpvxc p {
+#hmoocrgrcl p {
   margin: 0;
   padding: 0;
 }
 
-#btvuibpvxc .gt_table {
+#hmoocrgrcl .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5882,12 +5880,12 @@
   border-left-color: #D3D3D3;
 }
 
-#btvuibpvxc .gt_caption {
+#hmoocrgrcl .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#btvuibpvxc .gt_title {
+#hmoocrgrcl .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5899,7 +5897,7 @@
   border-bottom-width: 0;
 }
 
-#btvuibpvxc .gt_subtitle {
+#hmoocrgrcl .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5911,7 +5909,7 @@
   border-top-width: 0;
 }
 
-#btvuibpvxc .gt_heading {
+#hmoocrgrcl .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -5923,13 +5921,13 @@
   border-right-color: #D3D3D3;
 }
 
-#btvuibpvxc .gt_bottom_border {
+#hmoocrgrcl .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#btvuibpvxc .gt_col_headings {
+#hmoocrgrcl .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5944,7 +5942,7 @@
   border-right-color: #D3D3D3;
 }
 
-#btvuibpvxc .gt_col_heading {
+#hmoocrgrcl .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5964,7 +5962,7 @@
   overflow-x: hidden;
 }
 
-#btvuibpvxc .gt_column_spanner_outer {
+#hmoocrgrcl .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5976,15 +5974,15 @@
   padding-right: 4px;
 }
 
-#btvuibpvxc .gt_column_spanner_outer:first-child {
+#hmoocrgrcl .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#btvuibpvxc .gt_column_spanner_outer:last-child {
+#hmoocrgrcl .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#btvuibpvxc .gt_column_spanner {
+#hmoocrgrcl .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5996,11 +5994,11 @@
   width: 100%;
 }
 
-#btvuibpvxc .gt_spanner_row {
+#hmoocrgrcl .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#btvuibpvxc .gt_group_heading {
+#hmoocrgrcl .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6026,7 +6024,7 @@
   text-align: left;
 }
 
-#btvuibpvxc .gt_empty_group_heading {
+#hmoocrgrcl .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -6041,15 +6039,15 @@
   vertical-align: middle;
 }
 
-#btvuibpvxc .gt_from_md > :first-child {
+#hmoocrgrcl .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#btvuibpvxc .gt_from_md > :last-child {
+#hmoocrgrcl .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#btvuibpvxc .gt_row {
+#hmoocrgrcl .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6068,7 +6066,7 @@
   overflow-x: hidden;
 }
 
-#btvuibpvxc .gt_stub {
+#hmoocrgrcl .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6081,7 +6079,7 @@
   padding-right: 5px;
 }
 
-#btvuibpvxc .gt_stub_row_group {
+#hmoocrgrcl .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -6095,15 +6093,15 @@
   vertical-align: top;
 }
 
-#btvuibpvxc .gt_row_group_first td {
+#hmoocrgrcl .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#btvuibpvxc .gt_row_group_first th {
+#hmoocrgrcl .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#btvuibpvxc .gt_summary_row {
+#hmoocrgrcl .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6113,16 +6111,16 @@
   padding-right: 5px;
 }
 
-#btvuibpvxc .gt_first_summary_row {
+#hmoocrgrcl .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#btvuibpvxc .gt_first_summary_row.thick {
+#hmoocrgrcl .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#btvuibpvxc .gt_last_summary_row {
+#hmoocrgrcl .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6132,7 +6130,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#btvuibpvxc .gt_grand_summary_row {
+#hmoocrgrcl .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -6142,7 +6140,7 @@
   padding-right: 5px;
 }
 
-#btvuibpvxc .gt_first_grand_summary_row {
+#hmoocrgrcl .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6152,7 +6150,7 @@
   border-top-color: #D3D3D3;
 }
 
-#btvuibpvxc .gt_last_grand_summary_row_top {
+#hmoocrgrcl .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -6162,11 +6160,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#btvuibpvxc .gt_striped {
+#hmoocrgrcl .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#btvuibpvxc .gt_table_body {
+#hmoocrgrcl .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -6175,7 +6173,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#btvuibpvxc .gt_footnotes {
+#hmoocrgrcl .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6189,7 +6187,7 @@
   border-right-color: #D3D3D3;
 }
 
-#btvuibpvxc .gt_footnote {
+#hmoocrgrcl .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -6198,7 +6196,7 @@
   padding-right: 5px;
 }
 
-#btvuibpvxc .gt_sourcenotes {
+#hmoocrgrcl .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -6212,7 +6210,7 @@
   border-right-color: #D3D3D3;
 }
 
-#btvuibpvxc .gt_sourcenote {
+#hmoocrgrcl .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -6220,63 +6218,63 @@
   padding-right: 5px;
 }
 
-#btvuibpvxc .gt_left {
+#hmoocrgrcl .gt_left {
   text-align: left;
 }
 
-#btvuibpvxc .gt_center {
+#hmoocrgrcl .gt_center {
   text-align: center;
 }
 
-#btvuibpvxc .gt_right {
+#hmoocrgrcl .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#btvuibpvxc .gt_font_normal {
+#hmoocrgrcl .gt_font_normal {
   font-weight: normal;
 }
 
-#btvuibpvxc .gt_font_bold {
+#hmoocrgrcl .gt_font_bold {
   font-weight: bold;
 }
 
-#btvuibpvxc .gt_font_italic {
+#hmoocrgrcl .gt_font_italic {
   font-style: italic;
 }
 
-#btvuibpvxc .gt_super {
+#hmoocrgrcl .gt_super {
   font-size: 65%;
 }
 
-#btvuibpvxc .gt_footnote_marks {
+#hmoocrgrcl .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#btvuibpvxc .gt_asterisk {
+#hmoocrgrcl .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#btvuibpvxc .gt_indent_1 {
+#hmoocrgrcl .gt_indent_1 {
   text-indent: 5px;
 }
 
-#btvuibpvxc .gt_indent_2 {
+#hmoocrgrcl .gt_indent_2 {
   text-indent: 10px;
 }
 
-#btvuibpvxc .gt_indent_3 {
+#hmoocrgrcl .gt_indent_3 {
   text-indent: 15px;
 }
 
-#btvuibpvxc .gt_indent_4 {
+#hmoocrgrcl .gt_indent_4 {
   text-indent: 20px;
 }
 
-#btvuibpvxc .gt_indent_5 {
+#hmoocrgrcl .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -6293,7 +6291,7 @@
 </colgroup>
 <thead>
 <tr class="header gt_heading">
-<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Parameter Table</th>
+<th colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border">Tabla de parámetros</th>
 </tr>
 <tr class="odd gt_col_headings">
 <th id="param" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">param</th>
@@ -6424,10 +6422,10 @@
 <section id="definición-de-la-matriz-de-probabilidad-de-transición" class="slide level2">
 <h2>Definición de la matriz de probabilidad de transición</h2>
 <ul>
-<li class="fragment"><p>La matriz de probabilidad de transición es una matriz cuadrada que define la probabilidad de transición de un estado de salud a otro estado de salud en un solo paso de tiempo.</p></li>
-<li class="fragment"><p>Construir la matriz es un proceso bastante técnico, pero bastante pero bastante sencillo.</p>
+<li class="fragment"><p>La matriz de probabilidad de transición es una matriz cuadrada que define la probabilidad de transición de un estado de salud a otro estado de salud en un solo ciclo.</p></li>
+<li class="fragment"><p>Construir la matriz es un proceso bastante técnico, pero bastante sencillo.</p>
 <ul>
-<li class="fragment">Podríamos dedicarle un día entero de clases y casos prácticos (y lo hacemos en nuestra semana). (¡y lo hacemos en nuestro curso intermedio de una semana!)</li>
+<li class="fragment">Podríamos dedicarle un día entero del taller y casos de estudio</li>
 <li class="fragment">Sin embargo, en aras del tiempo, vamos a pasar por alto estos detalles técnicos de hoy.</li>
 </ul></li>
 </ul>
@@ -6555,7 +6553,7 @@
 <h2 data-id="quarto-animate-title">Ejecutar el modelo requiere dos entradas</h2>
 <div class="r-vstack">
 <div data-id="occ">
-<p>Estado de salud Ocupación al inicio del ciclo</p>
+<p>Estado de salud al inicio del ciclo</p>
 </div>
 <div data-id="m_P">
 <p>Matriz de probabilidad de transición</p>
@@ -6566,7 +6564,7 @@
 <h2 data-id="quarto-animate-title"></h2>
 <div class="r-hstack">
 <div data-id="occ">
-<p>Ocupación del estado de salud al inicio del ciclo</p>
+<p>Estado de salud al inicio del ciclo</p>
 </div>
 <div data-id="m_P">
 <p>Matriz de probabilidad de transición</p>
@@ -6577,7 +6575,7 @@
 <h2 data-id="quarto-animate-title"></h2>
 <div class="r-hstack">
 <div data-id="occ">
-<p>Ocupación del estado de salud al inicio del ciclo</p>
+<p>Estado de salud al inicio del ciclo</p>
 </div>
 <div data-id="m_P">
 <p>Matriz de probabilidad de transición</p>
@@ -6616,13 +6614,13 @@ D 0.000 0.000 1.000</code></pre>
 <h2 data-id="quarto-animate-title"></h2>
 <div class="r-hstack">
 <div data-id="occ">
-<p>Estado de salud Ocupación al inicio del ciclo</p>
+<p>Estado de salud al inicio del ciclo</p>
 </div>
 <div data-id="m_P">
 <p>Matriz de probabilidades de transición</p>
 </div>
 <div data-id="occ1">
-<p>Estado de salud Ocupación al final del ciclo</p>
+<p>Estado de salud al final del ciclo</p>
 </div>
 </div>
 <div class="columns">
@@ -6659,13 +6657,13 @@ D 0.000 0.000 1.000</code></pre>
 <h2 data-id="quarto-animate-title"></h2>
 <div class="r-hstack">
 <div data-id="occ">
-<p>Estado de salud Ocupación al inicio del ciclo</p>
+<p>Estado de salud al inicio del ciclo</p>
 </div>
 <div data-id="m_P">
 <p>Matriz de probabilidades de transición</p>
 </div>
 <div data-id="occ1">
-<p>Estado de salud Ocupación al final del ciclo</p>
+<p>Estado de salud al final del ciclo</p>
 </div>
 </div>
 <div class="columns">
@@ -6702,13 +6700,13 @@ D 0.000 0.000 1.000</code></pre>
 <h2 data-id="quarto-animate-title"></h2>
 <div class="r-hstack">
 <div data-id="occ">
-<p>Estado de salud Ocupación al inicio del ciclo</p>
+<p>Estado de salud al inicio del ciclo</p>
 </div>
 <div data-id="m_P">
 <p>Matriz de probabilidades de transición</p>
 </div>
 <div data-id="occ1">
-<p>Estado de salud Ocupación al final del ciclo</p>
+<p>Estado de salud al final del ciclo</p>
 </div>
 </div>
 <div class="columns">
@@ -6773,13 +6771,13 @@ D 0.000 0.000 1.000</code></pre>
 <h2 data-id="quarto-animate-title"></h2>
 <div class="r-hstack">
 <div data-id="occ">
-<p>Estado de salud Ocupación al inicio del ciclo</p>
+<p>Estado de salud al inicio del ciclo</p>
 </div>
 <div data-id="m_P">
 <p>Matriz de probabilidades de transición</p>
 </div>
 <div data-id="occ1">
-<p>Estado de salud Ocupación al final del ciclo</p>
+<p>Estado de salud al final del ciclo</p>
 </div>
 </div>
 <div class="columns">
@@ -6873,7 +6871,7 @@ D 0.000 0.000 1.000</code></pre>
 <section id="section-16" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
 <h2 data-id="quarto-animate-title"></h2>
 <div data-id="occ1">
-<p>Estado de salud Ocupación al final del ciclo</p>
+<p>Estado de salud al final del ciclo</p>
 </div>
 <div data-id="tr1">
 <div class="cell">
@@ -6903,7 +6901,7 @@ D 0.000 0.000 1.000</code></pre>
 <section id="trazado-de-markov" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
 <h2 data-id="quarto-animate-title">Trazado de Markov</h2>
 <div data-id="occ1">
-<p>Estado de salud Ocupación durante diez ciclos</p>
+<p>Estado de salud durante diez ciclos</p>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -6936,7 +6934,7 @@ D 0.000 0.000 1.000</code></pre>
 <ul>
 <li class="fragment">Se ha desarrollado un nuevo fármaco para pacientes con cáncer en remisión para disminuir su probabilidad de recaída</li>
 <li class="fragment">Este medicamento cuesta $10,000 por año (2022 USD)</li>
-<li class="fragment">Pregunta de investigación: ¿Es el nuevo fármaco rentable en comparación con la comparado con el tratamiento estándar actual?</li>
+<li class="fragment">Pregunta de investigación: ¿Es el nuevo fármaco rentable en comparación con el tratamiento estándar actual?</li>
 <li class="fragment">Supongamos que queremos modelizar esto en un horizonte temporal de 4 años</li>
 </ul>
 </div>
@@ -7141,9 +7139,9 @@ D 0.000 0.000 1.000</code></pre>
 <thead>
 <tr class="header">
 <th>Cycle</th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerto</th>
 </tr>
 </thead>
 <tbody>
@@ -7199,8 +7197,8 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="trazos-de-markov" class="slide level2">
-<h2>Trazos de Markov</h2>
+<section id="trazas-de-markov" class="slide level2">
+<h2>Trazas de Markov</h2>
 <ul>
 <li class="fragment">A menudo modelamos varias estrategias que compiten entre sí.</li>
 <li class="fragment">Cada estrategia tiene su propia matriz de probabilidad de transición.</li>
@@ -7210,23 +7208,23 @@ D 0.000 0.000 1.000</code></pre>
 <section id="cálculo-de-resultados-1" class="slide level2">
 <h2>Cálculo de resultados</h2>
 <ul>
-<li class="fragment">Con nuestras trazas de Markov completas, podemos calcular los resultados esperados (por ejemplo, costes, AVAC, AVAD, etc.).</li>
-<li class="fragment">Al igual que hicimos con los árboles de decisión, tenemos que definir los “pagos” para cada estado de salud. para cada estado de salud.</li>
+<li class="fragment">Con nuestras trazas de Markov completas, podemos calcular los resultados esperados (por ejemplo, costos, AVAC, AVAD, etc.).</li>
+<li class="fragment">Al igual que hicimos con los árboles de decisión, tenemos que definir los “pagos” para cada estado de salud.</li>
 </ul>
 </section>
 <section id="definición-de-los-resultados" class="slide level2">
 <h2>Definición de los resultados</h2>
 <ul>
-<li class="fragment">Coste de los resultados: Coste de estar sano, enfermo, muerto (incluido cualquier costes adicionales del tratamiento/intervención, si procede).</li>
-<li class="fragment">Resultados QALY: Peso de la utilidad de estar sano (normalmente 1,0), enfermo muerto (normalmente 0,0).</li>
-<li class="fragment">Resultados AVAD: Pesos de discapacidad de estar enfermo (YLD) y esperanza de vida esperanza de vida restante basada en la tabla de vida de referencia (YLL)</li>
+<li class="fragment">Costo de los resultados: Costo de estar sano, enfermo, muerto (incluido cualquier costos adicionales del tratamiento/intervención, si procede).</li>
+<li class="fragment">Resultados AVAC: Peso de la utilidad de estar sano (normalmente 1,0), enfermo muerto (normalmente 0,0).</li>
+<li class="fragment">Resultados AVAD: Pesos de discapacidad de estar enfermo (AVD) y esperanza de vida restante basada en la tabla de vida de referencia (AVP)</li>
 </ul>
 </section>
 <section id="definición-de-las-compensaciones" class="slide level2">
 <h2>Definición de las compensaciones</h2>
 <div>
 <ul>
-<li>Podemos calcular la retribución total de cada ciclo multiplicando el multiplicando el número o la fracción de la cohorte en cada estado de salud por su valor de compensación y sumándolos. y sumándolos.</li>
+<li>Podemos calcular la retribución total de cada ciclo multiplicando el número o la fracción de la cohorte en cada estado de salud por su valor de compensación y sumándolos.</li>
 </ul>
 </div>
 <p>Ejemplo de traza de Markov (dos ciclos):</p>
@@ -7234,10 +7232,10 @@ D 0.000 0.000 1.000</code></pre>
 <table>
 <thead>
 <tr class="header">
-<th>Cycle</th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
+<th>Ciclo</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerto</th>
 </tr>
 </thead>
 <tbody>
@@ -7263,9 +7261,9 @@ D 0.000 0.000 1.000</code></pre>
 <li class="fragment">Construiremos nuestro ejemplo utilizando un resultado simple: años de vida esperados bajo una estrategia dada.</li>
 <li class="fragment">Resultados:
 <ul>
-<li class="fragment">Healthy: <span style="color:green;">1.0</span></li>
-<li class="fragment">Sick: <span style="color:green;">1.0</span> [they’re still alive!]</li>
-<li class="fragment">Dead: <span style="color:green;">0.0</span></li>
+<li class="fragment">Sano: <span style="color:green;">1,0</span></li>
+<li class="fragment">Enfermo: <span style="color:green;">1,0</span> [Siguen vivos!]</li>
+<li class="fragment">Muerto: <span style="color:green;">0.0</span></li>
 </ul></li>
 </ul>
 </section>
@@ -7279,11 +7277,11 @@ D 0.000 0.000 1.000</code></pre>
 <table>
 <thead>
 <tr class="header">
-<th>Cycle</th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
-<th>LY</th>
+<th>Ciclo</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerto</th>
+<th>AV</th>
 </tr>
 </thead>
 <tbody>
@@ -7307,16 +7305,16 @@ D 0.000 0.000 1.000</code></pre>
 </section>
 <section id="ejemplo-años-de-vida-2" class="slide level2">
 <h2>Ejemplo: Años de vida</h2>
-<p>What is the LY “payoff” for Cycle 0?</p>
+<p>Cuál es la retribución en AV para el ciclo 0?</p>
 <div style="font-size: 0.7em">
 <table>
 <thead>
 <tr class="header">
-<th>Cycle</th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
-<th>LY</th>
+<th>Ciclo</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerto</th>
+<th>AV</th>
 </tr>
 </thead>
 <tbody>
@@ -7340,23 +7338,23 @@ D 0.000 0.000 1.000</code></pre>
 </section>
 <section id="ejemplo-años-de-vida-3" class="slide level2">
 <h2>Ejemplo: Años de vida</h2>
-<p>What is the LY “payoff” for Cycle 0?</p>
+<p>Cuál es la retribución en AV para el ciclo 0?</p>
 <div style="font-size: 0.7em">
 <table>
 <colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 60%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Cycle</th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
-<th>LY</th>
+<th>Ciclo</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerdo</th>
+<th>AV</th>
 </tr>
 </thead>
 <tbody>
@@ -7380,23 +7378,23 @@ D 0.000 0.000 1.000</code></pre>
 </section>
 <section id="ejemplo-años-de-vida-4" class="slide level2">
 <h2>Ejemplo: Años de vida</h2>
-<p>What is the LY “payoff” for Cycle 1?</p>
+<p>Cuál es la retribución en AV para el ciclo 1?</p>
 <div style="font-size: 0.7em">
 <table>
 <colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 61%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Cycle</th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
-<th>LY</th>
+<th>Ciclo</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerte</th>
+<th>AV</th>
 </tr>
 </thead>
 <tbody>
@@ -7425,11 +7423,11 @@ D 0.000 0.000 1.000</code></pre>
 <table>
 <thead>
 <tr class="header">
-<th>Cycle</th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
-<th>LY</th>
+<th>Ciclo</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerto</th>
+<th>AV</th>
 </tr>
 </thead>
 <tbody>
@@ -7493,30 +7491,30 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="ejemplo-costes" class="slide level2">
-<h2>Ejemplo: Costes</h2>
+<section id="ejemplo-costos" class="slide level2">
+<h2>Ejemplo: Costos</h2>
 <ul>
-<li class="fragment">Now suppose we want to calculate costs.</li>
-<li class="fragment">Payoffs:
+<li class="fragment">Ahora supongamos que queremos calcular los costos</li>
+<li class="fragment">Retribuciones:
 <ul>
-<li class="fragment">Healthy: <span style="color:blue;">$0</span></li>
-<li class="fragment">Sick: <span style="color:blue;">$1,000</span></li>
-<li class="fragment">Dead: <span style="color:blue;">$0</span></li>
+<li class="fragment">Sano: <span style="color:blue;">$0</span></li>
+<li class="fragment">Enfermo: <span style="color:blue;">$1,000</span></li>
+<li class="fragment">Muerto: <span style="color:blue;">$0</span></li>
 </ul></li>
 </ul>
 </section>
-<section id="ejemplo-costes-1" class="slide level2">
-<h2>Ejemplo: Costes</h2>
-<p>¿Cuál es el coste del ciclo 0?</p>
+<section id="ejemplo-costos-1" class="slide level2">
+<h2>Ejemplo: Costos</h2>
+<p>¿Cuál es el costo del ciclo 0?</p>
 <div style="font-size: 0.7em">
 <table>
 <thead>
 <tr class="header">
-<th>Cycle</th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
-<th>Cost</th>
+<th>Ciclo</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerto</th>
+<th>Costo</th>
 </tr>
 </thead>
 <tbody>
@@ -7538,25 +7536,25 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="ejemplo-costes-2" class="slide level2">
-<h2>Ejemplo: Costes</h2>
-<p>¿Cuál es el coste del ciclo 0?</p>
+<section id="ejemplo-costos-2" class="slide level2">
+<h2>Ejemplo: Costos</h2>
+<p>¿Cuál es el costo del ciclo 0?</p>
 <div style="font-size: 0.7em">
 <table>
 <colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 57%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Cycle</th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
-<th>Cost</th>
+<th>Ciclo</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerto</th>
+<th>Costo</th>
 </tr>
 </thead>
 <tbody>
@@ -7578,25 +7576,25 @@ D 0.000 0.000 1.000</code></pre>
 </table>
 </div>
 </section>
-<section id="ejemplo-costes-3" class="slide level2">
-<h2>Ejemplo: Costes</h2>
-<p>¿Cuál es el coste “compensatorio” del Ciclo 1?</p>
+<section id="ejemplo-costos-3" class="slide level2">
+<h2>Ejemplo: Costos</h2>
+<p>¿Cuál es el costo del ciclo 1?</p>
 <div style="font-size: 0.7em">
 <table>
 <colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 57%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Cycle</th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
-<th>Cost</th>
+<th>Ciclo</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerto</th>
+<th>Costo</th>
 </tr>
 </thead>
 <tbody>
@@ -7622,7 +7620,7 @@ D 0.000 0.000 1.000</code></pre>
 <section id="otros-resultados" class="slide level2">
 <h2>Otros resultados</h2>
 <ul>
-<li class="fragment">Podemos repetir un proceso similar para los resultados sanitarios (por ejemplo, AVAC, YLD) multiplicando el “resultado” (por ejemplo, el peso de la utilidad, el peso de la discapacidad) para un estado de salud determinado por la fracción de la cohorte que se encuentra en un estado de salud determinado. discapacidad) de un determinado estado de salud por la fracción de la cohorte que se encuentra en ese estado de salud en el ciclo. ese estado de salud en el ciclo.</li>
+<li class="fragment">Podemos repetir un proceso similar para los resultados sanitarios (por ejemplo, AVAC, AVD) multiplicando el “resultado” (por ejemplo, el peso de la utilidad, el peso de la discapacidad) para un estado de salud determinado por la fracción de la cohorte que se encuentra en ese estado de salud en el ciclo.</li>
 </ul>
 </section></section>
 <section>
@@ -7635,16 +7633,16 @@ D 0.000 0.000 1.000</code></pre>
 </section>
 <section id="total-de-años-de-vida" class="slide level2">
 <h2>Total de años de vida</h2>
-<p>Veamos la traza de Markov y los resultados del ciclo para el resultado Años de vida resultado.</p>
+<p>Veamos la traza de Markov y los resultados del ciclo para el resultado años de vida.</p>
 <div style="font-size: 0.7em">
 <table>
 <thead>
 <tr class="header">
-<th>Cycle</th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
-<th>LY (single cycle)</th>
+<th>Ciclo</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerto</th>
+<th>AV (ciclo único)</th>
 </tr>
 </thead>
 <tbody>
@@ -7712,23 +7710,23 @@ D 0.000 0.000 1.000</code></pre>
 <h2>Años de vida</h2>
 <p>Podemos crear una nueva columna que acumule los años de vida en cada ciclo.</p>
 <div style="font-size: 0.7em">
-<table style="width:100%;">
+<table>
 <colgroup>
 <col style="width: 14%">
+<col style="width: 9%">
 <col style="width: 12%">
-<col style="width: 9%">
-<col style="width: 9%">
-<col style="width: 26%">
+<col style="width: 11%">
+<col style="width: 25%">
 <col style="width: 26%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Cycle</th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
-<th>LY (single cycle)</th>
-<th>LY (cumulative)</th>
+<th>Ciclo</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerto</th>
+<th>AV (ciclo único)</th>
+<th>AV (cumulativo)</th>
 </tr>
 </thead>
 <tbody>
@@ -7803,23 +7801,23 @@ D 0.000 0.000 1.000</code></pre>
 <section id="años-de-vida-1" class="slide level2 smaller">
 <h2>Años de vida</h2>
 <div style="font-size: 0.7em">
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 23%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Cycle</th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
-<th>LY (single cycle)</th>
-<th>LY (cumulative)</th>
+<th>Ciclo</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerto</th>
+<th>AV (ciclo único)</th>
+<th>AV (cumulativo)</th>
 </tr>
 </thead>
 <tbody>
@@ -7894,26 +7892,34 @@ D 0.000 0.000 1.000</code></pre>
 <section id="años-de-vida-2" class="slide level2 smaller">
 <h2>Años de vida</h2>
 <ul>
-<li class="fragment"><p>The cumulative LYs for an individual starting in the Healthy state is <strong>44.825</strong></p></li>
-<li class="fragment"><p>Note that this is within a 75 years time horizon</p></li>
+<li class="fragment"><p>Los AV culmulativos para un individuo empezando en el estado sano es <strong>44.825</strong></p></li>
+<li class="fragment"><p>Notamos que este resultado es dentro de un horizonte de 75 años.</p></li>
 </ul>
 <div style="font-size: 0.7em">
-<table>
+<table style="width:100%;">
 <colgroup>
-<col style="width: 14%">
-<col style="width: 13%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 27%">
-<col style="width: 24%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 11%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Cycle</th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
-<th>LY (single cycle)</th>
+<th>Ciclo</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerto</th>
+<th>AV (ciclo único)</th>
+<th>AV (cumulativo)</th>
+<th>AV (ciclo único)</th>
+<th></th>
+<th>AV (ciclo único)</th>
 <th>LY (cumulative)</th>
 </tr>
 </thead>
@@ -7925,6 +7931,10 @@ D 0.000 0.000 1.000</code></pre>
 <td>0.000</td>
 <td>1</td>
 <td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
 <td>1</td>
@@ -7933,6 +7943,10 @@ D 0.000 0.000 1.000</code></pre>
 <td>0.007</td>
 <td>0.993</td>
 <td>1.993</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td>2</td>
@@ -7941,6 +7955,10 @@ D 0.000 0.000 1.000</code></pre>
 <td>0.015</td>
 <td>0.985</td>
 <td>2.978</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
 <td>3</td>
@@ -7949,6 +7967,10 @@ D 0.000 0.000 1.000</code></pre>
 <td>0.025</td>
 <td>0.975</td>
 <td>3.954</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td>4</td>
@@ -7957,6 +7979,10 @@ D 0.000 0.000 1.000</code></pre>
 <td>0.035</td>
 <td>0.965</td>
 <td>4.919</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
 <td>5</td>
@@ -7965,6 +7991,10 @@ D 0.000 0.000 1.000</code></pre>
 <td>0.046</td>
 <td>0.954</td>
 <td>5.872</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="odd">
 <td>…</td>
@@ -7973,6 +8003,10 @@ D 0.000 0.000 1.000</code></pre>
 <td>…</td>
 <td>…</td>
 <td>…</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
 <td>75 (End)</td>
@@ -7981,6 +8015,10 @@ D 0.000 0.000 1.000</code></pre>
 <td>0.718</td>
 <td>0.282</td>
 <td><strong>44.825</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -7989,8 +8027,8 @@ D 0.000 0.000 1.000</code></pre>
 <section id="resultados-totales-1" class="slide level2">
 <h2>Resultados totales</h2>
 <ul>
-<li class="fragment">Podemos hacer un ejercicio similar para obtener los costes totales, los AVAC totales, los AVAD totales, etc. AVAD, etc.</li>
-<li class="fragment">Sin embargo, no es tan sencillo. Hay algunas complicaciones complicaciones adicionales.
+<li class="fragment">Podemos hacer un ejercicio similar para obtener los costos totales, los AVAC totales, los AVAD totales, etc.</li>
+<li class="fragment">Sin embargo, no es tan sencillo. Hay algunas complicaciones adicionales.
 <ul>
 <li class="fragment">Descuentos</li>
 <li class="fragment">Corrección cíclica</li>
@@ -8006,7 +8044,7 @@ D 0.000 0.000 1.000</code></pre>
 <h2>El problema</h2>
 <ul>
 <li class="fragment"><p>En la vida real, los eventos podrían ocurrir en cualquier punto de un ciclo dado, pero un modelo de Markov asume que todos los eventos ocurren al principio o al final de cada ciclo</p></li>
-<li class="fragment"><p>El tiempo es continuo, también lo son las curvas de supervivencia/supervivencia sin eventos</p></li>
+<li class="fragment"><p>El tiempo es continuo, también lo son las curvas de supervivencia</p></li>
 <li class="fragment"><p>Cuando discretizamos el tiempo utilizando una longitud de ciclo fija, podemos hacer dos supuestos</p>
 <ul>
 <li class="fragment">Supongamos que se trata de un simple bien <span class="math inline">\arrow</span> proceso muerto</li>
@@ -8021,14 +8059,14 @@ D 0.000 0.000 1.000</code></pre>
 <p>Asumiendo que la muerte ocurre al final del ciclo (A)<img data-src="images/paste-48DC2C4B.png" class="quarto-figure quarto-figure-center" width="512"></p>
 </div>
 <div class="fragment">
-<p>Sobreestima la pertenencia a un estado en Well</p>
+<p>Sobreestima la pertenencia a un estado de salud</p>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="fragment">
 <p>Asumiendo que la muerte ocurre al inicio del ciclo (B)<img data-src="images/paste-6C74F22E.png" class="quarto-figure quarto-figure-center" width="525"></p>
 </div>
 <div class="fragment">
-<p>Subestima la pertenencia a un estado en Well</p>
+<p>Subestima la pertenencia a un estado de salud</p>
 </div>
 </div>
 </div>
@@ -8038,8 +8076,8 @@ D 0.000 0.000 1.000</code></pre>
 <h2>El problema</h2>
 
 <img data-src="images/half-cycle.png" width="513" class="r-stretch"></section>
-<section id="half-cycle-correction" class="slide level2">
-<h2>Half-cycle correction</h2>
+<section id="corrección-mitad-del-ciclo" class="slide level2">
+<h2>Corrección mitad del ciclo</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="images/paste-1105574D.png"></p>
@@ -8049,8 +8087,8 @@ D 0.000 0.000 1.000</code></pre>
 </div>
 <p><a href="https://doi.org/10.1177/0272989X08315241">Source</a></p>
 </section>
-<section id="half-cycle-correction-1" class="slide level2">
-<h2>Half-cycle correction</h2>
+<section id="corrección-mitad-del-ciclo-1" class="slide level2">
+<h2>Corrección mitad del ciclo</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="images/paste-F622FD0F.png"></p>
@@ -8062,8 +8100,8 @@ D 0.000 0.000 1.000</code></pre>
 </div>
 <p><a href="https://doi.org/10.1177/0272989X08315241">Source</a></p>
 </section>
-<section id="half-cycle-correction-2" class="slide level2 smaller">
-<h2>Half-cycle correction</h2>
+<section id="corrección-mitad-del-ciclo-2" class="slide level2">
+<h2>Corrección mitad del ciclo</h2>
 
 <img data-src="images/paste-86501A0D.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
 <li class="fragment"><p>Multiplicar los resultados por 1/2 en el primer y último ciclo.</p></li>
@@ -8072,39 +8110,39 @@ D 0.000 0.000 1.000</code></pre>
 </ul>
 <p><a href="https://doi.org/10.1177/0272989X08315241">Source</a></p>
 </section>
-<section id="half-cycle-correction-3" class="slide level2">
-<h2>Half-cycle correction</h2>
+<section id="corrección-mitad-del-ciclo-3" class="slide level2">
+<h2>Corrección mitad del ciclo</h2>
 <p><br></p>
 
 <img data-src="images/half-cycle2.png" class="r-stretch"></section></section>
 <section>
-<section id="apply-cycle-correction-methods-to-our-markov-trace" class="title-slide slide level1 center">
-<h1>Apply cycle correction methods to our markov trace…</h1>
+<section id="aplicar-corrección-mitad-del-ciclo-a-nuestra-traza-de-markov" class="title-slide slide level1 center">
+<h1>Aplicar corrección mitad del ciclo a nuestra traza de Markov…</h1>
 
 </section>
-<section id="half-cycle-correction-4" class="slide level2 smaller">
-<h2>Half-cycle correction</h2>
+<section id="corrección-mitad-del-ciclo-4" class="slide level2">
+<h2>Corrección mitad del ciclo</h2>
 <ul>
 <li class="fragment">Multiplicar los resultados por 1/2 en el primer y último ciclo.</li>
 </ul>
 <div class="fragment">
 <div style="font-size: 0.7em">
-<table style="width:100%;">
+<table>
 <colgroup>
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
-<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 24%">
+<col style="width: 15%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Cycle</th>
-<th>Healthy</th>
-<th>Sick</th>
-<th>Dead</th>
-<th>LY (single cycle, adjusted)</th>
+<th>Ciclo</th>
+<th>Sano</th>
+<th>Enfermo</th>
+<th>Muerto</th>
+<th>LY (single Ciclo, adjusted)</th>
 <th>LY (cumulative)</th>
 </tr>
 </thead>
@@ -8196,7 +8234,7 @@ D 0.000 0.000 1.000</code></pre>
 <section id="resumen" class="slide level2">
 <h2>Resumen</h2>
 <ul>
-<li class="fragment">Una vez que tenemos los resultados totales (descontados, corregidos por medio ciclo) para cada estrategia, podemos pasar a realizar un análisis análisis coste-eficacia incremental.</li>
+<li class="fragment">Una vez que tenemos los resultados totales (descontados, corregidos por medio ciclo) para cada estrategia, podemos pasar a realizar un análisis costo-efectividad incremental.</li>
 </ul>
 </section>
 <section id="markov-models" class="slide level2">

@@ -3553,7 +3553,7 @@
     "href": "case-studies/cs_injury-decision-tree.html#scratch",
     "title": "Gunpowder Injury Decision Tree",
     "section": "Scratch",
-    "text": "Scratch\nIn Amua, on the menu at the top, go to Model -&gt; New -&gt;  Decision Tree. This will create a new model with a single decision node  on the left side of the screen.\n\nDecision Node \nPlus \nAlign right \nRun Model \nCheck Model \nClear \nChange"
+    "text": "Scratch\n\nDecision Tree Parameters\n\n\n\n\n\n\n\nDescription\nBase Case Value\nParameter Name\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFirework Ban: Relative Risk of Minor Injury\n0.5\nrrMinorBan\n\n\nFirework Ban: Relative Risk of Moderate Injury\n0.2\nrrModerateBan\n\n\nFirework Ban: Relative Risk of Major Injury\n0.9\nrrMajorBan\n\n\nFirework Ban: Relative Risk of Fatal Injury\n0.95\nrrFatalBan\n\n\nFirework Regulation: Relative Risk of Minor Injury\n0.7\nrrMinorBan\n\n\nFirework Regulation: Relative Risk of Moderate Injury\n0.5\nrrModerateBan\n\n\nFirework Regulation: Relative Risk of Major Injury\n0.95\nrrMajorBan\n\n\nFirework Regulation: Relative Risk of Fatal Injury\n0.98\nrrFatalBan\n\n\n\n\n\n\n\n\nMinor Injuries\n\nUp-front: $100 (simple first aid) to $500 (doctor visits and medications)\nAnnual: $0\n\nModerate Injuries\n\nUp-front: $1,000 (outpatient treatment) to $5,000 (minor surgery, stitches)\nAnnual: $0\n\nMajor Injuries\n\nUp-front: $10,000 (initial hospitalization) to $50,000+ (multiple surgeries, ICU)\nAnnual: $1,000 - $10,000 for rehabilitation, follow-up surgeries, and long-term care\n\nIn Amua, on the menu at the top, go to Model -&gt; New -&gt;  Decision Tree. This will create a new model with a single decision node  on the left side of the screen.\n\nDecision Node \nPlus \nAlign right \nRun Model \nCheck Model \nClear \nChange"
   },
   {
     "objectID": "case-studies/cs_prob-decision.html",
@@ -3649,7 +3649,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Taller de análisis de decisiones",
+    "title": "Taller de Análisis Económico de intervenciones en salud para la toma de decisiones",
     "section": "",
     "text": "Calendario de talleres\n\n\n\n\n\n\n\n\n\nFecha\nHora programada\nTema\nNotas\n\n\n\n\nMartes\n9:00 - 9:30 am\nBienvenida y presentaciones\nWelcome\n\n\n\n9:30 - 10:00\nIntroducción al análisis de decisiones\nIntroduction to Decision Analysis\n\n\n\n10:00-11:00\nÁrboles de decisión y probabilidades\nDecision Trees\n\n\n\n11:00-11:15\nCafé\nBreak\n\n\n\n11:15 - 12:00\nCaso de estudio: Probabilidades y árboles de decisión\nCase Study: Decision Trees\n\n\n\n12:00 - 1:15 pm\nCafé\nBreak\n\n\n\n1:45 - 2:45 pm\nCaso de estudio: Construir un árbol de decisión en Excel\nCase Study: Excel\n\n\n\n2:45 - 4:00 pm\nCaso de estudio: Construir un árbol de decisión en Amua\nCase Study: Amua\n\n\nMiércoles\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nUmbrales de tratamiento y valor de la información\nTreatment Thresholds and Value of Information\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:30\nFundamentos CEA 1: Costos\nValuing Costs\n\n\n\n11:30 - 11:45\nCafé\nBreak\n\n\n\n11:45 - 1:00\nFundamentos CEA 2: Resultados sanitarios\nHealth Outcomes\n\n\n\n1:00 - 2:15\nAlmuerzo\nLunch\n\n\n\n2:15 - 3:15\nCaso de estudio: Lesiones por fuegos artificiales en Columbia\nCase Study: Firework Injuries in Columbia\n\n\n\n3:15 - 4:30\nFundamentos del ACE 3: Análisis coste-eficacia incremental\nICERs\n\n\n\n\n\n\n\n\nJueves\n9:00-9:15\nResumen diario\n\n\n\n\n9:15 - 10:30\nCaso de estudio: Análisis coste-eficacia incremental\nCase Study: ICERs\n\n\n\n10:30 - 12:00\nModelos de Markov\nMarkov Models\n\n\n\n12:00 - 1:15\nCafé\n\n\n\n\n1:15 - 4:00\nCaso de estudio: Modelos de Markov\nCase Study: Firework Injury Model (Markov)\n\n\n\n\n\n\n\n\nViernes\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nAnálisis determinista y de escenarios\nDeterministic and Sensitivity Analysis\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:15\nTécnicas avanzadas de modelización\nAdvanced modeling techniques\n\n\n\n11:15 - 11:45\nCeremonia de entrega de certificados\nClosing Ceremony"
   },
@@ -5611,7 +5611,7 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión-1",
     "title": "Árboles de decisión y probabilidades",
     "section": "Filosofías de decisión",
-    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección dadas perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento minimáximo\n\nNunca vayas a la playa si haya posibilidad de lluvia.\n\nUtilidad máxima\nUtilidad esperada\n\n\n\nVeamos rápidamente las filosofías de decisión con respecto a la ponderación de las preferencias. Existen diferentes niveles de aversión al riesgo & hay diferentes filosofías de decisión para estos comportamientos\nLa filosofía del arrepentimiento mini-max significa esencialmente que nunca irías a la playa si hay posbilidad de lluvia &gt;0%.\n\n\nPor ejemplo, los médicos pueden tener aversión al riesgo y, por tanto, minimizar el arrepentimiento máximo."
+    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección dadas perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento Mini- Max\n\nNunca vayas a la playa si haya posibilidad de lluvia.\n\nUtilidad máxima\nUtilidad esperada\n\n\n\nVeamos rápidamente las filosofías de decisión con respecto a la ponderación de las preferencias. Existen diferentes niveles de aversión al riesgo & hay diferentes filosofías de decisión para estos comportamientos\nLa filosofía del arrepentimiento mini-max significa esencialmente que nunca irías a la playa si hay posbilidad de lluvia &gt;0%.\n\n\nPor ejemplo, los médicos pueden tener aversión al riesgo y, por tanto, minimizar el arrepentimiento máximo."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión-2",
@@ -5625,7 +5625,7 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión-3",
     "title": "Árboles de decisión y probabilidades",
     "section": "Filosofías de decisión",
-    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección ante perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento minimáximo\n\nNunca vayas a la playa si haya posibilidad de lluvia.\n\nMaxi-max\n\nIr siempre a la playa a menos que llueva al 100%.\n\nUtilidad esperada\n\nDepende del clima.\n\n\nNotas (4) Si vas a basar tu decisión en la utilidad esperada, entonces depende del clima y del valor que le des a ciertos resultados – este es el enfoque del pensador racional – cuánto valoras la pérdida de utilidad de no disfrutar de la playa, y la experiencia de ir a la playa, por ejemplo. :::"
+    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección ante perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento Mini- Max\n\nNunca vayas a la playa si haya posibilidad de lluvia.\n\nMaxi-max\n\nIr siempre a la playa a menos que llueva al 100%.\n\nUtilidad esperada\n\nDepende del clima.\n\n\nNotas (4) Si vas a basar tu decisión en la utilidad esperada, entonces depende del clima y del valor que le des a ciertos resultados – este es el enfoque del pensador racional – cuánto valoras la pérdida de utilidad de no disfrutar de la playa, y la experiencia de ir a la playa, por ejemplo. :::"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#payoffs-1",
@@ -5658,861 +5658,861 @@
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#objetivos-de-aprendizaje",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#objetivos-de-aprendizaje",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Objetivos de aprendizaje",
-    "text": "Objetivos de aprendizaje\n\n\nDiscutir los pros y los contras de la modelización de decisiones mediante árboles de decisión frente a un modelo determinista formal\nComprender los componentes y la estructura de los modelos de Markov tiempo discreto\nCalcular los ciclos de Markov a mano, utilizando el diagrama de burbujas de Markov\nAplicar métodos de corrección de ciclos de Markov"
+    "text": "Objetivos de aprendizaje\n\n\nDiscutir los pros y los contras de la modelización de decisiones mediante árboles de decisión frente a un modelo determinista formal\nComprender los componentes y la estructura de los modelos de Markov de tiempo discreto\nCalcular los ciclos de Markov a mano, utilizando el diagrama de burbujas de Markov\nAplicar métodos de corrección de ciclos de Markov"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#un-proceso-de-enfermedad-simple",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#un-proceso-de-enfermedad-simple",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Un proceso de enfermedad simple",
-    "text": "Un proceso de enfermedad simple\n\n\nSupongamos que queremos modelizar la relación coste-eficacia de estrategias estrategias alternativas para prevenir la aparición de una enfermedad.\nPartimos de una población sana de 25 años y existen tres estados de salud que pueden experimentar las personas:\n\n\nPermanecer sano.\n\nEnfermar**.\nMorir"
-  },
-  {
-    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#un-simple-proceso-de-enfermedad",
-    "href": "lectures/ESP_lec_7.MarkovModels1.html#un-simple-proceso-de-enfermedad",
-    "title": "Markov Models",
-    "section": "Un Simple Proceso de Enfermedad",
-    "text": "Un Simple Proceso de Enfermedad\n\n\nPermanecer sano no conlleva disminución de utilidad (peso de utilidad = 1.0 por ciclo en estado sano)\nEnfermar conlleva una disminución de utilidad de 0,25 durante el resto de la vida de la persona (peso de utilidad = 0,75). vida de la persona (peso de la utilidad = 0,75)\nLa muerte conlleva un valor de utilidad de 0."
+    "text": "Un proceso de enfermedad simple\n\n\nSupongamos que queremos modelizar la relación costo-efectividad de estrategias alternativas para prevenir una enfermedad.\nPartimos de una población sana de 25 años y existen tres estados de salud que pueden experimentar las personas:\n\nPermanecer sano.\nEnfermarse**.\nMorir"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#un-proceso-de-enfermedad-simple-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#un-proceso-de-enfermedad-simple-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Un proceso de enfermedad simple",
-    "text": "Un proceso de enfermedad simple\n\n\nPermanecer sano no tiene ningún coste.\nEnfermar supone un coste de 1.000 $ al año.\nEnfermar aumenta el riesgo de muerte en un 300%."
+    "text": "Un proceso de enfermedad simple\n\n\nPermanecer sano no conlleva disminución de utilidad (peso de utilidad = 1,0 por ciclo en estado sano)\nEnfermarse conlleva una disminución de utilidad de 0,25 durante el resto de la vida de la persona (peso de utilidad = 0,75).\nLa muerte conlleva un valor de utilidad de 0."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#un-proceso-de-enfermedad-simple-2",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#un-proceso-de-enfermedad-simple-2",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Un proceso de enfermedad simple",
-    "text": "Un proceso de enfermedad simple\nEl Instituto de Salud de un país estudia cinco estrategias de prevención preventiva que reducen el riesgo de enfermar:\n\n\n\n\n\n\n\n\nEstrategia\nDescripción\nCoste\n\n\n\n\nA\nNormas de asistencia\n25 $/año\n\n\nB\nReducción adicional del 4% del riesgo de enfermar\n1,000 $/año\n\n\nC\n12% de reducción del riesgo\n3,100 $/año\n\n\nD\n8% de reducción del riesgo\n1,550 $/año\n\n\nE\n8% de reducción del riesgo\n5,000 $/año"
+    "text": "Un proceso de enfermedad simple\n\n\nPermanecer sano no tiene ningún costo.\nEnfermarse supone un costo de 1.000 $ al año.\nEnfermarse aumenta el riesgo de muerte en un 300%."
+  },
+  {
+    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#un-proceso-de-enfermedad-simple-3",
+    "href": "lectures/ESP_lec_7.MarkovModels1.html#un-proceso-de-enfermedad-simple-3",
+    "title": "Modelos de Markov",
+    "section": "Un proceso de enfermedad simple",
+    "text": "Un proceso de enfermedad simple\nEl Instituto de Salud de un país estudia cinco estrategias de prevención que reducen el riesgo de enfermarse:\n\n\n\n\n\n\n\n\nEstrategia\nDescripción\nCosto\n\n\n\n\nA\nNormas de asistencia\n25 $/año\n\n\nB\nReducción adicional del 4% del riesgo de enfermarse\n1,000 $/año\n\n\nC\n12% de reducción del riesgo\n3,100 $/año\n\n\nD\n8% de reducción del riesgo\n1,550 $/año\n\n\nE\n8% de reducción del riesgo\n5,000 $/año"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#opción-de-modelo-1-árbol-de-decisión",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#opción-de-modelo-1-árbol-de-decisión",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Opción de modelo 1: Árbol de decisión",
-    "text": "Opción de modelo 1: Árbol de decisión\n\nUna opción sería utilizar un árbol de decisión para modelar la utilidad esperada y los costes asociados a cada estrategia. utilidad esperada y los costes asociados a cada estrategia.\nHorizonte temporal del modelo: 10 años\nLa siguiente diapositiva muestra el árbol de decisión para los resultados experimentados en el primer año."
+    "text": "Opción de modelo 1: Árbol de decisión\n\nUna opción sería utilizar un árbol de decisión para modelar la utilidad esperada y los costos asociados a cada estrategia.\nHorizonte temporal del modelo: 10 años\nLa siguiente diapositiva muestra el árbol de decisión para los resultados experimentados en el primer año."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#opción-de-modelo-1-árbol-de-decisión-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#opción-de-modelo-1-árbol-de-decisión-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Opción de modelo 1: Árbol de decisión",
     "text": "Opción de modelo 1: Árbol de decisión\n\n¿Qué limitaciones ve?"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
     "text": "Árbol de decisión para dos ciclos completos."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-2",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-2",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
     "text": "Estrategia Un árbol de decisión para 5 ciclos."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-decisión",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-decisión",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Árboles de decisión",
     "text": "Árboles de decisión\n\n\n\n\n\n\n\nPros\nContras\n\n\n\n\nSencillo, rápido y puede aportar información"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-decisión-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-decisión-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Árboles de decisión",
     "text": "Árboles de decisión\n\n\n\n\n\n\n\nPros\nContras\n\n\n\n\nSencillo, rápido y puede aportar información\n\n\n\nFácil de describir y comprender"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-decisión-2",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-decisión-2",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Árboles de decisión",
     "text": "Árboles de decisión\n\n\n\n\n\n\n\nPros\nContras\n\n\n\n\nSencillo, rápido y puede aportar información\n\n\n\nFácil de describir y comprender\n\n\n\nFunciona bien con un horizonte temporal limitado"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-decisión-3",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-decisión-3",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Árboles de decisión",
     "text": "Árboles de decisión\n\n\n\n\n\n\n\nPros\nContras\n\n\n\n\nSencillo, rápido y puede aportar información\nDifícil incluir detalles clínicos\n\n\nFácil de describir y comprender\n\n\n\nFunciona bien con un horizonte temporal limitado"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-decisión-4",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-decisión-4",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Árboles de decisión",
     "text": "Árboles de decisión\n\n\n\n\n\n\n\nPros\nContras\n\n\n\n\nSencillo, rápido y puede aportar información\nDifícil incluir detalles clínicos\n\n\nFácil de describir y comprender\nEl paso del tiempo no es fácilmente evidente\n\n\nFunciona bien con un horizonte temporal limitado"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-decisión-5",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-decisión-5",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Árboles de decisión",
     "text": "Árboles de decisión\n\n\n\n\n\n\n\nPros\nContras\n\n\n\n\nSencillo, rápido y puede aportar información\nDifícil incluir detalles clínicos\n\n\nFácil de describir y comprender\nEl paso del tiempo no es fácilmente evidente\n\n\nFunciona bien con un horizonte temporal limitado\nDifícil modelizar horizontes temporales más largos (&gt;1 ciclo)"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-decisión-6",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-decisión-6",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Árboles de decisión",
     "text": "Árboles de decisión"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#próximos-pasos",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#próximos-pasos",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Próximos pasos",
-    "text": "Próximos pasos\n\nIdealmente, queremos un enfoque de modelado que pueda incorporar flexibilidad y manejar las complejidades que hacen que los árboles de decisión difíciles de manejar."
+    "text": "Próximos pasos\n\nIdealmente, queremos un enfoque de modelado que pueda incorporar flexibilidad y manejar las complejidades que hacen que los árboles de decisión sean difíciles de manejar."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#modelos-de-markov-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#modelos-de-markov-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Modelos de Markov",
     "text": "Modelos de Markov\nEnfoque habitual en los análisis de decisiones que añade flexibilidad adicional.\n\n\n\n\n\n\n\nPros\nContras\n\n\n\n\nPuede modelar sucesos repetidos"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#modelos-de-markov-2",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#modelos-de-markov-2",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Modelos de Markov",
     "text": "Modelos de Markov\nEnfoque habitual en los análisis de decisiones que añade flexibilidad adicional.\n\n\n\n\n\n\n\nPros\nContras\n\n\n\n\nPuede modelar sucesos repetidos\n\n\n\nPuede modelizar eventos clínicos más complejos y longitudinales"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#modelos-de-markov-3",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#modelos-de-markov-3",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Modelos de Markov",
     "text": "Modelos de Markov\nEnfoque habitual en los análisis de decisiones que añade flexibilidad adicional.\n\n\n\n\n\n\n\nPros\nContras\n\n\n\n\nPuede modelar sucesos repetidos\n\n\n\nPuede modelizar eventos clínicos más complejos y longitudinales\n\n\n\nNo requiere muchos cálculos; es eficiente de modelar y depurar."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#modelos-de-markov-4",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#modelos-de-markov-4",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Modelos de Markov",
-    "text": "Modelos de Markov\n\n\nLas ventajas de los modelos de Markov se derivan de su estructura en torno a estados de enfermedad mutuamente excluyentes.\nEstos estados de enfermedad representan los posibles estados o consecuencias de las estrategias u opciones consideradas.\nComo hay un número fijo de estados de enfermedad en los que puede encontrarse la población la población, no es necesario modelar vías complejas, como vimos en la como vimos en la “explosión” del árbol de decisión hace unas diapositivas."
+    "text": "Modelos de Markov\n\n\nLas ventajas de los modelos de Markov se derivan de su estructura en torno a estados de enfermedad mutuamente excluyentes.\nEstos estados de enfermedad representan los posibles estados o consecuencias de las estrategias u opciones consideradas.\nComo hay un número fijo de estados de enfermedad en los que puede encontrarse la población, no es necesario modelar vías complejas, como vimos en la “explosión” del árbol de decisión hace unas diapositivas."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-markov",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-markov",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Árboles de Markov",
     "text": "Árboles de Markov\nTambién es habitual emparejar un modelo de Markov con un árbol de decisión1.\n\n\n\n\n\n\n\n\n\n\n\nGasauskas et al. 2022"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-markov-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-markov-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Árboles de Markov",
     "text": "Árboles de Markov\nTambién es habitual emparejar un modelo de Markov con un árbol de decisión1.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGasauskas et al. 2022"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-markov-2",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#árboles-de-markov-2",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Árboles de Markov",
     "text": "Árboles de Markov\nUn árbol de decisión simple está implícito en casi todos los análisis de decisiones."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#árbol-de-markov-ejemplo",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#árbol-de-markov-ejemplo",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Árbol de Markov: Ejemplo",
     "text": "Árbol de Markov: Ejemplo\n\n\n\n\n\n\n\n\nTratamiento A:"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#árbol-de-markov-ejemplo-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#árbol-de-markov-ejemplo-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Árbol de Markov: Ejemplo",
     "text": "Árbol de Markov: Ejemplo\n\n\n\n\n\n\n\n\nTratamiento A:"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#al-elegir-una-estructura-de-modelo",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#al-elegir-una-estructura-de-modelo",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Al elegir una estructura de modelo…",
     "text": "Al elegir una estructura de modelo…\n\n\n“Las cosas deben hacerse tan simples como sea posible, pero no más simples” - Albert Einstein"
   },
   {
-    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#key-characteristics",
-    "href": "lectures/ESP_lec_7.MarkovModels1.html#key-characteristics",
-    "title": "Markov Models",
-    "section": "Key characteristics",
-    "text": "Key characteristics\n\n\nPermite transiciones de estado de salud en tiempo\nLos individuos sólo pueden existir en un estado a la vez (estados de salud mutuamente estados de salud mutuamente excluyentes)\nAl principio o al final de cada ciclo, los pacientes pasan por estados de salud mediante probabilidades de transición y los individuos permanecen en estado de salud durante todo el ciclo length\nLa probabilidad de transición depende del estado actual (“sin memoria”); (los estados túnel pueden tener en cuenta esta posible limitación)\nLas probabilidades de transición permanecen constantes a lo largo del tiempo (aparte de las tablas de vida integradas)\nLos resultados indican la “media” de la cohorte"
-  },
-  {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#características-principales",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#características-principales",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
+    "section": "Características principales",
+    "text": "Características principales\n\n\nPermite transiciones de estado de salud en tiempo\nLos individuos sólo pueden existir en un estado a la vez (estados de salud mutuamente excluyentes)\nAl principio o al final de cada ciclo, los pacientes pasan por estados de salud mediante probabilidades de transición y los individuos permanecen en estado de salud durante el largo del ciclo\nLa probabilidad de transición depende del estado actual (“sin memoria”); (los estados túnel pueden tener en cuenta esta posible limitación)\nLas probabilidades de transición permanecen constantes a lo largo del tiempo (aparte de las tablas de vida integradas)\nLos resultados indican la “media” de la cohorte"
+  },
+  {
+    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#características-principales-1",
+    "href": "lectures/ESP_lec_7.MarkovModels1.html#características-principales-1",
+    "title": "Modelos de Markov",
     "section": "Características principales",
     "text": "Características principales\n\n\n“CICLO” = Cantidad mínima de tiempo que cualquier individuo pasará en un estado antes de una posible transición a otro estado\n\n\nMás información en las siguientes diapositivas"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#pasos",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#pasos",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Pasos",
     "text": "Pasos\n\nDefinir el problema de decisión\nConceptualizar el modelo\nParametrizar el modelo\nCalcular o definir la matriz de probabilidades de transición\nEjecutar el modelo"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#paso-1-definir-el-problema-de-decisión",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#paso-1-definir-el-problema-de-decisión",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Paso 1: Definir el problema de decisión",
-    "text": "Paso 1: Definir el problema de decisión\nYa hemos definido el problema de decisión anteriormente en esta clase, así que repetiremos los objetivos básicos brevemente aquí."
+    "text": "Paso 1: Definir el problema de decisión\nYa hemos definido el problema de decisión anteriormente en este taller, así que repetiremos los objetivos básicos brevemente aquí."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#paso-1-definir-el-problema-de-decisión-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#paso-1-definir-el-problema-de-decisión-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Paso 1: Definir el problema de decisión",
-    "text": "Paso 1: Definir el problema de decisión\nObjetivo: modelar la rentabilidad de estrategias alternativas para para prevenir la aparición de una enfermedad.\n\n\n\n\n\n\n\n\nEstrategia\nDescripción\nCoste\n\n\n\n\nA\nNormas de asistencia\n25 $/año\n\n\nB\nReducción adicional del 4% del riesgo de enfermar\n1,000 $/año\n\n\nC\n12% de reducción del riesgo\n3,100 $/año\n\n\nD\n8% de reducción del riesgo\n1,550 $/año\n\n\nE\n8% de reducción del riesgo\n5,000 $/año"
+    "text": "Paso 1: Definir el problema de decisión\nObjetivo: modelar la rentabilidad de estrategias alternativas para para prevenir la aparición de una enfermedad.\n\n\n\n\n\n\n\n\nEstrategia\nDescripción\nCosto\n\n\n\n\nA\nNormas de asistencia\n25 $/año\n\n\nB\nReducción adicional del 4% del riesgo de enfermarse\n1,000 $/año\n\n\nC\n12% de reducción del riesgo\n3,100 $/año\n\n\nD\n8% de reducción del riesgo\n1,550 $/año\n\n\nE\n8% de reducción del riesgo\n5,000 $/año"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#paso-1-definir-el-problema-de-decisión-2",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#paso-1-definir-el-problema-de-decisión-2",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Paso 1: Definir el problema de decisión",
     "text": "Paso 1: Definir el problema de decisión"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#conceptualizar-el-modelo-de-markov-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#conceptualizar-el-modelo-de-markov-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "2. Conceptualizar el modelo de Markov",
     "text": "2. Conceptualizar el modelo de Markov\nDos pasos principales:\n 2a. Determinar los estados de salud\n 2b. Determinar las transiciones"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#paso-2-conceptualizar-el-modelo",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#paso-2-conceptualizar-el-modelo",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Paso 2: Conceptualizar el modelo",
-    "text": "Paso 2: Conceptualizar el modelo\n 2a. Determinar estados de salud\n\n\nLas personas pueden experimentar tres estados de salud:\n\nPermanecer Sano\nEnfermar**.\nMorir"
+    "text": "Paso 2: Conceptualizar el modelo\n 2a. Determinar estados de salud\n\n\nLas personas pueden experimentar tres estados de salud:\n\nPermanecer Sano\nEnfermarse**.\nMorir"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#paso-2-conceptualizar-el-modelo-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#paso-2-conceptualizar-el-modelo-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Paso 2: Conceptualizar el Modelo",
-    "text": "Paso 2: Conceptualizar el Modelo\n 2a. Determinar los estados de salud\n\n\nLas personas pueden experimentar tres estados de salud:\n\nPermanecer Sano\nEnfermar**.\nMorir\n\n\n\n 2b. Determinar transiciones\n\n\nLos individuos que enferman no pueden volver a estar sanos."
+    "text": "Paso 2: Conceptualizar el Modelo\n 2a. Determinar los estados de salud\n\n\nLas personas pueden experimentar tres estados de salud:\n\nPermanecer Sano\nEnfermarse**.\nMorir\n\n\n\n 2b. Determinar transiciones\n\n\nLos individuos que enferman no pueden volver a estar sanos."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#diagrama-de-burbujas",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#diagrama-de-burbujas",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "“Diagrama de burbujas",
     "text": "“Diagrama de burbujas\nLos diagramas de transición de estados (“burbuja”) son visualizaciones útiles de un modelo de Markov.\n\n\n\n\n\n\n\nG\n\n\n\nHealthy\n\nHealthy\n\n\n\nHealthy-&gt;Healthy\n\n\n\n\n\nSick\n\nSick\n\n\n\nHealthy-&gt;Sick\n\n\n\n\n\nDead\n\nDead\n\n\n\nHealthy-&gt;Dead\n\n\n\n\n\nSick-&gt;Sick\n\n\n\n\n\nSick-&gt;Dead\n\n\n\n\n\nDead-&gt;Dead\n\n\n\n\n\n\n\n\n\n\n\nDiagram constructed using the Graphviz Visual Editor"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3. Parametrizar el modelo",
     "text": "3. Parametrizar el modelo\nPasos básicos\n 3a. Determinar los parámetros básicos del modelo\n 3b. Curar y definir las entradas del modelo"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-2",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-2",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3. Parametrizar el modelo",
     "text": "3. Parametrizar el modelo\nPasos básicos\n 3a. Determinar los parámetros básicos del modelo\n\n\nDefinir la población (por ejemplo, mujeres de 25 años)\nDefinir la duración del ciclo de Markov (por ejemplo, ciclo de 1 año)\nDefinir el horizonte temporal (p. ej., seguimiento hasta los 100 años o la muerte)"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3a. Definir la longitud del ciclo de Markov",
-    "text": "3a. Definir la longitud del ciclo de Markov\n\n\n\nFundamentalmente, estamos modelando un proceso de tiempo continuo (por ejemplo, progresión de la enfermedad).\nUn modelo de Markov de tiempo discreto “divide” el tiempo en “trozos” (es decir, “ciclos”).\nUna consecuencia es que el modelo nos mostrará qué fracción empieza un ciclo en un estado determinado y qué fracción termina en cada estado al final del ciclo. al final del ciclo."
+    "text": "3a. Definir la longitud del ciclo de Markov\n\n\n\nFundamentalmente, estamos modelando un proceso de tiempo continuo (por ejemplo, progresión de la enfermedad).\nUn modelo de Markov de tiempo discreto “divide” el tiempo en “trozos” (es decir, “ciclos”).\nUna consecuencia es que el modelo nos mostrará qué fracción empieza un ciclo en un estado determinado y qué fracción termina en cada estado al final del ciclo."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3a. Definir la longitud del ciclo de Markov",
     "text": "3a. Definir la longitud del ciclo de Markov\n\n\nSupongamos que utilizamos un ciclo de un año para el modelo sano-enfermo-muerto.\nPensemos en el proceso de enfermedad subyacente (en tiempo continuo).\n\nRecordemos que enfermar aumenta sustancialmente la probabilidad de morir.\n\nSi no tenemos cuidado, ¿qué estamos suponiendo (implícitamente) que puede y puede y no puede ocurrir en un solo ciclo?"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-2",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-2",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3a. Definir la longitud del ciclo de Markov",
     "text": "3a. Definir la longitud del ciclo de Markov"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-3",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-3",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3a. Definir la longitud del ciclo de Markov",
-    "text": "3a. Definir la longitud del ciclo de Markov\nEl reto de seleccionar una longitud de ciclo adecuada se reduce a cómo tratamos los riesgos en competencia.\n\n\n\n\nRiesgos concurrentes: los individuos pueden pasar de su estado de salud estado de salud actual a otros dos o más estados de salud.\n\n\n\n\n\n\n\n\n\n\nG\n\n\n\nHealthy\n\nHealthy\n\n\n\nHealthy-&gt;Healthy\n\n\n\n\n\nSick\n\nSick\n\n\n\nHealthy-&gt;Sick\n\n\n\n\n\nDead\n\nDead\n\n\n\nHealthy-&gt;Dead\n\n\n\n\n\nSick-&gt;Sick\n\n\n\n\n\nSick-&gt;Dead\n\n\n\n\n\nDead-&gt;Dead"
+    "text": "3a. Definir la longitud del ciclo de Markov\nEl reto de seleccionar una longitud de ciclo adecuada se reduce a cómo tratamos los riesgos en competencia.\n\n\n\n\nRiesgos concurrentes: los individuos pueden pasar de su estado de salud actual a otros dos o más estados de salud.\n\n\n\n\n\n\n\n\n\n\nG\n\n\n\nHealthy\n\nHealthy\n\n\n\nHealthy-&gt;Healthy\n\n\n\n\n\nSick\n\nSick\n\n\n\nHealthy-&gt;Sick\n\n\n\n\n\nDead\n\nDead\n\n\n\nHealthy-&gt;Dead\n\n\n\n\n\nSick-&gt;Sick\n\n\n\n\n\nSick-&gt;Dead\n\n\n\n\n\nDead-&gt;Dead"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-4",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-4",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3a. Definir la longitud del ciclo de Markov",
     "text": "3a. Definir la longitud del ciclo de Markov\nEl reto de seleccionar una duración de ciclo adecuada se reduce a cómo los riesgos en competencia.\n\n\n\n\nSi no tenemos cuidado, podríamos descartar la posibilidad… de la Salud  Enfermo Muerto dentro de un ciclo.\nEl modelo sería como un sano básico  Muerto, pero se desvió a través de Enfermo en el camino.\n\n\n\n\n\n\n\n\n\n\nG\n\n\n\nHealthy\n\nHealthy\n\n\n\nHealthy-&gt;Healthy\n\n\n\n\n\nSick\n\nSick\n\n\n\nHealthy-&gt;Sick\n\n\n\n\n\nDead\n\nDead\n\n\n\nHealthy-&gt;Dead\n\n\n\n\n\nSick-&gt;Sick\n\n\n\n\n\nSick-&gt;Dead\n\n\n\n\n\nDead-&gt;Dead"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-5",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-5",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3a. Definir la longitud del ciclo de Markov",
     "text": "3a. Definir la longitud del ciclo de Markov\n\n\n\n\n\n\n\nPros\nContras\n\n\n\n\nPuede modelar sucesos repetidos\nSólo puede transitar una vez por ciclo\n\n\nPuede modelizar eventos clínicos más complejos y longitudinales\n\n\n\nNo requiere muchos cálculos; es eficiente de modelar y depurar."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-6",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-6",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3a. Definir la longitud del ciclo de Markov",
     "text": "3a. Definir la longitud del ciclo de Markov\n\nPuede resultar tentador simplemente acortar la duración del ciclo (por ejemplo, utilizar un ciclo de 1 día frente a 1 año).\n\nincremental - Para un horizonte de 75 años, ¿cuántos ciclos serían? - ¡¡¡- 27,375!!! - ¿Hay algún problema? :::"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-7",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-7",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3a. Definir la longitud del ciclo de Markov",
     "text": "3a. Definir la longitud del ciclo de Markov\n\nAcortar el ciclo supone un reto computacional.\n\n\n\nEl caso base requiere 27.375 ciclos diarios.\nSupongamos ahora que queremos realizar 2.000 análisis de sensibilidad probabilística probabilístico.\n\nAhora tenemos que hacer frente a 57.750.000 ciclos."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-8",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-8",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3a. Definir la longitud del ciclo de Markov",
     "text": "3a. Definir la longitud del ciclo de Markov\n\n\n\n\n\n\n\nPros\nContras\n\n\n\n\nPuede modelar sucesos repetidos\nSólo puede transitar una vez por ciclo\n\n\nPuede modelizar eventos clínicos más complejos y longitudinales\nAcortar el ciclo puede plantear retos informáticos.\n\n\nNo requiere muchos cálculos; es eficiente de modelar y depurar."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-9",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-9",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3a. Definir la longitud del ciclo de Markov",
     "text": "3a. Definir la longitud del ciclo de Markov\nMore challenges …"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-10",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-10",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3a. Definir la longitud del ciclo de Markov",
-    "text": "3a. Definir la longitud del ciclo de Markov\nMás retos …\n\nLos modelos de Markov carecen de memoria: no recuerdan lo que ocurrió antes del ciclo actual.\n\nSi su riesgo de transición a un estado de salud más grave depende de de acontecimientos anteriores, el modelo no puede tenerlo en cuenta explícitamente. explícitamente."
+    "text": "3a. Definir la longitud del ciclo de Markov\nMás retos …\n\nLos modelos de Markov carecen de memoria: no recuerdan lo que ocurrió antes del ciclo actual.\n\nSi su riesgo de transición a un estado de salud más grave depende de de acontecimientos anteriores, el modelo no puede tenerlo en cuenta explícitamente."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-11",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-11",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3a. Definir la longitud del ciclo de Markov",
-    "text": "3a. Definir la longitud del ciclo de Markov\nMás retos …\n\nExisten soluciones conocidas como “estados túnel” para evitar este problema, aunque son difíciles de hacer y presentan sus propios problemas\n\nNo los trataremos esta semana, pero podemos proporcionar referencias si explorar."
+    "text": "3a. Definir la longitud del ciclo de Markov\nMás retos …\n\nExisten soluciones conocidas como “estados túnel” para evitar este problema, aunque son difíciles de hacer y presentan sus propios problemas\n\nNo los trataremos esta semana, pero podemos proporcionar referencias si quieren explorar."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-12",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-12",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3a. Definir la longitud del ciclo de Markov",
     "text": "3a. Definir la longitud del ciclo de Markov\n\n\n\n\n\n\n\nPros\nContras\n\n\n\n\nPuede modelar sucesos repetidos\nSólo puede transitar una vez por ciclo\n\n\nPuede modelizar eventos clínicos más complejos y longitudinales\nAcortar el ciclo puede plantear retos informáticos.\n\n\nNo requiere muchos cálculos; es eficiente de modelar y depurar.\nAcortar el ciclo puede provocar una “explosión de estados” si se utilizan estados túnel"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-13",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#a.-definir-la-longitud-del-ciclo-de-markov-13",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3a. Definir la longitud del ciclo de Markov",
-    "text": "3a. Definir la longitud del ciclo de Markov\n\n\n\n\nTambién es aconsejable elegir una duración de ciclo que se alinee con los los plazos clínicos/enfermedad del problema de decisión.\n\nEsquemas de tratamiento.\nEnfermedad aguda frente a crónica.\n\nOtra opción es incorporar los acontecimientos “a corto plazo” que se producen en el curso de una enfermedad/intervención dentro del árbol de decisión y de decisión y, a continuación, permitir que el modelo de Markov modele las consecuencias sanitarias a largo plazo.\n\n\n\n\n\n\n\n\n\n\nG\n\n\n\nHealthy\n\nHealthy\n\n\n\nHealthy-&gt;Healthy\n\n\n\n\n\nSick\n\nSick\n\n\n\nHealthy-&gt;Sick\n\n\n\n\n\nDead\n\nDead\n\n\n\nHealthy-&gt;Dead\n\n\n\n\n\nSick-&gt;Sick\n\n\n\n\n\nSick-&gt;Dead\n\n\n\n\n\nDead-&gt;Dead"
+    "text": "3a. Definir la longitud del ciclo de Markov\n\n\n\n\nTambién es aconsejable elegir una duración de ciclo que se alinee con los los plazos clínicos/enfermedad del problema de decisión.\n\nEsquemas de tratamiento.\nEnfermedad aguda frente a crónica.\n\nOtra opción es incorporar los acontecimientos “a corto plazo” que se producen en el curso de una enfermedad/intervención dentro del árbol de decisión y, a continuación, permitir que el modelo de Markov modele las consecuencias sanitarias a largo plazo.\n\n\n\n\n\n\n\n\n\n\nG\n\n\n\nHealthy\n\nHealthy\n\n\n\nHealthy-&gt;Healthy\n\n\n\n\n\nSick\n\nSick\n\n\n\nHealthy-&gt;Sick\n\n\n\n\n\nDead\n\nDead\n\n\n\nHealthy-&gt;Dead\n\n\n\n\n\nSick-&gt;Sick\n\n\n\n\n\nSick-&gt;Dead\n\n\n\n\n\nDead-&gt;Dead"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-3",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-3",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3. Parametrizar el modelo",
-    "text": "3. Parametrizar el modelo\n 3b. Curar y definir las entradas del modelo\n\n\n 3b.i. Fuente y definir el caso base valores.\n 3b.ii. Origen y definición de las fuentes de incertidumbre."
+    "text": "3. Parametrizar el modelo\n 3b. Identificar y definir las entradas del modelo\n\n\n 3b.i. Fuente y definir el caso base valores.\n 3b.ii. Origen y definición de las fuentes de incertidumbre."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-4",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-4",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3. Parametrizar el modelo",
-    "text": "3. Parametrizar el modelo\n 3b. Curar y definir las entradas del modelo\n\n\nTasa de aparición de la enfermedad\nUtilidades y costes del estado de salud\nRatios de riesgo, odds ratios o riesgos relativos para diferentes estrategias. estrategias.\n… y así sucesivamente."
+    "text": "3. Parametrizar el modelo\n 3b. Identificar y definir las entradas del modelo\n\n\nTasa de incidencia de la enfermedad\nUtilidades y costos del estado de salud\nRelaciones de riesgo, odds ratios o riesgos relativos para diferentes estrategias.\n… y así sucesivamente."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-5",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-5",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3. Parametrizar el modelo",
-    "text": "3. Parametrizar el modelo\nHemos definido muchos de los parámetros subyacentes antes en esta conferencia, por lo que los repetiremos brevemente aquí."
+    "text": "3. Parametrizar el modelo\nHemos definido muchos de los parámetros subyacentes antes en este taller, por lo que los repetiremos brevemente aquí."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-6",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-6",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3. Parametrizar el modelo",
-    "text": "3. Parametrizar el modelo\n\nComenzamos con una población sana de 25 años de edad y los seguimos hasta los 100 años (o la muerte, si es antes).\n\n\n\nPermanecer sano no conlleva ninguna disminución de la utilidad (peso de la utilidad= 1,0)\nEnfermar conlleva una disminución de la utilidad de 0,25 durante el resto de la vida de la persona (peso de la utilidad= 1,0). vida de la persona (peso de utilidad = 0,75)\nLa muerte tiene un peso de utilidad de 0."
+    "text": "3. Parametrizar el modelo\n\nComenzamos con una población sana de 25 años de edad y los seguimos hasta los 100 años (o la muerte, si es antes).\n\n\n\nPermanecer sano no conlleva ninguna disminución de la utilidad (peso de la utilidad= 1,0)\nEnfermarse conlleva una disminución de la utilidad de 0,25 durante el resto de la vida de la persona (peso de utilidad = 0,75)\nLa muerte tiene un peso de utilidad de 0."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-7",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-7",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3. Parametrizar el modelo",
-    "text": "3. Parametrizar el modelo\n\nNo hay ningún coste asociado a mantenerse sano.\n\n\n\nEnfermar supone un coste de 1.000 $/año.\nEnfermar aumenta el riesgo de muerte en un 300%."
+    "text": "3. Parametrizar el modelo\n\nNo hay ningún costo asociado a mantenerse sano.\n\n\n\nEnfermar supone un costo de 1.000 $/año.\nEnfermar aumenta el riesgo de muerte en un 300%."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-8",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-8",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3. Parametrizar el modelo",
-    "text": "3. Parametrizar el modelo\nCada estrategia tiene un coste y un impacto diferentes en la probabilidad de enfermar. enfermar.\n\n\n\n\n\n\n\n\nEstrategia\nDescripción\nCoste\n\n\n\n\nA\nNormas de asistencia\n25 $/año\n\n\nB\nReducción adicional del 4% del riesgo de enfermar\n1,000 $/año\n\n\nC\n12% de reducción del riesgo\n3,100 $/año\n\n\nD\n8% de reducción del riesgo\n1,550 $/año\n\n\nE\n8% de reducción del riesgo\n5,000 $/año"
+    "text": "3. Parametrizar el modelo\nCada estrategia tiene un costo y un impacto diferente en la probabilidad de enfermar.\n\n\n\n\n\n\n\n\nEstrategia\nDescripción\nCosto\n\n\n\n\nA\nNormas de asistencia\n25 $/año\n\n\nB\nReducción adicional del 4% del riesgo de enfermar\n1,000 $/año\n\n\nC\n12% de reducción del riesgo\n3,100 $/año\n\n\nD\n8% de reducción del riesgo\n1,550 $/año\n\n\nE\n8% de reducción del riesgo\n5,000 $/año"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-9",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-9",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3. Parametrizar el modelo",
-    "text": "3. Parametrizar el modelo\n\n\n\n\n\n\nEs crítico seguir un proceso formal para parametrizar su modelo.\n\n\n\n\n\nA menudo, los parámetros se extraen de la literatura publicada, y es importante rastrear la fuente (valor publicado, suposición, etc.) de cada parámetro del modelo.\n\nPor ejemplo, el parámetro de reducción porcentual del riesgo de cada estrategia puede proceder de distintos ensayos clínicos. estrategia puede proceder de diferentes ensayos clínicos.\nEl parámetro que rige la muerte por causas de fondo puede derivarse de datos de mortalidad."
+    "text": "3. Parametrizar el modelo\n\n\n\n\n\n\nEs crítico seguir un proceso formal para parametrizar su modelo.\n\n\n\n\n\nA menudo, los parámetros se extraen de la literatura publicada, y es importante rastrear la fuente (valor publicado, suposición, etc.) de cada parámetro del modelo.\n\nPor ejemplo, el parámetro de reducción porcentual del riesgo de cada estrategia puede proceder de distintos ensayos clínicos.\nEl parámetro que rige la muerte por causas de fondo puede derivarse de datos de mortalidad."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-10",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-10",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3. Parametrizar el modelo",
-    "text": "3. Parametrizar el modelo\n\n\n\n\n\n\nEs crítico seguir un proceso formal para parametrizar su modelo. modelo.\n\n\n\n\n\nAlgunos parámetros pueden ser simplemente valores (por ejemplo, el coste de la estrategia A es de \\25 $/año)\nAlgunos parámetros pueden ser funciones de otros parámetros.\n\nPor ejemplo, supongamos que queremos seguir a una cohorte de personas de 25 años hasta los 100 años o la muerte, si ésta se produce antes.\nEn ese caso tenemos dos parámetros “fijos”: la edad inicial y la edad máxima.\nPodemos utilizar estos dos parámetros para deducir el número total de ciclos que necesitamos realizar. ciclos que necesitamos ejecutar."
+    "text": "3. Parametrizar el modelo\n\n\n\n\n\n\nEs crítico seguir un proceso formal para parametrizar su modelo.\n\n\n\n\n\nAlgunos parámetros pueden ser simplemente valores (por ejemplo, el costo de la estrategia A es de \\25 $/año)\nAlgunos parámetros pueden ser funciones de otros parámetros.\n\nPor ejemplo, supongamos que queremos seguir a una cohorte de personas de 25 años hasta los 100 años o la muerte, si ésta se produce antes.\nEn ese caso tenemos dos parámetros “fijos”: la edad inicial y la edad máxima.\nPodemos utilizar estos dos parámetros para deducir el número total de ciclos que necesitamos realizar."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-11",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-11",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3. Parametrizar el modelo",
-    "text": "3. Parametrizar el modelo\n\n\n\n\n\n\nEs crítico seguir un proceso formal para parametrizar su modelo. modelo.\n\n\n\n\n\nLos parámetros también tienen varios “sabores”:\n\nProbabilidades\nTasas\nRazones de riesgo\nCostes\nUtilidades\netc."
+    "text": "3. Parametrizar el modelo\n\n\n\n\n\n\nEs crítico seguir un proceso formal para parametrizar su modelo.\n\n\n\n\n\nLos parámetros también tienen varios “sabores”:\n\nProbabilidades\nTasas\nRelaciones de riesgo\nCostos\nUtilidades\netc."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-12",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-12",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3. Parametrizar el modelo",
-    "text": "3. Parametrizar el modelo\n\n\n\n\n\n\nEs crítico seguir un proceso formal para parametrizar su modelo. modelo.\n\n\n\n\n\nTodo lo anterior resalta la importancia de adoptar un proceso formal para nombrar y rastrear el valor, la fuente y la distribución de incertidumbre de de todos los parámetros del modelo en un único lugar.\nRecomendamos un enfoque estructurado basado en convenciones de nomenclatura de parámetros y tablas de parámetros. y tablas de parámetros."
+    "text": "3. Parametrizar el modelo\n\n\n\n\n\n\nEs crítico seguir un proceso formal para parametrizar su modelo.\n\n\n\n\n\nTodo lo anterior resalta la importancia de adoptar un proceso formal para nombrar y rastrear el valor, la fuente y la distribución de incertidumbre de de todos los parámetros del modelo en un único lugar.\nRecomendamos un enfoque estructurado basado en convenciones de nomenclatura de parámetros y tablas de parámetros."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-13",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#parametrizar-el-modelo-13",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "3. Parametrizar el modelo",
-    "text": "3. Parametrizar el modelo\nConvenciones de nomenclatura:\n\n\n\n\n\ntype\nprefix\n\n\n\n\nProbabilidad\np_\n\n\nTasa (Rate)\nr_\n\n\nMatriz\nm_\n\n\nCoste\nc_\n\n\nUtilidad\nu_\n\n\nRazón de riesgo (hazard ratio)\nhr_"
+    "text": "3. Parametrizar el modelo\nConvenciones de nomenclatura:\n\n\n\n\n\ntype\nprefix\n\n\n\n\nProbabilidad\np_\n\n\nTasa (Rate)\nr_\n\n\nMatriz\nm_\n\n\nCosto\nc_\n\n\nUtilidad\nu_\n\n\nRazón de riesgo (hazard ratio)\nhr_"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#tabla-de-parámetros",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#tabla-de-parámetros",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Tabla de parámetros",
-    "text": "Tabla de parámetros\n::: pie de página Nota: En la tabla sólo se muestra un subconjunto de parámetros del modelo. :::\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nParameter Table\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon"
+    "text": "Tabla de parámetros\n::: pie de página Nota: En la tabla sólo se muestra un subconjunto de parámetros del modelo. :::\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTabla de parámetros\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-3",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-3",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
-    "text": "param columna es el nombre corto del parámetro\n\nNota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nParameter Table\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon"
+    "text": "param columna es el nombre corto del parámetro\n\nNota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTabla de parámetros\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-4",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-4",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
-    "text": "base_case es el valor del parámetro para el caso base.\n\nNota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nParameter Table\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon"
+    "text": "base_case es el valor del parámetro para el caso base.\n\nNota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTabla de parámetros\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-5",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-5",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
-    "text": "formula define fórmulas de parámetros del modelo para parámetros que son funciones de otros parámetros del modelo.\n\nNota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nParameter Table\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon"
+    "text": "formula define fórmulas de parámetros del modelo para parámetros que son funciones de otros parámetros del modelo.\n\nNota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTabla de parámetros\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-6",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-6",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
-    "text": "description proporciona una descripción de texto del parámetro.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nParameter Table\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNota: En la tabla sólo se muestra un subconjunto de parámetros del modelo."
+    "text": "description proporciona una descripción de texto del parámetro.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTabla de parámetros\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNota: En la tabla sólo se muestra un subconjunto de parámetros del modelo."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-7",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-7",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
-    "text": "notas es una columna opcional donde se añaden notas adicionales o contexto para el parámetro.\n\nNota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nParameter Table\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon"
+    "text": "notas es una columna opcional donde se añaden notas adicionales o contexto para el parámetro.\n\nNota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTabla de parámetros\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-8",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-8",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
-    "text": "distribución especifica la distribución de incertidumbre para el parámetro. Se utiliza para los análisis de sensibilidad probabilísticos, que trataremos en nuestro taller intermedio (de una semana de duración). cubrimos en nuestro taller intermedio (de una semana de duración).\n\nNota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nParameter Table\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon"
+    "text": "distribución especifica la distribución de incertidumbre para el parámetro. Se utiliza para los análisis de sensibilidad probabilísticos.\n\nNota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTabla de parámetros\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-9",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-9",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
-    "text": "Nota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.\n\nsource proporciona la fuente del parámetro. Puede ser un artículo de investigación publicado, una hipótesis o simplemente un parámetro de modelización sin (por ejemplo, la edad inicial de la cohorte modelada).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nParameter Table\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon"
+    "text": "Nota: En la tabla sólo se muestra un subconjunto de parámetros del modelo.\n\nsource proporciona la fuente del parámetro. Puede ser un artículo de investigación publicado, una hipótesis o simplemente un parámetro de modelización sin (por ejemplo, la edad inicial de la cohorte modelada).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTabla de parámetros\n\n\nparam\nbase_case\nformula\ndescription\nnotes\ndistribution\nsource\n\n\n\n\nn_age_init\n25.00\n\n\nAge at baseline\n\n\n\n\nModeling Parameter\n\n\nn_age_max\n100.00\n\n\nMaximum age of followup\n\n\n\n\nModeling Parameter\n\n\nu_H\n1.00\n\n\nUtility weight of healthy (H)\n\n\nbeta(shape1 = 200, shape2 = 3)\nLeech et al. (2022)\n\n\nu_S\n0.75\n\n\nUtility weight of sick (S)\n\n\nbeta(shape1 = 130, shape2 = 45)\nLeech et al. (2022)\n\n\nc_S\n1000.00\n\n\nAnnual cost of sick (S)\n\n\ngamma(shape = 44.4, scale = 22.5)\nGraves et al. (2022)\n\n\nc_trtA\n25.00\n\n\nCost of treatment A\n\n\ngamma(shape = 12.5, scale = 2)\nMartin et al. (2022)\n\n\nc_trtB\n1000.00\n\n\nCost of treatment B\n\n\ngamma(shape = 12, scale = 83.3)\nAssumption\n\n\nc_trtC\n3100.00\n\n\nCost of treatment C\n\n\ngamma(shape = 36.144, scale = 83)\nAssumption\n\n\nn_cycles\n75.00\n(n_age_max - n_age_init)\nTime horizon"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#definición-de-la-matriz-de-probabilidad-de-transición",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#definición-de-la-matriz-de-probabilidad-de-transición",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Definición de la matriz de probabilidad de transición",
-    "text": "Definición de la matriz de probabilidad de transición\n\nLa matriz de probabilidad de transición es una matriz cuadrada que define la probabilidad de transición de un estado de salud a otro estado de salud en un solo paso de tiempo.\nConstruir la matriz es un proceso bastante técnico, pero bastante pero bastante sencillo.\n\nPodríamos dedicarle un día entero de clases y casos prácticos (y lo hacemos en nuestra semana). (¡y lo hacemos en nuestro curso intermedio de una semana!)\nSin embargo, en aras del tiempo, vamos a pasar por alto estos detalles técnicos de hoy."
+    "text": "Definición de la matriz de probabilidad de transición\n\nLa matriz de probabilidad de transición es una matriz cuadrada que define la probabilidad de transición de un estado de salud a otro estado de salud en un solo ciclo.\nConstruir la matriz es un proceso bastante técnico, pero bastante sencillo.\n\nPodríamos dedicarle un día entero del taller y casos de estudio\nSin embargo, en aras del tiempo, vamos a pasar por alto estos detalles técnicos de hoy."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#matriz-de-probabilidades-de-transición",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#matriz-de-probabilidades-de-transición",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Matriz de probabilidades de transición",
     "text": "Matriz de probabilidades de transición\n\n\n\n\n\n\n\n\n\nG\n\n\n\nSano\n\nSano\n\n\n\nSano-&gt;Sano\n\n\n0,856\n\n\n\nEnfermo\n\nEnfermo\n\n\n\nSano-&gt;Enfermo\n\n\n0.138\n\n\n\nMuerto\n\nMuerto\n\n\n\nSano-&gt;Muerto\n\n\n0.007\n\n\n\nEnfermo-&gt;Enfermo\n\n\n0.982\n\n\n\nEnfermo-&gt;Muerto\n\n\n0.018\n\n\n\nMuerto-&gt;Muerto\n\n\n1.0\n\n\n\n\n\n\n\n\n\n\n\n\n\nSano\nEnfermo\nMuerto\n\n\n\n\nSano\n0.856\n0.138\n0.007\n\n\nEnfermo\n0\n0.982\n0.018\n\n\nMuerto\n0\n0\n1"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejecutar-el-modelo-requiere-dos-entradas",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#ejecutar-el-modelo-requiere-dos-entradas",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Ejecutar el modelo requiere dos entradas",
-    "text": "Ejecutar el modelo requiere dos entradas\n\n\nEstado de salud Ocupación al inicio del ciclo\n\n\nMatriz de probabilidad de transición"
+    "text": "Ejecutar el modelo requiere dos entradas\n\n\nEstado de salud al inicio del ciclo\n\n\nMatriz de probabilidad de transición"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-10",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-10",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
-    "text": "Ocupación del estado de salud al inicio del ciclo\n\n\nMatriz de probabilidad de transición"
+    "text": "Estado de salud al inicio del ciclo\n\n\nMatriz de probabilidad de transición"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-11",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-11",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
-    "text": "Ocupación del estado de salud al inicio del ciclo\n\n\nMatriz de probabilidad de transición\n\n\n\\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad\n\n\n\n\ns =\n\n\n H S D\n 1 0 0\n\n\n\n\nP =\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\n\n\\quad \\quad \\quad \\quad"
+    "text": "Estado de salud al inicio del ciclo\n\n\nMatriz de probabilidad de transición\n\n\n\\quad \\quad \\quad \\quad \\quad \\quad \\quad \\quad\n\n\n\n\ns =\n\n\n H S D\n 1 0 0\n\n\n\n\nP =\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\n\n\\quad \\quad \\quad \\quad"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-12",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-12",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
-    "text": "Estado de salud Ocupación al inicio del ciclo\n\n\nMatriz de probabilidades de transición\n\n\nEstado de salud Ocupación al final del ciclo\n\n\n\n\ns =\n\n\n H S D\n 1 0 0\n\n\n\nP =\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\ns \\cdot P=\n\n\n     H     S     D\n 0.856 0.138 0.007"
+    "text": "Estado de salud al inicio del ciclo\n\n\nMatriz de probabilidades de transición\n\n\nEstado de salud al final del ciclo\n\n\n\n\ns =\n\n\n H S D\n 1 0 0\n\n\n\nP =\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\ns \\cdot P=\n\n\n     H     S     D\n 0.856 0.138 0.007"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-13",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-13",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
-    "text": "Estado de salud Ocupación al inicio del ciclo\n\n\nMatriz de probabilidades de transición\n\n\nEstado de salud Ocupación al final del ciclo\n\n\n\n\ns =\n\n\n H S D\n 1 0 0\n\n\n\nP =\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\ns \\cdot P=\n\n\n     H     S     D\n 0.856 0.138 0.007"
+    "text": "Estado de salud al inicio del ciclo\n\n\nMatriz de probabilidades de transición\n\n\nEstado de salud al final del ciclo\n\n\n\n\ns =\n\n\n H S D\n 1 0 0\n\n\n\nP =\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\ns \\cdot P=\n\n\n     H     S     D\n 0.856 0.138 0.007"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-14",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-14",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
-    "text": "Estado de salud Ocupación al inicio del ciclo\n\n\nMatriz de probabilidades de transición\n\n\nEstado de salud Ocupación al final del ciclo\n\n\n\n\ns =\n\n\n H S D\n 1 0 0\n\n\n\n\n\n\n\n\n     H     S     D\n 0.856 0.138 0.007\n\n\n\n\nP =\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\ns \\cdot P=\n\n\n     H     S     D\n 0.856 0.138 0.007\n\n\n\n\n\n\n\n     H     S     D\n 0.733 0.254 0.015"
+    "text": "Estado de salud al inicio del ciclo\n\n\nMatriz de probabilidades de transición\n\n\nEstado de salud al final del ciclo\n\n\n\n\ns =\n\n\n H S D\n 1 0 0\n\n\n\n\n\n\n\n\n     H     S     D\n 0.856 0.138 0.007\n\n\n\n\nP =\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\ns \\cdot P=\n\n\n     H     S     D\n 0.856 0.138 0.007\n\n\n\n\n\n\n\n     H     S     D\n 0.733 0.254 0.015"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-15",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-15",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
-    "text": "Estado de salud Ocupación al inicio del ciclo\n\n\nMatriz de probabilidades de transición\n\n\nEstado de salud Ocupación al final del ciclo\n\n\n\n\ns =\n\n\n H S D\n 1 0 0\n\n\n\n\n\n\n\n\n     H     S     D\n 0.856 0.138 0.007\n\n\n\n\n\n\n\n\n\n     H     S     D\n 0.733 0.254 0.015\n\n\n\n\nP =\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\ns \\cdot P=\n\n\n     H     S     D\n 0.856 0.138 0.007\n\n\n\n\n\n\n\n     H     S     D\n 0.733 0.254 0.015\n\n\n\n\n\n\n\n\n     H    S     D\n 0.627 0.35 0.025"
+    "text": "Estado de salud al inicio del ciclo\n\n\nMatriz de probabilidades de transición\n\n\nEstado de salud al final del ciclo\n\n\n\n\ns =\n\n\n H S D\n 1 0 0\n\n\n\n\n\n\n\n\n     H     S     D\n 0.856 0.138 0.007\n\n\n\n\n\n\n\n\n\n     H     S     D\n 0.733 0.254 0.015\n\n\n\n\nP =\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\n\n      H     S     D\nH 0.856 0.138 0.007\nS 0.000 0.982 0.018\nD 0.000 0.000 1.000\n\n\n\ns \\cdot P=\n\n\n     H     S     D\n 0.856 0.138 0.007\n\n\n\n\n\n\n\n     H     S     D\n 0.733 0.254 0.015\n\n\n\n\n\n\n\n\n     H    S     D\n 0.627 0.35 0.025"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#section-16",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#section-16",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "",
-    "text": "Estado de salud Ocupación al final del ciclo\n\n\n\n\n     H     S     D\n 0.856 0.138 0.007\n\n\n\n\n\n\n       H       S        D\n 0.73274 0.25364 0.015476\n\n\n\n\n\n\n       H      S        D\n 0.62722 0.3502 0.025171"
+    "text": "Estado de salud al final del ciclo\n\n\n\n\n     H     S     D\n 0.856 0.138 0.007\n\n\n\n\n\n\n       H       S        D\n 0.73274 0.25364 0.015476\n\n\n\n\n\n\n       H      S        D\n 0.62722 0.3502 0.025171"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#trazado-de-markov",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#trazado-de-markov",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Trazado de Markov",
-    "text": "Trazado de Markov\n\nEstado de salud Ocupación durante diez ciclos\n\n\n\n cycle       H       S        D\n     0 1.00000 0.00000 0.000000\n     1 0.85600 0.13800 0.007000\n     2 0.73274 0.25364 0.015476\n     3 0.62722 0.35020 0.025171\n     4 0.53690 0.43045 0.035865\n     5 0.45959 0.49679 0.047371\n     6 0.39341 0.55127 0.059531\n     7 0.33676 0.59564 0.072207\n     8 0.28826 0.63139 0.085286\n     9 0.24675 0.65981 0.098669\n    10 0.21122 0.68198 0.112273"
+    "text": "Trazado de Markov\n\nEstado de salud durante diez ciclos\n\n\n\n cycle       H       S        D\n     0 1.00000 0.00000 0.000000\n     1 0.85600 0.13800 0.007000\n     2 0.73274 0.25364 0.015476\n     3 0.62722 0.35020 0.025171\n     4 0.53690 0.43045 0.035865\n     5 0.45959 0.49679 0.047371\n     6 0.39341 0.55127 0.059531\n     7 0.33676 0.59564 0.072207\n     8 0.28826 0.63139 0.085286\n     9 0.24675 0.65981 0.098669\n    10 0.21122 0.68198 0.112273"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Ejemplo en clase",
-    "text": "Ejemplo en clase\n\n\nSe ha desarrollado un nuevo fármaco para pacientes con cáncer en remisión para disminuir su probabilidad de recaída\nEste medicamento cuesta $10,000 por año (2022 USD)\nPregunta de investigación: ¿Es el nuevo fármaco rentable en comparación con la comparado con el tratamiento estándar actual?\nSupongamos que queremos modelizar esto en un horizonte temporal de 4 años"
+    "text": "Ejemplo en clase\n\n\nSe ha desarrollado un nuevo fármaco para pacientes con cáncer en remisión para disminuir su probabilidad de recaída\nEste medicamento cuesta $10,000 por año (2022 USD)\nPregunta de investigación: ¿Es el nuevo fármaco rentable en comparación con el tratamiento estándar actual?\nSupongamos que queremos modelizar esto en un horizonte temporal de 4 años"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Ejemplo en clase",
     "text": "Ejemplo en clase\n\n\n\n\n\n\nStandard of Care\nNew Drug\n\n\n\n\nHealthy to Stage 1\n5%\n\n\n\nHealthy to Stage 2\n2%\n\n\n\nHealthy to Stage 3\n1%\n\n\n\nStage 1 to Stage 2\n10%\n\n\n\nStage 1 to Remission\n25%\n\n\n\nStage 2 to Stage 1\n5%\n\n\n\nStage 2 to Stage 3\n15%\n\n\n\nStage 2 to Remission\n20%\n\n\n\nStage 3 to Stage 2\n5%\n\n\n\nStage 3 to Death\n45%\n\n\n\nRemission to Stage 1\n10%\n2%\n\n\nRemission to Stage 2\n5%\n1%"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase-2",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase-2",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Ejemplo en clase",
     "text": "Ejemplo en clase"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase-3",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase-3",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Ejemplo en clase",
     "text": "Ejemplo en clase"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase-4",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase-4",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Ejemplo en clase",
     "text": "Ejemplo en clase"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase-5",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase-5",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Ejemplo en clase",
     "text": "Ejemplo en clase"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase-6",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase-6",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Ejemplo en clase",
     "text": "Ejemplo en clase"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase-7",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-en-clase-7",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Ejemplo en clase",
     "text": "Ejemplo en clase"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#un-ejemplo-de-trazado-de-markov-horizonte-de-75-años",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#un-ejemplo-de-trazado-de-markov-horizonte-de-75-años",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Un ejemplo de Trazado de Markov (horizonte de 75 años)",
-    "text": "Un ejemplo de Trazado de Markov (horizonte de 75 años)\n\n\n\n\nCycle\nHealthy\nSick\nDead\n\n\n\n\n0\n1.000\n0.000\n0.000\n\n\n1\n0.856\n0.138\n0.007\n\n\n2\n0.732\n0.253\n0.015\n\n\n3\n0.626\n0.349\n0.025\n\n\n4\n0.536\n0.429\n0.035\n\n\n5\n0.458\n0.495\n0.046\n\n\n…\n…\n…\n…\n\n\n75 (End)\n0\n0.282\n0.718"
+    "text": "Un ejemplo de Trazado de Markov (horizonte de 75 años)\n\n\n\n\nCycle\nSano\nEnfermo\nMuerto\n\n\n\n\n0\n1.000\n0.000\n0.000\n\n\n1\n0.856\n0.138\n0.007\n\n\n2\n0.732\n0.253\n0.015\n\n\n3\n0.626\n0.349\n0.025\n\n\n4\n0.536\n0.429\n0.035\n\n\n5\n0.458\n0.495\n0.046\n\n\n…\n…\n…\n…\n\n\n75 (End)\n0\n0.282\n0.718"
   },
   {
-    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#trazos-de-markov",
-    "href": "lectures/ESP_lec_7.MarkovModels1.html#trazos-de-markov",
-    "title": "Markov Models",
-    "section": "Trazos de Markov",
-    "text": "Trazos de Markov\n\nA menudo modelamos varias estrategias que compiten entre sí.\nCada estrategia tiene su propia matriz de probabilidad de transición.\nPor lo tanto, cada estrategia tendrá su propia traza de Markov."
+    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#trazas-de-markov",
+    "href": "lectures/ESP_lec_7.MarkovModels1.html#trazas-de-markov",
+    "title": "Modelos de Markov",
+    "section": "Trazas de Markov",
+    "text": "Trazas de Markov\n\nA menudo modelamos varias estrategias que compiten entre sí.\nCada estrategia tiene su propia matriz de probabilidad de transición.\nPor lo tanto, cada estrategia tendrá su propia traza de Markov."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#cálculo-de-resultados-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#cálculo-de-resultados-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Cálculo de resultados",
-    "text": "Cálculo de resultados\n\nCon nuestras trazas de Markov completas, podemos calcular los resultados esperados (por ejemplo, costes, AVAC, AVAD, etc.).\nAl igual que hicimos con los árboles de decisión, tenemos que definir los “pagos” para cada estado de salud. para cada estado de salud."
+    "text": "Cálculo de resultados\n\nCon nuestras trazas de Markov completas, podemos calcular los resultados esperados (por ejemplo, costos, AVAC, AVAD, etc.).\nAl igual que hicimos con los árboles de decisión, tenemos que definir los “pagos” para cada estado de salud."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#definición-de-los-resultados",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#definición-de-los-resultados",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Definición de los resultados",
-    "text": "Definición de los resultados\n\nCoste de los resultados: Coste de estar sano, enfermo, muerto (incluido cualquier costes adicionales del tratamiento/intervención, si procede).\nResultados QALY: Peso de la utilidad de estar sano (normalmente 1,0), enfermo muerto (normalmente 0,0).\nResultados AVAD: Pesos de discapacidad de estar enfermo (YLD) y esperanza de vida esperanza de vida restante basada en la tabla de vida de referencia (YLL)"
+    "text": "Definición de los resultados\n\nCosto de los resultados: Costo de estar sano, enfermo, muerto (incluido cualquier costos adicionales del tratamiento/intervención, si procede).\nResultados AVAC: Peso de la utilidad de estar sano (normalmente 1,0), enfermo muerto (normalmente 0,0).\nResultados AVAD: Pesos de discapacidad de estar enfermo (AVD) y esperanza de vida restante basada en la tabla de vida de referencia (AVP)"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#definición-de-las-compensaciones",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#definición-de-las-compensaciones",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Definición de las compensaciones",
-    "text": "Definición de las compensaciones\n\n\nPodemos calcular la retribución total de cada ciclo multiplicando el multiplicando el número o la fracción de la cohorte en cada estado de salud por su valor de compensación y sumándolos. y sumándolos.\n\n\nEjemplo de traza de Markov (dos ciclos):\n\n\n\n\nCycle\nHealthy\nSick\nDead\n\n\n\n\n0\n1.000\n0.000\n0.000\n\n\n1\n0.856\n0.138\n0.007"
+    "text": "Definición de las compensaciones\n\n\nPodemos calcular la retribución total de cada ciclo multiplicando el número o la fracción de la cohorte en cada estado de salud por su valor de compensación y sumándolos.\n\n\nEjemplo de traza de Markov (dos ciclos):\n\n\n\n\nCiclo\nSano\nEnfermo\nMuerto\n\n\n\n\n0\n1.000\n0.000\n0.000\n\n\n1\n0.856\n0.138\n0.007"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-años-de-vida",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-años-de-vida",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Ejemplo: Años de vida",
-    "text": "Ejemplo: Años de vida\n\nConstruiremos nuestro ejemplo utilizando un resultado simple: años de vida esperados bajo una estrategia dada.\nResultados:\n\nHealthy: 1.0\nSick: 1.0 [they’re still alive!]\nDead: 0.0"
+    "text": "Ejemplo: Años de vida\n\nConstruiremos nuestro ejemplo utilizando un resultado simple: años de vida esperados bajo una estrategia dada.\nResultados:\n\nSano: 1,0\nEnfermo: 1,0 [Siguen vivos!]\nMuerto: 0.0"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-años-de-vida-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-años-de-vida-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Ejemplo: Años de vida",
-    "text": "Ejemplo: Años de vida\n\nPara obtener la “retribución” total de un ciclo determinado, multiplicamos la fracción de la cohorte en un estado de salud dado por la retribución asociado a ese estado de salud.\nHaga esto para cada estado de salud y súmelos para obtener el total. total.\n\n\n\n\n\nCycle\nHealthy\nSick\nDead\nLY\n\n\n\n\n0\n1.000\n0.000\n0.000\n\n\n\n1\n0.856\n0.138\n0.007"
+    "text": "Ejemplo: Años de vida\n\nPara obtener la “retribución” total de un ciclo determinado, multiplicamos la fracción de la cohorte en un estado de salud dado por la retribución asociado a ese estado de salud.\nHaga esto para cada estado de salud y súmelos para obtener el total. total.\n\n\n\n\n\nCiclo\nSano\nEnfermo\nMuerto\nAV\n\n\n\n\n0\n1.000\n0.000\n0.000\n\n\n\n1\n0.856\n0.138\n0.007"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-años-de-vida-2",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-años-de-vida-2",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Ejemplo: Años de vida",
-    "text": "Ejemplo: Años de vida\nWhat is the LY “payoff” for Cycle 0?\n\n\n\n\nCycle\nHealthy\nSick\nDead\nLY\n\n\n\n\n0\n1.000\n0.000\n0.000\n\n\n\n1\n0.856\n0.138\n0.007"
+    "text": "Ejemplo: Años de vida\nCuál es la retribución en AV para el ciclo 0?\n\n\n\n\nCiclo\nSano\nEnfermo\nMuerto\nAV\n\n\n\n\n0\n1.000\n0.000\n0.000\n\n\n\n1\n0.856\n0.138\n0.007"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-años-de-vida-3",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-años-de-vida-3",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Ejemplo: Años de vida",
-    "text": "Ejemplo: Años de vida\nWhat is the LY “payoff” for Cycle 0?\n\n\n\n\n\n\n\n\n\n\n\nCycle\nHealthy\nSick\nDead\nLY\n\n\n\n\n0\n1.000\n0.000\n0.000\n1.0 = 1.0 * 1.0 + 0.0 * 1.0 + 0.0 * 0.0\n\n\n1\n0.856\n0.138\n0.007"
+    "text": "Ejemplo: Años de vida\nCuál es la retribución en AV para el ciclo 0?\n\n\n\n\n\n\n\n\n\n\n\nCiclo\nSano\nEnfermo\nMuerdo\nAV\n\n\n\n\n0\n1.000\n0.000\n0.000\n1.0 = 1.0 * 1.0 + 0.0 * 1.0 + 0.0 * 0.0\n\n\n1\n0.856\n0.138\n0.007"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-años-de-vida-4",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-años-de-vida-4",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Ejemplo: Años de vida",
-    "text": "Ejemplo: Años de vida\nWhat is the LY “payoff” for Cycle 1?\n\n\n\n\n\n\n\n\n\n\n\nCycle\nHealthy\nSick\nDead\nLY\n\n\n\n\n0\n1.000\n0.000\n0.000\n1.0\n\n\n1\n0.856\n0.138\n0.007\n0.994 = 0.856 * 1.0 + 0.138 * 1.0 + 0.007 * 0.0\n\n\n\n\n… y así sucesivamente."
+    "text": "Ejemplo: Años de vida\nCuál es la retribución en AV para el ciclo 1?\n\n\n\n\n\n\n\n\n\n\n\nCiclo\nSano\nEnfermo\nMuerte\nAV\n\n\n\n\n0\n1.000\n0.000\n0.000\n1.0\n\n\n1\n0.856\n0.138\n0.007\n0.994 = 0.856 * 1.0 + 0.138 * 1.0 + 0.007 * 0.0\n\n\n\n\n… y así sucesivamente."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-años-de-vida-5",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-años-de-vida-5",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Ejemplo: Años de vida",
-    "text": "Ejemplo: Años de vida\n\n\n\n\nCycle\nHealthy\nSick\nDead\nLY\n\n\n\n\n0\n1.000\n0.000\n0.000\n1\n\n\n1\n0.856\n0.138\n0.007\n0.993\n\n\n2\n0.732\n0.253\n0.015\n0.985\n\n\n3\n0.626\n0.349\n0.025\n0.975\n\n\n4\n0.536\n0.429\n0.035\n0.965\n\n\n5\n0.458\n0.495\n0.046\n0.954\n\n\n…\n…\n…\n…\n\n\n\n75 (End)\n0\n0.282\n0.718\n0.282"
+    "text": "Ejemplo: Años de vida\n\n\n\n\nCiclo\nSano\nEnfermo\nMuerto\nAV\n\n\n\n\n0\n1.000\n0.000\n0.000\n1\n\n\n1\n0.856\n0.138\n0.007\n0.993\n\n\n2\n0.732\n0.253\n0.015\n0.985\n\n\n3\n0.626\n0.349\n0.025\n0.975\n\n\n4\n0.536\n0.429\n0.035\n0.965\n\n\n5\n0.458\n0.495\n0.046\n0.954\n\n\n…\n…\n…\n…\n\n\n\n75 (End)\n0\n0.282\n0.718\n0.282"
   },
   {
-    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costes",
-    "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costes",
-    "title": "Markov Models",
-    "section": "Ejemplo: Costes",
-    "text": "Ejemplo: Costes\n\nNow suppose we want to calculate costs.\nPayoffs:\n\nHealthy: $0\nSick: $1,000\nDead: $0"
+    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costos",
+    "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costos",
+    "title": "Modelos de Markov",
+    "section": "Ejemplo: Costos",
+    "text": "Ejemplo: Costos\n\nAhora supongamos que queremos calcular los costos\nRetribuciones:\n\nSano: $0\nEnfermo: $1,000\nMuerto: $0"
   },
   {
-    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costes-1",
-    "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costes-1",
-    "title": "Markov Models",
-    "section": "Ejemplo: Costes",
-    "text": "Ejemplo: Costes\n¿Cuál es el coste del ciclo 0?\n\n\n\n\nCycle\nHealthy\nSick\nDead\nCost\n\n\n\n\n0\n1.000\n0.000\n0.000\n\n\n\n1\n0.856\n0.138\n0.007"
+    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costos-1",
+    "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costos-1",
+    "title": "Modelos de Markov",
+    "section": "Ejemplo: Costos",
+    "text": "Ejemplo: Costos\n¿Cuál es el costo del ciclo 0?\n\n\n\n\nCiclo\nSano\nEnfermo\nMuerto\nCosto\n\n\n\n\n0\n1.000\n0.000\n0.000\n\n\n\n1\n0.856\n0.138\n0.007"
   },
   {
-    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costes-2",
-    "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costes-2",
-    "title": "Markov Models",
-    "section": "Ejemplo: Costes",
-    "text": "Ejemplo: Costes\n¿Cuál es el coste del ciclo 0?\n\n\n\n\n\n\n\n\n\n\n\nCycle\nHealthy\nSick\nDead\nCost\n\n\n\n\n0\n1.000\n0.000\n0.000\n0 = 1.00 * 0 + 0.0 * 1000 + 0.0 * 0\n\n\n1\n0.856\n0.138\n0.007"
+    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costos-2",
+    "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costos-2",
+    "title": "Modelos de Markov",
+    "section": "Ejemplo: Costos",
+    "text": "Ejemplo: Costos\n¿Cuál es el costo del ciclo 0?\n\n\n\n\n\n\n\n\n\n\n\nCiclo\nSano\nEnfermo\nMuerto\nCosto\n\n\n\n\n0\n1.000\n0.000\n0.000\n0 = 1.00 * 0 + 0.0 * 1000 + 0.0 * 0\n\n\n1\n0.856\n0.138\n0.007"
   },
   {
-    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costes-3",
-    "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costes-3",
-    "title": "Markov Models",
-    "section": "Ejemplo: Costes",
-    "text": "Ejemplo: Costes\n¿Cuál es el coste “compensatorio” del Ciclo 1?\n\n\n\n\n\n\n\n\n\n\n\nCycle\nHealthy\nSick\nDead\nCost\n\n\n\n\n0\n1.000\n0.000\n0.000\n0\n\n\n1\n0.856\n0.138\n0.007\n138 = 0.856*0+0.138*1000+0.007*0\n\n\n\n\n… y así sucesivamente."
+    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costos-3",
+    "href": "lectures/ESP_lec_7.MarkovModels1.html#ejemplo-costos-3",
+    "title": "Modelos de Markov",
+    "section": "Ejemplo: Costos",
+    "text": "Ejemplo: Costos\n¿Cuál es el costo del ciclo 1?\n\n\n\n\n\n\n\n\n\n\n\nCiclo\nSano\nEnfermo\nMuerto\nCosto\n\n\n\n\n0\n1.000\n0.000\n0.000\n0\n\n\n1\n0.856\n0.138\n0.007\n138 = 0.856*0+0.138*1000+0.007*0\n\n\n\n\n… y así sucesivamente."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#otros-resultados",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#otros-resultados",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Otros resultados",
-    "text": "Otros resultados\n\nPodemos repetir un proceso similar para los resultados sanitarios (por ejemplo, AVAC, YLD) multiplicando el “resultado” (por ejemplo, el peso de la utilidad, el peso de la discapacidad) para un estado de salud determinado por la fracción de la cohorte que se encuentra en un estado de salud determinado. discapacidad) de un determinado estado de salud por la fracción de la cohorte que se encuentra en ese estado de salud en el ciclo. ese estado de salud en el ciclo."
+    "text": "Otros resultados\n\nPodemos repetir un proceso similar para los resultados sanitarios (por ejemplo, AVAC, AVD) multiplicando el “resultado” (por ejemplo, el peso de la utilidad, el peso de la discapacidad) para un estado de salud determinado por la fracción de la cohorte que se encuentra en ese estado de salud en el ciclo."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#resultados-totales",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#resultados-totales",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Resultados totales",
     "text": "Resultados totales"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#total-de-años-de-vida",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#total-de-años-de-vida",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Total de años de vida",
-    "text": "Total de años de vida\nVeamos la traza de Markov y los resultados del ciclo para el resultado Años de vida resultado.\n\n\n\n\nCycle\nHealthy\nSick\nDead\nLY (single cycle)\n\n\n\n\n0\n1.000\n0.000\n0.000\n1\n\n\n1\n0.856\n0.138\n0.007\n0.993\n\n\n2\n0.732\n0.253\n0.015\n0.985\n\n\n3\n0.626\n0.349\n0.025\n0.975\n\n\n4\n0.536\n0.429\n0.035\n0.965\n\n\n5\n0.458\n0.495\n0.046\n0.954\n\n\n…\n…\n…\n…\n\n\n\n75 (End)\n0\n0.282\n0.718\n0.282"
+    "text": "Total de años de vida\nVeamos la traza de Markov y los resultados del ciclo para el resultado años de vida.\n\n\n\n\nCiclo\nSano\nEnfermo\nMuerto\nAV (ciclo único)\n\n\n\n\n0\n1.000\n0.000\n0.000\n1\n\n\n1\n0.856\n0.138\n0.007\n0.993\n\n\n2\n0.732\n0.253\n0.015\n0.985\n\n\n3\n0.626\n0.349\n0.025\n0.975\n\n\n4\n0.536\n0.429\n0.035\n0.965\n\n\n5\n0.458\n0.495\n0.046\n0.954\n\n\n…\n…\n…\n…\n\n\n\n75 (End)\n0\n0.282\n0.718\n0.282"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#años-de-vida",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#años-de-vida",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Años de vida",
-    "text": "Años de vida\nPodemos crear una nueva columna que acumule los años de vida en cada ciclo.\n\n\n\n\n\n\n\n\n\n\n\n\nCycle\nHealthy\nSick\nDead\nLY (single cycle)\nLY (cumulative)\n\n\n\n\n0\n1.000\n0.000\n0.000\n1\n1\n\n\n1\n0.856\n0.138\n0.007\n0.993\n1 + 0.993 = 1.993\n\n\n2\n0.732\n0.253\n0.015\n0.985\n\n\n\n3\n0.626\n0.349\n0.025\n0.975\n\n\n\n4\n0.536\n0.429\n0.035\n0.965\n\n\n\n5\n0.458\n0.495\n0.046\n0.954\n\n\n\n…\n…\n…\n…\n…\n\n\n\n75 (End)\n0\n0.282\n0.718\n0.282"
+    "text": "Años de vida\nPodemos crear una nueva columna que acumule los años de vida en cada ciclo.\n\n\n\n\n\n\n\n\n\n\n\n\nCiclo\nSano\nEnfermo\nMuerto\nAV (ciclo único)\nAV (cumulativo)\n\n\n\n\n0\n1.000\n0.000\n0.000\n1\n1\n\n\n1\n0.856\n0.138\n0.007\n0.993\n1 + 0.993 = 1.993\n\n\n2\n0.732\n0.253\n0.015\n0.985\n\n\n\n3\n0.626\n0.349\n0.025\n0.975\n\n\n\n4\n0.536\n0.429\n0.035\n0.965\n\n\n\n5\n0.458\n0.495\n0.046\n0.954\n\n\n\n…\n…\n…\n…\n…\n\n\n\n75 (End)\n0\n0.282\n0.718\n0.282"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#años-de-vida-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#años-de-vida-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Años de vida",
-    "text": "Años de vida\n\n\n\n\n\n\n\n\n\n\n\n\nCycle\nHealthy\nSick\nDead\nLY (single cycle)\nLY (cumulative)\n\n\n\n\n0\n1.000\n0.000\n0.000\n1\n1\n\n\n1\n0.856\n0.138\n0.007\n0.993\n1.993\n\n\n2\n0.732\n0.253\n0.015\n0.985\n1 + 0.993 + 0.985 = 2.978\n\n\n3\n0.626\n0.349\n0.025\n0.975\n\n\n\n4\n0.536\n0.429\n0.035\n0.965\n\n\n\n5\n0.458\n0.495\n0.046\n0.954\n\n\n\n…\n…\n…\n…\n…\n\n\n\n75 (End)\n0\n0.282\n0.718\n0.282"
+    "text": "Años de vida\n\n\n\n\n\n\n\n\n\n\n\n\nCiclo\nSano\nEnfermo\nMuerto\nAV (ciclo único)\nAV (cumulativo)\n\n\n\n\n0\n1.000\n0.000\n0.000\n1\n1\n\n\n1\n0.856\n0.138\n0.007\n0.993\n1.993\n\n\n2\n0.732\n0.253\n0.015\n0.985\n1 + 0.993 + 0.985 = 2.978\n\n\n3\n0.626\n0.349\n0.025\n0.975\n\n\n\n4\n0.536\n0.429\n0.035\n0.965\n\n\n\n5\n0.458\n0.495\n0.046\n0.954\n\n\n\n…\n…\n…\n…\n…\n\n\n\n75 (End)\n0\n0.282\n0.718\n0.282"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#años-de-vida-2",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#años-de-vida-2",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Años de vida",
-    "text": "Años de vida\n\nThe cumulative LYs for an individual starting in the Healthy state is 44.825\nNote that this is within a 75 years time horizon\n\n\n\n\n\n\n\n\n\n\n\n\n\nCycle\nHealthy\nSick\nDead\nLY (single cycle)\nLY (cumulative)\n\n\n\n\n0\n1.000\n0.000\n0.000\n1\n1\n\n\n1\n0.856\n0.138\n0.007\n0.993\n1.993\n\n\n2\n0.732\n0.253\n0.015\n0.985\n2.978\n\n\n3\n0.626\n0.349\n0.025\n0.975\n3.954\n\n\n4\n0.536\n0.429\n0.035\n0.965\n4.919\n\n\n5\n0.458\n0.495\n0.046\n0.954\n5.872\n\n\n…\n…\n…\n…\n…\n…\n\n\n75 (End)\n0\n0.282\n0.718\n0.282\n44.825"
+    "text": "Años de vida\n\nLos AV culmulativos para un individuo empezando en el estado sano es 44.825\nNotamos que este resultado es dentro de un horizonte de 75 años.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCiclo\nSano\nEnfermo\nMuerto\nAV (ciclo único)\nAV (cumulativo)\nAV (ciclo único)\n\nAV (ciclo único)\nLY (cumulative)\n\n\n\n\n0\n1.000\n0.000\n0.000\n1\n1\n\n\n\n\n\n\n1\n0.856\n0.138\n0.007\n0.993\n1.993\n\n\n\n\n\n\n2\n0.732\n0.253\n0.015\n0.985\n2.978\n\n\n\n\n\n\n3\n0.626\n0.349\n0.025\n0.975\n3.954\n\n\n\n\n\n\n4\n0.536\n0.429\n0.035\n0.965\n4.919\n\n\n\n\n\n\n5\n0.458\n0.495\n0.046\n0.954\n5.872\n\n\n\n\n\n\n…\n…\n…\n…\n…\n…\n\n\n\n\n\n\n75 (End)\n0\n0.282\n0.718\n0.282\n44.825"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#resultados-totales-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#resultados-totales-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Resultados totales",
-    "text": "Resultados totales\n\nPodemos hacer un ejercicio similar para obtener los costes totales, los AVAC totales, los AVAD totales, etc. AVAD, etc.\nSin embargo, no es tan sencillo. Hay algunas complicaciones complicaciones adicionales.\n\nDescuentos\nCorrección cíclica"
+    "text": "Resultados totales\n\nPodemos hacer un ejercicio similar para obtener los costos totales, los AVAC totales, los AVAD totales, etc.\nSin embargo, no es tan sencillo. Hay algunas complicaciones adicionales.\n\nDescuentos\nCorrección cíclica"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#el-problema",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#el-problema",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "El problema",
-    "text": "El problema\n\nEn la vida real, los eventos podrían ocurrir en cualquier punto de un ciclo dado, pero un modelo de Markov asume que todos los eventos ocurren al principio o al final de cada ciclo\nEl tiempo es continuo, también lo son las curvas de supervivencia/supervivencia sin eventos\nCuando discretizamos el tiempo utilizando una longitud de ciclo fija, podemos hacer dos supuestos\n\nSupongamos que se trata de un simple bien \\arrow proceso muerto"
+    "text": "El problema\n\nEn la vida real, los eventos podrían ocurrir en cualquier punto de un ciclo dado, pero un modelo de Markov asume que todos los eventos ocurren al principio o al final de cada ciclo\nEl tiempo es continuo, también lo son las curvas de supervivencia\nCuando discretizamos el tiempo utilizando una longitud de ciclo fija, podemos hacer dos supuestos\n\nSupongamos que se trata de un simple bien \\arrow proceso muerto"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#el-problema-1",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#el-problema-1",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "El problema",
-    "text": "El problema\n\n\n\nAsumiendo que la muerte ocurre al final del ciclo (A)\n\n\nSobreestima la pertenencia a un estado en Well\n\n\n\nAsumiendo que la muerte ocurre al inicio del ciclo (B)\n\n\nSubestima la pertenencia a un estado en Well\n\n\n\nSource"
+    "text": "El problema\n\n\n\nAsumiendo que la muerte ocurre al final del ciclo (A)\n\n\nSobreestima la pertenencia a un estado de salud\n\n\n\nAsumiendo que la muerte ocurre al inicio del ciclo (B)\n\n\nSubestima la pertenencia a un estado de salud\n\n\n\nSource"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#el-problema-2",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#el-problema-2",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "El problema",
     "text": "El problema"
   },
   {
-    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#half-cycle-correction",
-    "href": "lectures/ESP_lec_7.MarkovModels1.html#half-cycle-correction",
-    "title": "Markov Models",
-    "section": "Half-cycle correction",
-    "text": "Half-cycle correction\n\n\n\n\n\n\n\nSource"
+    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#corrección-mitad-del-ciclo",
+    "href": "lectures/ESP_lec_7.MarkovModels1.html#corrección-mitad-del-ciclo",
+    "title": "Modelos de Markov",
+    "section": "Corrección mitad del ciclo",
+    "text": "Corrección mitad del ciclo\n\n\n\n\n\n\n\nSource"
   },
   {
-    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#half-cycle-correction-1",
-    "href": "lectures/ESP_lec_7.MarkovModels1.html#half-cycle-correction-1",
-    "title": "Markov Models",
-    "section": "Half-cycle correction",
-    "text": "Half-cycle correction\n\n\n\n\n\n\n\n\n\nSource"
+    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#corrección-mitad-del-ciclo-1",
+    "href": "lectures/ESP_lec_7.MarkovModels1.html#corrección-mitad-del-ciclo-1",
+    "title": "Modelos de Markov",
+    "section": "Corrección mitad del ciclo",
+    "text": "Corrección mitad del ciclo\n\n\n\n\n\n\n\n\n\nSource"
   },
   {
-    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#half-cycle-correction-2",
-    "href": "lectures/ESP_lec_7.MarkovModels1.html#half-cycle-correction-2",
-    "title": "Markov Models",
-    "section": "Half-cycle correction",
-    "text": "Half-cycle correction\n\n\nMultiplicar los resultados por 1/2 en el primer y último ciclo.\nDesplazar la curva calculada de pertenencia a un estado discreto hacia la izquierda en 1/2 ciclo.\nEsencialmente asumiendo que los eventos ocurren en la mitad del ciclo\n\nSource"
+    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#corrección-mitad-del-ciclo-2",
+    "href": "lectures/ESP_lec_7.MarkovModels1.html#corrección-mitad-del-ciclo-2",
+    "title": "Modelos de Markov",
+    "section": "Corrección mitad del ciclo",
+    "text": "Corrección mitad del ciclo\n\n\nMultiplicar los resultados por 1/2 en el primer y último ciclo.\nDesplazar la curva calculada de pertenencia a un estado discreto hacia la izquierda en 1/2 ciclo.\nEsencialmente asumiendo que los eventos ocurren en la mitad del ciclo\n\nSource"
   },
   {
-    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#half-cycle-correction-3",
-    "href": "lectures/ESP_lec_7.MarkovModels1.html#half-cycle-correction-3",
-    "title": "Markov Models",
-    "section": "Half-cycle correction",
-    "text": "Half-cycle correction"
+    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#corrección-mitad-del-ciclo-3",
+    "href": "lectures/ESP_lec_7.MarkovModels1.html#corrección-mitad-del-ciclo-3",
+    "title": "Modelos de Markov",
+    "section": "Corrección mitad del ciclo",
+    "text": "Corrección mitad del ciclo"
   },
   {
-    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#half-cycle-correction-4",
-    "href": "lectures/ESP_lec_7.MarkovModels1.html#half-cycle-correction-4",
-    "title": "Markov Models",
-    "section": "Half-cycle correction",
-    "text": "Half-cycle correction\n\nMultiplicar los resultados por 1/2 en el primer y último ciclo.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCycle\nHealthy\nSick\nDead\nLY (single cycle, adjusted)\nLY (cumulative)\n\n\n\n\n0\n1.000\n0.000\n0.000\n1*0.5\n0.5\n\n\n1\n0.856\n0.138\n0.007\n0.993\n0.5 + 0.993 = 1.493\n\n\n2\n0.732\n0.253\n0.015\n0.985\n2.478\n\n\n3\n0.626\n0.349\n0.025\n0.975\n3.454\n\n\n4\n0.536\n0.429\n0.035\n0.965\n4.419\n\n\n5\n0.458\n0.495\n0.046\n0.954\n5.372\n\n\n…\n…\n…\n…\n…\n…\n\n\n75 (End)\n0\n0.282\n0.718\n0.282 *0.5\n44.184\n\n\n\n\n\n\n\n\n\n\n\n\nEste número es menor que nuestra estimación original sin corrección de medio ciclo (¡44,825!)"
+    "objectID": "lectures/ESP_lec_7.MarkovModels1.html#corrección-mitad-del-ciclo-4",
+    "href": "lectures/ESP_lec_7.MarkovModels1.html#corrección-mitad-del-ciclo-4",
+    "title": "Modelos de Markov",
+    "section": "Corrección mitad del ciclo",
+    "text": "Corrección mitad del ciclo\n\nMultiplicar los resultados por 1/2 en el primer y último ciclo.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCiclo\nSano\nEnfermo\nMuerto\nLY (single Ciclo, adjusted)\nLY (cumulative)\n\n\n\n\n0\n1.000\n0.000\n0.000\n1*0.5\n0.5\n\n\n1\n0.856\n0.138\n0.007\n0.993\n0.5 + 0.993 = 1.493\n\n\n2\n0.732\n0.253\n0.015\n0.985\n2.478\n\n\n3\n0.626\n0.349\n0.025\n0.975\n3.454\n\n\n4\n0.536\n0.429\n0.035\n0.965\n4.419\n\n\n5\n0.458\n0.495\n0.046\n0.954\n5.372\n\n\n…\n…\n…\n…\n…\n…\n\n\n75 (End)\n0\n0.282\n0.718\n0.282 *0.5\n44.184\n\n\n\n\n\n\n\n\n\n\n\n\nEste número es menor que nuestra estimación original sin corrección de medio ciclo (¡44,825!)"
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#resumen",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#resumen",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Resumen",
-    "text": "Resumen\n\nUna vez que tenemos los resultados totales (descontados, corregidos por medio ciclo) para cada estrategia, podemos pasar a realizar un análisis análisis coste-eficacia incremental."
+    "text": "Resumen\n\nUna vez que tenemos los resultados totales (descontados, corregidos por medio ciclo) para cada estrategia, podemos pasar a realizar un análisis costo-efectividad incremental."
   },
   {
     "objectID": "lectures/ESP_lec_7.MarkovModels1.html#markov-models",
     "href": "lectures/ESP_lec_7.MarkovModels1.html#markov-models",
-    "title": "Markov Models",
+    "title": "Modelos de Markov",
     "section": "Markov Models",
     "text": "Markov Models\n\n\n\n\n\n\n\nPros\nContras\n\n\n\n\nPuede modelar sucesos repetidos\nSólo puede transitar una vez por ciclo\n\n\nPuede modelizar eventos clínicos más complejos y longitudinales\nAcortar el ciclo puede plantear retos informáticos.\n\n\nNo requiere muchos cálculos; es eficiente de modelar y depurar.\nAcortar el ciclo puede provocar una “explosión de estados” si se utilizan estados túnel\n\n\n\n\n\n\n\nVolver al sitio web"
   },
