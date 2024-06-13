@@ -3546,14 +3546,63 @@
     "href": "case-studies/cs_injury-decision-tree.html",
     "title": "Gunpowder Injury Decision Tree",
     "section": "",
-    "text": "In Columbia, the issue of gunpowder-related injuries, particularly during festive seasons, remains a significant public health concern. Fireworks, while culturally ingrained and a source of celebration, pose substantial risks, especially to children. This has led policymakers to consider various strategies to mitigate these risks and enhance public safety.\nThe decision problem we will consider revolves around identifying the most effective approach to reducing injuries and fatalities caused by fireworks. Two primary strategies under consideration are (1) a complete ban on fireworks and (2) heavy regulation, such as restricted sales licenses and stringent enforcement.\nA complete ban aims to eliminate the root cause of injuries by prohibiting the sale, storage, and use of fireworks. This approach seeks to protect public health directly but may face resistance due to its impact on cultural traditions and the livelihoods of vendors.\nOn the other hand, heavy regulation involves implementing strict controls over the sale and use of fireworks. This strategy includes measures such as issuing sales licenses only to authorized vendors, enforcing age restrictions, and conducting public education campaigns about the dangers of fireworks. This approach aims to reduce injuries while allowing for controlled, safe use of fireworks.\nOur case studies will explore these strategies through two decision modeling approaches. This case study will utilize a decision tree model to evaluate the immediate outcomes and costs associated with each strategy.\nLater, we will employ a Markov cohort model to examine the long-term health and economic impacts, considering factors such as injury rates, healthcare costs, and compliance levels.\nBy analyzing these models, we aim to provide a comprehensive assessment of the most cost-effective and sustainable approach to reducing gunpowder-related injuries in Bogotá today."
+    "text": "In Columbia, the issue of gunpowder-related injuries, particularly during festive seasons, remains a significant public health concern. Fireworks, while culturally ingrained and a source of celebration, pose substantial risks, especially to children. This has led policymakers to consider various strategies to mitigate these risks and enhance public safety.\nThe decision problem we will consider revolves around analyzing approaches to reducing injuries and fatalities caused by fireworks. Two primary strategies under consideration are (1) a complete ban on fireworks and (2) heavy regulation, such as restricted sales licenses and stringent enforcement.\nA complete ban aims to eliminate the root cause of injuries by prohibiting the sale, storage, and use of fireworks. This approach seeks to protect public health directly but may face resistance due to its impact on cultural traditions and the livelihoods of vendors.\nOn the other hand, heavy regulation involves implementing strict controls over the sale and use of fireworks. This strategy includes measures such as issuing sales licenses only to authorized vendors, enforcing age restrictions, and conducting public education campaigns about the dangers of fireworks. This approach aims to reduce injuries while allowing for controlled, safe use of fireworks.\nOur case studies will explore these strategies through two decision modeling approaches. This case study will utilize a decision tree model to evaluate the immediate outcomes and costs associated with each strategy.\nLater, we will employ a Markov cohort model to examine the long-term health and economic impacts, considering factors such as injury rates, healthcare costs, and compliance levels.\nBy analyzing these models, we aim to provide a comprehensive assessment of the most cost-effective and sustainable approach to reducing gunpowder-related injuries in Columbia today."
   },
   {
-    "objectID": "case-studies/cs_injury-decision-tree.html#scratch",
-    "href": "case-studies/cs_injury-decision-tree.html#scratch",
+    "objectID": "case-studies/cs_injury-decision-tree.html#injury-rates",
+    "href": "case-studies/cs_injury-decision-tree.html#injury-rates",
     "title": "Gunpowder Injury Decision Tree",
-    "section": "Scratch",
-    "text": "Scratch\n\nDecision Tree Parameters\n\n\n\n\n\n\n\nDescription\nBase Case Value\nParameter Name\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFirework Ban: Relative Risk of Minor Injury\n0.5\nrrMinorBan\n\n\nFirework Ban: Relative Risk of Moderate Injury\n0.2\nrrModerateBan\n\n\nFirework Ban: Relative Risk of Major Injury\n0.9\nrrMajorBan\n\n\nFirework Ban: Relative Risk of Fatal Injury\n0.95\nrrFatalBan\n\n\nFirework Regulation: Relative Risk of Minor Injury\n0.7\nrrMinorBan\n\n\nFirework Regulation: Relative Risk of Moderate Injury\n0.5\nrrModerateBan\n\n\nFirework Regulation: Relative Risk of Major Injury\n0.95\nrrMajorBan\n\n\nFirework Regulation: Relative Risk of Fatal Injury\n0.98\nrrFatalBan\n\n\n\n\n\n\n\n\nMinor Injuries\n\nUp-front: $100 (simple first aid) to $500 (doctor visits and medications)\nAnnual: $0\n\nModerate Injuries\n\nUp-front: $1,000 (outpatient treatment) to $5,000 (minor surgery, stitches)\nAnnual: $0\n\nMajor Injuries\n\nUp-front: $10,000 (initial hospitalization) to $50,000+ (multiple surgeries, ICU)\nAnnual: $1,000 - $10,000 for rehabilitation, follow-up surgeries, and long-term care\n\nIn Amua, on the menu at the top, go to Model -&gt; New -&gt;  Decision Tree. This will create a new model with a single decision node  on the left side of the screen.\n\nDecision Node \nPlus \nAlign right \nRun Model \nCheck Model \nClear \nChange"
+    "section": "Injury Rates",
+    "text": "Injury Rates\nYour colleagues have compiled the following data on gunpowder injuries by year in Columbia. We will construct a decision tree model based on injuries in the most recent year reported (2022).\n\n\nYearCasesPopulationRate.per.100.00020171,77847,419,0003.7520181,47748,259,4423.0620191,37849,269,6762.8020201,50450,407,4372.9820211,69451,177,3783.3120221,51051,826,9322.92"
+  },
+  {
+    "objectID": "case-studies/cs_injury-decision-tree.html#injury-types-and-consequences",
+    "href": "case-studies/cs_injury-decision-tree.html#injury-types-and-consequences",
+    "title": "Gunpowder Injury Decision Tree",
+    "section": "Injury Types and Consequences",
+    "text": "Injury Types and Consequences\nWe will assume that reported injuries fall into three major categories:\n\nMinor Or Moderate Injury: First-degree burns, which may cause pain, redness, and minor swelling. This category also includes second-degree burns that cover a more significant portion of the body and involve blisters, pain, and potential infection risk\nMajor Injury: third-degree burns or severe trauma that affects deeper tissues and can lead to significant complications.\nFatal Injury\n\n\n\n\n\n\n\nThere are very likely many minor and moderate injuries that go unreported in official statistics. For this case study, we will assume that severe injuries are 30% of reported injuries.\n\n\n\n\n\n\nDescription\nBase Case Value\nParameter Name\n\n\n\n\nProbability of Injury\n0.0000292\np_injury\n\n\nProbability Injury is Severe\n0.30\np_severe\n\n\nProbability Injury is Fatal\n0.0046\np_fatality\n\n\n\nWe will also assume that a small percentage (15%) of individuals with mild/moderate injuries experience long-term consequences (i.e., 85% recover), while the majority (60%) of those with severe injuries do not fully recover and experience long-term complications.\n\n\n\n\n\n\n\n\nDescription\nBase Case Value\nParameter Name\n\n\n\n\nProbability of Recovery: Mild/Moderate Injury\n0.85\np_recover_mildmod\n\n\nProbability of Recovery: Major Injury\n0.4\np_recover_severe"
+  },
+  {
+    "objectID": "case-studies/cs_injury-decision-tree.html#strategies-and-impact",
+    "href": "case-studies/cs_injury-decision-tree.html#strategies-and-impact",
+    "title": "Gunpowder Injury Decision Tree",
+    "section": "Strategies and Impact",
+    "text": "Strategies and Impact\nWhen the mayor of Bogota banned the sale of fireworks in 1995, fireworks-related burns fell by 62%, from 204 in the 1994-1995 Christmas season to 77 during the 1995-1996 season. We will assume a similar 60% relative risk reduction under the “Ban” scenario.\nBy comparison, we will assume that stricter regulation will reduce firework injuries by just 15%. We will examine the sensitivity of our findings to these assumpions later in the case study."
+  },
+  {
+    "objectID": "case-studies/cs_injury-decision-tree.html#build-a-do-nothing-strategy",
+    "href": "case-studies/cs_injury-decision-tree.html#build-a-do-nothing-strategy",
+    "title": "Gunpowder Injury Decision Tree",
+    "section": "1.1. Build a “Do Nothing” Strategy",
+    "text": "1.1. Build a “Do Nothing” Strategy\nConstruct a decision tree in Amua for a “Do Nothing” strategy. Your tree should work through the following chance nodes:\n\nInjury vs. No Injury\nFatal injury vs. non-fatal injury\nMild/Moderate vs. Severe injury\nRecovery vs. Recovery with Injury Sequale\n\nPlease use the parameter names and values supplied above in the construction of your tree."
+  },
+  {
+    "objectID": "case-studies/cs_injury-decision-tree.html#add-outcomes",
+    "href": "case-studies/cs_injury-decision-tree.html#add-outcomes",
+    "title": "Gunpowder Injury Decision Tree",
+    "section": "1.2. Add Outcomes",
+    "text": "1.2. Add Outcomes\nAmua defaults to cost outcomes. Please remove the cost outcome and define a new primary outcome based on injury. In other words, the outcome “payoff” should be 1.0 if an injury occurs, and 0 otherwise.\n\n\n\n\n\n\nTip\n\n\n\nYou can edit the outcomes by clicking Model  Properties  Analysis:"
+  },
+  {
+    "objectID": "case-studies/cs_injury-decision-tree.html#ensure-your-model-calibrates-to-observed-injury-totals",
+    "href": "case-studies/cs_injury-decision-tree.html#ensure-your-model-calibrates-to-observed-injury-totals",
+    "title": "Gunpowder Injury Decision Tree",
+    "section": "1.3. Ensure Your Model Calibrates to Observed Injury Totals",
+    "text": "1.3. Ensure Your Model Calibrates to Observed Injury Totals\nRun your initial decision tree using a cohort size of 51,682,692 (2022 population of Columbia). Verify that the total number of firework injuries closely matches the reported total of 1,510.\n\n\n\n\n\n\nTip\n\n\n\nYou can enter the cohort size by clicking Model  Properties  Simulation:"
+  },
+  {
+    "objectID": "case-studies/cs_injury-decision-tree.html#include-additional-policy-scenarios",
+    "href": "case-studies/cs_injury-decision-tree.html#include-additional-policy-scenarios",
+    "title": "Gunpowder Injury Decision Tree",
+    "section": "2.1. Include Additional Policy Scenarios",
+    "text": "2.1. Include Additional Policy Scenarios\nCreate a duplicate version of your “Do Nothing” tree to construct separate branches for the “Ban” and “Regulate” scenarios. Under each, the probability of injury should be modified by a relative risk reduction parameter with values set based on the text above and the table below.\n\n\n\n\n\n\n\n\nDescription\nBase Case Value\nParameter Name\n\n\n\n\nRelative risk reduction: probability of injury under “Ban” policy scenario\n0.6\nrr_ban\n\n\nRelative risk reduction: probability of injury under “Regulate” policy scenario\n0.85\nrr_ban\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nYou can copy and paste the “Do Nothing” branch by right-clicking on the first chance node  and selecting “Copy.” You can then paste a copy of the entire tree structure on the red decision node ."
+  },
+  {
+    "objectID": "case-studies/cs_injury-decision-tree.html#add-additional-outcomes",
+    "href": "case-studies/cs_injury-decision-tree.html#add-additional-outcomes",
+    "title": "Gunpowder Injury Decision Tree",
+    "section": "2.2. Add Additional Outcomes",
+    "text": "2.2. Add Additional Outcomes\nAdd additional outcomes based on each injury type (mild/moderate, severe, fatal). Use your decision tree to project injuries overall and by type under each strategy. Use your results to fill out the table below. Each cell should have calculated counts of the number of each type of injury under each strategy.\n\n\n\nStrategy\nAny Injury\nMild/Moderate\nSevere\nFatal\n\n\n\n\nDo Nothing\n\n\n\n\n\n\nBan Fireworks\n\n\n\n\n\n\nRegulate Fireworks"
   },
   {
     "objectID": "case-studies/cs_prob-decision.html",
