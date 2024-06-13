@@ -633,7 +633,7 @@ MAMOGRAFÍA (Perspectiva social): <br>
 
 -   Costos de guardería/transporte\]{style="background-color: yellow;"}
 
-# Recogida de datos {background="#43464B"}
+# Recolección de datos {background="#43464B"}
 
 ## Dos enfoques:
 

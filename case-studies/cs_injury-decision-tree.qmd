@@ -1,49 +1,194 @@
 ---
 title: "Gunpowder Injury Decision Tree"
-format: 
+format:
   html:
-    link-external-newwindow: true
+    toc: false
+  docx:
+    toc: false
+  pdf:
+    toc: false        
 editor_options: 
   chunk_output_type: console
 self-contained: true
-editor: source
 ---
 
-
-# Introduction
+# Introduction and Overview of Decision Problem {{< fa regular clipboard >}}
 
 In Columbia, the issue of gunpowder-related injuries, particularly during festive seasons, remains a significant public health concern. Fireworks, while culturally ingrained and a source of celebration, pose substantial risks, especially to children. This has led policymakers to consider various strategies to mitigate these risks and enhance public safety.
 
-The decision problem we will consider revolves around identifying the most effective approach to reducing injuries and fatalities caused by fireworks. Two primary strategies under consideration are **(1) a complete ban on fireworks** and **(2) heavy regulation**, such as restricted sales licenses and stringent enforcement. 
+The decision problem we will consider revolves around analyzing approaches to reducing injuries and fatalities caused by fireworks. Two primary strategies under consideration are **(1) a complete ban on fireworks** and **(2) heavy regulation**, such as restricted sales licenses and stringent enforcement.
 
 A complete ban aims to eliminate the root cause of injuries by prohibiting the sale, storage, and use of fireworks. This approach seeks to protect public health directly but may face resistance due to its impact on cultural traditions and the livelihoods of vendors.
 
 On the other hand, heavy regulation involves implementing strict controls over the sale and use of fireworks. This strategy includes measures such as issuing sales licenses only to authorized vendors, enforcing age restrictions, and conducting public education campaigns about the dangers of fireworks. This approach aims to reduce injuries while allowing for controlled, safe use of fireworks.
 
-Our case studies will explore these strategies through two decision modeling approaches. This case study will utilize a decision tree model to evaluate the immediate outcomes and costs associated with each strategy. 
+Our case studies will explore these strategies through two decision modeling approaches. This case study will utilize a decision tree model to evaluate the immediate outcomes and costs associated with each strategy.
 
-Later, we will employ a Markov cohort model to examine the long-term health and economic impacts, considering factors such as injury rates, healthcare costs, and compliance levels. 
+Later, we will employ a Markov cohort model to examine the long-term health and economic impacts, considering factors such as injury rates, healthcare costs, and compliance levels.
 
-By analyzing these models, we aim to provide a comprehensive assessment of the most cost-effective and sustainable approach to reducing gunpowder-related injuries in Bogotá today.
+By analyzing these models, we aim to provide a comprehensive assessment of the most cost-effective and sustainable approach to reducing gunpowder-related injuries in Columbia today.
+
+# Model Inputs and Parameters
+
+## Injury Rates
+
+Your colleagues have compiled the following data on gunpowder injuries by year in Columbia. We will construct a decision tree model based on injuries in the most recent year reported (2022).
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(flextable)
+
+# Create a data frame with the data
+firework_data <- data.frame(
+  Year = as.character(c(2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022)),
+  Cases = c(275, 754, 812, 1061, 1096, 1351, 1407, 848, 2012, 1469, 1778, 1477, 1378, 1504, 1694, 1510),
+  Population = c(42658630, 43134017, 43608630, 44086292, 44553416, 45001731, 45434492, 46301316, 43183988, 46301316, 47419000, 48259442, 49269676, 50407437, 51177378, 51826932),
+  `Rate per 100,000` = c(0.64, 1.75, 1.86, 2.41, 2.46, 3.00, 3.10, 1.83, 4.31, 3.17, 3.75, 3.06, 2.80, 2.98, 3.31, 2.92)
+)
+
+# Create the flextable
+ft <- flextable(tail(firework_data ))
+
+# Print the flextable
+ft
+```
+
+## Injury Types and Consequences
+
+We will assume that reported injuries fall into three major categories:
+
+-   **Minor Or Moderate Injury**: First-degree burns, which may cause pain, redness, and minor swelling. This category also includes second-degree burns that cover a more significant portion of the body and involve blisters, pain, and potential infection risk
+
+-   **Major Injury**: third-degree burns or severe trauma that affects deeper tissues and can lead to significant complications.
+
+-   **Fatal Injury**
+
+::: {.callout-important appearance="simple"}
+There are very likely many minor and moderate injuries that go unreported in official statistics. For this case study, we will assume that severe injuries are 30% of reported injuries.
+:::
+
+| Description                  | Base Case Value | Parameter Name |
+|------------------------------|-----------------|----------------|
+| Probability of Injury        | 0.0000292       | p_injury       |
+| Probability Injury is Severe | 0.30            | p_severe       |
+| Probability Injury is Fatal  | 0.0046          | p_fatality     |
+
+We will also assume that a small percentage (15%) of individuals with mild/moderate injuries experience long-term consequences (i.e., 85% recover), while the majority (60%) of those with severe injuries do not fully recover and experience long-term complications.
+
+| Description                                   | Base Case Value | Parameter Name    |
+|------------------------------------|------------------|------------------|
+| Probability of Recovery: Mild/Moderate Injury | 0.85            | p_recover_mildmod |
+| Probability of Recovery: Major Injury         | 0.4             | p_recover_severe  |
+
+## Strategies and Impact
+
+When the mayor of Bogota banned the sale of fireworks in 1995, fireworks-related burns fell by 62%, from 204 in the 1994-1995 Christmas season to 77 during the 1995-1996 season. We will assume a similar 60% relative risk reduction under the "Ban" scenario.
+
+By comparison, we will assume that stricter regulation will reduce firework injuries by just 15%. We will examine the sensitivity of our findings to these assumpions later in the case study.
+
+# Exercises
+
+## 1.1. Build a "Do Nothing" Strategy
+
+*Construct a decision tree in Amua for a "Do Nothing" strategy. Your tree should work through the following chance nodes*:
+
+1.  Injury vs. No Injury
+2.  Fatal injury vs. non-fatal injury
+3.  Mild/Moderate vs. Severe injury
+4.  Recovery vs. Recovery with Injury Sequale
+
+Please use the parameter names and values supplied above in the construction of your tree.
+
+## 1.2. Add Outcomes
+
+Amua defaults to cost outcomes. Please remove the cost outcome and define a new primary outcome based on injury. In other words, the outcome "payoff" should be 1.0 if an injury occurs, and 0 otherwise.
+
+::: callout-tip
+You can edit the outcomes by clicking Model {{< fa arrow-right >}} Properties {{< fa arrow-right >}} Analysis:
+
+![](images/clipboard-53317561.png){fig-align="center" width="445"}
+:::
+
+## 1.3. Ensure Your Model Calibrates to Observed Injury Totals
+
+*Run your initial decision tree using a cohort size of 51,682,692 (2022 population of Columbia). Verify that the total number of firework injuries closely matches the reported total of 1,510.*
+
+::: callout-tip
+You can enter the cohort size by clicking Model {{< fa arrow-right >}} Properties {{< fa arrow-right >}} Simulation:
+
+![](images/clipboard-670965426.png){fig-align="center" width="445"}
+:::
+
+## 2.1. Include Additional Policy Scenarios
+
+*Create a duplicate version of your "Do Nothing" tree to construct separate branches for the "Ban" and "Regulate" scenarios. Under each, the probability of injury should be modified by a relative risk reduction parameter with values set based on the text above and the table below.*
+
+| Description                                                                     | Base Case Value | Parameter Name |
+|-----------------------------------------|----------------|----------------|
+| Relative risk reduction: probability of injury under "Ban" policy scenario      | 0.6             | rr_ban         |
+| Relative risk reduction: probability of injury under "Regulate" policy scenario | 0.85            | rr_ban         |
+
+::: callout-tip
+You can copy and paste the "Do Nothing" branch by right-clicking on the first chance node <img src="../amua-images/chanceNode_24.png" alt="Custom Icon" width="20" height="20"/> and selecting "Copy." You can then paste a copy of the entire tree structure on the red decision node <img src="../amua-images/decisionNode_24.png" alt="Custom Icon" width="20" height="20"/>.
+:::
+
+## 2.2. Add Additional Outcomes
+
+Add additional outcomes based on each injury type (mild/moderate, severe, fatal). Use your decision tree to project injuries overall and by type under each strategy. Use your results to fill out the table below. Each cell should have calculated counts of the number of each type of injury under each strategy. 
+
+| Strategy           | Any Injury | Mild/Moderate | Severe | Fatal |
+|--------------------|------------|---------------|--------|-------|
+| Do Nothing         |            |               |        |       |
+| Ban Fireworks      |            |               |        |       |
+| Regulate Fireworks |            |               |        |       |
+
+<!-- ## Optional: Heterogeneous Policy Effects -->
+
+<!-- Suppose we want to model different effects of each policy on fatal, severe, and mild/moderate injuries. To do this, we can re-define some probabilities in our decision tree using *variables*. -->
+
+<!-- Assume that evidence indicates the following relative risk reductions under each policy: -->
+
+<!-- | Description                                | Parameter            | Value | -->
+<!-- |--------------------------------------------|----------------------|-------| -->
+<!-- | Relative Risk Reduction: Ban Strategy      |                      |       | -->
+<!-- | Fatal Injuries                             | rr_fatality_ban      | 0.50  | -->
+<!-- | Severe Injuries                            | rr_severe_ban        | 0.30  | -->
+<!-- | Mild/Moderate Injuries                     | rr_mildmod_ban       | 0.60  | -->
+<!-- | Relative Risk Reduction: Regulate Strategy |                      |       | -->
+<!-- | Fatal Injuries                             | rr_fatality_regulate | 0.90  | -->
+<!-- | Severe Injuries                            | rr_severe_regulate   | 0.80  | -->
+<!-- | Mild/Moderate Injuries                     | rr_mildmod_regulate  | 0.70  | -->
+
+<!-- We can incorporate this information into our decision model by defining some parameters as *variables*. Variables in Amua are functions of other parameters.  -->
+
+<!-- *Please use the expression values below to define variables for new probabilities under the two policy strategies under consideration (ban and regulate).* -->
+
+<!-- ::: callout-tip -->
+<!-- You can define variables in Amua by using the **Variables** panel. -->
+
+<!-- ![](images/clipboard-271073115.png){fig-align="center" width="600"} -->
+<!-- ::: -->
 
 
-## Scratch
 
+<!-- | Description                                           | Parameter        | Expression                                                                                                | -->
+<!-- |---------------------------------|---------------|------------------------------------------------------| -->
+<!-- | Overall probability of fatality under ban             | p_fatality_ban\_ | p_injury $\times$ p*\_*fatality $\times$ rr_fatality_ban                                                  | -->
+<!-- | Overall probability of severe injury under ban        | p_severe_ban\_   | p_injury $\times$ (1 - p_fatality × rr_fatality_ban) × p_severe × rr_severe_ban                           | -->
+<!-- | Overall probability of mild/moderate injury under ban | p_mildmod_ban\_  | p_injury $\times$ (1-p_fatality $\times$ rr_fatality_ban) $\times$ ((1-p_severe) $\times$ rr_mildmod_ban) | -->
+<!-- | Overall probability of injury under ban               | p_injury_ban     | p_fatality_ban\_+p_severe_ban\_+p_mildmod_ban\_                                                           | -->
+<!-- | Conditional probability of severe injury under ban    | p_severe_ban     | p_severe_ban\_/(p_severe_ban\_+p_mildmod_ban\_)                                                           | -->
+<!-- | Probability of fatal injury under ban                 | p_fatality_ban   | p_fatality $\times$ rr_fatality_ban                                                                       | -->
 
+<!-- | Description                                                         | Parameter             | Expression                                                                                                          | -->
+<!-- |----------------------------------|-----------------|-----------------------------------------------------| -->
+<!-- | Overall probability of fatality under regulate strategy             | p_fatality_regulate\_ | p_injury $\times$ p*\_*fatality $\times$ rr_fatality_regulate                                                       | -->
+<!-- | Overall probability of severe injury under regulate strategy        | p_severe_regulate\_   | p_injury $\times$ (1 - p_fatality × rr_fatality_regulate) × p_severe × rr_severe_regulate                           | -->
+<!-- | Overall probability of mild/moderate injury under regulate strategy | p_mildmod_regulate\_  | p_injury $\times$ (1-p_fatality $\times$ rr_fatality_regulate) $\times$ ((1-p_severe) $\times$ rr_mildmod_regulate) | -->
+<!-- | Overall probability of injury under regulate strategy               | p_injury_regulate     | p_fatality_regulate\_+p_severe_regulate\_+p_mildmod_regulate\_                                                      | -->
+<!-- | Conditional probability of severe injury under regulate strategy    | p_severe_regulate     | p_severe_regulate\_/(p_severe_regulate\_+p_mildmod_regulate\_)                                                      | -->
+<!-- | Probability of fatal injury under regulate strategy                 | p_fatality_regulate   | p_fatality $\times$ rr_fatality_regulate                                                                            | -->
 
-
-In Amua, on the menu at the top, go to **Model** -\> **New** -\>  **Decision Tree**. This will create a new model with a single decision node <img src="../amua-images/decisionNode_24.png" alt="Custom Icon" width="20" height="20"/> on the left side of the screen.
-
--   Decision Node <img src="../amua-images/decisionNode_24.png" alt="Custom Icon" width="20" height="20"/>
-
--   Plus <img src="../amua-images/add_128.png" alt="Custom Icon" width="20" height="20"/>
-
--   Align right <img src="../amua-images/alignRight_128.png" alt="Custom Icon" width="20" height="20"/>
-
--   Run Model <img src="../amua-images/runModel_24.png" alt="Custom Icon" width="20" height="20"/>
-
--   Check Model <img src="../amua-images/checkModel_24.png" alt="Custom Icon" width="20" height="20"/>
-
--   Clear <img src="../amua-images/clear_24.png" alt="Custom Icon" width="20" height="20"/>
-
-- Change <img src="../amua-images/changeTypeTrans_24.png" alt="Custom Icon" width="20" height="20"/> 

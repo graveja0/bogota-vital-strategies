@@ -1,0 +1,133 @@
+---
+title: "Case Study: ICERs"
+format:
+  html:
+    toc: false
+  pdf:
+    toc: false
+  docx:
+    toc: false
+---
+
+::: callout-important
+Puede descargar las versiones en PDF y Microsoft Word de este estudio de caso utilizando los enlaces de la derecha.
+:::
+
+# Caso 1 Descripción
+
+Buscas explorar diferentes estrategias farmacológicas para tratar la infección por VIH. El tratamiento con un único agente, retrociclovir 200 mg al día, tiene un coste medio descontado de por vida de 20.000 \$ y una esperanza de vida ajustada a la calidad de 70 años. El tratamiento con un único agente, retrociclovir 400 mg al día, tiene un coste medio descontado de por vida de 22.000 \$ y una esperanza de vida ajustada a la calidad de 65 años (dada la mayor incidencia de efectos secundarios con la dosis más alta). Otro fármaco, el centroflexavir (que sólo se presenta en una dosis de 250 mg/día) tiene un coste total medio de por vida de 10.000 dólares y una esperanza de vida ajustada por calidad de 50 años. La combinación de centroflexavir con dosis bajas de retrociclovir tiene un coste medio a lo largo de la vida de \$40.000 y una esperanza de vida media ajustada a la calidad de 80 años, mientras que la combinación de centroflexavir con dosis altas de retrociclovir tiene un coste medio a lo largo de la vida de \$35.000 y una esperanza de vida ajustada a la calidad de 75 años.
+
+También se dispone de nuevos antirretrovirales, cuyos costes y AVAC a lo largo de la vida se detallan a continuación:
+
+|         | Costos | QALY  |
+|---------|--------|-------|
+| ART 1/2 | 11,000 | 63.4  |
+| ART 1   | 15,525 | 73.52 |
+
+: Cost and QALY Outcomes for ARTs
+
+## Instrucciones
+
+\*Realice un análisis coste-efectividad de las opciones de tratamiento utilizando los AVAC como medida de los efectos sobre la salud. ¿Qué estrategia elegiría y por qué, si el umbral de disposición a pagar es de 50.000 dólares por año de vida ajustado por calidad?
+
+| Tratamiento        | Costos | QALYs |
+|--------------------|--------|-------|
+| No hacer nada      | 36,000 | 43.8  |
+| ART 1              | 15,525 | 73.52 |
+| ART 1/2            | 11,000 | 63.4  |
+| Retro 200          | 20,000 | 70.0  |
+| Retro 400          | 22,000 | 65.0  |
+| Centro             | 10,000 | 50.0  |
+| Centro / Retro 200 | 40,000 | 80.0  |
+| Centro / Retro 400 | 35,000 | 75.0  |
+
+<!-- ![](images/cs_icer_ans_1.1.png)    -->
+
+<!-- ![](images/cs_icer_ans_1.1.2.png)   -->
+
+<!-- ![](images/cs_icer_ans_1.1.3.png)    -->
+
+<!-- ![](images/cs_icer_ans_1.1.4.png)    -->
+
+| Estrategia | Costos descontados | AVAC descontados | Costos incrementales | Incremento de AVAC | ICER (\$/AVAC) |
+|------------|------------|------------|------------|------------|------------|
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+
+: Opciones de tratamiento
+
+| Estrategia | Costos descontados | AVAC descontados | Costos incrementales | Incremento de AVAC | ICER (\$/AVAC) |
+|------------|------------|------------|------------|------------|------------|
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+
+: Cálculo del ICER Tabla 1 {tbl-colwidths="\[20,20,20,20,20,20\]"}
+
+| Estrategia | Costos descontados | AVAC descontados | Costos incrementales | Incremento de AVAC | ICER (\$/AVAC) |
+|------------|------------|------------|------------|------------|------------|
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+
+: Cálculo ICER Tabla 2 {tbl-colwidths="\[20,20,20,20,20,20\]"}
+
+: Cálculo ICER Tabla 3 {tbl-colwidths="\[20,20,20,20,20,20\]"}
+
+# Caso 2 Descripción
+
+Usted está interesado en realizar un análisis de coste-efectividad de diferentes recomendaciones de cribado de lesiones intraepiteliales escamosas anales y cáncer anal en hombres.
+
+A continuación se muestra una tabla con los costes y los años de vida ajustados por calidad ganados asociados a diferentes estrategias de cribado en un periodo de tiempo de seis años.
+
+## Instrucciones
+
+*Calcule los cocientes de coste-efectividad incrementales para cada estrategia y determine qué estrategia de cribado elegiría si, como responsable de la toma de decisiones, estuviera dispuesto a pagar \$50.000/QALY (utilizando años de vida ajustados por calidad descontados)*.
+
+<!-- ![](images/cs_icer_ans_2.1.png) -->
+
+| Estrategia de cribado | AVAC descontados | Costes descontados (\$2022) |
+|-----------------------|------------------|-----------------------------|
+| No screening          | 10.05            | 4,130                       |
+| Every 3 years         | 10.798           | 5,178                       |
+| Every 2 years         | 10.830           | 5,583                       |
+| Every 1 year          | 10.973           | 6,417                       |
+| Every 6 months        | 10.988           | 8,744                       |
+
+: Cost and QALY Outcomes, by Strategy
+
+| Estrategia | Costos descontados | AVAC descontados | Costos incrementales | Incremento de AVAC | ICER (\$/AVAC) |
+|------------|------------|------------|------------|------------|------------|
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+
+: Cálculo del ICER Tabla 1 {tbl-colwidths="\[20,20,20,20,20,20\]"}
+
+| Estrategia | Costos descontados | AVAC descontados | Costos incrementales | Incremento de AVAC | ICER (\$/AVAC) |
+|------------|------------|------------|------------|------------|------------|
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+|            |                    |                  |                      |                    |                |
+
+: Cálculo ICER Tabla 2 {tbl-colwidths="\[20,20,20,20,20,20\]"}

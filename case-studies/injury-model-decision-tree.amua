@@ -7,7 +7,7 @@
         <dateCreated>Wed May 15 13:18:31 CDT 2024</dateCreated>
         <versionCreated>0.3.1</versionCreated>
         <modifier>johngraves</modifier>
-        <dateModified>Thu Jun 06 10:34:08 CDT 2024</dateModified>
+        <dateModified>Mon Jun 10 06:42:21 CDT 2024</dateModified>
         <versionModified>0.3.1</versionModified>
     </Metadata>
     <DimInfo>
@@ -52,7 +52,7 @@
     </Parameter>
     <Parameter>
         <name>pFullRecoveryMinor</name>
-        <expression>0.9</expression>
+        <expression>0.85</expression>
         <notes></notes>
     </Parameter>
     <Parameter>
@@ -62,7 +62,7 @@
     </Parameter>
     <Parameter>
         <name>pFullRecoveryMajor</name>
-        <expression>0.25</expression>
+        <expression>0.2</expression>
         <notes></notes>
     </Parameter>
     <Parameter>
@@ -115,7 +115,6 @@
             <hasVarUpdates>false</hasVarUpdates>
             <visible>true</visible>
             <collapsed>false</collapsed>
-            <cost>0</cost>
             <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>

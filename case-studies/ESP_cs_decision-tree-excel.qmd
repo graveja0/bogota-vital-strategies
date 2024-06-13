@@ -53,7 +53,7 @@ Además,
 
 Consideraremos dos posibles estrategias para tratar a estas mujeres:
 
-| Strategy                       | Costs                                      | Health Effects                           |
+| Estrategia                     | Costes                                     | Efectos sobre la salud                   |
 |--------------------|--------------------------|---------------------------|
 | 1\. Terapia anticoagulante     | Coste de la terapia anticoagulante = 1.000 | Probabilidad de EP recurrente = 0,05     |
 |                                |                                            | Probabilidad de hemorragia mortal = 0,04 |
@@ -65,12 +65,17 @@ Consideraremos dos posibles estrategias para tratar a estas mujeres:
 
 Nuestro primer paso es asignar a cada valor del caso base su nombre de variable. Hay dos maneras de hacerlo:
 
-1.  1. Utilizando el cuadro de asignación de nombres situado en la parte superior izquierda de la hoja de cálculo. Esto es útil para nombrar un elemento a la vez.
-2.  2. Nombrando por lotes utilizando una selección de tabla.
+1.  
+
+    1.  Utilizando el cuadro de asignación de nombres situado en la parte superior izquierda de la hoja de cálculo. Esto es útil para nombrar un elemento a la vez.
+
+2.  
+
+    2.  Nombrando por lotes utilizando una selección de tabla.
 
 Veamos primero la opción 1. En la siguiente figura, asignaremos el nombre "variable1" al valor de la celda C5. Para ello, utilizaremos el cuadro de asignación de nombres resaltado en la parte superior izquierda. Simplemente sustituye allí "C5" por el nombre que quieras darle al valor de esa celda, es decir, "variable1".
 
-Asigna el nombre de variable "variable1" al valor de la celda C5.](images/paste-9EE923C4.png)
+Asigna el nombre de variable "variable1" al valor de la celda C5.\](images/paste-9EE923C4.png)
 
 Puedes ver este proceso en acción en el siguiente vídeo.
 
@@ -146,11 +151,11 @@ Nuestro siguiente paso es calcular los resultados de salud y coste para cada ram
 
 ![](images/paste-64D89A83.png){width="500"}
 
-- La columna **Resultado** puede utilizarse para insertar texto que describa el resultado de esa rama. Por ejemplo, el primer resultado es para un evento PE recurrente fatal.
+-   La columna **Resultado** puede utilizarse para insertar texto que describa el resultado de esa rama. Por ejemplo, el primer resultado es para un evento PE recurrente fatal.
 
-- La columna **Costes** registra los costes totales de un resultado. En el ejemplo anterior, la columna de coste debe rellenarse para reflejar el coste total de un evento de EP recurrente mortal en el caso de que la mujer reciba tratamiento anticoagulante.
+-   La columna **Costes** registra los costes totales de un resultado. En el ejemplo anterior, la columna de coste debe rellenarse para reflejar el coste total de un evento de EP recurrente mortal en el caso de que la mujer reciba tratamiento anticoagulante.
 
-- La columna **Eficacia (Supervivencia)** registra los resultados de supervivencia. A efectos de este estudio de caso, sólo hacemos un seguimiento de la supervivencia, no de los años de vida ajustados por calidad. Por lo tanto, puede introducir un valor de "0" si el resultado para la rama dada es la muerte, y "1" si el resultado es la supervivencia.
+-   La columna **Eficacia (Supervivencia)** registra los resultados de supervivencia. A efectos de este estudio de caso, sólo hacemos un seguimiento de la supervivencia, no de los años de vida ajustados por calidad. Por lo tanto, puede introducir un valor de "0" si el resultado para la rama dada es la muerte, y "1" si el resultado es la supervivencia.
 
 ::: {.callout-tip appearance="simple"}
 ## Ejercicio 1.3

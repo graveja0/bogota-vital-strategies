@@ -382,7 +382,7 @@ plot(curve.reciprocal.edges(g), vertex.size=100,
 
 ```
 
-# Construyendo un Modelo Markov  {background="#43464B"}
+# Construir un Modelo Markov {background="#43464B"}
 
 ## Características principales {.smaller}
 

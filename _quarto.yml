@@ -16,6 +16,8 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - href: case-studies/2024_chds_amua_tutorials_tp.pdf
+        text: Recursos Amua
 
 format:
   html:
