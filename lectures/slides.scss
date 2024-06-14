@@ -1,0 +1,96 @@
+/*-- scss:defaults --*/
+
+// fonts
+@import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
+
+$font-family-sans-serif: "Atkinson Hyperlegible", sans-serif;
+/* $presentation-heading-color: #00589b;*/
+$presentation-title-slide-text-align: "left";
+$code-block-font-size: 0.6em;
+$code-color: #5f5f5f;
+$presentation-h2-font-size: 1.4em;
+
+
+.reveal .slide-logo {
+  display: block;
+  position: fixed;
+  bottom: unset !important;
+  right: unset !important;
+  top: 5px;
+  left: 12px;
+  height: 50px !important;
+  width: 50x !important;
+  max-width: unset !important;
+  max-height: unset !important;
+}
+
+/*-- scss:rules --*/
+
+details>summary {
+  font-size: 0.75em;
+}
+
+.small {
+  font-size: 0.75em;
+}
+
+.reveal .slide .in-out {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  padding-left: 1em;
+  background: #E8E8E8;
+  font-family: $font-family-monospace;
+  font-size: 0.6em;
+}
+
+
+.reveal .slide .goal {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  padding-left: 1em;
+  background: #ccddeb;
+}
+
+ul {
+    list-style: none;
+} 
+
+.one {
+  list-style: circle;
+}
+
+.two {
+  list-style: square inside;
+}
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('custom-fa-images/icomoon/fonts/icomoon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-custom:before {
+  content: "\e900"; /* Replace with your icon's Unicode value */
+}
+
+
