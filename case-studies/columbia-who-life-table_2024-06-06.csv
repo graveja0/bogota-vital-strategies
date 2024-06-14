@@ -1,0 +1,135 @@
+,,2019,2019,2019
+Indicator,Age Group, Both sexes, Male, Female
+nMx - age-specific death rate between ages x and x+n, &lt;1 year,0.011421011,0.01267109,0.010109514
+nMx - age-specific death rate between ages x and x+n, 1-4 years,0.000476663,0.000519262,0.000432019
+nMx - age-specific death rate between ages x and x+n, 5-9 years,0.000219113,0.000238712,0.000198605
+nMx - age-specific death rate between ages x and x+n, 10-14 years,0.000277938,0.000321734,0.000232187
+nMx - age-specific death rate between ages x and x+n, 15-19  years,0.000879912,0.001344714,0.000395774
+nMx - age-specific death rate between ages x and x+n, 20-24 years,0.001238626,0.002007058,0.000445279
+nMx - age-specific death rate between ages x and x+n, 25-29 years,0.001202814,0.001851586,0.000541287
+nMx - age-specific death rate between ages x and x+n, 30-34 years,0.001313255,0.001933862,0.000692671
+nMx - age-specific death rate between ages x and x+n, 35-39 years,0.001369367,0.001882894,0.000873628
+nMx - age-specific death rate between ages x and x+n, 40-44 years,0.001636712,0.002159737,0.001155464
+nMx - age-specific death rate between ages x and x+n, 45-49 years,0.002116144,0.002666281,0.001630377
+nMx - age-specific death rate between ages x and x+n, 50-54 years,0.003077367,0.003775853,0.002452444
+nMx - age-specific death rate between ages x and x+n, 55-59 years,0.005038384,0.006206887,0.004004672
+nMx - age-specific death rate between ages x and x+n, 60-64 years,0.007696626,0.009696119,0.006005371
+nMx - age-specific death rate between ages x and x+n, 65-69 years,0.011477605,0.014453097,0.008952365
+nMx - age-specific death rate between ages x and x+n, 70-74 years,0.019774603,0.024820407,0.015604826
+nMx - age-specific death rate between ages x and x+n, 75-79 years,0.036389065,0.045269056,0.02950724
+nMx - age-specific death rate between ages x and x+n, 80-84 years,0.058189266,0.068891998,0.050329859
+nMx - age-specific death rate between ages x and x+n, 85+ years,0.13535387,0.147526458,0.127285114
+nqx - probability of dying between ages x and x+n, &lt;1 year,0.01130481,0.012528219,0.010018361
+nqx - probability of dying between ages x and x+n, 1-4 years,0.001904473,0.002074461,0.001726287
+nqx - probability of dying between ages x and x+n, 5-9 years,0.001094963,0.001192849,0.000992534
+nqx - probability of dying between ages x and x+n, 10-14 years,0.001388723,0.001607376,0.001160261
+nqx - probability of dying between ages x and x+n, 15-19  years,0.004389904,0.006701041,0.001976915
+nqx - probability of dying between ages x and x+n, 20-24 years,0.006174013,0.009985189,0.002223922
+nqx - probability of dying between ages x and x+n, 25-29 years,0.005996041,0.009215273,0.002702776
+nqx - probability of dying between ages x and x+n, 30-34 years,0.006544787,0.009622789,0.003457366
+nqx - probability of dying between ages x and x+n, 35-39 years,0.006823476,0.00937036,0.004358622
+nqx - probability of dying between ages x and x+n, 40-44 years,0.008150211,0.010740694,0.005760679
+nqx - probability of dying between ages x and x+n, 45-49 years,0.010525039,0.013243128,0.008118795
+nqx - probability of dying between ages x and x+n, 50-54 years,0.015269361,0.01870272,0.012187497
+nqx - probability of dying between ages x and x+n, 55-59 years,0.024878549,0.030560225,0.019824879
+nqx - probability of dying between ages x and x+n, 60-64 years,0.037756631,0.047333221,0.029582716
+nqx - probability of dying between ages x and x+n, 65-69 years,0.055787264,0.069745391,0.043781947
+nqx - probability of dying between ages x and x+n, 70-74 years,0.094215338,0.116851295,0.075094536
+nqx - probability of dying between ages x and x+n, 75-79 years,0.166773498,0.203333492,0.13740043
+nqx - probability of dying between ages x and x+n, 80-84 years,0.253996634,0.293850176,0.223524415
+nqx - probability of dying between ages x and x+n, 85+ years,1,1,1
+lx - number of people left alive at age x, &lt;1 year,1.00E+05,1.00E+05,1.00E+05
+lx - number of people left alive at age x, 1-4 years,98869.51905,98747.17814,98998.16391
+lx - number of people left alive at age x, 5-9 years,98681.22474,98542.33096,98827.2647
+lx - number of people left alive at age x, 10-14 years,98573.17244,98424.78489,98729.17524
+lx - number of people left alive at age x, 15-19  years,98436.28158,98266.57927,98614.62364
+lx - number of people left alive at age x, 20-24 years,98004.15571,97608.09089,98419.67091
+lx - number of people left alive at age x, 25-29 years,97399.07677,96633.4557,98200.79326
+lx - number of people left alive at age x, 30-34 years,96815.0679,95742.95206,97935.37849
+lx - number of people left alive at age x, 35-39 years,96181.43389,94821.63786,97596.78005
+lx - number of people left alive at age x, 40-44 years,95525.14215,93933.125,97171.39254
+lx - number of people left alive at age x, 45-49 years,94746.59207,92924.21808,96611.61929
+lx - number of people left alive at age x, 50-54 years,93749.38054,91693.61074,95827.24933
+lx - number of people left alive at age x, 55-59 years,92317.88741,89978.69082,94659.35506
+lx - number of people left alive at age x, 60-64 years,90021.1523,87228.92178,92782.74479
+lx - number of people left alive at age x, 65-69 years,86622.25684,83100.09592,90037.97917
+lx - number of people left alive at age x, 70-74 years,81789.83816,77304.24724,86095.94117
+lx - number of people left alive at age x, 75-79 years,74083.98089,68271.14581,79630.60643
+lx - number of people left alive at age x, 80-84 years,61728.73625,54389.33532,68689.32686
+lx - number of people left alive at age x, 85+ years,46049.845,38407.01955,53335.58527
+ndx - number of people dying between ages x and x+n, &lt;1 year,1130.480951,1252.821856,1001.836089
+ndx - number of people dying between ages x and x+n, 1-4 years,188.2943132,204.8471803,170.8992065
+ndx - number of people dying between ages x and x+n, 5-9 years,108.0522941,117.5460755,98.08946811
+ndx - number of people dying between ages x and x+n, 10-14 years,136.8908644,158.2056162,114.5515985
+ndx - number of people dying between ages x and x+n, 15-19  years,432.1258693,658.4883849,194.9527282
+ndx - number of people dying between ages x and x+n, 20-24 years,605.0789417,974.635189,218.8776504
+ndx - number of people dying between ages x and x+n, 25-29 years,584.0088636,890.5036363,265.4147704
+ndx - number of people dying between ages x and x+n, 30-34 years,633.6340083,921.3142054,338.5984334
+ndx - number of people dying between ages x and x+n, 35-39 years,656.2917465,888.5128581,425.3875196
+ndx - number of people dying between ages x and x+n, 40-44 years,778.5500729,1008.906916,559.7732469
+ndx - number of people dying between ages x and x+n, 45-49 years,997.2115371,1230.607344,784.3699536
+ndx - number of people dying between ages x and x+n, 50-54 years,1431.49313,1714.919919,1167.894275
+ndx - number of people dying between ages x and x+n, 55-59 years,2296.735112,2749.769042,1876.610269
+ndx - number of people dying between ages x and x+n, 60-64 years,3398.895456,4128.825853,2744.765621
+ndx - number of people dying between ages x and x+n, 65-69 years,4832.418675,5795.848688,3942.037998
+ndx - number of people dying between ages x and x+n, 70-74 years,7705.857274,9033.101422,6465.334738
+ndx - number of people dying between ages x and x+n, 75-79 years,12355.24464,13881.81049,10941.27957
+ndx - number of people dying between ages x and x+n, 80-84 years,15678.89125,15982.31577,15353.74159
+ndx - number of people dying between ages x and x+n, 85+ years,46049.845,38407.01955,53335.58527
+nLx - person-years lived between ages x and x+n, &lt;1 year,98982.56714,98872.46033,99098.34752
+nLx - person-years lived between ages x and x+n, 1-4 years,395026.1698,394497.0793,395582.4975
+nLx - person-years lived between ages x and x+n, 5-9 years,493135.9929,492417.7896,493891.0999
+nLx - person-years lived between ages x and x+n, 10-14 years,492523.635,491728.4104,493359.4972
+nLx - person-years lived between ages x and x+n, 15-19  years,491101.0932,489686.6754,492585.7364
+nLx - person-years lived between ages x and x+n, 20-24 years,488508.0812,485603.8665,491551.1604
+nLx - person-years lived between ages x and x+n, 25-29 years,485535.3617,480941.0194,490340.4294
+nLx - person-years lived between ages x and x+n, 30-34 years,482491.2545,476411.4748,488830.3964
+nLx - person-years lived between ages x and x+n, 35-39 years,479266.4401,471886.9071,486920.4315
+nLx - person-years lived between ages x and x+n, 40-44 years,475679.3356,467143.3577,484457.5296
+nLx - person-years lived between ages x and x+n, 45-49 years,471239.9315,461544.572,481097.1716
+nLx - person-years lived between ages x and x+n, 50-54 years,465168.1699,454180.7539,476216.511
+nLx - person-years lived between ages x and x+n, 55-59 years,455847.5993,443019.0315,468605.2496
+nLx - person-years lived between ages x and x+n, 60-64 years,441608.5228,425822.5443,457051.8099
+nLx - person-years lived between ages x and x+n, 65-69 years,421030.2375,401010.8579,440334.8009
+nLx - person-years lived between ages x and x+n, 70-74 years,389684.5476,363938.4826,414316.369
+nLx - person-years lived between ages x and x+n, 75-79 years,339531.7929,306651.2028,370799.8332
+nLx - person-years lived between ages x and x+n, 80-84 years,269446.4531,231990.8872,305062.2803
+nLx - person-years lived between ages x and x+n, 85+ years,295549.1961,231863.0346,356930.3211
+Tx - person-years lived above age x, &lt;1 year,7931356.382,7669210.407,8187031.472
+Tx - person-years lived above age x, 1-4 years,7832373.815,7570337.947,8087933.125
+Tx - person-years lived above age x, 5-9 years,7437347.645,7175840.868,7692350.627
+Tx - person-years lived above age x, 10-14 years,6944211.652,6683423.078,7198459.527
+Tx - person-years lived above age x, 15-19  years,6451688.017,6191694.668,6705100.03
+Tx - person-years lived above age x, 20-24 years,5960586.924,5702007.992,6212514.294
+Tx - person-years lived above age x, 25-29 years,5472078.843,5216404.126,5720963.133
+Tx - person-years lived above age x, 30-34 years,4986543.481,4735463.106,5230622.704
+Tx - person-years lived above age x, 35-39 years,4504052.226,4259051.632,4741792.308
+Tx - person-years lived above age x, 40-44 years,4024785.786,3787164.725,4254871.876
+Tx - person-years lived above age x, 45-49 years,3549106.451,3320021.367,3770414.347
+Tx - person-years lived above age x, 50-54 years,3077866.519,2858476.795,3289317.175
+Tx - person-years lived above age x, 55-59 years,2612698.349,2404296.041,2813100.664
+Tx - person-years lived above age x, 60-64 years,2156850.75,1961277.009,2344495.414
+Tx - person-years lived above age x, 65-69 years,1715242.227,1535454.465,1887443.605
+Tx - person-years lived above age x, 70-74 years,1294211.99,1134443.607,1447108.804
+Tx - person-years lived above age x, 75-79 years,904527.4421,770505.1246,1032792.435
+Tx - person-years lived above age x, 80-84 years,564995.6493,463853.9218,661992.6014
+Tx - person-years lived above age x, 85+ years,295549.1961,231863.0346,356930.3211
+ex - expectation of life at age x, &lt;1 year,79.31356382,76.69210407,81.87031472
+ex - expectation of life at age x, 1-4 years,79.21929721,76.66384082,81.69780939
+ex - expectation of life at age x, 5-9 years,75.36740312,72.81988154,77.83632027
+ex - expectation of life at age x, 10-14 years,70.44727769,67.90386269,72.91116846
+ex - expectation of life at age x, 15-19  years,65.54176888,63.00916053,67.99295868
+ex - expectation of life at age x, 20-24 years,60.81973648,58.41737033,63.12268916
+ex - expectation of life at age x, 25-29 years,56.18204016,53.98134723,58.25780977
+ex - expectation of life at age x, 30-34 years,51.50586152,49.4601744,53.40891907
+ex - expectation of life at age x, 35-39 years,46.82870741,44.91645291,48.58554048
+ex - expectation of life at age x, 40-44 years,42.13326142,40.31766988,43.7872893
+ex - expectation of life at age x, 45-49 years,37.45893518,35.728268,39.02651021
+ex - expectation of life at age x, 50-54 years,32.83079314,31.17422001,34.32548881
+ex - expectation of life at age x, 55-59 years,28.30110635,26.72072709,29.71814738
+ex - expectation of life at age x, 60-64 years,23.95937727,22.48425143,25.26865766
+ex - expectation of life at age x, 65-69 years,19.80140312,18.47716838,20.96274952
+ex - expectation of life at age x, 70-74 years,15.8236282,14.67504889,16.80809553
+ex - expectation of life at age x, 75-79 years,12.20948755,11.28595566,12.96979241
+ex - expectation of life at age x, 80-84 years,9.152878927,8.528398427,9.637488554
+ex - expectation of life at age x, 85+ years,6.418028033,6.036996292,6.692160952

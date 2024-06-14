@@ -1,0 +1,13 @@
+﻿param,value
+pMinor,0.15
+pModerate,0.3
+pMajor,0.5
+pFatal,0.05
+pFullRecoveryMinor,0.9
+pFullRecoveryModerate,0.5
+pFullRecoveryMajor,0.25
+rrMinorBan,0.5
+rrModerateBan,0.75
+rrMajorBan,0.9
+rrFatalBan,0.95
+pInjury,0.00292
