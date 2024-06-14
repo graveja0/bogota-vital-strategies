@@ -13,7 +13,7 @@ bibliography: references.bib
 # Calendario de talleres
 
 | Fecha     | Hora programada | Tema                                                                                                    | Notas                                                                                                                          |
-|------------|------------|----------------------|----------------------------|
+|-----------|-----------------|---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
 | Martes    | 9:00 - 9:30 am  | Bienvenida y presentaciones                                                                             | Welcome                                                                                                                        |
 |           | 9:30 - 10:00    | [Introducción al análisis de decisiones](lectures/ESP_lec_1a.introduction-to-decision-analysis.qmd)     | [Introduction to Decision Analysis](lectures/lec_1a.introduction-to-decision-analysis.qmd "Introduction to Decision Analysis") |
 |           | 10:00-11:00     | [Árboles de decisión y probabilidades](lectures/ESP_lec_2.decision-trees-and-probabilities.qmd)         | [Decision Trees](lectures/lec_2.decision-trees-and-probabilities.qmd "Decision Trees and Probabilities")                       |
