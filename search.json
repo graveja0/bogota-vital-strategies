@@ -3961,6 +3961,20 @@
     "text": "Run the Model\nVerify that your model is able to run by clicking on the  check model button. Once all errors have been fixed,  run the model.\nAfter you run the model, you will see expected outcomes at the bottom of the screen. This information tells us that total life expectancy is 77.04 years and there are an expected 222.07 firework injuries and 1.02 fatal injuries per 100,000 newborns in Columbia.\n\nAmua will also display a new window with a figure and spreadsheet table. The figure shows the total number of people in the cohort in each health state (“Alive” and “Dead”) at each cycle of the model. The spreadsheet table contains the plotted information (in the Alive and Dead columns) as well as cycle-specific calculations for life-expectancy and injury counts.\nThe columns that start with Cum_ are cumulative counts of each outcome. The output below, for example, shows that at cycle \\(t=20\\) (which corresponds to age=20 for our cohort), there are an expected 58.951 firework-related injuries in our cohort of 100,000 newborns."
   },
   {
+    "objectID": "case-studies/cs_injury-markov.html#add-the-injury-probability-lookup-table",
+    "href": "case-studies/cs_injury-markov.html#add-the-injury-probability-lookup-table",
+    "title": "Firework Injury: Markov Model",
+    "section": "Add the Injury Probability Lookup Table",
+    "text": "Add the Injury Probability Lookup Table\nJust like we did with the age-specific mortality probabilities above, download the cases-by-age.csv data file from the workshop website.\nGo to the “Tables” panel, click  to add a table, and you should see a “Define Table” window (see screenshot below). Click the Import button  and select the downloaded .csv file to import. The table will automatically be resized to fit the imported data. The first row in the file will be used as table headers.\nEnter “tbl_p_injury” as the name for this variable. “Lookup” is the default table type (which is what we want here). Choose “Interpolate” as the Lookup Method. Click Save to apply.\n\n\n\n\n\n\nImportant\n\n\n\nAmua may also include additional blank rows when it imports the table. Before you proceed, remove all blank rows by clicking on the row, then using the  button next to “Rows” (see red rectangles below)."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#define-an-age-specific-injury-probability",
+    "href": "case-studies/cs_injury-markov.html#define-an-age-specific-injury-probability",
+    "title": "Firework Injury: Markov Model",
+    "section": "Define an Age-Specific Injury Probability",
+    "text": "Define an Age-Specific Injury Probability\nNext, we can define the time-varying variable p_injury_t (which reads from the table we just defined and operates as the background mortality probability in the current model cycle, \\(t\\)).\nMake sure you create a variable and not a parameter. Under “Variables”, click  to add a variable p_injury_t = tbl_p_injury[age_initial + t, 1].\n\n\n\n\n\n\nRe-run the model using age-specific injury probabilities. How does the expected number of overall and fatal injuries change from when we used the fixed probabilities above?"
+  },
+  {
     "objectID": "case-studies/markov-injury-planning.html",
     "href": "case-studies/markov-injury-planning.html",
     "title": "Injury Markov Model",
