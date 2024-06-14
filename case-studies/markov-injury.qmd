@@ -306,6 +306,9 @@ lt <-
   mutate(age = as.numeric(paste0(age))) %>% 
   arrange(age)
 
+lt %>% write.csv(here("case-studies/columbia-life-table.csv"))
+# Note: have to manually go in and delete row name column!
+
 ages     <- lt$age[lt$age<100]
 deaths   <- lt$dx[lt$age<100]
 exposure <- lt$Lx[lt$age<100]
@@ -324,9 +327,6 @@ df_p_Die <- tibble(index = 0:110, p_die = 1-exp(-HP2(x = 0:110, par = hp_fit$coe
   as.data.frame() 
 rownames(df_p_Die) = NULL
 df_p_Die %>% write.csv(here("case-studies/columbia-life-table-death-probabilities.csv"))
-
-
-
 
 cbind.data.frame(hp = HP2(x = lt$age, par = hp_fit$coefficients)$hx, lt = lt$mx)
 

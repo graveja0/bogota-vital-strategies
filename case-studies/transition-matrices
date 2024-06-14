@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{nicematrix}
+ \usepackage{relsize}
+\NiceMatrixOptions{cell-space-limits=1pt}
+ \onehalfspacing
+\linespread{2}
+\begin{document}
+
+\[
+\mathbf{Q_t}=\begin{pNiceArray}{ccccc}[small, baseline=line-3, first-row, first-col]
+& \smaller \text{H} & \smaller \text{S1} & \smaller \text{S2} & \smaller \text{DOC} & \smaller \text{DS}\\
+\smaller \text{H} & -(\texttt{r\_HS1}_t+\texttt{r\_HD}_t) & \texttt{r\_HS1}_t & 0 & \texttt{r\_HD}_t  & 0 \\
+\smaller \text{S1} & \texttt{r\_S1H}_t & -( \texttt{r\_S1H}_t + \texttt{r\_S1S2}_t + \texttt{hr\_S1}_t \cdot \texttt{r\_HD}_t) & \texttt{r\_S1S2}_t &  \texttt{r\_HD}_t & \texttt{hr\_S1}_t \cdot \texttt{r\_HD}_t - \texttt{r\_HD}_t  \\
+\smaller \text{S2} & 0 & 0 & -(\texttt{hr\_S2} \cdot \texttt{r\_HD}_t) & \texttt{r\_HD}_t & \texttt{hr\_S2}_t \cdot \texttt{r\_HD}_t - \texttt{r\_HD}_t \\
+\smaller \text{DOC} & 0 & 0 & 0 & 0 & 0\\
+\smaller \text{DS} & 0 & 0 & 0 & 0 & 0\\
+\end{pNiceArray}
+\]
+
+
+\end{document}

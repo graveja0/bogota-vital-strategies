@@ -8,16 +8,33 @@ project:
     - "*.pdf"
     - "*.docx"
     - "*.amua"
+    - "*.csv"
 
 website:
   title: "Taller de análisis de decisiones"
-  navbar:
-    left:
+  sidebar:
+    style: "floating"
+    search: false
+    collapse-level: 1
+    contents:
       - href: index.qmd
         text: Home
-      - about.qmd
-      - href: case-studies/2024_chds_amua_tutorials_tp.pdf
-        text: Recursos Amua
+      - section: "Recursos Amua"
+        contents:
+          - text: Center for Health Decision Sciences Amua Resources
+            href: case-studies/2024_chds_amua_tutorials_tp.pdf
+          - text: How to Watch (Amua Video Tutorial)
+            href: https://vimeo.com/888816562
+          - text: Introductions (Amua Video Tutorial)
+            href: https://vimeo.com/888816572
+          - text: Basic Layout (Amua Video Tutorial)
+            href: https://vimeo.com/888812546
+          - text: Decision Trees (Amua Video Tutorial)
+            href: https://vimeo.com/888816515
+          - text: Markov Models (Amua Video Tutorial)
+            href: https://vimeo.com/888816536
+      - href: about.qmd
+        text: Instructores
 
 format:
   html:

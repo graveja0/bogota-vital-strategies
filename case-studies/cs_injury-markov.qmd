@@ -1,0 +1,279 @@
+---
+title: "Firework Injury: Markov Model"
+format:
+  html:
+    toc: false
+  docx:
+    toc: false
+  pdf:
+    toc: false        
+editor_options: 
+  chunk_output_type: console
+self-contained: true
+---
+
+# Introduction and Overview of Decision Problem {{< fa regular clipboard >}}
+
+This case study will build on the initial analysis of firework-related injuries in Columbia using a decision tree model. We will extend our evaluation by employing a Markov cohort model. While the decision tree provided immediate outcomes and costs for various strategies, the Markov model offers significant advantages for examining long-term health and cost impacts.
+
+Our Markov model will allow us to capture the progression of firework-related injuries over an extended period, allowing us to consider long-term implications. By modeling injury events and transitions between different health states over time, we can better understand the chronic effects of injuries and the long-term benefits of intervention strategies.
+
+This approach will provide a more comprehensive assessment of the lifetime health and economic impacts of the proposed strategies, considering factors such as long-term healthcare costs, changes in injury rates, and compliance levels. The Markov model’s ability to incorporate these extended horizons and recurring events will yield deeper insights into the most effective and sustainable approaches to mitigating firework-related injuries in Columbia.
+
+# Alive-Dead Model
+
+We will start by constructing a simple Markov model to represent the progression of firework-related injuries in Columbia. Our initial model will consist of two health states: "Alive" and "Dead." We will assume that individuals can transition between these states based on the probabilities of surviving as calculated using life table data.
+
+## Markov Structure: Alive-Dead
+
+The structure of the Markov model for the Alive-Dead model is shown in the figure below. Amua has a special Markov node (represented by <img src="../amua-images/markovChain_24.png" alt="Custom Icon" width="20" height="20"/> ). The branches that lead off a Markov node designate all the Markov states (and only Markov states).
+
+In this example, there are two health states: (1) Alive, (2) Dead. Off each health state, you can create a subtree (also called a cycle tree) that reflects those events that can occur during a cycle. The last branch at the end of each pathway will be a state transition, which defines what state to go to for the next cycle.
+
+::: callout-note
+Note that in a Markov model, outcomes are defined elsewhere – NOT at the end of the branch, but at the state.
+:::
+
+![](images/clipboard-904538470.png){fig-align="center" width="800"}
+
+## Building the Tree
+
+### Structure
+
+After you open Amua, click Model {{< fa arrow-right >}} New {{< fa arrow-right >}} <img src="../amua-images/markovChain_24.png" alt="Custom Icon" width="20" height="20"/> Markov Model.
+
+-   Save your model right at the start.
+
+-   Now select the decision node <img src="../amua-images/decisionNode_24.png" alt="Custom Icon" width="20" height="20"/>, Right-click {{< fa arrow-right >}} Add {{< fa arrow-right >}} <img src="../amua-images/markovChain_24.png" alt="Custom Icon" width="20" height="20"/> Markov Chain .
+
+-   Start by developing the structure of the Markov model using Alive and Dead for the different health states. The branches of the Markov chain should correspond to the states of the model. Label the name option to the right of the decision node as Alive-Dead.
+
+![](images/clipboard-556363520.png){width="800"}
+
+::: {.callout-caution appearance="minimal"}
+**Complete the structure of the Markov model using the information above. Note: focus on adding the branches and transitions for this step; Parameters will be added later.**
+:::
+
+-   When you reach the end of the branch, select the chance node you would like to turn into a state transition, right click, select Change to State Transition. This will give you the blue arrow <img src="../amua-images/arrow_48.png" alt="Custom Icon" width="20" height="20"/> . On the right of this arrow, you can find a dropdown menu with the different health states you specified. Select the health state this part of the cohort will transition to.
+
+-   With this button <img src="../amua-images/alignRightSelected_24.png" alt="Custom Icon" width="20" height="20"/> you can align the end nodes.
+
+### Cohort size and starting probabilities
+
+-   Go to Model {{< fa arrow-right >}} Properties {{< fa arrow-right >}} select the Simulation tab. The default cohort size is 1,000. Change cohort size to 1, so that all outputs will be at the individual level (i.e., per person).
+
+![](images/clipboard-1176592840.png){fig-align="center" width="500"}
+
+-   At the Markov Chain <img src="../amua-images/markovChain_24.png" alt="Custom Icon" width="20" height="20"/> , change the initial probabilities of health states. Since all patients start in the Alive state, change the p:0 on the left of the Local state to p:1 (see blue box below).
+
+![](images/clipboard-948912894.png){fig-align="center" width="600"}
+
+## Model Parameters
+
+First, define the following time-constant parameters for the model in the “Parameters” panel.
+
+![](images/clipboard-2737349940.png){fig-align="center" width="350"}
+
+This variable tells Amua that we will model a cohort of newborns. However, we could easily adapt this to model a cohort of 20 year-olds, etc.
+
+## Transition Probabilities
+
+The underlying transition probability matrix has the following form:
+
+![](images/clipboard-3364156865.png){fig-align="center" width="200"}
+
+However, because we are modeling a cohort of newborns until death, we need to include death transition probabilities that vary by age (i.e., cycle) in the model. In other words, there will be a different death probability in each cycle.
+
+::: callout-important
+In Amua, **time-varying inputs are operationalized as variables** <img src="../amua-images/variable_16.png" alt="Custom Icon" width="20" height="20"/> rather than parameters.
+
+Variables <img src="../amua-images/variable_16.png" alt="Custom Icon" width="20" height="20"/> can be defined to keep track of model events and dynamically update expressions as the model runs. Thus, unlike parameters <img src="../amua-images/parameter_16.png" alt="Custom Icon" width="20" height="20"/> which are fixed for a given run of the model, variables can change within a simulation. Variables may change across individuals, allowing heterogeneity to be modeled, or they may change over time.
+:::
+
+Therefore, we will define `p_die` as a **variable** <img src="../amua-images/variable_16.png" alt="Custom Icon" width="20" height="20"/> that references values in a **lookup table** <img src="../amua-images/table_16.png" alt="Custom Icon" width="20" height="20"/>, following the steps below.
+
+::: callout-important
+A lookup table returns the value that corresponds to a particular index. The first column in a lookup table contains the table indices, and one or more columns of lookup values can be defined. Index values must be unique and in ascending order. There are 3 lookup methods, (1) exact, (2) interpolate, and (3) truncate, for details about these methods visit the [Amua Wiki on GitHub](https://github.com/zward/Amua/wiki/Tables).
+:::
+
+We first define a lookup table <img src="../amua-images/table_16.png" alt="Custom Icon" width="20" height="20"/> tbl_death to read in the age-dependent background mortality constructed from the Columbian life tables.
+
+### Download Data
+
+[Download the file titled `columbia-life-table-death-probabilities.csv`](https://graveja0.github.io/bogota-vital-strategies/case-studies/columbia-life-table-death-probabilities.csv) from the workshop website. This table contains the age-indexed annual mortality probability for Columbia. A screenshot of the first few rows of this .csv file is shown below. The `index` column is the age, while `p_die` is the annual probability of death at each age.
+
+![](images/clipboard-2593165698.png){fig-align="center" width="300"}
+
+Go to the “Tables” panel, click <img src="../amua-images/add_16.png" alt="Custom Icon" width="20" height="20"/> to add a table, and you should see a “Define Table” window (see screenshot below). Click the Import button <img src="../amua-images/table_16.png" alt="Custom Icon" width="20" height="20"/> and select the downloaded .csv file to import. The table will automatically be resized to fit the imported data. The first row in the file will be used as table headers.
+
+![](images/clipboard-4147587961.png)
+
+Enter “tbl_p_die” as the name for this variable. “Lookup” is the default table type (which is what we want here). Choose "Interpolate" as the Lookup Method. Click Save to apply.
+
+Next, we can define the *time-varying variable* `p_die` (which reads from the table we just defined and operates as the background mortality probability in the current model cycle, $t$).
+
+*Make sure you create a variable and not a parameter.* Under “Variables”, click <img src="../amua-images/add_16.png" alt="Custom Icon" width="20" height="20"/> to add a variable p_die = tbl_p_die\[age_initial + t, 1\].
+
+The first column of a table is always used for indexing in tables. Therefore, the number "1" here will actually indicate the second column in your table as the corresponding value. You can also use the name of the column to read a value, e.g., tbl_p_die\[age_initial + t, “p_die”\].
+
+::: callout-tip
+In Amua, “***t***” is a built-in variable that tracks the number of cycles. It automatically updates when the model runs. For example, in the 10^th^ cycle on the Markov model, *t = 10*. Therefore, in the formula “tbl_p_die\[age_initial + *t*, 1\]”, age_initial + *t* will equal the modeled age of the individual in cycle *t*, and the full formula will read the age-dependent background mortality based on the individual’s current age (instead of the initial age).
+
+Amua defaults to a cycle time of $t=0$. Therefore, if you hit "Evaluate" the Expected Value field should calculate the death probability for a newborn as shown in the .csv lookup table.
+:::
+
+![](images/clipboard-3390332906.png){fig-align="center" width="500"}
+
+We now have all transition probabilities defined. Add these inputs to the branches of the model. Remember to add the complementary probabilities using “C” as well.
+
+## Termination Condition
+
+-   Specify the termination of the model by selecting \[termination\] and type t==110. This will allow your model to run for 110 cycles, then the model will terminate.
+
+![](images/clipboard-3413612505.png){fig-align="center" width="400"}
+
+## Rewards
+
+The default reward in Amua is cost. We need to change this to have life-expectancy (LE) as a reward. Go to Model {{< fa arrow-right >}} Properties {{< fa arrow-right >}} select the Analysis tab and change the cost dimension to LE. Use LE as the symbol and set to 4 decimal places.
+
+![](images/clipboard-896605952.png){fig-align="center" width="500"}
+
+Add the life-expectancy "payoff" on the left of each health state after "R: (LE)".
+
+![](images/clipboard-2710970859.png){fig-align="center" width="400"}
+
+Apply Half-cycle correction. Go to **Model** {{< fa arrow-right >}} **Properties** {{< fa arrow-right >}} select the **Markov** tab and check the Half-cycle correction box. Click **OK** to apply.
+
+![](images/clipboard-2281393950.png){fig-align="center" width="400"}
+
+Now, we have finished constructing the Alive-Dead model. Analyze the model using a cohort simulation by clicking **Run** {{< fa arrow-right >}} **Run Model**.
+
+::: {.callout-caution appearance="minimal"}
+**Run the alive-dead model and calculate overall life expectancy.**
+:::
+
+# Firework Injury Model
+
+Our next step is to build on the Alive-Dead model by adding in a new probability of firework injury among those who survive in each cycle. Recall the following probabilities from the Firework Injury Decision Tree case study:
+
+| Description                 | Base Case Value | Parameter Name |
+|-----------------------------|-----------------|----------------|
+| Probability of Injury       | 0.0000292       | p_injury       |
+| Probability Injury is Fatal | 0.0046          | p_fatality     |
+
+We will next add to the model to include two possible events:
+
+1.  Firework injury
+2.  Among those with injury, fatal firework injury.
+
+## Add Injury Chance Nodes
+
+From the "Alive" health state, convert the blue arrow <img src="../amua-images/arrow_48.png" alt="Custom Icon" width="20" height="20"/> into a chance node using the change type button <img src="../amua-images/changeTypeTrans_24.png" alt="Custom Icon" width="20" height="20"/>. From this chance node, include the chance of a firework injury. The probability of an injury should be based on a new fixed parameter called `p_injury`.
+
+From the injury branch, add another chance node for whether or not the injury is fatal. Complete the structure of the model by adding transition arrows to the Alive health state if the individual either does not have an injury, or has a non-fatal firework injury. Add a transition arrow to the death state if the individual dies from their firework injury.
+
+Your Markov tree should now look like this:
+
+![](images/clipboard-687927954.png)
+
+## Add Injury and Fatal Injury as Outcomes
+
+Next, add outcomes for firework injury (INJ) and fatal firework injury (FINJ) to the model (Model {{< fa arrow-right >}} Properties {{< fa arrow-right >}} Analysis ).
+
+![](images/clipboard-881873459.png){fig-align="center" width="400"}
+
+We next need to add a one-time "tracker" to record each instance where a cohort member is injured and fatally injured. We can do this by *right-clicking* on the chance node after "Firework Injury," and then clicking on <img src="../amua-images/cost_24.png" alt="Custom Icon" width="20" height="20"/> Add Cost.
+
+![](images/clipboard-3337587212.png)
+
+::: {.callout-caution appearance="minimal"}
+**Add outcome trackers for any injury (INJ) and fatal injuries (FINJ) to your Markov tree.**
+:::
+
+## Change Cohort Size
+
+Our current model is structured for a cohort size of 1 individual. This is often useful---especially for calculating life expectancy as an outcome---but using other cohort sizes can be helpful for producing policy decision-relevant information.
+
+We'll now change the model so that we capture the lifetime experience of a cohort of 100,000 newborns. This will allow us to model the expected number of total and fatal firework injuries over a lifetime for a large cohort—and, eventually, to see how the total number of lifetime injuries falls under different policy options.
+
+-   Go to Model {{< fa arrow-right >}} Properties {{< fa arrow-right >}} select the Simulation tab. Change cohort size to 100,000.
+
+::: callout-tip
+Your life expectancy outcome (LE) will now return the expected *total* life years for a cohort of 100,000 people. To return a standard life expectancy outcome, you can redefine the "payoff" for the LE outcome as $1/100000$.
+
+![](images/clipboard-2682716973.png){fig-align="center" width="300"}
+:::
+
+## Apply Half-Cycle Correction
+
+-   Apply Half-cycle correction. Go to Model {{< fa arrow-right >}} Properties {{< fa arrow-right >}} select the Markov tab and check the Half-cycle correction box. Click OK to apply.
+
+## Run the Model
+
+Verify that your model is able to run by clicking on the <img src="../amua-images/checkModel_24.png" alt="Custom Icon" width="20" height="20"/> check model button. Once all errors have been fixed, <img src="../amua-images/runModel_24.png" alt="Custom Icon" width="20" height="20"/> run the model.
+
+After you run the model, you will see expected outcomes at the bottom of the screen. This information tells us that total life expectancy is 77.04 years and there are an expected 222.07 firework injuries and 1.02 fatal injuries per 100,000 newborns in Columbia.
+
+![](images/clipboard-3464155160.png)
+
+Amua will also display a new window with a figure and spreadsheet table. The figure shows the total number of people in the cohort in each health state ("Alive" and "Dead") at each cycle of the model. The spreadsheet table contains the plotted information (in the Alive and Dead columns) as well as cycle-specific calculations for life-expectancy and injury counts.
+
+The columns that start with `Cum_` are cumulative counts of each outcome. The output below, for example, shows that at cycle $t=20$ (which corresponds to age=20 for our cohort), there are an expected 58.951 firework-related injuries in our cohort of 100,000 newborns.
+
+::: column-page
+![](images/clipboard-3937417551.png)
+:::
+
+# Age-Dependent Injury Probabilities
+
+The above model was constructed with a single fixed injury probability (0.0000292). In this section, we will amend our model to allow the probability of injury to vary by age.
+
+Our colleagues have calculated the following table summarizing the probability of firework injury by age group:
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: false
+library(flextable)
+library(tidyverse)
+library(here)
+read.csv(here("case-studies/cases-by-age.csv")) %>% 
+ select(age, p_injury) %>% 
+na.omit() %>% 
+flextable()
+```
+
+## Add the Injury Probability Lookup Table
+
+Just like we did with the age-specific mortality probabilities above, download the [`cases-by-age.csv`](https://graveja0.github.io/bogota-vital-strategies/case-studies/cases-by-age.csv) data file from the workshop website.
+
+Go to the “Tables” panel, click <img src="../amua-images/add_16.png" alt="Custom Icon" width="20" height="20"/> to add a table, and you should see a “Define Table” window (see screenshot below). Click the Import button <img src="../amua-images/table_16.png" alt="Custom Icon" width="20" height="20"/> and select the downloaded .csv file to import. The table will automatically be resized to fit the imported data. The first row in the file will be used as table headers.
+
+Enter “tbl_p_injury” as the name for this variable. “Lookup” is the default table type (which is what we want here). Choose "Interpolate" as the Lookup Method. Click Save to apply.
+
+::: callout-important
+You will need to allow Amua to extrapolate some probabilities outside the specified age ranges. To do this, select the "Extrapolate" field and set it to "Yes":
+
+![](images/clipboard-1378174773.png)
+:::
+
+::: callout-important
+Amua may also include additional blank rows when it imports the table. Before you proceed, remove all blank rows by clicking on the row, then using the <img src="../amua-images/remove_16.png" alt="Custom Icon" width="20" height="20"/> button next to "Rows" (see red rectangles below).
+
+![](images/clipboard-3528703004.png)
+:::
+
+## Define an Age-Specific Injury Probability
+
+Next, we can define the *time-varying variable* `p_injury_t` (which reads from the table we just defined and operates as the background mortality probability in the current model cycle, $t$).
+
+*Make sure you create a variable and not a parameter.* Under “Variables”, click <img src="../amua-images/add_16.png" alt="Custom Icon" width="20" height="20"/> to add a variable
+
+`p_injury_t = tbl_p_injury[age_initial + t, 1].`
+
+::: {.callout-caution appearance="minimal"}
+Re-run the model using age-specific injury probabilities. How does the expected number of overall and fatal injuries change from when we used the fixed probabilities above?
+:::
+
+# Add Regulate and Ban Scenarios
+

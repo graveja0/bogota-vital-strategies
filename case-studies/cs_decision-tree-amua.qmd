@@ -23,7 +23,7 @@ Please note that this case study is based on the Amua tutorial [here](https://s3
 
 # Overview of Decision Problem
 
-In this example problem, you must decide whether or not to implement a screening program for a certain disease (Dx). Assume that persons testing positive will be treated, which improves their life expectancy. For disease-positive individuals who are not screened, assume that treatment will be delayed until they become symptomatic and that they have a lower life expectancy than those who receive immediate treatment. 
+In this example problem, you must decide whether or not to implement a screening program for a certain disease (Dx). Assume that persons testing positive will be treated, which improves their life expectancy. For disease-positive individuals who are not screened, assume that treatment will be delayed until they become symptomatic and that they have a lower life expectancy than those who receive immediate treatment.
 
 For disease-negative individuals who are inappropriately treated, assume that there is a decrease in their life expectancy due to drug toxicity. The screening test is imperfect with a sensitivity of 0.97 and a specificity of 0.9988. The prevalence of the disease in this population is 0.05. The objective is to maximize life expectancy. As alternative strategies, you could not screen anyone, or you could simply treat everyone without screening first.
 
@@ -77,7 +77,7 @@ New branches are called Name by default. To give branches more informative label
 
 1.  Double-click on the No Screen chance node <i class="fa-solid fa-circle fa-xs" style="color: #00ff00;"></i> to add 2 branches.\
 2.  Click the Optimize Current Display (OCD) button on the toolbar to arrange the branches and ensure even spacing.
-3.  Right-click on each of the child nodes <i class="fa-solid fa-circle fa-xs" style="color: #00ff00;"></i> and select <img src="../amua-images/changeTypeTrans_24.png" alt="Custom Icon" width="20" height="20"/>  **Change to Terminal Node**. You may also change node types on the toolbar or add a new terminal node <i class="fa-solid fa-caret-left" style="color: #0000ff;"></i> using the toolbar or pop-up menu.
+3.  Right-click on each of the child nodes <i class="fa-solid fa-circle fa-xs" style="color: #00ff00;"></i> and select <img src="../amua-images/changeTypeTrans_24.png" alt="Custom Icon" width="20" height="20"/> **Change to Terminal Node**. You may also change node types on the toolbar or add a new terminal node <i class="fa-solid fa-caret-left" style="color: #0000ff;"></i> using the toolbar or pop-up menu.
 4.  Name the top branch D+ and the bottom branch D-.
 
 Your tree should look like this:
@@ -214,9 +214,8 @@ We’ve entered the names of all of the probabilities and payoffs in the tree, b
 To [delete a variable]{style="color: #D65C41;"}, click on the variable and click on the red <i class="fa-solid fa-x" style="color: #d03216;"></i> next to the pencil image in the variable dialogue.
 :::
 
-
 | Parameter | Description                                                                      | Value                                                    |
-|-----------------|---------------------------------|----------------------|
+|-----------|----------------------------------------------------------------------------------|----------------------------------------------------------|
 | prev      | Disease prevalence                                                               | 0.05                                                     |
 | sens      | Sensitivity of test                                                              | 0.97                                                     |
 | spec      | Specificity of test                                                              | 0.9988                                                   |
@@ -229,8 +228,6 @@ To [delete a variable]{style="color: #D65C41;"}, click on the variable and click
 | Tox       | Life expectancy if treated, but do not have disease (due to Rx toxicity)         | 39.4                                                     |
 
 ![](images/amua-addparam1.png){width="511"}
-
-
 
 # Step 10: Run the Model
 
@@ -245,4 +242,3 @@ For this model we get the following results:
 | No Screen | 39.54           |
 | Screen    | 40.06           |
 | Treat All | 39.22           |
-

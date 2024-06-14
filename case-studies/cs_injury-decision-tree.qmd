@@ -1,5 +1,5 @@
 ---
-title: "Gunpowder Injury Decision Tree"
+title: "Firework Injury Decision Tree"
 format:
   html:
     toc: false
@@ -14,7 +14,7 @@ self-contained: true
 
 # Introduction and Overview of Decision Problem {{< fa regular clipboard >}}
 
-In Columbia, the issue of gunpowder-related injuries, particularly during festive seasons, remains a significant public health concern. Fireworks, while culturally ingrained and a source of celebration, pose substantial risks, especially to children. This has led policymakers to consider various strategies to mitigate these risks and enhance public safety.
+In Columbia, the issue of firework-related injuries, particularly during festive seasons, remains a significant public health concern. Fireworks, while culturally ingrained and a source of celebration, pose substantial risks, especially to children. This has led policymakers to consider various strategies to mitigate these risks and enhance public safety.
 
 The decision problem we will consider revolves around analyzing approaches to reducing injuries and fatalities caused by fireworks. Two primary strategies under consideration are **(1) a complete ban on fireworks** and **(2) heavy regulation**, such as restricted sales licenses and stringent enforcement.
 
@@ -81,13 +81,15 @@ We will also assume that a small percentage (15%) of individuals with mild/moder
 | Description                                   | Base Case Value | Parameter Name    |
 |------------------------------------|------------------|------------------|
 | Probability of Recovery: Mild/Moderate Injury | 0.85            | p_recover_mildmod |
-| Probability of Recovery: Major Injury         | 0.4             | p_recover_severe  |
+| Probability of Recovery: Major Injury         | 0.6             | p_recover_severe  |
 
 ## Strategies and Impact
 
-When the mayor of Bogota banned the sale of fireworks in 1995, fireworks-related burns fell by 62%, from 204 in the 1994-1995 Christmas season to 77 during the 1995-1996 season. We will assume a similar 60% relative risk reduction under the "Ban" scenario.
+When the mayor of Bogota banned the sale of fireworks in 1995, fireworks-related burns fell by 62%, from 204 in the 1994-1995 Christmas season to 77 during the 1995-1996 season.[^1] We will assume a similar 60% relative risk reduction under the "Ban" scenario.
 
-By comparison, we will assume that stricter regulation will reduce firework injuries by just 15%. We will examine the sensitivity of our findings to these assumpions later in the case study.
+[^1]: Source: "Antanas Mockus: The Prohibition of Fireworks in Bogotá Sequel," *Harvard Kennedy School Case Study.* Available from<https://case.hks.harvard.edu/antanas-mockus-the-prohibition-of-fireworks-in-bogota-sequel/>
+
+By comparison, we will assume that stricter regulation will reduce firework injuries by just 20%. We will examine the sensitivity of our findings to these assumpions later in the case study.
 
 # Exercises
 
@@ -127,9 +129,9 @@ You can enter the cohort size by clicking Model {{< fa arrow-right >}} Propertie
 *Create a duplicate version of your "Do Nothing" tree to construct separate branches for the "Ban" and "Regulate" scenarios. Under each, the probability of injury should be modified by a relative risk reduction parameter with values set based on the text above and the table below.*
 
 | Description                                                                     | Base Case Value | Parameter Name |
-|-----------------------------------------|----------------|----------------|
-| Relative risk reduction: probability of injury under "Ban" policy scenario      | 0.6             | rr_ban         |
-| Relative risk reduction: probability of injury under "Regulate" policy scenario | 0.85            | rr_ban         |
+|------------------------------------|------------------|------------------|
+| Relative risk reduction: probability of injury under "Ban" policy scenario      | 0.40            | rr_ban         |
+| Relative risk reduction: probability of injury under "Regulate" policy scenario | 0.80            | rr_regulate    |
 
 ::: callout-tip
 You can copy and paste the "Do Nothing" branch by right-clicking on the first chance node <img src="../amua-images/chanceNode_24.png" alt="Custom Icon" width="20" height="20"/> and selecting "Copy." You can then paste a copy of the entire tree structure on the red decision node <img src="../amua-images/decisionNode_24.png" alt="Custom Icon" width="20" height="20"/>.
@@ -137,7 +139,7 @@ You can copy and paste the "Do Nothing" branch by right-clicking on the first ch
 
 ## 2.2. Add Additional Outcomes
 
-Add additional outcomes based on each injury type (mild/moderate, severe, fatal). Use your decision tree to project injuries overall and by type under each strategy. Use your results to fill out the table below. Each cell should have calculated counts of the number of each type of injury under each strategy. 
+Add additional outcomes based on each injury type (mild/moderate, severe, fatal). Use your decision tree to project injuries overall and by type under each strategy. Use your results to fill out the table below. Each cell should have calculated counts of the number of each type of injury under each strategy.
 
 | Strategy           | Any Injury | Mild/Moderate | Severe | Fatal |
 |--------------------|------------|---------------|--------|-------|
@@ -152,14 +154,23 @@ Add additional outcomes based on each injury type (mild/moderate, severe, fatal)
 <!-- Assume that evidence indicates the following relative risk reductions under each policy: -->
 
 <!-- | Description                                | Parameter            | Value | -->
+
 <!-- |--------------------------------------------|----------------------|-------| -->
+
 <!-- | Relative Risk Reduction: Ban Strategy      |                      |       | -->
+
 <!-- | Fatal Injuries                             | rr_fatality_ban      | 0.50  | -->
+
 <!-- | Severe Injuries                            | rr_severe_ban        | 0.30  | -->
+
 <!-- | Mild/Moderate Injuries                     | rr_mildmod_ban       | 0.60  | -->
+
 <!-- | Relative Risk Reduction: Regulate Strategy |                      |       | -->
+
 <!-- | Fatal Injuries                             | rr_fatality_regulate | 0.90  | -->
+
 <!-- | Severe Injuries                            | rr_severe_regulate   | 0.80  | -->
+
 <!-- | Mild/Moderate Injuries                     | rr_mildmod_regulate  | 0.70  | -->
 
 <!-- We can incorporate this information into our decision model by defining some parameters as *variables*. Variables in Amua are functions of other parameters.  -->
@@ -167,28 +178,41 @@ Add additional outcomes based on each injury type (mild/moderate, severe, fatal)
 <!-- *Please use the expression values below to define variables for new probabilities under the two policy strategies under consideration (ban and regulate).* -->
 
 <!-- ::: callout-tip -->
+
 <!-- You can define variables in Amua by using the **Variables** panel. -->
 
 <!-- ![](images/clipboard-271073115.png){fig-align="center" width="600"} -->
+
 <!-- ::: -->
 
-
-
 <!-- | Description                                           | Parameter        | Expression                                                                                                | -->
+
 <!-- |---------------------------------|---------------|------------------------------------------------------| -->
+
 <!-- | Overall probability of fatality under ban             | p_fatality_ban\_ | p_injury $\times$ p*\_*fatality $\times$ rr_fatality_ban                                                  | -->
+
 <!-- | Overall probability of severe injury under ban        | p_severe_ban\_   | p_injury $\times$ (1 - p_fatality × rr_fatality_ban) × p_severe × rr_severe_ban                           | -->
+
 <!-- | Overall probability of mild/moderate injury under ban | p_mildmod_ban\_  | p_injury $\times$ (1-p_fatality $\times$ rr_fatality_ban) $\times$ ((1-p_severe) $\times$ rr_mildmod_ban) | -->
+
 <!-- | Overall probability of injury under ban               | p_injury_ban     | p_fatality_ban\_+p_severe_ban\_+p_mildmod_ban\_                                                           | -->
+
 <!-- | Conditional probability of severe injury under ban    | p_severe_ban     | p_severe_ban\_/(p_severe_ban\_+p_mildmod_ban\_)                                                           | -->
+
 <!-- | Probability of fatal injury under ban                 | p_fatality_ban   | p_fatality $\times$ rr_fatality_ban                                                                       | -->
 
 <!-- | Description                                                         | Parameter             | Expression                                                                                                          | -->
-<!-- |----------------------------------|-----------------|-----------------------------------------------------| -->
-<!-- | Overall probability of fatality under regulate strategy             | p_fatality_regulate\_ | p_injury $\times$ p*\_*fatality $\times$ rr_fatality_regulate                                                       | -->
-<!-- | Overall probability of severe injury under regulate strategy        | p_severe_regulate\_   | p_injury $\times$ (1 - p_fatality × rr_fatality_regulate) × p_severe × rr_severe_regulate                           | -->
-<!-- | Overall probability of mild/moderate injury under regulate strategy | p_mildmod_regulate\_  | p_injury $\times$ (1-p_fatality $\times$ rr_fatality_regulate) $\times$ ((1-p_severe) $\times$ rr_mildmod_regulate) | -->
-<!-- | Overall probability of injury under regulate strategy               | p_injury_regulate     | p_fatality_regulate\_+p_severe_regulate\_+p_mildmod_regulate\_                                                      | -->
-<!-- | Conditional probability of severe injury under regulate strategy    | p_severe_regulate     | p_severe_regulate\_/(p_severe_regulate\_+p_mildmod_regulate\_)                                                      | -->
-<!-- | Probability of fatal injury under regulate strategy                 | p_fatality_regulate   | p_fatality $\times$ rr_fatality_regulate                                                                            | -->
 
+<!-- |----------------------------------|-----------------|-----------------------------------------------------| -->
+
+<!-- | Overall probability of fatality under regulate strategy             | p_fatality_regulate\_ | p_injury $\times$ p*\_*fatality $\times$ rr_fatality_regulate                                                       | -->
+
+<!-- | Overall probability of severe injury under regulate strategy        | p_severe_regulate\_   | p_injury $\times$ (1 - p_fatality × rr_fatality_regulate) × p_severe × rr_severe_regulate                           | -->
+
+<!-- | Overall probability of mild/moderate injury under regulate strategy | p_mildmod_regulate\_  | p_injury $\times$ (1-p_fatality $\times$ rr_fatality_regulate) $\times$ ((1-p_severe) $\times$ rr_mildmod_regulate) | -->
+
+<!-- | Overall probability of injury under regulate strategy               | p_injury_regulate     | p_fatality_regulate\_+p_severe_regulate\_+p_mildmod_regulate\_                                                      | -->
+
+<!-- | Conditional probability of severe injury under regulate strategy    | p_severe_regulate     | p_severe_regulate\_/(p_severe_regulate\_+p_mildmod_regulate\_)                                                      | -->
+
+<!-- | Probability of fatal injury under regulate strategy                 | p_fatality_regulate   | p_fatality $\times$ rr_fatality_regulate                                                                            | -->
