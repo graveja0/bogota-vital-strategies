@@ -7,12 +7,18 @@
         <dateCreated>Thu Jun 13 08:34:42 CDT 2024</dateCreated>
         <versionCreated>0.3.1</versionCreated>
         <modifier>johngraves</modifier>
-        <dateModified>Fri Jun 14 07:37:32 CDT 2024</dateModified>
+        <dateModified>Fri Jun 14 10:13:41 CDT 2024</dateModified>
         <versionModified>0.3.1</versionModified>
     </Metadata>
     <DimInfo>
         <dimNames>Life Expectancy</dimNames>
+        <dimNames>Injury</dimNames>
+        <dimNames>Fatal Injury</dimNames>
         <dimSymbols>LE</dimSymbols>
+        <dimSymbols>INJ</dimSymbols>
+        <dimSymbols>FINJ</dimSymbols>
+        <decimals>4</decimals>
+        <decimals>4</decimals>
         <decimals>4</decimals>
         <analysisType>0</analysisType>
         <objective>0</objective>
@@ -29,9 +35,24 @@
         <expression>0</expression>
         <notes></notes>
     </Parameter>
+    <Parameter>
+        <name>p_injury</name>
+        <expression>0.0000292</expression>
+        <notes></notes>
+    </Parameter>
+    <Parameter>
+        <name>p_fatality</name>
+        <expression>0.0046</expression>
+        <notes></notes>
+    </Parameter>
     <Variable>
         <name>p_die</name>
         <expression>tbl_p_die[age_initial+t,1]</expression>
+        <notes></notes>
+    </Variable>
+    <Variable>
+        <name>p_die_tmp</name>
+        <expression>tbl_life_table[t,1]</expression>
         <notes></notes>
     </Variable>
     <Table>
@@ -488,9 +509,197 @@
         </data>
         <notes></notes>
     </Table>
+    <Table>
+        <name>tbl_life_table</name>
+        <type>Lookup</type>
+        <lookupMethod>Interpolate</lookupMethod>
+        <interpolate>Linear</interpolate>
+        <extrapolate>Yes</extrapolate>
+        <numRows>19</numRows>
+        <numCols>7</numCols>
+        <headers>age</headers>
+        <headers>mx</headers>
+        <headers>qx</headers>
+        <headers>lx</headers>
+        <headers>dx</headers>
+        <headers>Lx</headers>
+        <headers>Tx</headers>
+        <data>
+            <item>0.0</item>
+            <item>0.011421011</item>
+            <item>0.01130481</item>
+            <item>100000.0</item>
+            <item>1130.480951</item>
+            <item>98982.56714</item>
+            <item>7931356.382</item>
+        </data>
+        <data>
+            <item>1.0</item>
+            <item>4.76663E-4</item>
+            <item>0.001904473</item>
+            <item>98869.51905</item>
+            <item>188.2943132</item>
+            <item>395026.1698</item>
+            <item>7832373.815</item>
+        </data>
+        <data>
+            <item>5.0</item>
+            <item>2.19113E-4</item>
+            <item>0.001094963</item>
+            <item>98681.22474</item>
+            <item>108.0522941</item>
+            <item>493135.9929</item>
+            <item>7437347.645</item>
+        </data>
+        <data>
+            <item>10.0</item>
+            <item>2.77938E-4</item>
+            <item>0.001388723</item>
+            <item>98573.17244</item>
+            <item>136.8908644</item>
+            <item>492523.635</item>
+            <item>6944211.652</item>
+        </data>
+        <data>
+            <item>15.0</item>
+            <item>8.79912E-4</item>
+            <item>0.004389904</item>
+            <item>98436.28158</item>
+            <item>432.1258693</item>
+            <item>491101.0932</item>
+            <item>6451688.017</item>
+        </data>
+        <data>
+            <item>20.0</item>
+            <item>0.001238626</item>
+            <item>0.006174013</item>
+            <item>98004.15571</item>
+            <item>605.0789417</item>
+            <item>488508.0812</item>
+            <item>5960586.924</item>
+        </data>
+        <data>
+            <item>25.0</item>
+            <item>0.001202814</item>
+            <item>0.005996041</item>
+            <item>97399.07677</item>
+            <item>584.0088636</item>
+            <item>485535.3617</item>
+            <item>5472078.843</item>
+        </data>
+        <data>
+            <item>30.0</item>
+            <item>0.001313255</item>
+            <item>0.006544787</item>
+            <item>96815.0679</item>
+            <item>633.6340083</item>
+            <item>482491.2545</item>
+            <item>4986543.481</item>
+        </data>
+        <data>
+            <item>35.0</item>
+            <item>0.001369367</item>
+            <item>0.006823476</item>
+            <item>96181.43389</item>
+            <item>656.2917465</item>
+            <item>479266.4401</item>
+            <item>4504052.226</item>
+        </data>
+        <data>
+            <item>40.0</item>
+            <item>0.001636712</item>
+            <item>0.008150211</item>
+            <item>95525.14215</item>
+            <item>778.5500729</item>
+            <item>475679.3356</item>
+            <item>4024785.786</item>
+        </data>
+        <data>
+            <item>45.0</item>
+            <item>0.002116144</item>
+            <item>0.010525039</item>
+            <item>94746.59207</item>
+            <item>997.2115371</item>
+            <item>471239.9315</item>
+            <item>3549106.451</item>
+        </data>
+        <data>
+            <item>50.0</item>
+            <item>0.003077367</item>
+            <item>0.015269361</item>
+            <item>93749.38054</item>
+            <item>1431.49313</item>
+            <item>465168.1699</item>
+            <item>3077866.519</item>
+        </data>
+        <data>
+            <item>55.0</item>
+            <item>0.005038384</item>
+            <item>0.024878549</item>
+            <item>92317.88741</item>
+            <item>2296.735112</item>
+            <item>455847.5993</item>
+            <item>2612698.349</item>
+        </data>
+        <data>
+            <item>60.0</item>
+            <item>0.007696626</item>
+            <item>0.037756631</item>
+            <item>90021.1523</item>
+            <item>3398.895456</item>
+            <item>441608.5228</item>
+            <item>2156850.75</item>
+        </data>
+        <data>
+            <item>65.0</item>
+            <item>0.011477605</item>
+            <item>0.055787264</item>
+            <item>86622.25684</item>
+            <item>4832.418675</item>
+            <item>421030.2375</item>
+            <item>1715242.227</item>
+        </data>
+        <data>
+            <item>70.0</item>
+            <item>0.019774603</item>
+            <item>0.094215338</item>
+            <item>81789.83816</item>
+            <item>7705.857274</item>
+            <item>389684.5476</item>
+            <item>1294211.99</item>
+        </data>
+        <data>
+            <item>75.0</item>
+            <item>0.036389065</item>
+            <item>0.166773498</item>
+            <item>74083.98089</item>
+            <item>12355.24464</item>
+            <item>339531.7929</item>
+            <item>904527.4421</item>
+        </data>
+        <data>
+            <item>80.0</item>
+            <item>0.058189266</item>
+            <item>0.253996634</item>
+            <item>61728.73625</item>
+            <item>15678.89125</item>
+            <item>269446.4531</item>
+            <item>564995.6493</item>
+        </data>
+        <data>
+            <item>85.0</item>
+            <item>0.13535387</item>
+            <item>1.0</item>
+            <item>46049.845</item>
+            <item>46049.845</item>
+            <item>295549.1961</item>
+            <item>295549.1961</item>
+        </data>
+        <notes></notes>
+    </Table>
     <simParamSets>false</simParamSets>
     <simType>0</simType>
-    <cohortSize>1</cohortSize>
+    <cohortSize>100000</cohortSize>
     <CRN>false</CRN>
     <crnSeed>-1</crnSeed>
     <displayIndResults>false</displayIndResults>
@@ -500,8 +709,8 @@
         <Node>
             <type>0</type>
             <name>Root</name>
-            <xPos>182</xPos>
-            <yPos>432</yPos>
+            <xPos>82</xPos>
+            <yPos>344</yPos>
             <width>33</width>
             <height>33</height>
             <parentX>0</parentX>
@@ -513,16 +722,18 @@
             <hasVarUpdates>false</hasVarUpdates>
             <visible>true</visible>
             <collapsed>false</collapsed>
+            <cost>0</cost>
+            <cost>0</cost>
         </Node>
         <Node>
             <type>1</type>
-            <name>Alive-Dead</name>
-            <xPos>483</xPos>
-            <yPos>425</yPos>
+            <name>Do Nothing </name>
+            <xPos>387</xPos>
+            <yPos>336</yPos>
             <width>49</width>
             <height>49</height>
-            <parentX>215</parentX>
-            <parentY>448</parentY>
+            <parentX>115</parentX>
+            <parentY>360</parentY>
             <parentType>0</parentType>
             <childIndices>2</childIndices>
             <childIndices>3</childIndices>
@@ -533,6 +744,8 @@
             <collapsed>false</collapsed>
             <prob>0</prob>
             <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
             <terminationCondition>t==110</terminationCondition>
             <stateNames>Alive</stateNames>
             <stateNames>Dead</stateNames>
@@ -540,12 +753,12 @@
         <Node>
             <type>2</type>
             <name>Alive</name>
-            <xPos>626</xPos>
-            <yPos>341</yPos>
+            <xPos>528</xPos>
+            <yPos>235</yPos>
             <width>198</width>
             <height>66</height>
-            <parentX>532</parentX>
-            <parentY>449</parentY>
+            <parentX>436</parentX>
+            <parentY>360</parentY>
             <parentType>1</parentType>
             <childIndices>4</childIndices>
             <childIndices>5</childIndices>
@@ -556,17 +769,21 @@
             <collapsed>false</collapsed>
             <prob>1</prob>
             <cost>0</cost>
-            <rewards>1</rewards>
+            <cost>0</cost>
+            <cost>0</cost>
+            <rewards>1/100000</rewards>
+            <rewards>0</rewards>
+            <rewards>0</rewards>
         </Node>
         <Node>
             <type>2</type>
             <name>Dead</name>
-            <xPos>625</xPos>
-            <yPos>495</yPos>
+            <xPos>528</xPos>
+            <yPos>421</yPos>
             <width>198</width>
             <height>66</height>
-            <parentX>532</parentX>
-            <parentY>449</parentY>
+            <parentX>436</parentX>
+            <parentY>360</parentY>
             <parentType>1</parentType>
             <childIndices>6</childIndices>
             <level>2</level>
@@ -576,18 +793,24 @@
             <collapsed>false</collapsed>
             <prob>0</prob>
             <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <rewards>0</rewards>
+            <rewards>0</rewards>
             <rewards>0</rewards>
         </Node>
         <Node>
-            <type>4</type>
+            <type>3</type>
             <name>Survive</name>
-            <xPos>1095</xPos>
-            <yPos>308</yPos>
+            <xPos>997</xPos>
+            <yPos>164</yPos>
             <width>33</width>
             <height>33</height>
-            <parentX>824</parentX>
-            <parentY>374</parentY>
+            <parentX>726</parentX>
+            <parentY>268</parentY>
             <parentType>2</parentType>
+            <childIndices>7</childIndices>
+            <childIndices>8</childIndices>
             <level>3</level>
             <hasCost>false</hasCost>
             <hasVarUpdates>false</hasVarUpdates>
@@ -595,17 +818,19 @@
             <collapsed>false</collapsed>
             <prob>C</prob>
             <cost>0</cost>
-            <transition>Alive</transition>
+            <cost>0</cost>
+            <cost>0</cost>
+            <transition>0</transition>
         </Node>
         <Node>
             <type>4</type>
             <name>Die</name>
-            <xPos>1095</xPos>
-            <yPos>406</yPos>
+            <xPos>997</xPos>
+            <yPos>338</yPos>
             <width>33</width>
             <height>33</height>
-            <parentX>824</parentX>
-            <parentY>374</parentY>
+            <parentX>726</parentX>
+            <parentY>268</parentY>
             <parentType>2</parentType>
             <level>3</level>
             <hasCost>false</hasCost>
@@ -614,17 +839,19 @@
             <collapsed>false</collapsed>
             <prob>p_die</prob>
             <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
             <transition>Dead</transition>
         </Node>
         <Node>
             <type>4</type>
             <name>Dead</name>
-            <xPos>1094</xPos>
-            <yPos>506</yPos>
+            <xPos>997</xPos>
+            <yPos>437</yPos>
             <width>33</width>
             <height>33</height>
-            <parentX>823</parentX>
-            <parentY>528</parentY>
+            <parentX>726</parentX>
+            <parentY>454</parentY>
             <parentType>2</parentType>
             <level>3</level>
             <hasCost>false</hasCost>
@@ -633,6 +860,94 @@
             <collapsed>false</collapsed>
             <prob>1</prob>
             <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <transition>Dead</transition>
+        </Node>
+        <Node>
+            <type>3</type>
+            <name>Firework Injury</name>
+            <xPos>1302</xPos>
+            <yPos>90</yPos>
+            <width>33</width>
+            <height>33</height>
+            <parentX>1030</parentX>
+            <parentY>180</parentY>
+            <parentType>3</parentType>
+            <childIndices>9</childIndices>
+            <childIndices>10</childIndices>
+            <level>4</level>
+            <hasCost>true</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>p_injury</prob>
+            <cost>0</cost>
+            <cost>1</cost>
+            <cost>0</cost>
+            <transition>0</transition>
+        </Node>
+        <Node>
+            <type>4</type>
+            <name>No Firework Injury</name>
+            <xPos>1302</xPos>
+            <yPos>239</yPos>
+            <width>33</width>
+            <height>33</height>
+            <parentX>1030</parentX>
+            <parentY>180</parentY>
+            <parentType>3</parentType>
+            <level>4</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>C</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <transition>Alive</transition>
+        </Node>
+        <Node>
+            <type>4</type>
+            <name>Survive</name>
+            <xPos>1607</xPos>
+            <yPos>41</yPos>
+            <width>33</width>
+            <height>33</height>
+            <parentX>1335</parentX>
+            <parentY>106</parentY>
+            <parentType>3</parentType>
+            <level>5</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>c</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <transition>Alive</transition>
+        </Node>
+        <Node>
+            <type>4</type>
+            <name>Die</name>
+            <xPos>1607</xPos>
+            <yPos>140</yPos>
+            <width>33</width>
+            <height>33</height>
+            <parentX>1335</parentX>
+            <parentY>106</parentY>
+            <parentType>3</parentType>
+            <level>5</level>
+            <hasCost>true</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>p_fatality</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>1</cost>
             <transition>Dead</transition>
         </Node>
         <maxCycles>1000</maxCycles>
