@@ -3668,7 +3668,49 @@
     "href": "case-studies/cs_injury-markov.html#add-injury-chance-nodes",
     "title": "Firework Injury: Markov Model",
     "section": "Add Injury Chance Nodes",
-    "text": "Add Injury Chance Nodes\nFrom the “Alive” health state, convert the blue arrow  into a chance node using the change type button . From this chance node, include the chance of a firework injury. The probability of an injury should be based on a new fixed parameter called p_injury.\nFrom the injury branch, add another chance node for whether or not the injury is fatal. Complete the structure of the model by adding transition arrows to the Alive health state if the individual either does not have an injury, or has a non-fatal firework injury. Add a transition arrow to the death state if the individual dies from their firework injury.\nYour Markov tree should now look like this:\n\n\nAdd Injury and Fatal Injury as Outcomes\nNext, add outcomes for firework injury (INJ) and fatal firework injury (FINJ) to the model (Model  Properties  Analysis ).\n\n\n\n\n\nWe next need to add a one-time “tracker” to record each instance where a cohort member is injured and fatally injured. We can do this by right-clicking on the chance node after “Firework Injury”"
+    "text": "Add Injury Chance Nodes\nFrom the “Alive” health state, convert the blue arrow  into a chance node using the change type button . From this chance node, include the chance of a firework injury. The probability of an injury should be based on a new fixed parameter called p_injury.\nFrom the injury branch, add another chance node for whether or not the injury is fatal. Complete the structure of the model by adding transition arrows to the Alive health state if the individual either does not have an injury, or has a non-fatal firework injury. Add a transition arrow to the death state if the individual dies from their firework injury.\nYour Markov tree should now look like this:"
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#add-injury-and-fatal-injury-as-outcomes",
+    "href": "case-studies/cs_injury-markov.html#add-injury-and-fatal-injury-as-outcomes",
+    "title": "Firework Injury: Markov Model",
+    "section": "Add Injury and Fatal Injury as Outcomes",
+    "text": "Add Injury and Fatal Injury as Outcomes\nNext, add outcomes for firework injury (INJ) and fatal firework injury (FINJ) to the model (Model  Properties  Analysis ).\n\n\n\n\n\nWe next need to add a one-time “tracker” to record each instance where a cohort member is injured and fatally injured. We can do this by right-clicking on the chance node after “Firework Injury,” and then clicking on  Add Cost.\n\n\n\n\n\n\n\nAdd outcome trackers for any injury (INJ) and fatal injuries (FINJ) to your Markov tree."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#change-cohort-size",
+    "href": "case-studies/cs_injury-markov.html#change-cohort-size",
+    "title": "Firework Injury: Markov Model",
+    "section": "Change Cohort Size",
+    "text": "Change Cohort Size\nOur current model is structured for a cohort size of 1 individual. This is often useful—especially for calculating life expectancy as an outcome—but using other cohort sizes can be helpful for producing policy decision-relevant information.\nWe’ll now change the model so that we capture the lifetime experience of a cohort of 100,000 newborns. This will allow us to model the expected number of total and fatal firework injuries over a lifetime for a large cohort—and, eventually, to see how the total number of lifetime injuries falls under different policy options.\n\nGo to Model  Properties  select the Simulation tab. Change cohort size to 100,000.\n\n\n\n\n\n\n\nTip\n\n\n\nYour life expectancy outcome (LE) will now return the expected total life years for a cohort of 100,000 people. To return a standard life expectancy outcome, you can redefine the “payoff” for the LE outcome as \\(1/100000\\)."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#apply-half-cycle-correction",
+    "href": "case-studies/cs_injury-markov.html#apply-half-cycle-correction",
+    "title": "Firework Injury: Markov Model",
+    "section": "Apply Half-Cycle Correction",
+    "text": "Apply Half-Cycle Correction\n\nApply Half-cycle correction. Go to Model  Properties  select the Markov tab and check the Half-cycle correction box. Click OK to apply."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#run-the-model",
+    "href": "case-studies/cs_injury-markov.html#run-the-model",
+    "title": "Firework Injury: Markov Model",
+    "section": "Run the Model",
+    "text": "Run the Model\nVerify that your model is able to run by clicking on the  check model button. Once all errors have been fixed,  run the model.\nAfter you run the model, you will see expected outcomes at the bottom of the screen. This information tells us that total life expectancy is 77.04 years and there are an expected 222.07 firework injuries and 1.02 fatal injuries per 100,000 newborns in Columbia.\n\nAmua will also display a new window with a figure and spreadsheet table. The figure shows the total number of people in the cohort in each health state (“Alive” and “Dead”) at each cycle of the model. The spreadsheet table contains the plotted information (in the Alive and Dead columns) as well as cycle-specific calculations for life-expectancy and injury counts.\nThe columns that start with Cum_ are cumulative counts of each outcome. The output below, for example, shows that at cycle \\(t=20\\) (which corresponds to age=20 for our cohort), there are an expected 58.951 firework-related injuries in our cohort of 100,000 newborns."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#add-the-injury-probability-lookup-table",
+    "href": "case-studies/cs_injury-markov.html#add-the-injury-probability-lookup-table",
+    "title": "Firework Injury: Markov Model",
+    "section": "Add the Injury Probability Lookup Table",
+    "text": "Add the Injury Probability Lookup Table\nJust like we did with the age-specific mortality probabilities above, download the cases-by-age.csv data file from the workshop website.\nGo to the “Tables” panel, click  to add a table, and you should see a “Define Table” window (see screenshot below). Click the Import button  and select the downloaded .csv file to import. The table will automatically be resized to fit the imported data. The first row in the file will be used as table headers.\nEnter “tbl_p_injury” as the name for this variable. “Lookup” is the default table type (which is what we want here). Choose “Interpolate” as the Lookup Method. Click Save to apply.\n\n\n\n\n\n\nImportant\n\n\n\nYou will need to allow Amua to extrapolate some probabilities outside the specified age ranges. To do this, select the “Extrapolate” field and set it to “Yes”:\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nAmua may also include additional blank rows when it imports the table. Before you proceed, remove all blank rows by clicking on the row, then using the  button next to “Rows” (see red rectangles below)."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#define-an-age-specific-injury-probability",
+    "href": "case-studies/cs_injury-markov.html#define-an-age-specific-injury-probability",
+    "title": "Firework Injury: Markov Model",
+    "section": "Define an Age-Specific Injury Probability",
+    "text": "Define an Age-Specific Injury Probability\nNext, we can define the time-varying variable p_injury_t (which reads from the table we just defined and operates as the background mortality probability in the current model cycle, \\(t\\)).\nMake sure you create a variable and not a parameter. Under “Variables”, click  to add a variable\np_injury_t = tbl_p_injury[age_initial + t, 1].\n\n\n\n\n\n\nRe-run the model using age-specific injury probabilities. How does the expected number of overall and fatal injuries change from when we used the fixed probabilities above?"
   },
   {
     "objectID": "case-studies/ESP_cs_icer.html",
