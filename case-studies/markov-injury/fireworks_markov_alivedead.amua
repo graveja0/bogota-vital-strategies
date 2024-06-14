@@ -7,13 +7,13 @@
         <dateCreated>Thu Jun 13 08:34:42 CDT 2024</dateCreated>
         <versionCreated>0.3.1</versionCreated>
         <modifier>johngraves</modifier>
-        <dateModified>Thu Jun 13 19:54:18 CDT 2024</dateModified>
+        <dateModified>Fri Jun 14 07:37:32 CDT 2024</dateModified>
         <versionModified>0.3.1</versionModified>
     </Metadata>
     <DimInfo>
         <dimNames>Life Expectancy</dimNames>
         <dimSymbols>LE</dimSymbols>
-        <decimals>2</decimals>
+        <decimals>4</decimals>
         <analysisType>0</analysisType>
         <objective>0</objective>
         <objectiveDim>0</objectiveDim>
@@ -22,15 +22,20 @@
         <WTP>0.0</WTP>
         <extendedDim>0</extendedDim>
     </DimInfo>
-    <scale>100</scale>
+    <scale>165</scale>
     <alignRight>false</alignRight>
+    <Parameter>
+        <name>age_initial</name>
+        <expression>0</expression>
+        <notes></notes>
+    </Parameter>
     <Variable>
         <name>p_die</name>
-        <expression>Life_Table[t, 1]</expression>
+        <expression>tbl_p_die[age_initial+t,1]</expression>
         <notes></notes>
     </Variable>
     <Table>
-        <name>Life_Table</name>
+        <name>tbl_p_die</name>
         <type>Lookup</type>
         <lookupMethod>Exact</lookupMethod>
         <numRows>111</numRows>
@@ -495,10 +500,10 @@
         <Node>
             <type>0</type>
             <name>Root</name>
-            <xPos>114</xPos>
-            <yPos>265</yPos>
-            <width>20</width>
-            <height>20</height>
+            <xPos>182</xPos>
+            <yPos>432</yPos>
+            <width>33</width>
+            <height>33</height>
             <parentX>0</parentX>
             <parentY>0</parentY>
             <parentType>0</parentType>
@@ -512,12 +517,12 @@
         <Node>
             <type>1</type>
             <name>Alive-Dead</name>
-            <xPos>296</xPos>
-            <yPos>260</yPos>
-            <width>30</width>
-            <height>30</height>
-            <parentX>134</parentX>
-            <parentY>275</parentY>
+            <xPos>483</xPos>
+            <yPos>425</yPos>
+            <width>49</width>
+            <height>49</height>
+            <parentX>215</parentX>
+            <parentY>448</parentY>
             <parentType>0</parentType>
             <childIndices>2</childIndices>
             <childIndices>3</childIndices>
@@ -528,19 +533,19 @@
             <collapsed>false</collapsed>
             <prob>0</prob>
             <cost>0</cost>
-            <terminationCondition>t==100</terminationCondition>
+            <terminationCondition>t==110</terminationCondition>
             <stateNames>Alive</stateNames>
             <stateNames>Dead</stateNames>
         </Node>
         <Node>
             <type>2</type>
             <name>Alive</name>
-            <xPos>381</xPos>
-            <yPos>210</yPos>
-            <width>120</width>
-            <height>40</height>
-            <parentX>326</parentX>
-            <parentY>275</parentY>
+            <xPos>626</xPos>
+            <yPos>341</yPos>
+            <width>198</width>
+            <height>66</height>
+            <parentX>532</parentX>
+            <parentY>449</parentY>
             <parentType>1</parentType>
             <childIndices>4</childIndices>
             <childIndices>5</childIndices>
@@ -556,12 +561,12 @@
         <Node>
             <type>2</type>
             <name>Dead</name>
-            <xPos>381</xPos>
-            <yPos>300</yPos>
-            <width>120</width>
-            <height>40</height>
-            <parentX>326</parentX>
-            <parentY>275</parentY>
+            <xPos>625</xPos>
+            <yPos>495</yPos>
+            <width>198</width>
+            <height>66</height>
+            <parentX>532</parentX>
+            <parentY>449</parentY>
             <parentType>1</parentType>
             <childIndices>6</childIndices>
             <level>2</level>
@@ -576,12 +581,12 @@
         <Node>
             <type>4</type>
             <name>Survive</name>
-            <xPos>666</xPos>
-            <yPos>190</yPos>
-            <width>20</width>
-            <height>20</height>
-            <parentX>501</parentX>
-            <parentY>230</parentY>
+            <xPos>1095</xPos>
+            <yPos>308</yPos>
+            <width>33</width>
+            <height>33</height>
+            <parentX>824</parentX>
+            <parentY>374</parentY>
             <parentType>2</parentType>
             <level>3</level>
             <hasCost>false</hasCost>
@@ -595,12 +600,12 @@
         <Node>
             <type>4</type>
             <name>Die</name>
-            <xPos>666</xPos>
-            <yPos>250</yPos>
-            <width>20</width>
-            <height>20</height>
-            <parentX>501</parentX>
-            <parentY>230</parentY>
+            <xPos>1095</xPos>
+            <yPos>406</yPos>
+            <width>33</width>
+            <height>33</height>
+            <parentX>824</parentX>
+            <parentY>374</parentY>
             <parentType>2</parentType>
             <level>3</level>
             <hasCost>false</hasCost>
@@ -614,12 +619,12 @@
         <Node>
             <type>4</type>
             <name>Dead</name>
-            <xPos>666</xPos>
-            <yPos>310</yPos>
-            <width>20</width>
-            <height>20</height>
-            <parentX>501</parentX>
-            <parentY>320</parentY>
+            <xPos>1094</xPos>
+            <yPos>506</yPos>
+            <width>33</width>
+            <height>33</height>
+            <parentX>823</parentX>
+            <parentY>528</parentY>
             <parentType>2</parentType>
             <level>3</level>
             <hasCost>false</hasCost>
@@ -632,7 +637,7 @@
         </Node>
         <maxCycles>1000</maxCycles>
         <stateDecimals>4</stateDecimals>
-        <halfCycleCorrection>false</halfCycleCorrection>
+        <halfCycleCorrection>true</halfCycleCorrection>
         <discountRewards>false</discountRewards>
         <discountStartCycle>0</discountStartCycle>
         <cyclesPerYear>1.0</cyclesPerYear>
