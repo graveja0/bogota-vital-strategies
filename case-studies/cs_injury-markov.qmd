@@ -20,10 +20,9 @@ Our Markov model will allow us to capture the progression of firework-related in
 
 This approach will provide a more comprehensive assessment of the lifetime health and economic impacts of the proposed strategies, considering factors such as long-term healthcare costs, changes in injury rates, and compliance levels. The Markov model’s ability to incorporate these extended horizons and recurring events will yield deeper insights into the most effective and sustainable approaches to mitigating firework-related injuries in Columbia.
 
-
 # Alive-Dead Model
 
-We will start by constructing a simple Markov model representing just two health states: "Alive" and "Dead." We will assume that individuals can transition between these states based on the probabilities of surviving as calculated using demographic life table data from Columbia. Once we validate that we can successfully replicate life expectancy from birth, we can begin to augment the model with firework injuries, strategies, costs, etc. 
+We will start by constructing a simple Markov model representing just two health states: "Alive" and "Dead." We will assume that individuals can transition between these states based on the probabilities of surviving as calculated using demographic life table data from Columbia. Once we validate that we can successfully replicate life expectancy from birth, we can begin to augment the model with firework injuries, strategies, costs, etc.
 
 ## Markov Structure: Alive-Dead
 
@@ -264,10 +263,17 @@ Amua may also include additional blank rows when it imports the table. Before yo
 
 Next, we can define the *time-varying variable* `p_injury_t` (which reads from the table we just defined and operates as the background mortality probability in the current model cycle, $t$).
 
-*Make sure you create a variable and not a parameter.* Under “Variables”, click <img src="../amua-images/add_16.png" alt="Custom Icon" width="20" height="20"/> to add a variable p_injury_t = tbl_p_injury[age_initial + t, 1].
+*Make sure you create a variable and not a parameter.* Under “Variables”, click <img src="../amua-images/add_16.png" alt="Custom Icon" width="20" height="20"/> to add a variable p_injury_t = tbl_p_injury\[age_initial + t, 1\].
 
 ::: {.callout-caution appearance="minimal"}
 Re-run the model using age-specific injury probabilities. How does the expected number of overall and fatal injuries change from when we used the fixed probabilities above?
 :::
 
 # Add Regulate and Ban Scenarios
+
+As in the Decision Tree case study, we'll next add in two additional strategies that aim to reduce the probability of injury:
+
+| Description                                   | Base Case Value | Parameter Name    |
+|-----------------------------------|------------------|------------------|
+| Probability of Recovery: Mild/Moderate Injury | 0.85            | p_recover_mildmod |
+| Probability of Recovery: Major Injury         | 0.6             | p_recover_severe  |
