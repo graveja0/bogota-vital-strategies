@@ -1,1 +1,5 @@
 /* css styles */
+.quarto-content {
+  max-width: 1200px; /* Adjust the width as needed */
+  margin: auto; /* Center the content */
+}
