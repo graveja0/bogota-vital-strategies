@@ -24,6 +24,12 @@ This approach will provide a more comprehensive assessment of the lifetime healt
 
 We will start by constructing a simple Markov model representing just two health states: "Alive" and "Dead." We will assume that individuals can transition between these states based on the probabilities of surviving as calculated using demographic life table data from Columbia. Once we validate that we can successfully replicate life expectancy from birth, we can begin to augment the model with firework injuries, strategies, costs, etc.
 
+## Open New Model
+
+Click on Model {{< fa arrow-right >}} New Markov {{< fa arrow-right >}} model to start a new model in Amua.
+
+![](images/clipboard-2052749061.png){fig-align="center" width="400"}
+
 ## Markov Structure: Alive-Dead
 
 The structure of the Markov model for the Alive-Dead model is shown in the figure below. Amua has a special Markov node (represented by <img src="../amua-images/markovChain_24.png" alt="Custom Icon" width="20" height="20"/> ). The branches that lead off a Markov node designate all the Markov states (and only Markov states).
@@ -274,6 +280,6 @@ Re-run the model using age-specific injury probabilities. How does the expected 
 As in the Decision Tree case study, we'll next add in two additional strategies that aim to reduce the probability of injury:
 
 | Description                                   | Base Case Value | Parameter Name    |
-|-----------------------------------|------------------|------------------|
+|----------------------------------|-------------------|-------------------|
 | Probability of Recovery: Mild/Moderate Injury | 0.85            | p_recover_mildmod |
 | Probability of Recovery: Major Injury         | 0.6             | p_recover_severe  |
