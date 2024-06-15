@@ -4,7 +4,7 @@
     "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#objetivos-de-aprendizaje",
     "title": "Umbrales de tratamiento y valor de la información",
     "section": "Objetivos de aprendizaje",
-    "text": "Objetivos de aprendizaje\n\nDefinir los umbrales de tratamiento en un árbol de decisión y examinar diferentes formas de interpretación\nComprender y calcular el valor de la información de una prueba perfecta frente a una imperfecta prueba imperfecta"
+    "text": "Objetivos de aprendizaje\n\nDefinir los umbrales de tratamiento en un árbol de decisión y examinar diferentes formas de interpretación\nComprender y calcular el valor de la información de una prueba perfecta frente a una prueba imperfecta"
   },
   {
     "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#resumen",
@@ -81,7 +81,7 @@
     "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-9",
     "title": "Umbrales de tratamiento y valor de la información",
     "section": "Umbrales de tratamiento",
-    "text": "Umbrales de tratamiento\n\nRealizar una prueba para obtener información adicional SÓLO merece la pena SI: \n\nAl menos una decisión cambiaría dados algunos resultados de la prueba, y/o\\. \nEl riesgo para el paciente asociado a la prueba es menor que el beneficio esperado de someterse a la prueba"
+    "text": "Umbrales de tratamiento\n\nRealizar una prueba para obtener información adicional SÓLO merece la pena SI: \n\nAl menos una decisión cambiaría dados algunos resultados de la prueba, y/o. \nEl riesgo para el paciente asociado a la prueba es menor que el beneficio esperado de someterse a la prueba"
   },
   {
     "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-10",
@@ -102,32 +102,32 @@
     "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#umbrales-de-tratamiento-12",
     "title": "Umbrales de tratamiento y valor de la información",
     "section": "Umbrales de tratamiento",
-    "text": "Umbrales de tratamiento\n\nNo tratar – Umbral de prueba  Probabilidad de indiferencia entre probar y no tratar\n\nUmbral de prueba y tratamiento  Probabilidad de indiferencia entre prueba y tratamiento"
-  },
-  {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information",
-    "title": "Umbrales de tratamiento y valor de la información",
-    "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information\n\n\n\nEn teoría, la información puede ser perfecta, gratuita y sin riesgos, pero ¡normalmente NO LO ES!\nLa información es casi siempre IMPERFECTA\nObtener información suele TENER UN COSTO"
-  },
-  {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-1",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-1",
-    "title": "Umbrales de tratamiento y valor de la información",
-    "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information\n\n\nEl valor de la información pregunta: ¿Qué ganamos con esta información adicional?\n\n\n\nValor de la información =\n|[valor esperado de la estrategia “obtener información] –\n[valor esperado de la siguiente mejor estrategia]|"
-  },
-  {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-2",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#testing-expected-value-of-information-2",
-    "title": "Umbrales de tratamiento y valor de la información",
-    "section": "Testing & expected value of information",
-    "text": "Testing & expected value of information\n\nLas pruebas PERFECTAS nos dan un límite superior del beneficio potencial de cualquier prueba\n\n\n\nLa ganancia de esta prueba PERFECTA es el valor esperado de la información perfecta (EVPI)"
+    "text": "Umbrales de tratamiento\n\nUmbral de prueba y no tratar  Probabilidad de indiferencia entre probar y no tratar\n\nUmbral de prueba y tratamiento  Probabilidad de indiferencia entre probar y tratar"
   },
   {
     "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información",
     "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información",
+    "title": "Umbrales de tratamiento y valor de la información",
+    "section": "Pruebas y valor esperado de la información",
+    "text": "Pruebas y valor esperado de la información\n\n\n\nEn teoría, la información puede ser perfecta, gratuita y sin riesgos, pero ¡normalmente NO LO ES!\nLa información es casi siempre IMPERFECTA\nObtener información suele TENER UN COSTO"
+  },
+  {
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información-1",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información-1",
+    "title": "Umbrales de tratamiento y valor de la información",
+    "section": "Pruebas y valor esperado de la información",
+    "text": "Pruebas y valor esperado de la información\n\n\nEl valor de la información pregunta: ¿Qué ganamos con esta información adicional?\n\n\n\nValor de la información =\n[valor esperado de la estrategia “obtener información] –\n[valor esperado de la siguiente mejor estrategia]"
+  },
+  {
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información-2",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información-2",
+    "title": "Umbrales de tratamiento y valor de la información",
+    "section": "Pruebas y valor esperado de la información",
+    "text": "Pruebas y valor esperado de la información\n\nLas pruebas PERFECTAS nos dan un límite superior del beneficio potencial de cualquier prueba\n\n\n\nLa ganancia de esta prueba PERFECTA es el valor esperado de la información perfecta (EVPI)"
+  },
+  {
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información-3",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información-3",
     "title": "Umbrales de tratamiento y valor de la información",
     "section": "Pruebas y valor esperado de la información",
     "text": "Pruebas y valor esperado de la información"
@@ -144,7 +144,7 @@
     "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-perfecta-100-sensitividad-y-specificidad-sin-riesgo-1",
     "title": "Umbrales de tratamiento y valor de la información",
     "section": "Una prueba perfecta (100% sensitividad y specificidad) sin riesgo",
-    "text": "Una prueba perfecta (100% sensitividad y specificidad) sin riesgo\n\n\n\n\n\n\nEV(prueba perfecta) = 0.12\nEV(estrategia de tratamiento) = 0.16\nEV(estrategia de no tratar) = 0.24 (peor EV)\n\nEVPI =\n|EV ‘prueba perfecta’ – EV ‘siguiente mejor estrategia: tratar a todos’|\n=|0.12 – 0.16| = 0.04,\no 4 muertes evitadas por cada 100 pruebas gracias a la información adicional de la prueba"
+    "text": "Una prueba perfecta (100% sensitividad y specificidad) sin riesgo\n\n\n\n\n\n\nEV(prueba perfecta) = 0.12\nEV(estrategia de tratamiento) = 0.16\nEV(estrategia de no tratar) = 0.24 (peor EV)\n\nEVPI =\nEV ‘prueba perfecta’ – EV ‘siguiente mejor estrategia: tratar a todos’\n=0.12 – 0.16 = 0.04,\no 4 muertes evitadas por cada 100 pruebas gracias a la información adicional de la prueba"
   },
   {
     "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#una-prueba-imperfecta-con-riesgo-de-morbilidad",
@@ -168,11 +168,11 @@
     "text": "Una prueba imperfecta con riesgo de morbilidad\n\n\nCuando la prueba es imperfecta, probar sigue siendo la mejor estrategia (en este caso, cuanto menor sea el VE, mejor, ya que nuestros valores de resultado son la probabilidad de un mal resultado), pero no por mucho:"
   },
   {
-    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información-1",
-    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información-1",
+    "objectID": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información-4",
+    "href": "lectures/ESP_lec_4a.trt-thresholds-voi.html#pruebas-y-valor-esperado-de-la-información-4",
     "title": "Umbrales de tratamiento y valor de la información",
     "section": "Pruebas y valor esperado de la información",
-    "text": "Pruebas y valor esperado de la información\n\nCuando la prueba es IMPERFECTA: \n\nEV(estrategia de prueba) = 0,157\nEV(estrategia de tratamiento) = 0,16\nEV(estrategia de no tratar) = 0,24 (peor EV)\n\n\n\nVOI = |EV ‘prueba’ – EV ‘siguiente mejor estrategia’||\n= |0.157 – 0.16| = 0.003,\no 3 muertes evitadas por cada 1.000 pruebas gracias a la información adicional de las pruebas.\n\n\n\n\n\nVolver al sitio web"
+    "text": "Pruebas y valor esperado de la información\n\nCuando la prueba es IMPERFECTA: \n\nEV(estrategia de prueba) = 0,157\nEV(estrategia de tratamiento) = 0,16\nEV(estrategia de no tratar) = 0,24 (peor EV)\n\n\n\nVOI = EV ‘prueba’ – EV ‘siguiente mejor estrategia’\n= 0.157 – 0.16 = 0.003,\no 3 muertes evitadas por cada 1.000 pruebas gracias a la información adicional de las pruebas.\n\n\n\n\n\nVolver al sitio web"
   },
   {
     "objectID": "lectures/lec_2.decision-trees-and-probabilities.html#learning-objectives",
@@ -599,7 +599,7 @@
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#características-de-la-evaluación-económica",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Características de la evaluación económica",
-    "text": "Características de la evaluación económica\n\n\n Cuantificación sistemática de costos y consecuencias.\n\n\n\n Análisis comparativo de cursos de acción alternativos. de acción.\n\nNos centraremos en esto en la próxima sesión."
+    "text": "Características de la evaluación económica\n\n\n Cuantificación sistemática de costos y consecuencias.\n\n\n\n Análisis comparativo de cursos de acción alternativos.\n\nNos centraremos en esto en la próxima sesión."
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#técnicas-de-evaluación-económica",
@@ -627,7 +627,7 @@
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-efectividad-ace",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Análisis Costo-Efectividad (ACE)",
-    "text": "Análisis Costo-Efectividad (ACE)\n\n\n\nMás útil cuando los responsables de la toma de decisiones consideran múltiples opciones dentro de un presupuesto, y el resultado relevante es común a todas las estrategias\n\n\n\n\nLos costos se valoran en términos monetarios ($)\nLos beneficios se valoran en términos de resultados clínicos (por ejemplo, casos prevenidos o curados, vidas salvadas, años de vida ganados, años de vida ganados ajustados a la calidad)\nLos resultados se presentan como una relación costo-efectividad"
+    "text": "Análisis Costo-Efectividad (ACE)\n\n\n\nMás útil cuando los responsables de la toma de decisiones consideran múltiples opciones dentro de un presupuesto, y el resultado relevante es común a todas las estrategias\n\n\n\n\nLos costos se valoran en términos monetarios ($)\nLos beneficios se valoran en términos de resultados clínicos (por ejemplo, casos prevenidos o curados, vidas salvadas, años de vida ganados, años de vida ganados ajustados a la calidad)\nLos resultados se presentan como una razón costo-efectividad"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-efectividad",
@@ -648,7 +648,7 @@
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-utilidad",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Análisis Costo-Utilidad",
-    "text": "Análisis Costo-Utilidad\n\n\nEsencialmente una variante del análisis costo-efectividad.\nCaracterística principal: uso de medida genérica de salud.\nAño de vida ajustado por calidad (AVAC): Una métrica que refleja tanto como la calidad de vida (dolor, función o ambos).\nEs la forma de evaluación económica más publicada.\n\n\n\n\n\n\n\n\n\nA lo largo del taller nos centraremos principalmente en el ACE (especialmente en el ACU)."
+    "text": "Análisis Costo-Utilidad\n\n\nEsencialmente una variante del análisis costo-efectividad.\nCaracterística principal: uso de medida genérica de salud.\nAño de vida ajustado por calidad (AVAC): Una métrica que refleja tanto la cantidad como la calidad de vida (dolor, función o ambos).\nEs la forma de evaluación económica más publicada.\n\n\n\n\n\n\n\n\n\nA lo largo del taller nos centraremos principalmente en el ACE (especialmente en el ACU)."
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#técnicas-de-evaluación-económica-3",
@@ -662,7 +662,7 @@
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-beneficio",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Análisis Costo-Beneficio",
-    "text": "Análisis Costo-Beneficio\n\nRelevante para la asignación de recursos entre sanidad y otras áreas (por ejemplo, la educación)\nLos costos y las consecuencias para la salud se valoran en términos monetarios (p. ej, dólares estadounidenses).\nLa valoración de las consecuencias sanitarias en términos monetarios ($) se obtiene estimando la disposición de los individuos a pagar para salvar vidas o mejorar la salud.\n\nPor ejemplo, en EE.UU. se estima que el valor por vida estadística es de 9 millones de dólares.\n\nCriterio costo-beneficio: los beneficios de un programa son superiores a sus costos.\n\nObsérvese que no estamos haciendo comparaciones entre estrategias, sólo comparaciones de costos y beneficios de la misma estrategia. estrategia]{style=“background-color: yellow;”}\n\nPara saber más: Robinson et al, 2019"
+    "text": "Análisis Costo-Beneficio\n\nRelevante para la asignación de recursos entre salud y otros sectores (por ejemplo, la educación)\nLos costos y las consecuencias para la salud se valoran en términos monetarios (p. ej, dólares estadounidenses).\nLa valoración de las consecuencias sanitarias en términos monetarios ($) se obtiene estimando la disposición de los individuos a pagar para salvar vidas o mejorar la salud.\n\nPor ejemplo, en EE.UU. se estima que el valor por vida estadística es de 9 millones de dólares.\n\nCriterio costo-beneficio: los beneficios de un programa son superiores a sus costos.\n\nObsérvese que no estamos haciendo comparaciones entre estrategias, sólo comparaciones de costos y beneficios de la misma estrategia.\n\nPara saber más: Robinson et al, 2019"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-beneficio-1",
@@ -683,14 +683,14 @@
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#volvemos-al-análisis-costo-efectividad",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "¡Volvemos al Análisis Costo-Efectividad!",
-    "text": "¡Volvemos al Análisis Costo-Efectividad!\n\n\nRelevante cuando las alternativas sanitarias tienen diferentes costos y consecuencias para la salud consecuencias para la salud \n\n\n \\frac{\\text{(Costo Intervención A - Costo Intervención B)}}{\\text{(Beneficio A - Beneficio B)}}\n\n\nEl VALOR relativo de una intervención en comparación con su alternativa se expresa en forma de RELACION costo-efectividad (¡el tema central de la próxima sesión)\n\n\n\nEl análisis costo-efectividad es pertinente cuando las alternativas sanitarias entre diferentes servicios/intervenciones tienen costos DIFERENTES Y consecuencias para la salud EJEMPLO: Diferentes tipos de quimioterapia\nUn RESULTADO CLAVE en los análisis costo-efectividad es lo que se denomina RCEI [o relación costo-efectividad incremental], que nos da el valor relativo de una intervención frente a una alternativa.\nEn otras palabras, EL PRECIO POR UNIDAD DE BENEFICIO de una intervención sobre la otra\nEn las próximas semanas impartiremos 2 clases completas sobre los ICER y cómo interpretar estos relaciónes entre intervenciones. interpretar estos relaciónes entre intervenciones En lo que nos centraremos HOY en los componentes que forman el numerador (es decir, los COSTOS) y el denominador (es decir, los BENEFICIOS). el denominador (es decir, los BENEFICIOS)\nLO IMPORTANTE: Al estimar la magnitud de los resultados y los costos de las intervenciones, los análisis de rentabilidad pueden mostrar las ventajas y desventajas de las distintas intervenciones y, por tanto, contribuir a mejorar la toma de decisiones"
+    "text": "¡Volvemos al Análisis Costo-Efectividad!\n\n\nRelevante cuando las alternativas sanitarias tienen diferentes costos y consecuencias para la salud \n\n\n \\frac{\\text{(Costo Intervención A - Costo Intervención B)}}{\\text{(Beneficio A - Beneficio B)}}\n\n\nEl VALOR relativo de una intervención en comparación con su alternativa se expresa en forma de RAZON costo-efectividad (¡el tema central de la próxima sesión)\n\n\n\nEl análisis costo-efectividad es pertinente cuando las alternativas sanitarias entre diferentes servicios/intervenciones tienen costos DIFERENTES Y consecuencias para la salud EJEMPLO: Diferentes tipos de quimioterapia\nUn RESULTADO CLAVE en los análisis costo-efectividad es lo que se denomina RCEI [o razón costo-efectividad incremental], que nos da el valor relativo de una intervención frente a una alternativa.\nEn otras palabras, EL PRECIO POR UNIDAD DE BENEFICIO de una intervención sobre la otra\nEn las próximas semanas impartiremos 2 clases completas sobre los ICER y cómo interpretar estos razones entre intervenciones. interpretar estos razones entre intervenciones En lo que nos centraremos HOY en los componentes que forman el numerador (es decir, los COSTOS) y el denominador (es decir, los BENEFICIOS). el denominador (es decir, los BENEFICIOS)\nLO IMPORTANTE: Al estimar la magnitud de los resultados y los costos de las intervenciones, los análisis de rentabilidad pueden mostrar las ventajas y desventajas de las distintas intervenciones y, por tanto, contribuir a mejorar la toma de decisiones"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#quién-utiliza-las-evaluaciones-económicas",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#quién-utiliza-las-evaluaciones-económicas",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "¿Quién utiliza las evaluaciones económicas?",
-    "text": "¿Quién utiliza las evaluaciones económicas?\n\n\nComités Asesores de Tecnología Sanitaria\n\nNICE (The National Institute for Health and Care Excellence, REINO UNIDO)\nAgencia de Medicamentos y Tecnología Sanitaria de Canadá (Drug and Health Technology Agency)\nPBAC (Comité Asesor sobre Beneficios Farmacéuticos en Australia)\nInstituto de evaluación de tecnologías sanitarias de Brasil.\n\nGrupos que elaboran directrices clínicas\n\nOMS\nCDC\nOrganizaciones de enfermedades específicas: Sociedad Americana del Cáncer Asociación Americana del Corazón; Organización Europea del Ictus\n\nAgencias reguladoras:\n\nFDA (Administración de Alimentos y Medicamentos de EE.UU.)\nEPA (Agencia de Protección del Medio Ambiente de Estados Unidos)\n\n\n\n\nSi nos fijamos en cómo se utiliza la relación costo-efectividad en todo el mundo –\nA diferencia de Estados Unidos, los gobiernos de muchos países tienen sus propios que realizan evaluaciones formales de la relación costo-efectividad de los algunos de los cuales son\n\nEl Reino Unido - que es un sistema de pagador único conocido como el NHS & tiene un organismo independiente llamado NICE que evalúa la relación costo-efectividad NICE recomienda al NHS lo que debe cubrir en función de su VALOR. NICE recomienda al NHS lo que debe cubrir basándose en el VALOR (es decir, la rentabilidad).\n\n\nEl NHS está legalmente obligado a financiar los medicamentos y tratamientos recomendados por el NICE. recomendados por el NICE\n\n\nCanadá también tiene un organismo de evaluación de tecnologías sanitarias llamado Agencia Canadiense de Medicamentos y Tecnologías Sanitarias (CADTH), que funciona de forma similar al NICE\nY del mismo modo, Australia, así como Brasil, Alemania, Francia, Italia, Suecia, Países Bajos, etc., tienen instituciones gubernamentales similares. similares\nEntre los grupos que elaboran directrices clínicas sobre la ACE se encuentran…"
+    "text": "¿Quién utiliza las evaluaciones económicas?\n\n\nComités Asesores de Tecnología Sanitaria\n\nNICE (The National Institute for Health and Care Excellence, REINO UNIDO)\nAgencia de Medicamentos y Tecnología Sanitaria de Canadá (Drug and Health Technology Agency)\nPBAC (Comité Asesor sobre Beneficios Farmacéuticos en Australia)\nInstituto de evaluación de tecnologías sanitarias de Brasil.\n\nGrupos que elaboran directrices clínicas\n\nOMS\nCDC\nOrganizaciones de enfermedades específicas: Sociedad Americana del Cáncer Asociación Americana del Corazón; Organización Europea del Ictus\n\nAgencias reguladoras:\n\nFDA (Administración de Alimentos y Medicamentos de EE.UU.)\nEPA (Agencia de Protección del Medio Ambiente de Estados Unidos)\n\n\n\n\nSi nos fijamos en cómo se utiliza la razón costo-efectividad en todo el mundo –\nA diferencia de Estados Unidos, los gobiernos de muchos países tienen sus propios que realizan evaluaciones formales de la razón costo-efectividad de los algunos de los cuales son\n\nEl Reino Unido - que es un sistema de pagador único conocido como el NHS & tiene un organismo independiente llamado NICE que evalúa la razón costo-efectividad NICE recomienda al NHS lo que debe cubrir en función de su VALOR. NICE recomienda al NHS lo que debe cubrir basándose en el VALOR (es decir, la rentabilidad).\n\n\nEl NHS está legalmente obligado a financiar los medicamentos y tratamientos recomendados por el NICE. recomendados por el NICE\n\n\nCanadá también tiene un organismo de evaluación de tecnologías sanitarias llamado Agencia Canadiense de Medicamentos y Tecnologías Sanitarias (CADTH), que funciona de forma similar al NICE\nY del mismo modo, Australia, así como Brasil, Alemania, Francia, Italia, Suecia, Países Bajos, etc., tienen instituciones gubernamentales similares. similares\nEntre los grupos que elaboran directrices clínicas sobre la ACE se encuentran…"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#identificación-de-alternativas",
@@ -704,21 +704,21 @@
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#componentes-del-ace",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Componentes del ACE",
-    "text": "Componentes del ACE\n\n \\frac{\\text{(Costo Intervención A - Costo Intervención B)}}{\\text{(Beneficio A - Beneficio B)}}\n\n\nA continuación nos adentraremos en los componentes de los análisis costo-efectividad analizando en primer lugar lo que constituye el NUMERADOR de la relación costo-efectividad y, a continuación, profundizaremos en el DENOMINADOR"
+    "text": "Componentes del ACE\n\n \\frac{\\text{(Costo Intervención A - Costo Intervención B)}}{\\text{(Beneficio A - Beneficio B)}}\n\n\nA continuación nos adentraremos en los componentes de los análisis costo-efectividad analizando en primer lugar lo que constituye el NUMERADOR de la razón costo-efectividad y, a continuación, profundizaremos en el DENOMINADOR"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#valoración-de-costos-pasos",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#valoración-de-costos-pasos",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Valoración de costos: Pasos",
-    "text": "Valoración de costos: Pasos\nFuente: Gold 1996, Drummond 2015, Gray 2012) \n\nIdentificar – Estimar las diferentes categorías de recursos probablemente necesarios (por ejemplo, personal quirúrgico, equipo médico, complicaciones quirúrgicas, reingresos)  \nMedir – Estimar qué cantidad de cada categoría de recursos (por ejemplo, tipo de personal que realiza la intervención implicado, duración de la estancia postoperatoria, tasas de reingreso)  \nValor – Aplicar costos unitarios a cada categoría de recursos (por ejemplo, escalas salariales del hospital correspondiente o tarifas salariales nacionales para salarios del personal, costo por día de hospitalización para la estancia)"
+    "text": "Valoración de costos: Pasos\nFuente: Gold 1996, Drummond 2015, Gray 2012) \n\nIdentificar – Estimar las diferentes categorías de recursos probablemente necesarios (por ejemplo, personal quirúrgico, equipo médico, complicaciones quirúrgicas, reingresos)  \nMedir – Estimar qué cantidad de cada categoría de recursos (por ejemplo, tipo de personal que realiza la intervención implicado, duración de la estancia postoperatoria, tasas de reingreso)  \nValor – Aplicar costos unitarios a cada categoría de recursos (por ejemplo, escalas salariales del hospital correspondiente o tarifas nacionales para salarios del personal, costo por día de hospitalización para la estancia)"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#podemos-identificar-diferentes-tipos-de-costos-sanitarios",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#podemos-identificar-diferentes-tipos-de-costos-sanitarios",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Podemos identificar diferentes tipos de costos sanitarios",
-    "text": "Podemos identificar diferentes tipos de costos sanitarios\n\n\n\nCostos sanitarios directos\n\nHospital, consultorio, hogar, instalaciones\nMedicamentos, procedimientos, pruebas, honorarios profesionales\n\nCostos directos no sanitarios**]{style=“color: #57886C”}\n\nCuidado de niños, gastos de transporte\n\nCostos de tiempo**]{style=“color: #57886C”}\n\nTiempo del paciente recibiendo atención, costo de oportunidad del tiempo\n\nCostos de productividad (‘costos indirectos’)**]{style=“color: #57886C”}\n\n¿Pérdida de la capacidad laboral por morbilidad?\n¿Pérdida de productividad económica por fallecimiento?\n\nCostos sanitarios no relacionados**]{style=“color: #57886C”}\n\nTrayectoria acumulada de los costos sanitarios totales a lo largo del tiempo (no relacionados con intervenciones médicas)"
+    "text": "Podemos identificar diferentes tipos de costos sanitarios\n\n\n\nCostos sanitarios directos\n\nHospital, consultorio, hogar, instalaciones\nMedicamentos, procedimientos, pruebas, honorarios profesionales\n\nCostos directos no sanitarios**\n\nCuidado de niños, gastos de transporte\n\nCostos de tiempo**\n\nTiempo del paciente recibiendo atención, costo de oportunidad del tiempo\n\nCostos de productividad (‘costos indirectos’)**\n\n¿Pérdida de la capacidad laboral por morbilidad?\n¿Pérdida de productividad económica por fallecimiento?\n\nCostos sanitarios no relacionados**\n\nTrayectoria acumulada de los costos sanitarios totales a lo largo del tiempo (no relacionados con intervenciones médicas)"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#identificación-de-costos-continuación",
@@ -732,7 +732,7 @@
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#podemos-medir-los-costos-utilizando-diferentes-enfoques",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Podemos medir los costos utilizando diferentes enfoques",
-    "text": "Podemos medir los costos utilizando diferentes enfoques\n\n\nMicrocostos (“bottom-up”)\n\nMedir todos los recursos utilizados por los pacientes individuales y, a continuación, asignar el costo unitario a cada tipo de recurso consumido para calcular el costo total\n\nCosto bruto (“top-down”)\n\nEstimar el costo para un volumen determinado de pacientes dividiendo el costo total por el volumen de uso del servicio\nEjemplo: Costos descendentes (por ejemplo, hospitalización por sobredosis de opiáceos) sobredosis de opiáceos)\n\nEnfoque basado en los ingredientes (P x Q x C)\n\nProbabilidad de ocurrencia (P)\nCantidad (Q)\nCostos unitarios (C)\n\n\n\n\n\nMicrocosto: el más preciso (es un enfoque ascendente en el que por ejemplo, todas las pruebas de laboratorio, camas hospitalarias tiempo del proveedor, pruebas de imagen, equipos utilizados, etc.)\nCosto bruto: Normalmente es lo que tenemos para cuantificar los “costos descendentes” – pero también podemos utilizar este método para calcular el costo de una intervención si no disponemos de datos para el enfoque del microcosto.\n\n\nPor ejemplo, si sabemos que 10 prótesis totales de rodilla nos costaron \\300.000 dólares el mes pasado, es decir, 30.000 dólares por intervención.\n\n\nEnfoque de ingredientes: Supongamos que sabemos que el 10% de las cirugías son complicadas, y las cirugías complicadas requieren un 50% más de cirujano tiempo del cirujano, y el tiempo del cirujano cuesta $500/hr"
+    "text": "Podemos medir los costos utilizando diferentes enfoques\n\n\nMicrocostos (“bottom-up”)\n\nMedir todos los recursos utilizados por los pacientes individuales y, a continuación, asignar el costo unitario a cada tipo de recurso consumido para calcular el costo total\n\nCosto bruto (“top-down”)\n\nEstimar el costo para un volumen determinado de pacientes dividiendo el costo total por el volumen de uso del servicio\nEjemplo: Costos descendentes (por ejemplo, hospitalización por sobredosis de opiáceos)\n\nEnfoque basado en los ingredientes (P x Q x C)\n\nProbabilidad de ocurrencia (P)\nCantidad (Q)\nCostos unitarios (C)\n\n\n\n\n\nMicrocosto: el más preciso (es un enfoque ascendente en el que por ejemplo, todas las pruebas de laboratorio, camas hospitalarias tiempo del proveedor, pruebas de imagen, equipos utilizados, etc.)\nCosto bruto: Normalmente es lo que tenemos para cuantificar los “costos descendentes” – pero también podemos utilizar este método para calcular el costo de una intervención si no disponemos de datos para el enfoque del microcosto.\n\n\nPor ejemplo, si sabemos que 10 prótesis totales de rodilla nos costaron \\300.000 dólares el mes pasado, es decir, 30.000 dólares por intervención.\n\n\nEnfoque de ingredientes: Supongamos que sabemos que el 10% de las cirugías son complicadas, y las cirugías complicadas requieren un 50% más de cirujano tiempo del cirujano, y el tiempo del cirujano cuesta $500/hr"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#perspectiva-de-quién",
@@ -752,15 +752,15 @@
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#la-perspectiva-de-quién-1",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#la-perspectiva-de-quién-1",
     "title": "Fundamentos del CEA: Valoración de costos",
-    "section": "¿La perspectiva de quién? {}",
-    "text": "¿La perspectiva de quién? {}\n\nPerspectiva del sector sanitario\n\nMAMOGRAFÍA (Sector sanitario): \n\nCostos asociados al tamizaje en sí [procedimiento mamografía + tiempo del médico]\nCostos de las pruebas de seguimiento para falsos positivos y verdaderos positivos\nCostos (o ahorros) derivados de los casos de cáncer de mama, como hospitalización + costos de tratamiento\nCostos no relacionados con la intervención médica/enfermedad; de vivir más tiempo debido a la mamografía\n\n\n\nVeamos un ejemplo: mamografía para el tamizaje del cáncer de mama.\nSi tuviéramos que calcular el costo desde el punto de vista del sector sanitario sanitario, habría que tener en cuenta\n\n\nCostos asociados al propio tamizaje: costos del procedimiento costos del procedimiento + tiempo del médico\nCostos de las pruebas de seguimiento, tanto para los falsos positivos como para los verdaderos positivos. positivos verdaderos\nCostos (o ahorros) derivados de los casos de cáncer de mama cáncer de mama, incluidas hospitalizaciones y costos de tratamiento\n\n***EJEMPLO: Supongamos que queremos examinar la diferencia entre entre el tamizaje mamográfico rutinario a los 40 y a los 50 años. habrá costos iniciales más elevados a los 40 años, PERO si detectamos más casos de cáncer de mama que si esperamos, entonces eso podría potencialmente ahorrar mucho costos de tratamiento/hospitalización\nLISA, el LIBRO dice COSTOS EVITADOS para los costos posteriores\n\nCostos no relacionados con la intervención médica debidos al hecho de vivir más tiempo (se tratarán en las próximas diapositivas). discutiremos en las próximas diapositivas)"
+    "section": "¿La perspectiva de quién?",
+    "text": "¿La perspectiva de quién?\n\nPerspectiva del sector sanitario\n\nMAMOGRAFÍA (Sector sanitario): \n\nCostos asociados al tamizaje en sí [procedimiento mamografía + tiempo del médico]\nCostos de las pruebas de seguimiento para falsos positivos y verdaderos positivos\nCostos (o ahorros) derivados de los casos de cáncer de mama, como hospitalización + costos de tratamiento\nCostos no relacionados con la intervención médica/enfermedad; de vivir más tiempo debido a la mamografía\n\n\n\nVeamos un ejemplo: mamografía para el tamizaje del cáncer de mama.\nSi tuviéramos que calcular el costo desde el punto de vista del sector sanitario sanitario, habría que tener en cuenta\n\n\nCostos asociados al propio tamizaje: costos del procedimiento costos del procedimiento + tiempo del médico\nCostos de las pruebas de seguimiento, tanto para los falsos positivos como para los verdaderos positivos. positivos verdaderos\nCostos (o ahorros) derivados de los casos de cáncer de mama cáncer de mama, incluidas hospitalizaciones y costos de tratamiento\n\n***EJEMPLO: Supongamos que queremos examinar la diferencia entre entre el tamizaje mamográfico rutinario a los 40 y a los 50 años. habrá costos iniciales más elevados a los 40 años, PERO si detectamos más casos de cáncer de mama que si esperamos, entonces eso podría potencialmente ahorrar mucho costos de tratamiento/hospitalización\nLISA, el LIBRO dice COSTOS EVITADOS para los costos posteriores\n\nCostos no relacionados con la intervención médica debidos al hecho de vivir más tiempo (se tratarán en las próximas diapositivas). discutiremos en las próximas diapositivas)"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#perspectiva-de-quién-1",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#perspectiva-de-quién-1",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "¿Perspectiva de quién?",
-    "text": "¿Perspectiva de quién?\n\nPerspectiva social\n\nMAMOGRAFÍA (Perspectiva social): \n\nCostos asociados al tamizaje en sí [procedimiento de mamografía + tiempo del médico]\nCostos de las pruebas de seguimiento tanto para falsos positivos como para verdaderos positivos\nCostos (o ahorros) derivados de los casos de cáncer de mama, como hospitalización + costos de tratamiento\nCostos no relacionados con la intervención médica/enfermedad; de vivir más tiempo debido a la mamografía\nPérdidas de productividad de los pacientes asociadas al tamizaje o al tratamiento del cáncer]{style=“background-color: yellow;”}\nCostos de guardería/transporte]{style=“background-color: yellow;”}"
+    "text": "¿Perspectiva de quién?\n\nPerspectiva social\n\nMAMOGRAFÍA (Perspectiva social): \n\nCostos asociados al tamizaje en sí [procedimiento de mamografía + tiempo del médico\nCostos de las pruebas de seguimiento tanto para falsos positivos como para verdaderos positivos\nCostos (o ahorros) derivados de los casos de cáncer de mama, como hospitalización + costos de tratamiento\nCostos no relacionados con la intervención médica/enfermedad; de vivir más tiempo debido a la mamografía\nPérdidas de productividad de los pacientes asociadas al tamizaje o al tratamiento del cáncer\nCostos de guardería/transporte"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#dos-enfoques",
@@ -858,7 +858,7 @@
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajuste-por-inflación-motivación",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Ajuste por inflación motivación",
-    "text": "Ajuste por inflación motivación\n\n\n100 $ en 2000 no equivalen a 100 $ en 2020\n\n ¡100 $ podían comprar mucho más en 2000!\n\nEs importante ajustar la diferencia de precios a lo largo del tiempo, especialmente cuando se trabaja con fuentes de costos de varios años"
+    "text": "Ajuste por inflación motivación\n\n\n100 $ en 2000 no equivalen a 100 $ en 2020\n\n¡100 $ podían comprar mucho más en 2000!\n\nEs importante ajustar la diferencia de precios a lo largo del tiempo, especialmente cuando se trabaja con fuentes de costos de varios años"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#ajuste-por-inflación-ejemplo",
@@ -886,7 +886,7 @@
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#conversión-de-monedas-1",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Conversión de monedas",
-    "text": "Conversión de monedas\n\n\nNo es necesario para CEA pero puede ser útil en algunas situaciones:\n\nEjemplo: puede ser necesario convertir la moneda local a USD porque porque los umbrales de costo-efectividad suelen estimarse en USD por AVAD.\n\n¿Cómo se convierten 1.000 Nairas a USD?\nTipo de cambio actual en 2023: 1 Naira = ~0,0013 USD\n1.000 Nairas = 1,3 USD"
+    "text": "Conversión de monedas\n\n\nNo es necesario para CEA pero puede ser útil en algunas situaciones:\n\nEjemplo: puede ser necesario convertir la moneda local a USD porque los umbrales de costo-efectividad suelen estimarse en USD por AVAD.\n\n¿Cómo se convierten 1.000 Nairas a USD?\nTipo de cambio actual en 2023: 1 Naira = ~0,0013 USD\n1.000 Nairas = 1,3 USD"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#por-qué-descontar",
@@ -2090,7 +2090,7 @@
     "href": "lectures/ESP_lec_5b.cea-fundamentals2.html#objetivos-de-aprendizaje",
     "title": "Fundamentos del CEA: Valoración de los resultados sanitarios",
     "section": "Objetivos de aprendizaje",
-    "text": "Objetivos de aprendizaje\n\nComprender los conceptos de medidas resumidas de la salud, en concreto años de vida ajustados por calidad (AVAC)\nDescribir las diferencias generales entre los métodos directos e indirectos para estimar las utilidades del estado de salud\nSeleccionar los parámetros del modelo para cuantificar los “beneficios” (el denominador en el cociente CEA)"
+    "text": "Objetivos de aprendizaje\n\nComprender los conceptos de medidas resumidas de la salud, en concreto años de vida ajustados por calidad (AVAC)\nDescribir las diferencias generales entre los métodos directos e indirectos para estimar las utilidades del estado de salud\nSeleccionar los parámetros del modelo para cuantificar los “beneficios” (el denominador en la RCEI)"
   },
   {
     "objectID": "lectures/ESP_lec_5b.cea-fundamentals2.html#esquema",
@@ -2195,7 +2195,7 @@
     "href": "lectures/ESP_lec_5b.cea-fundamentals2.html#métodos-directos---apuesta-estándar-1",
     "title": "Fundamentos del CEA: Valoración de los resultados sanitarios",
     "section": "Métodos directos - Apuesta estándar",
-    "text": "Métodos directos - Apuesta estándar\n\n¿Qué riesgo de muerte aceptaría para evitar [vivir el resto de su vida con una pierna amputada] y vivir su vida en perfecto estado de salud?”"
+    "text": "Métodos directos - Apuesta estándar\n\n“¿Qué riesgo de muerte aceptaría para evitar [vivir el resto de su vida con una pierna amputada] y vivir su vida en perfecto estado de salud?”"
   },
   {
     "objectID": "lectures/ESP_lec_5b.cea-fundamentals2.html#métodos-directos---apuesta-estándar-2",
@@ -3241,22 +3241,22 @@
     "text": "Incentivos económicos para la atención del derrame cerebral"
   },
   {
-    "objectID": "lectures/ESP_lec_sensitivity.html#incentivos-financieros-para-la-atención-del-derrame-cerebral",
-    "href": "lectures/ESP_lec_sensitivity.html#incentivos-financieros-para-la-atención-del-derrame-cerebral",
-    "title": "Análisis determinista y de escenarios",
-    "section": "Incentivos financieros para la atención del derrame cerebral",
-    "text": "Incentivos financieros para la atención del derrame cerebral\n\n\nEn el marco de las políticas de pago por resultados en EE.UU., se paga más a los médicos u hospitales por alcanzar objetivos de calidad basados en la evidencia\nObjetivo del estudio: Ilustrar cómo los incentivos de pago por resultados pueden limitarse cuantitativamente mediante modelos de costo-efectividad, a través de la aplicación del reembolso a los hospitales por un tiempo más rápido hasta el ATP para el derrame cerebral."
-  },
-  {
     "objectID": "lectures/ESP_lec_sensitivity.html#incentivos-económicos-para-la-atención-del-derrame-cerebral-1",
     "href": "lectures/ESP_lec_sensitivity.html#incentivos-económicos-para-la-atención-del-derrame-cerebral-1",
+    "title": "Análisis determinista y de escenarios",
+    "section": "Incentivos económicos para la atención del derrame cerebral",
+    "text": "Incentivos económicos para la atención del derrame cerebral\n\n\nEn el marco de las políticas de pago por resultados en EE.UU., se paga más a los médicos u hospitales por alcanzar objetivos de calidad basados en la evidencia\nObjetivo del estudio: Ilustrar cómo los incentivos de pago por resultados pueden limitarse cuantitativamente mediante modelos de costo-efectividad, a través de la aplicación del reembolso a los hospitales por un tiempo más rápido hasta el ATP para el derrame cerebral."
+  },
+  {
+    "objectID": "lectures/ESP_lec_sensitivity.html#incentivos-económicos-para-la-atención-del-derrame-cerebral-2",
+    "href": "lectures/ESP_lec_sensitivity.html#incentivos-económicos-para-la-atención-del-derrame-cerebral-2",
     "title": "Análisis determinista y de escenarios",
     "section": "Incentivos económicos para la atención del derrame cerebral",
     "text": "Incentivos económicos para la atención del derrame cerebral\n\nCuando se administra rápidamente tras el inicio del derrame (en un plazo de tres horas, según lo aprobado por la FDA), el ATP ayuda a restablecer el flujo sanguíneo a las regiones cerebrales afectadas por un derrame, limitando así el riesgo de daños y deterioro funcional."
   },
   {
-    "objectID": "lectures/ESP_lec_sensitivity.html#incentivos-económicos-para-la-atención-del-derrame-cerebral-2",
-    "href": "lectures/ESP_lec_sensitivity.html#incentivos-económicos-para-la-atención-del-derrame-cerebral-2",
+    "objectID": "lectures/ESP_lec_sensitivity.html#incentivos-económicos-para-la-atención-del-derrame-cerebral-3",
+    "href": "lectures/ESP_lec_sensitivity.html#incentivos-económicos-para-la-atención-del-derrame-cerebral-3",
     "title": "Análisis determinista y de escenarios",
     "section": "Incentivos económicos para la atención del derrame cerebral",
     "text": "Incentivos económicos para la atención del derrame cerebral"
@@ -7752,14 +7752,14 @@
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-2.-defectos-de-nacimiento-1",
     "title": "Introducción al análisis de decisiones",
     "section": "Ej 2. Defectos de nacimiento",
-    "text": "Ej 2. Defectos de nacimiento\n\n\n\n¿Deberíamos comprobar este hipotético defecto de nacimiento?\n\n\n\n\n\n\n\nUn hipotético defecto congénito está presente en 1 de cada 1.000 niños nacidos.\nA menos que se trate, esta condición tiene una tasa de mortalidad del 50%."
+    "text": "Ej 2. Defectos de nacimiento\n\n\n\n¿Deberíamos detectar este hipotético defecto de nacimiento?\n\n\n\n\n\n\n\nUn hipotético defecto congénito está presente en 1 de cada 1.000 niños nacidos.\nA menos que se trate, esta condición tiene una tasa de mortalidad del 50%."
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-2.-defectos-de-nacimiento-2",
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-2.-defectos-de-nacimiento-2",
     "title": "Introducción al análisis de decisiones",
     "section": "Ej 2. Defectos de nacimiento",
-    "text": "Ej 2. Defectos de nacimiento\n\n\n\n¿Deberíamos probar este hipotético defecto de nacimiento?\n\n\n\n\n\n\n\n\nPrueba diagnóstica: Perfectamente preciso\nTodos los recién nacidos en los que se identifica el defecto pueden ser curados con éxito\nPERO la prueba en sí puede ser letal:\n\n4 de cada 10.000 bebés sometidos a la prueba morirán como resultado directo y observable del procedimiento de la prueba"
+    "text": "Ej 2. Defectos de nacimiento\n\n\n\n¿Deberíamosdetectar este hipotético defecto de nacimiento?\n\n\n\n\n\n\n\n\nPrueba diagnóstica: Perfectamente preciso\nTodos los recién nacidos en los que se identifica el defecto pueden ser curados con éxito\nPERO la prueba en sí puede ser letal:\n\n4 de cada 10.000 bebés sometidos a la prueba morirán como resultado directo y observable del procedimiento de la prueba"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-2.-defectos-de-nacimiento-3",
@@ -7822,7 +7822,7 @@
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-3.-cáncer-de-colon-prevención-1",
     "title": "Introducción al análisis de decisiones",
     "section": "Ej 3. Cáncer de colon – Prevención",
-    "text": "Ej 3. Cáncer de colon – Prevención\n\n\n¿Coste-efectividad de pruebas de tamizaje alternativas?\n¿Frecuencias alternativas de tamizaje?\n¿Cómo debería variar el tamizaje según los grupos de riesgo?"
+    "text": "Ej 3. Cáncer de colon – Prevención\n\n\n¿Costo-efectividad de pruebas de tamizaje alternativas?\n¿Frecuencias alternativas de tamizaje?\n¿Cómo debería variar el tamizaje según los grupos de riesgo?"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-3.-cáncer-de-colon---estimación-de-probabilidades",
@@ -7836,7 +7836,7 @@
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#ej-3.-cáncer-de-colon---estimación-de-probabilidades-1",
     "title": "Introducción al análisis de decisiones",
     "section": "Ej 3. Cáncer de colon - Estimación de probabilidades",
-    "text": "Ej 3. Cáncer de colon - Estimación de probabilidades\n\n\n\nPredecir el “beneficio” del tamizaje\n\nTodas las probabilidades anteriores\nProbabilidad de detección precoz\nProbabilidad de complicaciones derivadas de las pruebas\nProbabilidad de falso positivo\nProbabilidad de falso negativo\nProbabilidad de que prueba positiva = cáncer\nProbabilidad de que prueba negativa = sin cáncer"
+    "text": "Ej 3. Cáncer de colon - Estimación de probabilidades\n\n\nPredecir el “beneficio” del tamizaje\n\nTodas las probabilidades anteriores\nProbabilidad de detección precoz\nProbabilidad de complicaciones derivadas de las pruebas\nProbabilidad de falso positivo\nProbabilidad de falso negativo\nProbabilidad de que prueba positiva = cáncer\nProbabilidad de que prueba negativa = sin cáncer"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#la-estimación-de-probabilidades-es-fundamental-para-la-toma-de-decisiones",
@@ -7846,11 +7846,11 @@
     "text": "La estimación de probabilidades es fundamental para la toma de decisiones\n\n\nNo se pueden obtener fácilmente las probabilidades necesarias\nPeríodos de tiempo / duraciones variables\nMétodos para estimar probabilidades"
   },
   {
-    "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#casos-comunes",
-    "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#casos-comunes",
+    "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#commonality-of-cases",
+    "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#commonality-of-cases",
     "title": "Introducción al análisis de decisiones",
-    "section": "Casos comunes",
-    "text": "Casos comunes\n\n\nTradeoffs inevitables\nDiferentes perspectivas pueden llevar a conclusiones diferentes\nMúltiples objetivos contrapuestos\nComplejidad\nIncertidumbre"
+    "section": "Commonality of cases",
+    "text": "Commonality of cases\n\n\nTradeoffs inevitables\nDiferentes perspectivas pueden llevar a conclusiones diferentes\nMúltiples objetivos contrapuestos\nComplejidad\nIncertidumbre"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#análisis-de-decisiones",
@@ -7871,21 +7871,21 @@
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#contenido-del-taller",
     "title": "Introducción al análisis de decisiones",
     "section": "Contenido del taller",
-    "text": "Contenido del taller\n\nFundamentos del análisis de decisiones (Días 1-2)\n\n\nÁrboles de decisión\nTeorema de Bayes y umbrales de tratamiento\nIncertidumbre y priorización de la investigación futura"
+    "text": "Contenido del taller\n\nFundamentos del análisis de decisiones (Días 1)\n\n\nÁrboles de decisión"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#contenido-del-taller-1",
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#contenido-del-taller-1",
     "title": "Introducción al análisis de decisiones",
     "section": "Contenido del taller",
-    "text": "Contenido del taller\n\nFundamentos del análisis costo-efectividad (Días 3-4)\n\n\nValoración de costos y resultados sanitarios\nAnálisis costo-efectividad incremental\nIntroducción a los modelos de Markov"
+    "text": "Contenido del taller\n\nFundamentos del análisis costo-efectividad (Días 2-3)\n\n\nUmbrales de tratamiento y valor de la información\nValoración de costos y resultados sanitarios\nAnálisis costo-efectividad incremental\nIntroducción a los modelos de Markov"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#contenido-del-taller-2",
     "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#contenido-del-taller-2",
     "title": "Introducción al análisis de decisiones",
     "section": "Contenido del taller",
-    "text": "Contenido del taller\n\nAvance de temas avanzados (Día 5)\n\n\nAnálisis de sensibilidad\nMarcos avanzados de modelización CEA."
+    "text": "Contenido del taller\n\nAvance de temas avanzados (Día 4)\n\n\nAnálisis de sensibilidad\nMarcos avanzados de modelización CEA."
   },
   {
     "objectID": "lectures/lec_5b.cea-fundamentals2.html#learning-objectives",
