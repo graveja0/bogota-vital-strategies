@@ -4066,6 +4066,13 @@
     "text": "This case study extend our evaluation of firework injuries using a discrete time Markov cohort model. While the decision tree we constructed yesterday provided immediate outcomes and costs for various strategies, the Markov model offers significant advantages for examining long-term health and cost impacts.\nOur Markov model will allow us to capture the progression of firework-related injuries over an extended period, allowing us to consider long-term implications. By modeling injury events and transitions between different health states over time, we can better understand the chronic effects of injuries and the long-term benefits of intervention strategies.\nThis approach will provide a more comprehensive assessment of the lifetime health and economic impacts of the proposed strategies, considering factors such as long-term healthcare costs, changes in injury rates, and compliance levels. The Markov model’s ability to incorporate these extended horizons and recurring events will yield deeper insights into the most effective and sustainable approaches to mitigating firework-related injuries in Columbia."
   },
   {
+    "objectID": "case-studies/cs_injury-markov.html#open-new-model",
+    "href": "case-studies/cs_injury-markov.html#open-new-model",
+    "title": "Firework Injury: Markov Model",
+    "section": "Open New Model",
+    "text": "Open New Model\nClick on Model  New Markov  model to start a new model in Amua."
+  },
+  {
     "objectID": "case-studies/cs_injury-markov.html#markov-structure-alive-dead",
     "href": "case-studies/cs_injury-markov.html#markov-structure-alive-dead",
     "title": "Firework Injury: Markov Model",
