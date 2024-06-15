@@ -5,6 +5,7 @@ editor: visual
 format: 
   html:
     link-external-newwindow: true
+css: styles.css
 editor_options: 
   chunk_output_type: console
 bibliography: references.bib
@@ -12,8 +13,8 @@ bibliography: references.bib
 
 # Calendario de talleres
 
-| Fecha     | Hora programada | Tema                                                                                                    | Notas                                                                                                                          |
-|-----------|-----------------|---------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| Fecha     | Hora programada | Tema                                                                                                    | Versión inglesa                                                                                                                |
+|-----------|---------------|------------------|----------------------------|
 | Martes    | 9:00 - 9:30 am  | Bienvenida y presentaciones                                                                             | Welcome                                                                                                                        |
 |           | 9:30 - 10:00    | [Introducción al análisis de decisiones](lectures/ESP_lec_1a.introduction-to-decision-analysis.qmd)     | [Introduction to Decision Analysis](lectures/lec_1a.introduction-to-decision-analysis.qmd "Introduction to Decision Analysis") |
 |           | 10:00-11:00     | [Árboles de decisión y probabilidades](lectures/ESP_lec_2.decision-trees-and-probabilities.qmd)         | [Decision Trees](lectures/lec_2.decision-trees-and-probabilities.qmd "Decision Trees and Probabilities")                       |
@@ -31,17 +32,15 @@ bibliography: references.bib
 |           | 1:00 - 2:15     | Almuerzo                                                                                                | Lunch                                                                                                                          |
 |           | 2:15 - 3:15     | Caso de estudio: Lesiones por fuegos artificiales en Columbia                                           | [Case Study: Firework Injuries in Columbia](case-studies/cs_injury-decision-tree.qmd)                                          |
 |           | 3:15 - 4:30     | [Fundamentos del ACE 3: Análisis coste-eficacia incremental](lectures/ESP_lec_6.ICERs.qmd)              | [ICERs](lectures/lec_6.ICERs.qmd "Incremental CEA")                                                                            |
-|           |                 |                                                                                                         |                                                                                                                                |
 | Jueves    | 9:00-9:15       | Resumen diario                                                                                          |                                                                                                                                |
 |           | 9:15 - 10:30    | [Caso de estudio: Análisis coste-eficacia incremental](case-studies/ESP_cs_icer.html)                   | [Case Study: ICERs](case-studies/cs_icer.qmd)                                                                                  |
 |           | 10:30 - 12:00   | [Modelos de Markov](lectures/ESP_lec_7.MarkovModels1.qmd)                                               | [Markov Models](lectures/lec_7.MarkovModels1.qmd)                                                                              |
 |           | 12:00 - 1:15    | Café                                                                                                    |                                                                                                                                |
 |           | 1:15 - 4:00     | Caso de estudio: Modelos de Markov                                                                      | [Case Study: Firework Injury Model (Markov)](case-studies/cs_injury-markov.qmd)                                                |
-|           |                 |                                                                                                         |                                                                                                                                |
 | Viernes   | 9:00-9:15       | Resumen diario                                                                                          | Recap                                                                                                                          |
 |           | 9:15 - 10:00    | [Análisis determinista y de escenarios](lectures/ESP_lec_sensitivity.qmd)                               | [Deterministic and Sensitivity Analysis](lectures/lec_sensitivity.qmd)                                                         |
 |           | 10:00 - 10:15   | Café                                                                                                    | Break                                                                                                                          |
 |           | 10:15 - 11:15   | [Técnicas avanzadas de modelización](lectures/lec_advanced-modeling-techniques.qmd)                     | [Advanced modeling techniques](lectures/lec_advanced-modeling-techniques.qmd)                                                  |
 |           | 11:15 - 11:45   | Ceremonia de entrega de certificados                                                                    | Closing Ceremony                                                                                                               |
 
-: {tbl-colwidths="\[10,20,30,5,20\]"}
+: {tbl-colwidths="\[10,20,30,30\]"}

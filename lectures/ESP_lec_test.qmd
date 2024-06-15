@@ -1,0 +1,84 @@
+---
+title: "Introducción al análisis de decisiones"
+format:
+  revealjs:
+    theme: slides.scss
+    incremental: true
+    slide-number: true
+    logo: ../vchem.png
+    html-math-method: katex
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    footer: |
+      [Volver al sitio web](../index.html)
+editor_options: 
+  chunk_output_type: console
+editor: source
+---
+
+## Esquema {{< fa regular clipboard >}}
+
+::: incremental
+1.  Presentaciones
+2.  Motivación
+3.  Ejemplos de análisis de decisiones
+4.  Objetivos del taller
+:::
+
+## Curso Sitio web
+
+::: {style="font-size: 2.0em"}
+https://github.com/graveja0/bogota-vital-strategies
+:::
+
+::: incremental
+- Todos los materiales del curso (diapositivas, casos prácticos) se publican aquí.
+- Nuestro calendario (que probablemente evolucione) también se publicará aquí y se actualizará periódicamente.
+:::
+
+## Presentaciones
+
+- Por favor, ¡preséntese!
+
+# Motivación {background="#43464B"}
+
+## Las dos últimas décadas ...
+
+::: incremental
+- Hepatitis C curada
+- Reducción significativa de la incidencia del VIH
+- Posible cura de la leucemia y el linfoma recidivantes o refractarios
+- Vacunas perfeccionadas (por ejemplo, la vacuna contra el VPH) para prevenir enfermedades como el cáncer de cuello de útero y otros tipos de cáncer.
+- Avances en la prevención de enfermedades cardiovasculares
+:::
+
+## A pesar de estos avances ...
+
+- La carga de enfermedades no transmisibles (ENT) como el cáncer, las enfermedades cardiovasculares y la diabetes va en aumento.
+- Son la causa del 74% de las muertes en el mundo, y la mayoría (86%) en los países de renta baja y media (PRMB).
+    - Fuente: [OMS](https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases)
+- Las tasas de malnutrición, necesidad insatisfecha de servicios de salud sexual y reproductiva y mortalidad materna también siguen siendo elevadas en muchas partes del mundo.
+
+## {background-image="images/new_decision-analysis-overview.png" data-background-size="contain"}
+
+## {background-image="images/new_decision-analysis-overview_blank.png" data-background-size="contain"}
+
+<br><br>
+
+## Ejemplos de Análisis de Decisiones {background="#43464B"}
+
+## Ej 1. VIH
+
+::: {.callout-important appearance="minimal" icon="false"}
+Ha sido nombrado director de un comité de asignación de fondos responsable de las iniciativas de prevención y tratamiento del VIH.
+:::
+
+::: incremental
+1.  Cómo decidirá el comité la proporción de fondos para las iniciativas de prevención frente a las de tratamiento?
+
+2.  2. ¿Debería destinarse parte de los fondos a la investigación?
+
+3.  ¿Cómo responder a un miembro que argumenta que los fondos están mejor gastados en vacunación infantil?
+:::
+

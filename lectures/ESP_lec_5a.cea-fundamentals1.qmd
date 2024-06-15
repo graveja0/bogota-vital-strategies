@@ -97,7 +97,7 @@ fig-align="center" width="255"}
 
 ::: {.fragment .fade-in-then-semi-out}
 -   {{< fa check-circle >}} Análisis comparativo de cursos de acción
-    alternativos. de acción.
+    alternativos.
     -   Nos centraremos en esto en la próxima sesión.
 :::
 :::
@@ -107,7 +107,7 @@ fig-align="center" width="255"}
 <br>
 
 | Tipo de estudio    | Medición/valoración de costos | Identificación de consecuencias | Medición / valoración de consecuencias |
-|-----------------|-----------------|-----------------|--------------------|
+|------------------|------------------|------------------|--------------------|
 | Análisis de costos | Unidades monetarias           | Ninguno                         | Ninguno                                |
 
 ::: footer
@@ -133,7 +133,7 @@ Fuente: [@drummond2015a]
 <br>
 
 | Tipo de estudio                            | Medición/Valoración de costos ambas alternativas | Identificación de consecuencias                                                           | Medición/Valoración de consecuencias                                                                                                    |
-|------------------|------------------|------------------|--------------------|
+|------------------|------------------|------------------|-------------------|
 | [Análisis de costos]{style="color: gris;"} | [Unidades monetarias]{style="color: grey;"}      | [Ninguno]{style="color: grey;"}                                                           | [Ninguno]{style="color: grey;"}                                                                                                         |
 | Análisis costo-efectividad                 | Unidades monetarias                              | Efecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados. | Unidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.) |
 
@@ -153,7 +153,7 @@ común a todas las estrategias
 -   Los beneficios se valoran en términos de resultados clínicos (por
     ejemplo, casos prevenidos o curados, vidas salvadas, años de vida
     ganados, años de vida ganados ajustados a la calidad)
--   Los resultados se presentan como una relación costo-efectividad
+-   Los resultados se presentan como una razón costo-efectividad
 
 ## Análisis Costo-Efectividad
 
@@ -173,7 +173,7 @@ común a todas las estrategias
 ## Técnicas de evaluación económica {.smaller}
 
 | Tipo de estudio                                    | Medición/valoración de los costos de ambas alternativas | Identificación de las consecuencias                                                                              | Medición/valoración de las consecuencias                                                                                                                        |
-|------------------|------------------|------------------|--------------------|
+|------------------|------------------|------------------|-------------------|
 | [Análisis de costos]{style="color: gris;"}         | [Unidades monetarias]{style="color: grey;"}             | [Ninguno]{style="color: grey;"}                                                                                  | [Ninguno]{style="color: grey;"}                                                                                                                                 |
 | [Análisis costo-e]{style="color: grey;"}fectividad | [Unidades monetarias]{style="color: grey;"}             | [Efecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados]{style="color: grey;"} | [Unidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.)]{style="color: grey;"} |
 | Análisis costo-utilidad                            | Unidades monetarias                                     | Efectos únicos o múltiples, no necesariamente comunes a ambas alternativas.                                      | Años de vida con buena salud (medidos normalmente como años de vida ajustados por calidad)                                                                      |
@@ -188,7 +188,7 @@ Fuente: [@drummond2015a]
 -   Esencialmente una variante del análisis costo-efectividad.
 -   **Característica principal:** uso de medida genérica de salud.
 -   Año de vida ajustado por calidad (AVAC): Una métrica que refleja
-    tanto como la calidad de vida (dolor, función o ambos).
+    tanto la cantidad como la calidad de vida (dolor, función o ambos).
 -   Es la forma de evaluación económica más publicada.
 :::
 
@@ -203,7 +203,7 @@ A lo largo del taller nos centraremos principalmente en el ACE
 
 ::: {style="font-size: 0.8em"}
 | Tipo de estudio                                    | Medición/valoración de costos ambas alternativas | Identificación de consecuencias                                                                                  | Medición/valoración de consecuencias                                                                                                                            |
-|------------------|------------------|------------------|--------------------|
+|------------------|------------------|------------------|-------------------|
 | [Análisis de costos]{style="color: gris;"}         | [Unidades monetarias]{style="color: grey;"}      | [Ninguno]{style="color: grey;"}                                                                                  | [Ninguno]{style="color: grey;"}                                                                                                                                 |
 | [Análisis costo-e]{style="color: grey;"}fectividad | [Unidades monetarias]{style="color: grey;"}      | [Efecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados]{style="color: grey;"} | [Unidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.)]{style="color: grey;"} |
 | [Análisis costo-utilidad]{style="color: grey;"}    | [Unidades monetarias]{style="color: grey;"}      | [Efectos únicos o múltiples, no necesariamente comunes a ambas alternativas]{style="color: grey;"}               | [Años de vida saludable (medidos normalmente como años de vida ajustados por calidad)]{style="color: grey;"}                                                    |
@@ -212,8 +212,8 @@ A lo largo del taller nos centraremos principalmente en el ACE
 
 ## Análisis Costo-Beneficio {.smaller}
 
--   Relevante para la asignación de recursos entre sanidad y otras áreas
-    (por ejemplo, la educación)
+-   Relevante para la asignación de recursos entre salud y otros
+    sectores (por ejemplo, la educación)
 -   **Los costos y las consecuencias para la salud se valoran en
     términos monetarios (p. ej, dólares estadounidenses)**.
 -   La valoración de las consecuencias sanitarias en términos monetarios
@@ -225,8 +225,7 @@ A lo largo del taller nos centraremos principalmente en el ACE
     superiores a sus costos.
     -   Obsérvese que no estamos haciendo comparaciones entre
         estrategias, sólo comparaciones de costos y beneficios de la
-        misma estrategia. estrategia\]{style="background-color:
-        yellow;"}
+        misma estrategia.
 -   Para saber más: [Robinson et al,
     2019](https://www.cambridge.org/core/product/identifier/S2194588819000046/type/journal_article)
 
@@ -243,16 +242,15 @@ A lo largo del taller nos centraremos principalmente en el ACE
 <br>
 
 -   Relevante cuando las alternativas sanitarias tienen diferentes
-    costos y consecuencias para la salud consecuencias para la salud
-    <br>
+    costos y consecuencias para la salud <br>
 
 ::: fragment
 $$ \frac{\text{(Costo Intervención A - Costo Intervención B)}}{\text{(Beneficio A - Beneficio B)}}$$
 :::
 
 -   El VALOR relativo de una intervención en comparación con su
-    alternativa se expresa en forma de RELACION costo-efectividad (¡el
-    tema central de la próxima sesión)
+    alternativa se expresa en forma de RAZON costo-efectividad (¡el tema
+    central de la próxima sesión)
 
 ::: notes
 (1) El análisis costo-efectividad es pertinente cuando las alternativas
@@ -261,15 +259,15 @@ $$ \frac{\text{(Costo Intervención A - Costo Intervención B)}}{\text{(Benefici
     de quimioterapia
 
 (2) Un RESULTADO CLAVE en los análisis costo-efectividad es lo que se
-    denomina RCEI \[o relación costo-efectividad incremental\], que nos
-    da el valor relativo de una intervención frente a una alternativa.
+    denomina RCEI \[o razón costo-efectividad incremental\], que nos da
+    el valor relativo de una intervención frente a una alternativa.
 
 (3) En otras palabras, EL PRECIO POR UNIDAD DE BENEFICIO de una
     intervención sobre la otra
 
 (4) En las próximas semanas impartiremos 2 clases completas sobre los
-    ICER y cómo interpretar estos relaciónes entre intervenciones.
-    interpretar estos relaciónes entre intervenciones En lo que nos
+    ICER y cómo interpretar estos razones entre intervenciones.
+    interpretar estos razones entre intervenciones En lo que nos
     centraremos HOY en los componentes que forman el numerador (es
     decir, los COSTOS) y el denominador (es decir, los BENEFICIOS). el
     denominador (es decir, los BENEFICIOS)
@@ -314,17 +312,17 @@ $$ \frac{\text{(Costo Intervención A - Costo Intervención B)}}{\text{(Benefici
 :::
 
 ::: notes
-Si nos fijamos en cómo se utiliza la relación costo-efectividad en todo
-el mundo --
+Si nos fijamos en cómo se utiliza la razón costo-efectividad en todo el
+mundo --
 
 A diferencia de Estados Unidos, los gobiernos de muchos países tienen
-sus propios que realizan evaluaciones formales de la relación
+sus propios que realizan evaluaciones formales de la razón
 costo-efectividad de los algunos de los cuales son
 
 (1) El Reino Unido - que es un sistema de pagador único conocido como el
     NHS & tiene un organismo independiente llamado NICE que evalúa la
-    relación costo-efectividad NICE recomienda al NHS lo que debe cubrir
-    en función de su VALOR. NICE recomienda al NHS lo que debe cubrir
+    razón costo-efectividad NICE recomienda al NHS lo que debe cubrir en
+    función de su VALOR. NICE recomienda al NHS lo que debe cubrir
     basándose en el VALOR (es decir, la rentabilidad).
 
 -   El NHS está legalmente obligado a financiar los medicamentos y
@@ -378,7 +376,7 @@ $$ \frac{\text{(Costo Intervención A - Costo Intervención B)}}{\text{(Benefici
 ::: notes
 (1) A continuación nos adentraremos en los componentes de los análisis
     costo-efectividad analizando en primer lugar lo que constituye el
-    NUMERADOR de la relación costo-efectividad y, a continuación,
+    NUMERADOR de la razón costo-efectividad y, a continuación,
     profundizaremos en el DENOMINADOR
 :::
 
@@ -399,8 +397,8 @@ Fuente: Gold 1996, Drummond 2015, Gray 2012) <br>
 
 3.  **Valor** -- Aplicar costos unitarios a cada categoría de recursos
     (por ejemplo, escalas salariales del hospital correspondiente o
-    tarifas salariales nacionales para salarios del personal, costo por
-    día de hospitalización para la estancia)
+    tarifas nacionales para salarios del personal, costo por día de
+    hospitalización para la estancia)
 
 ## Podemos [identificar]{.underline} diferentes tipos de costos sanitarios {.smaller}
 
@@ -412,23 +410,22 @@ Fuente: Gold 1996, Drummond 2015, Gray 2012) <br>
 
     -   Medicamentos, procedimientos, pruebas, honorarios profesionales
 
--   Costos directos no sanitarios\*\*\]{style="color: #57886C"}
+-   **Costos directos no sanitarios\*\***
 
     -   Cuidado de niños, gastos de transporte
 
--   Costos de tiempo\*\*\]{style="color: #57886C"}
+-   **Costos de tiempo\*\***
 
     -   Tiempo del paciente recibiendo atención, costo de oportunidad
         del tiempo
 
--   Costos de productividad ('costos indirectos')\*\*\]{style="color:
-    #57886C"}
+-   **Costos de productividad ('costos indirectos')\*\***
 
     -   ¿Pérdida de la capacidad laboral por morbilidad?
 
     -   ¿Pérdida de productividad económica por fallecimiento?
 
--   Costos sanitarios no relacionados\*\*\]{style="color: #57886C"}
+-   **Costos sanitarios no relacionados\*\***
 
     -   Trayectoria acumulada de los costos sanitarios totales a lo
         largo del tiempo (no relacionados con intervenciones médicas)
@@ -463,7 +460,7 @@ Fuente: Gold 1996, Drummond 2015, Gray 2012) <br>
     -   Estimar el costo para un volumen determinado de pacientes
         dividiendo el costo total por el volumen de uso del servicio
     -   Ejemplo: Costos descendentes (por ejemplo, hospitalización por
-        sobredosis de opiáceos) sobredosis de opiáceos)
+        sobredosis de opiáceos)
 
 -   **Enfoque basado en los ingredientes (P x Q x C)**
 
@@ -556,7 +553,7 @@ LA PERSPECTIVA IMPORTA -- <br> <br>
     mejor las implicaciones implicaciones de la toma de decisiones.
 :::
 
-## ¿La perspectiva de quién? {<br>}
+## ¿La perspectiva de quién? 
 
 <br>
 
@@ -617,7 +614,7 @@ LISA, el LIBRO dice COSTOS EVITADOS para los costos posteriores
 MAMOGRAFÍA (Perspectiva social): <br>
 
 -   Costos asociados al tamizaje en sí \[procedimiento de mamografía +
-    tiempo del médico\]
+    tiempo del médico
 
 -   Costos de las pruebas de seguimiento tanto para falsos positivos
     como para verdaderos positivos
@@ -629,9 +626,9 @@ MAMOGRAFÍA (Perspectiva social): <br>
     vivir más tiempo debido a la mamografía
 
 -   Pérdidas de productividad de los pacientes asociadas al tamizaje o
-    al tratamiento del cáncer\]{style="background-color: yellow;"}
+    al tratamiento del cáncer
 
--   Costos de guardería/transporte\]{style="background-color: yellow;"}
+-   Costos de guardería/transporte
 
 # Recolección de datos {background="#43464B"}
 
@@ -728,7 +725,7 @@ http://ghcearegistry.org/ghcearegistry/
 
 -   100 \$ en 2000 no equivalen a 100 \$ en 2020
 
-    -   <br> ¡100 \$ podían comprar mucho más en 2000!
+    -   ¡100 \$ podían comprar mucho más en 2000!
 
 -   Es importante ajustar la diferencia de precios a lo largo del
     tiempo, especialmente cuando se trabaja con fuentes de costos de
@@ -781,8 +778,8 @@ $$
 -   No es necesario para CEA pero puede ser útil en algunas situaciones:
 
     -   Ejemplo: puede ser necesario convertir la moneda local a USD
-        porque porque los umbrales de costo-efectividad suelen estimarse
-        en USD por AVAD.
+        porque los umbrales de costo-efectividad suelen estimarse en USD
+        por AVAD.
 
 -   ¿Cómo se convierten 1.000 Nairas a USD?
 

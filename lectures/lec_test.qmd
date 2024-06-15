@@ -1,0 +1,84 @@
+---
+title: "Introduction to Decision Analysis"
+format:
+  revealjs:
+    theme: slides.scss
+    incremental: true
+    slide-number: true
+    logo: ../vchem.png
+    html-math-method: katex
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    footer: |
+      [Back to Website](../index.html)
+editor_options: 
+  chunk_output_type: console
+editor: source
+---
+
+## Outline {{< fa regular clipboard >}}
+
+::: incremental
+1.  Introductions
+2.  Motivation
+3.  Examples of Decision Analysis
+4.  Workshop objectives
+:::
+
+## Course Website
+
+::: {style="font-size: 2.0em"}
+https://github.com/graveja0/bogota-vital-strategies
+:::
+
+::: incremental
+-   All course materials (slides, case studies) are posted here.
+-   Our (likely evolving) schedule will also be posted here, and updated regularly.
+:::
+
+## Introductions
+
+-   Please introduce yourself!
+
+# Motivation {background="#43464B"}
+
+## The Past Two Decades ...
+
+::: incremental
+-   Cured Hepatitis C
+-   Significantly reduced incidence of HIV
+-   Potential cure for relapsed/refractory leukemia & lymphoma
+-   Perfected vaccines (e.g. HPV vaccine) to prevent diseases such as cervical & other cancers
+-   Strides in preventing cardiovascular disease
+:::
+
+## Despite these advances ...
+
+-   Burden of non-communicable diseases (NCDs) like cancer, cardiovascular disease, and diabetes is growing.
+-   NCDs are the cause of 74 percent of deaths globally, with most (86%) of those deaths in low- and middle-income countries (LMICs)
+    -   Source: [WHO](https://www.who.int/news-room/fact-sheets/detail/noncommunicable-diseases)
+-   Rates also remain high in many parts of the world for malnutrition, unmet need for sexual and reproductive health services, and maternal mortality.
+
+##  {background-image="images/new_decision-analysis-overview.png" data-background-size="contain"}
+
+##  {background-image="images/new_decision-analysis-overview_blank.png" data-background-size="contain"}
+
+<br><br>
+
+# Examples of Decision Analyses {background="#43464B"}
+
+## Ex 1. HIV
+
+::: {.callout-important appearance="minimal" icon="false"}
+You have been appointed as Director of a funding allocation committee responsible for prevention & treatment initiatives for HIV.
+:::
+
+::: incremental
+1.  How will the committee decide on the proportion of funds for prevention efforts versus treatment?
+
+2.  Should any of the funds be used for research?
+
+3.  How do you respond to a member who argues that the funds are better spent on childhood vaccinations?
+:::
+

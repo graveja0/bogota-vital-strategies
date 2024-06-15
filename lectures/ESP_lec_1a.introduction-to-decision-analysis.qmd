@@ -28,7 +28,7 @@ editor: source
 
 ## Curso sitio web
 
-::: {style="font-size: 1.0em"}
+::: {style="font-size: 2.0em"}
 https://github.com/graveja0/bogota-vital-strategies
 :::
 
@@ -93,7 +93,7 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 ## Ej 2. Defectos de nacimiento {auto-animate="true"}
 
 ::: {.callout-important appearance="minimal" icon="false"}
-### [**¿Deberíamos comprobar este hipotético defecto de nacimiento?**]{style="color: verde bosque;"}
+### **¿Deberíamos detectar este hipotético defecto de nacimiento?**
 :::
 
 -   Un hipotético defecto congénito está presente en 1 de cada 1.000 niños nacidos.
@@ -103,7 +103,7 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 ## Ej 2. Defectos de nacimiento {auto-animate="true"}
 
 ::: {.callout-important appearance="minimal" icon="false"}
-### [**¿Deberíamos probar este hipotético defecto de nacimiento?**]{style="color: verde bosque;"}
+### [**¿Deberíamos** ]{style="color: verde bosque;"}**detectar [este hipotético defecto de nacimiento?]{style="color: verde bosque;"}**
 :::
 
 ::: incremental
@@ -202,7 +202,7 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 ## Ej 3. Cáncer de colon -- **Prevención**
 
 ::: incremental
--   ¿Coste-efectividad de pruebas de tamizaje alternativas?
+-   ¿Costo-efectividad de pruebas de tamizaje alternativas?
 -   ¿Frecuencias alternativas de tamizaje?
 -   ¿Cómo debería variar el tamizaje según los grupos de riesgo?
 :::
@@ -220,7 +220,7 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 :::
 
 ## Ej 3. Cáncer de colon - **Estimación de probabilidades**
-::: {style="font-size: 0.8em"}
+
 ::: incremental
 -   Predecir el "beneficio" del tamizaje
     -   Todas las probabilidades anteriores
@@ -231,8 +231,6 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
     -   Probabilidad de que prueba positiva = cáncer
     -   Probabilidad de que prueba negativa = sin cáncer
 :::
-:::
-
 
 ## La estimación de probabilidades es fundamental para la toma de decisiones {background="#43464B"}
 
@@ -244,7 +242,7 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 
 <!-- TK Esto necesita ser una página completa -->
 
-## Casos comunes {background="#43464B"}
+## Commonality of cases {background="#43464B"}
 
 ::: incremental
 -   *Tradeoffs* inevitables
@@ -275,23 +273,22 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 
 ## Contenido del taller
 
-1.  Fundamentos del análisis de decisiones (Días 1-2)
+1.  Fundamentos del análisis de decisiones (Días 1)
 
 -   Árboles de decisión
--   Teorema de Bayes y umbrales de tratamiento
--   Incertidumbre y priorización de la investigación futura
 
 ## Contenido del taller
 
-2.  Fundamentos del análisis costo-efectividad (Días 3-4)
+2.  Fundamentos del análisis costo-efectividad (Días 2-3)
 
+-   Umbrales de tratamiento y valor de la información
 -   Valoración de costos y resultados sanitarios
 -   Análisis costo-efectividad incremental
 -   Introducción a los modelos de Markov
 
 ## Contenido del taller
 
-3.  Avance de temas avanzados (Día 5)
+3.  Avance de temas avanzados (Día 4)
 
 -   Análisis de sensibilidad
 -   Marcos avanzados de modelización CEA.

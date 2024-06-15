@@ -30,7 +30,7 @@ editor:
     indirectos para estimar las utilidades del estado de salud
 
 -   Seleccionar los parámetros del modelo para cuantificar los
-    "beneficios" (el denominador en el cociente CEA)
+    "beneficios" (el denominador en la RCEI)
 
 ## Esquema
 
@@ -47,7 +47,7 @@ editor:
 :::
 :::
 
-# Revisión ICER {background="#43464B"}
+# Revisión RCEI {background="#43464B"}
 
 $$
 \frac{C_1 - C_0 \quad (\Delta C)}{E_1 - E_0 \quad (\Delta E)}
@@ -243,7 +243,7 @@ Esta es la TÉCNICA APUESTA ESTÁNDAR
 
 ## Métodos directos - Apuesta estándar {.smaller}
 
-> ¿Qué riesgo de muerte aceptaría para evitar \[vivir el resto de su
+> "¿Qué riesgo de muerte aceptaría para evitar \[vivir el resto de su
 > vida con una pierna amputada\] y vivir su vida en perfecto estado de
 > salud?"
 

@@ -186,7 +186,7 @@ df_i4 <-
 -   Cuantifica cómo maximizar la calidad y cantidad de vida entre
     alternativas en competencia, dados unos recursos restringidos
 
--   Es una medida explícita de la relación valor-precio
+-   Es una medida explícita de la razón valor-precio
 
 -   Una herramienta de toma de decisiones a NIVEL DE POBLACIÓN
 :::
@@ -240,7 +240,7 @@ Beneficio de la alternativa
 :::
 :::
 
-## Relación costo-efectividad {auto-animate="true" auto-animate-easing="ease-in-out"}
+## Razón costo-efectividad {auto-animate="true" auto-animate-easing="ease-in-out"}
 
 ::: r-vstack
 ::: r-hstack
@@ -270,7 +270,7 @@ Beneficio de la alternativa
 :::
 :::
 
-## Relación costo-efectividad {auto-animate="true" auto-animate-easing="ease-in-out"}
+## Razón costo-efectividad {auto-animate="true" auto-animate-easing="ease-in-out"}
 
 ::: r-vstack
 ::: r-hstack
@@ -300,7 +300,7 @@ $E_1$
 :::
 :::
 
-## Relación costo-efectividad {auto-animate="true" auto-animate-easing="ease-in-out"}
+## Razón costo-efectividad {auto-animate="true" auto-animate-easing="ease-in-out"}
 
 ::: r-vstack
 ::: r-hstack
@@ -318,7 +318,7 @@ $\Delta E$
 :::
 :::
 
-## Relación costo-efectividad incremental {.smaller}
+## Razón costo-efectividad incremental {.smaller}
 
 **El más utilizado, ya que para la mayoría de las enfermedades ya existe
 algún tratamiento disponible.**
@@ -398,7 +398,7 @@ Estrategia: Tratar a todos ![](images/cea-example3.png)
     cuantificar y sopesar estas consideraciones.
 :::
 
-## Relación costo-efectividad promedia {.smaller}
+## Razón costo-efectividad promedia {.smaller}
 
 **Caso especial en el que** se supone que $C_0$ y $E_0$ son cero.
 
@@ -434,7 +434,7 @@ $$
     programas/intervenciones que no son mutuamente excluyentes.
 
 -   Cada programa se compara con una alternativa nula. Calcular una
-    relación costo-efectividad "media".
+    razón costo-efectividad "media".
 
 ## Uso del ACE en dos situaciones {auto-animate="true"}
 
@@ -443,7 +443,7 @@ $$
     mutuamente excluyentes.
 
 -   Dos o más alternativas activas además de la opción nula.
--   Es necesario calcular una "relación costo-efectividad incremental",
+-   Es necesario calcular una "razón costo-efectividad incremental",
     que nos da el costo añadido por unidad de beneficio añadido de una
     opción, en relación con la siguiente opción menos costosa
 
@@ -575,7 +575,7 @@ costos comparado con la alternativa de no programa
 ::: {.column width="50%"}
 ::: incremental
 Paso 3:\
-- Clasificar otros programas en orden ascendente según su relación
+- Clasificar otros programas en orden ascendente según su razón
 costo-efectividad (de menor a mayor) <br> - A continuación se
 seleccionan los programas del menor a mayor costo hasta agotar el
 presupuesto. <br> - El conjunto de programas seleccionados dependerá de
@@ -676,7 +676,7 @@ df_ex %>%
 ::: columns
 ::: {.column width="50%"}
 ::: incremental
--   Calcular la relación costo-efectividad promedia.
+-   Calcular la razón costo-efectividad promedia.
 :::
 :::
 
@@ -709,7 +709,7 @@ df_ex_ %>%
 
 ::: columns
 ::: {.column width="50%"}
--   Calcular la relación costo-efectividad promedia.
+-   Calcular la razón costo-efectividad promedia.
 -   Ordenar (por C/E) en orden ascendente .
 :::
 
@@ -740,7 +740,7 @@ df_ex_ %>%
 :::
 
 ::: notes
--   Queremos ordenar los RELACIONES de menor a mayor para la inclusión
+-   Queremos ordenar la RAZONES de menor a mayor para la inclusión
     en el presupuesto , ya que cuanto más bajo sea, más eficientemente
     ganaremos AVAC. o que obtenemos más beneficios por dólar gastado en
     atención sanitaria.
@@ -983,7 +983,7 @@ df_ex_[c(color.me.green,color.me.yellow),]  %>%
 
 #### {{< fa circle-check >}} No se puede aplicar más de una estrategia a la vez.
 
-#### {{< fa circle-check >}} La relación costo-efectividad incremental está por debajo de un umbral de adopción preespecificado.
+#### {{< fa circle-check >}} La razón costo-efectividad incremental está por debajo de un umbral de adopción preespecificado.
 
 ## ¿Cuál es la diferencia?
 
@@ -993,7 +993,7 @@ df_ex_[c(color.me.green,color.me.yellow),]  %>%
 
 1.  Puede seleccionar varios programas
 2.  Diferentes costos y efectos asociados a cada uno
-3.  Requiere el cálculo de una *Relación costo-efectividad promedia*.
+3.  Requiere el cálculo de una *Razón costo-efectividad promedia*.
 :::
 
 ::: {.column width="50%"}
@@ -1001,7 +1001,7 @@ df_ex_[c(color.me.green,color.me.yellow),]  %>%
 
 1.  [Los programas se excluyen mutuamente.]{style="color: rojo;"}
 2.  Diferentes costos y efectos asociados a cada uno.
-3.  [Requiere el cálculo de una *Relación Costo-Efectividad Incremental*
+3.  [Requiere el cálculo de una *Razón Costo-Efectividad Incremental*
     (RCEI).]{style="color: red;"}
 :::
 :::
@@ -1016,7 +1016,7 @@ df_ex_[c(color.me.green,color.me.yellow),]  %>%
 -   A menudo, se define una estrategia que refleja la práctica actual
     ("statu quo", "no hacer nada", "historia natural").
 -   A continuación se calculan los costos y efectos de cada estrategia
-    en relación con el respecto al statu quo.
+    en relación con el statu quo.
 -   Representar gráficamente la diferencia de costos y efectos sobre la
     salud en el eje de abscisas y los efectos sobre los costos en el eje
     de ordenadas.
@@ -1100,7 +1100,7 @@ estrategias no dominadas. :::
 
 ## RCEI {.smaller auto-animate="true"}
 
--   La pendiente de una línea que une dos puntos es la relación
+-   La pendiente de una línea que une dos puntos es la razón
     costo-efectividad incremental comparando esas estrategias. Más
     adelante
 
@@ -1757,7 +1757,7 @@ df4 %>%
     "sin valor"? o "sin valor"?
 
 (2) Supongamos que comparamos la vacunación antigripal con la no
-    vacunación & que nuestra relación costo-efectividad arroja un precio
+    vacunación & que nuestra razón costo-efectividad arroja un precio
     por unidad de beneficio de \\90.000 \$ / AVAC ganado
 
 (3) \[PREGUNTA A CLASE\] - ¿Se consideraría esto de "alto valor"?

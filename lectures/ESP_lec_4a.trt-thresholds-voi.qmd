@@ -27,7 +27,7 @@ editor:
     examinar diferentes formas de interpretación
 
 -   Comprender y calcular el valor de la información de una prueba
-    perfecta frente a una imperfecta prueba imperfecta
+    perfecta frente a una prueba imperfecta
 
 ## Resumen
 
@@ -122,7 +122,7 @@ Realizar una prueba para obtener información adicional SÓLO merece la
 pena SI: <br>
 
 (1) Al menos una decisión cambiaría dados algunos resultados de la
-    prueba, y/o\\. <br>
+    prueba, y/o. <br>
 (2) El riesgo para el paciente asociado a la prueba es menor que el
     beneficio esperado de someterse a la prueba
 
@@ -138,15 +138,15 @@ pena SI: <br>
 
 <br>
 
-**No tratar -- Umbral de prueba** <br> Probabilidad de indiferencia
-entre probar y no tratar
+**Umbral de prueba y no tratar** <br> Probabilidad de indiferencia entre
+probar y no tratar
 
 <br>
 
 **Umbral de prueba y tratamiento** <br> Probabilidad de indiferencia
-entre prueba y tratamiento
+entre probar y tratar
 
-## Testing & expected value of information
+## Pruebas y valor esperado de la información
 
 <br>
 
@@ -157,7 +157,7 @@ entre prueba y tratamiento
 -   Obtener información suele TENER UN COSTO
 :::
 
-## Testing & expected value of information
+## Pruebas y valor esperado de la información
 
 <br>
 
@@ -171,12 +171,12 @@ adicional?**
 ::: fragment
 Valor de la información =
 
-\|\[valor esperado de la estrategia "obtener información\] --
+\[valor esperado de la estrategia "obtener información\] --
 
-\[valor esperado de la siguiente mejor estrategia\]\|
+\[valor esperado de la siguiente mejor estrategia\]
 :::
 
-## Testing & expected value of information
+## Pruebas y valor esperado de la información
 
 ::: fragment
 Las pruebas PERFECTAS nos dan un límite superior del beneficio potencial
@@ -213,10 +213,9 @@ información perfecta (EVPI)
 
 EVPI =
 
-\|EV 'prueba perfecta' -- EV 'siguiente mejor estrategia: tratar a
-todos'\|
+EV 'prueba perfecta' -- EV 'siguiente mejor estrategia: tratar a todos'
 
-=\|0.12 -- 0.16\| = 0.04,
+=0.12 – 0.16 = 0.04,
 
 o 4 muertes evitadas por cada 100 pruebas gracias a la información
 adicional de la prueba
@@ -258,9 +257,9 @@ Cuando la prueba es IMPERFECTA: <br>
 <br>
 
 ::: fragment
-VOI = \|EV 'prueba' -- EV 'siguiente mejor estrategia'\|\|
+VOI = EV 'prueba' -- EV 'siguiente mejor estrategia'
 
-= \|0.157 -- 0.16\| = 0.003,
+= 0.157 -- 0.16 = 0.003,
 
 o 3 muertes evitadas por cada 1.000 pruebas gracias a la información
 adicional de las pruebas.

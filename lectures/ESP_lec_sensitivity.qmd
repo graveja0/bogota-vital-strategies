@@ -118,7 +118,7 @@ bibliography: ../references.bib
 
 ![](images/Screen%20Shot%202022-09-28%20at%2010.25.53%20PM.png){width="543"}
 
-## Incentivos financieros para la atención del derrame cerebral
+## Incentivos económicos para la atención del derrame cerebral
 
 ::: incremental
 -   En el marco de las políticas de pago por resultados en EE.UU., **se paga más a los médicos u hospitales por alcanzar objetivos de calidad basados en la evidencia**
@@ -141,7 +141,7 @@ bibliography: ../references.bib
 -   Limitado por la subjetividad de la elección de los parámetros a analizar
 -   Por eso también ejecutamos APS!, es decir, variando TODOS los parámetros de entrada al mismo tiempo, usando priors para reproducir una distribución alrededor de cada valor
 
-# ¡Oportunidad de practicar en el Ejercicio!
+# ¡Oportunidad de practicar en el ejercicio!
 
 # Análisis de escenarios
 
