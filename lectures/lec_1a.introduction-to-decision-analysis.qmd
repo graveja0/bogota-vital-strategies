@@ -273,15 +273,13 @@ You have been appointed as Director of a funding allocation committee responsibl
 
 ## Workshop Content
 
-1.  Basics of decision analysis (Days 1-2)
+1.  Basics of decision analysis (Day 1)
 
 -   Decision trees
--   Bayes theorem and treatment thresholds
--   Uncertainty and prioritizing future research
 
 ## Workshop Content
 
-2.  Basics of Cost-Effectiveness Analysis (Days 3-4)
+2.  Basics of Cost-Effectiveness Analysis (Days 2-3)
 
 -   Valuing cost and health outcomes
 -   Incremental cost-effectiveness analysis
@@ -289,7 +287,7 @@ You have been appointed as Director of a funding allocation committee responsibl
 
 ## Workshop Content
 
-3.  Advanced Topic Preview (Day 5)
+3.  Advanced Topic Preview (4)
 
 -   Sensitivity Analysis
 -   Advanced CEA modeling frameworks.

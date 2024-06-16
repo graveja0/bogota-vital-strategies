@@ -242,7 +242,7 @@ Ha sido nombrado director de un comité de asignación de fondos responsable de 
 
 <!-- TK Esto necesita ser una página completa -->
 
-## Commonality of cases {background="#43464B"}
+## Casos comunes {background="#43464B"}
 
 ::: incremental
 -   *Tradeoffs* inevitables
