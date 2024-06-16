@@ -5596,21 +5596,21 @@
     "href": "lectures/lec_1a.introduction-to-decision-analysis.html#workshop-content",
     "title": "Introduction to Decision Analysis",
     "section": "Workshop Content",
-    "text": "Workshop Content\n\nBasics of decision analysis (Days 1-2)\n\n\nDecision trees\nBayes theorem and treatment thresholds\nUncertainty and prioritizing future research"
+    "text": "Workshop Content\n\nBasics of decision analysis (Day 1)\n\n\nDecision trees"
   },
   {
     "objectID": "lectures/lec_1a.introduction-to-decision-analysis.html#workshop-content-1",
     "href": "lectures/lec_1a.introduction-to-decision-analysis.html#workshop-content-1",
     "title": "Introduction to Decision Analysis",
     "section": "Workshop Content",
-    "text": "Workshop Content\n\nBasics of Cost-Effectiveness Analysis (Days 3-4)\n\n\nValuing cost and health outcomes\nIncremental cost-effectiveness analysis\nIntroduction to Markov Modeling"
+    "text": "Workshop Content\n\nBasics of Cost-Effectiveness Analysis (Days 2-3)\n\n\nValuing cost and health outcomes\nIncremental cost-effectiveness analysis\nIntroduction to Markov Modeling"
   },
   {
     "objectID": "lectures/lec_1a.introduction-to-decision-analysis.html#workshop-content-2",
     "href": "lectures/lec_1a.introduction-to-decision-analysis.html#workshop-content-2",
     "title": "Introduction to Decision Analysis",
     "section": "Workshop Content",
-    "text": "Workshop Content\n\nAdvanced Topic Preview (Day 5)\n\n\nSensitivity Analysis\nAdvanced CEA modeling frameworks."
+    "text": "Workshop Content\n\nAdvanced Topic Preview (4)\n\n\nSensitivity Analysis\nAdvanced CEA modeling frameworks."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#objetivos-de-aprendizaje",
@@ -7846,11 +7846,11 @@
     "text": "La estimación de probabilidades es fundamental para la toma de decisiones\n\n\nNo se pueden obtener fácilmente las probabilidades necesarias\nPeríodos de tiempo / duraciones variables\nMétodos para estimar probabilidades"
   },
   {
-    "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#commonality-of-cases",
-    "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#commonality-of-cases",
+    "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#casos-comunes",
+    "href": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#casos-comunes",
     "title": "Introducción al análisis de decisiones",
-    "section": "Commonality of cases",
-    "text": "Commonality of cases\n\n\nTradeoffs inevitables\nDiferentes perspectivas pueden llevar a conclusiones diferentes\nMúltiples objetivos contrapuestos\nComplejidad\nIncertidumbre"
+    "section": "Casos comunes",
+    "text": "Casos comunes\n\n\nTradeoffs inevitables\nDiferentes perspectivas pueden llevar a conclusiones diferentes\nMúltiples objetivos contrapuestos\nComplejidad\nIncertidumbre"
   },
   {
     "objectID": "lectures/ESP_lec_1a.introduction-to-decision-analysis.html#análisis-de-decisiones",
