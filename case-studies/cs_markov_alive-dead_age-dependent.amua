@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Model>
-    <name>cs_markov_alive-dead</name>
+    <name>cs_markov_alive-dead_age-dependent</name>
     <type>1</type>
     <Metadata>
         <author>johngraves</author>
         <dateCreated>Sat Jun 15 16:19:01 CDT 2024</dateCreated>
         <versionCreated>0.3.1</versionCreated>
         <modifier>johngraves</modifier>
-        <dateModified>Sat Jun 15 16:46:09 CDT 2024</dateModified>
+        <dateModified>Sat Jun 15 16:46:23 CDT 2024</dateModified>
         <versionModified>0.3.1</versionModified>
     </Metadata>
     <DimInfo>
