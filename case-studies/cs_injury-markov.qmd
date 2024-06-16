@@ -20,15 +20,9 @@ Our Markov model will allow us to capture the progression of firework-related in
 
 This approach will provide a more comprehensive assessment of the lifetime health and economic impacts of the proposed strategies, considering factors such as long-term healthcare costs, changes in injury rates, and compliance levels. The Markov model’s ability to incorporate these extended horizons and recurring events will yield deeper insights into the most effective and sustainable approaches to mitigating firework-related injuries in Columbia.
 
-# Alive-Dead Model
+# 1. Alive-Dead Model
 
 We will start by constructing a simple Markov model representing just two health states: "Alive" and "Dead." We will assume that individuals can transition between these states based on the probabilities of surviving as calculated using demographic life table data from Columbia. Once we validate that we can successfully replicate life expectancy from birth, we can begin to augment the model with firework injuries, strategies, costs, etc.
-
-## Open New Model
-
-Click on Model {{< fa arrow-right >}} New Markov {{< fa arrow-right >}} model to start a new model in Amua.
-
-![](images/clipboard-2052749061.png){fig-align="center" width="400"}
 
 ## Markov Structure: Alive-Dead
 
@@ -160,7 +154,7 @@ Now, we have finished constructing the Alive-Dead model. Analyze the model using
 **Run the alive-dead model and calculate overall life expectancy.**
 :::
 
-# Firework Injury Model
+# 2. Firework Injury Model
 
 Our next step is to build on the Alive-Dead model by adding in a new probability of firework injury among those who survive in each cycle. Recall the following probabilities from the Firework Injury Decision Tree case study:
 
@@ -275,11 +269,26 @@ Next, we can define the *time-varying variable* `p_injury_t` (which reads from t
 Re-run the model using age-specific injury probabilities. How does the expected number of overall and fatal injuries change from when we used the fixed probabilities above?
 :::
 
-# Add Regulate and Ban Scenarios
+# 3. Add Regulate and Ban Scenarios
 
-As in the Decision Tree case study, we'll next add in two additional strategies that aim to reduce the probability of injury:
+As in the Decision Tree case study, please add in two additional strategies that aim to reduce the probability of injury:
 
-| Description                                   | Base Case Value | Parameter Name    |
+::: callout-tip
+Recall that you can "copy" and "paste" trees to reduce the amount of work you need to do!
+:::
+
+| Description                                                                     | Base Case Value | Parameter Name |
+|---------------------------------------------|--------------|--------------|
+| Relative risk reduction: probability of injury under "Ban" policy scenario      | 0.40            | rr_ban         |
+| Relative risk reduction: probability of injury under "Regulate" policy scenario | 0.80            | rr_regulate    |
+
+# 4. Add Long-Term Consequences
+
+Please add in chance nodes (after initial injury) and long-term (Markov chain) health states corresponding to recovery vs. sequelae from the injury:
+
+| Description                                    | Base Case Value | Parameter Name    |
 |----------------------------------|-------------------|-------------------|
-| Probability of Recovery: Mild/Moderate Injury | 0.85            | p_recover_mildmod |
-| Probability of Recovery: Major Injury         | 0.6             | p_recover_severe  |
+| Probability Injury is Severe                   | 0.30            | p_severe          |
+| Probability Injury is Moderate                 | 0.70            | p_fatality        |
+| Probability of Recovery: Mild/Moderate Injury  | 0.85            | p_recover_mildmod |
+| Probability of Recovery: Major Injury          | 0.6             | p_recover_severe  |

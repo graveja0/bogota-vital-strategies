@@ -7,7 +7,7 @@
         <dateCreated>Sat Jun 15 16:19:01 CDT 2024</dateCreated>
         <versionCreated>0.3.1</versionCreated>
         <modifier>johngraves</modifier>
-        <dateModified>Sat Jun 15 18:57:21 CDT 2024</dateModified>
+        <dateModified>Sun Jun 16 07:07:21 CDT 2024</dateModified>
         <versionModified>0.3.1</versionModified>
     </Metadata>
     <DimInfo>
@@ -46,12 +46,12 @@
         <notes></notes>
     </Parameter>
     <Parameter>
-        <name>rr_lesión</name>
+        <name>rr_lesión_prohibir</name>
         <expression>0.4</expression>
         <notes></notes>
     </Parameter>
     <Parameter>
-        <name>rr_regulate</name>
+        <name>rr_lesión_regular</name>
         <expression>0.8</expression>
         <notes></notes>
     </Parameter>
@@ -674,9 +674,6 @@
             <hasVarUpdates>false</hasVarUpdates>
             <visible>true</visible>
             <collapsed>false</collapsed>
-            <cost>0</cost>
-            <cost>0</cost>
-            <cost>0</cost>
         </Node>
         <Node>
             <type>1</type>
@@ -993,7 +990,7 @@
             <hasVarUpdates>false</hasVarUpdates>
             <visible>true</visible>
             <collapsed>false</collapsed>
-            <prob>rr_lesión * p_lesión_por_edad</prob>
+            <prob>rr_lesión_prohibir * p_lesión_por_edad</prob>
             <cost>0</cost>
             <cost>1</cost>
             <cost>0</cost>
@@ -1130,7 +1127,7 @@
         </Node>
         <Node>
             <type>1</type>
-            <name>Regular los fuegos artificiales</name>
+            <name>Regular las ventas</name>
             <xPos>227</xPos>
             <yPos>776</yPos>
             <width>29</width>
@@ -1218,7 +1215,7 @@
             <hasVarUpdates>false</hasVarUpdates>
             <visible>true</visible>
             <collapsed>false</collapsed>
-            <prob>rr_regulate * p_lesión_por_edad</prob>
+            <prob>rr_lesión_regular * p_lesión_por_edad</prob>
             <cost>0</cost>
             <cost>1</cost>
             <cost>0</cost>
