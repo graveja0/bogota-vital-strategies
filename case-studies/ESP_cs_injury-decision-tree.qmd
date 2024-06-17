@@ -1,0 +1,158 @@
+---
+title: "Árbol de decisiones sobre lesiones por fuegos artificiales"
+format:
+  html:
+    toc: false
+  docx:
+    toc: false
+  pdf:
+    toc: false        
+editor_options: 
+  chunk_output_type: console
+self-contained: true
+---
+
+# Introducción y visión general del problema {{< fa regular clipboard >}}
+
+En Colombia, el problema de las lesiones relacionadas con los fuegos artificiales, especialmente durante las fiestas, sigue siendo un importante problema de salud pública. Los fuegos artificiales, aunque están culturalmente arraigados y son una fuente de celebración, plantean riesgos sustanciales, especialmente para los niños. Esto ha llevado a los responsables políticos a considerar diversas estrategias para mitigar estos riesgos y mejorar la seguridad pública.
+
+El problema de decisión que vamos a considerar gira en torno al análisis de enfoques para reducir las lesiones y muertes causadas por los fuegos artificiales. Las dos estrategias principales que se barajan son **(1) la prohibición total de los fuegos artificiales** y **(2) una reglamentación estricta**, como la restricción de las licencias de venta y una aplicación rigurosa de la ley.
+
+La prohibición total pretende eliminar la causa principal de las lesiones prohibiendo la venta, el almacenamiento y el uso de fuegos artificiales. Este enfoque pretende proteger directamente la salud pública, pero puede encontrar resistencia debido a su impacto en las tradiciones culturales y los medios de subsistencia de los vendedores.
+
+Por otro lado, la regulación estricta implica la aplicación de controles estrictos sobre la venta y el uso de fuegos artificiales. Esta estrategia incluye medidas como la expedición de licencias de venta sólo a vendedores autorizados, la imposición de restricciones de edad y la realización de campañas de educación pública sobre los peligros de los fuegos artificiales. Este enfoque pretende reducir las lesiones al tiempo que permite un uso controlado y seguro de los fuegos artificiales.
+
+Nuestros estudios de casos explorarán estas estrategias a través de dos enfoques de modelización de decisiones. Este estudio de caso utilizará un modelo de árbol de decisión para evaluar los resultados inmediatos y los costes asociados a cada estrategia.
+
+Posteriormente, emplearemos un modelo de cohortes de Markov para examinar las repercusiones sanitarias y económicas a largo plazo, teniendo en cuenta factores como las tasas de lesiones, los costes sanitarios y los niveles de cumplimiento.
+
+Mediante el análisis de estos modelos, pretendemos ofrecer una evaluación exhaustiva del planteamiento más rentable y sostenible para reducir las lesiones relacionadas con la pólvora en Columbia en la actualidad. \# Model Inputs and Parameters
+
+## Índices de lesiones
+
+Sus colegas han recopilado los siguientes datos sobre lesiones por pólvora por año en Columbia. Construiremos un modelo de árbol de decisión basado en las lesiones del año más reciente notificado (2022).
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(flextable)
+
+# Create a data frame with the data
+firework_data <- data.frame(
+  Year = as.character(c(2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022)),
+  Cases = c(275, 754, 812, 1061, 1096, 1351, 1407, 848, 2012, 1469, 1778, 1477, 1378, 1504, 1694, 1510),
+  Population = c(42658630, 43134017, 43608630, 44086292, 44553416, 45001731, 45434492, 46301316, 43183988, 46301316, 47419000, 48259442, 49269676, 50407437, 51177378, 51826932),
+  `Rate per 100,000` = c(0.64, 1.75, 1.86, 2.41, 2.46, 3.00, 3.10, 1.83, 4.31, 3.17, 3.75, 3.06, 2.80, 2.98, 3.31, 2.92)
+)
+
+# Create the flextable
+ft <- flextable(tail(firework_data ))
+
+# Print the flextable
+ft
+```
+
+## Tipos de lesiones y consecuencias
+
+Partiremos de la base de que las lesiones notificadas se clasifican en tres grandes categorías:
+
+-   **Lesiones leves o moderadas**: Quemaduras de primer grado, que pueden causar dolor, enrojecimiento e hinchazón leve. Esta categoría también incluye las quemaduras de segundo grado que cubren una parte más importante del cuerpo e implican ampollas, dolor y riesgo potencial de infección
+
+-   **Lesión grave**: quemaduras de tercer grado o traumatismos graves que afectan a tejidos más profundos y pueden dar lugar a complicaciones importantes.
+
+-   Lesión mortal
+
+::: {.callout-important appearance="simple"}
+Es muy probable que haya muchas lesiones leves y moderadas que no figuren en las estadísticas oficiales. Para este estudio de caso, supondremos que las lesiones graves representan el 30% de las lesiones notificadas.
+:::
+
+| Description                            | Base Case Value   | Parameter Name |
+|------------------------------------|------------------|------------------|
+| Probabilidad de lesión                 | 0.0000292         | p_lesión       |
+| Probabilidad de lesiones graves        | 0.30              | p_grave        |
+| Probabilidad de lesión leve o moderada | 0.7 = 1 - p_grave | 1 - p_grave    |
+| Probabilidad de lesión mortal          | 0.0046            | p_fatalidad    |
+
+También supondremos que un pequeño porcentaje (15%) de las personas con lesiones leves/moderadas sufren secuelas a largo plazo (es decir, se recuperan en un 85%), mientras que la mayoría (60%) de las personas con lesiones graves no se recuperan totalmente y sufren complicaciones a largo plazo.
+
+| Description                                        | Base Case Value | Parameter Name    |
+|-----------------------------------|------------------|------------------|
+| Probabilidad de recuperación: Lesión leve/moderada | 0.85            | p_recuperar_mod   |
+| Probabilidad de recuperación: Lesión grave         | 0.1             | p_recuperar_grave |
+
+## Estrategias e impacto
+
+Cuando el alcalde de Bogotá prohibió la venta de fuegos artificiales en 1995, las quemaduras relacionadas con este tipo de material se redujeron en un 62%, pasando de 204 en la temporada navideña de 1994-1995 a 77 en la de 1995-1996[^1] Supondremos una reducción relativa del riesgo similar del 60% en el escenario de "Prohibición".
+
+[^1]: Fuente: "Antanas Mockus: The Prohibition of Fireworks in Bogotá Sequel," *Harvard Kennedy School Case Study.* Available from<https://case.hks.harvard.edu/antanas-mockus-the-prohibition-of-fireworks-in-bogota-sequel/>
+
+En comparación, supondremos que una normativa más estricta reducirá las lesiones por fuegos artificiales en sólo un 20%. Más adelante examinaremos la sensibilidad de nuestros resultados a estas hipótesis.
+
+# Ejercicios
+
+## 1.1. Construir una estrategia de statu quo
+
+*Construya un árbol de decisión en Amua para una estrategia de "No hacer nada". Su árbol debería funcionar a través de los siguientes nodos de azar*:
+
+1.  Lesionado vs. No lesionado
+
+2.  Lesión mortal frente a lesión no mortal
+
+3.  Lesión leve/moderada frente a lesión grave
+
+4.  Recuperación completa vs. Recuperación con secuela de lesión
+
+Por favor, utilice los nombres y valores de los parámetros suministrados anteriormente en la construcción de su árbol.
+
+::: callout-important
+A menudo, cuando añades ramas a un árbol en Amua, el árbol se llena mucho (ver abajo). Para "limpiar" tu árbol, puedes hacer clic en el botón "OCD" (Organize Current Display) y Amua reorganizará el diseño por ti.
+
+![](images/clipboard-1033024070.png){fig-align="center" width="400"}
+
+## 1.2. Add Outcomes
+:::
+
+## 1.2. Añadir resultados
+
+Amua utiliza por defecto resultados de coste. Por favor, elimine el resultado de coste y defina un nuevo resultado primario basado en la lesión. En otras palabras, el resultado "payoff" debería ser 1.0 si se produce una lesión, y 0 en caso contrario.
+
+::: callout-tip
+Puede editar los resultados haciendo clic en Modelo {{< fa flecha-derecha >}} Propiedades {{< fa flecha-derecha >}} Análisis:
+
+![](images/clipboard-53317561.png){fig-align="center" width="445"}
+:::
+
+## 1.3. Asegúrese de que su modelo se ajusta a los totales de lesiones observados.
+
+\*Ejecute su árbol de decisión inicial utilizando un tamaño de cohorte de 51.682.692 (2022 población de Columbia). Verifique que el número total de lesiones por fuegos artificiales coincide con el total registrado de 1.510.
+
+::: aviso
+Puede introducir el tamaño de la cohorte haciendo clic en Modelo {{< fa flecha-derecha >}} Propiedades {{< fa flecha-derecha >}} Simulación:
+
+![](images/clipboard-670965426.png){fig-align="center" width="445"}
+:::
+
+## 2.1. Incluir escenarios de políticas adicionales
+
+\*Cree una versión duplicada de su árbol "No hacer nada" para construir ramas separadas para los escenarios "Prohibir" y "Regular". En cada uno de ellos, la probabilidad de lesión debe modificarse mediante un parámetro de reducción del riesgo relativo con valores basados en el texto anterior y la tabla siguiente.
+
+| Descripción                                                                               | Valor del caso base | Nombre del parámetro |
+|-------------------------------------|------------------|------------------|
+| Reducción relativa del riesgo: probabilidad de lesión en la hipótesis de la política "Ban | 0.40                | rr_lesión_prohibir   |
+| Reducción relativa del riesgo: probabilidad de lesión en el escenario político "Regular   | 0.80                | rr_lesión_regular    |
+
+::: callout-tip
+Puede copiar y pegar la rama "No hacer nada" haciendo clic con el botón derecho en el primer nodo de azar <img src="../amua-images/chanceNode_24.png" alt="Custom Icon" width="20" height="20"/> y seleccionando "Copiar". A continuación, puede pegar una copia de toda la estructura de árbol en el nodo de decisión rojo <img src="../amua-images/decisionNode_24.png" alt="Custom Icon" width="20" height="20"/>.
+:::
+
+## 2.2. Añadir resultados adicionales
+
+Añada resultados adicionales basados en cada tipo de lesión (leve/moderada, grave, mortal). Utilice su árbol de decisión para proyectar las lesiones en general y por tipo según cada estrategia. Utilice los resultados para rellenar la tabla siguiente. En cada celda debe haber un recuento calculado del número de cada tipo de lesión en cada estrategia.
+
+| Estrategia                       | Cualquier lesión | Leve/Moderada | Grave | Lesión mortal |
+|---------------|---------------|---------------|---------------|---------------|
+| No hacer nada                    |                  |               |       |               |
+| Prohibir los fuegos artificiales |                  |               |       |               |
+| Regular los fuegos artificiales  |                  |               |       |               |
