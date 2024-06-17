@@ -7,7 +7,7 @@
         <dateCreated>Mon Jun 17 07:57:53 COT 2024</dateCreated>
         <versionCreated>0.3.1</versionCreated>
         <modifier>johngraves</modifier>
-        <dateModified>Mon Jun 17 08:53:40 COT 2024</dateModified>
+        <dateModified>Mon Jun 17 10:47:33 COT 2024</dateModified>
         <versionModified>0.3.1</versionModified>
     </Metadata>
     <DimInfo>
@@ -15,10 +15,13 @@
         <dimNames>Lesión mortal</dimNames>
         <dimNames>Moderato</dimNames>
         <dimNames>Grave</dimNames>
+        <dimNames>Costos</dimNames>
         <dimSymbols>IN</dimSymbols>
         <dimSymbols>FINJ</dimSymbols>
         <dimSymbols>MINJ</dimSymbols>
         <dimSymbols>GRAVE</dimSymbols>
+        <dimSymbols>C</dimSymbols>
+        <decimals>4</decimals>
         <decimals>4</decimals>
         <decimals>4</decimals>
         <decimals>4</decimals>
@@ -68,6 +71,31 @@
         <expression>0.8</expression>
         <notes></notes>
     </Parameter>
+    <Parameter>
+        <name>c_mod</name>
+        <expression>2000000</expression>
+        <notes></notes>
+    </Parameter>
+    <Parameter>
+        <name>c_grave</name>
+        <expression>40000000</expression>
+        <notes></notes>
+    </Parameter>
+    <Parameter>
+        <name>c_fatalidad</name>
+        <expression>0</expression>
+        <notes></notes>
+    </Parameter>
+    <Parameter>
+        <name>c_sec_mod</name>
+        <expression>1000000</expression>
+        <notes></notes>
+    </Parameter>
+    <Parameter>
+        <name>c_sec_grave</name>
+        <expression>4000000</expression>
+        <notes></notes>
+    </Parameter>
     <simParamSets>false</simParamSets>
     <simType>0</simType>
     <cohortSize>51682692</cohortSize>
@@ -81,13 +109,15 @@
             <type>0</type>
             <name>Root</name>
             <xPos>50</xPos>
-            <yPos>257</yPos>
+            <yPos>617</yPos>
             <width>20</width>
             <height>20</height>
             <parentX>0</parentX>
             <parentY>0</parentY>
             <parentType>0</parentType>
             <childIndices>1</childIndices>
+            <childIndices>23</childIndices>
+            <childIndices>12</childIndices>
             <level>0</level>
             <hasCost>false</hasCost>
             <hasVarUpdates>false</hasVarUpdates>
@@ -97,6 +127,8 @@
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
@@ -104,13 +136,13 @@
         </Node>
         <Node>
             <type>1</type>
-            <name>Status Quo</name>
+            <name>Status QuoPro</name>
             <xPos>235</xPos>
             <yPos>257</yPos>
             <width>20</width>
             <height>20</height>
             <parentX>70</parentX>
-            <parentY>267</parentY>
+            <parentY>627</parentY>
             <parentType>0</parentType>
             <childIndices>2</childIndices>
             <childIndices>3</childIndices>
@@ -124,6 +156,8 @@
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
@@ -151,6 +185,8 @@
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
@@ -176,6 +212,8 @@
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
@@ -203,6 +241,8 @@
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
@@ -228,10 +268,12 @@
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
             <payoff>1</payoff>
             <payoff>1</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
+            <payoff>c_fatalidad</payoff>
         </Node>
         <Node>
             <type>1</type>
@@ -255,6 +297,8 @@
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
@@ -280,10 +324,12 @@
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
             <payoff>1</payoff>
             <payoff>0</payoff>
             <payoff>1</payoff>
             <payoff>0</payoff>
+            <payoff>c_mod</payoff>
         </Node>
         <Node>
             <type>2</type>
@@ -305,16 +351,18 @@
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
             <payoff>1</payoff>
             <payoff>0</payoff>
             <payoff>1</payoff>
             <payoff>0</payoff>
+            <payoff>c_mod+c_sec_mod</payoff>
         </Node>
         <Node>
             <type>1</type>
             <name>Grave</name>
             <xPos>790</xPos>
-            <yPos>175</yPos>
+            <yPos>173</yPos>
             <width>20</width>
             <height>20</height>
             <parentX>625</parentX>
@@ -332,6 +380,8 @@
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
@@ -341,11 +391,11 @@
             <type>2</type>
             <name>Recuperar</name>
             <xPos>975</xPos>
-            <yPos>145</yPos>
+            <yPos>143</yPos>
             <width>20</width>
             <height>20</height>
             <parentX>810</parentX>
-            <parentY>185</parentY>
+            <parentY>183</parentY>
             <parentType>1</parentType>
             <level>5</level>
             <hasCost>false</hasCost>
@@ -357,20 +407,22 @@
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
             <payoff>1</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>1</payoff>
+            <payoff>c_grave</payoff>
         </Node>
         <Node>
             <type>2</type>
             <name>Secuelas de lesiones</name>
             <xPos>975</xPos>
-            <yPos>205</yPos>
+            <yPos>203</yPos>
             <width>20</width>
             <height>20</height>
             <parentX>810</parentX>
-            <parentY>185</parentY>
+            <parentY>183</parentY>
             <parentType>1</parentType>
             <level>5</level>
             <hasCost>false</hasCost>
@@ -382,10 +434,626 @@
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
+            <cost>0</cost>
             <payoff>1</payoff>
             <payoff>0</payoff>
             <payoff>0</payoff>
             <payoff>1</payoff>
+            <payoff>c_grave+c_sec_grave</payoff>
+        </Node>
+        <Node>
+            <type>1</type>
+            <name>Prohibición</name>
+            <xPos>235</xPos>
+            <yPos>977</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>70</parentX>
+            <parentY>627</parentY>
+            <parentType>0</parentType>
+            <childIndices>13</childIndices>
+            <childIndices>22</childIndices>
+            <level>1</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>0</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+        </Node>
+        <Node>
+            <type>1</type>
+            <name>Lesiones</name>
+            <xPos>420</xPos>
+            <yPos>910</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>255</parentX>
+            <parentY>987</parentY>
+            <parentType>1</parentType>
+            <childIndices>14</childIndices>
+            <childIndices>21</childIndices>
+            <level>2</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>rr_lesión_prohibir * p_lesión</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+        </Node>
+        <Node>
+            <type>1</type>
+            <name>Sobrevivir</name>
+            <xPos>605</xPos>
+            <yPos>835</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>440</parentX>
+            <parentY>920</parentY>
+            <parentType>1</parentType>
+            <childIndices>15</childIndices>
+            <childIndices>18</childIndices>
+            <level>3</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>C</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+        </Node>
+        <Node>
+            <type>1</type>
+            <name>Moderato</name>
+            <xPos>790</xPos>
+            <yPos>775</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>625</parentX>
+            <parentY>845</parentY>
+            <parentType>1</parentType>
+            <childIndices>16</childIndices>
+            <childIndices>17</childIndices>
+            <level>4</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>C</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+        </Node>
+        <Node>
+            <type>2</type>
+            <name>Recuperar</name>
+            <xPos>975</xPos>
+            <yPos>745</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>810</parentX>
+            <parentY>785</parentY>
+            <parentType>1</parentType>
+            <level>5</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>p_recuperar_mod</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
+            <payoff>c_mod</payoff>
+        </Node>
+        <Node>
+            <type>2</type>
+            <name>Secuelas de lesiones</name>
+            <xPos>975</xPos>
+            <yPos>805</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>810</parentX>
+            <parentY>785</parentY>
+            <parentType>1</parentType>
+            <level>5</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>C</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
+            <payoff>c_mod+c_sec_mod</payoff>
+        </Node>
+        <Node>
+            <type>1</type>
+            <name>Grave</name>
+            <xPos>790</xPos>
+            <yPos>895</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>625</parentX>
+            <parentY>845</parentY>
+            <parentType>1</parentType>
+            <childIndices>19</childIndices>
+            <childIndices>20</childIndices>
+            <level>4</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>p_grave</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+        </Node>
+        <Node>
+            <type>2</type>
+            <name>Recuperar</name>
+            <xPos>975</xPos>
+            <yPos>865</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>810</parentX>
+            <parentY>905</parentY>
+            <parentType>1</parentType>
+            <level>5</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>p_recuperar_grave</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>1</payoff>
+            <payoff>c_grave</payoff>
+        </Node>
+        <Node>
+            <type>2</type>
+            <name>Secuelas de lesiones</name>
+            <xPos>975</xPos>
+            <yPos>925</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>810</parentX>
+            <parentY>905</parentY>
+            <parentType>1</parentType>
+            <level>5</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>C</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>1</payoff>
+            <payoff>c_grave+c_sec_mod</payoff>
+        </Node>
+        <Node>
+            <type>2</type>
+            <name>Lesión mortal</name>
+            <xPos>605</xPos>
+            <yPos>985</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>440</parentX>
+            <parentY>920</parentY>
+            <parentType>1</parentType>
+            <level>3</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>p_fatalidad</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>1</payoff>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>c_fatalidad</payoff>
+        </Node>
+        <Node>
+            <type>2</type>
+            <name>Sin lesiones</name>
+            <xPos>420</xPos>
+            <yPos>1045</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>255</parentX>
+            <parentY>987</parentY>
+            <parentType>1</parentType>
+            <level>2</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>C</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+        </Node>
+        <Node>
+            <type>1</type>
+            <name>Regular</name>
+            <xPos>235</xPos>
+            <yPos>617</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>70</parentX>
+            <parentY>627</parentY>
+            <parentType>0</parentType>
+            <childIndices>24</childIndices>
+            <childIndices>33</childIndices>
+            <level>1</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>0</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+        </Node>
+        <Node>
+            <type>1</type>
+            <name>Lesiones</name>
+            <xPos>420</xPos>
+            <yPos>550</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>255</parentX>
+            <parentY>627</parentY>
+            <parentType>1</parentType>
+            <childIndices>25</childIndices>
+            <childIndices>32</childIndices>
+            <level>2</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>rr_lesión_regular * p_lesión</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+        </Node>
+        <Node>
+            <type>1</type>
+            <name>Sobrevivir</name>
+            <xPos>605</xPos>
+            <yPos>475</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>440</parentX>
+            <parentY>560</parentY>
+            <parentType>1</parentType>
+            <childIndices>26</childIndices>
+            <childIndices>29</childIndices>
+            <level>3</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>C</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+        </Node>
+        <Node>
+            <type>1</type>
+            <name>Moderato</name>
+            <xPos>790</xPos>
+            <yPos>415</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>625</parentX>
+            <parentY>485</parentY>
+            <parentType>1</parentType>
+            <childIndices>27</childIndices>
+            <childIndices>28</childIndices>
+            <level>4</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>C</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+        </Node>
+        <Node>
+            <type>2</type>
+            <name>Recuperar</name>
+            <xPos>975</xPos>
+            <yPos>385</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>810</parentX>
+            <parentY>425</parentY>
+            <parentType>1</parentType>
+            <level>5</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>p_recuperar_mod</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
+            <payoff>c_mod</payoff>
+        </Node>
+        <Node>
+            <type>2</type>
+            <name>Secuelas de lesiones</name>
+            <xPos>975</xPos>
+            <yPos>445</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>810</parentX>
+            <parentY>425</parentY>
+            <parentType>1</parentType>
+            <level>5</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>C</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
+            <payoff>c_mod+c_sec_mod</payoff>
+        </Node>
+        <Node>
+            <type>1</type>
+            <name>Grave</name>
+            <xPos>790</xPos>
+            <yPos>535</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>625</parentX>
+            <parentY>485</parentY>
+            <parentType>1</parentType>
+            <childIndices>30</childIndices>
+            <childIndices>31</childIndices>
+            <level>4</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>p_grave</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+        </Node>
+        <Node>
+            <type>2</type>
+            <name>Recuperar</name>
+            <xPos>975</xPos>
+            <yPos>505</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>810</parentX>
+            <parentY>545</parentY>
+            <parentType>1</parentType>
+            <level>5</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>p_recuperar_grave</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>1</payoff>
+            <payoff>c_grave</payoff>
+        </Node>
+        <Node>
+            <type>2</type>
+            <name>Secuelas de lesiones</name>
+            <xPos>975</xPos>
+            <yPos>565</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>810</parentX>
+            <parentY>545</parentY>
+            <parentType>1</parentType>
+            <level>5</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>C</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>1</payoff>
+            <payoff>c_grave+c_sec_grave</payoff>
+        </Node>
+        <Node>
+            <type>2</type>
+            <name>Lesión mortal</name>
+            <xPos>605</xPos>
+            <yPos>625</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>440</parentX>
+            <parentY>560</parentY>
+            <parentType>1</parentType>
+            <level>3</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>p_fatalidad</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>1</payoff>
+            <payoff>1</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>c_fatalidad</payoff>
+        </Node>
+        <Node>
+            <type>2</type>
+            <name>Sin lesiones</name>
+            <xPos>420</xPos>
+            <yPos>685</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>255</parentX>
+            <parentY>627</parentY>
+            <parentType>1</parentType>
+            <level>2</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <prob>C</prob>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <cost>0</cost>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
+            <payoff>0</payoff>
         </Node>
     </tree>
 </Model>
