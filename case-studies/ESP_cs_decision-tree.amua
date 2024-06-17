@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Model>
+    <name>ESP_cs_decision-tree</name>
+    <type>0</type>
+    <Metadata>
+        <author>johngraves</author>
+        <dateCreated>Mon Jun 17 07:57:53 COT 2024</dateCreated>
+        <versionCreated>0.3.1</versionCreated>
+        <modifier>johngraves</modifier>
+        <dateModified>Mon Jun 17 07:58:02 COT 2024</dateModified>
+        <versionModified>0.3.1</versionModified>
+    </Metadata>
+    <DimInfo>
+        <dimNames>Cost</dimNames>
+        <dimSymbols>$</dimSymbols>
+        <decimals>4</decimals>
+        <analysisType>0</analysisType>
+        <objective>0</objective>
+        <objectiveDim>0</objectiveDim>
+        <costDim>0</costDim>
+        <effectDim>0</effectDim>
+        <WTP>0.0</WTP>
+        <extendedDim>0</extendedDim>
+    </DimInfo>
+    <scale>100</scale>
+    <alignRight>false</alignRight>
+    <simParamSets>false</simParamSets>
+    <simType>0</simType>
+    <cohortSize>1</cohortSize>
+    <CRN>false</CRN>
+    <crnSeed>0</crnSeed>
+    <displayIndResults>false</displayIndResults>
+    <numThreads>1</numThreads>
+    <reportSubgroups>false</reportSubgroups>
+    <tree>
+        <Node>
+            <type>0</type>
+            <name>Root</name>
+            <xPos>175</xPos>
+            <yPos>175</yPos>
+            <width>20</width>
+            <height>20</height>
+            <parentX>0</parentX>
+            <parentY>0</parentY>
+            <parentType>0</parentType>
+            <level>0</level>
+            <hasCost>false</hasCost>
+            <hasVarUpdates>false</hasVarUpdates>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <cost>0</cost>
+            <payoff>0</payoff>
+        </Node>
+    </tree>
+</Model>

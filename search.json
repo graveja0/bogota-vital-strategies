@@ -3745,7 +3745,7 @@
     "href": "case-studies/cs_injury-decision-tree.html#injury-types-and-consequences",
     "title": "Firework Injury Decision Tree",
     "section": "Injury Types and Consequences",
-    "text": "Injury Types and Consequences\nWe will assume that reported injuries fall into three major categories:\n\nMinor Or Moderate Injury: First-degree burns, which may cause pain, redness, and minor swelling. This category also includes second-degree burns that cover a more significant portion of the body and involve blisters, pain, and potential infection risk\nMajor Injury: third-degree burns or severe trauma that affects deeper tissues and can lead to significant complications.\nFatal Injury\n\n\n\n\n\n\n\nThere are very likely many minor and moderate injuries that go unreported in official statistics. For this case study, we will assume that severe injuries are 30% of reported injuries.\n\n\n\n\n\n\nDescription\nBase Case Value\nParameter Name\n\n\n\n\nProbability of Injury\n0.0000292\np_injury\n\n\nProbability Injury is Severe\n0.30\np_severe\n\n\nProbability Injury is Fatal\n0.0046\np_fatality\n\n\n\nWe will also assume that a small percentage (15%) of individuals with mild/moderate injuries experience long-term consequences (i.e., 85% recover), while the majority (60%) of those with severe injuries do not fully recover and experience long-term complications.\n\n\n\n\n\n\n\n\nDescription\nBase Case Value\nParameter Name\n\n\n\n\nProbability of Recovery: Mild/Moderate Injury\n0.85\np_recover_mildmod\n\n\nProbability of Recovery: Major Injury\n0.6\np_recover_severe"
+    "text": "Injury Types and Consequences\nWe will assume that reported injuries fall into three major categories:\n\nMinor Or Moderate Injury: First-degree burns, which may cause pain, redness, and minor swelling. This category also includes second-degree burns that cover a more significant portion of the body and involve blisters, pain, and potential infection risk\nMajor Injury: third-degree burns or severe trauma that affects deeper tissues and can lead to significant complications.\nFatal Injury\n\n\n\n\n\n\n\nThere are very likely many minor and moderate injuries that go unreported in official statistics. For this case study, we will assume that severe injuries are 30% of reported injuries.\n\n\n\n\n\n\n\n\n\n\n\nDescription\nBase Case Value\nParameter Name\n\n\n\n\nProbability of Injury\n0.0000292\np_injury\n\n\nProbability Injury is Severe\n0.30\np_severe\n\n\nProbability Injury is Mild or Moderate\n0.7 = 1 - p_severe\n1 - p_severe\n\n\nProbability Injury is Fatal\n0.0046\np_fatality\n\n\n\nWe will also assume that a small percentage (15%) of individuals with mild/moderate injuries experience long-term consequences (i.e., 85% recover), while the majority (60%) of those with severe injuries do not fully recover and experience long-term complications.\n\n\n\n\n\n\n\n\nDescription\nBase Case Value\nParameter Name\n\n\n\n\nProbability of Recovery: Mild/Moderate Injury\n0.85\np_recover_mildmod\n\n\nProbability of Recovery: Major Injury\n0.1\np_recover_severe"
   },
   {
     "objectID": "case-studies/cs_injury-decision-tree.html#strategies-and-impact",
@@ -3797,133 +3797,193 @@
     "text": "Footnotes\n\n\nSource: “Antanas Mockus: The Prohibition of Fireworks in Bogotá Sequel,” Harvard Kennedy School Case Study. Available fromhttps://case.hks.harvard.edu/antanas-mockus-the-prohibition-of-fireworks-in-bogota-sequel/↩︎"
   },
   {
-    "objectID": "case-studies/ESP_cs_decision-tree-excel.html",
-    "href": "case-studies/ESP_cs_decision-tree-excel.html",
-    "title": "Exercise: Decision Tree in Excel",
+    "objectID": "case-studies/ESP_cs_injury-decision-tree.html",
+    "href": "case-studies/ESP_cs_injury-decision-tree.html",
+    "title": "Árbol de decisiones sobre lesiones por fuegos artificiales",
     "section": "",
-    "text": "Descargar archivo Excel de árbol de decisión"
+    "text": "En Colombia, el problema de las lesiones relacionadas con los fuegos artificiales, especialmente durante las fiestas, sigue siendo un importante problema de salud pública. Los fuegos artificiales, aunque están culturalmente arraigados y son una fuente de celebración, plantean riesgos sustanciales, especialmente para los niños. Esto ha llevado a los responsables políticos a considerar diversas estrategias para mitigar estos riesgos y mejorar la seguridad pública.\nEl problema de decisión que vamos a considerar gira en torno al análisis de enfoques para reducir las lesiones y muertes causadas por los fuegos artificiales. Las dos estrategias principales que se barajan son (1) la prohibición total de los fuegos artificiales y (2) una reglamentación estricta, como la restricción de las licencias de venta y una aplicación rigurosa de la ley.\nLa prohibición total pretende eliminar la causa principal de las lesiones prohibiendo la venta, el almacenamiento y el uso de fuegos artificiales. Este enfoque pretende proteger directamente la salud pública, pero puede encontrar resistencia debido a su impacto en las tradiciones culturales y los medios de subsistencia de los vendedores.\nPor otro lado, la regulación estricta implica la aplicación de controles estrictos sobre la venta y el uso de fuegos artificiales. Esta estrategia incluye medidas como la expedición de licencias de venta sólo a vendedores autorizados, la imposición de restricciones de edad y la realización de campañas de educación pública sobre los peligros de los fuegos artificiales. Este enfoque pretende reducir las lesiones al tiempo que permite un uso controlado y seguro de los fuegos artificiales.\nNuestros estudios de casos explorarán estas estrategias a través de dos enfoques de modelización de decisiones. Este estudio de caso utilizará un modelo de árbol de decisión para evaluar los resultados inmediatos y los costes asociados a cada estrategia.\nPosteriormente, emplearemos un modelo de cohortes de Markov para examinar las repercusiones sanitarias y económicas a largo plazo, teniendo en cuenta factores como las tasas de lesiones, los costes sanitarios y los niveles de cumplimiento.\nMediante el análisis de estos modelos, pretendemos ofrecer una evaluación exhaustiva del planteamiento más rentable y sostenible para reducir las lesiones relacionadas con la pólvora en Columbia en la actualidad. # Model Inputs and Parameters\n\n\nSus colegas han recopilado los siguientes datos sobre lesiones por pólvora por año en Columbia. Construiremos un modelo de árbol de decisión basado en las lesiones del año más reciente notificado (2022).\n\n\nYearCasesPopulationRate.per.100.00020171,77847,419,0003.7520181,47748,259,4423.0620191,37849,269,6762.8020201,50450,407,4372.9820211,69451,177,3783.3120221,51051,826,9322.92\n\n\n\n\n\nPartiremos de la base de que las lesiones notificadas se clasifican en tres grandes categorías:\n\nLesiones leves o moderadas: Quemaduras de primer grado, que pueden causar dolor, enrojecimiento e hinchazón leve. Esta categoría también incluye las quemaduras de segundo grado que cubren una parte más importante del cuerpo e implican ampollas, dolor y riesgo potencial de infección\nLesión grave: quemaduras de tercer grado o traumatismos graves que afectan a tejidos más profundos y pueden dar lugar a complicaciones importantes.\nLesión mortal\n\n\n\n\n\n\n\nEs muy probable que haya muchas lesiones leves y moderadas que no figuren en las estadísticas oficiales. Para este estudio de caso, supondremos que las lesiones graves representan el 30% de las lesiones notificadas.\n\n\n\n\n\n\n\n\n\n\n\nDescription\nBase Case Value\nParameter Name\n\n\n\n\nProbabilidad de lesión\n0.0000292\np_lesión\n\n\nProbabilidad de lesiones graves\n0.30\np_grave\n\n\nProbabilidad de lesión leve o moderada\n0.7 = 1 - p_grave\n1 - p_grave\n\n\nProbabilidad de lesión mortal\n0.0046\np_fatalidad\n\n\n\nTambién supondremos que un pequeño porcentaje (15%) de las personas con lesiones leves/moderadas sufren secuelas a largo plazo (es decir, se recuperan en un 85%), mientras que la mayoría (60%) de las personas con lesiones graves no se recuperan totalmente y sufren complicaciones a largo plazo.\n\n\n\n\n\n\n\n\nDescription\nBase Case Value\nParameter Name\n\n\n\n\nProbabilidad de recuperación: Lesión leve/moderada\n0.85\np_recuperar_mod\n\n\nProbabilidad de recuperación: Lesión grave\n0.1\np_recuperar_grave\n\n\n\n\n\n\nCuando el alcalde de Bogotá prohibió la venta de fuegos artificiales en 1995, las quemaduras relacionadas con este tipo de material se redujeron en un 62%, pasando de 204 en la temporada navideña de 1994-1995 a 77 en la de 1995-19961 Supondremos una reducción relativa del riesgo similar del 60% en el escenario de “Prohibición”.\nEn comparación, supondremos que una normativa más estricta reducirá las lesiones por fuegos artificiales en sólo un 20%. Más adelante examinaremos la sensibilidad de nuestros resultados a estas hipótesis."
   },
   {
-    "objectID": "case-studies/ESP_cs_decision-tree-excel.html#asignación-de-nombres-de-variables",
-    "href": "case-studies/ESP_cs_decision-tree-excel.html#asignación-de-nombres-de-variables",
-    "title": "Exercise: Decision Tree in Excel",
-    "section": "Asignación de nombres de variables",
-    "text": "Asignación de nombres de variables\nNuestro primer paso es asignar a cada valor del caso base su nombre de variable. Hay dos maneras de hacerlo:\n\n\nUtilizando el cuadro de asignación de nombres situado en la parte superior izquierda de la hoja de cálculo. Esto es útil para nombrar un elemento a la vez.\n\n\nNombrando por lotes utilizando una selección de tabla.\n\n\nVeamos primero la opción 1. En la siguiente figura, asignaremos el nombre “variable1” al valor de la celda C5. Para ello, utilizaremos el cuadro de asignación de nombres resaltado en la parte superior izquierda. Simplemente sustituye allí “C5” por el nombre que quieras darle al valor de esa celda, es decir, “variable1”.\nAsigna el nombre de variable “variable1” al valor de la celda C5.](images/paste-9EE923C4.png)\nPuedes ver este proceso en acción en el siguiente vídeo."
-  },
-  {
-    "objectID": "case-studies/ESP_cs_decision-tree-excel.html#asignación-de-nombres-de-variables-por-lotes",
-    "href": "case-studies/ESP_cs_decision-tree-excel.html#asignación-de-nombres-de-variables-por-lotes",
-    "title": "Exercise: Decision Tree in Excel",
-    "section": "Asignación de nombres de variables por lotes",
-    "text": "Asignación de nombres de variables por lotes\nA menudo es más eficiente asignar grupos de variables, en lugar de hacerlo una a una. Para ello simplemente seleccionamos la “tabla” que queremos utilizar, y luego vamos a la pestaña Formulas y seleccionamos Crear a partir de selección.\n\n\n\n\n\n\nAsegúrese de que el nombre de la variable que desea asignar se encuentra en la fila de la izquierda o en la fila superior (véase más abajo). Asegúrate también de que el valor que quieres asignar a esa variable está en la segunda columna, como se muestra en la figura.\n\n\n\n\nSuponiendo que haya estructurado su tabla de parámetros como se indica más arriba, y utilizando la guía anterior, cuando Excel le pida “Crear nombres” puede decirle que los nombres de las variables están en la columna de la izquierda:\n\nUna vez hecho esto, puede seleccionar el Administrador de nombres de la cinta Fórmulas para confirmar que se han asignado los nuevos nombres y realizar cambios.\n\n\n\n\n\n\nTambién puede editar, eliminar o reasignar los valores/rangos de celda en el Gestor de nombres.\n\n\n\n\nA continuación se muestra un vídeo explicativo de este proceso.\n\nSi los nombres de sus parámetros están organizados como cabeceras de columna, puede utilizar el mismo proceso, como se muestra en el siguiente vídeo."
-  },
-  {
-    "objectID": "case-studies/ESP_cs_decision-tree-excel.html#paso-4-calcular-los-resultados-esperados",
-    "href": "case-studies/ESP_cs_decision-tree-excel.html#paso-4-calcular-los-resultados-esperados",
-    "title": "Exercise: Decision Tree in Excel",
-    "section": "Paso 4: Calcular los resultados esperados",
-    "text": "Paso 4: Calcular los resultados esperados\nEl último paso consiste en “replegar” el árbol de decisión para resumir los resultados esperados de coste y supervivencia de cada estrategia considerada. Encontrará una tabla resumen de resultados en la hoja de cálculo titulada “Resumen”.\n\n\n\n\n\n\n\nEjercicio 1.4\n\n\n\n Calcule los resultados esperados para cada estrategia.\n\n\n\n\n\n\nSUGERENCIA: Para el resultado esperado de muertes, puede utilizar el tamaño total de la población y el resultado esperado de supervivencia."
-  },
-  {
-    "objectID": "case-studies/cs_prob-decision.html",
-    "href": "case-studies/cs_prob-decision.html",
-    "title": "Case Study: Probabilities & Decision Trees",
+    "objectID": "case-studies/ESP_cs_injury-decision-tree.html#índices-de-lesiones",
+    "href": "case-studies/ESP_cs_injury-decision-tree.html#índices-de-lesiones",
+    "title": "Árbol de decisiones sobre lesiones por fuegos artificiales",
     "section": "",
-    "text": "Important\n\n\n\nPlease note that you can download PDF and Microsoft Word versions of this case study using the links on the right.\n\n\n\nCase 1\nIn a hypothetical community, 60% of all people consume at least 6 alcoholic beverages per week and 50% are overweight. The percentage of people who are both overweight and consume this much alcohol is 40%. Construct a 2x2 table to answer (a)-(c) below. For part (d), construct a decision tree.\n\nWhat percentage of people consume at least 6 alcoholic beverages per week, are overweight, or fall into both categories?\n\n\n\n\n\n\n\n\n\n\n\n\nYou sample at random a person from the community and find that they consume at least 6 alcoholic beverages per week. What is the probability that they are overweight?\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is the probability that someone from this community consumes at least 6 alcoholic beverages per week if they are overweight?\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase 2\nA new screening procedure can detect 80% of women diagnosed with breast cancer but will falsely identify 2% without breast cancer. The prevalence of breast cancer in the population is 1.6 in 100\n\nWhat is the probability that a woman does not have breast cancer if the test is negative?\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is the probability that a woman has breast cancer if the test is positive?\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase 3\nA patient is found to have an abdominal aortic aneurysm (AAA) 5 cm in size. If you operate now and he survives, he will have a life expectancy of 3 additional years. In a series of 100 similar patients from your hospital, 6 died immediately after surgery. If you elect to watch the patient, 60% will rupture their AAA at home (assume at an average of 1 year later). Of those who rupture their AAA, 30% will die, while the other % will undergo emergency surgery and survive, allowing the patient to survive the full 3-years of life expectancy\n\nDraw a decision tree for the problem of choosing whether to operate electively. Remember that you must consider the life expectancies as an outcome here. What is the preferred choice?\n\n\n\n\n\n\n\n\n\n\n\n\nA 95% confidence interval for the mortality rate of elective surgery at your hospital ranges from 1.4-12.7%. Does this influence your thoughts? Why? Do you need better information about your estimate of mortality? Why? (Note: For the latter, calculate the mortality rate for which you are indifferent between the two choices)\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase 4\nA patient presents to the ER with abdominal pain. As per the ER doc, you estimate that the patient’s appendicitis probability is 0.16. If the patient truly has appendicitis, the probability that the appendix was already perforated at the time the patient presents to the ER is 0.1875. You can also observe the patient for 6 hours to be certain that your diagnosis is correct. If your diagnosis ends up being correct, 24% of individuals will have a perforated appendix after 6 hours (Note: this number is not what goes into your tree. You must account for the 18.75% who already had a perforated appendix at the time the patient entered the hospital).\nIf the appendix is perforated at the time the patient presents to the ER or at the end of 6 hours, there is a 0.84 chance that the symptoms will become worse and a 0.16 chance they will remain the same. If the patient has appendicitis but the appendix does not burst at the end of 6 hours, there is a 0.8 chance the symptoms will worsen and a 0.2 chance that they will remain the same. If the appendix is not diseased, there is a 0.39 chance that the symptoms will remain the same in 6 hours, a 0.61 chance that this will improve, and no chance that they will worsen.\n\nCalculate the probability that a patient has a perforated appendix by the end of 6 hours given that he had appendicitis but was not perforated at the time he entered the hospital\n\n\n\n\n\n\n\n\n\n\n\nDraw a decision tree to calculate the probabilities asked in questions 3-6.\n\nCalculate the probability that the patient has a perforated appendix at the beginning of 6 hours.\n\n\n\n\n\n\n\n\n\n\n\nP(Perforation at the beginning of the six hours) = 0.1600 * 0.1875 = 0.0300. This is the proportion of patients with appendicitis multiplied by the conditional probability of perforation given appendicitis at the time the patient enters the hospital.\n\nCalculate the probability that the patient will have a perforated appendix if you wait 6 hours\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalculate the probability that the patient’s symptoms will 1) get worse, 2) stay the same, and 3) get better.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalculate the conditional probability that the patient has a perforated appendix if the symptoms 1) get worse; 2) stay the same or 3) get better.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalculate the conditional probability that the patient has appendicitis if 1) the symptoms get worse, 2) stay the same, or 3) get better"
+    "text": "Sus colegas han recopilado los siguientes datos sobre lesiones por pólvora por año en Columbia. Construiremos un modelo de árbol de decisión basado en las lesiones del año más reciente notificado (2022).\n\n\nYearCasesPopulationRate.per.100.00020171,77847,419,0003.7520181,47748,259,4423.0620191,37849,269,6762.8020201,50450,407,4372.9820211,69451,177,3783.3120221,51051,826,9322.92"
   },
   {
-    "objectID": "case-studies/cs_decision-tree-amua.html",
-    "href": "case-studies/cs_decision-tree-amua.html",
-    "title": "Exercise: Decision Tree in Amua",
+    "objectID": "case-studies/ESP_cs_injury-decision-tree.html#tipos-de-lesiones-y-consecuencias",
+    "href": "case-studies/ESP_cs_injury-decision-tree.html#tipos-de-lesiones-y-consecuencias",
+    "title": "Árbol de decisiones sobre lesiones por fuegos artificiales",
     "section": "",
-    "text": "This case study is designed to get you familiar with constructing a decision tree in Amua. Specific learning objectives are as follows:\n\nParameterize and structure a decision tree model.\nEstimate survival and cost outcomes from the decision tree model in the Amua software.\n\n\n\n\n\n\n\nPlease note that this case study is based on the Amua tutorial here. We have modified the tutorial to make it more relevant to the workshop."
+    "text": "Partiremos de la base de que las lesiones notificadas se clasifican en tres grandes categorías:\n\nLesiones leves o moderadas: Quemaduras de primer grado, que pueden causar dolor, enrojecimiento e hinchazón leve. Esta categoría también incluye las quemaduras de segundo grado que cubren una parte más importante del cuerpo e implican ampollas, dolor y riesgo potencial de infección\nLesión grave: quemaduras de tercer grado o traumatismos graves que afectan a tejidos más profundos y pueden dar lugar a complicaciones importantes.\nLesión mortal\n\n\n\n\n\n\n\nEs muy probable que haya muchas lesiones leves y moderadas que no figuren en las estadísticas oficiales. Para este estudio de caso, supondremos que las lesiones graves representan el 30% de las lesiones notificadas.\n\n\n\n\n\n\n\n\n\n\n\nDescription\nBase Case Value\nParameter Name\n\n\n\n\nProbabilidad de lesión\n0.0000292\np_lesión\n\n\nProbabilidad de lesiones graves\n0.30\np_grave\n\n\nProbabilidad de lesión leve o moderada\n0.7 = 1 - p_grave\n1 - p_grave\n\n\nProbabilidad de lesión mortal\n0.0046\np_fatalidad\n\n\n\nTambién supondremos que un pequeño porcentaje (15%) de las personas con lesiones leves/moderadas sufren secuelas a largo plazo (es decir, se recuperan en un 85%), mientras que la mayoría (60%) de las personas con lesiones graves no se recuperan totalmente y sufren complicaciones a largo plazo.\n\n\n\n\n\n\n\n\nDescription\nBase Case Value\nParameter Name\n\n\n\n\nProbabilidad de recuperación: Lesión leve/moderada\n0.85\np_recuperar_mod\n\n\nProbabilidad de recuperación: Lesión grave\n0.1\np_recuperar_grave"
   },
   {
-    "objectID": "case-studies/cs_decision-tree-amua.html#getting-started",
-    "href": "case-studies/cs_decision-tree-amua.html#getting-started",
-    "title": "Exercise: Decision Tree in Amua",
-    "section": "Getting started",
-    "text": "Getting started\nYou will first need to install Java (1.8 or later) & download Amua. Follow the directions here\nHere is a comprehensive tutorial to get you started. We review some highlights below:"
-  },
-  {
-    "objectID": "case-studies/cs_decision-tree-amua.html#disease-prevalence",
-    "href": "case-studies/cs_decision-tree-amua.html#disease-prevalence",
-    "title": "Exercise: Decision Tree in Amua",
-    "section": "Disease Prevalence",
-    "text": "Disease Prevalence\n\nFor the branch No Screen, click underneath the branch labeled D+ (next to the label p:). A text-entry box will now be outlined in blue. This is where you enter the probability for this branch.\nType prev which we will define as the prevalence of the disease. Hit Enter or click outside the text-box to accept the probability.\nThe text will now turn red because Amua does not recognize prev as a model object, so we will have to\ndefine it later."
-  },
-  {
-    "objectID": "case-studies/cs_decision-tree-amua.html#complementary-probabilities",
-    "href": "case-studies/cs_decision-tree-amua.html#complementary-probabilities",
-    "title": "Exercise: Decision Tree in Amua",
-    "section": "Complementary Probabilities",
-    "text": "Complementary Probabilities\n\nNow enter the probability for the D- branch for No Screen.\nBecause the probabilities for all branches of a chance node must sum to 1.0, we could enter 1-prev as the probability.\n\nThis is called a ‘complementary’ probability as it provides the complement to sum to 1.0.\n\n\n-In Amua you can type C or c to indicate a complementary probability. - Note that there can only be one complementary probability per chance node.\n-Enter C for the probability of D-."
-  },
-  {
-    "objectID": "case-studies/cs_decision-tree-amua.html#define-probabilities-for-screen-strategy",
-    "href": "case-studies/cs_decision-tree-amua.html#define-probabilities-for-screen-strategy",
-    "title": "Exercise: Decision Tree in Amua",
-    "section": "Define Probabilities for Screen Strategy",
-    "text": "Define Probabilities for Screen Strategy\n\nFor the Test + branch enter pTPos as the probability of testing positive, which will be a function of the disease prevalence and test characteristics (sensitivity and specificity).\nEnter C for the probability of Test -.\nNext, we’ll define the probability of having the disease given each test result in the Screen strategy.\n\nOn the Test + branch, click under the D+ branch and type pD_TPos. This will be the probability of having the disease given a positive test.\nClick under D- and type C to indicate a complementary probability.\nFor the Test - branch, click under the D+ branch and type pD_TNeg, which is the probability of having the disease given a negative test.\nClick under D- below and type C again.\n\n\n - Finally, define teh probability of having the disease in the Treat All strategy. 1. Click under D+ and type prev, which is the prevalence of the disease. 2. Enter C for the probability of D-."
-  },
-  {
-    "objectID": "case-studies/cs_decision-tree-excel.html",
-    "href": "case-studies/cs_decision-tree-excel.html",
-    "title": "Exercise: Decision Tree in Excel",
+    "objectID": "case-studies/ESP_cs_injury-decision-tree.html#estrategias-e-impacto",
+    "href": "case-studies/ESP_cs_injury-decision-tree.html#estrategias-e-impacto",
+    "title": "Árbol de decisiones sobre lesiones por fuegos artificiales",
     "section": "",
-    "text": "Download Decision Tree Excel File"
+    "text": "Cuando el alcalde de Bogotá prohibió la venta de fuegos artificiales en 1995, las quemaduras relacionadas con este tipo de material se redujeron en un 62%, pasando de 204 en la temporada navideña de 1994-1995 a 77 en la de 1995-19961 Supondremos una reducción relativa del riesgo similar del 60% en el escenario de “Prohibición”.\nEn comparación, supondremos que una normativa más estricta reducirá las lesiones por fuegos artificiales en sólo un 20%. Más adelante examinaremos la sensibilidad de nuestros resultados a estas hipótesis."
   },
   {
-    "objectID": "case-studies/cs_decision-tree-excel.html#assigning-variable-names",
-    "href": "case-studies/cs_decision-tree-excel.html#assigning-variable-names",
-    "title": "Exercise: Decision Tree in Excel",
-    "section": "Assigning Variable Names",
-    "text": "Assigning Variable Names\nOur first step is to assign each base case value its variable name. There are two ways to do this:\n\nUsing the naming box in the upper left of the spreadsheet. This is useful for naming one item at a time.\nBatch naming by using a table selection.\n\nLet’s first run through option 1. In the figure below, we will assign the name “variable1” to the value in cell C5. We do this using the naming box highlighted in the upper left. Simply replace “C5” there with what you want to call the value in that cell, i.e., “variable1.”\n\n\n\nAssign the variable name “variable1” to the value in cell C5.\n\n\nYou can see this process in action in the video below."
+    "objectID": "case-studies/ESP_cs_injury-decision-tree.html#construir-una-estrategia-de-no-hacer-nada",
+    "href": "case-studies/ESP_cs_injury-decision-tree.html#construir-una-estrategia-de-no-hacer-nada",
+    "title": "Árbol de decisiones sobre lesiones por fuegos artificiales",
+    "section": "1.1. Construir una estrategia de “no hacer nada",
+    "text": "1.1. Construir una estrategia de “no hacer nada\nConstruya un árbol de decisión en Amua para una estrategia de “No hacer nada”. Su árbol debería funcionar a través de los siguientes nodos de azar:\n\n\nLesionado vs. No lesionado\n\n\nLesión mortal frente a lesión no mortal\n\nLesión leve/moderada frente a lesión grave\nRecuperación completa vs. Recuperación con secuela de lesión\n\nPor favor, utilice los nombres y valores de los parámetros suministrados anteriormente en la construcción de su árbol."
   },
   {
-    "objectID": "case-studies/cs_decision-tree-excel.html#batch-assigning-variable-names",
-    "href": "case-studies/cs_decision-tree-excel.html#batch-assigning-variable-names",
-    "title": "Exercise: Decision Tree in Excel",
-    "section": "Batch Assigning Variable Names",
-    "text": "Batch Assigning Variable Names\nOften it is more efficient to assign groups of variables, rather than do it one by one. To do this we simply select the “table” we want to use, and then go to the Formulas tab and select Create from Selection.\n\n\n\n\n\n\nMake sure the variable name you want to assign is either in the leftmost row, or the top row (see below). Also make sure the value you want assigned to that variable is in the second column, as shown in the figure.\n\n\n\n\nAssuming you have structured your parameter table as above, and using the guidance above, when excel prompts you to “Create Names” you can tell it the variable names are in the left column:\n\nOnce you have done this, you can select the Name Manager on the Formulas ribbon to confirm the new names have been assigned, and to make changes.\n\n\n\n\n\n\nYou can edit, delete, or reassign the cell values/range in the Name Manager, too.\n\n\n\n\nA video walk-through of this process is shown below.\n\nIf your parameter names are organized as column headers, you can use the same process, as shown in the video below."
+    "objectID": "case-studies/ESP_cs_injury-decision-tree.html#añadir-resultados",
+    "href": "case-studies/ESP_cs_injury-decision-tree.html#añadir-resultados",
+    "title": "Árbol de decisiones sobre lesiones por fuegos artificiales",
+    "section": "1.2. Añadir resultados",
+    "text": "1.2. Añadir resultados\nAmua utiliza por defecto resultados de coste. Por favor, elimine el resultado de coste y defina un nuevo resultado primario basado en la lesión. En otras palabras, el resultado “payoff” debería ser 1.0 si se produce una lesión, y 0 en caso contrario.\n\n\n\n\n\n\nTip\n\n\n\nPuede editar los resultados haciendo clic en Modelo  Propiedades  Análisis:"
   },
   {
-    "objectID": "case-studies/cs_decision-tree-excel.html#step-4-calculate-expected-outcomes",
-    "href": "case-studies/cs_decision-tree-excel.html#step-4-calculate-expected-outcomes",
-    "title": "Exercise: Decision Tree in Excel",
-    "section": "Step 4: Calculate Expected Outcomes",
-    "text": "Step 4: Calculate Expected Outcomes\nOur final step is to “fold-back” the decision tree to summarize expected cost and survival outcomes for each strategy under consideration. You will find a summary table of outcomes in the worksheet titled “Summary.”\n\n\n\n\n\n\n\nExercise 1.4\n\n\n\n Calculate expected outcomes for each strategy.\n\n\n\n\n\n\nHINT: For the expected deaths outcome, you can use the total population size and expected survival outcome."
+    "objectID": "case-studies/ESP_cs_injury-decision-tree.html#asegúrese-de-que-su-modelo-se-ajusta-a-los-totales-de-lesiones-observados.",
+    "href": "case-studies/ESP_cs_injury-decision-tree.html#asegúrese-de-que-su-modelo-se-ajusta-a-los-totales-de-lesiones-observados.",
+    "title": "Árbol de decisiones sobre lesiones por fuegos artificiales",
+    "section": "1.3. Asegúrese de que su modelo se ajusta a los totales de lesiones observados.",
+    "text": "1.3. Asegúrese de que su modelo se ajusta a los totales de lesiones observados.\n*Ejecute su árbol de decisión inicial utilizando un tamaño de cohorte de 51.682.692 (2022 población de Columbia). Verifique que el número total de lesiones por fuegos artificiales coincide con el total registrado de 1.510.\n\nPuede introducir el tamaño de la cohorte haciendo clic en Modelo  Propiedades  Simulación:"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Taller de Análisis Económico de intervenciones en salud para la toma de decisiones",
+    "objectID": "case-studies/ESP_cs_injury-decision-tree.html#incluir-escenarios-de-políticas-adicionales",
+    "href": "case-studies/ESP_cs_injury-decision-tree.html#incluir-escenarios-de-políticas-adicionales",
+    "title": "Árbol de decisiones sobre lesiones por fuegos artificiales",
+    "section": "2.1. Incluir escenarios de políticas adicionales",
+    "text": "2.1. Incluir escenarios de políticas adicionales\n*Cree una versión duplicada de su árbol “No hacer nada” para construir ramas separadas para los escenarios “Prohibir” y “Regular”. En cada uno de ellos, la probabilidad de lesión debe modificarse mediante un parámetro de reducción del riesgo relativo con valores basados en el texto anterior y la tabla siguiente.\n\n\n\n\n\n\n\n\nDescripción\nValor del caso base\nNombre del parámetro\n\n\n\n\nReducción relativa del riesgo: probabilidad de lesión en la hipótesis de la política “Ban\n0.40\nrr_lesión_prohibir\n\n\nReducción relativa del riesgo: probabilidad de lesión en el escenario político “Regular\n0.80\nrr_lesión_regular\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nPuede copiar y pegar la rama “No hacer nada” haciendo clic con el botón derecho en el primer nodo de azar  y seleccionando “Copiar”. A continuación, puede pegar una copia de toda la estructura de árbol en el nodo de decisión rojo ."
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-decision-tree.html#añadir-resultados-adicionales",
+    "href": "case-studies/ESP_cs_injury-decision-tree.html#añadir-resultados-adicionales",
+    "title": "Árbol de decisiones sobre lesiones por fuegos artificiales",
+    "section": "2.2. Añadir resultados adicionales",
+    "text": "2.2. Añadir resultados adicionales\nAñada resultados adicionales basados en cada tipo de lesión (leve/moderada, grave, mortal). Utilice su árbol de decisión para proyectar las lesiones en general y por tipo según cada estrategia. Utilice los resultados para rellenar la tabla siguiente. En cada celda debe haber un recuento calculado del número de cada tipo de lesión en cada estrategia.\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCualquier lesión\nLeve/Moderada\nGrave\nLesión mortal\n\n\n\n\nNo hacer nada\n\n\n\n\n\n\nProhibir los fuegos artificiales\n\n\n\n\n\n\nRegular los fuegos artificiales"
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-decision-tree.html#footnotes",
+    "href": "case-studies/ESP_cs_injury-decision-tree.html#footnotes",
+    "title": "Árbol de decisiones sobre lesiones por fuegos artificiales",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nFuente: “Antanas Mockus: The Prohibition of Fireworks in Bogotá Sequel,” Harvard Kennedy School Case Study. Available fromhttps://case.hks.harvard.edu/antanas-mockus-the-prohibition-of-fireworks-in-bogota-sequel/↩︎"
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html",
+    "href": "case-studies/cs_injury-markov.html",
+    "title": "Firework Injury: Markov Model",
     "section": "",
-    "text": "Calendario de talleres\n\n\n\n\n\n\n\n\n\nFecha\nHora programada\nTema\nVersión inglesa\n\n\n\n\nMartes\n9:00 - 9:30 am\nBienvenida y presentaciones\nWelcome\n\n\n\n9:30 - 10:00\nIntroducción al análisis de decisiones\nIntroduction to Decision Analysis\n\n\n\n10:00-11:00\nÁrboles de decisión y probabilidades\nDecision Trees\n\n\n\n11:00-11:15\nCafé\nBreak\n\n\n\n11:15 - 12:00\nCaso de estudio: Probabilidades y árboles de decisión\nCase Study: Decision Trees\n\n\n\n12:00 - 1:15 pm\nCafé\nBreak\n\n\n\n1:45 - 2:45 pm\nCaso de estudio: Construir un árbol de decisión en Excel\nCase Study: Excel\n\n\n\n2:45 - 4:00 pm\nCaso de estudio: Construir un árbol de decisión en Amua\nCase Study: Amua\n\n\nMiércoles\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nUmbrales de tratamiento y valor de la información\nTreatment Thresholds and Value of Information\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:30\nFundamentos CEA 1: Costos\nValuing Costs\n\n\n\n11:30 - 11:45\nCafé\nBreak\n\n\n\n11:45 - 1:00\nFundamentos CEA 2: Resultados sanitarios\nHealth Outcomes\n\n\n\n1:00 - 2:15\nAlmuerzo\nLunch\n\n\n\n2:15 - 3:15\nCaso de estudio: Lesiones por fuegos artificiales en Columbia\nCase Study: Firework Injuries in Columbia\n\n\n\n3:15 - 4:30\nFundamentos del ACE 3: Análisis coste-eficacia incremental\nICERs\n\n\nJueves\n9:00-9:15\nResumen diario\n\n\n\n\n9:15 - 10:30\nCaso de estudio: Análisis coste-eficacia incremental\nCase Study: ICERs\n\n\n\n10:30 - 12:00\nModelos de Markov\nMarkov Models\n\n\n\n12:00 - 1:15\nCafé\n\n\n\n\n1:15 - 4:00\nCaso de estudio: Modelos de Markov\nCase Study: Firework Injury Model (Markov)\n\nAlive-Dead\nAlive-Injury-Dead\nFireworks (basic w/ strategies)\nFireworks (full w/ sequelae)\n\n\n\nViernes\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nAnálisis determinista y de escenarios\nDeterministic and Sensitivity Analysis\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:15\nTécnicas avanzadas de modelización\nAdvanced modeling techniques\n\n\n\n11:15 - 11:45\nCeremonia de entrega de certificados\nClosing Ceremony",
-    "crumbs": [
-      "Home"
-    ]
+    "text": "This case study extend our evaluation of firework injuries using a discrete time Markov cohort model. While the decision tree we constructed yesterday provided immediate outcomes and costs for various strategies, the Markov model offers significant advantages for examining long-term health and cost impacts.\nOur Markov model will allow us to capture the progression of firework-related injuries over an extended period, allowing us to consider long-term implications. By modeling injury events and transitions between different health states over time, we can better understand the chronic effects of injuries and the long-term benefits of intervention strategies.\nThis approach will provide a more comprehensive assessment of the lifetime health and economic impacts of the proposed strategies, considering factors such as long-term healthcare costs, changes in injury rates, and compliance levels. The Markov model’s ability to incorporate these extended horizons and recurring events will yield deeper insights into the most effective and sustainable approaches to mitigating firework-related injuries in Columbia."
   },
   {
-    "objectID": "case-studies/cs_icer.html",
-    "href": "case-studies/cs_icer.html",
+    "objectID": "case-studies/cs_injury-markov.html#markov-structure-alive-dead",
+    "href": "case-studies/cs_injury-markov.html#markov-structure-alive-dead",
+    "title": "Firework Injury: Markov Model",
+    "section": "Markov Structure: Alive-Dead",
+    "text": "Markov Structure: Alive-Dead\nThe structure of the Markov model for the Alive-Dead model is shown in the figure below. Amua has a special Markov node (represented by  ). The branches that lead off a Markov node designate all the Markov states (and only Markov states).\nIn this example, there are two health states: (1) Alive, (2) Dead. Off each health state, you can create a subtree (also called a cycle tree) that reflects those events that can occur during a cycle. The last branch at the end of each pathway will be a state transition, which defines what health state to go to for the next cycle.\n\n\n\n\n\n\nNote\n\n\n\nNote that in a Markov model, outcomes are defined elsewhere – NOT at the end of the branch, but at the state."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#building-the-tree",
+    "href": "case-studies/cs_injury-markov.html#building-the-tree",
+    "title": "Firework Injury: Markov Model",
+    "section": "Building the Tree",
+    "text": "Building the Tree\n\nStructure\nAfter you open Amua, click Model  New   Markov Model.\n\nSave your model right at the start.\nNow select the decision node , Right-click  Add   Markov Chain .\nStart by developing the structure of the Markov model using Alive and Dead for the different health states. The branches of the Markov chain should correspond to the states of the model. Label the name option to the right of the decision node as Alive-Dead.\n\n\n\n\n\n\n\n\nComplete the structure of the Markov model using the information above. Note: focus on adding the branches and transitions for this step; Parameters will be added later.\n\n\n\n\nWhen you reach the end of the branch, select the chance node you would like to turn into a state transition, right click, select Change to State Transition. This will give you the blue arrow  . On the right of this arrow, you can find a dropdown menu with the different health states you specified. Select the health state this part of the cohort will transition to.\nWith this button  you can align the end nodes.\n\n\n\nCohort size and starting probabilities\n\nGo to Model  Properties  select the Simulation tab. The default cohort size is 1,000. Change cohort size to 1, so that all outputs will be at the individual level (i.e., per person).\n\n\n\n\n\n\n\nAt the Markov Chain  , change the initial probabilities of health states. Since all patients start in the Alive state, change the p:0 on the left of the Local state to p:1 (see blue box below)."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#model-parameters",
+    "href": "case-studies/cs_injury-markov.html#model-parameters",
+    "title": "Firework Injury: Markov Model",
+    "section": "Model Parameters",
+    "text": "Model Parameters\nFirst, define the following time-constant parameters for the model in the “Parameters” panel.\n\n\n\n\n\nThis variable tells Amua that we will model a cohort of newborns. However, we could easily adapt this to model a cohort of 20 year-olds, etc."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#transition-probabilities",
+    "href": "case-studies/cs_injury-markov.html#transition-probabilities",
+    "title": "Firework Injury: Markov Model",
+    "section": "Transition Probabilities",
+    "text": "Transition Probabilities\nThe underlying transition probability matrix has the following form:\n\n\n\n\n\nHowever, because we are modeling a cohort of newborns until death, we need to include death transition probabilities that vary by age (i.e., cycle) in the model. In other words, there will be a different death probability in each cycle.\n\n\n\n\n\n\nImportant\n\n\n\nIn Amua, time-varying inputs are operationalized as variables  rather than parameters.\nVariables  can be defined to keep track of model events and dynamically update expressions as the model runs. Thus, unlike parameters  which are fixed for a given run of the model, variables can change within a simulation. Variables may change across individuals, allowing heterogeneity to be modeled, or they may change over time.\n\n\nTherefore, we will define p_die as a variable  that references values in a lookup table , following the steps below.\n\n\n\n\n\n\nImportant\n\n\n\nA lookup table returns the value that corresponds to a particular index. The first column in a lookup table contains the table indices, and one or more columns of lookup values can be defined. Index values must be unique and in ascending order. There are 3 lookup methods, (1) exact, (2) interpolate, and (3) truncate, for details about these methods visit the Amua Wiki on GitHub.\n\n\nWe first define a lookup table  tbl_death to read in the age-dependent background mortality constructed from the Columbian life tables.\n\nDownload Data\nDownload the file titled columbia-life-table-death-probabilities.csv from the workshop website. This table contains the age-indexed annual mortality probability for Columbia. A screenshot of the first few rows of this .csv file is shown below. The index column is the age, while p_die is the annual probability of death at each age.\n\n\n\n\n\nGo to the “Tables” panel, click  to add a table, and you should see a “Define Table” window (see screenshot below). Click the Import button  and select the downloaded .csv file to import. The table will automatically be resized to fit the imported data. The first row in the file will be used as table headers.\n\nEnter “tbl_p_die” as the name for this variable. “Lookup” is the default table type (which is what we want here). Choose “Interpolate” as the Lookup Method. Click Save to apply.\nNext, we can define the time-varying variable p_die (which reads from the table we just defined and operates as the background mortality probability in the current model cycle, \\(t\\)).\nMake sure you create a variable and not a parameter. Under “Variables”, click  to add a variable p_die = tbl_p_die[age_initial + t, 1].\n\n\n\n\n\n\nNote\n\n\n\nThe first column of a table is always used for indexing in tables. Therefore, the number “1” here will actually indicate the second column in your table as the corresponding value. You can also use the name of the column to read a value, e.g., tbl_p_die[age_initial + t, “p_die”].\n\n\n\n\n\n\n\n\nTip\n\n\n\nIn Amua, “t” is a built-in variable that tracks the number of cycles. It automatically updates when the model runs. For example, in the 10th cycle on the Markov model, t = 10. Therefore, in the formula “tbl_p_die[age_initial + t, 1]”, age_initial + t will equal the modeled age of the individual in cycle t, and the full formula will read the age-dependent background mortality based on the individual’s current age (instead of the initial age).\nAmua defaults to a cycle time of \\(t=0\\). Therefore, if you hit “Evaluate” the Expected Value field should calculate the death probability for a newborn as shown in the .csv lookup table.\n\n\n\n\n\n\n\nWe now have all transition probabilities defined. Add these inputs to the branches of the model. Remember to add the complementary probabilities using “C” as well."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#termination-condition",
+    "href": "case-studies/cs_injury-markov.html#termination-condition",
+    "title": "Firework Injury: Markov Model",
+    "section": "Termination Condition",
+    "text": "Termination Condition\n\nSpecify the termination of the model by selecting [termination] and type t==110. This will allow your model to run for 110 cycles, then the model will terminate."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#rewards",
+    "href": "case-studies/cs_injury-markov.html#rewards",
+    "title": "Firework Injury: Markov Model",
+    "section": "Rewards",
+    "text": "Rewards\nThe default reward in Amua is cost. We need to change this to have life-expectancy (LE) as a reward. Go to Model  Properties  select the Analysis tab and change the cost dimension to LE. Use LE as the symbol and set to 4 decimal places.\n\n\n\n\n\nAdd the life-expectancy “payoff” on the left of each health state after “R: (LE)”.\n\n\n\n\n\nApply Half-cycle correction. Go to Model  Properties  select the Markov tab and check the Half-cycle correction box. Click OK to apply.\n\n\n\n\n\nNow, we have finished constructing the Alive-Dead model. Analyze the model using a cohort simulation by clicking Run  Run Model.\n\n\n\n\n\n\nRun the alive-dead model and calculate overall life expectancy."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#add-injury-chance-nodes",
+    "href": "case-studies/cs_injury-markov.html#add-injury-chance-nodes",
+    "title": "Firework Injury: Markov Model",
+    "section": "Add Injury Chance Nodes",
+    "text": "Add Injury Chance Nodes\nFrom the “Alive” health state, convert the blue arrow  into a chance node using the change type button . From this chance node, include the chance of a firework injury. The probability of an injury should be based on a new fixed parameter called p_injury.\nFrom the injury branch, add another chance node for whether or not the injury is fatal. Complete the structure of the model by adding transition arrows to the Alive health state if the individual either does not have an injury, or has a non-fatal firework injury. Add a transition arrow to the death state if the individual dies from their firework injury.\nYour Markov tree should now look like this:"
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#add-injury-and-fatal-injury-as-outcomes",
+    "href": "case-studies/cs_injury-markov.html#add-injury-and-fatal-injury-as-outcomes",
+    "title": "Firework Injury: Markov Model",
+    "section": "Add Injury and Fatal Injury as Outcomes",
+    "text": "Add Injury and Fatal Injury as Outcomes\nNext, add outcomes for firework injury (INJ) and fatal firework injury (FINJ) to the model (Model  Properties  Analysis ).\n\n\n\n\n\nWe next need to add a one-time “tracker” to record each instance where a cohort member is injured and fatally injured. We can do this by right-clicking on the chance node after “Firework Injury,” and then clicking on  Add Cost.\n\n\n\n\n\n\n\nAdd outcome trackers for any injury (INJ) and fatal injuries (FINJ) to your Markov tree."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#change-cohort-size",
+    "href": "case-studies/cs_injury-markov.html#change-cohort-size",
+    "title": "Firework Injury: Markov Model",
+    "section": "Change Cohort Size",
+    "text": "Change Cohort Size\nOur current model is structured for a cohort size of 1 individual. This is often useful—especially for calculating life expectancy as an outcome—but using other cohort sizes can be helpful for producing policy decision-relevant information.\nWe’ll now change the model so that we capture the lifetime experience of a cohort of 100,000 newborns. This will allow us to model the expected number of total and fatal firework injuries over a lifetime for a large cohort—and, eventually, to see how the total number of lifetime injuries falls under different policy options.\n\nGo to Model  Properties  select the Simulation tab. Change cohort size to 100,000.\n\n\n\n\n\n\n\nTip\n\n\n\nYour life expectancy outcome (LE) will now return the expected total life years for a cohort of 100,000 people. To return a standard life expectancy outcome, you can redefine the “payoff” for the LE outcome as \\(1/100000\\)."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#apply-half-cycle-correction",
+    "href": "case-studies/cs_injury-markov.html#apply-half-cycle-correction",
+    "title": "Firework Injury: Markov Model",
+    "section": "Apply Half-Cycle Correction",
+    "text": "Apply Half-Cycle Correction\n\nApply Half-cycle correction. Go to Model  Properties  select the Markov tab and check the Half-cycle correction box. Click OK to apply."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#run-the-model",
+    "href": "case-studies/cs_injury-markov.html#run-the-model",
+    "title": "Firework Injury: Markov Model",
+    "section": "Run the Model",
+    "text": "Run the Model\nVerify that your model is able to run by clicking on the  check model button. Once all errors have been fixed,  run the model.\nAfter you run the model, you will see expected outcomes at the bottom of the screen. This information tells us that total life expectancy is 77.04 years and there are an expected 222.07 firework injuries and 1.02 fatal injuries per 100,000 newborns in Columbia.\n\nAmua will also display a new window with a figure and spreadsheet table. The figure shows the total number of people in the cohort in each health state (“Alive” and “Dead”) at each cycle of the model. The spreadsheet table contains the plotted information (in the Alive and Dead columns) as well as cycle-specific calculations for life-expectancy and injury counts.\nThe columns that start with Cum_ are cumulative counts of each outcome. The output below, for example, shows that at cycle \\(t=20\\) (which corresponds to age=20 for our cohort), there are an expected 58.951 firework-related injuries in our cohort of 100,000 newborns."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#add-the-injury-probability-lookup-table",
+    "href": "case-studies/cs_injury-markov.html#add-the-injury-probability-lookup-table",
+    "title": "Firework Injury: Markov Model",
+    "section": "Add the Injury Probability Lookup Table",
+    "text": "Add the Injury Probability Lookup Table\nJust like we did with the age-specific mortality probabilities above, download the cases-by-age.csv data file from the workshop website.\nGo to the “Tables” panel, click  to add a table, and you should see a “Define Table” window (see screenshot below). Click the Import button  and select the downloaded .csv file to import. The table will automatically be resized to fit the imported data. The first row in the file will be used as table headers.\nEnter “tbl_p_injury” as the name for this variable. “Lookup” is the default table type (which is what we want here). Choose “Interpolate” as the Lookup Method. Click Save to apply.\n\n\n\n\n\n\nImportant\n\n\n\nAmua may also include additional blank rows when it imports the table. Before you proceed, remove all blank rows by clicking on the row, then using the  button next to “Rows” (see red rectangles below)."
+  },
+  {
+    "objectID": "case-studies/cs_injury-markov.html#define-an-age-specific-injury-probability",
+    "href": "case-studies/cs_injury-markov.html#define-an-age-specific-injury-probability",
+    "title": "Firework Injury: Markov Model",
+    "section": "Define an Age-Specific Injury Probability",
+    "text": "Define an Age-Specific Injury Probability\nNext, we can define the time-varying variable p_injury_t (which reads from the table we just defined and operates as the background mortality probability in the current model cycle, \\(t\\)).\nMake sure you create a variable and not a parameter. Under “Variables”, click  to add a variable p_injury_t = tbl_p_injury[age_initial + t, 1].\n\n\n\n\n\n\nRe-run the model using age-specific injury probabilities. How does the expected number of overall and fatal injuries change from when we used the fixed probabilities above?"
+  },
+  {
+    "objectID": "case-studies/ESP_cs_icer.html",
+    "href": "case-studies/ESP_cs_icer.html",
     "title": "Case Study: ICERs",
     "section": "",
-    "text": "Important\n\n\n\nPlease note that you can download PDF and Microsoft Word versions of this case study using the links on the right."
+    "text": "Important\n\n\n\nPuede descargar las versiones en PDF y Microsoft Word de este estudio de caso utilizando los enlaces de la derecha."
   },
   {
-    "objectID": "case-studies/cs_icer.html#instructions",
-    "href": "case-studies/cs_icer.html#instructions",
+    "objectID": "case-studies/ESP_cs_icer.html#instrucciones",
+    "href": "case-studies/ESP_cs_icer.html#instrucciones",
     "title": "Case Study: ICERs",
-    "section": "Instructions",
-    "text": "Instructions\nPerform a cost-effectiveness analysis of the treatment options using QALYs as the measure of health effects. Which strategy would you choose and why, if the willingness-to-pay threshold is $50,000 per quality-adjusted life year?\n\n\n\nTreatment\nCosts\nQALYs\n\n\n\n\nDo nothing\n36,000\n43.8\n\n\nART 1\n15,525\n73.52\n\n\nART 1/2\n11,000\n63.4\n\n\nRetro 200\n20,000\n70.0\n\n\nRetro 400\n22,000\n65.0\n\n\nCentro\n10,000\n50.0\n\n\nCentro / Retro 200\n40,000\n80.0\n\n\nCentro / Retro 400\n35,000\n75.0\n\n\n\n\n\n\n\n\nTreatment Options\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nICER Calculation Table 1\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nICER Calculation Table 2\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n: ICER Calculation Table 3 {tbl-colwidths=“[20,20,20,20,20,20]”}"
+    "section": "Instrucciones",
+    "text": "Instrucciones\n*Realice un análisis coste-efectividad de las opciones de tratamiento utilizando los AVAC como medida de los efectos sobre la salud. ¿Qué estrategia elegiría y por qué, si el umbral de disposición a pagar es de 50.000 dólares por año de vida ajustado por calidad?\n\n\n\nTratamiento\nCostos\nQALYs\n\n\n\n\nNo hacer nada\n36,000\n43.8\n\n\nART 1\n15,525\n73.52\n\n\nART 1/2\n11,000\n63.4\n\n\nRetro 200\n20,000\n70.0\n\n\nRetro 400\n22,000\n65.0\n\n\nCentro\n10,000\n50.0\n\n\nCentro / Retro 200\n40,000\n80.0\n\n\nCentro / Retro 400\n35,000\n75.0\n\n\n\n\n\n\n\n\nOpciones de tratamiento\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo del ICER Tabla 1\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo ICER Tabla 2\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n: Cálculo ICER Tabla 3 {tbl-colwidths=“[20,20,20,20,20,20]”}"
   },
   {
-    "objectID": "case-studies/cs_icer.html#instructions-1",
-    "href": "case-studies/cs_icer.html#instructions-1",
+    "objectID": "case-studies/ESP_cs_icer.html#instrucciones-1",
+    "href": "case-studies/ESP_cs_icer.html#instrucciones-1",
     "title": "Case Study: ICERs",
-    "section": "Instructions",
-    "text": "Instructions\nCalculate incremental cost-effectiveness ratios for each strategy and determine which screening strategy you would choose if, as a decision maker, you were prepared to pay $50,000/QALY (using discounted quality-adjusted life years)\n\n\nCost and QALY Outcomes, by Strategy\n\n\nScreening Strategy\nDiscounted QALYs\nDiscounted Costs ($2022)\n\n\n\n\nNo screening\n10.05\n4,130\n\n\nEvery 3 years\n10.798\n5,178\n\n\nEvery 2 years\n10.830\n5,583\n\n\nEvery 1 year\n10.973\n6,417\n\n\nEvery 6 months\n10.988\n8,744\n\n\n\n\nICER Calculation Table 1\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nICER Calculation Table 2\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)"
+    "section": "Instrucciones",
+    "text": "Instrucciones\nCalcule los cocientes de coste-efectividad incrementales para cada estrategia y determine qué estrategia de cribado elegiría si, como responsable de la toma de decisiones, estuviera dispuesto a pagar $50.000/QALY (utilizando años de vida ajustados por calidad descontados).\n\n\nCost and QALY Outcomes, by Strategy\n\n\n\n\n\n\n\nEstrategia de cribado\nAVAC descontados\nCostes descontados ($2022)\n\n\n\n\nNo screening\n10.05\n4,130\n\n\nEvery 3 years\n10.798\n5,178\n\n\nEvery 2 years\n10.830\n5,583\n\n\nEvery 1 year\n10.973\n6,417\n\n\nEvery 6 months\n10.988\n8,744\n\n\n\n\nCálculo del ICER Tabla 1\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo ICER Tabla 2\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)"
   },
   {
     "objectID": "case-studies/cs_markov-trace.html",
@@ -4038,123 +4098,133 @@
     "text": "Footnotes\n\n\nIn reality, transition probabilities would be expected to change over time as the population ages and as the prevalence of risk factors changes. For example, the risk of developing CVD is likely to increase with age, and the risk of developing CVD is likely to increase with the prevalence of risk factors such as obesity and diabetes. We will ignore these changes for the sake of simplicity. This simplifying assumption means that we are fitting a “time-homogeneous” model. In reality, we would expect the model to be “time-inhomogeneous” (i.e., the transition probabilities change as the cohort ages).↩︎"
   },
   {
-    "objectID": "case-studies/ESP_cs_icer.html",
-    "href": "case-studies/ESP_cs_icer.html",
+    "objectID": "case-studies/cs_icer.html",
+    "href": "case-studies/cs_icer.html",
     "title": "Case Study: ICERs",
     "section": "",
-    "text": "Important\n\n\n\nPuede descargar las versiones en PDF y Microsoft Word de este estudio de caso utilizando los enlaces de la derecha."
+    "text": "Important\n\n\n\nPlease note that you can download PDF and Microsoft Word versions of this case study using the links on the right."
   },
   {
-    "objectID": "case-studies/ESP_cs_icer.html#instrucciones",
-    "href": "case-studies/ESP_cs_icer.html#instrucciones",
+    "objectID": "case-studies/cs_icer.html#instructions",
+    "href": "case-studies/cs_icer.html#instructions",
     "title": "Case Study: ICERs",
-    "section": "Instrucciones",
-    "text": "Instrucciones\n*Realice un análisis coste-efectividad de las opciones de tratamiento utilizando los AVAC como medida de los efectos sobre la salud. ¿Qué estrategia elegiría y por qué, si el umbral de disposición a pagar es de 50.000 dólares por año de vida ajustado por calidad?\n\n\n\nTratamiento\nCostos\nQALYs\n\n\n\n\nNo hacer nada\n36,000\n43.8\n\n\nART 1\n15,525\n73.52\n\n\nART 1/2\n11,000\n63.4\n\n\nRetro 200\n20,000\n70.0\n\n\nRetro 400\n22,000\n65.0\n\n\nCentro\n10,000\n50.0\n\n\nCentro / Retro 200\n40,000\n80.0\n\n\nCentro / Retro 400\n35,000\n75.0\n\n\n\n\n\n\n\n\nOpciones de tratamiento\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo del ICER Tabla 1\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo ICER Tabla 2\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n: Cálculo ICER Tabla 3 {tbl-colwidths=“[20,20,20,20,20,20]”}"
+    "section": "Instructions",
+    "text": "Instructions\nPerform a cost-effectiveness analysis of the treatment options using QALYs as the measure of health effects. Which strategy would you choose and why, if the willingness-to-pay threshold is $50,000 per quality-adjusted life year?\n\n\n\nTreatment\nCosts\nQALYs\n\n\n\n\nDo nothing\n36,000\n43.8\n\n\nART 1\n15,525\n73.52\n\n\nART 1/2\n11,000\n63.4\n\n\nRetro 200\n20,000\n70.0\n\n\nRetro 400\n22,000\n65.0\n\n\nCentro\n10,000\n50.0\n\n\nCentro / Retro 200\n40,000\n80.0\n\n\nCentro / Retro 400\n35,000\n75.0\n\n\n\n\n\n\n\n\nTreatment Options\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nICER Calculation Table 1\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nICER Calculation Table 2\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n: ICER Calculation Table 3 {tbl-colwidths=“[20,20,20,20,20,20]”}"
   },
   {
-    "objectID": "case-studies/ESP_cs_icer.html#instrucciones-1",
-    "href": "case-studies/ESP_cs_icer.html#instrucciones-1",
+    "objectID": "case-studies/cs_icer.html#instructions-1",
+    "href": "case-studies/cs_icer.html#instructions-1",
     "title": "Case Study: ICERs",
-    "section": "Instrucciones",
-    "text": "Instrucciones\nCalcule los cocientes de coste-efectividad incrementales para cada estrategia y determine qué estrategia de cribado elegiría si, como responsable de la toma de decisiones, estuviera dispuesto a pagar $50.000/QALY (utilizando años de vida ajustados por calidad descontados).\n\n\nCost and QALY Outcomes, by Strategy\n\n\n\n\n\n\n\nEstrategia de cribado\nAVAC descontados\nCostes descontados ($2022)\n\n\n\n\nNo screening\n10.05\n4,130\n\n\nEvery 3 years\n10.798\n5,178\n\n\nEvery 2 years\n10.830\n5,583\n\n\nEvery 1 year\n10.973\n6,417\n\n\nEvery 6 months\n10.988\n8,744\n\n\n\n\nCálculo del ICER Tabla 1\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo ICER Tabla 2\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)"
+    "section": "Instructions",
+    "text": "Instructions\nCalculate incremental cost-effectiveness ratios for each strategy and determine which screening strategy you would choose if, as a decision maker, you were prepared to pay $50,000/QALY (using discounted quality-adjusted life years)\n\n\nCost and QALY Outcomes, by Strategy\n\n\nScreening Strategy\nDiscounted QALYs\nDiscounted Costs ($2022)\n\n\n\n\nNo screening\n10.05\n4,130\n\n\nEvery 3 years\n10.798\n5,178\n\n\nEvery 2 years\n10.830\n5,583\n\n\nEvery 1 year\n10.973\n6,417\n\n\nEvery 6 months\n10.988\n8,744\n\n\n\n\nICER Calculation Table 1\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nICER Calculation Table 2\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)"
   },
   {
-    "objectID": "case-studies/cs_injury-markov.html",
-    "href": "case-studies/cs_injury-markov.html",
-    "title": "Firework Injury: Markov Model",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Taller de Análisis Económico de intervenciones en salud para la toma de decisiones",
     "section": "",
-    "text": "This case study extend our evaluation of firework injuries using a discrete time Markov cohort model. While the decision tree we constructed yesterday provided immediate outcomes and costs for various strategies, the Markov model offers significant advantages for examining long-term health and cost impacts.\nOur Markov model will allow us to capture the progression of firework-related injuries over an extended period, allowing us to consider long-term implications. By modeling injury events and transitions between different health states over time, we can better understand the chronic effects of injuries and the long-term benefits of intervention strategies.\nThis approach will provide a more comprehensive assessment of the lifetime health and economic impacts of the proposed strategies, considering factors such as long-term healthcare costs, changes in injury rates, and compliance levels. The Markov model’s ability to incorporate these extended horizons and recurring events will yield deeper insights into the most effective and sustainable approaches to mitigating firework-related injuries in Columbia."
+    "text": "Calendario de talleres\n\n\n\n\n\n\n\n\n\nFecha\nHora programada\nTema\nVersión inglesa\n\n\n\n\nMartes\n9:00 - 9:30 am\nBienvenida y presentaciones\nWelcome\n\n\n\n9:30 - 10:00\nIntroducción al análisis de decisiones\nIntroduction to Decision Analysis\n\n\n\n10:00-11:00\nÁrboles de decisión y probabilidades\nDecision Trees\n\n\n\n11:00-11:15\nCafé\nBreak\n\n\n\n11:15 - 12:00\nCaso de estudio: Probabilidades y árboles de decisión\nCase Study: Decision Trees\n\n\n\n12:00 - 1:15 pm\nCafé\nBreak\n\n\n\n1:45 - 2:45 pm\nCaso de estudio: Construir un árbol de decisión en Excel\nCase Study: Excel\n\n\n\n2:45 - 4:00 pm\nCaso de estudio: Construir un árbol de decisión en Amua\nCase Study: Amua\n\n\nMiércoles\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nUmbrales de tratamiento y valor de la información\nTreatment Thresholds and Value of Information\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:30\nFundamentos CEA 1: Costos\nValuing Costs\n\n\n\n11:30 - 11:45\nCafé\nBreak\n\n\n\n11:45 - 1:00\nFundamentos CEA 2: Resultados sanitarios\nHealth Outcomes\n\n\n\n1:00 - 2:15\nAlmuerzo\nLunch\n\n\n\n2:15 - 3:15\nCaso de estudio: Lesiones por fuegos artificiales en Columbia\nCase Study: Firework Injuries in Columbia\n\n\n\n3:15 - 4:30\nFundamentos del ACE 3: Análisis coste-eficacia incremental\nICERs\n\n\nJueves\n9:00-9:15\nResumen diario\n\n\n\n\n9:15 - 10:30\nCaso de estudio: Análisis coste-eficacia incremental\nCase Study: ICERs\n\n\n\n10:30 - 12:00\nModelos de Markov\nMarkov Models\n\n\n\n12:00 - 1:15\nCafé\n\n\n\n\n1:15 - 4:00\nCaso de estudio: Modelos de Markov\nCase Study: Firework Injury Model (Markov)\n\nAlive-Dead\nAlive-Injury-Dead\nFireworks (basic w/ strategies)\nFireworks (full w/ sequelae)\n\n\n\nViernes\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nAnálisis determinista y de escenarios\nDeterministic and Sensitivity Analysis\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:15\nTécnicas avanzadas de modelización\nAdvanced modeling techniques\n\n\n\n11:15 - 11:45\nCeremonia de entrega de certificados\nClosing Ceremony",
+    "crumbs": [
+      "Home"
+    ]
   },
   {
-    "objectID": "case-studies/cs_injury-markov.html#markov-structure-alive-dead",
-    "href": "case-studies/cs_injury-markov.html#markov-structure-alive-dead",
-    "title": "Firework Injury: Markov Model",
-    "section": "Markov Structure: Alive-Dead",
-    "text": "Markov Structure: Alive-Dead\nThe structure of the Markov model for the Alive-Dead model is shown in the figure below. Amua has a special Markov node (represented by  ). The branches that lead off a Markov node designate all the Markov states (and only Markov states).\nIn this example, there are two health states: (1) Alive, (2) Dead. Off each health state, you can create a subtree (also called a cycle tree) that reflects those events that can occur during a cycle. The last branch at the end of each pathway will be a state transition, which defines what health state to go to for the next cycle.\n\n\n\n\n\n\nNote\n\n\n\nNote that in a Markov model, outcomes are defined elsewhere – NOT at the end of the branch, but at the state."
+    "objectID": "case-studies/cs_decision-tree-excel.html",
+    "href": "case-studies/cs_decision-tree-excel.html",
+    "title": "Exercise: Decision Tree in Excel",
+    "section": "",
+    "text": "Download Decision Tree Excel File"
   },
   {
-    "objectID": "case-studies/cs_injury-markov.html#building-the-tree",
-    "href": "case-studies/cs_injury-markov.html#building-the-tree",
-    "title": "Firework Injury: Markov Model",
-    "section": "Building the Tree",
-    "text": "Building the Tree\n\nStructure\nAfter you open Amua, click Model  New   Markov Model.\n\nSave your model right at the start.\nNow select the decision node , Right-click  Add   Markov Chain .\nStart by developing the structure of the Markov model using Alive and Dead for the different health states. The branches of the Markov chain should correspond to the states of the model. Label the name option to the right of the decision node as Alive-Dead.\n\n\n\n\n\n\n\n\nComplete the structure of the Markov model using the information above. Note: focus on adding the branches and transitions for this step; Parameters will be added later.\n\n\n\n\nWhen you reach the end of the branch, select the chance node you would like to turn into a state transition, right click, select Change to State Transition. This will give you the blue arrow  . On the right of this arrow, you can find a dropdown menu with the different health states you specified. Select the health state this part of the cohort will transition to.\nWith this button  you can align the end nodes.\n\n\n\nCohort size and starting probabilities\n\nGo to Model  Properties  select the Simulation tab. The default cohort size is 1,000. Change cohort size to 1, so that all outputs will be at the individual level (i.e., per person).\n\n\n\n\n\n\n\nAt the Markov Chain  , change the initial probabilities of health states. Since all patients start in the Alive state, change the p:0 on the left of the Local state to p:1 (see blue box below)."
+    "objectID": "case-studies/cs_decision-tree-excel.html#assigning-variable-names",
+    "href": "case-studies/cs_decision-tree-excel.html#assigning-variable-names",
+    "title": "Exercise: Decision Tree in Excel",
+    "section": "Assigning Variable Names",
+    "text": "Assigning Variable Names\nOur first step is to assign each base case value its variable name. There are two ways to do this:\n\nUsing the naming box in the upper left of the spreadsheet. This is useful for naming one item at a time.\nBatch naming by using a table selection.\n\nLet’s first run through option 1. In the figure below, we will assign the name “variable1” to the value in cell C5. We do this using the naming box highlighted in the upper left. Simply replace “C5” there with what you want to call the value in that cell, i.e., “variable1.”\n\n\n\nAssign the variable name “variable1” to the value in cell C5.\n\n\nYou can see this process in action in the video below."
   },
   {
-    "objectID": "case-studies/cs_injury-markov.html#model-parameters",
-    "href": "case-studies/cs_injury-markov.html#model-parameters",
-    "title": "Firework Injury: Markov Model",
-    "section": "Model Parameters",
-    "text": "Model Parameters\nFirst, define the following time-constant parameters for the model in the “Parameters” panel.\n\n\n\n\n\nThis variable tells Amua that we will model a cohort of newborns. However, we could easily adapt this to model a cohort of 20 year-olds, etc."
+    "objectID": "case-studies/cs_decision-tree-excel.html#batch-assigning-variable-names",
+    "href": "case-studies/cs_decision-tree-excel.html#batch-assigning-variable-names",
+    "title": "Exercise: Decision Tree in Excel",
+    "section": "Batch Assigning Variable Names",
+    "text": "Batch Assigning Variable Names\nOften it is more efficient to assign groups of variables, rather than do it one by one. To do this we simply select the “table” we want to use, and then go to the Formulas tab and select Create from Selection.\n\n\n\n\n\n\nMake sure the variable name you want to assign is either in the leftmost row, or the top row (see below). Also make sure the value you want assigned to that variable is in the second column, as shown in the figure.\n\n\n\n\nAssuming you have structured your parameter table as above, and using the guidance above, when excel prompts you to “Create Names” you can tell it the variable names are in the left column:\n\nOnce you have done this, you can select the Name Manager on the Formulas ribbon to confirm the new names have been assigned, and to make changes.\n\n\n\n\n\n\nYou can edit, delete, or reassign the cell values/range in the Name Manager, too.\n\n\n\n\nA video walk-through of this process is shown below.\n\nIf your parameter names are organized as column headers, you can use the same process, as shown in the video below."
   },
   {
-    "objectID": "case-studies/cs_injury-markov.html#transition-probabilities",
-    "href": "case-studies/cs_injury-markov.html#transition-probabilities",
-    "title": "Firework Injury: Markov Model",
-    "section": "Transition Probabilities",
-    "text": "Transition Probabilities\nThe underlying transition probability matrix has the following form:\n\n\n\n\n\nHowever, because we are modeling a cohort of newborns until death, we need to include death transition probabilities that vary by age (i.e., cycle) in the model. In other words, there will be a different death probability in each cycle.\n\n\n\n\n\n\nImportant\n\n\n\nIn Amua, time-varying inputs are operationalized as variables  rather than parameters.\nVariables  can be defined to keep track of model events and dynamically update expressions as the model runs. Thus, unlike parameters  which are fixed for a given run of the model, variables can change within a simulation. Variables may change across individuals, allowing heterogeneity to be modeled, or they may change over time.\n\n\nTherefore, we will define p_die as a variable  that references values in a lookup table , following the steps below.\n\n\n\n\n\n\nImportant\n\n\n\nA lookup table returns the value that corresponds to a particular index. The first column in a lookup table contains the table indices, and one or more columns of lookup values can be defined. Index values must be unique and in ascending order. There are 3 lookup methods, (1) exact, (2) interpolate, and (3) truncate, for details about these methods visit the Amua Wiki on GitHub.\n\n\nWe first define a lookup table  tbl_death to read in the age-dependent background mortality constructed from the Columbian life tables.\n\nDownload Data\nDownload the file titled columbia-life-table-death-probabilities.csv from the workshop website. This table contains the age-indexed annual mortality probability for Columbia. A screenshot of the first few rows of this .csv file is shown below. The index column is the age, while p_die is the annual probability of death at each age.\n\n\n\n\n\nGo to the “Tables” panel, click  to add a table, and you should see a “Define Table” window (see screenshot below). Click the Import button  and select the downloaded .csv file to import. The table will automatically be resized to fit the imported data. The first row in the file will be used as table headers.\n\nEnter “tbl_p_die” as the name for this variable. “Lookup” is the default table type (which is what we want here). Choose “Interpolate” as the Lookup Method. Click Save to apply.\nNext, we can define the time-varying variable p_die (which reads from the table we just defined and operates as the background mortality probability in the current model cycle, \\(t\\)).\nMake sure you create a variable and not a parameter. Under “Variables”, click  to add a variable p_die = tbl_p_die[age_initial + t, 1].\n\n\n\n\n\n\nNote\n\n\n\nThe first column of a table is always used for indexing in tables. Therefore, the number “1” here will actually indicate the second column in your table as the corresponding value. You can also use the name of the column to read a value, e.g., tbl_p_die[age_initial + t, “p_die”].\n\n\n\n\n\n\n\n\nTip\n\n\n\nIn Amua, “t” is a built-in variable that tracks the number of cycles. It automatically updates when the model runs. For example, in the 10th cycle on the Markov model, t = 10. Therefore, in the formula “tbl_p_die[age_initial + t, 1]”, age_initial + t will equal the modeled age of the individual in cycle t, and the full formula will read the age-dependent background mortality based on the individual’s current age (instead of the initial age).\nAmua defaults to a cycle time of \\(t=0\\). Therefore, if you hit “Evaluate” the Expected Value field should calculate the death probability for a newborn as shown in the .csv lookup table.\n\n\n\n\n\n\n\nWe now have all transition probabilities defined. Add these inputs to the branches of the model. Remember to add the complementary probabilities using “C” as well."
+    "objectID": "case-studies/cs_decision-tree-excel.html#step-4-calculate-expected-outcomes",
+    "href": "case-studies/cs_decision-tree-excel.html#step-4-calculate-expected-outcomes",
+    "title": "Exercise: Decision Tree in Excel",
+    "section": "Step 4: Calculate Expected Outcomes",
+    "text": "Step 4: Calculate Expected Outcomes\nOur final step is to “fold-back” the decision tree to summarize expected cost and survival outcomes for each strategy under consideration. You will find a summary table of outcomes in the worksheet titled “Summary.”\n\n\n\n\n\n\n\nExercise 1.4\n\n\n\n Calculate expected outcomes for each strategy.\n\n\n\n\n\n\nHINT: For the expected deaths outcome, you can use the total population size and expected survival outcome."
   },
   {
-    "objectID": "case-studies/cs_injury-markov.html#termination-condition",
-    "href": "case-studies/cs_injury-markov.html#termination-condition",
-    "title": "Firework Injury: Markov Model",
-    "section": "Termination Condition",
-    "text": "Termination Condition\n\nSpecify the termination of the model by selecting [termination] and type t==110. This will allow your model to run for 110 cycles, then the model will terminate."
+    "objectID": "case-studies/cs_decision-tree-amua.html",
+    "href": "case-studies/cs_decision-tree-amua.html",
+    "title": "Exercise: Decision Tree in Amua",
+    "section": "",
+    "text": "This case study is designed to get you familiar with constructing a decision tree in Amua. Specific learning objectives are as follows:\n\nParameterize and structure a decision tree model.\nEstimate survival and cost outcomes from the decision tree model in the Amua software.\n\n\n\n\n\n\n\nPlease note that this case study is based on the Amua tutorial here. We have modified the tutorial to make it more relevant to the workshop."
   },
   {
-    "objectID": "case-studies/cs_injury-markov.html#rewards",
-    "href": "case-studies/cs_injury-markov.html#rewards",
-    "title": "Firework Injury: Markov Model",
-    "section": "Rewards",
-    "text": "Rewards\nThe default reward in Amua is cost. We need to change this to have life-expectancy (LE) as a reward. Go to Model  Properties  select the Analysis tab and change the cost dimension to LE. Use LE as the symbol and set to 4 decimal places.\n\n\n\n\n\nAdd the life-expectancy “payoff” on the left of each health state after “R: (LE)”.\n\n\n\n\n\nApply Half-cycle correction. Go to Model  Properties  select the Markov tab and check the Half-cycle correction box. Click OK to apply.\n\n\n\n\n\nNow, we have finished constructing the Alive-Dead model. Analyze the model using a cohort simulation by clicking Run  Run Model.\n\n\n\n\n\n\nRun the alive-dead model and calculate overall life expectancy."
+    "objectID": "case-studies/cs_decision-tree-amua.html#getting-started",
+    "href": "case-studies/cs_decision-tree-amua.html#getting-started",
+    "title": "Exercise: Decision Tree in Amua",
+    "section": "Getting started",
+    "text": "Getting started\nYou will first need to install Java (1.8 or later) & download Amua. Follow the directions here\nHere is a comprehensive tutorial to get you started. We review some highlights below:"
   },
   {
-    "objectID": "case-studies/cs_injury-markov.html#add-injury-chance-nodes",
-    "href": "case-studies/cs_injury-markov.html#add-injury-chance-nodes",
-    "title": "Firework Injury: Markov Model",
-    "section": "Add Injury Chance Nodes",
-    "text": "Add Injury Chance Nodes\nFrom the “Alive” health state, convert the blue arrow  into a chance node using the change type button . From this chance node, include the chance of a firework injury. The probability of an injury should be based on a new fixed parameter called p_injury.\nFrom the injury branch, add another chance node for whether or not the injury is fatal. Complete the structure of the model by adding transition arrows to the Alive health state if the individual either does not have an injury, or has a non-fatal firework injury. Add a transition arrow to the death state if the individual dies from their firework injury.\nYour Markov tree should now look like this:"
+    "objectID": "case-studies/cs_decision-tree-amua.html#disease-prevalence",
+    "href": "case-studies/cs_decision-tree-amua.html#disease-prevalence",
+    "title": "Exercise: Decision Tree in Amua",
+    "section": "Disease Prevalence",
+    "text": "Disease Prevalence\n\nFor the branch No Screen, click underneath the branch labeled D+ (next to the label p:). A text-entry box will now be outlined in blue. This is where you enter the probability for this branch.\nType prev which we will define as the prevalence of the disease. Hit Enter or click outside the text-box to accept the probability.\nThe text will now turn red because Amua does not recognize prev as a model object, so we will have to\ndefine it later."
   },
   {
-    "objectID": "case-studies/cs_injury-markov.html#add-injury-and-fatal-injury-as-outcomes",
-    "href": "case-studies/cs_injury-markov.html#add-injury-and-fatal-injury-as-outcomes",
-    "title": "Firework Injury: Markov Model",
-    "section": "Add Injury and Fatal Injury as Outcomes",
-    "text": "Add Injury and Fatal Injury as Outcomes\nNext, add outcomes for firework injury (INJ) and fatal firework injury (FINJ) to the model (Model  Properties  Analysis ).\n\n\n\n\n\nWe next need to add a one-time “tracker” to record each instance where a cohort member is injured and fatally injured. We can do this by right-clicking on the chance node after “Firework Injury,” and then clicking on  Add Cost.\n\n\n\n\n\n\n\nAdd outcome trackers for any injury (INJ) and fatal injuries (FINJ) to your Markov tree."
+    "objectID": "case-studies/cs_decision-tree-amua.html#complementary-probabilities",
+    "href": "case-studies/cs_decision-tree-amua.html#complementary-probabilities",
+    "title": "Exercise: Decision Tree in Amua",
+    "section": "Complementary Probabilities",
+    "text": "Complementary Probabilities\n\nNow enter the probability for the D- branch for No Screen.\nBecause the probabilities for all branches of a chance node must sum to 1.0, we could enter 1-prev as the probability.\n\nThis is called a ‘complementary’ probability as it provides the complement to sum to 1.0.\n\n\n-In Amua you can type C or c to indicate a complementary probability. - Note that there can only be one complementary probability per chance node.\n-Enter C for the probability of D-."
   },
   {
-    "objectID": "case-studies/cs_injury-markov.html#change-cohort-size",
-    "href": "case-studies/cs_injury-markov.html#change-cohort-size",
-    "title": "Firework Injury: Markov Model",
-    "section": "Change Cohort Size",
-    "text": "Change Cohort Size\nOur current model is structured for a cohort size of 1 individual. This is often useful—especially for calculating life expectancy as an outcome—but using other cohort sizes can be helpful for producing policy decision-relevant information.\nWe’ll now change the model so that we capture the lifetime experience of a cohort of 100,000 newborns. This will allow us to model the expected number of total and fatal firework injuries over a lifetime for a large cohort—and, eventually, to see how the total number of lifetime injuries falls under different policy options.\n\nGo to Model  Properties  select the Simulation tab. Change cohort size to 100,000.\n\n\n\n\n\n\n\nTip\n\n\n\nYour life expectancy outcome (LE) will now return the expected total life years for a cohort of 100,000 people. To return a standard life expectancy outcome, you can redefine the “payoff” for the LE outcome as \\(1/100000\\)."
+    "objectID": "case-studies/cs_decision-tree-amua.html#define-probabilities-for-screen-strategy",
+    "href": "case-studies/cs_decision-tree-amua.html#define-probabilities-for-screen-strategy",
+    "title": "Exercise: Decision Tree in Amua",
+    "section": "Define Probabilities for Screen Strategy",
+    "text": "Define Probabilities for Screen Strategy\n\nFor the Test + branch enter pTPos as the probability of testing positive, which will be a function of the disease prevalence and test characteristics (sensitivity and specificity).\nEnter C for the probability of Test -.\nNext, we’ll define the probability of having the disease given each test result in the Screen strategy.\n\nOn the Test + branch, click under the D+ branch and type pD_TPos. This will be the probability of having the disease given a positive test.\nClick under D- and type C to indicate a complementary probability.\nFor the Test - branch, click under the D+ branch and type pD_TNeg, which is the probability of having the disease given a negative test.\nClick under D- below and type C again.\n\n\n - Finally, define teh probability of having the disease in the Treat All strategy. 1. Click under D+ and type prev, which is the prevalence of the disease. 2. Enter C for the probability of D-."
   },
   {
-    "objectID": "case-studies/cs_injury-markov.html#apply-half-cycle-correction",
-    "href": "case-studies/cs_injury-markov.html#apply-half-cycle-correction",
-    "title": "Firework Injury: Markov Model",
-    "section": "Apply Half-Cycle Correction",
-    "text": "Apply Half-Cycle Correction\n\nApply Half-cycle correction. Go to Model  Properties  select the Markov tab and check the Half-cycle correction box. Click OK to apply."
+    "objectID": "case-studies/cs_prob-decision.html",
+    "href": "case-studies/cs_prob-decision.html",
+    "title": "Case Study: Probabilities & Decision Trees",
+    "section": "",
+    "text": "Important\n\n\n\nPlease note that you can download PDF and Microsoft Word versions of this case study using the links on the right.\n\n\n\nCase 1\nIn a hypothetical community, 60% of all people consume at least 6 alcoholic beverages per week and 50% are overweight. The percentage of people who are both overweight and consume this much alcohol is 40%. Construct a 2x2 table to answer (a)-(c) below. For part (d), construct a decision tree.\n\nWhat percentage of people consume at least 6 alcoholic beverages per week, are overweight, or fall into both categories?\n\n\n\n\n\n\n\n\n\n\n\n\nYou sample at random a person from the community and find that they consume at least 6 alcoholic beverages per week. What is the probability that they are overweight?\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is the probability that someone from this community consumes at least 6 alcoholic beverages per week if they are overweight?\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase 2\nA new screening procedure can detect 80% of women diagnosed with breast cancer but will falsely identify 2% without breast cancer. The prevalence of breast cancer in the population is 1.6 in 100\n\nWhat is the probability that a woman does not have breast cancer if the test is negative?\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is the probability that a woman has breast cancer if the test is positive?\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase 3\nA patient is found to have an abdominal aortic aneurysm (AAA) 5 cm in size. If you operate now and he survives, he will have a life expectancy of 3 additional years. In a series of 100 similar patients from your hospital, 6 died immediately after surgery. If you elect to watch the patient, 60% will rupture their AAA at home (assume at an average of 1 year later). Of those who rupture their AAA, 30% will die, while the other % will undergo emergency surgery and survive, allowing the patient to survive the full 3-years of life expectancy\n\nDraw a decision tree for the problem of choosing whether to operate electively. Remember that you must consider the life expectancies as an outcome here. What is the preferred choice?\n\n\n\n\n\n\n\n\n\n\n\n\nA 95% confidence interval for the mortality rate of elective surgery at your hospital ranges from 1.4-12.7%. Does this influence your thoughts? Why? Do you need better information about your estimate of mortality? Why? (Note: For the latter, calculate the mortality rate for which you are indifferent between the two choices)\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase 4\nA patient presents to the ER with abdominal pain. As per the ER doc, you estimate that the patient’s appendicitis probability is 0.16. If the patient truly has appendicitis, the probability that the appendix was already perforated at the time the patient presents to the ER is 0.1875. You can also observe the patient for 6 hours to be certain that your diagnosis is correct. If your diagnosis ends up being correct, 24% of individuals will have a perforated appendix after 6 hours (Note: this number is not what goes into your tree. You must account for the 18.75% who already had a perforated appendix at the time the patient entered the hospital).\nIf the appendix is perforated at the time the patient presents to the ER or at the end of 6 hours, there is a 0.84 chance that the symptoms will become worse and a 0.16 chance they will remain the same. If the patient has appendicitis but the appendix does not burst at the end of 6 hours, there is a 0.8 chance the symptoms will worsen and a 0.2 chance that they will remain the same. If the appendix is not diseased, there is a 0.39 chance that the symptoms will remain the same in 6 hours, a 0.61 chance that this will improve, and no chance that they will worsen.\n\nCalculate the probability that a patient has a perforated appendix by the end of 6 hours given that he had appendicitis but was not perforated at the time he entered the hospital\n\n\n\n\n\n\n\n\n\n\n\nDraw a decision tree to calculate the probabilities asked in questions 3-6.\n\nCalculate the probability that the patient has a perforated appendix at the beginning of 6 hours.\n\n\n\n\n\n\n\n\n\n\n\nP(Perforation at the beginning of the six hours) = 0.1600 * 0.1875 = 0.0300. This is the proportion of patients with appendicitis multiplied by the conditional probability of perforation given appendicitis at the time the patient enters the hospital.\n\nCalculate the probability that the patient will have a perforated appendix if you wait 6 hours\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalculate the probability that the patient’s symptoms will 1) get worse, 2) stay the same, and 3) get better.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalculate the conditional probability that the patient has a perforated appendix if the symptoms 1) get worse; 2) stay the same or 3) get better.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalculate the conditional probability that the patient has appendicitis if 1) the symptoms get worse, 2) stay the same, or 3) get better"
   },
   {
-    "objectID": "case-studies/cs_injury-markov.html#run-the-model",
-    "href": "case-studies/cs_injury-markov.html#run-the-model",
-    "title": "Firework Injury: Markov Model",
-    "section": "Run the Model",
-    "text": "Run the Model\nVerify that your model is able to run by clicking on the  check model button. Once all errors have been fixed,  run the model.\nAfter you run the model, you will see expected outcomes at the bottom of the screen. This information tells us that total life expectancy is 77.04 years and there are an expected 222.07 firework injuries and 1.02 fatal injuries per 100,000 newborns in Columbia.\n\nAmua will also display a new window with a figure and spreadsheet table. The figure shows the total number of people in the cohort in each health state (“Alive” and “Dead”) at each cycle of the model. The spreadsheet table contains the plotted information (in the Alive and Dead columns) as well as cycle-specific calculations for life-expectancy and injury counts.\nThe columns that start with Cum_ are cumulative counts of each outcome. The output below, for example, shows that at cycle \\(t=20\\) (which corresponds to age=20 for our cohort), there are an expected 58.951 firework-related injuries in our cohort of 100,000 newborns."
+    "objectID": "case-studies/ESP_cs_decision-tree-excel.html",
+    "href": "case-studies/ESP_cs_decision-tree-excel.html",
+    "title": "Exercise: Decision Tree in Excel",
+    "section": "",
+    "text": "Descargar archivo Excel de árbol de decisión"
   },
   {
-    "objectID": "case-studies/cs_injury-markov.html#add-the-injury-probability-lookup-table",
-    "href": "case-studies/cs_injury-markov.html#add-the-injury-probability-lookup-table",
-    "title": "Firework Injury: Markov Model",
-    "section": "Add the Injury Probability Lookup Table",
-    "text": "Add the Injury Probability Lookup Table\nJust like we did with the age-specific mortality probabilities above, download the cases-by-age.csv data file from the workshop website.\nGo to the “Tables” panel, click  to add a table, and you should see a “Define Table” window (see screenshot below). Click the Import button  and select the downloaded .csv file to import. The table will automatically be resized to fit the imported data. The first row in the file will be used as table headers.\nEnter “tbl_p_injury” as the name for this variable. “Lookup” is the default table type (which is what we want here). Choose “Interpolate” as the Lookup Method. Click Save to apply.\n\n\n\n\n\n\nImportant\n\n\n\nAmua may also include additional blank rows when it imports the table. Before you proceed, remove all blank rows by clicking on the row, then using the  button next to “Rows” (see red rectangles below)."
+    "objectID": "case-studies/ESP_cs_decision-tree-excel.html#asignación-de-nombres-de-variables",
+    "href": "case-studies/ESP_cs_decision-tree-excel.html#asignación-de-nombres-de-variables",
+    "title": "Exercise: Decision Tree in Excel",
+    "section": "Asignación de nombres de variables",
+    "text": "Asignación de nombres de variables\nNuestro primer paso es asignar a cada valor del caso base su nombre de variable. Hay dos maneras de hacerlo:\n\n\nUtilizando el cuadro de asignación de nombres situado en la parte superior izquierda de la hoja de cálculo. Esto es útil para nombrar un elemento a la vez.\n\n\nNombrando por lotes utilizando una selección de tabla.\n\n\nVeamos primero la opción 1. En la siguiente figura, asignaremos el nombre “variable1” al valor de la celda C5. Para ello, utilizaremos el cuadro de asignación de nombres resaltado en la parte superior izquierda. Simplemente sustituye allí “C5” por el nombre que quieras darle al valor de esa celda, es decir, “variable1”.\nAsigna el nombre de variable “variable1” al valor de la celda C5.](images/paste-9EE923C4.png)\nPuedes ver este proceso en acción en el siguiente vídeo."
   },
   {
-    "objectID": "case-studies/cs_injury-markov.html#define-an-age-specific-injury-probability",
-    "href": "case-studies/cs_injury-markov.html#define-an-age-specific-injury-probability",
-    "title": "Firework Injury: Markov Model",
-    "section": "Define an Age-Specific Injury Probability",
-    "text": "Define an Age-Specific Injury Probability\nNext, we can define the time-varying variable p_injury_t (which reads from the table we just defined and operates as the background mortality probability in the current model cycle, \\(t\\)).\nMake sure you create a variable and not a parameter. Under “Variables”, click  to add a variable p_injury_t = tbl_p_injury[age_initial + t, 1].\n\n\n\n\n\n\nRe-run the model using age-specific injury probabilities. How does the expected number of overall and fatal injuries change from when we used the fixed probabilities above?"
+    "objectID": "case-studies/ESP_cs_decision-tree-excel.html#asignación-de-nombres-de-variables-por-lotes",
+    "href": "case-studies/ESP_cs_decision-tree-excel.html#asignación-de-nombres-de-variables-por-lotes",
+    "title": "Exercise: Decision Tree in Excel",
+    "section": "Asignación de nombres de variables por lotes",
+    "text": "Asignación de nombres de variables por lotes\nA menudo es más eficiente asignar grupos de variables, en lugar de hacerlo una a una. Para ello simplemente seleccionamos la “tabla” que queremos utilizar, y luego vamos a la pestaña Formulas y seleccionamos Crear a partir de selección.\n\n\n\n\n\n\nAsegúrese de que el nombre de la variable que desea asignar se encuentra en la fila de la izquierda o en la fila superior (véase más abajo). Asegúrate también de que el valor que quieres asignar a esa variable está en la segunda columna, como se muestra en la figura.\n\n\n\n\nSuponiendo que haya estructurado su tabla de parámetros como se indica más arriba, y utilizando la guía anterior, cuando Excel le pida “Crear nombres” puede decirle que los nombres de las variables están en la columna de la izquierda:\n\nUna vez hecho esto, puede seleccionar el Administrador de nombres de la cinta Fórmulas para confirmar que se han asignado los nuevos nombres y realizar cambios.\n\n\n\n\n\n\nTambién puede editar, eliminar o reasignar los valores/rangos de celda en el Gestor de nombres.\n\n\n\n\nA continuación se muestra un vídeo explicativo de este proceso.\n\nSi los nombres de sus parámetros están organizados como cabeceras de columna, puede utilizar el mismo proceso, como se muestra en el siguiente vídeo."
+  },
+  {
+    "objectID": "case-studies/ESP_cs_decision-tree-excel.html#paso-4-calcular-los-resultados-esperados",
+    "href": "case-studies/ESP_cs_decision-tree-excel.html#paso-4-calcular-los-resultados-esperados",
+    "title": "Exercise: Decision Tree in Excel",
+    "section": "Paso 4: Calcular los resultados esperados",
+    "text": "Paso 4: Calcular los resultados esperados\nEl último paso consiste en “replegar” el árbol de decisión para resumir los resultados esperados de coste y supervivencia de cada estrategia considerada. Encontrará una tabla resumen de resultados en la hoja de cálculo titulada “Resumen”.\n\n\n\n\n\n\n\nEjercicio 1.4\n\n\n\n Calcule los resultados esperados para cada estrategia.\n\n\n\n\n\n\nSUGERENCIA: Para el resultado esperado de muertes, puede utilizar el tamaño total de la población y el resultado esperado de supervivencia."
   },
   {
     "objectID": "case-studies/markov-injury-planning.html",
