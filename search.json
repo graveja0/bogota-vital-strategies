@@ -3759,14 +3759,14 @@
     "href": "case-studies/cs_injury-decision-tree.html#build-a-status-quo-strategy",
     "title": "Firework Injury Decision Tree",
     "section": "1.1. Build a “Status Quo” Strategy",
-    "text": "1.1. Build a “Status Quo” Strategy\nConstruct a decision tree in Amua for a “Status Quo” strategy. Your tree should work through the following chance nodes:\n\nInjury vs. No Injury\nFatal injury vs. non-fatal injury\nMild/Moderate vs. Severe injury\nFull recovery vs. Recovery with injury sequelea\n\nPlease use the parameter names and values supplied above in the construction of your tree.\n\n\n\n\n\n\nImportant\n\n\n\nOften, when you add branches to a tree in Amua, the tree will become very crowded (see below). To “clean up” your tree, you can click the “OCD” (Organize Current Display) button and Amua will re-organize the layout for you!\n\n\n\n\n\n\n1.2. Add Outcomes\n\n\n\nAmua defaults to cost outcomes. Please remove the cost outcome and define a new primary outcome based on injury. In other words, the outcome “payoff” should be 1.0 if an injury occurs, and 0 otherwise.\n\n\n\n\n\n\nTip\n\n\n\nYou can edit the outcomes by clicking Model  Properties  Analysis:"
+    "text": "1.1. Build a “Status Quo” Strategy\nConstruct a decision tree in Amua for a “Status Quo” strategy. Your tree should work through the following chance nodes:\n\nInjury vs. No Injury\nFatal injury vs. non-fatal injury\nMild/Moderate vs. Severe injury\nFull recovery vs. Recovery with injury sequelea\n\nPlease use the parameter names and values supplied above in the construction of your tree.\n\n\n\n\n\n\nImportant\n\n\n\nOften, when you add branches to a tree in Amua, the tree will become very crowded (see below). To “clean up” your tree, you can click the “OCD” (Organize Current Display) button and Amua will re-organize the layout for you!"
   },
   {
     "objectID": "case-studies/cs_injury-decision-tree.html#add-outcomes",
     "href": "case-studies/cs_injury-decision-tree.html#add-outcomes",
     "title": "Firework Injury Decision Tree",
     "section": "1.2. Add Outcomes",
-    "text": "1.2. Add Outcomes"
+    "text": "1.2. Add Outcomes\nAmua defaults to cost outcomes. Please remove the cost outcome and define a new primary outcome based on injury. In other words, the outcome “payoff” should be 1.0 if an injury occurs, and 0 otherwise.\n\n\n\n\n\n\nTip\n\n\n\nYou can edit the outcomes by clicking Model  Properties  Analysis:"
   },
   {
     "objectID": "case-studies/cs_injury-decision-tree.html#ensure-your-model-calibrates-to-observed-injury-totals",
@@ -3829,14 +3829,7 @@
     "href": "case-studies/ESP_cs_injury-decision-tree.html#construir-una-estrategia-de-statu-quo",
     "title": "Árbol de decisiones sobre lesiones por fuegos artificiales",
     "section": "1.1. Construir una estrategia de statu quo",
-    "text": "1.1. Construir una estrategia de statu quo\nConstruya un árbol de decisión en Amua para una estrategia de “No hacer nada”. Su árbol debería funcionar a través de los siguientes nodos de azar:\n\nLesionado vs. No lesionado\nLesión mortal frente a lesión no mortal\nLesión leve/moderada frente a lesión grave\nRecuperación completa vs. Recuperación con secuela de lesión\n\nPor favor, utilice los nombres y valores de los parámetros suministrados anteriormente en la construcción de su árbol.\n\n\n\n\n\n\nImportant\n\n\n\nA menudo, cuando añades ramas a un árbol en Amua, el árbol se llena mucho (ver abajo). Para “limpiar” tu árbol, puedes hacer clic en el botón “OCD” (Organize Current Display) y Amua reorganizará el diseño por ti.\n\n\n\n\n\n\n1.2. Add Outcomes"
-  },
-  {
-    "objectID": "case-studies/ESP_cs_injury-decision-tree.html#add-outcomes",
-    "href": "case-studies/ESP_cs_injury-decision-tree.html#add-outcomes",
-    "title": "Árbol de decisiones sobre lesiones por fuegos artificiales",
-    "section": "1.2. Add Outcomes",
-    "text": "1.2. Add Outcomes"
+    "text": "1.1. Construir una estrategia de statu quo\nConstruya un árbol de decisión en Amua para una estrategia de “No hacer nada”. Su árbol debería funcionar a través de los siguientes nodos de azar:\n\nLesionado vs. No lesionado\nLesión mortal frente a lesión no mortal\nLesión leve/moderada frente a lesión grave\nRecuperación completa vs. Recuperación con secuela de lesión\n\nPor favor, utilice los nombres y valores de los parámetros suministrados anteriormente en la construcción de su árbol.\n\n\n\n\n\n\nImportant\n\n\n\nA menudo, cuando añades ramas a un árbol en Amua, el árbol se llena mucho (ver abajo). Para “limpiar” tu árbol, puedes hacer clic en el botón “OCD” (Organize Current Display) y Amua reorganizará el diseño por ti."
   },
   {
     "objectID": "case-studies/ESP_cs_injury-decision-tree.html#añadir-resultados",
