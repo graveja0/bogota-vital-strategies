@@ -71,7 +71,7 @@ There are very likely many minor and moderate injuries that go unreported in off
 :::
 
 | Description                            | Base Case Value    | Parameter Name |
-|------------------------------------|------------------|------------------|
+|-----------------------------------|------------------|------------------|
 | Probability of Injury                  | 0.0000292          | p_injury       |
 | Probability Injury is Severe           | 0.30               | p_severe       |
 | Probability Injury is Mild or Moderate | 0.7 = 1 - p_severe | 1 - p_severe   |
@@ -80,7 +80,7 @@ There are very likely many minor and moderate injuries that go unreported in off
 We will also assume that a small percentage (15%) of individuals with mild/moderate injuries experience long-term consequences (i.e., 85% recover), while the majority (60%) of those with severe injuries do not fully recover and experience long-term complications.
 
 | Description                                   | Base Case Value | Parameter Name    |
-|-----------------------------------|------------------|------------------|
+|-----------------------------------|-------------------|-------------------|
 | Probability of Recovery: Mild/Moderate Injury | 0.85            | p_recover_mildmod |
 | Probability of Recovery: Major Injury         | 0.1             | p_recover_severe  |
 
@@ -109,7 +109,6 @@ Please use the parameter names and values supplied above in the construction of 
 Often, when you add branches to a tree in Amua, the tree will become very crowded (see below). To "clean up" your tree, you can click the "OCD" (Organize Current Display) button and Amua will re-organize the layout for you!
 
 ![](images/clipboard-1033024070.png){fig-align="center" width="400"}
-
 :::
 
 ## 1.2. Add Outcomes
@@ -137,7 +136,7 @@ You can enter the cohort size by clicking Model {{< fa arrow-right >}} Propertie
 *Create a duplicate version of your "Do Nothing" tree to construct separate branches for the "Ban" and "Regulate" scenarios. Under each, the probability of injury should be modified by a relative risk reduction parameter with values set based on the text above and the table below.*
 
 | Description                                                                     | Base Case Value | Parameter Name |
-|-------------------------------------|------------------|------------------|
+|------------------------------------|------------------|------------------|
 | Relative risk reduction: probability of injury under "Ban" policy scenario      | 0.40            | rr_ban         |
 | Relative risk reduction: probability of injury under "Regulate" policy scenario | 0.80            | rr_regulate    |
 
@@ -147,10 +146,34 @@ You can copy and paste the "Do Nothing" branch by right-clicking on the first ch
 
 ## 2.2. Add Additional Outcomes
 
-Add additional outcomes based on each injury type (mild/moderate, severe, fatal). Use your decision tree to project injuries overall and by type under each strategy. Use your results to fill out the table below. Each cell should have calculated counts of the number of each type of injury under each strategy.
+Add additional outcomes based on each injury type (mild/moderate, severe, fatal). Use your decision tree to project injuries overall and by type under each strategy.
+
+::: {.callout-warning appearance="minimal"}
+Run the model and use the results to fill out the table below. Each cell should have calculated counts of the number of each type of injury under each strategy.
+:::
 
 | Strategy           | Any Injury | Mild/Moderate | Severe | Fatal |
 |--------------------|------------|---------------|--------|-------|
 | Do Nothing         |            |               |        |       |
 | Ban Fireworks      |            |               |        |       |
 | Regulate Fireworks |            |               |        |       |
+
+### Cost Outcomes
+
+Next, add in cost outcomes under the following assumptions.
+
+::: callout-tip
+You will need to add costs as an outcome by clicking Model {{< fa arrow-right >}} Properties {{< fa arrow-right >}} Analysis
+:::
+
+| Description                     | Base Case Value | Parameter Name |
+|---------------------------------|-----------------|----------------|
+| Cost of mild or moderate injury | 2.000.000 COP   | c_moderate     |
+| Cost of severe injury           | 40.000.000 COP  | c_severe       |
+| Cost of fatal injury            | 0 COP           | c_fatalily     |
+| Cost of mild/moderate sequelae  | 1.000.000 COP   | c_seq_mildmod  |
+| Cost of severe sequalae         | 4.000.000 COP   | c_seq_severe   |
+
+::: {.callout-warning appearance="minimal"}
+By what percentage does each policy strategy reduce overall costs of firework injuries in Columbia? 
+:::

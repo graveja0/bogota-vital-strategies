@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Model>
-    <name>fireworks_injury_v4</name>
+    <name>cs_decision-tree</name>
     <type>0</type>
     <Metadata>
         <author>graceratcliff</author>
         <dateCreated>Tue Jun 11 09:47:14 CDT 2024</dateCreated>
         <versionCreated>0.3.1</versionCreated>
-        <modifier>graceratcliff</modifier>
-        <dateModified>Thu Jun 13 13:42:01 CDT 2024</dateModified>
+        <modifier>johngraves</modifier>
+        <dateModified>Mon Jun 17 10:27:38 COT 2024</dateModified>
         <versionModified>0.3.1</versionModified>
     </Metadata>
     <DimInfo>
@@ -45,7 +45,7 @@
     </Parameter>
     <Parameter>
         <name>p_recover_severe</name>
-        <expression>.6</expression>
+        <expression>0.1</expression>
         <notes></notes>
     </Parameter>
     <Parameter>
