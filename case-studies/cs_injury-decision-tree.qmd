@@ -110,8 +110,9 @@ Often, when you add branches to a tree in Amua, the tree will become very crowde
 
 ![](images/clipboard-1033024070.png){fig-align="center" width="400"}
 
-## 1.2. Add Outcomes
 :::
+
+## 1.2. Add Outcomes
 
 Amua defaults to cost outcomes. Please remove the cost outcome and define a new primary outcome based on injury. In other words, the outcome "payoff" should be 1.0 if an injury occurs, and 0 otherwise.
 

@@ -110,8 +110,6 @@ Por favor, utilice los nombres y valores de los parámetros suministrados anteri
 A menudo, cuando añades ramas a un árbol en Amua, el árbol se llena mucho (ver abajo). Para "limpiar" tu árbol, puedes hacer clic en el botón "OCD" (Organize Current Display) y Amua reorganizará el diseño por ti.
 
 ![](images/clipboard-1033024070.png){fig-align="center" width="400"}
-
-## 1.2. Add Outcomes
 :::
 
 ## 1.2. Añadir resultados
