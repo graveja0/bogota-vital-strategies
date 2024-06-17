@@ -42,7 +42,9 @@ Construye una tabla de 2x2 para responder a las preguntas (a)-(c) siguientes. Pa
 
 {{< include "space-insertion.qmd" >}} 
 
+- *Dibuja un árbol de decisión para representar este problema*
 
+{{< include "space-insertion.qmd" >}} 
 
 # Caso 2
 
@@ -61,104 +63,3 @@ prevalencia del cáncer de mama en la población es de 1,6 en 100
 
 {{< include "space-insertion.qmd" >}}
 
-
-
-# Caso 3
-
-A un paciente se le detecta un aneurisma aórtico abdominal (AAA) de 5 cm de
-de tamaño. Si se le opera ahora y sobrevive, tendrá una esperanza de vida
-de 3 años más. En una serie de 100 pacientes similares de su
-hospital, 6 murieron inmediatamente después de la operación. Si eliges vigilar al
-paciente, el 60% romperá su AAA en casa (supongamos que una media de 1
-año después). De los que rompen su AAA, el 30% morirá, mientras que el
-otro % se someterá a cirugía de urgencia y sobrevivirá, permitiendo al paciente
-sobreviva los 3 años de esperanza de vida.
-
-- *Dibujar un árbol de decisión para el problema de elegir si se opera
-    electiva. Recuerde que debe considerar la esperanza de vida como un resultado.
-    como un resultado. ¿Cuál es la opción preferida?
-
-{{< include "space-insertion.qmd" >}}
-
-
-- *Un intervalo de confianza del 95% para la tasa de mortalidad de la cirugía electiva
-    electiva en su hospital oscila entre el 1,4 y el 12,7%. ¿Influye esto
-    sus pensamientos? ¿Por qué? ¿Necesita más información sobre su
-    estimación de la mortalidad? ¿Por qué? (Nota: Para esto último, calcule la
-    tasa de mortalidad para la que es indiferente entre las dos
-    opciones)*
-
-{{< include "space-insertion.qmd" >}}
-
-
-# Caso 4
-
-Un paciente acude a Urgencias con dolor abdominal. Según el médico de urgencias, usted
-estima que la probabilidad de apendicitis del paciente es de 0,16. Si el
-paciente tiene realmente apendicitis, la probabilidad de que el apéndice ya estuviera
-perforado en el momento en que el paciente acude a Urgencias es de 0,1875.
-También puede observar al paciente durante 6 horas para estar seguro de que su
-diagnóstico es correcto. Si su diagnóstico acaba siendo correcto, el 24% de
-apéndice perforado al cabo de 6 horas (Nota: esta cifra no es la que se
-número no es el que entra en su árbol. Debe tener en cuenta el 18,75%
-apéndice perforado cuando el paciente ingresó en el hospital).
-hospital).
-
-Si el apéndice está perforado en el momento en que el paciente se presenta en urgencias
-o al cabo de 6 horas, hay un 0,84 de probabilidades de que los síntomas
-empeoren y un 0,16 de que permanezcan igual. Si el paciente
-tiene apendicitis pero el apéndice no revienta al cabo de 6 horas,
-hay una probabilidad de 0,8 de que los síntomas empeoren y una probabilidad de 0,2 de que
-permanezcan igual. Si el apéndice no está enfermo, hay un
-0,39 de probabilidad de que los síntomas sigan igual en 6 horas, un 0,61
-probabilidad de que mejoren y ninguna probabilidad de que empeoren.
-
-- Calcular la probabilidad de que un paciente tenga un apéndice perforado
-    al cabo de 6 horas, dado que tenía apendicitis pero no estaba
-    perforado en el momento de ingresar en el hospital
-
-{{< include "space-insertion.qmd" >}}
-
-
-Dibuja un árbol de decisión para calcular las probabilidades planteadas en las preguntas
-3-6.
-
-
-
-- *Calcule la probabilidad de que el paciente tenga un apéndice perforado
-    apéndice al principio de las 6 horas.*
-
-{{< include "space-insertion.qmd" >}}
-
-
-P(Perforación al comienzo de las seis horas) = 0,1600 \* 0,1875 =
-0.0300. Esta es la proporción de pacientes con apendicitis multiplicada
-por la probabilidad condicional de perforación dada la apendicitis en el
-en el momento en que el paciente ingresa en el hospital.
-
-- *Calcular la probabilidad de que el paciente tenga una perforación de
-    apéndice si espera 6 horas*
-
-{{< include "space-insertion.qmd" >}}
-
-
-- Calcule la probabilidad de que los síntomas del paciente 1) empeoren
-    empeoren, 2) permanezcan igual, y 3) mejoren.*
-
-{{< include "space-insertion.qmd" >}}
-
-
-
-- *Calcule la probabilidad condicional de que el paciente tenga una
-    apéndice perforado si los síntomas 1) empeoran; 2) permanecen igual
-    o 3) mejoran*.
-
-{{< include "space-insertion.qmd" >}}
-
-
-
-- *Calcule la probabilidad condicional de que el paciente tenga
-    apendicitis si 1) los síntomas empeoran, 2) permanecen igual, o 3)
-    mejoran*
-
-{{< include "space-insertion.qmd" >}}

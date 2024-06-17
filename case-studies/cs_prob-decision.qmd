@@ -50,10 +50,14 @@ decision tree.
 
 {{< include "space-insertion.qmd" >}} 
 
+- *Draw a decision tree to represent this problem*
+
+{{< include "space-insertion.qmd" >}} 
+
+
 <!-- ::: {.callout-tip appearance="minimal"} -->
 <!-- P(Drinker \| Overweight) = 0.4 / 0.5 = 0.8 -->
 <!-- ::: -->
-
 
 # Case 2
 
@@ -79,143 +83,3 @@ prevalence of breast cancer in the population is 1.6 in 100
 <!-- ![](images/cs_decision-tree_ans_2.2.png) -->
 <!-- ::: -->
 
-# Case 3
-
-A patient is found to have an abdominal aortic aneurysm (AAA) 5 cm in
-size. If you operate now and he survives, he will have a life expectancy
-of 3 additional years. In a series of 100 similar patients from your
-hospital, 6 died immediately after surgery. If you elect to watch the
-patient, 60% will rupture their AAA at home (assume at an average of 1
-year later). Of those who rupture their AAA, 30% will die, while the
-other % will undergo emergency surgery and survive, allowing the patient
-to survive the full 3-years of life expectancy
-
--   *Draw a decision tree for the problem of choosing whether to operate
-    electively. Remember that you must consider the life expectancies as
-    an outcome here. What is the preferred choice?*
-
-{{< include "space-insertion.qmd" >}}
-
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- ![](images/cs_decision-tree_ans_3.1.png) -->
-<!-- ::: -->
-
--   *A 95% confidence interval for the mortality rate of elective
-    surgery at your hospital ranges from 1.4-12.7%. Does this influence
-    your thoughts? Why? Do you need better information about your
-    estimate of mortality? Why? (Note: For the latter, calculate the
-    mortality rate for which you are indifferent between the two
-    choices)*
-
-{{< include "space-insertion.qmd" >}}
-
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- ![](images/cs_decision-tree_ans_3.2.png) -->
-<!-- ::: -->
-
-# Case 4
-
-A patient presents to the ER with abdominal pain. As per the ER doc, you
-estimate that the patient's appendicitis probability is 0.16. If the
-patient truly has appendicitis, the probability that the appendix was
-already perforated at the time the patient presents to the ER is 0.1875.
-You can also observe the patient for 6 hours to be certain that your
-diagnosis is correct. If your diagnosis ends up being correct, 24% of
-individuals will have a perforated appendix after 6 hours (Note: this
-number is not what goes into your tree. You must account for the 18.75%
-who already had a perforated appendix at the time the patient entered
-the hospital).
-
-If the appendix is perforated at the time the patient presents to the ER
-or at the end of 6 hours, there is a 0.84 chance that the symptoms will
-become worse and a 0.16 chance they will remain the same. If the patient
-has appendicitis but the appendix does not burst at the end of 6 hours,
-there is a 0.8 chance the symptoms will worsen and a 0.2 chance that
-they will remain the same. If the appendix is not diseased, there is a
-0.39 chance that the symptoms will remain the same in 6 hours, a 0.61
-chance that this will improve, and no chance that they will worsen.
-
--   Calculate the probability that a patient has a perforated appendix
-    by the end of 6 hours given that he had appendicitis but was not
-    perforated at the time he entered the hospital
-
-{{< include "space-insertion.qmd" >}}
-
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- ![](images/cs_decision-tree_ans_4.1.png)     -->
-<!-- ::: -->
-
-Draw a decision tree to calculate the probabilities asked in questions
-3-6.
-
-
-
--   *Calculate the probability that the patient has a perforated
-    appendix at the beginning of 6 hours.*
-
-{{< include "space-insertion.qmd" >}}
-
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- ![](images/cs_decision-tree_ans_4.2.png) -->
-<!-- ::: -->
-
-P(Perforation at the beginning of the six hours) = 0.1600 \* 0.1875 =
-0.0300. This is the proportion of patients with appendicitis multiplied
-by the conditional probability of perforation given appendicitis at the
-time the patient enters the hospital.
-
--   *Calculate the probability that the patient will have a perforated
-    appendix if you wait 6 hours*
-
-{{< include "space-insertion.qmd" >}}
-
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- P(Perforation after six hours) = 0.0300 + 0.1600 \* 0.8125 \* 0.0646 = -->
-<!-- 0.0384 P(Perforation after six hours) = 0.1600 \* 0.2400 = 0.0384. This -->
-<!-- is the proportion of patients with appendicitis times the proportion of -->
-<!-- patients with a perforated appendix. -->
-<!-- ::: -->
-
--   *Calculate the probability that the patient’s symptoms will 1) get
-    worse, 2) stay the same, and 3) get better.*
-
-{{< include "space-insertion.qmd" >}}
-
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- You can find these probabilities by adding up the probabilities at the -->
-<!-- ends of the branches of the decision tree. P(Symptoms worse) = 0.0252 + -->
-<!-- 0.0071 + 0.0973 = 0.1296 P(Symptoms the same) = 0.0048 + 0.0013 + -->
-<!-- 0.0243 + 0.3276 = 0.3580 P(Symptoms improve) = 0.5124 -->
-<!-- ::: -->
-
--   *Calculate the conditional probability that the patient has a
-    perforated appendix if the symptoms 1) get worse; 2) stay the same
-    or 3) get* better.
-
-{{< include "space-insertion.qmd" >}}
-
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- By using probability definitions, we can calculate the conditional -->
-<!-- probabilities. P(E,F) = P(E \| F) \* P(F) P(E,F): Joint probability of E -->
-<!-- and F together P(E \| F): Conditional probability of E, given F P(F): -->
-<!-- Probability of F P(E \| F) = (E,F) / P(F) P(Perforation \| Symptoms -->
-<!-- worse) = P(Perforation and Symptoms worse) / P(Symptoms worse) = -->
-<!-- (0.0252 + 0.0071) / 0.1296 = 0.2492 P(Perforation \| Symptoms same) = -->
-<!-- P(Perforation and Symptoms same) / P(Symptoms same) = (0.0048+ 0.0013) / -->
-<!-- 0.3593 = 0.0170 P(Perforation \| Symptoms improve) = P(Perforation and -->
-<!-- Symptoms improve) / P(Symptoms improve) = 0 / 0.5124 = 0 -->
-<!-- ::: -->
-
--   *Calculate the conditional probability that the patient has
-    appendicitis if 1) the symptoms get worse, 2) stay the same, or 3)
-    get better*
-
-{{< include "space-insertion.qmd" >}}
-
-<!-- ::: {.callout-tip appearance="minimal"} -->
-<!-- Using the same probability notations as in question f, we can calculate -->
-<!-- the following probabilities: P(Appendicitis \| Symptoms worse) = -->
-<!-- (0.0252 + 0.0071 + 0.0973) / 0.1296 = 1 P(Appendicitis \| Symptoms same) -->
-<!-- = (0.0048 + 0.0013 + 0.0243) / 0.3580 = 0.0849 P(Appendicitis \| -->
-<!-- Symptoms improve) = 0 / 0.5124 = 0 -->
-<!-- ::: -->
