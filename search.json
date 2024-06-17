@@ -3755,18 +3755,18 @@
     "text": "Strategies and Impact\nWhen the mayor of Bogota banned the sale of fireworks in 1995, fireworks-related burns fell by 62%, from 204 in the 1994-1995 Christmas season to 77 during the 1995-1996 season.1 We will assume a similar 60% relative risk reduction under the “Ban” scenario.\nBy comparison, we will assume that stricter regulation will reduce firework injuries by just 20%. We will examine the sensitivity of our findings to these assumpions later in the case study."
   },
   {
-    "objectID": "case-studies/cs_injury-decision-tree.html#build-a-do-nothing-strategy",
-    "href": "case-studies/cs_injury-decision-tree.html#build-a-do-nothing-strategy",
+    "objectID": "case-studies/cs_injury-decision-tree.html#build-a-status-quo-strategy",
+    "href": "case-studies/cs_injury-decision-tree.html#build-a-status-quo-strategy",
     "title": "Firework Injury Decision Tree",
-    "section": "1.1. Build a “Do Nothing” Strategy",
-    "text": "1.1. Build a “Do Nothing” Strategy\nConstruct a decision tree in Amua for a “Do Nothing” strategy. Your tree should work through the following chance nodes:\n\nInjury vs. No Injury\nFatal injury vs. non-fatal injury\nMild/Moderate vs. Severe injury\nFull recovery vs. Recovery with injury sequelea\n\nPlease use the parameter names and values supplied above in the construction of your tree."
+    "section": "1.1. Build a “Status Quo” Strategy",
+    "text": "1.1. Build a “Status Quo” Strategy\nConstruct a decision tree in Amua for a “Status Quo” strategy. Your tree should work through the following chance nodes:\n\nInjury vs. No Injury\nFatal injury vs. non-fatal injury\nMild/Moderate vs. Severe injury\nFull recovery vs. Recovery with injury sequelea\n\nPlease use the parameter names and values supplied above in the construction of your tree.\n\n\n\n\n\n\nImportant\n\n\n\nOften, when you add branches to a tree in Amua, the tree will become very crowded (see below). To “clean up” your tree, you can click the “OCD” (Organize Current Display) button and Amua will re-organize the layout for you!\n\n\n\n\n\n\n1.2. Add Outcomes\n\n\n\nAmua defaults to cost outcomes. Please remove the cost outcome and define a new primary outcome based on injury. In other words, the outcome “payoff” should be 1.0 if an injury occurs, and 0 otherwise.\n\n\n\n\n\n\nTip\n\n\n\nYou can edit the outcomes by clicking Model  Properties  Analysis:"
   },
   {
     "objectID": "case-studies/cs_injury-decision-tree.html#add-outcomes",
     "href": "case-studies/cs_injury-decision-tree.html#add-outcomes",
     "title": "Firework Injury Decision Tree",
     "section": "1.2. Add Outcomes",
-    "text": "1.2. Add Outcomes\nAmua defaults to cost outcomes. Please remove the cost outcome and define a new primary outcome based on injury. In other words, the outcome “payoff” should be 1.0 if an injury occurs, and 0 otherwise.\n\n\n\n\n\n\nTip\n\n\n\nYou can edit the outcomes by clicking Model  Properties  Analysis:"
+    "text": "1.2. Add Outcomes"
   },
   {
     "objectID": "case-studies/cs_injury-decision-tree.html#ensure-your-model-calibrates-to-observed-injury-totals",
@@ -3825,11 +3825,18 @@
     "text": "Cuando el alcalde de Bogotá prohibió la venta de fuegos artificiales en 1995, las quemaduras relacionadas con este tipo de material se redujeron en un 62%, pasando de 204 en la temporada navideña de 1994-1995 a 77 en la de 1995-19961 Supondremos una reducción relativa del riesgo similar del 60% en el escenario de “Prohibición”.\nEn comparación, supondremos que una normativa más estricta reducirá las lesiones por fuegos artificiales en sólo un 20%. Más adelante examinaremos la sensibilidad de nuestros resultados a estas hipótesis."
   },
   {
-    "objectID": "case-studies/ESP_cs_injury-decision-tree.html#construir-una-estrategia-de-no-hacer-nada",
-    "href": "case-studies/ESP_cs_injury-decision-tree.html#construir-una-estrategia-de-no-hacer-nada",
+    "objectID": "case-studies/ESP_cs_injury-decision-tree.html#construir-una-estrategia-de-statu-quo",
+    "href": "case-studies/ESP_cs_injury-decision-tree.html#construir-una-estrategia-de-statu-quo",
     "title": "Árbol de decisiones sobre lesiones por fuegos artificiales",
-    "section": "1.1. Construir una estrategia de “no hacer nada",
-    "text": "1.1. Construir una estrategia de “no hacer nada\nConstruya un árbol de decisión en Amua para una estrategia de “No hacer nada”. Su árbol debería funcionar a través de los siguientes nodos de azar:\n\n\nLesionado vs. No lesionado\n\n\nLesión mortal frente a lesión no mortal\n\nLesión leve/moderada frente a lesión grave\nRecuperación completa vs. Recuperación con secuela de lesión\n\nPor favor, utilice los nombres y valores de los parámetros suministrados anteriormente en la construcción de su árbol."
+    "section": "1.1. Construir una estrategia de statu quo",
+    "text": "1.1. Construir una estrategia de statu quo\nConstruya un árbol de decisión en Amua para una estrategia de “No hacer nada”. Su árbol debería funcionar a través de los siguientes nodos de azar:\n\nLesionado vs. No lesionado\nLesión mortal frente a lesión no mortal\nLesión leve/moderada frente a lesión grave\nRecuperación completa vs. Recuperación con secuela de lesión\n\nPor favor, utilice los nombres y valores de los parámetros suministrados anteriormente en la construcción de su árbol.\n\n\n\n\n\n\nImportant\n\n\n\nA menudo, cuando añades ramas a un árbol en Amua, el árbol se llena mucho (ver abajo). Para “limpiar” tu árbol, puedes hacer clic en el botón “OCD” (Organize Current Display) y Amua reorganizará el diseño por ti.\n\n\n\n\n\n\n1.2. Add Outcomes"
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-decision-tree.html#add-outcomes",
+    "href": "case-studies/ESP_cs_injury-decision-tree.html#add-outcomes",
+    "title": "Árbol de decisiones sobre lesiones por fuegos artificiales",
+    "section": "1.2. Add Outcomes",
+    "text": "1.2. Add Outcomes"
   },
   {
     "objectID": "case-studies/ESP_cs_injury-decision-tree.html#añadir-resultados",
