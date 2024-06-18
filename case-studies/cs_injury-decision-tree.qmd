@@ -71,7 +71,7 @@ There are very likely many minor and moderate injuries that go unreported in off
 :::
 
 | Description                            | Base Case Value    | Parameter Name |
-|-----------------------------------|------------------|------------------|
+|-----------------------------------|-------------------|-------------------|
 | Probability of Injury                  | 0.0000292          | p_injury       |
 | Probability Injury is Severe           | 0.30               | p_severe       |
 | Probability Injury is Mild or Moderate | 0.7 = 1 - p_severe | 1 - p_severe   |
@@ -80,7 +80,7 @@ There are very likely many minor and moderate injuries that go unreported in off
 We will also assume that a small percentage (15%) of individuals with mild/moderate injuries experience long-term consequences (i.e., 85% recover), while the majority (60%) of those with severe injuries do not fully recover and experience long-term complications.
 
 | Description                                   | Base Case Value | Parameter Name    |
-|-----------------------------------|-------------------|-------------------|
+|----------------------------------|-------------------|-------------------|
 | Probability of Recovery: Mild/Moderate Injury | 0.85            | p_recover_mildmod |
 | Probability of Recovery: Major Injury         | 0.1             | p_recover_severe  |
 
@@ -136,7 +136,7 @@ You can enter the cohort size by clicking Model {{< fa arrow-right >}} Propertie
 *Create a duplicate version of your "Do Nothing" tree to construct separate branches for the "Ban" and "Regulate" scenarios. Under each, the probability of injury should be modified by a relative risk reduction parameter with values set based on the text above and the table below.*
 
 | Description                                                                     | Base Case Value | Parameter Name |
-|------------------------------------|------------------|------------------|
+|-----------------------------------|------------------|------------------|
 | Relative risk reduction: probability of injury under "Ban" policy scenario      | 0.40            | rr_ban         |
 | Relative risk reduction: probability of injury under "Regulate" policy scenario | 0.80            | rr_regulate    |
 
@@ -168,12 +168,12 @@ You will need to add costs as an outcome by clicking Model {{< fa arrow-right >}
 
 | Description                     | Base Case Value | Parameter Name |
 |---------------------------------|-----------------|----------------|
-| Cost of mild or moderate injury | 2.000.000 COP   | c_moderate     |
-| Cost of severe injury           | 40.000.000 COP  | c_severe       |
-| Cost of fatal injury            | 0 COP           | c_fatalily     |
-| Cost of mild/moderate sequelae  | 1.000.000 COP   | c_seq_mildmod  |
-| Cost of severe sequalae         | 4.000.000 COP   | c_seq_severe   |
+| Cost of mild or moderate injury | COP 2,000,000   | c_moderate     |
+| Cost of severe injury           | COP 40,000,000  | c_severe       |
+| Cost of fatal injury            | COP 0           | c_fatalily     |
+| Cost of mild/moderate sequelae  | COP 1,000,000   | c_seq_mildmod  |
+| Cost of severe sequalae         | COP 4,000,000   | c_seq_severe   |
 
 ::: {.callout-warning appearance="minimal"}
-By what percentage does each policy strategy reduce overall costs of firework injuries in Columbia? 
+By what percentage does each policy strategy reduce overall costs of firework injuries in Columbia?
 :::

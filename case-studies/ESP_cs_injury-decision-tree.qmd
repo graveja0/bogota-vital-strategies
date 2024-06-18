@@ -69,7 +69,7 @@ Es muy probable que haya muchas lesiones leves y moderadas que no figuren en las
 :::
 
 | Description                            | Base Case Value   | Parameter Name |
-|------------------------------------|------------------|------------------|
+|-----------------------------------|------------------|------------------|
 | Probabilidad de lesión                 | 0.0000292         | p_lesión       |
 | Probabilidad de lesiones graves        | 0.30              | p_grave        |
 | Probabilidad de lesión leve o moderada | 0.7 = 1 - p_grave | 1 - p_grave    |
@@ -78,7 +78,7 @@ Es muy probable que haya muchas lesiones leves y moderadas que no figuren en las
 También supondremos que un pequeño porcentaje (15%) de las personas con lesiones leves/moderadas sufren secuelas a largo plazo (es decir, se recuperan en un 85%), mientras que la mayoría (60%) de las personas con lesiones graves no se recuperan totalmente y sufren complicaciones a largo plazo.
 
 | Description                                        | Base Case Value | Parameter Name    |
-|-----------------------------------|------------------|------------------|
+|-----------------------------------|-------------------|-------------------|
 | Probabilidad de recuperación: Lesión leve/moderada | 0.85            | p_recuperar_mod   |
 | Probabilidad de recuperación: Lesión grave         | 0.1             | p_recuperar_grave |
 
@@ -137,7 +137,7 @@ Puede introducir el tamaño de la cohorte haciendo clic en Modelo {{< fa arrow-r
 \*Cree una versión duplicada de su árbol "No hacer nada" para construir ramas separadas para los escenarios "Prohibir" y "Regular". En cada uno de ellos, la probabilidad de lesión debe modificarse mediante un parámetro de reducción del riesgo relativo con valores basados en el texto anterior y la tabla siguiente.
 
 | Descripción                                                                               | Valor del caso base | Nombre del parámetro |
-|-------------------------------------|------------------|------------------|
+|------------------------------------|------------------|------------------|
 | Reducción relativa del riesgo: probabilidad de lesión en la hipótesis de la política "Ban | 0.40                | rr_lesión_prohibir   |
 | Reducción relativa del riesgo: probabilidad de lesión en el escenario político "Regular   | 0.80                | rr_lesión_regular    |
 
@@ -161,22 +161,20 @@ Ejecute el modelo y utilice los resultados para rellenar la tabla siguiente. En 
 
 ### Resultados de los costes
 
-
 A continuación, añada los resultados de los costes según los siguientes supuestos.
 
 ::: callout-tip
 Para añadir costes como resultado, haga clic en Model {{< fa arrow-right >}} Properties {{< fa arrow-right >}} Analysis
 :::
 
-
 | Description                             | Base Case Value | Parameter Name |
 |-----------------------------------------|-----------------|----------------|
-| Coste de las lesiones leves o moderadas | 2.000.000 COP   | c_mod          |
-| Coste de las lesiones graves            | 40.000.000 COP  | c_grave        |
-| Coste de la lesión mortal               | 0 COP           | c_fatalidad    |
-| Coste de las secuelas leves/moderadas   | 1.000.000 COP   | c_sec_mod      |
-| Coste de las secuelas graves            | 4.000.000 COP   | c_sec_grave    |
+| Coste de las lesiones leves o moderadas | COP 2,000,000   | c_mod          |
+| Coste de las lesiones graves            | COP 40,000,000  | c_grave        |
+| Coste de la lesión mortal               | COP 0           | c_fatalidad    |
+| Coste de las secuelas leves/moderadas   | COP 1,000,000   | c_sec_mod      |
+| Coste de las secuelas graves            | COP 4,000,000   | c_sec_grave    |
 
 ::: {.callout-warning appearance="minimal"}
-¿En qué porcentaje reduce cada estrategia política los costes globales de las lesiones por fuegos artificiales en Colombia? 
+¿En qué porcentaje reduce cada estrategia política los costes globales de las lesiones por fuegos artificiales en Colombia?
 :::
