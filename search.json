@@ -5694,7 +5694,7 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#esquema",
     "title": "Árboles de decisión y probabilidades",
     "section": "Esquema",
-    "text": "Esquema\n\n\n\nEstructura\nRevisión de probabilidades\nProbabilidades en los árboles de decisión\n\n\n\nPuntos fuertes/limitaciones de los árboles de decisión"
+    "text": "Esquema\n\n\n\nEstructura\nRevisión de probabilidades\nProbabilidades en los árboles de decisión\n\n\n\nVentajas/limitaciones de los árboles de decisión"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#recapitulación-análisis-de-decisión",
@@ -5785,14 +5785,14 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#cuál-es-el-valor-esperado-de-ir-a-la-playa",
     "title": "Árboles de decisión y probabilidades",
     "section": "¿Cuál es el valor esperado de ir a la playa?",
-    "text": "¿Cuál es el valor esperado de ir a la playa?\n\n\n\\color{green}{0.82} = \\underbrace{\\color{red}{0.3} * \\color{blue}{0.4}}_{\\text{Lluvia}} + \\underbrace{\\color{red}{0.7} * \\color{blue}{1.0}}_{\\text{Sin lluvia}}\n\nProbabilidades en rojo.\nPagos en azul.\nValor esperado en verde."
+    "text": "¿Cuál es el valor esperado de ir a la playa?\n\n\n\\color{verde}{0,82} = \\color{rojo}{0,3} * \\color{blue}{0.4}}_{\\text{Rain}} + \\underbrace {color{rojo} {0,7} * \\color{azul} {1,0} {{texto{sin lluvia}}\n\nProbabilidades en rojo.\nPagos en azul.\nValor esperado en verde."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#cuál-es-el-valor-esperado-de-quedarse-en-casa",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#cuál-es-el-valor-esperado-de-quedarse-en-casa",
     "title": "Árboles de decisión y probabilidades",
     "section": "¿Cuál es el valor esperado de quedarse en casa?",
-    "text": "¿Cuál es el valor esperado de quedarse en casa?\n\n\n\\color{green}{0.74} = \\underbrace{\\color{red}{0.3} \\cdot \\color{blue}{0.6}}_{\\text{Lluvia}} + \\underbrace{\\color{red}{0.7} \\cdot \\color{blue}{0.8}}_{\\text{Sin Lluvia}}\n\nProbabilidades en rojo.\nPagos en azul.\nValor esperado en verde."
+    "text": "¿Cuál es el valor esperado de quedarse en casa?\n\n\n0,74 = 0,3. }_{} + …rojo, 0,7… …sin lluvia…\n\nProbabilidades en rojo.\nPagos en azul.\nValor esperado en verde."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#valores-esperados",
@@ -5827,14 +5827,14 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p-son-iguales-las-dos-opciones-2",
     "title": "Árboles de decisión y probabilidades",
     "section": "¿A qué probabilidad p son iguales las dos opciones?",
-    "text": "¿A qué probabilidad p son iguales las dos opciones?\n\\underbrace{0.3 * 0.4 + 0.7 * 1.0}_{\\text{Playa}} = \\underbrace{0.3 * 0.6 + 0.7 * 0.8}_{\\text{Casa}}"
+    "text": "¿A qué probabilidad p son iguales las dos opciones?\n{underbrace{0.3 * 0.4 + 0.7 * 1.0}_{\\text{Playa}} = \\underbrace{0.3 * 0.6 + 0.7 * 0.8}_{\\text{Casa}}"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p-son-iguales-las-dos-opciones-3",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p-son-iguales-las-dos-opciones-3",
     "title": "Árboles de decisión y probabilidades",
     "section": "¿A qué probabilidad p son iguales las dos opciones?",
-    "text": "¿A qué probabilidad p son iguales las dos opciones?\nSustituya la probabilidad de lluvia por P y 1-P y resuelva para “P”\n\np * 0.4 + (1-p) * 1.0 = p * 0.6 + (1-p) * 0.8\n\n\\underbrace{0.3 * 0.4 + 0.7 * 1,0}_{\\text{Playa}} = \\underbrace{0.3 * 0.6 + 0.7 * 0.8}_{\\text{Casa}}"
+    "text": "¿A qué probabilidad p son iguales las dos opciones?\nSustituya la probabilidad de lluvia por P y 1-P y resuelva para “P”\n\np * 0.4 + (1-p) * 1.0 = p * 0.6 + (1-p) * 0.8\n\n\\underbrace{0,3 * 0,4 + 0,7 * 1,0}_{texto{Playa}} = \\underbrace{0,3 * 0,6 + 0,7 * 0,8}_{texto{Casa}}"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#a-qué-probabilidad-p-son-iguales-las-dos-opciones-4",
@@ -6016,28 +6016,28 @@
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión",
     "title": "Árboles de decisión y probabilidades",
     "section": "Filosofías de decisión",
-    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección dadas perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nMínimo-máximo arrepentimiento\nMáximo\nUtilidad esperada"
+    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección dadas perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento Mini-max\nUtilidad máxima\nUtilidad esperada"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión-1",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión-1",
     "title": "Árboles de decisión y probabilidades",
     "section": "Filosofías de decisión",
-    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección dadas perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento Mini- Max\n\nNunca vayas a la playa si haya posibilidad de lluvia.\n\nUtilidad máxima\nUtilidad esperada\n\n\n\nVeamos rápidamente las filosofías de decisión con respecto a la ponderación de las preferencias. Existen diferentes niveles de aversión al riesgo & hay diferentes filosofías de decisión para estos comportamientos\nLa filosofía del arrepentimiento mini-max significa esencialmente que nunca irías a la playa si hay posbilidad de lluvia &gt;0%.\n\n\nPor ejemplo, los médicos pueden tener aversión al riesgo y, por tanto, minimizar el arrepentimiento máximo."
+    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección dadas perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento Mini-max\n\nNunca vayas a la playa si haya posibilidad de lluvia.\n\nUtilidad máxima\nUtilidad esperada\n\n\n\nVeamos rápidamente las filosofías de decisión con respecto a la ponderación de las preferencias. Existen diferentes niveles de aversión al riesgo & hay diferentes filosofías de decisión para estos comportamientos\nLa filosofía del arrepentimiento mini-max significa esencialmente que nunca irías a la playa si hay posbilidad de lluvia &gt;0%.\n\n\nPor ejemplo, los médicos pueden tener aversión al riesgo y, por tanto, minimizar el arrepentimiento máximo."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión-2",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión-2",
     "title": "Árboles de decisión y probabilidades",
     "section": "Filosofías de decisión",
-    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección dadas perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento minimáximo\n\nNunca vayas a la playa si haya posibilidad de lluvia.\n\nMaxi-max\n\nIr siempre a la playa a menos que llueva al 100%.\n\nUtilidad esperada\n\n\n(3)(a) La utilidad maxi-max es la inversa – donde siempre irías a la playa a menos que lloviera al 100% – buscas el riesgo – te gusta tanto la playa tanto que vas a intentarlo.\n(3)(b) Otro ejemplo de esto en un contexto médico es el ejemplo del paciente desesperado: vas a morir de todos modos, así que te vamos a dar este tratamiento, pero tiene efectos secundarios desagradables – cáncer – quimioterapias, incluso trasplantes de médula ósea, de segunda o tercera línea. Alta probabilidad de un mal resultado, pero si no haces nada entonces vas a a morir."
+    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección dadas perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento Mini-max\n\nNunca vayas a la playa si haya posibilidad de lluvia.\n\nUtilidad máxima\n\nIr siempre a la playa a menos que llueva al 100%.\n\nUtilidad esperada\n\n\n(3)(a) La utilidad maxi-max es la inversa – donde siempre irías a la playa a menos que lloviera al 100% – buscas el riesgo – te gusta tanto la playa tanto que vas a intentarlo.\n(3)(b) Otro ejemplo de esto en un contexto médico es el ejemplo del paciente desesperado: vas a morir de todos modos, así que te vamos a dar este tratamiento, pero tiene efectos secundarios desagradables – cáncer – quimioterapias, incluso trasplantes de médula ósea, de segunda o tercera línea. Alta probabilidad de un mal resultado, pero si no haces nada entonces vas a a morir."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión-3",
     "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#filosofías-de-decisión-3",
     "title": "Árboles de decisión y probabilidades",
     "section": "Filosofías de decisión",
-    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección ante perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento Mini- Max\n\nNunca vayas a la playa si haya posibilidad de lluvia.\n\nMaxi-max\n\nIr siempre a la playa a menos que llueva al 100%.\n\nUtilidad esperada\n\nDepende del clima.\n\n\nNotas (4) Si vas a basar tu decisión en la utilidad esperada, entonces depende del clima y del valor que le des a ciertos resultados – este es el enfoque del pensador racional – cuánto valoras la pérdida de utilidad de no disfrutar de la playa, y la experiencia de ir a la playa, por ejemplo. :::"
+    "text": "Filosofías de decisión\n\n\n\n\n\n\nMaximizar el valor esperado es un criterio razonable de elección ante perspectivas inciertas; aunque no necesariamente promete los mejores resultados para cualquier individuo.\n\n\n\n\nEl arrepentimiento Mini-max\n\nNunca vayas a la playa si haya posibilidad de lluvia.\n\nUtilidad máxima\n\nIr siempre a la playa a menos que llueva al 100%.\n\nUtilidad esperada\n\nDepende del clima.\n\n\nNotas (4) Si vas a basar tu decisión en la utilidad esperada, entonces depende del clima y del valor que le des a ciertos resultados – este es el enfoque del pensador racional – cuánto valoras la pérdida de utilidad de no disfrutar de la playa, y la experiencia de ir a la playa, por ejemplo. :::"
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#payoffs-1",
@@ -6047,11 +6047,11 @@
     "text": "Payoffs\n\n\nA cada estado del mundo se le asigna un costo o resultado.\nNuestro objetivo suele ser calcular el valor esperado de estos resultados.\nEn las próximas sesiones profundizaremos en las teorías y marcos que subyacen a los distintos resultados"
   },
   {
-    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#puntos-fuertes",
-    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#puntos-fuertes",
+    "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#ventajas",
+    "href": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#ventajas",
     "title": "Árboles de decisión y probabilidades",
-    "section": "Puntos fuertes",
-    "text": "Puntos fuertes\n\n\nSon fáciles de describir y entender\nFuncionan bien con un horizonte temporal limitado\nLos árboles de decisión son un marco potente para analizar decisiones y pueden proporcionar perspectivas rápidas/útiles, pero tienen limitaciones."
+    "section": "Ventajas",
+    "text": "Ventajas\n\n\nSon fáciles de describir y entender\nFuncionan bien con un horizonte temporal limitado\nLos árboles de decisión son un marco potente para analizar decisiones y pueden proporcionar perspectivas rápidas/útiles, pero tienen limitaciones."
   },
   {
     "objectID": "lectures/ESP_lec_2.decision-trees-and-probabilities.html#limitaciones",
