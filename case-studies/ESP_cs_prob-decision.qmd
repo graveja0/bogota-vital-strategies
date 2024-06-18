@@ -13,53 +13,52 @@ editor:
 ---
 
 ::: callout-important
-Puede descargar las versiones en PDF y Microsoft Word de
-este estudio de caso utilizando los enlaces de la derecha.
+Puede descargar las versiones en PDF y Microsoft Word de este estudio de
+caso utilizando los enlaces de la derecha.
 :::
 
 # Caso 1
 
 En una comunidad hipotética, el 60% de las personas consumen al menos 6
-bebidas alcohólicas a la semana y el 50% tiene sobrepeso. El porcentaje de
-personas que tienen sobrepeso y consumen esta cantidad de alcohol es del 40%.
-Construye una tabla de 2x2 para responder a las preguntas (a)-(c) siguientes. Para la parte (d), construya un
-árbol de decisión.
+bebidas alcohólicas a la semana y el 50% tiene sobrepeso. El porcentaje
+de personas que tienen sobrepeso y consumen esta cantidad de alcohol es
+del 40%. Construye una tabla de 2x2 para responder a las preguntas
+(a)-(c) siguientes. Para la parte (d), construya un árbol de decisión.
 
-- *¿Qué porcentaje de personas consumen al menos 6 bebidas alcohólicas
+-   *¿Qué porcentaje de personas consumen al menos 6 bebidas alcohólicas
     a la semana, tienen sobrepeso o entran en ambas categorías?*.
 
 {{< include "space-insertion.qmd" >}}
 
+-   *Toma una muestra aleatoria de una persona de la comunidad y
+    descubre que consume al menos 6 bebidas alcohólicas a la semana.
+    ¿Cuál es la probabilidad de que tenga sobrepeso? ¿Cuál es la
+    probabilidad de que tenga sobrepeso?*
 
-- *Toma una muestra aleatoria de una persona de la comunidad y descubre que
-    consume al menos 6 bebidas alcohólicas a la semana. ¿Cuál es la probabilidad de que tenga sobrepeso?
-    ¿Cuál es la probabilidad de que tenga sobrepeso?
+{{< include "space-insertion.qmd" >}}
 
-{{< include "space-insertion.qmd" >}} 
-
-- *¿Cuál es la probabilidad de que alguien de esta comunidad consuma
+-   *¿Cuál es la probabilidad de que alguien de esta comunidad consuma
     al menos 6 bebidas alcohólicas a la semana si tiene sobrepeso?*
 
-{{< include "space-insertion.qmd" >}} 
+{{< include "space-insertion.qmd" >}}
 
-- *Dibuja un árbol de decisión para representar este problema*
+-   *Dibuja un árbol de decisión para representar este problema.*
 
-{{< include "space-insertion.qmd" >}} 
+{{< include "space-insertion.qmd" >}}
 
 # Caso 2
 
-Un nuevo procedimiento de cribado puede detectar el 80% de las mujeres diagnosticadas de cáncer de mama
-cáncer de mama pero identificará falsamente al 2% sin cáncer de mama. La
-prevalencia del cáncer de mama en la población es de 1,6 en 100
+Un nuevo procedimiento de tamizaje puede detectar el 80% de las mujeres
+diagnosticadas de cáncer de mama pero identificará falsamente al 2% sin
+cáncer de mama. La prevalencia del cáncer de mama en la población es de
+1,6 en 100
 
-- *¿Cuál es la probabilidad de que una mujer no tenga cáncer de mama si
-    la prueba es negativa?*
-
-{{< include "space-insertion.qmd" >}}
-
-
-- *¿Cuál es la probabilidad de que una mujer tenga cáncer de mama si la prueba
-    es positiva?*
+-   *¿Cuál es la probabilidad de que una mujer no tenga cáncer de mama
+    si la prueba es negativa?*
 
 {{< include "space-insertion.qmd" >}}
 
+-   *¿Cuál es la probabilidad de que una mujer tenga cáncer de mama si
+    la prueba es positiva?*
+
+{{< include "space-insertion.qmd" >}}
