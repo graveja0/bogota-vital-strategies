@@ -40,7 +40,7 @@ bibliography: references.bib
 | Viernes   | 9:00-9:15       | Resumen diario                                                                                                | Recap                                                                                                                          |
 |           | 9:15 - 10:00    | [Análisis determinista y de escenarios](lectures/ESP_lec_sensitivity.qmd)                                     | [Deterministic and Sensitivity Analysis](lectures/lec_sensitivity.qmd)                                                         |
 |           | 10:00 - 10:15   | Café                                                                                                          | Break                                                                                                                          |
-|           | 10:15 - 11:15   | [Técnicas avanzadas de modelización](lectures/lec_advanced-modeling-techniques.qmd)                           | [Advanced modeling techniques](lectures/lec_advanced-modeling-techniques.qmd)                                                  |
+|           | 10:15 - 11:15   | [Técnicas avanzadas de modelización](lectures/ESP_lec_advanced-modeling-techniques.qmd)                       | [Advanced modeling techniques](lectures/lec_advanced-modeling-techniques.qmd)                                                  |
 |           | 11:15 - 11:45   | Ceremonia de entrega de certificados                                                                          | Closing Ceremony                                                                                                               |
 
 : {tbl-colwidths="\[10,20,30,30\]"}

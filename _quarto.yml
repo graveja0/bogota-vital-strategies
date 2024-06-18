@@ -33,6 +33,11 @@ website:
             href: https://vimeo.com/888816515
           - text: Markov Models (Amua Video Tutorial)
             href: https://vimeo.com/888816536
+      - text: Modelización de Markov avanzada
+        href: https://graveja0.github.io/dalys/
+      - text: Taller de modelado intermedio
+        href: https://smdm-europe23-what-they-didnt-teach.netlify.app
+      
       - href: about.qmd
         text: Instructores
 
