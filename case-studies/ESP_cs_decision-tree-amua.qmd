@@ -11,13 +11,11 @@ editor: source
 
 # Introducción y objetivos de aprendizaje {{< fa regular clipboard >}}
 
-Este caso práctico está diseñado para que se familiarice con la construcción de un árbol de decisión en Amua. Los objetivos específicos de aprendizaje son los siguientes:
+Este caso de estudio está diseñado para que se familiarice con la construcción de un árbol de decisión en Amua. Los objetivos específicos de aprendizaje son los siguientes:
 
 1.  Parametrizar y estructurar un modelo de árbol de decisión.
 
-2.  
-
-    2.  Estimar los resultados de supervivencia y coste a partir del modelo de árbol de decisión en el software Amua.
+2.  Estimar los resultados de supervivencia y costo a partir del modelo de árbol de decisión en el software Amua.
 
 ::: {.callout-note appearance="simple"}
 Tenga en cuenta que este caso práctico se basa en el tutorial de Amua [aquí](https://s3.amazonaws.com/amua-tutorials/Amua+-+Tutorial+-+Decision+Tree+20190117.pdf). Hemos modificado el tutorial para hacerlo más relevante para el taller.
@@ -25,9 +23,9 @@ Tenga en cuenta que este caso práctico se basa en el tutorial de Amua [aquí](h
 
 # Resumen del problema de decisión
 
-En este problema de ejemplo, debe decidir si implantar o no un programa de cribado para una determinada enfermedad (Dx). Suponga que las personas que den positivo serán tratadas, lo que mejorará su esperanza de vida. En el caso de los individuos positivos a la enfermedad que no se someten a cribado, suponga que el tratamiento se retrasará hasta que presenten síntomas y que tienen una esperanza de vida inferior a los que reciben tratamiento inmediato.
+En este problema de ejemplo, debe decidir si implantar o no un programa de tamizaje para una determinada enfermedad (Dx). Suponga que las personas que den positivo serán tratadas, lo que mejorará su esperanza de vida. En el caso de los individuos positivos a la enfermedad que no se someten a la prueba de tamizaje, suponga que el tratamiento se retrasará hasta que presenten síntomas y que tienen una esperanza de vida inferior a los que reciben tratamiento inmediato.
 
-En el caso de los individuos negativos a la enfermedad que reciben un tratamiento inadecuado, supongamos que su esperanza de vida disminuye debido a la toxicidad de los fármacos. La prueba de detección es imperfecta, con una sensibilidad de 0,97 y una especificidad de 0,9988. La prevalencia de la enfermedad en esta población es de 0,05. El objetivo es maximizar la esperanza de vida. Como estrategias alternativas, se podría no cribar a nadie, o simplemente tratar a todos sin cribar primero.
+En el caso de los individuos negativos a la enfermedad que reciben un tratamiento inadecuado, supongamos que su esperanza de vida disminuye debido a la toxicidad de los fármacos. La prueba de detección es imperfecta, con una sensibilidad de 0,97 y una especificidad de 0,9988. La prevalencia de la enfermedad en esta población es de 0,05. El objetivo es maximizar la esperanza de vida. Como estrategias alternativas, se podría no hacerle la prueba a nadie, o simplemente tratar a todos sin hacerle la prueba primero.
 
 # Amua
 
@@ -44,13 +42,11 @@ Aquí encontrará un completo [tutorial](https://s3.amazonaws.com/amua-tutorials
 # Paso 1: Definir estrategias
 
 -   Cree un nuevo modelo en Amua y defina las tres estrategias siguientes
-    1.  
+    1.  Sin tamizaje
 
-        1.  Sin cribado
+    2.  Tamizaje
 
-    2.  Cribar
-
-    3.  Tratar todo
+    3.  Tratar a todos
 
 ::: {.callout-tip appearance="minimal"}
 ## Añadir Ramas
@@ -58,7 +54,7 @@ Aquí encontrará un completo [tutorial](https://s3.amazonaws.com/amua-tutorials
 Para añadir ramas a este nodo de decisión (la raíz del árbol) tiene varias opciones:
 
 -   Doble clic: Haga doble clic en el nodo para añadir dos ramas con nodos de azar <i class="fa-solid fa-circle fa-xs" style="color: #00ff00;"></i> . Tenga en cuenta que si el nodo ya tiene ramas, al hacer doble clic se añadirá una rama.
--   Haga clic con el botón derecho: Haga clic con el botón derecho en el nodo para mostrar el menú emergente. Seleccione Añadir y elija el tipo de nodo que desea añadir. que desee añadir.
+-   Haga clic con el botón derecho: Haga clic con el botón derecho en el nodo para mostrar el menú emergente. Seleccione Añadir y elija el tipo de nodo que desea añadir.
 -   Barra de herramientas: Seleccione el nodo y haga clic en un tipo de nodo de la barra de herramientas de la parte superior para añadirlo al árbol.
 
 Para el ejemplo de este tutorial, haga doble clic en el nodo de decisión raíz <i class="fa-solid fa-square" style="color: #ff0000;"></i> , lo que añadirá dos ramas.
@@ -81,7 +77,7 @@ Las nuevas ramas se llaman Nombre por defecto. Para dar a las ramas etiquetas m�
 # Paso 2: Añadir nodos terminales
 
 1.  Haga doble clic en el nodo Sin posibilidad de pantalla <i class="fa-solid fa-circle fa-xs" style="color: #00ff00;"></i> para añadir 2 ramas.
-2.  Haga clic en el botón Optimizar pantalla actual (OCD) de la barra de herramientas para organizar las ramas y garantizar un espaciado uniforme.
+2.  Haga clic en el botón optimizar pantalla actual (OCD) de la barra de herramientas para organizar las ramas y garantizar un espaciado uniforme.
 3.  Haga clic con el botón derecho en cada uno de los nodos hijos <i class="fa-solid fa-circle fa-xs" style="color: #00ff00;"></i> y seleccione <img src="../amua-images/changeTypeTrans_24.png" alt="Custom Icon" width="20" height="20"/> **Cambiar a nodo terminal**. También puede cambiar los tipos de nodo en la barra de herramientas o añadir un nuevo nodo terminal <i class="fa-solid fa-caret-left" style="color: #0000ff;"></i> utilizando la barra de herramientas o el menú emergente.
 4.  Nombra la rama superior D+ y la rama inferior D-.
 
@@ -91,7 +87,7 @@ Su árbol debería tener este aspecto
 
 # Paso 3: Construir la estrategia de pantalla
 
-Adapte la estrategia Cribar para incluir un nodo de azar que indique la probabilidad de un resultado positivo.
+Adapte la estrategia Tamizaje para incluir un nodo de azar que indique la probabilidad de un resultado positivo.
 
 -   Haga doble clic en el nodo de probabilidad Pantalla <i class="fa-solid fa-circle fa-xs" style="color: #00ff00;"></i> para añadir dos ramas más. Nómbralas "Prueba +" y "Prueba -".
 
@@ -103,9 +99,9 @@ Su árbol de decisión debería tener este aspecto:
 
 # Paso 4: Completar la estructura
 
-Ahora puede completar la estructura del árbol de decisión añadiendo los nodos terminales restantes para la estrategia Tratar todo.
+Ahora puede completar la estructura del árbol de decisión añadiendo los nodos terminales restantes para la estrategia Tratar a todos.
 
-![](imágenes/amua-terminal3.png)
+![](images/amua-terminal.png)
 
 ::: {.callout-tip appearance="minimal"}
 ## Funciones adicionales de edición
@@ -125,10 +121,10 @@ Ahora puede completar la estructura del árbol de decisión añadiendo los nodos
 
 # Paso 6: Definir los resultados del modelo
 
-Por defecto, los resultados del modelo (denominados "dimensiones" del modelo en Amua) hacen un seguimiento de los Costes, denotados por el símbolo \$ dentro de un paréntesis. entre paréntesis. En este modelo, nuestro resultado de interés será la Esperanza de Vida.
+Por defecto, los resultados del modelo (denominados "dimensiones" del modelo en Amua) hacen un seguimiento de los Costos, denotados por el símbolo \$ dentro de un paréntesis. En este modelo, nuestro resultado de interés será la Esperanza de Vida.
 
 -   Para cambiar el resultado de interés, vaya a la barra de menú y haga clic en `Modelo -> Propiedades` y seleccione la pestaña `Análisis`.
--   En esta pestaña, cambie el nombre de la dimensión de **Coste** a **Esperanza de Vida**, cambie el símbolo a LE, y elija 2 decimales para la precisión.
+-   En esta pestaña, cambie el nombre de la dimensión de **Costo** a **Esperanza de Vida**, cambie el símbolo a LE, y elija 2 decimales para la precisión.
 -   Asegúrese de pulsar Intro cuando cambie el valor en una celda de la tabla. El borde de la celda se volverá [azul claro]{style="color: #118aef;"} una vez actualizada la celda.
 
 ![](images/amua-properties.png) ![](images/amua-le.png)
@@ -161,7 +157,7 @@ Ahora asignaremos probabilidades a las ramas de los nodos de azar <i class="fa-s
 
 ![](images/amua-prob2.png)
 
-## Definir probabilidades para la estrategia \`Screen
+## Definir probabilidades para la estrategia Tamizaje
 
 -   Para la rama Prueba + introduzca `pTPos` como probabilidad de dar positivo, que será función de la prevalencia de la enfermedad y de las características de la prueba (sensibilidad y especificidad).
 
@@ -172,8 +168,7 @@ Ahora asignaremos probabilidades a las ramas de los nodos de azar <i class="fa-s
     1.  En la rama **Prueba +**, haga clic en la rama **D+** y escriba `pD_TPos`. Esta será la probabilidad de tener la enfermedad dado un test positivo.
     2.  Haga clic bajo **D-** y escriba `C` para indicar una probabilidad complementaria.
     3.  Para la rama **Prueba -**, haga clic bajo la rama **D+** y escriba `pD_TNeg`, que será la probabilidad de tener la enfermedad dada una prueba negativa.
-    4.  
-        4.  Haga clic en la rama **D-** y escriba "C" de nuevo.
+    4.  Haga clic en la rama **D-** y escriba "C" de nuevo.
 
 ![](images/amua-prob3.png) - Finalmente, defina la probabilidad de tener la enfermedad en la estrategia `Treat All`. 1. Haga clic en **D+** y escriba `prev`, que es la prevalencia de la enfermedad. 2. Introduzca **C** para la probabilidad de **D-**.
 
@@ -183,18 +178,18 @@ Ahora definiremos los pagos para cada nodo terminal para modelar las consecuenci
 
 -   Para introducir un resultado, haga clic a la derecha del <i class="fa-solid fa-caret-left" style="color: #0000ff;"></i> nodo terminal. Aparecerá un cuadro de texto delineado en [azul]{style="color: blue;"}. Por defecto, los pagos se establecen en 0, por lo que tenemos que actualizar estos valores.
 
--   En la estrategia "No Screen" para **D +**, introduzca "LateRx" como recompensa, que definiremos como la esperanza de vida de las personas que reciben tratamiento tarde.
+-   En la estrategia "No Tamizaje" para **D +**, introduzca "LateRx" como pago, que definiremos como la esperanza de vida de las personas que reciben tratamiento tarde.
 
-    -   Para **D -**, introduzca `NoDx` como resultado, que será la esperanza de vida de las personas sin la enfermedad.
+    -   Para **D -**, introduzca `NoDx` como pago, que será la esperanza de vida de las personas sin la enfermedad.
 
--   En la estrategia Screen, sólo se tratará a las personas que den positivo.
+-   En la estrategia Tamizaje, sólo se tratará a las personas que den positivo.
 
-    -   En la rama **Prueba +**, introduzca `Rx` como resultado para **D +** para indicar que estas personas serán tratadas.
-    -   Para **D-**, introduzca `Tox` como recompensa, ya que estas personas son falsos positivos y se ven afectadas negativamente por la toxicidad del tratamiento.
-    -   En la rama **Test-**, introduzca `LateRx` como recompensa para **D +**, ya que estas personas tienen la enfermedad pero no fueron identificadas por la prueba de cribado.
+    -   En la rama **Prueba +**, introduzca `Rx` como pago para **D +** para indicar que estas personas serán tratadas.
+    -   Para **D-**, introduzca `Tox` como pago, ya que estas personas son falsos positivos y se ven afectadas negativamente por la toxicidad del tratamiento.
+    -   En la rama **Test-**, introduzca `LateRx` como pago para **D +**, ya que estas personas tienen la enfermedad pero no fueron identificadas por la prueba de tamizaje.
     -   Para **D -**, introduzca `NoDx` ya que estas personas son verdaderos negativos.
 
--   Todos serán tratados en la estrategia "Tratar a todos". Esto es bueno para los que tienen la enfermedad, pero no para los que no la tienen. sin la enfermedad.
+-   Todos serán tratados en la estrategia "Tratar a todos". Esto es bueno para los que tienen la enfermedad, pero no para los que no la tienen.
 
     -   Para **D +**, introduzca `Rx` como resultado y para **D -** introduzca `Tox`.
 
@@ -216,7 +211,7 @@ Hemos introducido los nombres de todas las probabilidades y pagos del árbol, pe
 Para [eliminar una variable]{style="color: #D65C41;"}, haga clic en la variable y haga clic en el icono rojo <i class="fa-solid fa-x" style="color: #d03216;"></i> junto a la imagen del lápiz en el diálogo de variables.
 :::
 
-| Parameter | Description                                                                                           | Value                                                    |
+| Parámetro | Descripción                                                                                           | Valor                                                    |
 |------------------|--------------------------------|----------------------|
 | prev      | Prevalencia de la enfermedad                                                                          | 0.05                                                     |
 | sens      | Sensibilidad de la prueba                                                                             | 0.97                                                     |
@@ -235,12 +230,12 @@ Para [eliminar una variable]{style="color: #D65C41;"}, haga clic en la variable 
 
 -   Mientras desarrolla los modelos puede hacer clic en <i class="fa-solid fa-check" style="color: #1862e2;"></i> Comprobar modelo en la barra de herramientas en cualquier momento para resaltar cualquier error encontrado.
 
--   Cuando esté listo para ejecutar el modelo, puede hacer clic en <i class="fa-solid fa-circle-play" style="color: #18af59;"></i> Ejecutar modelo, que evaluará el modelo y mostrará los resultados en el lienzo y en la consola.
+-   Cuando esté listo para ejecutar el modelo, puede hacer clic en <i class="fa-solid fa-circle-play" style="color: #18af59;"></i> Ejecutar modelo, que evaluará el modelo y mostrará los resultados en la pantalla de abajo y en la pantalla principal.
 
 Para este modelo obtenemos los siguientes resultados:
 
-| Estrategia           | Esperanza de Vida |
-|----------------------|-------------------|
-| Sin Pantalla 39.54   |                   |
-| Pantalla 40,06       |                   |
-| Tratar a todos 39,22 |                   |
+| Estrategia      | Esperanza de Vida |
+|-----------------|-------------------|
+| Sin Tamizaje    | 39.54             |
+| Tamizaje        | 40,06             |
+| Tratar a todos  | 39,22             |
