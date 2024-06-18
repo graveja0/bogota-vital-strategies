@@ -400,4 +400,3 @@ or 3 deaths prevented per 1000 tests because of the additional testing
 information
 :::
 
-# Next... case studies! {background="#43464B"}
