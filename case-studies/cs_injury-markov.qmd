@@ -18,11 +18,11 @@ This case study extend our evaluation of firework injuries using a discrete time
 
 Our Markov model will allow us to capture the progression of firework-related injuries over an extended period, allowing us to consider long-term implications. By modeling injury events and transitions between different health states over time, we can better understand the chronic effects of injuries and the long-term benefits of intervention strategies.
 
-This approach will provide a more comprehensive assessment of the lifetime health and economic impacts of the proposed strategies, considering factors such as long-term healthcare costs, changes in injury rates, and compliance levels. The Markov model’s ability to incorporate these extended horizons and recurring events will yield deeper insights into the most effective and sustainable approaches to mitigating firework-related injuries in Columbia.
+This approach will provide a more comprehensive assessment of the lifetime health and economic impacts of the proposed strategies, considering factors such as long-term healthcare costs, changes in injury rates, and compliance levels. The Markov model’s ability to incorporate these extended horizons and recurring events will yield deeper insights into the most effective and sustainable approaches to mitigating firework-related injuries in Colombia.
 
 # 1. Alive-Dead Model
 
-We will start by constructing a simple Markov model representing just two health states: "Alive" and "Dead." We will assume that individuals can transition between these states based on the probabilities of surviving as calculated using demographic life table data from Columbia. Once we validate that we can successfully replicate life expectancy from birth, we can begin to augment the model with firework injuries, strategies, costs, etc.
+We will start by constructing a simple Markov model representing just two health states: "Alive" and "Dead." We will assume that individuals can transition between these states based on the probabilities of surviving as calculated using demographic life table data from Colombia. Once we validate that we can successfully replicate life expectancy from birth, we can begin to augment the model with firework injuries, strategies, costs, etc.
 
 ## Markov Structure: Alive-Dead
 
@@ -96,11 +96,11 @@ Therefore, we will define `p_die` as a **variable** <img src="../amua-images/var
 A lookup table returns the value that corresponds to a particular index. The first column in a lookup table contains the table indices, and one or more columns of lookup values can be defined. Index values must be unique and in ascending order. There are 3 lookup methods, (1) exact, (2) interpolate, and (3) truncate, for details about these methods visit the [Amua Wiki on GitHub](https://github.com/zward/Amua/wiki/Tables).
 :::
 
-We first define a lookup table <img src="../amua-images/table_16.png" alt="Custom Icon" width="20" height="20"/> tbl_death to read in the age-dependent background mortality constructed from the Columbian life tables.
+We first define a lookup table <img src="../amua-images/table_16.png" alt="Custom Icon" width="20" height="20"/> tbl_death to read in the age-dependent background mortality constructed from the Colombian life tables.
 
 ### Download Data
 
-[Download the file titled `columbia-life-table-death-probabilities.csv`](https://graveja0.github.io/bogota-vital-strategies/case-studies/columbia-life-table-death-probabilities.csv) from the workshop website. This table contains the age-indexed annual mortality probability for Columbia. A screenshot of the first few rows of this .csv file is shown below. The `index` column is the age, while `p_die` is the annual probability of death at each age.
+[Download the file titled `Colombia-life-table-death-probabilities.csv`](https://graveja0.github.io/bogota-vital-strategies/case-studies/Colombia-life-table-death-probabilities.csv) from the workshop website. This table contains the age-indexed annual mortality probability for Colombia. A screenshot of the first few rows of this .csv file is shown below. The `index` column is the age, while `p_die` is the annual probability of death at each age.
 
 ![](images/clipboard-2593165698.png){fig-align="center" width="300"}
 
@@ -214,7 +214,7 @@ Your life expectancy outcome (LE) will now return the expected *total* life year
 
 Verify that your model is able to run by clicking on the <img src="../amua-images/checkModel_24.png" alt="Custom Icon" width="20" height="20"/> check model button. Once all errors have been fixed, <img src="../amua-images/runModel_24.png" alt="Custom Icon" width="20" height="20"/> run the model.
 
-After you run the model, you will see expected outcomes at the bottom of the screen. This information tells us that total life expectancy is 77.04 years and there are an expected 222.07 firework injuries and 1.02 fatal injuries per 100,000 newborns in Columbia.
+After you run the model, you will see expected outcomes at the bottom of the screen. This information tells us that total life expectancy is 77.04 years and there are an expected 222.07 firework injuries and 1.02 fatal injuries per 100,000 newborns in Colombia.
 
 ![](images/clipboard-3464155160.png)
 

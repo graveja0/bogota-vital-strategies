@@ -258,7 +258,7 @@ options("scipen" = 100, "digits" = 5)
 select <- dplyr::select
 
 
-# Columbia Life Tables
+# Colombia Life Tables
 # Source: https://apps.who.int/gho/data/view.searo.LT62020?lang=en
 
 lt_lut <- c(
@@ -294,7 +294,7 @@ x_lut <- c(
 ) 
 
 lt <- 
-  read.csv(here("case-studies/columbia-who-life-table_2024-06-06.csv"),skip =1) %>% 
+  read.csv(here("case-studies/Colombia-who-life-table_2024-06-06.csv"),skip =1) %>% 
   as_tibble() %>% 
   janitor::clean_names() %>% 
   mutate(indicator2 = lt_lut[indicator]) %>% 
@@ -306,7 +306,7 @@ lt <-
   mutate(age = as.numeric(paste0(age))) %>% 
   arrange(age)
 
-lt %>% write.csv(here("case-studies/columbia-life-table.csv"))
+lt %>% write.csv(here("case-studies/Colombia-life-table.csv"))
 # Note: have to manually go in and delete row name column!
 
 ages     <- lt$age[lt$age<100]
@@ -326,7 +326,7 @@ plot(hp_fit)
 df_p_Die <- tibble(index = 0:110, p_die = 1-exp(-HP2(x = 0:110, par = hp_fit$coefficients)$hx)) %>% 
   as.data.frame() 
 rownames(df_p_Die) = NULL
-df_p_Die %>% write.csv(here("case-studies/columbia-life-table-death-probabilities.csv"))
+df_p_Die %>% write.csv(here("case-studies/Colombia-life-table-death-probabilities.csv"))
 
 cbind.data.frame(hp = HP2(x = lt$age, par = hp_fit$coefficients)$hx, lt = lt$mx)
 
