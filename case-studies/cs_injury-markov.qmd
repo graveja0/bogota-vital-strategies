@@ -278,7 +278,7 @@ Recall that you can "copy" and "paste" trees to reduce the amount of work you ne
 :::
 
 | Description                                                                     | Base Case Value | Parameter Name |
-|---------------------------------------------------------------------------------|-----------------|----------------|
+|---------------------------------------------|--------------|--------------|
 | Relative risk reduction: probability of injury under "Ban" policy scenario      | 0.40            | rr_ban         |
 | Relative risk reduction: probability of injury under "Regulate" policy scenario | 0.80            | rr_regulate    |
 
@@ -287,8 +287,8 @@ Recall that you can "copy" and "paste" trees to reduce the amount of work you ne
 Please add in chance nodes (after initial injury) and long-term (Markov chain) health states corresponding to recovery vs. sequelae from the injury:
 
 | Description                                   | Base Case Value | Parameter Name    |
-|-----------------------------------------------|-----------------|-------------------|
+|--------------------------------------|-----------------|-----------------|
 | Probability Injury is Severe                  | 0.30            | p_severe          |
-| Probability Injury is Moderate                | 0.70            | p_fatality        |
+| Probability Injury is Moderate                | 0.70            | p_mod             |
 | Probability of Recovery: Mild/Moderate Injury | 0.85            | p_recover_mildmod |
-| Probability of Recovery: Major Injury         | 0.6             | p_recover_severe  |
+| Probability of Recovery: Major Injury         | 0.1             | p_recover_severe  |

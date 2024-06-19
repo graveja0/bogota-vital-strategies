@@ -1,0 +1,294 @@
+---
+title: "Firework Injury: Markov Model"
+format:
+  html:
+    toc: false
+  docx:
+    toc: false
+  pdf:
+    toc: false        
+editor_options: 
+  chunk_output_type: console
+self-contained: true
+---
+
+# Introducción y visión general del problema de decisión{{< fa regular clipboard >}}
+
+Este estudio de caso amplía nuestra evaluación de las lesiones por fuegos artificiales mediante un modelo de cohortes de Markov en tiempo discreto. Mientras que el árbol de decisión que construimos ayer proporcionaba resultados y costes inmediatos para diversas estrategias, el modelo de Markov ofrece ventajas significativas para examinar las repercusiones a largo plazo sobre la salud y los costes.
+
+Nuestro modelo de Markov nos permitirá captar la progresión de las lesiones relacionadas con los incendios a lo largo de un periodo prolongado, lo que nos permitirá considerar las implicaciones a largo plazo. Al modelizar los eventos lesionales y las transiciones entre diferentes estados de salud a lo largo del tiempo, podemos comprender mejor los efectos crónicos de las lesiones y los beneficios a largo plazo de las estrategias de intervención.
+
+Este enfoque proporcionará una evaluación más completa de las repercusiones sanitarias y económicas a lo largo de la vida de las estrategias propuestas, teniendo en cuenta factores como los costes sanitarios a largo plazo, los cambios en las tasas de lesiones y los niveles de cumplimiento. La capacidad del modelo de Markov para incorporar estos horizontes más amplios y los sucesos recurrentes proporcionará una visión más profunda de los enfoques más eficaces y sostenibles para mitigar las lesiones relacionadas con los incendios en Colombia.
+
+# 1. Modelo vivo-muerto
+
+Empezaremos por construir un modelo de Markov sencillo que represente sólo dos estados de salud: "Vivo" y "Muerto". Supondremos que los individuos pueden pasar de un estado a otro en función de las probabilidades de supervivencia calculadas a partir de los datos demográficos de la tabla de vida de Columbia. Una vez que validemos que podemos replicar con éxito la esperanza de vida desde el nacimiento, podemos empezar a aumentar el modelo con lesiones, estrategias, costes, etc. de los fuegos artificiales.
+
+## Estructura de Markov: Vivo-Muerto
+
+La estructura del modelo de Markov para el modelo Vivo-Muerto se muestra en la siguiente figura. Amua tiene un nodo de Markov especial (representado por ). Las ramas que salen de un nodo de Markov designan todos los estados de Markov (y sólo los estados de Markov).
+
+En este ejemplo, hay dos estados de salud: (1) Vivo, (2) Muerto. A partir de cada estado de salud, se puede crear un subárbol (también llamado árbol de ciclos) que refleje los eventos que pueden ocurrir durante un ciclo. La última rama al final de cada camino será una transición de estado, que define a qué estado de salud se pasará en el siguiente ciclo.
+
+::: callout-note
+Tenga en cuenta que en un modelo de Markov, los resultados se definen en otro lugar - NO al final de la rama, sino en el estado.
+:::
+
+![](images/clipboard-904538470.png){fig-align="center" width="800"}
+
+## Construir el árbol
+
+### Estructura
+
+Después de abrir Amua, haga clic en Modelo {{< fa arrow-right >}} Nuevo {{< fa arrow-right >}} Modelo de Markov.
+
+-   Guarde su modelo desde el principio.
+
+-   Ahora selecciona el nodo de decisión <img src="../amua-images/decisionNode_24.png" alt="Custom Icon" width="20" height="20"/>, Haz clic con el botón derecho del ratón {{< fa arrow-right >}} Añadir {{< fa arrow-right >}} <img src="../amua-images/markovChain_24.png" alt="Custom Icon" width="20" height="20"/> Cadena de Markov .
+
+-   Empiece por desarrollar la estructura del modelo de Markov utilizando Vivo y Muerto para los diferentes estados de salud. Las ramas de la cadena de Markov deben corresponder a los estados del modelo. Etiquete la opción de nombre a la derecha del nodo de decisión como Vivo-Muerto.
+
+![](images/clipboard-556363520.png){width="800"}
+
+::: {.callout-caution appearance="minimal"}
+Complete la estructura del modelo de Markov utilizando la información anterior. Nota: céntrate en añadir las ramas y transiciones para este paso; los parámetros se añadirán más tarde.
+:::
+
+-   Cuando llegue al final de la rama, seleccione el nodo de azar que desea convertir en una transición de estado, haga clic derecho, seleccione Cambiar a Transición de Estado. Esto le dará la flecha azul <img src="../amua-images/arrow_48.png" alt="Custom Icon" width="20" height="20"/> . A la derecha de esta flecha, encontrará un menú desplegable con los diferentes estados de salud que haya especificado. Seleccione el estado de salud al que pasará esta parte de la cohorte.
+
+-   Con este botón <img src="../amua-images/alignRightSelected_24.png" alt="Custom Icon" width="20" height="20"/> puede alinear los nodos finales.
+
+### Tamaño de la cohorte y probabilidades iniciales
+
+-   Vaya a Modelo {{< fa arrow-right >}} Propiedades {{< fa arrow-right >}} seleccione la pestaña Simulación. El tamaño de cohorte por defecto es 1.000. Cambie el tamaño de la cohorte a 1, para que todos los resultados sean a nivel individual (es decir, por persona).
+
+![](images/clipboard-1176592840.png){fig-align="center" width="500"}
+
+-   En la Cadena de Markov <img src="../amua-images/markovChain_24.png" alt="Custom Icon" width="20" height="20"/> , cambie las probabilidades iniciales de los estados de salud. Como todos los pacientes empiezan en el estado Vivo, cambie el p:0 de la izquierda del estado Local a p:1 (vea el cuadro azul de abajo).
+
+![](images/clipboard-948912894.png){fig-align="center" width="600"}
+
+## Parámetros del modelo
+
+En primer lugar, defina los siguientes parámetros de constante temporal para el modelo en el panel "Parámetros".
+
+![](images/clipboard-2737349940.png){fig-align="center" width="350"}
+
+Esta variable indica a Amua que vamos a modelizar una cohorte de recién nacidos. Sin embargo, podríamos adaptarla fácilmente para modelar una cohorte de personas de 20 años, etc.
+
+## Probabilidades de transición
+
+La matriz de probabilidades de transición subyacente tiene la siguiente forma:
+
+![](images/clipboard-3364156865.png){fig-align="center" width="200"}
+
+Sin embargo, como estamos modelando una cohorte de recién nacidos hasta la muerte, necesitamos incluir en el modelo probabilidades de transición de muerte que varíen según la edad (es decir, el ciclo). En otras palabras, habrá una probabilidad de muerte diferente en cada ciclo.
+
+::: callout-important
+En Amua, **los inputs variables en el tiempo se operacionalizan como variables** <img src="../amua-images/variable_16.png" alt="Custom Icon" width="20" height="20"/> en lugar de parámetros.
+
+Las variables <img src="../amua-images/variable_16.png" alt="Custom Icon" width="20" height="20"/> pueden definirse para realizar un seguimiento de los eventos del modelo y actualizar dinámicamente las expresiones a medida que el modelo se ejecuta. Así, a diferencia de los parámetros <img src="../amua-images/parameter_16.png" alt="Custom Icon" width="20" height="20"/> que son fijos para una ejecución determinada del modelo, las variables pueden cambiar dentro de una simulación. Las variables pueden cambiar entre individuos, lo que permite modelar la heterogeneidad, o pueden cambiar con el tiempo.
+:::
+
+Por lo tanto, definiremos `p_die` como una **variable** <img src="../amua-images/variable_16.png" alt="Custom Icon" width="20" height="20"/> que hace referencia a valores de una **tabla de consulta** <img src="../amua-images/table_16.png" alt="Custom Icon" width="20" height="20"/>, siguiendo los pasos que se indican a continuación.
+
+::: callout-important
+Una tabla de consulta devuelve el valor que corresponde a un índice determinado. La primera columna de una tabla de consulta contiene los índices de la tabla, y pueden definirse una o varias columnas de valores de consulta. Los valores de los índices deben ser únicos y estar en orden ascendente. Hay 3 métodos de búsqueda, (1) exacto, (2) interpolar, y (3) truncar, para más detalles sobre estos métodos visite el [Amua Wiki en GitHub](https://github.com/zward/Amua/wiki/Tables).
+:::
+
+Primero definimos una tabla de consulta <img src="../amua-images/table_16.png" alt="Custom Icon" width="20" height="20"/> tbl_death para leer la mortalidad de fondo dependiente de la edad construida a partir de las tablas de vida colombinas.
+
+### Descarga de datos
+
+[Descargue el archivo titulado `colombia-life-table-death-probabilities.csv`](https://graveja0.github.io/bogota-vital-strategies/case-studies/colombia-life-table-death-probabilities.csv) de la página web del taller. Esta tabla contiene la probabilidad de mortalidad anual indexada por edad para Colombia. A continuación se muestra una captura de pantalla de las primeras filas de este archivo .csv. La columna `index` es la edad, mientras que `p_die` es la probabilidad anual de muerte a cada edad.
+
+![](images/clipboard-2593165698.png){fig-align="center" width="300"}
+
+Vaya al panel "Tablas", haga clic en <img src="../amua-images/add_16.png" alt="Custom Icon" width="20" height="20"/> para añadir una tabla, y debería ver una ventana "Definir tabla" (véase la captura de pantalla siguiente). Haga clic en el botón Importar <img src="../amua-images/table_16.png" alt="Custom Icon" width="20" height="20"/> y seleccione el archivo .csv descargado para importarlo. La tabla se redimensionará automáticamente para ajustarse a los datos importados. La primera fila del archivo se utilizará como encabezado de la tabla.
+
+![](images/clipboard-4147587961.png)
+
+Introduzca "tbl_p_die" como nombre para esta variable. "Lookup" es el tipo de tabla por defecto (que es lo que queremos aquí). Elija "Interpolar" como método de búsqueda. Haga clic en Guardar para aplicarlo.
+
+A continuación, podemos definir la variable *variable en el tiempo* `p_die` (que lee de la tabla que acabamos de definir y funciona como la probabilidad de mortalidad de fondo en el ciclo actual del modelo, $t$).
+
+*Asegúrese de crear una variable y no un parámetro.* En "Variables", haga clic en <img src="../amua-images/add_16.png" alt="Custom Icon" width="20" height="20"/> para añadir una variable p_die = tbl_p_die\[age_initial + t, 1\].
+
+::: callout-note
+La primera columna de una tabla se utiliza siempre para la indexación en las tablas. Por lo tanto, el número "1" aquí indicará en realidad la segunda columna de la tabla como valor correspondiente. También puede utilizar el nombre de la columna para leer un valor, por ejemplo, tbl_p_die\[edad_inicial + t, "p_die"\].
+:::
+
+::: callout-tip
+En Amua, "***t***" es una variable integrada que registra el número de ciclos. Se actualiza automáticamente cuando se ejecuta el modelo. Por ejemplo, en el ciclo 10\^\^ del modelo de Markov, *t = 10*. Por lo tanto, en la fórmula "tbl_p_die\[edad_inicial + *t*, 1\]", edad_inicial + *t* será igual a la edad modelada del individuo en el ciclo *t*, y la fórmula completa leerá la mortalidad de fondo dependiente de la edad basada en la edad actual del individuo (en lugar de la edad inicial).
+
+Amua utiliza por defecto un tiempo de ciclo de $t=0$. Por lo tanto, si pulsa "Evaluar", el campo Valor esperado debería calcular la probabilidad de muerte de un recién nacido como se muestra en la tabla de consulta .csv.
+:::
+
+![](images/clipboard-3390332906.png){fig-align="center" width="500"}
+
+Ahora tenemos definidas todas las probabilidades de transición. Añada estas entradas a las ramas del modelo. Recuerda añadir también las probabilidades complementarias usando "C".
+
+## Condición de terminación
+
+-   Especifique la terminación del modelo seleccionando \[terminación\] y escriba t==110. Esto permitirá que su modelo funcione durante 110 ciclos, entonces el modelo terminará.
+
+![](images/clipboard-3413612505.png){fig-align="center" width="400"}
+
+## Recompensas
+
+La recompensa por defecto en Amua es el coste. Tenemos que cambiar esto para tener la esperanza de vida (LE) como una recompensa. Ir a Modelo {{< fa arrow-right >}} Propiedades {{< fa arrow-right >}} seleccione la pestaña Análisis y cambie la dimensión de coste a LE. Utilice LE como símbolo y ajuste a 4 decimales.
+
+![](images/clipboard-896605952.png){fig-align="center" width="500"}
+
+Añada la esperanza de vida a la izquierda de cada estado de salud después de "R: (LE)".
+
+![](images/clipboard-2710970859.png){fig-align="center" width="400"}
+
+Aplicar la corrección de medio ciclo. Ir a **Modelo** {{< fa arrow-right >}} **Propiedades** {{< fa arrow-right >}} seleccione la pestaña **Markov** y marque la casilla Corrección de medio ciclo. Haga clic en **OK** para aplicar.
+
+![](images/clipboard-2281393950.png){fig-align="center" width="400"}
+
+Ahora, hemos terminado de construir el modelo Vivo-Muerto. Analice el modelo utilizando una simulación de cohortes haciendo clic en **Ejecutar** {{< fa arrow-right >}} **Ejecutar modelo**.
+
+::: {.callout-caution appearance="minimal"}
+\*\*Ejecuta el modelo vivo-muerto y calcula la esperanza de vida total.
+:::
+
+# 2. Modelo de lesiones por fuegos artificiales
+
+Nuestro siguiente paso es construir sobre el modelo Vivo-Muerto añadiendo una nueva probabilidad de lesión por fuegos artificiales entre los que sobreviven en cada ciclo. Recordemos las siguientes probabilidades del caso de estudio del Árbol de Decisión de Lesiones por Fuegos Artificiales:
+
+| Descripción                   | Valor Inicial | Nombre de parámetro |
+|-------------------------------|---------------|---------------------|
+| Probabilidad de lesión        | 0.0000292     | p_lesión            |
+| Probabilidad de lesión mortal | 0.0046        | p_fatalidad         |
+
+A continuación ampliaremos el modelo para incluir dos posibles sucesos:
+
+1.  Lesión por fuegos artificiales
+2.  Entre los lesionados, lesión mortal por fuegos artificiales.
+
+## Añadir Nodos de Probabilidad de Herida
+
+Desde el estado de salud "Vivo", convierte la flecha azul <img src="../amua-images/arrow_48.png" alt="Custom Icon" width="20" height="20"/> en un nodo de azar usando el botón de cambio de tipo <img src="../amua-images/changeTypeTrans_24.png" alt="Custom Icon" width="20" height="20"/>. A partir de este nodo de probabilidad, incluya la probabilidad de que se produzca una lesión por fuegos artificiales. La probabilidad de una lesión debe basarse en un nuevo parámetro fijo llamado `p_lesión`.
+
+A partir de la rama lesión, añade otro nodo de azar para saber si la lesión es mortal o no. Completa la estructura del modelo añadiendo flechas de transición al estado de salud "Vivo" si el individuo no tiene ninguna lesión o tiene una lesión no mortal por fuegos artificiales. Añade una flecha de transición al estado de muerte si el individuo muere a causa de su lesión por fuegos artificiales.
+
+El árbol de Markov debería tener este aspecto:
+
+![](images/clipboard-687927954.png)
+
+## Añadir Lesiones y Lesiones Mortales como Resultados
+
+A continuación, añada los resultados de lesiones por fuegos artificiales (INJ) y lesiones mortales por fuegos artificiales (FINJ) al modelo (Modelo {{< fa arrow-right >}} Propiedades {{< fa arrow-right >}} Análisis ).
+
+![](images/clipboard-881873459.png){fig-align="center" width="400"}
+
+A continuación, tenemos que añadir un "rastreador" de una sola vez para registrar cada instancia en la que un miembro de la cohorte es herido y fatalmente herido. Podemos hacerlo haciendo *clic-derecho* en el nodo de azar después de "Herida de Fuego", y luego haciendo clic en <img src="../amua-images/cost_24.png" alt="Custom Icon" width="20" height="20"/> Add Cost.
+
+![](images/clipboard-3337587212.png)
+
+::: {.callout-caution appearance="minimal"}
+\*\*Añade a tu árbol de Markov los resultados de cualquier lesión (LES) y de las lesiones mortales (MORT).
+:::
+
+## Cambiar el tamaño de la cohorte
+
+Nuestro modelo actual está estructurado para un tamaño de cohorte de 1 individuo. Esto suele ser útil -especialmente para calcular la esperanza de vida como resultado-, pero utilizar otros tamaños de cohorte puede ser útil para producir información relevante para la toma de decisiones políticas.
+
+Ahora cambiaremos el modelo de modo que capturemos la experiencia vital de una cohorte de 100.000 recién nacidos. Esto nos permitirá modelizar el número esperado de lesiones totales y mortales por fuegos artificiales a lo largo de la vida para una cohorte grande y, finalmente, ver cómo disminuye el número total de lesiones a lo largo de la vida bajo diferentes opciones políticas.
+
+-   Ir a Modelo {{< fa arrow-right >}} Propiedades {{< fa arrow-right >}} seleccione la pestaña Simulación. Cambie el tamaño de la cohorte a 100.000.
+
+::: callout-tip
+Su resultado de esperanza de vida (EV) devolverá ahora el *total* de años de vida esperados para una cohorte de 100.000 personas. Para obtener un resultado de esperanza de vida estándar, puede redefinir el "resultado" para el resultado LE como $1/100000$.
+
+![](images/clipboard-2682716973.png){fig-align="center" width="300"}
+:::
+
+## Apply Half-Cycle Correction
+
+-   Aplicar corrección de medio ciclo. Vaya a Modelo {{< fa arrow-right >}} Propiedades {{< fa arrow-right >}} seleccione la pestaña Markov y marque la casilla Corrección de medio ciclo. Haga clic en Aceptar para aplicarla.
+
+## Ejecutar el Modelo
+
+Verifique que su modelo es capaz de funcionar haciendo clic en el botón <img src="../amua-images/checkModel_24.png" alt="Custom Icon" width="20" height="20"/> check model. Una vez corregidos todos los errores, <img src="../amua-images/runModel_24.png" alt="Custom Icon" width="20" height="20"/> ejecute el modelo.
+
+Después de ejecutar el modelo, verá los resultados esperados en la parte inferior de la pantalla. Esta información nos dice que la esperanza de vida total es de 77,04 años y que se esperan 222,07 lesiones por fuegos artificiales y 1,02 lesiones mortales por cada 100.000 recién nacidos en Colombia.
+
+![](images/clipboard-3464155160.png)
+
+Amua también mostrará una nueva ventana con una figura y una tabla de hoja de cálculo. La figura muestra el número total de personas de la cohorte en cada estado de salud ("Vivo" y "Muerto") en cada ciclo del modelo. La tabla de la hoja de cálculo contiene la información trazada (en las columnas "Vivo" y "Muerto"), así como los cálculos específicos de cada ciclo para la esperanza de vida y el recuento de lesiones.
+
+Las columnas que empiezan por `Cum_` son recuentos acumulados de cada resultado. El resultado que se muestra a continuación, por ejemplo, indica que en el ciclo $t=20$ (que corresponde a la edad=20 de nuestra cohorte), se prevén 58.951 lesiones relacionadas con incendios en nuestra cohorte de 100.000 recién nacidos.
+
+::: column-page
+![](images/clipboard-3937417551.png)
+:::
+
+# Probabilidades de lesión dependientes de la edad
+
+El modelo anterior se construyó con una única probabilidad de lesión fija (0,0000292). En esta sección, modificaremos nuestro modelo para permitir que la probabilidad de lesión varíe en función de la edad.
+
+Nuestros colegas han calculado la siguiente tabla que resume la probabilidad de lesión por fuegos artificiales según el grupo de edad:
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: false
+library(flextable)
+library(tidyverse)
+library(here)
+read.csv(here("case-studies/cases-by-age.csv")) %>% 
+ select(age, p_injury) %>% 
+na.omit() %>% 
+flextable()
+```
+
+## Añadir la tabla de búsqueda de probabilidades de lesión
+
+Al igual que hicimos anteriormente con las probabilidades de mortalidad por edad, descargue el archivo de datos [`cases-by-age.csv`](https://graveja0.github.io/bogota-vital-strategies/case-studies/cases-by-age.csv) del sitio web del taller.
+
+Vaya al panel "Tablas", haga clic en <img src="../amua-images/add_16.png" alt="Icono personalizado" width="20" height="20"/> para añadir una tabla, y debería ver una ventana "Definir tabla" (véase la captura de pantalla siguiente). Haga clic en el botón Importar <img src="../amua-images/table_16.png" alt="Custom Icon" width="20" height="20"/> y seleccione el archivo .csv descargado para importarlo. La tabla se redimensionará automáticamente para ajustarse a los datos importados. La primera fila del archivo se utilizará como encabezado de la tabla.
+
+Introduzca "tbl_p_injury" como nombre para esta variable. "Lookup" es el tipo de tabla por defecto (que es lo que queremos aquí). Elija "Interpolar" como método de búsqueda. Haga clic en Guardar para aplicar.
+
+::: callout-important
+Amua también puede incluir filas en blanco adicionales cuando importa la tabla. Antes de continuar, elimine todas las filas en blanco haciendo clic en la fila y, a continuación, utilizando el botón <img src="../amua-images/remove_16.png" alt="Custom Icon" width="20" height="20"/> situado junto a "Rows" (vea los rectángulos rojos a continuación).
+
+![](images/clipboard-3528703004.png)
+:::
+
+## Definir una probabilidad de lesión específica por edad
+
+A continuación, podemos definir la *variable en el tiempo* variable `p_injury_t` (que lee de la tabla que acabamos de definir y opera como la probabilidad de mortalidad de fondo en el ciclo actual del modelo, $t$).
+
+*Asegúrese de crear una variable y no un parámetro.* En "Variables", haga clic en <img src="../amua-images/add_16.png" alt="Custom Icon" width="20" height="20"/> para añadir una variable p_injury_t = tbl_p_injury\[age_initial + t, 1\].
+
+::: {.callout-caution appearance="minimal"}
+Vuelva a ejecutar el modelo utilizando probabilidades de lesión específicas para cada edad. ¿Cómo cambia el número esperado de lesiones totales y mortales respecto a cuando utilizamos las probabilidades fijas anteriores?
+:::
+
+# 3. Añadir escenarios de regulación y prohibición
+
+Al igual que en el caso práctico del Árbol de decisiones, añada dos estrategias adicionales destinadas a reducir la probabilidad de lesiones:
+
+::: callout-tip
+Recuerda que puedes "copiar" y "pegar" árboles para reducir la cantidad de trabajo que tienes que hacer.
+:::
+
+| Descripción                                                                               | Valor Inicial | Nombre de parámetro |
+|------------------------------------|------------------|------------------|
+| Reducción relativa del riesgo: probabilidad de lesión en la hipótesis de la política "Ban | 0.40          | rr_lesión_prohibir  |
+| Reducción relativa del riesgo: probabilidad de lesión en el escenario político "Regular   | 0.80          | rr_lesión_regular   |
+
+# 4. Add Long-Term Consequences
+
+Please add in chance nodes (after initial injury) and long-term (Markov chain) health states corresponding to recovery vs. sequelae from the injury:
+
+| Description                                        | Base Case Value | Parameter Name    |
+|-----------------------------------|-------------------|-------------------|
+| Probabilidad de lesiones graves                    | 0.30            | p_grave           |
+| Probabilidad de lesión leve o moderada             | 0.70            | p_mod             |
+| Probabilidad de recuperación: Lesión leve/moderada | 0.85            | p_recuperar_mod   |
+| Probabilidad de recuperación: Lesión grave         | 0.1             | p_recuperar_grave |
