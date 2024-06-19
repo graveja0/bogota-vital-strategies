@@ -355,7 +355,6 @@ $$
 
 ## Árbol de decisión de enfermedades neurológicas
 
-(De ayer)
 
 ![](images/cea-example1.png)
 

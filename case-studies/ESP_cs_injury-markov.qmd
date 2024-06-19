@@ -22,7 +22,7 @@ Este enfoque proporcionará una evaluación más completa de las repercusiones s
 
 # 1. Modelo vivo-muerto
 
-Empezaremos por construir un modelo de Markov sencillo que represente sólo dos estados de salud: "Vivo" y "Muerto". Supondremos que los individuos pueden pasar de un estado a otro en función de las probabilidades de supervivencia calculadas a partir de los datos demográficos de la tabla de vida de Columbia. Una vez que validemos que podemos replicar con éxito la esperanza de vida desde el nacimiento, podemos empezar a aumentar el modelo con lesiones, estrategias, costes, etc. de los fuegos artificiales.
+Empezaremos por construir un modelo de Markov sencillo que represente sólo dos estados de salud: "Vivo" y "Muerto". Supondremos que los individuos pueden pasar de un estado a otro en función de las probabilidades de supervivencia calculadas a partir de los datos demográficos de la tabla de vida de Colombia. Una vez que validemos que podemos replicar con éxito la esperanza de vida desde el nacimiento, podemos empezar a aumentar el modelo con lesiones, estrategias, costes, etc. de los fuegos artificiales.
 
 ## Estructura de Markov: Vivo-Muerto
 
@@ -282,9 +282,9 @@ Recuerda que puedes "copiar" y "pegar" árboles para reducir la cantidad de trab
 | Reducción relativa del riesgo: probabilidad de lesión en la hipótesis de la política "Ban | 0.40          | rr_lesión_prohibir  |
 | Reducción relativa del riesgo: probabilidad de lesión en el escenario político "Regular   | 0.80          | rr_lesión_regular   |
 
-# 4. Add Long-Term Consequences
+# 4. Añadir consecuencias a largo plazo
 
-Please add in chance nodes (after initial injury) and long-term (Markov chain) health states corresponding to recovery vs. sequelae from the injury:
+Añada nodos de azar (tras la lesión inicial) y estados de salud a largo plazo (cadena de Markov) correspondientes a la recuperación frente a las secuelas de la lesión:
 
 | Description                                        | Base Case Value | Parameter Name    |
 |-----------------------------------|-------------------|-------------------|
