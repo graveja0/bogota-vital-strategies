@@ -599,7 +599,7 @@
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#características-de-la-evaluación-económica",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Características de la evaluación económica",
-    "text": "Características de la evaluación económica\n\n\n Cuantificación sistemática de costos y consecuencias.\n\n\n\n Análisis comparativo de cursos de acción alternativos.\n\nNos centraremos en esto en la próxima sesión."
+    "text": "Características de la evaluación económica\n\n\n Cuantificación sistemática de costos y consecuencias.\n\n\n\n Análisis comparativo de cursos de acción alternativos.\n\nNos centraremos en esto más adelante."
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#técnicas-de-evaluación-económica",
@@ -620,14 +620,14 @@
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#técnicas-de-evaluación-económica-1",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Técnicas de evaluación económica",
-    "text": "Técnicas de evaluación económica\n\n\n\n\n\n\n\n\n\n\nTipo de estudio\nMedición/Valoración de costos ambas alternativas\nIdentificación de consecuencias\nMedición/Valoración de consecuencias\n\n\n\n\nAnálisis de costos\nUnidades monetarias\nNinguno\nNinguno\n\n\nAnálisis costo-efectividad\nUnidades monetarias\nEfecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados.\nUnidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.)\n\n\n\n\nFuente: [@drummond2015a]"
+    "text": "Técnicas de evaluación económica\n\n\n\n\n\n\n\n\n\n\nTipo de estudio\nMedición/Valoración de costos s\nIdentificación de consecuencias\nMedición/Valoración de consecuencias\n\n\n\n\nAnálisis de costos\nUnidades monetarias\nNinguno\nNinguno\n\n\nAnálisis costo-efectividad\nUnidades monetarias\nEfecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados.\nUnidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.)\n\n\n\n\nFuente: [@drummond2015a]"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-efectividad-ace",
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-efectividad-ace",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Análisis Costo-Efectividad (ACE)",
-    "text": "Análisis Costo-Efectividad (ACE)\n\n\n\nMás útil cuando los responsables de la toma de decisiones consideran múltiples opciones dentro de un presupuesto, y el resultado relevante es común a todas las estrategias\n\n\n\n\nLos costos se valoran en términos monetarios ($)\nLos beneficios se valoran en términos de resultados clínicos (por ejemplo, casos prevenidos o curados, vidas salvadas, años de vida ganados, años de vida ganados ajustados a la calidad)\nLos resultados se presentan como una razón costo-efectividad"
+    "text": "Análisis Costo-Efectividad (ACE)\n\n\n\nMás útil cuando los responsables de la toma de decisiones consideran múltiples opciones dentro de un presupuesto, y el resultado relevante es común a todas las estrategias\n\n\n\n\nLos costos se valoran en términos monetarios ($)\nLos beneficios se valoran en términos de resultados clínicos (por ejemplo, casos prevenidos o curados, vidas salvadas, años de vida ganados)\nLos resultados se presentan como una razón costo-efectividad"
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-efectividad",
@@ -648,7 +648,7 @@
     "href": "lectures/ESP_lec_5a.cea-fundamentals1.html#análisis-costo-utilidad",
     "title": "Fundamentos del CEA: Valoración de costos",
     "section": "Análisis Costo-Utilidad",
-    "text": "Análisis Costo-Utilidad\n\n\nEsencialmente una variante del análisis costo-efectividad.\nCaracterística principal: uso de medida genérica de salud.\nAño de vida ajustado por calidad (AVAC): Una métrica que refleja tanto la cantidad como la calidad de vida (dolor, función o ambos).\nEs la forma de evaluación económica más publicada.\n\n\n\n\n\n\n\n\n\nA lo largo del taller nos centraremos principalmente en el ACE (especialmente en el ACU)."
+    "text": "Análisis Costo-Utilidad\n\n\nEsencialmente una variante del análisis costo-efectividad.\nCaracterística principal: uso de medida genérica de salud.\nAño de vida ajustado por calidad (AVAC): Una métrica que refleja tanto la cantidad como la calidad de vida (dolor, función o ambos).\nEs la forma de evaluación económica más publicada."
   },
   {
     "objectID": "lectures/ESP_lec_5a.cea-fundamentals1.html#técnicas-de-evaluación-económica-3",
@@ -3406,14 +3406,14 @@
     "href": "lectures/lec_5a.cea-fundamentals1.html#techniques-for-economic-evaluation-1",
     "title": "CEA Fundamentals: Valuing Costs",
     "section": "Techniques for Economic Evaluation",
-    "text": "Techniques for Economic Evaluation\n\n\n\n\n\n\n\n\n\n\nType of study\nMeasurement/Valuation of costs both alternative\nIdentification of consequences\nMeasurement / valuation of consequences\n\n\n\n\nCost analysis\nMonetary units\nNone\nNone\n\n\nCost-effectiveness analysis\nMonetary units\nSingle effect of interest, common to both alternatives, but achieved to different degrees.\nNatural units (e.g., life-years gained, disability days saved, points of blood pressure reduction, etc.)\n\n\n\n\nSource: [@drummond2015a]"
+    "text": "Techniques for Economic Evaluation\n\n\n\n\n\n\n\n\n\n\nType of study\nMeasurement/Valuation of costs\nIdentification of consequences\nMeasurement / valuation of consequences\n\n\n\n\nCost analysis\nMonetary units\nNone\nNone\n\n\nCost-effectiveness analysis\nMonetary units\nSingle effect of interest, common to both alternatives, but achieved to different degrees.\nNatural units (e.g., life-years gained, disability days saved, points of blood pressure reduction, etc.)\n\n\n\n\nSource: [@drummond2015a]"
   },
   {
     "objectID": "lectures/lec_5a.cea-fundamentals1.html#cost-effectiveness-analysis-cea",
     "href": "lectures/lec_5a.cea-fundamentals1.html#cost-effectiveness-analysis-cea",
     "title": "CEA Fundamentals: Valuing Costs",
     "section": "Cost-Effectiveness Analysis (CEA)",
-    "text": "Cost-Effectiveness Analysis (CEA)\n\n\n\nMost useful when decision makers consider multiple options within a budget, and the relevant outcome is common across strategies\n\n\n\n\nCosts are valued in monetary terms ($)\nBenefits are valued in terms of clinical outcomes (e.g., cases prevented or cured, lives saved, years of life gained, quality-adjusted life years gained)\nResults reported as a cost-effectiveness ratio"
+    "text": "Cost-Effectiveness Analysis (CEA)\n\n\n\nMost useful when decision makers consider multiple options within a budget, and the relevant outcome is common across strategies\n\n\n\n\nCosts are valued in monetary terms ($)\nBenefits are valued in terms of clinical outcomes (e.g., cases prevented or cured, lives saved, years of life gained)\nResults reported as a cost-effectiveness ratio"
   },
   {
     "objectID": "lectures/lec_5a.cea-fundamentals1.html#cost-effectiveness-analysis",
@@ -3434,7 +3434,7 @@
     "href": "lectures/lec_5a.cea-fundamentals1.html#cost-utility-analysis",
     "title": "CEA Fundamentals: Valuing Costs",
     "section": "Cost-Utility Analysis",
-    "text": "Cost-Utility Analysis\n\n\nEssentially a variant of cost-effectiveness analysis.\nMajor feature: use of generic measure of health.\nQuality-Adjusted Life Year (QALY): A metric that reflects both changes in life expectancy and quality of life (pain, function, or both).\nBy far the most widely published form of economic evaluation.\n\n\n\n\n\n\n\n\n\nWe will focus mostly on CEA (especially CUA) throughout the workshop"
+    "text": "Cost-Utility Analysis\n\n\nEssentially a variant of cost-effectiveness analysis.\nMajor feature: use of generic measure of health.\nQuality-Adjusted Life Year (QALY): A metric that reflects both changes in life expectancy and quality of life (pain, function, or both).\nBy far the most widely published form of economic evaluation."
   },
   {
     "objectID": "lectures/lec_5a.cea-fundamentals1.html#techniques-for-economic-evaluation-3",
@@ -4123,7 +4123,7 @@
     "href": "index.html",
     "title": "Taller de Análisis Económico de intervenciones en salud para la toma de decisiones",
     "section": "",
-    "text": "Calendario de talleres\n\n\n\n\n\n\n\n\n\nFecha\nHora programada\nTema\nVersión inglesa\n\n\n\n\nMartes\n9:00 - 9:30 am\nBienvenida y presentaciones\nWelcome\n\n\n\n9:30 - 10:00\nIntroducción al análisis de decisiones\nIntroduction to Decision Analysis\n\n\n\n10:00-11:00\nÁrboles de decisión y probabilidades\nDecision Trees\n\n\n\n11:00-11:15\nCafé\nBreak\n\n\n\n11:15 - 12:00\nCaso de estudio: Probabilidades y árboles de decisión\nRespuestas\nCase Study: Decision Trees\n\n\n\n12:00 - 1:15 pm\nCafé\nBreak\n\n\n\n1:45 - 2:45 pm\nCaso de estudio: Construir un árbol de decisión en Excel\nRespuestas\nCase Study: Excel\n\n\n\n2:45 - 4:00 pm\nCaso de estudio: Construir un árbol de decisión en Amua\nCase Study: Amua\n\n\nMiércoles\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nUmbrales de tratamiento y valor de la información\nTreatment Thresholds and Value of Information\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:30\nFundamentos CEA 1: Costos\nValuing Costs\n\n\n\n11:30 - 11:45\nCafé\nBreak\n\n\n\n11:45 - 1:00\nFundamentos CEA 2: Resultados sanitarios\nHealth Outcomes\n\n\n\n1:00 - 2:15\nAlmuerzo\nLunch\n\n\n\n2:15 - 3:15\nCaso de estudio: Lesiones por fuegos artificiales en Columbia\nCase Study: Firework Injuries in Columbia\n\n\n\n3:15 - 4:30\nFundamentos del ACE 3: Análisis coste-eficacia incremental\nICERs\n\n\nJueves\n9:00-9:15\nResumen diario\n\n\n\n\n9:15 - 10:30\nCaso de estudio: Análisis coste-eficacia incremental\nCase Study: ICERs\n\n\n\n10:30 - 12:00\nModelos de Markov\nMarkov Models\n\n\n\n12:00 - 1:15\nCafé\n\n\n\n\n1:15 - 4:00\nCaso de estudio: Modelos de Markov\nCase Study: Firework Injury Model (Markov)\n\n\nViernes\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nAnálisis determinista y de escenarios\nDeterministic and Sensitivity Analysis\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:15\nTécnicas avanzadas de modelización\nAdvanced modeling techniques\n\n\n\n11:15 - 11:45\nCeremonia de entrega de certificados\nClosing Ceremony",
+    "text": "Calendario de talleres\n\n\n\n\n\n\n\n\n\nFecha\nHora programada\nTema\nVersión inglesa\n\n\n\n\nMartes\n9:00 - 9:30 am\nBienvenida y presentaciones\nWelcome\n\n\n\n9:30 - 10:00\nIntroducción al análisis de decisiones\nIntroduction to Decision Analysis\n\n\n\n10:00-11:00\nÁrboles de decisión y probabilidades\nDecision Trees\n\n\n\n11:00-11:15\nCafé\nBreak\n\n\n\n11:15 - 12:00\nCaso de estudio: Probabilidades y árboles de decisión\nRespuestas\nCase Study: Decision Trees\n\n\n\n12:00 - 1:15 pm\nCafé\nBreak\n\n\n\n1:45 - 2:45 pm\nCaso de estudio: Construir un árbol de decisión en Excel\nRespuestas\nCase Study: Excel\n\n\n\n2:45 - 4:00 pm\n\n\n\n\nMiércoles\n9:00-9:15\nResumen diario\nUmbrales de tratamiento y valor de la información\nRecap and Demonstration of Threshold Analysis in Amua\nTreatment Thresholds and Value of Information\n\n\n\n9:15 - 10:15\nCaso de estudio: Construir un árbol de decisión en Amua\nCase Study: Amua\n\n\n\n10:15 - 11:30\nFundamentos CEA 1: Costos\nValuing Costs\n\n\n\n11:30 - 11:45\nCafé\nBreak\n\n\n\n11:45 - 1:00\nFundamentos CEA 2: Resultados sanitarios\nHealth Outcomes\n\n\n\n1:00 - 2:15\nAlmuerzo\nLunch\n\n\n\n2:15 - 3:15\nCaso de estudio: Lesiones por fuegos artificiales en Columbia\nCase Study: Firework Injuries in Columbia\n\n\n\n3:15 - 4:30\nFundamentos del ACE 3: Análisis coste-eficacia incremental\nICERs\n\n\nJueves\n9:00-9:15\nResumen diario\n\n\n\n\n9:15 - 10:30\nCaso de estudio: Análisis coste-eficacia incremental\nCase Study: ICERs\n\n\n\n10:30 - 12:00\nModelos de Markov\nMarkov Models\n\n\n\n12:00 - 1:15\nCafé\n\n\n\n\n1:15 - 4:00\nCaso de estudio: Modelos de Markov\nCase Study: Firework Injury Model (Markov)\n\n\nViernes\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nAnálisis determinista y de escenarios\nDeterministic and Sensitivity Analysis\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:15\nTécnicas avanzadas de modelización\nAdvanced modeling techniques\n\n\n\n11:15 - 11:45\nCeremonia de entrega de certificados\nClosing Ceremony",
     "crumbs": [
       "Home"
     ]
