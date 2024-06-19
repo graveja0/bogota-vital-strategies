@@ -6929,13 +6929,6 @@
     "text": "Métodos directos: Escalas de valoración\n\nFáciles de utilizar: Las escalas de valoración suelen utilizarse cuando el tiempo o la capacidad cognitiva/alfabetización impide el uso de otros métodos\nMuy subjetivos y propensos a respuestas extremas. Generalmente, utilidades para EVA &lt; TTO &lt; AE"
   },
   {
-    "objectID": "lectures/ESP_lec_5b.cea-fundamentals2.html#cuestión-práctica-vigilar-a-los-tramposos",
-    "href": "lectures/ESP_lec_5b.cea-fundamentals2.html#cuestión-práctica-vigilar-a-los-tramposos",
-    "title": "Fundamentos del CEA: Valoración de los resultados sanitarios",
-    "section": "Cuestión práctica: vigilar a los “tramposos”",
-    "text": "Cuestión práctica: vigilar a los “tramposos”\nEjemplo hipotético de “trampa”:\n\nLa compañía farmacéutica X ha descubierto un medicamento que previene la diabetes pero causa migrañas (efecto secundario)\nUtilizan la EVA para estimar la utilidad de la diabetes en su modelo de decisión y la AE para estimar la utilidad de las migrañas.\n¿Hay algún problema? (¡sí, lo hay!)\n\nRecordemos que, por lo general, la utilidad de la EVA es menor que la de la TTO y menor que la de la AE.\nPor lo tanto, este enfoque exagera el beneficio del tratamiento al utilizar una U(Diabetes) más baja y U(migrañas) más alta\n\n\n\n\nAE suele tener una mayor utilidad (por tanto, mejor calidad de vida), por lo que se resta importancia al efecto secundario de la migraña.\nMientras que EVA suele tener una utilidad más baja, por lo que ganarán MÁS con la prevención de la diabetes, ya que una utilidad más baja = peor situación."
-  },
-  {
     "objectID": "lectures/ESP_lec_5b.cea-fundamentals2.html#métodos-indirectos-eq-5d",
     "href": "lectures/ESP_lec_5b.cea-fundamentals2.html#métodos-indirectos-eq-5d",
     "title": "Fundamentos del CEA: Valoración de los resultados sanitarios",
@@ -6948,27 +6941,6 @@
     "title": "Fundamentos del CEA: Valoración de los resultados sanitarios",
     "section": "Métodos indirectos",
     "text": "Métodos indirectos\n\nMEDIDAS INDIRECTAS DE UTILIDAD \n\nHUI - Índice de utilidad para la salud\nEQ5D - Medida del estado de salud EuroQol\nSF-6D - Convierte las puntuaciones SF-36 y SF-12 en utilidades\nQWB - Escala de calidad del bienestar\n\n\n\nNo voy a entrar en detalles para cada uno de estos ya que no es necesario conocer la granularidad de cada uno en este momento hasta que comience a explorar para sus estudios en el futuro, pero sólo como una visión general de algunos de los más conocidos:\nHUI (Índice de Utilidad para la Salud), basado en una amplia muestra comunitaria canadiense (con derechos de autor, no de uso gratuito), se pide a los pacientes que consideren su salud en las últimas 2, 3 y 4 semanas.\nEQ5D, basado en Europa y EE.UU., pide a los participantes que consideren su estado de salud durante el día de la entrevista; es gratuito, pero hay que pedir permiso y, si hay que traducirlo a otros idiomas, puede resultar bastante caro.\nSF-6D, periodo de recuerdo de 4 a 1 semana, convierte el SF-36 y el SF-12 (medidas de calidad de vida genéricas y validadas) en puntuaciones de utilidad, conversión realizada por John Brazier, desarrollador de la Universidad de Sheffield; artículos publicados sobre la metodología para convertirlos.\nQWB (Quality of Well-Being scale), pide a los participantes que consideren su estado de salud durante los tres días anteriores, pacientes de atención primaria en San Diego, California; póngase en contacto con el programa de evaluación de resultados de salud de la UCSD para obtener acceso."
-  },
-  {
-    "objectID": "lectures/ESP_lec_5b.cea-fundamentals2.html#métodos-indirectos-1",
-    "href": "lectures/ESP_lec_5b.cea-fundamentals2.html#métodos-indirectos-1",
-    "title": "Fundamentos del CEA: Valoración de los resultados sanitarios",
-    "section": "Métodos indirectos",
-    "text": "Métodos indirectos\n\nPRECAUCIÓN - \nEs posible que vea artículos / estudios que informan de medidas de calidad de vida “NO BASADAS EN PREFERENCIAS” (por ejemplo, que miden la carga, la “calidad de vida”, los síntomas; normalmente no en una escala de 0 a 1), que a menudo informan de “puntuaciones de resumen”, pero éstas NO SON LO MISMO que medidas BASADAS EN PREFERENCIAS (por ejemplo, cómo valora uno los diferentes estados de salud)\n\nEstas últimas pueden utilizarse en las evaluaciones económicas."
-  },
-  {
-    "objectID": "lectures/ESP_lec_5b.cea-fundamentals2.html#medidas-específicas-de-la-enfermedad",
-    "href": "lectures/ESP_lec_5b.cea-fundamentals2.html#medidas-específicas-de-la-enfermedad",
-    "title": "Fundamentos del CEA: Valoración de los resultados sanitarios",
-    "section": "Medidas específicas de la enfermedad",
-    "text": "Medidas específicas de la enfermedad\n\nMás sensibles a los cambios en una enfermedad concreta \nDesventajas - \n\nMuchas personas tienen múltiples condiciones de salud\nNo se puede transferir a QALY/Utilidad a menos que se mapee estadísticamente a medidas generalizadas (EQ5D, etc.)\n\n\n\nLas medidas específicas de una enfermedad son más sensibles a los cambios en una enfermedad concreta.\nPor ejemplo, **Utilizar una medida de calidad de vida específica de la enfermedad para la epilepsia"
-  },
-  {
-    "objectID": "lectures/ESP_lec_5b.cea-fundamentals2.html#números-estándar-para-sus-propias-ace",
-    "href": "lectures/ESP_lec_5b.cea-fundamentals2.html#números-estándar-para-sus-propias-ace",
-    "title": "Fundamentos del CEA: Valoración de los resultados sanitarios",
-    "section": "¿Números estándar para sus propias ACE?",
-    "text": "¿Números estándar para sus propias ACE?\n\n\nEstudios de utilidad a gran escala\nEquilibrio entre diferentes medidas - Análisis de sensibilidad\nRegistro de ACE de Tufts\nJunto con los ensayos controlados aleatorios"
   },
   {
     "objectID": "lectures/ESP_lec_5b.cea-fundamentals2.html#avad",
@@ -8476,13 +8448,6 @@
     "text": "Direct methods – Rating scales\n\nEasy to use: Rating scales often used where time or cognitive ability/literacy prevents use of other methods\nVery subjective and prone to more extreme answers! Usually, utilities for VAS &lt; TTO &lt; SG"
   },
   {
-    "objectID": "lectures/lec_5b.cea-fundamentals2.html#practical-issue-keep-an-eye-out-for-cheaters",
-    "href": "lectures/lec_5b.cea-fundamentals2.html#practical-issue-keep-an-eye-out-for-cheaters",
-    "title": "CEA Fundamentals: Valuing Outcomes",
-    "section": "Practical issue – keep an eye out for “cheaters”",
-    "text": "Practical issue – keep an eye out for “cheaters”\nHypothetical “cheating” example:\n\nDrug company X has discovered a drug that prevents diabetes but causes migraines (side-effect)\nThey use VAS to estimate the utility of diabetes in their decision model and SG to estimate the utility of migraines\nIs there a problem here? (yes, there is!!)\n\nRecall, usually utilities for VAS &lt; TTO &lt; SG\nThus, this approach overstates the benefit by using a lower U(Diabetes) and higher U(migraines)\n\n\n\n\nSG will usually have a higher utility (so better quality of life) - so they are downplaying the migraine side effect\nWhereas VAS usually has a lower utility, so they will gain MORE from preventing diabetes since a lower utility = worse off."
-  },
-  {
     "objectID": "lectures/lec_5b.cea-fundamentals2.html#indirect-methods---eq-5d",
     "href": "lectures/lec_5b.cea-fundamentals2.html#indirect-methods---eq-5d",
     "title": "CEA Fundamentals: Valuing Outcomes",
@@ -8497,32 +8462,11 @@
     "text": "Indirect Methods\n\nINDIRECT UTILITY MEASURES \n\nHUI – Health Utility Index\nEQ5D – EuroQol health status measure\nSF-6D – Converts SF-36 & SF-12 scores to utilities\nQWB – Quality of well-being scale\n\n\n\nI’m not going to get into detail for each of these since you don’t need to know the granularity of each right now until you start exploring for your studies in the future, but just as an overview of some of the more well-known ones:\nHUI (Health Utility Index), based on a large, Canadian community sample (copyrighted, not free to use), patients are asked to consider their health over the past 2, 3, & 4 weeks\nEQ5D, European & US-based, asks participants to consider their health during the day of the interview; free but need to request permission & if you need to translate into other languages then it can be quite pricey\nSF-6D, 4 to 1-week recall period, converts the SF-36 & SF-12 (validated, generic quality of life measures) into utility scores, conversion done by University of Sheffield developer John Brazier; published articles on the methodology to convert these\nQWB (Quality of Well-Being scale), asks participants to consider their health over the previous three days, primary care patients in San Diego, CA; contact UCSD health outcomes assessment program for access"
   },
   {
-    "objectID": "lectures/lec_5b.cea-fundamentals2.html#indirect-methods-1",
-    "href": "lectures/lec_5b.cea-fundamentals2.html#indirect-methods-1",
-    "title": "CEA Fundamentals: Valuing Outcomes",
-    "section": "Indirect Methods",
-    "text": "Indirect Methods\n\nCAUTION – \nYou may see articles / studies that report “NON-PREFERENCED-BASED” quality of life measures (e.g. measuring burden, ”quality of life”, symptoms; usually not on 0 to 1 scale), which often report “summary scores”, but these are NOT THE SAME as PREFERENCE-BASED measures (e.g., how one VALUES different health states)\n\nThe latter of which can be used in economic evaluations"
-  },
-  {
-    "objectID": "lectures/lec_5b.cea-fundamentals2.html#disease-specific-measures",
-    "href": "lectures/lec_5b.cea-fundamentals2.html#disease-specific-measures",
-    "title": "CEA Fundamentals: Valuing Outcomes",
-    "section": "Disease specific measures",
-    "text": "Disease specific measures\n\nMore sensitive to changes in a particular disease \nDisadvantages – \n\nMany people have multiple health conditions\nCan not be transferred to QALY/Utility unless statistically mapped to generalized measures (EQ5D, etc.)\n\n\n\nDisease specific measures are more sensitive to changes in a particular disease\nFor example, **Using a disease-specific quality of life measure for epilepsy"
-  },
-  {
-    "objectID": "lectures/lec_5b.cea-fundamentals2.html#off-the-shelf-numbers-for-your-own-ceas",
-    "href": "lectures/lec_5b.cea-fundamentals2.html#off-the-shelf-numbers-for-your-own-ceas",
-    "title": "CEA Fundamentals: Valuing Outcomes",
-    "section": "Off-the-shelf numbers for your own CEAs?",
-    "text": "Off-the-shelf numbers for your own CEAs?\n\n\nLarge scale utility studies\nBalancing tradeoffs between different measures\n\nSensitivity analyses!\n\nTufts CEA registry\nAlongside RCTs"
-  },
-  {
     "objectID": "lectures/lec_5b.cea-fundamentals2.html#dalys",
     "href": "lectures/lec_5b.cea-fundamentals2.html#dalys",
     "title": "CEA Fundamentals: Valuing Outcomes",
     "section": "DALYs",
-    "text": "DALYs\nYou, furthermore, will not be tested on DALYs, but for your reference/interest:\n\n\nOrigin story: Global Burden of Disease Study\nDeliberately a measure of health, not welfare/utility\nSimilar to QALYs, two dimensions of interest:\n\nlength of life (differences in life expectancy)\nquality of life (measured by disability weight)"
+    "text": "DALYs\n\n\nOrigin story: Global Burden of Disease Study\nDeliberately a measure of health, not welfare/utility\nSimilar to QALYs, two dimensions of interest:\n\nlength of life (differences in life expectancy)\nquality of life (measured by disability weight)"
   },
   {
     "objectID": "lectures/lec_5b.cea-fundamentals2.html#dalys-1",
@@ -8585,6 +8529,6 @@
     "href": "lectures/lec_5b.cea-fundamentals2.html#dalys-for-cea",
     "title": "CEA Fundamentals: Valuing Outcomes",
     "section": "DALYs for CEA",
-    "text": "DALYs for CEA\n\n\nRecommended calculation approach has changed over time (age weighting, discounting, now both out)\nSome will calculate a “QALY-like” DALY, using utility weight = 1- disability weight\nDiscounting still generally done for CEA\n\n\n\n\n\n\n\n\n\nImportant\n\n\nCommon practice\n\nHigh-income setting: QALYs\nLow- and middle- income setting = DALYs ***Since disability weights are freely & publicly available (these weights are required for DALY calculations), it can reduce costs/time/resources compared to collecting QALY estimates"
+    "text": "DALYs for CEA\n\n\nRecommended calculation approach has changed over time (age weighting, discounting, now both out)\nSome will calculate a “QALY-like” DALY, using utility weight = 1- disability weight\nDiscounting still generally done for CEA\n\n\n\n\n\n\n\n\n\nImportant\n\n\nCommon practice\n\nHigh-income setting: QALYs\nLow- and middle- income setting = DALYs ***Since disability weights are freely & publicly available (these weights are required for DALY calculations), it can reduce costs/time/resources compared to collecting QALY estimates\n\n\n\n\n\n\n\n\n\nBack to Website"
   }
 ]
