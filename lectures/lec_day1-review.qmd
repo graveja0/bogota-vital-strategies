@@ -1,0 +1,241 @@
+---
+title: "Review of Day 1 Concepts"
+format:
+  revealjs:
+    theme: slides.scss
+    incremental: false
+    slide-number: true
+    logo: ../vchem.png
+    html-math-method: katex
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    footer: |
+      [Volver al sitio web](../index.html)
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Decision Trees
+
+## 
+
+![](media/lec_conceptual-and-theoretical-frameworks/dt_beachhome1.png){fig-align="center"}
+
+## Strengths
+
+::: incremental
+-   They are easy to describe and understand
+-   Works well with limited time horizon
+-   Decision trees are a powerful framework for analyzing decisions and
+    can provide rapid/useful insights, but they have limitations.
+:::
+
+## Limitations
+
+::: incremental
+-   No explicit accounting for the elapse of time.
+    -   Recurrent events must be separately built into model.
+    -   Fine for short time cycles (e.g., 12 months) but we often want
+        to model over a lifetime.
+-   Difficult to incorporate real clinical detail - Tree structure can
+    quickly become complex.
+:::
+
+## At what probability ($p_B$) of rain for the beach are you indifferent between the two options? {auto-animate="true"}
+
+::: incremental
+![](media/lec_conceptual-and-theoretical-frameworks/dt_beachhome_pB.png){fig-align="center"
+width="50%"}
+:::
+
+## At what probability ($p_B$) of rain for the beach are you indifferent between the two options? {auto-animate="true"}
+
+::: {style="font-size: 0.8em"}
+::: incremental
+-   Earlier, we solved for the expected payoff of remaining at home:
+    0.74 (which was a lower expected value than going to the beach when
+    the chance of rain at both was 30%) <br>
+
+-   **What would** $p_B$ need to be to yield an expected payoff *at the
+    beach* of 0.74?
+
+    -   In other words, at what probability of rain at the beach would
+        you be indifferent between staying at home & going to the beach?
+:::
+:::
+
+::: notes
+(1) Now, let's ask a slightly different question -- At what
+    probabiility....
+(2) Let's now assume that the probability of rain for the HOME option
+    does not change (so stays at 0.3)
+(3) KEY DIFFERENCE FROM THE LAST EXAMPLE: In the last example, the
+    probabilities were the same & we wanted to get our threshold of
+    indifference between the beach and staying at home
+(4) \*\*Now we are assuming that there's still a probability of 30% that
+    it rains if you stay home, but at what probability of rain at the
+    beach would you be indifferent between the two options? (Since we
+    CHOSE BEACH when the probabilities both equaled 30%)
+
+-   In other words, at what probability of RAIN AT THE BEACH would you
+    be indifferent between the beach & home
+:::
+
+## At what probability ($p_B$) of rain for the beach are you indifferent between the two options? {auto-animate="true"}
+
+Set 0.74 (expected value of remaining at home) equal to the **beach**
+payoffs and solve for $p_B$
+
+<br>
+
+p~B~ \* 0.4 + (1 - p~B~) \* 1.0 = 0.74
+
+## At what probability ($p_B$) of rain for the beach are you indifferent between the two options? {auto-animate="true"}
+
+::: {.fragment .fade-out}
+p~B~ \* 0.4 + (1 - p~B~) \* 1.0 = 0.74
+:::
+
+::: incremental
+p~B~ \* 0.4 + 1 - p~B~ = 0.74
+:::
+
+## At what probability ($p_B$) of rain for the beach are you indifferent between the two options? {auto-animate="true"}
+
+::: {.fragment .fade-out}
+p~B~ \* 0.4 + 1 - p~B~ = 0.74
+:::
+
+::: incremental
+p~B~ \* -0.6 = -0.26
+:::
+
+## At what probability ($p_B$) of rain for the beach are you indifferent between the two options? {auto-animate="true"}
+
+::: {.fragment .fade-out}
+p~B~ \* -0.6 = -0.26
+:::
+
+::: incremental
+p~B~ = -0.26 / -0.6 = [**0.43**]{style="color:green;"}
+:::
+
+## At what probability ($p_B$) of rain for the beach are you indifferent between the two options? {auto-animate="true"}
+
+> When the probability of rain at the beach is 43% (probability of rain
+> at home remains at 30%), we would be indifferent between staying at
+> home & going to the beach.
+
+> If the probability of rain at the beach in \> 43%, then we would stay
+> home
+
+# Threshold Example: Screening Program
+
+## Decision Tree: Pulmonary Embolism
+
+![](images/clipboard-3525292626.png)
+
+## Decision Tree: Pulmonary Embolism
+
+![](images/clipboard-1862969085.png)
+
+## Parameter Uncertainty
+
+-   Suppose we are not certain about the probability of fatal
+    hemorrhage.
+
+-   At what value of `p_fatal_hem` would expected survival be equal?
+
+## Threshold Analysis: Idea
+
+::: incremental
+-   Allow the value of `p_fatal_hem` to vary over a range.
+
+-   Find the value of `p_fatal_hem` along this range where expected
+    survival is equal for the "Anticoagulant" and "No Anticoagulant"
+    strategies.
+:::
+
+## Threshold Analysis
+
+![](images/clipboard-2537887771.png)
+
+## Threshold Analysis
+
+![](images/clipboard-820301870.png)
+
+## Threshold Analysis
+
+![](images/clipboard-3563991472.png)
+
+## Threshold Analysis
+
+![](images/clipboard-3291599707.png)
+
+## Threshold Analysis
+
+![](images/clipboard-1452136494.png)
+
+##  {background="#43464B" background-image="images/clipboard-2596799462.png" data-background-size="contain"}
+
+
+# Example 2: Screening Program
+
+## Screening Program
+
+::: incremental
+-   The Ministry of Health is considering implementation of a
+    population-wide treatment program for a costly disease that affects a subgroup of the population.
+-   The prevalence of the disease is not well-established.
+:::
+
+## Screening Program
+
+::: incremental
+-   An inexpensive screening test is available, but it is not perfect at
+    detecting individuals with the disease.
+-   A more expensive (perfect) diagnostic test is available.
+:::
+
+## Decision Problem
+
+1.  Do nothing.
+2.  Population screening with the inexpensive test.
+3.  Expensive diagnostic test for everyone.
+
+## Decision Problem
+
+::: incremental
+-   Given that we do not know the underlying probability of disease
+    (`p_disease`), can we make a policy decision?
+-   Perhaps! We can use a threshold analysis.
+:::
+
+## Threshold Analysis: Steps
+
+::: incremental
+1.  Allow `p_disease` to vary over a plausible range.
+2.  Find the threshold at which we would be indifferent between:
+  -   Do nothing vs. population screening with inexpensive test.
+  -   Population screening vs. diagnostic test for everyone.
+:::
+
+## Threshold Analysis
+
+![](images/clipboard-2527152312.png)
+
+
+##  {background="#43464B" background-image="images/clipboard-3866434634.png" data-background-size="contain"}
+
+##  {background="#43464B" background-image="images/clipboard-332595108.png" data-background-size="contain"}
+
+##  {background="#43464B" background-image="images/clipboard-246926963.png" data-background-size="contain"}
+
+## Decision
+
+- We can now solicit expert opinion on a likely range of the disease prevalance.
+- If this range falls within the thresholds, we can make a decision despite uncertainty in the underlying disease prevalence. 

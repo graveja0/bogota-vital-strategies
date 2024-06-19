@@ -1,0 +1,233 @@
+---
+title: "Repaso de los conceptos del primer día"
+format:
+  revealjs:
+    theme: slides.scss
+    incremental: false
+    slide-number: true
+    logo: ../vchem.png
+    html-math-method: katex
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    footer: |
+      [Volver al sitio web](../index.html)
+editor_options: 
+  chunk_output_type: console
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+# Árboles de decisión
+
+## 
+
+![](media/lec_conceptual-and-theoretical-frameworks/dt_beachhome1.png){fig-align="center"}
+
+
+## Ventajas
+
+::: incrementales
+-   Son fáciles de describir y entender
+-   Funcionan bien con un horizonte temporal limitado
+-   Los árboles de decisión son un marco potente para analizar
+    decisiones y pueden proporcionar perspectivas rápidas/útiles, pero
+    tienen limitaciones.
+:::
+
+## Limitaciones
+
+::: incremental
+-   No toman en cuenta explícitamente el paso del tiempo.
+    -   Los sucesos recurrentes deben incorporarse por separado al
+        modelo.
+    -   Está bien para ciclos de tiempo cortos (por ejemplo, 12 meses),
+        pero a menudo queremos modelizar a lo largo de toda la vida.
+-   Es difícil incorporar detalles clínicos reales. La estructura de
+    árbol puede volverse compleja rápidamente.
+:::
+
+
+
+## ¿A qué probabilidad ($p_B$) de lluvia para la playa estaríamos indiferente entre las dos opciones? {auto-animate="true"}
+
+::: incremental
+![](media/lec_conceptual-and-theoretical-frameworks/dt_beachhome_pB.png){fig-align="center"
+width="50%"}
+:::
+
+## ¿A qué probabilidad ($p_B$) de lluvia para la playa estaríamos indiferente entre las dos opciones? {auto-animate="true"}
+
+::: {style="font-size: 0.8em"}
+::: incremental
+-   Antes hemos calculado el beneficio esperado de quedarse en casa:
+    0,74 (que era un valor esperado menor que ir a la playa cuando la
+    probabilidad de lluvia en ambos era del 30%) <br>
+
+-   ¿Cuál tendría que ser\*\* $p_B$ para obtener una recompensa esperada
+    *en la playa playa* de 0,74?
+
+    -   En otras palabras, ¿con qué probabilidad de lluvia en la playa
+        ¿le resultaría indiferente quedarse en casa o ir a la playa?
+:::
+:::
+
+::: notes
+(1) Formulemos ahora una pregunta ligeramente distinta. probabilidad....
+(2) Supongamos ahora que la probabilidad de lluvia para la opción CASA
+    no cambia (por lo que se mantiene en 0,3)
+(3) DIFERENCIA CLAVE CON RESPECTO AL ÚLTIMO EJEMPLO: En el último
+    ejemplo, las probabilidades eran las mismas y queríamos obtener
+    nuestro umbral de indiferencia entre la playa y quedarse en casa
+(4) \*\*Ahora estamos suponiendo que todavía hay una probabilidad del
+    30% de que que llueva si te quedas en casa, pero ¿a qué probabilidad
+    de lluvia en la playa te sería indiferente entre las dos opciones?
+    (Puesto que elegimos la playa cuando ambas probabilidades eran
+    iguales al 30%)
+
+-   En otras palabras, ¿con qué probabilidad de LLOVER EN LA PLAYA sería
+    indiferente entre la playa y su casa
+:::
+
+## ¿A qué probabilidad ($p_B$) de lluvia para la playa estaríamos indiferente entre las dos opciones? {auto-animate="true"}
+
+Fije 0,74 (valor esperado de quedarse en casa) igual a la **playa** y
+resuelva para $p_B$.
+
+<br>
+
+p~B~ \* 0.4 + (1 - p~B~) \* 1.0 = 0.74
+
+## ¿A qué probabilidad ($p_B$) de lluvia para la playa estaríamos indiferente entre las dos opciones? {auto-animate="true"}
+
+::: {.fragment .fade-out}
+p~B~ \* 0.4 + (1 - p~B~) \* 1.0 = 0.74
+:::
+
+::: incremental
+p~B~ \* 0.4 + 1 - p~B~ = 0.74
+:::
+
+## ¿A qué probabilidad ($p_B$) de lluvia para la playa estaríamos indiferente entre las dos opciones? {auto-animate="true"}
+
+::: {.fragment .fade-out}
+p~B~ \* 0.4 + 1 - p~B~ = 0.74
+:::
+
+::: incremental
+p~B~ \* -0.6 = -0.26
+:::
+
+## ¿A qué probabilidad ($p_B$) de lluvia para la playa estaríamos indiferente entre las dos opciones? {auto-animate="true"}
+
+::: {.fragment .fade-out}
+p~B~ \* -0.6 = -0.26
+:::
+
+::: incremental
+p~B~ = -0.26 / -0.6 = [**0.43**]{style="color:green;"}
+:::
+
+## ¿A qué probabilidad ($p_B$) de lluvia para la playa estaríamos indiferente entre las dos opciones? {auto-animate="true"}
+
+> Cuando la probabilidad de lluvia en la playa es del 43% (la
+> probabilidad de lluvia en casa se mantiene en el 30%), nos resulta
+> igual quedarnos en casa e ir a la playa.
+
+> Si la probabilidad de que llueva en la playa es \> \> del 43%, nos
+> quedaríamos en casa.
+
+# Ejemplo de umbral: Programa de cribado
+
+## Árbol de decisión: Embolia pulmonar
+
+![](images/clipboard-3525292626.png)
+
+## Árbol de decisión: Embolia pulmonar
+
+![](images/clipboard-1862969085.png)
+
+## Incertidumbre de los parámetros
+
+- Supongamos que no estamos seguros de la probabilidad de una
+    fatal.
+
+- ¿A qué valor de `p_hem_fatal` sería igual la supervivencia esperada?
+
+## Análisis de umbrales: Idea
+
+::: incremental
+- Permita que el valor de `p_fatal_hem` varíe en un intervalo.
+
+- Encuentre el valor de `p_fatal_hem` a lo largo de este rango donde la supervivencia esperada
+    supervivencia esperada es igual para las estrategias "Anticoagulante" y "Sin anticoagulante".
+    estrategias.
+:::
+
+## Análisis de umbrales
+
+![](images/clipboard-2537887771.png)
+
+## Análisis de umbrales
+
+![](images/clipboard-820301870.png)
+
+## Threshold Analysis
+
+![](images/clipboard-3563991472.png)
+
+## Análisis de umbrales
+
+![](images/clipboard-3291599707.png)
+
+## Análisis de umbrales
+
+![](images/clipboard-1452136494.png)
+
+## {background="#43464B" background-image="images/clipboard-2596799462.png" data-background-size="contain"}
+
+# Ejemplo 2: Programa de detección
+
+## Programa de cribado
+
+::: incremental
+- El Ministerio de Sanidad está considerando la implantación de un
+    programa de tratamiento para toda la población de una enfermedad costosa que afecta a un subgrupo de la población.
+- La prevalencia de la enfermedad no está bien establecida.
+:::
+
+## Programa de detección
+
+::: incremental
+- Se dispone de una prueba de cribado barata, pero no es perfecta para detectar a los individuos con la enfermedad.
+    detectar individuos con la enfermedad.
+- Se dispone de una prueba diagnóstica más cara (perfecta).
+:::
+
+## Problema de decisión
+
+1.  No hacer nada.
+2.  Cribado poblacional con la prueba barata.
+3.  Prueba diagnóstica cara para todos.
+
+## Problema de decisión
+
+::: incremental
+- Dado que no conocemos la probabilidad subyacente de enfermedad
+    (`p_enfermedad`), ¿podemos tomar una decisión política?
+- Tal vez. Podemos utilizar un análisis de umbrales.
+:::
+
+## Análisis de umbrales: Pasos
+
+::: incremental
+1.  Permitir que `p_enfermedad` varíe en un rango plausible.
+2.  Encontrar el umbral en el que nos sería indiferente entre:
+  - No hacer nada vs. cribado poblacional con prueba barata.
+  - Cribado de la población o prueba diagnóstica para todos.
+:::
+
+## Análisis del umbral
+
+![](images/clipboard-2527152312.png)

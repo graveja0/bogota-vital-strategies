@@ -399,4 +399,3 @@ VOI = \|EV 'test' -- EV 'next best strategy'\|
 or 3 deaths prevented per 1000 tests because of the additional testing
 information
 :::
-
