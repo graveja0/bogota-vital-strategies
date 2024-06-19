@@ -84,7 +84,7 @@ distintos programas de software
 -   Esto puede ayudarnos a tomar decisiones de asignación de recursos
     ante limitaciones (por ejemplo, presupuestarias).
 
-![](images/noun-coste-y-beneficio-4664704.jpeg){.fragment
+![](images/noun-cost-and-benefit-4664704.jpeg){.fragment
 fig-align="center" width="255"}
 :::
 :::
@@ -486,10 +486,10 @@ Fuente: Gold 1996, Drummond 2015, Gray 2012) <br>
 
 ## ¿Perspectiva de quién?
 
-Sanders GD, Neumann PJ, Basu A, et al. Recommendations for Conduct,
+![Sanders GD, Neumann PJ, Basu A, et al. Recommendations for Conduct,
 Methodological Practices, and Reporting of Cost-effectiveness Analyses:
 Second Panel on Cost-Effectiveness in Health and Medicine. JAMA.
-2016;316:1093--1103.\](images/paste-1BA51D60.png)
+2016;316:1093--1103.](images/paste-1BA51D60.png)
 
 ## ¿La perspectiva de quién?
 
@@ -552,6 +552,7 @@ LA PERSPECTIVA IMPORTA -- <br> <br>
 
 **Perspectiva del sector sanitario**
 
+::: {style="font-size: 0.8em"}
 <br>
 
 MAMOGRAFÍA (Sector sanitario): <br>
@@ -567,6 +568,7 @@ MAMOGRAFÍA (Sector sanitario): <br>
 
 -   Costos no relacionados con la intervención médica/enfermedad; de
     vivir más tiempo debido a la mamografía
+:::
 
 ::: notes
 (1) Veamos un ejemplo: mamografía para el tamizaje del cáncer de mama.
@@ -604,6 +606,7 @@ LISA, el LIBRO dice COSTOS EVITADOS para los costos posteriores
 
 <br>
 
+::: {style="font-size: 0.8em"}
 MAMOGRAFÍA (Perspectiva social): <br>
 
 -   Costos asociados al tamizaje en sí \[procedimiento de mamografía +
@@ -622,6 +625,7 @@ MAMOGRAFÍA (Perspectiva social): <br>
     al tratamiento del cáncer
 
 -   Costos de guardería/transporte
+:::
 
 # Recolección de datos {background="#43464B"}
 
