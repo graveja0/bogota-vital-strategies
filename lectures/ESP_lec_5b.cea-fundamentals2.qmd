@@ -395,34 +395,6 @@ https://assessment-module.yale.edu/im-palliative/visual-analogue-scale"}
 -   Muy subjetivos y propensos a respuestas extremas. Generalmente,
     utilidades para **EVA \< TTO \< AE**
 
-## Cuestión práctica: vigilar a los "tramposos" {.smaller}
-
-[Ejemplo hipotético de "trampa":]{.subrayado}
-
--   La compañía farmacéutica X ha descubierto un medicamento que
-    previene la diabetes pero causa migrañas (efecto secundario)
-
--   Utilizan la EVA para estimar la utilidad de la diabetes en su modelo
-    de decisión y la AE para estimar la utilidad de las migrañas.
-
--   ¿Hay algún problema? (¡sí, lo hay!)
-
-    -   Recordemos que, por lo general, la utilidad de la EVA es menor
-        que la de la TTO y menor que la de la AE.
-
-    -   Por lo tanto, **este enfoque exagera el beneficio del
-        tratamiento al utilizar una U(Diabetes) más baja** **y
-        U(migrañas) más alta**
-
-::: notes
--   AE suele tener una mayor utilidad (por tanto, mejor calidad de
-    vida), por lo que se resta importancia al efecto secundario de la
-    migraña.
-
--   Mientras que EVA suele tener una utilidad más baja, por lo que
-    ganarán MÁS con la prevención de la diabetes, ya que una utilidad
-    más baja = peor situación.
-:::
 
 ## Métodos indirectos: EQ-5D {.smaller}
 
@@ -489,52 +461,6 @@ MEDIDAS INDIRECTAS DE UTILIDAD <br>
     UCSD para obtener acceso.
 :::
 
-## Métodos indirectos
-
-<br>
-
-PRECAUCIÓN - <br>
-
-Es posible que vea artículos / estudios que informan de medidas de
-calidad de vida "NO BASADAS EN PREFERENCIAS" (por ejemplo, que miden la
-carga, la "calidad de vida", los síntomas; normalmente no en una escala
-de 0 a 1), que a menudo informan de "puntuaciones de resumen", pero
-éstas NO SON LO MISMO que [medidas BASADAS EN PREFERENCIAS (por ejemplo,
-cómo valora uno los diferentes estados de
-salud)]{style="background-color: yellow;"}
-
-::: notes
-Estas últimas pueden utilizarse en las evaluaciones económicas.
-:::
-
-## Medidas específicas de la enfermedad
-
-<br>
-
-Más sensibles a los cambios en una enfermedad concreta <br>
-
-Desventajas - <br>
-
--   Muchas personas tienen múltiples condiciones de salud
-
--   No se puede transferir a QALY/Utilidad a menos que se mapee
-    estadísticamente a medidas generalizadas (EQ5D, etc.)
-
-::: notes
-(1) Las medidas específicas de una enfermedad son más sensibles a los
-    cambios en una enfermedad concreta.
-(2) Por ejemplo, \*\*Utilizar una medida de calidad de vida específica
-    de la enfermedad para la epilepsia
-:::
-
-## ¿Números estándar para sus propias ACE?
-
-<br>
-
--   Estudios de utilidad a gran escala
--   Equilibrio entre diferentes medidas - Análisis de sensibilidad
--   Registro de ACE de Tufts
--   Junto con los ensayos controlados aleatorios
 
 ## AVAD
 

@@ -385,29 +385,6 @@ https://assessment-module.yale.edu/im-palliative/visual-analogue-scale](images/p
 -   Very subjective and prone to more extreme answers! Usually,
     utilities for **VAS \< TTO \< SG**
 
-## Practical issue -- keep an eye out for "cheaters" {.smaller}
-
-[Hypothetical "cheating" example:]{.underline}
-
--   Drug company X has discovered a drug that prevents diabetes but
-    causes migraines (side-effect)
-
--   They use VAS to estimate the utility of diabetes in their decision
-    model and SG to estimate the utility of migraines
-
--   Is there a problem here? (yes, there is!!)
-
-    -   Recall, usually utilities for VAS \< TTO \< SG
-
-    -   Thus, **this approach overstates the benefit by using a lower
-        U(Diabetes) and higher U(migraines)**
-
-
-::: notes
--   SG will usually have a higher utility (so better quality of life) - so they are downplaying the migraine side effect 
-
--   Whereas VAS usually has a lower utility, so they will gain MORE from preventing diabetes since a lower utility = worse off. 
-:::
 
 ## Indirect Methods - EQ-5D {.smaller}
 
@@ -457,50 +434,8 @@ INDIRECT UTILITY MEASURES
 :::
 
 
-## Indirect Methods
-<br>
-
-CAUTION – <br>
-
-You may see articles / studies that report “NON-PREFERENCED-BASED” quality of life measures (e.g. measuring burden, ”quality of life”, symptoms; usually not on 0 to 1 scale), which often report “summary scores”, but these are NOT THE SAME as [PREFERENCE-BASED measures (e.g., how one VALUES different health states)]{style="background-color: yellow;"} 
-
-::: notes
-The latter of which can be used in economic evaluations 
-:::
-
-
-## Disease specific measures 
-<br>
-
-More sensitive to changes in a particular disease 
-<br>
-
-Disadvantages – <br>
-
--   Many people have multiple health conditions
-
--   Can not be transferred to QALY/Utility unless statistically mapped to generalized measures (EQ5D, etc.)
-
-::: notes
-(1) Disease specific measures are more sensitive to changes in a particular disease 
-(2) For example, **Using a disease-specific quality of life measure for epilepsy 
-:::
-
-
-## Off-the-shelf numbers for your own CEAs?
-
-<br>
-
--   Large scale utility studies
--   Balancing tradeoffs between different measures
-      -   Sensitivity analyses! 
--   Tufts CEA registry
--   Alongside RCTs
-
 ## DALYs
 
-You, furthermore, will not be tested on DALYs, but for your
-reference/interest:
 
 <br>
 
@@ -674,4 +609,4 @@ e712-e723.](images/paste-51631169.png){width="404"}](http://www.thelancet.com/jo
 :::
 :::
 
-# Next week: How to solve incremental CEAs!
+
