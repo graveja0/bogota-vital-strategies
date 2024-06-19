@@ -22,15 +22,17 @@ La prohibición total pretende eliminar la causa principal de las lesiones prohi
 
 Por otro lado, la regulación estricta implica la aplicación de controles estrictos sobre la venta y el uso de fuegos artificiales. Esta estrategia incluye medidas como la expedición de licencias de venta sólo a vendedores autorizados, la imposición de restricciones de edad y la realización de campañas de educación pública sobre los peligros de los fuegos artificiales. Este enfoque pretende reducir las lesiones al tiempo que permite un uso controlado y seguro de los fuegos artificiales.
 
-Nuestros estudios de casos explorarán estas estrategias a través de dos enfoques de modelización de decisiones. Este estudio de caso utilizará un modelo de árbol de decisión para evaluar los resultados inmediatos y los costes asociados a cada estrategia.
+Nuestros estudios de caso explorarán estas estrategias a través de dos enfoques de modelización de decisiones. Este estudio de caso utilizará un modelo de árbol de decisión para evaluar los resultados inmediatos y los costos asociados a cada estrategia.
 
-Posteriormente, emplearemos un modelo de cohortes de Markov para examinar las repercusiones sanitarias y económicas a largo plazo, teniendo en cuenta factores como las tasas de lesiones, los costes sanitarios y los niveles de cumplimiento.
+Posteriormente, emplearemos un modelo de cohortes de Markov para examinar las repercusiones sanitarias y económicas a largo plazo, teniendo en cuenta factores como las tasas de lesiones, los costos sanitarios y los niveles de cumplimiento.
 
-Mediante el análisis de estos modelos, pretendemos ofrecer una evaluación exhaustiva del planteamiento más rentable y sostenible para reducir las lesiones relacionadas con la pólvora en Columbia en la actualidad. \# Model Inputs and Parameters
+Mediante el análisis de estos modelos, pretendemos ofrecer una evaluación exhaustiva del planteamiento más rentable y sostenible para reducir las lesiones relacionadas con la pólvora en Colombia en la actualidad.
+
+# Datos y parámetros del modelo
 
 ## Índices de lesiones
 
-Sus colegas han recopilado los siguientes datos sobre lesiones por pólvora por año en Columbia. Construiremos un modelo de árbol de decisión basado en las lesiones del año más reciente notificado (2022).
+Sus colegas han recopilado los siguientes datos sobre lesiones por pólvora por año en Colombia. Construiremos un modelo de árbol de decisión basado en las lesiones del año más reciente notificado (2022).
 
 ```{r}
 #| echo: false
@@ -62,25 +64,25 @@ Partiremos de la base de que las lesiones notificadas se clasifican en tres gran
 
 -   **Lesión grave**: quemaduras de tercer grado o traumatismos graves que afectan a tejidos más profundos y pueden dar lugar a complicaciones importantes.
 
--   Lesión mortal
+-   **Lesión mortal**
 
 ::: {.callout-important appearance="simple"}
 Es muy probable que haya muchas lesiones leves y moderadas que no figuren en las estadísticas oficiales. Para este estudio de caso, supondremos que las lesiones graves representan el 30% de las lesiones notificadas.
 :::
 
-| Description                            | Base Case Value   | Parameter Name |
-|-----------------------------------|------------------|------------------|
-| Probabilidad de lesión                 | 0.0000292         | p_lesión       |
-| Probabilidad de lesiones graves        | 0.30              | p_grave        |
-| Probabilidad de lesión leve o moderada | 0.7 = 1 - p_grave | 1 - p_grave    |
-| Probabilidad de lesión mortal          | 0.0046            | p_fatalidad    |
+| Descripción                            | Valor Inicial     | Nombre de parámetro |
+|-----------------------------------|-------------------|-------------------|
+| Probabilidad de lesión                 | 0.0000292         | p_lesión            |
+| Probabilidad de lesiones graves        | 0.30              | p_grave             |
+| Probabilidad de lesión leve o moderada | 0.7 = 1 - p_grave | 1 - p_grave         |
+| Probabilidad de lesión mortal          | 0.0046            | p_fatalidad         |
 
 También supondremos que un pequeño porcentaje (15%) de las personas con lesiones leves/moderadas sufren secuelas a largo plazo (es decir, se recuperan en un 85%), mientras que la mayoría (60%) de las personas con lesiones graves no se recuperan totalmente y sufren complicaciones a largo plazo.
 
-| Description                                        | Base Case Value | Parameter Name    |
-|-----------------------------------|-------------------|-------------------|
-| Probabilidad de recuperación: Lesión leve/moderada | 0.85            | p_recuperar_mod   |
-| Probabilidad de recuperación: Lesión grave         | 0.1             | p_recuperar_grave |
+| Descripción                                        | Valor Inicial | Nombre de parámetro |
+|----------------------------------|-------------------|-------------------|
+| Probabilidad de recuperación: Lesión leve/moderada | 0.85          | p_recuperar_mod     |
+| Probabilidad de recuperación: Lesión grave         | 0.1           | p_recuperar_grave   |
 
 ## Estrategias e impacto
 
@@ -114,7 +116,7 @@ A menudo, cuando añades ramas a un árbol en Amua, el árbol se llena mucho (ve
 
 ## 1.2. Añadir resultados
 
-Amua utiliza por defecto resultados de coste. Por favor, elimine el resultado de coste y defina un nuevo resultado primario basado en la lesión. En otras palabras, el resultado "payoff" debería ser 1.0 si se produce una lesión, y 0 en caso contrario.
+Amua utiliza por defecto resultados de costo. Por favor, elimine el resultado de costo y defina un nuevo resultado primario basado en la lesión. En otras palabras, el resultado "payoff" debería ser 1.0 si se produce una lesión, y 0 en caso contrario.
 
 ::: callout-tip
 Puede editar los resultados haciendo clic en Modelo {{< fa arrow-right >}} Propiedades {{< fa arrow-right >}} Análisis:
@@ -124,7 +126,7 @@ Puede editar los resultados haciendo clic en Modelo {{< fa arrow-right >}} Propi
 
 ## 1.3. Asegúrese de que su modelo se ajusta a los totales de lesiones observados.
 
-\*Ejecute su árbol de decisión inicial utilizando un tamaño de cohorte de 51.682.692 (2022 población de Columbia). Verifique que el número total de lesiones por fuegos artificiales coincide con el total registrado de 1.510.
+\*Ejecute su árbol de decisión inicial utilizando un tamaño de cohorte de 51.682.692 (2022 población de Colombia). Verifique que el número total de lesiones por fuegos artificiales coincide con el total registrado de 1.510.
 
 ::: aviso
 Puede introducir el tamaño de la cohorte haciendo clic en Modelo {{< fa arrow-right >}} Propiedades {{< fa arrow-right >}} Simulación:
@@ -136,10 +138,10 @@ Puede introducir el tamaño de la cohorte haciendo clic en Modelo {{< fa arrow-r
 
 \*Cree una versión duplicada de su árbol "No hacer nada" para construir ramas separadas para los escenarios "Prohibir" y "Regular". En cada uno de ellos, la probabilidad de lesión debe modificarse mediante un parámetro de reducción del riesgo relativo con valores basados en el texto anterior y la tabla siguiente.
 
-| Descripción                                                                               | Valor del caso base | Nombre del parámetro |
+| Descripción                                                                               | Valor inicial | Nombre del parámetro |
 |------------------------------------|------------------|------------------|
-| Reducción relativa del riesgo: probabilidad de lesión en la hipótesis de la política "Ban | 0.40                | rr_lesión_prohibir   |
-| Reducción relativa del riesgo: probabilidad de lesión en el escenario político "Regular   | 0.80                | rr_lesión_regular    |
+| Reducción relativa del riesgo: probabilidad de lesión en la hipótesis de la política "Ban | 0.40          | rr_lesión_prohibir   |
+| Reducción relativa del riesgo: probabilidad de lesión en el escenario político "Regular   | 0.80          | rr_lesión_regular    |
 
 ::: callout-tip
 Puede copiar y pegar la rama "No hacer nada" haciendo clic con el botón derecho en el primer nodo de azar <img src="../amua-images/chanceNode_24.png" alt="Custom Icon" width="20" height="20"/> y seleccionando "Copiar". A continuación, puede pegar una copia de toda la estructura de árbol en el nodo de decisión rojo <img src="../amua-images/decisionNode_24.png" alt="Custom Icon" width="20" height="20"/>.
@@ -159,22 +161,22 @@ Ejecute el modelo y utilice los resultados para rellenar la tabla siguiente. En 
 | Prohibir los fuegos artificiales |                  |               |       |               |
 | Regular los fuegos artificiales  |                  |               |       |               |
 
-### Resultados de los costes
+### Resultados de los costos
 
-A continuación, añada los resultados de los costes según los siguientes supuestos.
+A continuación, añada los resultados de los costos según los siguientes supuestos.
 
 ::: callout-tip
-Para añadir costes como resultado, haga clic en Model {{< fa arrow-right >}} Properties {{< fa arrow-right >}} Analysis
+Para añadir costos como resultado, haga clic en Model {{< fa arrow-right >}} Properties {{< fa arrow-right >}} Analysis
 :::
 
-| Description                             | Base Case Value | Parameter Name |
-|-----------------------------------------|-----------------|----------------|
-| Coste de las lesiones leves o moderadas | COP 2,000,000   | c_mod          |
-| Coste de las lesiones graves            | COP 40,000,000  | c_grave        |
-| Coste de la lesión mortal               | COP 0           | c_fatalidad    |
-| Coste de las secuelas leves/moderadas   | COP 1,000,000   | c_sec_mod      |
-| Coste de las secuelas graves            | COP 4,000,000   | c_sec_grave    |
+| Descripción                             | Valor Inicial  | Nombre de parámetro |
+|--------------------------------------|-----------------|-----------------|
+| Costo de las lesiones leves o moderadas | COP 2,000,000  | c_mod               |
+| Costo de las lesiones graves            | COP 40,000,000 | c_grave             |
+| Costo de la lesión mortal               | COP 0          | c_fatalidad         |
+| Costo de las secuelas leves/moderadas   | COP 1,000,000  | c_sec_mod           |
+| Costo de las secuelas graves            | COP 4,000,000  | c_sec_grave         |
 
 ::: {.callout-warning appearance="minimal"}
-¿En qué porcentaje reduce cada estrategia política los costes globales de las lesiones por fuegos artificiales en Colombia?
+¿En qué porcentaje reduce cada estrategia política los costos globales de las lesiones por fuegos artificiales en Colombia?
 :::
