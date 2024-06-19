@@ -98,7 +98,7 @@ fig-align="center" width="255"}
 ::: {.fragment .fade-in-then-semi-out}
 -   {{< fa check-circle >}} Análisis comparativo de cursos de acción
     alternativos.
-    -   Nos centraremos en esto en la próxima sesión.
+    -   Nos centraremos en esto más adelante.
 :::
 :::
 
@@ -107,7 +107,7 @@ fig-align="center" width="255"}
 <br>
 
 | Tipo de estudio    | Medición/valoración de costos | Identificación de consecuencias | Medición / valoración de consecuencias |
-|------------------|------------------|------------------|--------------------|
+|------------------|------------------|------------------|-------------------|
 | Análisis de costos | Unidades monetarias           | Ninguno                         | Ninguno                                |
 
 ::: footer
@@ -132,10 +132,10 @@ Fuente: [@drummond2015a]
 
 <br>
 
-| Tipo de estudio                            | Medición/Valoración de costos ambas alternativas | Identificación de consecuencias                                                           | Medición/Valoración de consecuencias                                                                                                    |
+| Tipo de estudio                            | Medición/Valoración de costos s             | Identificación de consecuencias                                                           | Medición/Valoración de consecuencias                                                                                                    |
 |------------------|------------------|------------------|-------------------|
-| [Análisis de costos]{style="color: gris;"} | [Unidades monetarias]{style="color: grey;"}      | [Ninguno]{style="color: grey;"}                                                           | [Ninguno]{style="color: grey;"}                                                                                                         |
-| Análisis costo-efectividad                 | Unidades monetarias                              | Efecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados. | Unidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.) |
+| [Análisis de costos]{style="color: gris;"} | [Unidades monetarias]{style="color: grey;"} | [Ninguno]{style="color: grey;"}                                                           | [Ninguno]{style="color: grey;"}                                                                                                         |
+| Análisis costo-efectividad                 | Unidades monetarias                         | Efecto único de interés, común a ambas alternativas, pero alcanzado en diferentes grados. | Unidades naturales (por ejemplo, años de vida ganados, días de incapacidad ahorrados, puntos de reducción de la presión arterial, etc.) |
 
 ::: footer
 Fuente: [@drummond2015a]
@@ -152,7 +152,7 @@ común a todas las estrategias
 -   Los costos se valoran en términos monetarios (\$)
 -   Los beneficios se valoran en términos de resultados clínicos (por
     ejemplo, casos prevenidos o curados, vidas salvadas, años de vida
-    ganados, años de vida ganados ajustados a la calidad)
+    ganados)
 -   Los resultados se presentan como una razón costo-efectividad
 
 ## Análisis Costo-Efectividad
@@ -190,13 +190,6 @@ Fuente: [@drummond2015a]
 -   Año de vida ajustado por calidad (AVAC): Una métrica que refleja
     tanto la cantidad como la calidad de vida (dolor, función o ambos).
 -   Es la forma de evaluación económica más publicada.
-:::
-
-::: fragment
-::: {.callout-note appearance="simple"}
-A lo largo del taller nos centraremos principalmente en el ACE
-(especialmente en el ACU).
-:::
 :::
 
 ## Técnicas de evaluación económica {.smaller}
@@ -553,7 +546,7 @@ LA PERSPECTIVA IMPORTA -- <br> <br>
     mejor las implicaciones implicaciones de la toma de decisiones.
 :::
 
-## ¿La perspectiva de quién? 
+## ¿La perspectiva de quién?
 
 <br>
 

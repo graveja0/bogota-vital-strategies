@@ -106,7 +106,7 @@ fig-align="center" width="255"}
 <br>
 
 | Type of study | Measurement/valuation of costs | Identification of consequences | Measurement / valuation of consequences |
-|---------------|--------------------------------|--------------------------------|-----------------------------------------|
+|----------------|-----------------|-----------------|----------------------|
 | Cost analysis | Monetary units                 | None                           | None                                    |
 
 ::: footer
@@ -130,10 +130,10 @@ Source: [@drummond2015a]
 
 <br>
 
-| Type of study                         | Measurement/Valuation of costs both alternative | Identification of consequences                                                             | Measurement / valuation of consequences                                                                  |
-|---------------------------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
-| [Cost analysis]{style="color: grey;"} | [Monetary units]{style="color: grey;"}          | [None]{style="color: grey;"}                                                               | [None]{style="color: grey;"}                                                                             |
-| Cost-effectiveness analysis           | Monetary units                                  | Single effect of interest, common to both alternatives, but achieved to different degrees. | Natural units (e.g., life-years gained, disability days saved, points of blood pressure reduction, etc.) |
+| Type of study                         | Measurement/Valuation of costs         | Identification of consequences                                                             | Measurement / valuation of consequences                                                                  |
+|---------------|---------------|--------------------|-----------------------|
+| [Cost analysis]{style="color: grey;"} | [Monetary units]{style="color: grey;"} | [None]{style="color: grey;"}                                                               | [None]{style="color: grey;"}                                                                             |
+| Cost-effectiveness analysis           | Monetary units                         | Single effect of interest, common to both alternatives, but achieved to different degrees. | Natural units (e.g., life-years gained, disability days saved, points of blood pressure reduction, etc.) |
 
 ::: footer
 Source: [@drummond2015a]
@@ -148,8 +148,7 @@ budget, and the relevant outcome is common across strategies
 
 -   Costs are valued in monetary terms (\$)
 -   Benefits are valued in terms of clinical outcomes (e.g., cases
-    prevented or cured, lives saved, years of life gained,
-    quality-adjusted life years gained)
+    prevented or cured, lives saved, years of life gained)
 -   Results reported as a cost-effectiveness ratio
 
 ## Cost-Effectiveness Analysis
@@ -169,7 +168,7 @@ budget, and the relevant outcome is common across strategies
 ## Techniques for Economic Evaluation {.smaller}
 
 | Type of study                                       | Measurement/Valuation of costs both alternative | Identification of consequences                                                                                     | Measurement / valuation of consequences                                                                                          |
-|-----------------------------------------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+|---------------|---------------|--------------------|-----------------------|
 | [Cost analysis]{style="color: grey;"}               | [Monetary units]{style="color: grey;"}          | [None]{style="color: grey;"}                                                                                       | [None]{style="color: grey;"}                                                                                                     |
 | [Cost-effectiveness analysis]{style="color: grey;"} | [Monetary units]{style="color: grey;"}          | [Single effect of interest, common to both alternatives, but achieved to different degrees.]{style="color: grey;"} | [Natural units (e.g., life-years gained, disability days saved, points of blood pressure reduction, etc.)]{style="color: grey;"} |
 | Cost-utility analysis                               | Monetary units                                  | Single or multiple effects, not necessarily common to both alternatives.                                           | Healthy years (typically measured as quality-adjusted life-years)                                                                |
@@ -189,17 +188,11 @@ Source: [@drummond2015a]
 -   By far the most widely published form of economic evaluation.
 :::
 
-::: fragment
-::: {.callout-note appearance="simple"}
-We will focus mostly on CEA (especially CUA) throughout the workshop
-:::
-:::
-
 ## Techniques for Economic Evaluation {.smaller}
 
 ::: {style="font-size: 0.8em"}
 | Type of study                                       | Measurement/Valuation of costs both alternative | Identification of consequences                                                                                     | Measurement / valuation of consequences                                                                                          |
-|-----------------------------------------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
+|---------------|---------------|--------------------|-----------------------|
 | [Cost analysis]{style="color: grey;"}               | [Monetary units]{style="color: grey;"}          | [None]{style="color: grey;"}                                                                                       | [None]{style="color: grey;"}                                                                                                     |
 | [Cost-effectiveness analysis]{style="color: grey;"} | [Monetary units]{style="color: grey;"}          | [Single effect of interest, common to both alternatives, but achieved to different degrees.]{style="color: grey;"} | [Natural units (e.g., life-years gained, disability days saved, points of blood pressure reduction, etc.)]{style="color: grey;"} |
 | [Cost-utility analysis]{style="color: grey;"}       | [Monetary units]{style="color: grey;"}          | [Single or multiple effects, not necessarily common to both alternatives.]{style="color: grey;"}                   | [Healthy years (typically measured as quality-adjusted life-years)]{style="color: grey;"}                                        |
