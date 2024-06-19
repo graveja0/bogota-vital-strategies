@@ -1,5 +1,5 @@
 ---
-title: "Firework Injury: Markov Model"
+title: "Caso de estudio: Modelos de Markov"
 format:
   html:
     toc: false
