@@ -342,6 +342,8 @@ Esta es la TÉCNICA APUESTA ESTÁNDAR
 ![](images/paste-BAEB413C.png){fig-align="center" width="600"}
 :::
 
+
+::: {style="font-size: 0.8em"}
 ::: fragment
 U(Post-derrame cerebral) \* 40 años = U(Salud perfecta) \* 25 años +
 U(Muerto) \* 15 años
@@ -349,6 +351,7 @@ U(Muerto) \* 15 años
 U(Después de la apoplejía) \* 40 años = 1 \* 25 años + 0 \* 15 años
 
 U(Después de la apoplejía) = 25/40 = 0,625
+:::
 :::
 
 ## Apuesta estándar (AE) vs TTO
@@ -382,9 +385,8 @@ La escala visual analógica (EVA) es una escala de valoración muy
 utilizada.
 
 ::: fragment
-Fuente:
-https://assessment-module.yale.edu/im-palliative/visual-analogue-scale\](images/paste-B88DC3D6.png){alt="Fuente:
-https://assessment-module.yale.edu/im-palliative/visual-analogue-scale"}
+![Fuente:
+https://assessment-module.yale.edu/im-palliative/visual-analogue-scale](images/paste-B88DC3D6.png){alt="Source: https://assessment-module.yale.edu/im-palliative/visual-analogue-scale"}
 :::
 
 ## Métodos directos: Escalas de valoración
@@ -394,7 +396,6 @@ https://assessment-module.yale.edu/im-palliative/visual-analogue-scale"}
     uso de otros métodos
 -   Muy subjetivos y propensos a respuestas extremas. Generalmente,
     utilidades para **EVA \< TTO \< AE**
-
 
 ## Métodos indirectos: EQ-5D {.smaller}
 
@@ -461,7 +462,6 @@ MEDIDAS INDIRECTAS DE UTILIDAD <br>
     UCSD para obtener acceso.
 :::
 
-
 ## AVAD
 
 <br>
@@ -478,7 +478,7 @@ MEDIDAS INDIRECTAS DE UTILIDAD <br>
 
 ## AVAD
 
-[![](images/DALY_disability_affected_life_year_infographic.svg){width="1500"}](https://en.wikipedia.org/wiki/Disability-adjusted_life_year)
+[![](images/AVAD_disability_affected_life_year_infographic.svg){width="1500"}](https://en.wikipedia.org/wiki/Disability-adjusted_life_year)
 
 ::: fragment
 **AVAD = AVP + AVD**
@@ -487,8 +487,9 @@ MEDIDAS INDIRECTAS DE UTILIDAD <br>
 -   AVD (Años vividos con discapacidad)
 :::
 
-## DALYs = AVP + AVD
+## AVADs = AVP + AVD
 
+::: {style="font-size: 0.8em"}
 -   **Años de vida perdidos (AVP):** cambios en la esperanza de vida,
     calculados a partir de la comparación con la tabla de vida sintética
 
@@ -498,6 +499,7 @@ MEDIDAS INDIRECTAS DE UTILIDAD <br>
     -   Años de vida ganados = 20 años
 
     -   ¿AVP?
+:::
 
 ## Tabla de vida sintética, de referencia
 
@@ -541,7 +543,7 @@ Fuente:
 http://ghdx.healthdata.org/record/ihme-data/global-burden-disease-study-2019-gbd-2019-reference-life-table
 :::
 
-## DALYs = AVP + AVD
+## AVAD = AVP + AVD
 
 ::: nonincremental
 -   Años de vida perdidos (AVP): cambios en la esperanza de vida,
@@ -562,7 +564,7 @@ http://ghdx.healthdata.org/record/ihme-data/global-burden-disease-study-2019-gbd
 :::
 :::
 
-## DALYs = AVP + AVD
+## AVAD = AVP + AVD
 
 -   Años vividos con discapacidad (AVD): calculados de forma similar a
     los AVAC, peso de la utilidad ≈ 1 - peso de la discapacidad
