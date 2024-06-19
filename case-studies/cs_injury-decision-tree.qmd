@@ -77,7 +77,7 @@ There are very likely many minor and moderate injuries that go unreported in off
 | Probability Injury is Mild or Moderate | 0.7 = 1 - p_severe | 1 - p_severe   |
 | Probability Injury is Fatal            | 0.0046             | p_fatality     |
 
-We will also assume that a small percentage (15%) of individuals with mild/moderate injuries experience long-term consequences (i.e., 85% recover), while the majority (60%) of those with severe injuries do not fully recover and experience long-term complications.
+We will also assume that a small percentage (15%) of individuals with mild/moderate injuries experience long-term consequences (i.e., 85% recover), while the majority (90%) of those with severe injuries do not fully recover and experience long-term complications.
 
 | Description                                   | Base Case Value | Parameter Name    |
 |----------------------------------|-------------------|-------------------|

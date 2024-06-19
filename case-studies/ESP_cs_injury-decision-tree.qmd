@@ -1,5 +1,5 @@
 ---
-title: "Árbol de decisiones sobre lesiones por fuegos artificiales"
+title: "Lesiones por pólvora pirotécnica"
 format:
   html:
     toc: false
@@ -71,13 +71,13 @@ Es muy probable que haya muchas lesiones leves y moderadas que no figuren en las
 :::
 
 | Descripción                            | Valor Inicial     | Nombre de parámetro |
-|-----------------------------------|-------------------|-------------------|
+|----------------------------------|-------------------|-------------------|
 | Probabilidad de lesión                 | 0.0000292         | p_lesión            |
 | Probabilidad de lesiones graves        | 0.30              | p_grave             |
 | Probabilidad de lesión leve o moderada | 0.7 = 1 - p_grave | 1 - p_grave         |
 | Probabilidad de lesión mortal          | 0.0046            | p_fatalidad         |
 
-También supondremos que un pequeño porcentaje (15%) de las personas con lesiones leves/moderadas sufren secuelas a largo plazo (es decir, se recuperan en un 85%), mientras que la mayoría (60%) de las personas con lesiones graves no se recuperan totalmente y sufren complicaciones a largo plazo.
+También supondremos que un pequeño porcentaje (15%) de las personas con lesiones leves/moderadas sufren secuelas a largo plazo (es decir, se recuperan en un 85%), mientras que la mayoría (90%) de las personas con lesiones graves no se recuperan totalmente y sufren complicaciones a largo plazo.
 
 | Descripción                                        | Valor Inicial | Nombre de parámetro |
 |----------------------------------|-------------------|-------------------|
@@ -139,7 +139,7 @@ Puede introducir el tamaño de la cohorte haciendo clic en Modelo {{< fa arrow-r
 \*Cree una versión duplicada de su árbol "No hacer nada" para construir ramas separadas para los escenarios "Prohibir" y "Regular". En cada uno de ellos, la probabilidad de lesión debe modificarse mediante un parámetro de reducción del riesgo relativo con valores basados en el texto anterior y la tabla siguiente.
 
 | Descripción                                                                               | Valor inicial | Nombre del parámetro |
-|------------------------------------|------------------|------------------|
+|-----------------------------------|-------------------|-------------------|
 | Reducción relativa del riesgo: probabilidad de lesión en la hipótesis de la política "Ban | 0.40          | rr_lesión_prohibir   |
 | Reducción relativa del riesgo: probabilidad de lesión en el escenario político "Regular   | 0.80          | rr_lesión_regular    |
 
@@ -170,7 +170,7 @@ Para añadir costos como resultado, haga clic en Model {{< fa arrow-right >}} Pr
 :::
 
 | Descripción                             | Valor Inicial  | Nombre de parámetro |
-|--------------------------------------|-----------------|-----------------|
+|------------------------------------|------------------|------------------|
 | Costo de las lesiones leves o moderadas | COP 2,000,000  | c_mod               |
 | Costo de las lesiones graves            | COP 40,000,000 | c_grave             |
 | Costo de la lesión mortal               | COP 0          | c_fatalidad         |

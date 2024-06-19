@@ -286,7 +286,6 @@ $C_0$
 
 $$\frac{\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad}{\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad}$$
 
-
 ::: r-hstack
 ::: {data-id="benefitA" style="color: #3FA090;"}
 $E_0$
@@ -346,9 +345,29 @@ $$
 :::
 :::
 
+<!-- # Example: Neurologic Disease -->
+
+<!-- ## Neurologic Disease Decision Tree -->
+
+<!-- - Consider a neurologic disease that blocks a certain cell receptor in the brain.  -->
+
+<!-- - If left untreated, the disease is lethal for 50 out of every 1,000 people. -->
+
+<!-- ## Neurologic Disease Decision Tree -->
+
+<!-- - A hypothetical new treatment reduces the mortality rate to to 15 out of every 1,000, but only among people with the certain cell receptor.  -->
+
+<!-- - Among people without the receptor, the treatment confers a 1% probability of death.  -->
+
+<!-- ## Neurologic Disease Decision Tree -->
+
+<!-- - Rather than treat none or treat all suspected with the disease, a biopsy option is available. -->
+
+<!-- - TK -->
+
+
 ## Neurologic Disease Decision Tree
 
-(From yesterday)
 
 ![](images/cea-example1.png)
 
