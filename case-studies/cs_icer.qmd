@@ -13,7 +13,6 @@ format:
 Please note that you can download PDF and Microsoft Word versions of this case study using the links on the right.
 :::
 
-
 # Case 1 Description
 
 You seek to explore different drug strategies to treat HIV infection. Single agent therapy with retrocyclovir at 200mg per day has a mean discounted lifetime cost of \$20,000 and results in a quality-adjusted life expectancy of 70 years. Single agent therapy with retrocyclovir at 400mg per day has a mean discounted lifetime cost of \$22,000 and a quality adjusted life expectancy of 65 years (given the increased incidence of side effects with the higher dose). Another drug, centroflexavir (which comes only in one dose of 250 mg/day) has a mean total lifetime cost of \$10,000 and a quality-adjusted life expectancy of 50 years. The combination of centroflexavir with low-dose retrocyclovir has a mean-life time cost of \$40,000 and an average quality adjusted life expectancy of 80 years, while the combination of centroflexavir with high-dose retrocyclovir has a mean lifetime cost of \$35,000 and a quality-adjusted life expectancy of 75 years.
@@ -50,6 +49,16 @@ Newer ARTs are also available and their lifetime costs/QALYs are detailed below:
 
 <!-- ![](images/cs_icer_ans_1.1.4.png)    -->
 
+| Strategy | Discounted Costs | Discounted QALYs | Incremental Costs | Incremental QALYs | ICER (\$/QALY) |
+|------------|------------|------------|------------|------------|------------|
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
+|          |                  |                  |                   |                   |                |
 
 : Treatment Options
 
@@ -78,17 +87,6 @@ Newer ARTs are also available and their lifetime costs/QALYs are detailed below:
 |          |                  |                  |                   |                   |                |
 
 : ICER Calculation Table 2 {tbl-colwidths="\[20,20,20,20,20,20\]"}
-
-| Strategy | Discounted Costs | Discounted QALYs | Incremental Costs | Incremental QALYs | ICER (\$/QALY) |
-|------------|------------|------------|------------|------------|------------|
-|          |                  |                  |                   |                   |                |
-|          |                  |                  |                   |                   |                |
-|          |                  |                  |                   |                   |                |
-|          |                  |                  |                   |                   |                |
-|          |                  |                  |                   |                   |                |
-|          |                  |                  |                   |                   |                |
-|          |                  |                  |                   |                   |                |
-|          |                  |                  |                   |                   |                |
 
 : ICER Calculation Table 3 {tbl-colwidths="\[20,20,20,20,20,20\]"}
 
