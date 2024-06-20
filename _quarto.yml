@@ -37,7 +37,10 @@ website:
         href: https://graveja0.github.io/dalys/
       - text: Taller de modelado intermedio
         href: https://smdm-europe23-what-they-didnt-teach.netlify.app
-      
+      - text: Basic Markov Cohort Modeling in R
+        href: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9742144/
+      - text: Time-Dependent Markov Modeling in R
+        href: https://journals.sagepub.com/doi/full/10.1177/0272989X221121747
       - href: about.qmd
         text: Instructores
 
