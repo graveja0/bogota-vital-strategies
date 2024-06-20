@@ -50,7 +50,7 @@ También se dispone de nuevos antirretrovirales, cuyos costes y AVAC a lo largo 
 <!-- ![](images/cs_icer_ans_1.1.4.png)    -->
 
 | Estrategia | Costos descontados | AVAC descontados | Costos incrementales | Incremento de AVAC | ICER (\$/AVAC) |
-|------------|------------|------------|------------|------------|------------|
+|------------|--------------------|------------------|----------------------|--------------------|----------------|
 |            |                    |                  |                      |                    |                |
 |            |                    |                  |                      |                    |                |
 |            |                    |                  |                      |                    |                |
@@ -63,7 +63,7 @@ También se dispone de nuevos antirretrovirales, cuyos costes y AVAC a lo largo 
 : Opciones de tratamiento
 
 | Estrategia | Costos descontados | AVAC descontados | Costos incrementales | Incremento de AVAC | ICER (\$/AVAC) |
-|------------|------------|------------|------------|------------|------------|
+|------------|--------------------|------------------|----------------------|--------------------|----------------|
 |            |                    |                  |                      |                    |                |
 |            |                    |                  |                      |                    |                |
 |            |                    |                  |                      |                    |                |
@@ -76,7 +76,7 @@ También se dispone de nuevos antirretrovirales, cuyos costes y AVAC a lo largo 
 : Cálculo del ICER Tabla 1 {tbl-colwidths="\[20,20,20,20,20,20\]"}
 
 | Estrategia | Costos descontados | AVAC descontados | Costos incrementales | Incremento de AVAC | ICER (\$/AVAC) |
-|------------|------------|------------|------------|------------|------------|
+|------------|--------------------|------------------|----------------------|--------------------|----------------|
 |            |                    |                  |                      |                    |                |
 |            |                    |                  |                      |                    |                |
 |            |                    |                  |                      |                    |                |
@@ -113,7 +113,7 @@ A continuación se muestra una tabla con los costes y los años de vida ajustado
 : Cost and QALY Outcomes, by Strategy
 
 | Estrategia | Costos descontados | AVAC descontados | Costos incrementales | Incremento de AVAC | ICER (\$/AVAC) |
-|------------|------------|------------|------------|------------|------------|
+|------------|--------------------|------------------|----------------------|--------------------|----------------|
 |            |                    |                  |                      |                    |                |
 |            |                    |                  |                      |                    |                |
 |            |                    |                  |                      |                    |                |
@@ -123,7 +123,7 @@ A continuación se muestra una tabla con los costes y los años de vida ajustado
 : Cálculo del ICER Tabla 1 {tbl-colwidths="\[20,20,20,20,20,20\]"}
 
 | Estrategia | Costos descontados | AVAC descontados | Costos incrementales | Incremento de AVAC | ICER (\$/AVAC) |
-|------------|------------|------------|------------|------------|------------|
+|------------|--------------------|------------------|----------------------|--------------------|----------------|
 |            |                    |                  |                      |                    |                |
 |            |                    |                  |                      |                    |                |
 |            |                    |                  |                      |                    |                |

@@ -14,15 +14,15 @@ self-contained: true
 
 # Introducción y visión general del problema de decisión{{< fa regular clipboard >}}
 
-Este estudio de caso amplía nuestra evaluación de las lesiones por fuegos artificiales mediante un modelo de cohortes de Markov en tiempo discreto. Mientras que el árbol de decisión que construimos ayer proporcionaba resultados y costes inmediatos para diversas estrategias, el modelo de Markov ofrece ventajas significativas para examinar las repercusiones a largo plazo sobre la salud y los costes.
+Este estudio de caso amplía nuestra evaluación de las lesiones por fuegos artificiales mediante un modelo de cohortes de Markov en tiempo discreto. Mientras que el árbol de decisión que construimos ayer proporcionaba resultados y costos inmediatos para diversas estrategias, el modelo de Markov ofrece ventajas significativas para examinar las repercusiones a largo plazo sobre la salud y los costos.
 
-Nuestro modelo de Markov nos permitirá captar la progresión de las lesiones relacionadas con los incendios a lo largo de un periodo prolongado, lo que nos permitirá considerar las implicaciones a largo plazo. Al modelizar los eventos lesionales y las transiciones entre diferentes estados de salud a lo largo del tiempo, podemos comprender mejor los efectos crónicos de las lesiones y los beneficios a largo plazo de las estrategias de intervención.
+Nuestro modelo de Markov nos permitirá captar la progresión de las lesiones relacionadas con los fuegos artificiales a lo largo de un periodo prolongado, lo que nos permitirá considerar las implicaciones a largo plazo. Al modelizar los eventos lesionales y las transiciones entre diferentes estados de salud a lo largo del tiempo, podemos comprender mejor los efectos crónicos de las lesiones y los beneficios a largo plazo de las estrategias de intervención.
 
-Este enfoque proporcionará una evaluación más completa de las repercusiones sanitarias y económicas a lo largo de la vida de las estrategias propuestas, teniendo en cuenta factores como los costes sanitarios a largo plazo, los cambios en las tasas de lesiones y los niveles de cumplimiento. La capacidad del modelo de Markov para incorporar estos horizontes más amplios y los sucesos recurrentes proporcionará una visión más profunda de los enfoques más eficaces y sostenibles para mitigar las lesiones relacionadas con los incendios en Colombia.
+Este enfoque proporcionará una evaluación más completa de las repercusiones sanitarias y económicas a lo largo de la vida de las estrategias propuestas, teniendo en cuenta factores como los costos sanitarios a largo plazo, los cambios en las tasas de lesiones y los niveles de cumplimiento. La capacidad del modelo de Markov para incorporar estos horizontes más amplios y los sucesos recurrentes proporcionará una visión más profunda de los enfoques más eficaces y sostenibles para mitigar las lesiones relacionadas con los fuegos artificiales en Colombia.
 
 # 1. Modelo vivo-muerto
 
-Empezaremos por construir un modelo de Markov sencillo que represente sólo dos estados de salud: "Vivo" y "Muerto". Supondremos que los individuos pueden pasar de un estado a otro en función de las probabilidades de supervivencia calculadas a partir de los datos demográficos de la tabla de vida de Colombia. Una vez que validemos que podemos replicar con éxito la esperanza de vida desde el nacimiento, podemos empezar a aumentar el modelo con lesiones, estrategias, costes, etc. de los fuegos artificiales.
+Empezaremos por construir un modelo de Markov sencillo que represente sólo dos estados de salud: "Vivo" y "Muerto". Supondremos que los individuos pueden pasar de un estado a otro en función de las probabilidades de supervivencia calculadas a partir de los datos demográficos de la tabla de vida de Colombia. Una vez que validemos que podemos replicar con éxito la esperanza de vida desde el nacimiento, podemos empezar a aumentar el modelo con lesiones, estrategias, costos, etc. de los fuegos artificiales.
 
 ## Estructura de Markov: Vivo-Muerto
 
@@ -64,7 +64,7 @@ Complete la estructura del modelo de Markov utilizando la información anterior.
 
 ![](images/clipboard-1176592840.png){fig-align="center" width="500"}
 
--   En la Cadena de Markov <img src="../amua-images/markovChain_24.png" alt="Custom Icon" width="20" height="20"/> , cambie las probabilidades iniciales de los estados de salud. Como todos los pacientes empiezan en el estado Vivo, cambie el p:0 de la izquierda del estado Local a p:1 (vea el cuadro azul de abajo).
+-   En la Cadena de Markov <img src="../amua-images/markovChain_24.png" alt="Custom Icon" width="20" height="20"/> , cambie las probabilidades iniciales de los estados de salud. Como todos los pacientes empiezan en el estado Vivo, cambie el p:0 de la izquierda del estado Vivo a p:1 (vea el cuadro azul de abajo).
 
 ![](images/clipboard-948912894.png){fig-align="center" width="600"}
 
@@ -96,7 +96,7 @@ Por lo tanto, definiremos `p_die` como una **variable** <img src="../amua-images
 Una tabla de consulta devuelve el valor que corresponde a un índice determinado. La primera columna de una tabla de consulta contiene los índices de la tabla, y pueden definirse una o varias columnas de valores de consulta. Los valores de los índices deben ser únicos y estar en orden ascendente. Hay 3 métodos de búsqueda, (1) exacto, (2) interpolar, y (3) truncar, para más detalles sobre estos métodos visite el [Amua Wiki en GitHub](https://github.com/zward/Amua/wiki/Tables).
 :::
 
-Primero definimos una tabla de consulta <img src="../amua-images/table_16.png" alt="Custom Icon" width="20" height="20"/> tbl_death para leer la mortalidad de fondo dependiente de la edad construida a partir de las tablas de vida colombinas.
+Primero definimos una tabla de consulta <img src="../amua-images/table_16.png" alt="Custom Icon" width="20" height="20"/> tbl_death para leer la mortalidad de fondo dependiente de la edad construida a partir de las tablas de vida Colombianas.
 
 ### Descarga de datos
 
@@ -119,7 +119,7 @@ La primera columna de una tabla se utiliza siempre para la indexación en las ta
 :::
 
 ::: callout-tip
-En Amua, "***t***" es una variable integrada que registra el número de ciclos. Se actualiza automáticamente cuando se ejecuta el modelo. Por ejemplo, en el ciclo 10\^\^ del modelo de Markov, *t = 10*. Por lo tanto, en la fórmula "tbl_p_die\[edad_inicial + *t*, 1\]", edad_inicial + *t* será igual a la edad modelada del individuo en el ciclo *t*, y la fórmula completa leerá la mortalidad de fondo dependiente de la edad basada en la edad actual del individuo (en lugar de la edad inicial).
+En Amua, "***t***" es una variable integrada que registra el número de ciclos. Se actualiza automáticamente cuando se ejecuta el modelo. Por ejemplo, en el ciclo 10 del modelo de Markov, *t = 10*. Por lo tanto, en la fórmula "tbl_p_die\[edad_inicial + *t*, 1\]", edad_inicial + *t* será igual a la edad modelada del individuo en el ciclo *t*, y la fórmula completa leerá la mortalidad de fondo dependiente de la edad basada en la edad actual del individuo (en lugar de la edad inicial).
 
 Amua utiliza por defecto un tiempo de ciclo de $t=0$. Por lo tanto, si pulsa "Evaluar", el campo Valor esperado debería calcular la probabilidad de muerte de un recién nacido como se muestra en la tabla de consulta .csv.
 :::
@@ -136,11 +136,11 @@ Ahora tenemos definidas todas las probabilidades de transición. Añada estas en
 
 ## Recompensas
 
-La recompensa por defecto en Amua es el coste. Tenemos que cambiar esto para tener la esperanza de vida (LE) como una recompensa. Ir a Modelo {{< fa arrow-right >}} Propiedades {{< fa arrow-right >}} seleccione la pestaña Análisis y cambie la dimensión de coste a LE. Utilice LE como símbolo y ajuste a 4 decimales.
+La recompensa por defecto en Amua es el costo. Tenemos que cambiar esto para tener la esperanza de vida (EV) como una recompensa. Ir a Modelo {{< fa arrow-right >}} Propiedades {{< fa arrow-right >}} seleccione la pestaña Análisis y cambie la dimensión de costo a EV. Utilice EV como símbolo y ajuste a 4 decimales.
 
 ![](images/clipboard-896605952.png){fig-align="center" width="500"}
 
-Añada la esperanza de vida a la izquierda de cada estado de salud después de "R: (LE)".
+Añada la esperanza de vida a la izquierda de cada estado de salud después de "R: (EV)".
 
 ![](images/clipboard-2710970859.png){fig-align="center" width="400"}
 
@@ -194,14 +194,14 @@ A continuación, tenemos que añadir un "rastreador" de una sola vez para regist
 
 ## Cambiar el tamaño de la cohorte
 
-Nuestro modelo actual está estructurado para un tamaño de cohorte de 1 individuo. Esto suele ser útil -especialmente para calcular la esperanza de vida como resultado-, pero utilizar otros tamaños de cohorte puede ser útil para producir información relevante para la toma de decisiones políticas.
+Nuestro modelo actual está estructurado para un tamaño de cohorte de 1 individuo. Esto suele ser útil, especialmente para calcular la esperanza de vida como resultado, pero utilizar otros tamaños de cohorte puede ser útil para producir información relevante para la toma de decisiones políticas.
 
 Ahora cambiaremos el modelo de modo que capturemos la experiencia vital de una cohorte de 100.000 recién nacidos. Esto nos permitirá modelizar el número esperado de lesiones totales y mortales por fuegos artificiales a lo largo de la vida para una cohorte grande y, finalmente, ver cómo disminuye el número total de lesiones a lo largo de la vida bajo diferentes opciones políticas.
 
 -   Ir a Modelo {{< fa arrow-right >}} Propiedades {{< fa arrow-right >}} seleccione la pestaña Simulación. Cambie el tamaño de la cohorte a 100.000.
 
 ::: callout-tip
-Su resultado de esperanza de vida (EV) devolverá ahora el *total* de años de vida esperados para una cohorte de 100.000 personas. Para obtener un resultado de esperanza de vida estándar, puede redefinir el "resultado" para el resultado LE como $1/100000$.
+Su resultado de esperanza de vida (EV) devolverá ahora el *total* de años de vida esperados para una cohorte de 100.000 personas. Para obtener un resultado de esperanza de vida estándar, puede redefinir el "resultado" para el resultado EV como $1/100000$.
 
 ![](images/clipboard-2682716973.png){fig-align="center" width="300"}
 :::
@@ -220,7 +220,7 @@ Después de ejecutar el modelo, verá los resultados esperados en la parte infer
 
 Amua también mostrará una nueva ventana con una figura y una tabla de hoja de cálculo. La figura muestra el número total de personas de la cohorte en cada estado de salud ("Vivo" y "Muerto") en cada ciclo del modelo. La tabla de la hoja de cálculo contiene la información trazada (en las columnas "Vivo" y "Muerto"), así como los cálculos específicos de cada ciclo para la esperanza de vida y el recuento de lesiones.
 
-Las columnas que empiezan por `Cum_` son recuentos acumulados de cada resultado. El resultado que se muestra a continuación, por ejemplo, indica que en el ciclo $t=20$ (que corresponde a la edad=20 de nuestra cohorte), se prevén 58.951 lesiones relacionadas con incendios en nuestra cohorte de 100.000 recién nacidos.
+Las columnas que empiezan por `Cum_` son recuentos acumulados de cada resultado. El resultado que se muestra a continuación, por ejemplo, indica que en el ciclo $t=20$ (que corresponde a la edad=20 de nuestra cohorte), se prevén 58.951 lesiones relacionadas con fuegos artificiales en nuestra cohorte de 100.000 recién nacidos.
 
 ::: column-page
 ![](images/clipboard-3937417551.png)
@@ -278,7 +278,7 @@ Recuerda que puedes "copiar" y "pegar" árboles para reducir la cantidad de trab
 :::
 
 | Descripción                                                                               | Valor Inicial | Nombre de parámetro |
-|------------------------------------|------------------|------------------|
+|-----------------------------------|------------------|------------------|
 | Reducción relativa del riesgo: probabilidad de lesión en la hipótesis de la política "Ban | 0.40          | rr_lesión_prohibir  |
 | Reducción relativa del riesgo: probabilidad de lesión en el escenario político "Regular   | 0.80          | rr_lesión_regular   |
 
@@ -287,7 +287,7 @@ Recuerda que puedes "copiar" y "pegar" árboles para reducir la cantidad de trab
 Añada nodos de azar (tras la lesión inicial) y estados de salud a largo plazo (cadena de Markov) correspondientes a la recuperación frente a las secuelas de la lesión:
 
 | Description                                        | Base Case Value | Parameter Name    |
-|-----------------------------------|-------------------|-------------------|
+|----------------------------------|-------------------|-------------------|
 | Probabilidad de lesiones graves                    | 0.30            | p_grave           |
 | Probabilidad de lesión leve o moderada             | 0.70            | p_mod             |
 | Probabilidad de recuperación: Lesión leve/moderada | 0.85            | p_recuperar_mod   |
