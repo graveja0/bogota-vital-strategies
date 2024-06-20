@@ -4200,7 +4200,7 @@
     "href": "case-studies/cs_injury-markov.html",
     "title": "Firework Injury: Markov Model",
     "section": "",
-    "text": "This case study extend our evaluation of firework injuries using a discrete time Markov cohort model. While the decision tree we constructed yesterday provided immediate outcomes and costs for various strategies, the Markov model offers significant advantages for examining long-term health and cost impacts.\nOur Markov model will allow us to capture the progression of firework-related injuries over an extended period, allowing us to consider long-term implications. By modeling injury events and transitions between different health states over time, we can better understand the chronic effects of injuries and the long-term benefits of intervention strategies.\nThis approach will provide a more comprehensive assessment of the lifetime health and economic impacts of the proposed strategies, considering factors such as long-term healthcare costs, changes in injury rates, and compliance levels. The Markov model’s ability to incorporate these extended horizons and recurring events will yield deeper insights into the most effective and sustainable approaches to mitigating firework-related injuries in Columbia."
+    "text": "This case study extend our evaluation of firework injuries using a discrete time Markov cohort model. While the decision tree we constructed yesterday provided immediate outcomes and costs for various strategies, the Markov model offers significant advantages for examining long-term health and cost impacts.\nOur Markov model will allow us to capture the progression of firework-related injuries over an extended period, allowing us to consider long-term implications. By modeling injury events and transitions between different health states over time, we can better understand the chronic effects of injuries and the long-term benefits of intervention strategies.\nThis approach will provide a more comprehensive assessment of the lifetime health and economic impacts of the proposed strategies, considering factors such as long-term healthcare costs, changes in injury rates, and compliance levels. The Markov model’s ability to incorporate these extended horizons and recurring events will yield deeper insights into the most effective and sustainable approaches to mitigating firework-related injuries in Colombia."
   },
   {
     "objectID": "case-studies/cs_injury-markov.html#markov-structure-alive-dead",
@@ -4228,7 +4228,7 @@
     "href": "case-studies/cs_injury-markov.html#transition-probabilities",
     "title": "Firework Injury: Markov Model",
     "section": "Transition Probabilities",
-    "text": "Transition Probabilities\nThe underlying transition probability matrix has the following form:\n\n\n\n\n\nHowever, because we are modeling a cohort of newborns until death, we need to include death transition probabilities that vary by age (i.e., cycle) in the model. In other words, there will be a different death probability in each cycle.\n\n\n\n\n\n\nImportant\n\n\n\nIn Amua, time-varying inputs are operationalized as variables  rather than parameters.\nVariables  can be defined to keep track of model events and dynamically update expressions as the model runs. Thus, unlike parameters  which are fixed for a given run of the model, variables can change within a simulation. Variables may change across individuals, allowing heterogeneity to be modeled, or they may change over time.\n\n\nTherefore, we will define p_die as a variable  that references values in a lookup table , following the steps below.\n\n\n\n\n\n\nImportant\n\n\n\nA lookup table returns the value that corresponds to a particular index. The first column in a lookup table contains the table indices, and one or more columns of lookup values can be defined. Index values must be unique and in ascending order. There are 3 lookup methods, (1) exact, (2) interpolate, and (3) truncate, for details about these methods visit the Amua Wiki on GitHub.\n\n\nWe first define a lookup table  tbl_death to read in the age-dependent background mortality constructed from the Columbian life tables.\n\nDownload Data\nDownload the file titled columbia-life-table-death-probabilities.csv from the workshop website. This table contains the age-indexed annual mortality probability for Columbia. A screenshot of the first few rows of this .csv file is shown below. The index column is the age, while p_die is the annual probability of death at each age.\n\n\n\n\n\nGo to the “Tables” panel, click  to add a table, and you should see a “Define Table” window (see screenshot below). Click the Import button  and select the downloaded .csv file to import. The table will automatically be resized to fit the imported data. The first row in the file will be used as table headers.\n\nEnter “tbl_p_die” as the name for this variable. “Lookup” is the default table type (which is what we want here). Choose “Interpolate” as the Lookup Method. Click Save to apply.\nNext, we can define the time-varying variable p_die (which reads from the table we just defined and operates as the background mortality probability in the current model cycle, \\(t\\)).\nMake sure you create a variable and not a parameter. Under “Variables”, click  to add a variable p_die = tbl_p_die[age_initial + t, 1].\n\n\n\n\n\n\nNote\n\n\n\nThe first column of a table is always used for indexing in tables. Therefore, the number “1” here will actually indicate the second column in your table as the corresponding value. You can also use the name of the column to read a value, e.g., tbl_p_die[age_initial + t, “p_die”].\n\n\n\n\n\n\n\n\nTip\n\n\n\nIn Amua, “t” is a built-in variable that tracks the number of cycles. It automatically updates when the model runs. For example, in the 10th cycle on the Markov model, t = 10. Therefore, in the formula “tbl_p_die[age_initial + t, 1]”, age_initial + t will equal the modeled age of the individual in cycle t, and the full formula will read the age-dependent background mortality based on the individual’s current age (instead of the initial age).\nAmua defaults to a cycle time of \\(t=0\\). Therefore, if you hit “Evaluate” the Expected Value field should calculate the death probability for a newborn as shown in the .csv lookup table.\n\n\n\n\n\n\n\nWe now have all transition probabilities defined. Add these inputs to the branches of the model. Remember to add the complementary probabilities using “C” as well."
+    "text": "Transition Probabilities\nThe underlying transition probability matrix has the following form:\n\n\n\n\n\nHowever, because we are modeling a cohort of newborns until death, we need to include death transition probabilities that vary by age (i.e., cycle) in the model. In other words, there will be a different death probability in each cycle.\n\n\n\n\n\n\nImportant\n\n\n\nIn Amua, time-varying inputs are operationalized as variables  rather than parameters.\nVariables  can be defined to keep track of model events and dynamically update expressions as the model runs. Thus, unlike parameters  which are fixed for a given run of the model, variables can change within a simulation. Variables may change across individuals, allowing heterogeneity to be modeled, or they may change over time.\n\n\nTherefore, we will define p_die as a variable  that references values in a lookup table , following the steps below.\n\n\n\n\n\n\nImportant\n\n\n\nA lookup table returns the value that corresponds to a particular index. The first column in a lookup table contains the table indices, and one or more columns of lookup values can be defined. Index values must be unique and in ascending order. There are 3 lookup methods, (1) exact, (2) interpolate, and (3) truncate, for details about these methods visit the Amua Wiki on GitHub.\n\n\nWe first define a lookup table  tbl_death to read in the age-dependent background mortality constructed from the Colombian life tables.\n\nDownload Data\nDownload the file titled Colombia-life-table-death-probabilities.csv from the workshop website. This table contains the age-indexed annual mortality probability for Colombia. A screenshot of the first few rows of this .csv file is shown below. The index column is the age, while p_die is the annual probability of death at each age.\n\n\n\n\n\nGo to the “Tables” panel, click  to add a table, and you should see a “Define Table” window (see screenshot below). Click the Import button  and select the downloaded .csv file to import. The table will automatically be resized to fit the imported data. The first row in the file will be used as table headers.\n\nEnter “tbl_p_die” as the name for this variable. “Lookup” is the default table type (which is what we want here). Choose “Interpolate” as the Lookup Method. Click Save to apply.\nNext, we can define the time-varying variable p_die (which reads from the table we just defined and operates as the background mortality probability in the current model cycle, \\(t\\)).\nMake sure you create a variable and not a parameter. Under “Variables”, click  to add a variable p_die = tbl_p_die[age_initial + t, 1].\n\n\n\n\n\n\nNote\n\n\n\nThe first column of a table is always used for indexing in tables. Therefore, the number “1” here will actually indicate the second column in your table as the corresponding value. You can also use the name of the column to read a value, e.g., tbl_p_die[age_initial + t, “p_die”].\n\n\n\n\n\n\n\n\nTip\n\n\n\nIn Amua, “t” is a built-in variable that tracks the number of cycles. It automatically updates when the model runs. For example, in the 10th cycle on the Markov model, t = 10. Therefore, in the formula “tbl_p_die[age_initial + t, 1]”, age_initial + t will equal the modeled age of the individual in cycle t, and the full formula will read the age-dependent background mortality based on the individual’s current age (instead of the initial age).\nAmua defaults to a cycle time of \\(t=0\\). Therefore, if you hit “Evaluate” the Expected Value field should calculate the death probability for a newborn as shown in the .csv lookup table.\n\n\n\n\n\n\n\nWe now have all transition probabilities defined. Add these inputs to the branches of the model. Remember to add the complementary probabilities using “C” as well."
   },
   {
     "objectID": "case-studies/cs_injury-markov.html#termination-condition",
@@ -4277,7 +4277,7 @@
     "href": "case-studies/cs_injury-markov.html#run-the-model",
     "title": "Firework Injury: Markov Model",
     "section": "Run the Model",
-    "text": "Run the Model\nVerify that your model is able to run by clicking on the  check model button. Once all errors have been fixed,  run the model.\nAfter you run the model, you will see expected outcomes at the bottom of the screen. This information tells us that total life expectancy is 77.04 years and there are an expected 222.07 firework injuries and 1.02 fatal injuries per 100,000 newborns in Columbia.\n\nAmua will also display a new window with a figure and spreadsheet table. The figure shows the total number of people in the cohort in each health state (“Alive” and “Dead”) at each cycle of the model. The spreadsheet table contains the plotted information (in the Alive and Dead columns) as well as cycle-specific calculations for life-expectancy and injury counts.\nThe columns that start with Cum_ are cumulative counts of each outcome. The output below, for example, shows that at cycle \\(t=20\\) (which corresponds to age=20 for our cohort), there are an expected 58.951 firework-related injuries in our cohort of 100,000 newborns."
+    "text": "Run the Model\nVerify that your model is able to run by clicking on the  check model button. Once all errors have been fixed,  run the model.\nAfter you run the model, you will see expected outcomes at the bottom of the screen. This information tells us that total life expectancy is 77.04 years and there are an expected 222.07 firework injuries and 1.02 fatal injuries per 100,000 newborns in Colombia.\n\nAmua will also display a new window with a figure and spreadsheet table. The figure shows the total number of people in the cohort in each health state (“Alive” and “Dead”) at each cycle of the model. The spreadsheet table contains the plotted information (in the Alive and Dead columns) as well as cycle-specific calculations for life-expectancy and injury counts.\nThe columns that start with Cum_ are cumulative counts of each outcome. The output below, for example, shows that at cycle \\(t=20\\) (which corresponds to age=20 for our cohort), there are an expected 58.951 firework-related injuries in our cohort of 100,000 newborns."
   },
   {
     "objectID": "case-studies/cs_injury-markov.html#add-the-injury-probability-lookup-table",
@@ -4294,25 +4294,203 @@
     "text": "Define an Age-Specific Injury Probability\nNext, we can define the time-varying variable p_injury_t (which reads from the table we just defined and operates as the background mortality probability in the current model cycle, \\(t\\)).\nMake sure you create a variable and not a parameter. Under “Variables”, click  to add a variable p_injury_t = tbl_p_injury[age_initial + t, 1].\n\n\n\n\n\n\nRe-run the model using age-specific injury probabilities. How does the expected number of overall and fatal injuries change from when we used the fixed probabilities above?"
   },
   {
-    "objectID": "case-studies/ESP_cs_icer.html",
-    "href": "case-studies/ESP_cs_icer.html",
+    "objectID": "case-studies/cs_prob-decision.html",
+    "href": "case-studies/cs_prob-decision.html",
+    "title": "Case Study: Probabilities & Decision Trees",
+    "section": "",
+    "text": "Important\n\n\n\nPlease note that you can download PDF and Microsoft Word versions of this case study using the links on the right.\n\n\n\nCase 1\nIn a hypothetical community, 60% of all people consume at least 6 alcoholic beverages per week and 50% are overweight. The percentage of people who are both overweight and consume this much alcohol is 40%. Construct a 2x2 table to answer (a)-(c) below. For part (d), construct a decision tree.\n\nWhat percentage of people consume at least 6 alcoholic beverages per week, are overweight, or fall into both categories?\n\n\n\n\n\n\n\n\n\n\n\n\nYou sample at random a person from the community and find that they consume at least 6 alcoholic beverages per week. What is the probability that they are overweight?\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is the probability that someone from this community consumes at least 6 alcoholic beverages per week if they are overweight?\n\n\n\n\n\n\n\n\n\nDraw a decision tree to represent this problem\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase 2\nA new screening procedure can detect 80% of women diagnosed with breast cancer but will falsely identify 2% without breast cancer. The prevalence of breast cancer in the population is 1.6 in 100\n\nWhat is the probability that a woman does not have breast cancer if the test is negative?\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is the probability that a woman has breast cancer if the test is positive?"
+  },
+  {
+    "objectID": "case-studies/cs_decision-tree-amua.html",
+    "href": "case-studies/cs_decision-tree-amua.html",
+    "title": "Exercise: Decision Tree in Amua",
+    "section": "",
+    "text": "This case study is designed to get you familiar with constructing a decision tree in Amua. Specific learning objectives are as follows:\n\nParameterize and structure a decision tree model.\nEstimate survival and cost outcomes from the decision tree model in the Amua software.\n\n\n\n\n\n\n\nPlease note that this case study is based on the Amua tutorial here. We have modified the tutorial to make it more relevant to the workshop."
+  },
+  {
+    "objectID": "case-studies/cs_decision-tree-amua.html#getting-started",
+    "href": "case-studies/cs_decision-tree-amua.html#getting-started",
+    "title": "Exercise: Decision Tree in Amua",
+    "section": "Getting started",
+    "text": "Getting started\nYou will first need to install Java (1.8 or later) & download Amua. Follow the directions here\nHere is a comprehensive tutorial to get you started. We review some highlights below:"
+  },
+  {
+    "objectID": "case-studies/cs_decision-tree-amua.html#disease-prevalence",
+    "href": "case-studies/cs_decision-tree-amua.html#disease-prevalence",
+    "title": "Exercise: Decision Tree in Amua",
+    "section": "Disease Prevalence",
+    "text": "Disease Prevalence\n\nFor the branch No Screen, click underneath the branch labeled D+ (next to the label p:). A text-entry box will now be outlined in blue. This is where you enter the probability for this branch.\nType prev which we will define as the prevalence of the disease. Hit Enter or click outside the text-box to accept the probability.\nThe text will now turn red because Amua does not recognize prev as a model object, so we will have to\ndefine it later."
+  },
+  {
+    "objectID": "case-studies/cs_decision-tree-amua.html#complementary-probabilities",
+    "href": "case-studies/cs_decision-tree-amua.html#complementary-probabilities",
+    "title": "Exercise: Decision Tree in Amua",
+    "section": "Complementary Probabilities",
+    "text": "Complementary Probabilities\n\nNow enter the probability for the D- branch for No Screen.\nBecause the probabilities for all branches of a chance node must sum to 1.0, we could enter 1-prev as the probability.\n\nThis is called a ‘complementary’ probability as it provides the complement to sum to 1.0.\n\n\n-In Amua you can type C or c to indicate a complementary probability. - Note that there can only be one complementary probability per chance node.\n-Enter C for the probability of D-."
+  },
+  {
+    "objectID": "case-studies/cs_decision-tree-amua.html#define-probabilities-for-screen-strategy",
+    "href": "case-studies/cs_decision-tree-amua.html#define-probabilities-for-screen-strategy",
+    "title": "Exercise: Decision Tree in Amua",
+    "section": "Define Probabilities for Screen Strategy",
+    "text": "Define Probabilities for Screen Strategy\n\nFor the Test + branch enter pTPos as the probability of testing positive, which will be a function of the disease prevalence and test characteristics (sensitivity and specificity).\nEnter C for the probability of Test -.\nNext, we’ll define the probability of having the disease given each test result in the Screen strategy.\n\nOn the Test + branch, click under the D+ branch and type pD_TPos. This will be the probability of having the disease given a positive test.\nClick under D- and type C to indicate a complementary probability.\nFor the Test - branch, click under the D+ branch and type pD_TNeg, which is the probability of having the disease given a negative test.\nClick under D- below and type C again.\n\n\n - Finally, define teh probability of having the disease in the Treat All strategy. 1. Click under D+ and type prev, which is the prevalence of the disease. 2. Enter C for the probability of D-."
+  },
+  {
+    "objectID": "case-studies/cs_decision-tree-excel.html",
+    "href": "case-studies/cs_decision-tree-excel.html",
+    "title": "Exercise: Decision Tree in Excel",
+    "section": "",
+    "text": "Download Decision Tree Excel File"
+  },
+  {
+    "objectID": "case-studies/cs_decision-tree-excel.html#assigning-variable-names",
+    "href": "case-studies/cs_decision-tree-excel.html#assigning-variable-names",
+    "title": "Exercise: Decision Tree in Excel",
+    "section": "Assigning Variable Names",
+    "text": "Assigning Variable Names\nOur first step is to assign each base case value its variable name. There are two ways to do this:\n\nUsing the naming box in the upper left of the spreadsheet. This is useful for naming one item at a time.\nBatch naming by using a table selection.\n\nLet’s first run through option 1. In the figure below, we will assign the name “variable1” to the value in cell C5. We do this using the naming box highlighted in the upper left. Simply replace “C5” there with what you want to call the value in that cell, i.e., “variable1.”\n\n\n\nAssign the variable name “variable1” to the value in cell C5.\n\n\nYou can see this process in action in the video below."
+  },
+  {
+    "objectID": "case-studies/cs_decision-tree-excel.html#batch-assigning-variable-names",
+    "href": "case-studies/cs_decision-tree-excel.html#batch-assigning-variable-names",
+    "title": "Exercise: Decision Tree in Excel",
+    "section": "Batch Assigning Variable Names",
+    "text": "Batch Assigning Variable Names\nOften it is more efficient to assign groups of variables, rather than do it one by one. To do this we simply select the “table” we want to use, and then go to the Formulas tab and select Create from Selection.\n\n\n\n\n\n\nMake sure the variable name you want to assign is either in the leftmost row, or the top row (see below). Also make sure the value you want assigned to that variable is in the second column, as shown in the figure.\n\n\n\n\nAssuming you have structured your parameter table as above, and using the guidance above, when excel prompts you to “Create Names” you can tell it the variable names are in the left column:\n\nOnce you have done this, you can select the Name Manager on the Formulas ribbon to confirm the new names have been assigned, and to make changes.\n\n\n\n\n\n\nYou can edit, delete, or reassign the cell values/range in the Name Manager, too.\n\n\n\n\nA video walk-through of this process is shown below.\n\nIf your parameter names are organized as column headers, you can use the same process, as shown in the video below."
+  },
+  {
+    "objectID": "case-studies/cs_decision-tree-excel.html#step-4-calculate-expected-outcomes",
+    "href": "case-studies/cs_decision-tree-excel.html#step-4-calculate-expected-outcomes",
+    "title": "Exercise: Decision Tree in Excel",
+    "section": "Step 4: Calculate Expected Outcomes",
+    "text": "Step 4: Calculate Expected Outcomes\nOur final step is to “fold-back” the decision tree to summarize expected cost and survival outcomes for each strategy under consideration. You will find a summary table of outcomes in the worksheet titled “Summary.”\n\n\n\n\n\n\n\nExercise 1.4\n\n\n\n Calculate expected outcomes for each strategy.\n\n\n\n\n\n\nHINT: For the expected deaths outcome, you can use the total population size and expected survival outcome."
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-markov.html",
+    "href": "case-studies/ESP_cs_injury-markov.html",
+    "title": "Caso de estudio: Modelos de Markov",
+    "section": "",
+    "text": "Este estudio de caso amplía nuestra evaluación de las lesiones por fuegos artificiales mediante un modelo de cohortes de Markov en tiempo discreto. Mientras que el árbol de decisión que construimos ayer proporcionaba resultados y costos inmediatos para diversas estrategias, el modelo de Markov ofrece ventajas significativas para examinar las repercusiones a largo plazo sobre la salud y los costos.\nNuestro modelo de Markov nos permitirá captar la progresión de las lesiones relacionadas con los fuegos artificiales a lo largo de un periodo prolongado, lo que nos permitirá considerar las implicaciones a largo plazo. Al modelizar los eventos lesionales y las transiciones entre diferentes estados de salud a lo largo del tiempo, podemos comprender mejor los efectos crónicos de las lesiones y los beneficios a largo plazo de las estrategias de intervención.\nEste enfoque proporcionará una evaluación más completa de las repercusiones sanitarias y económicas a lo largo de la vida de las estrategias propuestas, teniendo en cuenta factores como los costos sanitarios a largo plazo, los cambios en las tasas de lesiones y los niveles de cumplimiento. La capacidad del modelo de Markov para incorporar estos horizontes más amplios y los sucesos recurrentes proporcionará una visión más profunda de los enfoques más eficaces y sostenibles para mitigar las lesiones relacionadas con los fuegos artificiales en Colombia."
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-markov.html#estructura-de-markov-vivo-muerto",
+    "href": "case-studies/ESP_cs_injury-markov.html#estructura-de-markov-vivo-muerto",
+    "title": "Caso de estudio: Modelos de Markov",
+    "section": "Estructura de Markov: Vivo-Muerto",
+    "text": "Estructura de Markov: Vivo-Muerto\nLa estructura del modelo de Markov para el modelo Vivo-Muerto se muestra en la siguiente figura. Amua tiene un nodo de Markov especial (representado por ). Las ramas que salen de un nodo de Markov designan todos los estados de Markov (y sólo los estados de Markov).\nEn este ejemplo, hay dos estados de salud: (1) Vivo, (2) Muerto. A partir de cada estado de salud, se puede crear un subárbol (también llamado árbol de ciclos) que refleje los eventos que pueden ocurrir durante un ciclo. La última rama al final de cada camino será una transición de estado, que define a qué estado de salud se pasará en el siguiente ciclo.\n\n\n\n\n\n\nNote\n\n\n\nTenga en cuenta que en un modelo de Markov, los resultados se definen en otro lugar - NO al final de la rama, sino en el estado."
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-markov.html#construir-el-árbol",
+    "href": "case-studies/ESP_cs_injury-markov.html#construir-el-árbol",
+    "title": "Caso de estudio: Modelos de Markov",
+    "section": "Construir el árbol",
+    "text": "Construir el árbol\n\nEstructura\nDespués de abrir Amua, haga clic en Modelo  Nuevo  Modelo de Markov.\n\nGuarde su modelo desde el principio.\nAhora selecciona el nodo de decisión , Haz clic con el botón derecho del ratón  Añadir   Cadena de Markov .\nEmpiece por desarrollar la estructura del modelo de Markov utilizando Vivo y Muerto para los diferentes estados de salud. Las ramas de la cadena de Markov deben corresponder a los estados del modelo. Etiquete la opción de nombre a la derecha del nodo de decisión como Vivo-Muerto.\n\n\n\n\n\n\n\n\nComplete la estructura del modelo de Markov utilizando la información anterior. Nota: céntrate en añadir las ramas y transiciones para este paso; los parámetros se añadirán más tarde.\n\n\n\n\nCuando llegue al final de la rama, seleccione el nodo de azar que desea convertir en una transición de estado, haga clic derecho, seleccione Cambiar a Transición de Estado. Esto le dará la flecha azul  . A la derecha de esta flecha, encontrará un menú desplegable con los diferentes estados de salud que haya especificado. Seleccione el estado de salud al que pasará esta parte de la cohorte.\nCon este botón  puede alinear los nodos finales.\n\n\n\nTamaño de la cohorte y probabilidades iniciales\n\nVaya a Modelo  Propiedades  seleccione la pestaña Simulación. El tamaño de cohorte por defecto es 1.000. Cambie el tamaño de la cohorte a 1, para que todos los resultados sean a nivel individual (es decir, por persona).\n\n\n\n\n\n\n\nEn la Cadena de Markov  , cambie las probabilidades iniciales de los estados de salud. Como todos los pacientes empiezan en el estado Vivo, cambie el p:0 de la izquierda del estado Vivo a p:1 (vea el cuadro azul de abajo)."
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-markov.html#parámetros-del-modelo",
+    "href": "case-studies/ESP_cs_injury-markov.html#parámetros-del-modelo",
+    "title": "Caso de estudio: Modelos de Markov",
+    "section": "Parámetros del modelo",
+    "text": "Parámetros del modelo\nEn primer lugar, defina los siguientes parámetros de constante temporal para el modelo en el panel “Parámetros”.\n\n\n\n\n\nEsta variable indica a Amua que vamos a modelizar una cohorte de recién nacidos. Sin embargo, podríamos adaptarla fácilmente para modelar una cohorte de personas de 20 años, etc."
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-markov.html#probabilidades-de-transición",
+    "href": "case-studies/ESP_cs_injury-markov.html#probabilidades-de-transición",
+    "title": "Caso de estudio: Modelos de Markov",
+    "section": "Probabilidades de transición",
+    "text": "Probabilidades de transición\nLa matriz de probabilidades de transición subyacente tiene la siguiente forma:\n\n\n\n\n\nSin embargo, como estamos modelando una cohorte de recién nacidos hasta la muerte, necesitamos incluir en el modelo probabilidades de transición de muerte que varíen según la edad (es decir, el ciclo). En otras palabras, habrá una probabilidad de muerte diferente en cada ciclo.\n\n\n\n\n\n\nImportant\n\n\n\nEn Amua, los inputs variables en el tiempo se operacionalizan como variables  en lugar de parámetros.\nLas variables  pueden definirse para realizar un seguimiento de los eventos del modelo y actualizar dinámicamente las expresiones a medida que el modelo se ejecuta. Así, a diferencia de los parámetros  que son fijos para una ejecución determinada del modelo, las variables pueden cambiar dentro de una simulación. Las variables pueden cambiar entre individuos, lo que permite modelar la heterogeneidad, o pueden cambiar con el tiempo.\n\n\nPor lo tanto, definiremos p_die como una variable  que hace referencia a valores de una tabla de consulta , siguiendo los pasos que se indican a continuación.\n\n\n\n\n\n\nImportant\n\n\n\nUna tabla de consulta devuelve el valor que corresponde a un índice determinado. La primera columna de una tabla de consulta contiene los índices de la tabla, y pueden definirse una o varias columnas de valores de consulta. Los valores de los índices deben ser únicos y estar en orden ascendente. Hay 3 métodos de búsqueda, (1) exacto, (2) interpolar, y (3) truncar, para más detalles sobre estos métodos visite el Amua Wiki en GitHub.\n\n\nPrimero definimos una tabla de consulta  tbl_death para leer la mortalidad de fondo dependiente de la edad construida a partir de las tablas de vida Colombianas.\n\nDescarga de datos\nDescargue el archivo titulado colombia-life-table-death-probabilities.csv de la página web del taller. Esta tabla contiene la probabilidad de mortalidad anual indexada por edad para Colombia. A continuación se muestra una captura de pantalla de las primeras filas de este archivo .csv. La columna index es la edad, mientras que p_die es la probabilidad anual de muerte a cada edad.\n\n\n\n\n\nVaya al panel “Tablas”, haga clic en  para añadir una tabla, y debería ver una ventana “Definir tabla” (véase la captura de pantalla siguiente). Haga clic en el botón Importar  y seleccione el archivo .csv descargado para importarlo. La tabla se redimensionará automáticamente para ajustarse a los datos importados. La primera fila del archivo se utilizará como encabezado de la tabla.\n\nIntroduzca “tbl_p_die” como nombre para esta variable. “Lookup” es el tipo de tabla por defecto (que es lo que queremos aquí). Elija “Interpolar” como método de búsqueda. Haga clic en Guardar para aplicarlo.\nA continuación, podemos definir la variable variable en el tiempo p_die (que lee de la tabla que acabamos de definir y funciona como la probabilidad de mortalidad de fondo en el ciclo actual del modelo, \\(t\\)).\nAsegúrese de crear una variable y no un parámetro. En “Variables”, haga clic en  para añadir una variable p_die = tbl_p_die[age_initial + t, 1].\n\n\n\n\n\n\nNote\n\n\n\nLa primera columna de una tabla se utiliza siempre para la indexación en las tablas. Por lo tanto, el número “1” aquí indicará en realidad la segunda columna de la tabla como valor correspondiente. También puede utilizar el nombre de la columna para leer un valor, por ejemplo, tbl_p_die[edad_inicial + t, “p_die”].\n\n\n\n\n\n\n\n\nTip\n\n\n\nEn Amua, “t” es una variable integrada que registra el número de ciclos. Se actualiza automáticamente cuando se ejecuta el modelo. Por ejemplo, en el ciclo 10 del modelo de Markov, t = 10. Por lo tanto, en la fórmula “tbl_p_die[edad_inicial + t, 1]”, edad_inicial + t será igual a la edad modelada del individuo en el ciclo t, y la fórmula completa leerá la mortalidad de fondo dependiente de la edad basada en la edad actual del individuo (en lugar de la edad inicial).\nAmua utiliza por defecto un tiempo de ciclo de \\(t=0\\). Por lo tanto, si pulsa “Evaluar”, el campo Valor esperado debería calcular la probabilidad de muerte de un recién nacido como se muestra en la tabla de consulta .csv.\n\n\n\n\n\n\n\nAhora tenemos definidas todas las probabilidades de transición. Añada estas entradas a las ramas del modelo. Recuerda añadir también las probabilidades complementarias usando “C”."
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-markov.html#condición-de-terminación",
+    "href": "case-studies/ESP_cs_injury-markov.html#condición-de-terminación",
+    "title": "Caso de estudio: Modelos de Markov",
+    "section": "Condición de terminación",
+    "text": "Condición de terminación\n\nEspecifique la terminación del modelo seleccionando [terminación] y escriba t==110. Esto permitirá que su modelo funcione durante 110 ciclos, entonces el modelo terminará."
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-markov.html#recompensas",
+    "href": "case-studies/ESP_cs_injury-markov.html#recompensas",
+    "title": "Caso de estudio: Modelos de Markov",
+    "section": "Recompensas",
+    "text": "Recompensas\nLa recompensa por defecto en Amua es el costo. Tenemos que cambiar esto para tener la esperanza de vida (EV) como una recompensa. Ir a Modelo  Propiedades  seleccione la pestaña Análisis y cambie la dimensión de costo a EV. Utilice EV como símbolo y ajuste a 4 decimales.\n\n\n\n\n\nAñada la esperanza de vida a la izquierda de cada estado de salud después de “R: (EV)”.\n\n\n\n\n\nAplicar la corrección de medio ciclo. Ir a Modelo  Propiedades  seleccione la pestaña Markov y marque la casilla Corrección de medio ciclo. Haga clic en OK para aplicar.\n\n\n\n\n\nAhora, hemos terminado de construir el modelo Vivo-Muerto. Analice el modelo utilizando una simulación de cohortes haciendo clic en Ejecutar  Ejecutar modelo.\n\n\n\n\n\n\n**Ejecuta el modelo vivo-muerto y calcula la esperanza de vida total."
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-markov.html#añadir-nodos-de-probabilidad-de-herida",
+    "href": "case-studies/ESP_cs_injury-markov.html#añadir-nodos-de-probabilidad-de-herida",
+    "title": "Caso de estudio: Modelos de Markov",
+    "section": "Añadir Nodos de Probabilidad de Herida",
+    "text": "Añadir Nodos de Probabilidad de Herida\nDesde el estado de salud “Vivo”, convierte la flecha azul  en un nodo de azar usando el botón de cambio de tipo . A partir de este nodo de probabilidad, incluya la probabilidad de que se produzca una lesión por fuegos artificiales. La probabilidad de una lesión debe basarse en un nuevo parámetro fijo llamado p_lesión.\nA partir de la rama lesión, añade otro nodo de azar para saber si la lesión es mortal o no. Completa la estructura del modelo añadiendo flechas de transición al estado de salud “Vivo” si el individuo no tiene ninguna lesión o tiene una lesión no mortal por fuegos artificiales. Añade una flecha de transición al estado de muerte si el individuo muere a causa de su lesión por fuegos artificiales.\nEl árbol de Markov debería tener este aspecto:"
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-markov.html#añadir-lesiones-y-lesiones-mortales-como-resultados",
+    "href": "case-studies/ESP_cs_injury-markov.html#añadir-lesiones-y-lesiones-mortales-como-resultados",
+    "title": "Caso de estudio: Modelos de Markov",
+    "section": "Añadir Lesiones y Lesiones Mortales como Resultados",
+    "text": "Añadir Lesiones y Lesiones Mortales como Resultados\nA continuación, añada los resultados de lesiones por fuegos artificiales (INJ) y lesiones mortales por fuegos artificiales (FINJ) al modelo (Modelo  Propiedades  Análisis ).\n\n\n\n\n\nA continuación, tenemos que añadir un “rastreador” de una sola vez para registrar cada instancia en la que un miembro de la cohorte es herido y fatalmente herido. Podemos hacerlo haciendo clic-derecho en el nodo de azar después de “Herida de Fuego”, y luego haciendo clic en  Add Cost.\n\n\n\n\n\n\n\n**Añade a tu árbol de Markov los resultados de cualquier lesión (LES) y de las lesiones mortales (MORT)."
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-markov.html#cambiar-el-tamaño-de-la-cohorte",
+    "href": "case-studies/ESP_cs_injury-markov.html#cambiar-el-tamaño-de-la-cohorte",
+    "title": "Caso de estudio: Modelos de Markov",
+    "section": "Cambiar el tamaño de la cohorte",
+    "text": "Cambiar el tamaño de la cohorte\nNuestro modelo actual está estructurado para un tamaño de cohorte de 1 individuo. Esto suele ser útil, especialmente para calcular la esperanza de vida como resultado, pero utilizar otros tamaños de cohorte puede ser útil para producir información relevante para la toma de decisiones políticas.\nAhora cambiaremos el modelo de modo que capturemos la experiencia vital de una cohorte de 100.000 recién nacidos. Esto nos permitirá modelizar el número esperado de lesiones totales y mortales por fuegos artificiales a lo largo de la vida para una cohorte grande y, finalmente, ver cómo disminuye el número total de lesiones a lo largo de la vida bajo diferentes opciones políticas.\n\nIr a Modelo  Propiedades  seleccione la pestaña Simulación. Cambie el tamaño de la cohorte a 100.000.\n\n\n\n\n\n\n\nTip\n\n\n\nSu resultado de esperanza de vida (EV) devolverá ahora el total de años de vida esperados para una cohorte de 100.000 personas. Para obtener un resultado de esperanza de vida estándar, puede redefinir el “resultado” para el resultado EV como \\(1/100000\\)."
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-markov.html#apply-half-cycle-correction",
+    "href": "case-studies/ESP_cs_injury-markov.html#apply-half-cycle-correction",
+    "title": "Caso de estudio: Modelos de Markov",
+    "section": "Apply Half-Cycle Correction",
+    "text": "Apply Half-Cycle Correction\n\nAplicar corrección de medio ciclo. Vaya a Modelo  Propiedades  seleccione la pestaña Markov y marque la casilla Corrección de medio ciclo. Haga clic en Aceptar para aplicarla."
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-markov.html#ejecutar-el-modelo",
+    "href": "case-studies/ESP_cs_injury-markov.html#ejecutar-el-modelo",
+    "title": "Caso de estudio: Modelos de Markov",
+    "section": "Ejecutar el Modelo",
+    "text": "Ejecutar el Modelo\nVerifique que su modelo es capaz de funcionar haciendo clic en el botón  check model. Una vez corregidos todos los errores,  ejecute el modelo.\nDespués de ejecutar el modelo, verá los resultados esperados en la parte inferior de la pantalla. Esta información nos dice que la esperanza de vida total es de 77,04 años y que se esperan 222,07 lesiones por fuegos artificiales y 1,02 lesiones mortales por cada 100.000 recién nacidos en Colombia.\n\nAmua también mostrará una nueva ventana con una figura y una tabla de hoja de cálculo. La figura muestra el número total de personas de la cohorte en cada estado de salud (“Vivo” y “Muerto”) en cada ciclo del modelo. La tabla de la hoja de cálculo contiene la información trazada (en las columnas “Vivo” y “Muerto”), así como los cálculos específicos de cada ciclo para la esperanza de vida y el recuento de lesiones.\nLas columnas que empiezan por Cum_ son recuentos acumulados de cada resultado. El resultado que se muestra a continuación, por ejemplo, indica que en el ciclo \\(t=20\\) (que corresponde a la edad=20 de nuestra cohorte), se prevén 58.951 lesiones relacionadas con fuegos artificiales en nuestra cohorte de 100.000 recién nacidos."
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-markov.html#añadir-la-tabla-de-búsqueda-de-probabilidades-de-lesión",
+    "href": "case-studies/ESP_cs_injury-markov.html#añadir-la-tabla-de-búsqueda-de-probabilidades-de-lesión",
+    "title": "Caso de estudio: Modelos de Markov",
+    "section": "Añadir la tabla de búsqueda de probabilidades de lesión",
+    "text": "Añadir la tabla de búsqueda de probabilidades de lesión\nAl igual que hicimos anteriormente con las probabilidades de mortalidad por edad, descargue el archivo de datos cases-by-age.csv del sitio web del taller.\nVaya al panel “Tablas”, haga clic en  para añadir una tabla, y debería ver una ventana “Definir tabla” (véase la captura de pantalla siguiente). Haga clic en el botón Importar  y seleccione el archivo .csv descargado para importarlo. La tabla se redimensionará automáticamente para ajustarse a los datos importados. La primera fila del archivo se utilizará como encabezado de la tabla.\nIntroduzca “tbl_p_injury” como nombre para esta variable. “Lookup” es el tipo de tabla por defecto (que es lo que queremos aquí). Elija “Interpolar” como método de búsqueda. Haga clic en Guardar para aplicar.\n\n\n\n\n\n\nImportant\n\n\n\nAmua también puede incluir filas en blanco adicionales cuando importa la tabla. Antes de continuar, elimine todas las filas en blanco haciendo clic en la fila y, a continuación, utilizando el botón  situado junto a “Rows” (vea los rectángulos rojos a continuación)."
+  },
+  {
+    "objectID": "case-studies/ESP_cs_injury-markov.html#definir-una-probabilidad-de-lesión-específica-por-edad",
+    "href": "case-studies/ESP_cs_injury-markov.html#definir-una-probabilidad-de-lesión-específica-por-edad",
+    "title": "Caso de estudio: Modelos de Markov",
+    "section": "Definir una probabilidad de lesión específica por edad",
+    "text": "Definir una probabilidad de lesión específica por edad\nA continuación, podemos definir la variable en el tiempo variable p_injury_t (que lee de la tabla que acabamos de definir y opera como la probabilidad de mortalidad de fondo en el ciclo actual del modelo, \\(t\\)).\nAsegúrese de crear una variable y no un parámetro. En “Variables”, haga clic en  para añadir una variable p_injury_t = tbl_p_injury[age_initial + t, 1].\n\n\n\n\n\n\nVuelva a ejecutar el modelo utilizando probabilidades de lesión específicas para cada edad. ¿Cómo cambia el número esperado de lesiones totales y mortales respecto a cuando utilizamos las probabilidades fijas anteriores?"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Taller de Análisis Económico de intervenciones en salud para la toma de decisiones",
+    "section": "",
+    "text": "Calendario de talleres\n\n\n\n\n\n\n\n\n\nFecha\nHora programada\nTema\nVersión inglesa\n\n\n\n\nMartes\n9:00 - 9:30 am\nBienvenida y presentaciones\nWelcome\n\n\n\n9:30 - 10:00\nIntroducción al análisis de decisiones\nIntroduction to Decision Analysis\n\n\n\n10:00-11:00\nÁrboles de decisión y probabilidades\nDecision Trees\n\n\n\n11:00-11:15\nCafé\nBreak\n\n\n\n11:15 - 12:00\nCaso de estudio: Probabilidades y árboles de decisión\nRespuestas\nCase Study: Decision Trees\n\n\n\n12:00 - 1:15 pm\nCafé\nBreak\n\n\n\n1:45 - 2:45 pm\nCaso de estudio: Construir un árbol de decisión en Excel\nRespuestas\nCase Study: Excel\n\n\n\n2:45 - 4:00 pm\n\n\n\n\nMiércoles\n9:00-9:15\nRecapitulación y demostración del análisis de umbrales en Amua\nUmbrales de tratamiento y valor de la información\nRecap and Demonstration of Threshold Analysis in Amua\nTreatment Thresholds and Value of Information\n\n\n\n9:15 - 10:15\nCaso de estudio: Construir un árbol de decisión en Amua\nAmua model\nCase Study: Amua\n\n\n\n10:15 - 11:00\nFundamentos CEA 1: Costos\nValuing Costs\n\n\n\n11:00 - 11:05\nCafé\nBreak\n\n\n\n11:05 - 12:00\nFundamentos CEA 2: Resultados sanitarios\nHealth Outcomes\n\n\n\n12:00 - 1:40\nAlmuerzo\nLunch\n\n\n\n1:40 - 2:45\n\nGroup Discussion of Firework Injury Policy Brief\n\n\n\n2:45 - 4:00\nCaso de estudio: Lesiones por pólvora pirotécnica\nCase Study: Firework Injuries in Colombia\n\n\n\n4:00 - 4:45\nFundamentos del ACE 3: Análisis coste-eficacia incremental\nICERs\n\n\nJueves\n9:00-9:15\nResumen diario\n\n\n\n\n9:15 - 10:00\nFundamentos del ACE 3: Análisis coste-eficacia incremental\nICERs\n\n\n\n10:00 - 11:00\nCaso de estudio: Análisis coste-eficacia incremental\nCase Study: ICERs\n\n\n\n10:30 - 12:00\nModelos de Markov\nMarkov Models\n\n\n\n12:00 - 1:15\nCafé\n\n\n\n\n1:15 - 4:00\nCaso de estudio: Modelos de Markov\nCase Study: Firework Injury Model (Markov)\n\n\nViernes\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nAnálisis determinista y de escenarios\nDeterministic and Sensitivity Analysis\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:15\nTécnicas avanzadas de modelización\nAdvanced modeling techniques\n\n\n\n11:15 - 11:45\nCeremonia de entrega de certificados\nClosing Ceremony",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "case-studies/cs_icer.html",
+    "href": "case-studies/cs_icer.html",
     "title": "Case Study: ICERs",
     "section": "",
-    "text": "Important\n\n\n\nPuede descargar las versiones en PDF y Microsoft Word de este estudio de caso utilizando los enlaces de la derecha."
+    "text": "Important\n\n\n\nPlease note that you can download PDF and Microsoft Word versions of this case study using the links on the right."
   },
   {
-    "objectID": "case-studies/ESP_cs_icer.html#instrucciones",
-    "href": "case-studies/ESP_cs_icer.html#instrucciones",
+    "objectID": "case-studies/cs_icer.html#instructions",
+    "href": "case-studies/cs_icer.html#instructions",
     "title": "Case Study: ICERs",
-    "section": "Instrucciones",
-    "text": "Instrucciones\n*Realice un análisis coste-efectividad de las opciones de tratamiento utilizando los AVAC como medida de los efectos sobre la salud. ¿Qué estrategia elegiría y por qué, si el umbral de disposición a pagar es de 50.000 dólares por año de vida ajustado por calidad?\n\n\n\nTratamiento\nCostos\nQALYs\n\n\n\n\nNo hacer nada\n36,000\n43.8\n\n\nART 1\n15,525\n73.52\n\n\nART 1/2\n11,000\n63.4\n\n\nRetro 200\n20,000\n70.0\n\n\nRetro 400\n22,000\n65.0\n\n\nCentro\n10,000\n50.0\n\n\nCentro / Retro 200\n40,000\n80.0\n\n\nCentro / Retro 400\n35,000\n75.0\n\n\n\n\n\n\n\n\nOpciones de tratamiento\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo del ICER Tabla 1\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo ICER Tabla 2\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n: Cálculo ICER Tabla 3 {tbl-colwidths=“[20,20,20,20,20,20]”}"
+    "section": "Instructions",
+    "text": "Instructions\nPerform a cost-effectiveness analysis of the treatment options using QALYs as the measure of health effects. Which strategy would you choose and why, if the willingness-to-pay threshold is $50,000 per quality-adjusted life year?\n\n\n\nTreatment\nCosts\nQALYs\n\n\n\n\nDo nothing\n36,000\n43.8\n\n\nART 1\n15,525\n73.52\n\n\nART 1/2\n11,000\n63.4\n\n\nRetro 200\n20,000\n70.0\n\n\nRetro 400\n22,000\n65.0\n\n\nCentro\n10,000\n50.0\n\n\nCentro / Retro 200\n40,000\n80.0\n\n\nCentro / Retro 400\n35,000\n75.0\n\n\n\n\n\n\n\n\nTreatment Options\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nICER Calculation Table 1\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nICER Calculation Table 2\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n: ICER Calculation Table 3 {tbl-colwidths=“[20,20,20,20,20,20]”}"
   },
   {
-    "objectID": "case-studies/ESP_cs_icer.html#instrucciones-1",
-    "href": "case-studies/ESP_cs_icer.html#instrucciones-1",
+    "objectID": "case-studies/cs_icer.html#instructions-1",
+    "href": "case-studies/cs_icer.html#instructions-1",
     "title": "Case Study: ICERs",
-    "section": "Instrucciones",
-    "text": "Instrucciones\nCalcule los cocientes de coste-efectividad incrementales para cada estrategia y determine qué estrategia de cribado elegiría si, como responsable de la toma de decisiones, estuviera dispuesto a pagar $50.000/QALY (utilizando años de vida ajustados por calidad descontados).\n\n\nCost and QALY Outcomes, by Strategy\n\n\n\n\n\n\n\nEstrategia de cribado\nAVAC descontados\nCostes descontados ($2022)\n\n\n\n\nNo screening\n10.05\n4,130\n\n\nEvery 3 years\n10.798\n5,178\n\n\nEvery 2 years\n10.830\n5,583\n\n\nEvery 1 year\n10.973\n6,417\n\n\nEvery 6 months\n10.988\n8,744\n\n\n\n\nCálculo del ICER Tabla 1\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo ICER Tabla 2\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)"
+    "section": "Instructions",
+    "text": "Instructions\nCalculate incremental cost-effectiveness ratios for each strategy and determine which screening strategy you would choose if, as a decision maker, you were prepared to pay $50,000/QALY (using discounted quality-adjusted life years)\n\n\nCost and QALY Outcomes, by Strategy\n\n\nScreening Strategy\nDiscounted QALYs\nDiscounted Costs ($2022)\n\n\n\n\nNo screening\n10.05\n4,130\n\n\nEvery 3 years\n10.798\n5,178\n\n\nEvery 2 years\n10.830\n5,583\n\n\nEvery 1 year\n10.973\n6,417\n\n\nEvery 6 months\n10.988\n8,744\n\n\n\n\nICER Calculation Table 1\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nICER Calculation Table 2\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)"
   },
   {
     "objectID": "case-studies/cs_markov-trace.html",
@@ -4427,203 +4605,46 @@
     "text": "Footnotes\n\n\nIn reality, transition probabilities would be expected to change over time as the population ages and as the prevalence of risk factors changes. For example, the risk of developing CVD is likely to increase with age, and the risk of developing CVD is likely to increase with the prevalence of risk factors such as obesity and diabetes. We will ignore these changes for the sake of simplicity. This simplifying assumption means that we are fitting a “time-homogeneous” model. In reality, we would expect the model to be “time-inhomogeneous” (i.e., the transition probabilities change as the cohort ages).↩︎"
   },
   {
-    "objectID": "case-studies/cs_icer.html",
-    "href": "case-studies/cs_icer.html",
+    "objectID": "case-studies/ESP_cs_icer.html",
+    "href": "case-studies/ESP_cs_icer.html",
     "title": "Case Study: ICERs",
     "section": "",
-    "text": "Important\n\n\n\nPlease note that you can download PDF and Microsoft Word versions of this case study using the links on the right."
+    "text": "Important\n\n\n\nPuede descargar las versiones en PDF y Microsoft Word de este estudio de caso utilizando los enlaces de la derecha."
   },
   {
-    "objectID": "case-studies/cs_icer.html#instructions",
-    "href": "case-studies/cs_icer.html#instructions",
+    "objectID": "case-studies/ESP_cs_icer.html#instrucciones",
+    "href": "case-studies/ESP_cs_icer.html#instrucciones",
     "title": "Case Study: ICERs",
-    "section": "Instructions",
-    "text": "Instructions\nPerform a cost-effectiveness analysis of the treatment options using QALYs as the measure of health effects. Which strategy would you choose and why, if the willingness-to-pay threshold is $50,000 per quality-adjusted life year?\n\n\n\nTreatment\nCosts\nQALYs\n\n\n\n\nDo nothing\n36,000\n43.8\n\n\nART 1\n15,525\n73.52\n\n\nART 1/2\n11,000\n63.4\n\n\nRetro 200\n20,000\n70.0\n\n\nRetro 400\n22,000\n65.0\n\n\nCentro\n10,000\n50.0\n\n\nCentro / Retro 200\n40,000\n80.0\n\n\nCentro / Retro 400\n35,000\n75.0\n\n\n\n\n\n\n\n\nTreatment Options\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nICER Calculation Table 1\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nICER Calculation Table 2\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n: ICER Calculation Table 3 {tbl-colwidths=“[20,20,20,20,20,20]”}"
+    "section": "Instrucciones",
+    "text": "Instrucciones\n*Realice un análisis coste-efectividad de las opciones de tratamiento utilizando los AVAC como medida de los efectos sobre la salud. ¿Qué estrategia elegiría y por qué, si el umbral de disposición a pagar es de 50.000 dólares por año de vida ajustado por calidad?\n\n\n\nTratamiento\nCostos\nQALYs\n\n\n\n\nNo hacer nada\n36,000\n43.8\n\n\nART 1\n15,525\n73.52\n\n\nART 1/2\n11,000\n63.4\n\n\nRetro 200\n20,000\n70.0\n\n\nRetro 400\n22,000\n65.0\n\n\nCentro\n10,000\n50.0\n\n\nCentro / Retro 200\n40,000\n80.0\n\n\nCentro / Retro 400\n35,000\n75.0\n\n\n\n\n\n\n\n\nOpciones de tratamiento\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo del ICER Tabla 1\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo ICER Tabla 2\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n: Cálculo ICER Tabla 3 {tbl-colwidths=“[20,20,20,20,20,20]”}"
   },
   {
-    "objectID": "case-studies/cs_icer.html#instructions-1",
-    "href": "case-studies/cs_icer.html#instructions-1",
+    "objectID": "case-studies/ESP_cs_icer.html#instrucciones-1",
+    "href": "case-studies/ESP_cs_icer.html#instrucciones-1",
     "title": "Case Study: ICERs",
-    "section": "Instructions",
-    "text": "Instructions\nCalculate incremental cost-effectiveness ratios for each strategy and determine which screening strategy you would choose if, as a decision maker, you were prepared to pay $50,000/QALY (using discounted quality-adjusted life years)\n\n\nCost and QALY Outcomes, by Strategy\n\n\nScreening Strategy\nDiscounted QALYs\nDiscounted Costs ($2022)\n\n\n\n\nNo screening\n10.05\n4,130\n\n\nEvery 3 years\n10.798\n5,178\n\n\nEvery 2 years\n10.830\n5,583\n\n\nEvery 1 year\n10.973\n6,417\n\n\nEvery 6 months\n10.988\n8,744\n\n\n\n\nICER Calculation Table 1\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nICER Calculation Table 2\n\n\n\n\n\n\n\n\n\n\nStrategy\nDiscounted Costs\nDiscounted QALYs\nIncremental Costs\nIncremental QALYs\nICER ($/QALY)"
+    "section": "Instrucciones",
+    "text": "Instrucciones\nCalcule los cocientes de coste-efectividad incrementales para cada estrategia y determine qué estrategia de cribado elegiría si, como responsable de la toma de decisiones, estuviera dispuesto a pagar $50.000/QALY (utilizando años de vida ajustados por calidad descontados).\n\n\nCost and QALY Outcomes, by Strategy\n\n\n\n\n\n\n\nEstrategia de cribado\nAVAC descontados\nCostes descontados ($2022)\n\n\n\n\nNo screening\n10.05\n4,130\n\n\nEvery 3 years\n10.798\n5,178\n\n\nEvery 2 years\n10.830\n5,583\n\n\nEvery 1 year\n10.973\n6,417\n\n\nEvery 6 months\n10.988\n8,744\n\n\n\n\nCálculo del ICER Tabla 1\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo ICER Tabla 2\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nICER ($/AVAC)"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Taller de Análisis Económico de intervenciones en salud para la toma de decisiones",
+    "objectID": "case-studies/ESP_cs_icer_em.html",
+    "href": "case-studies/ESP_cs_icer_em.html",
+    "title": "Caso de Estudio: RCEIs",
     "section": "",
-    "text": "Calendario de talleres\n\n\n\n\n\n\n\n\n\nFecha\nHora programada\nTema\nVersión inglesa\n\n\n\n\nMartes\n9:00 - 9:30 am\nBienvenida y presentaciones\nWelcome\n\n\n\n9:30 - 10:00\nIntroducción al análisis de decisiones\nIntroduction to Decision Analysis\n\n\n\n10:00-11:00\nÁrboles de decisión y probabilidades\nDecision Trees\n\n\n\n11:00-11:15\nCafé\nBreak\n\n\n\n11:15 - 12:00\nCaso de estudio: Probabilidades y árboles de decisión\nRespuestas\nCase Study: Decision Trees\n\n\n\n12:00 - 1:15 pm\nCafé\nBreak\n\n\n\n1:45 - 2:45 pm\nCaso de estudio: Construir un árbol de decisión en Excel\nRespuestas\nCase Study: Excel\n\n\n\n2:45 - 4:00 pm\n\n\n\n\nMiércoles\n9:00-9:15\nRecapitulación y demostración del análisis de umbrales en Amua\nUmbrales de tratamiento y valor de la información\nRecap and Demonstration of Threshold Analysis in Amua\nTreatment Thresholds and Value of Information\n\n\n\n9:15 - 10:15\nCaso de estudio: Construir un árbol de decisión en Amua\nAmua model\nCase Study: Amua\n\n\n\n10:15 - 11:00\nFundamentos CEA 1: Costos\nValuing Costs\n\n\n\n11:00 - 11:05\nCafé\nBreak\n\n\n\n11:05 - 12:00\nFundamentos CEA 2: Resultados sanitarios\nHealth Outcomes\n\n\n\n12:00 - 1:40\nAlmuerzo\nLunch\n\n\n\n1:40 - 2:45\n\nGroup Discussion of Firework Injury Policy Brief\n\n\n\n2:45 - 4:00\nCaso de estudio: Lesiones por pólvora pirotécnica\nCase Study: Firework Injuries in Colombia\n\n\n\n4:00 - 4:45\nFundamentos del ACE 3: Análisis coste-eficacia incremental\nICERs\n\n\nJueves\n9:00-9:15\nResumen diario\n\n\n\n\n9:15 - 10:00\nFundamentos del ACE 3: Análisis coste-eficacia incremental\nICERs\n\n\n\n10:00 - 11:00\nCaso de estudio: Análisis coste-eficacia incremental\nCase Study: ICERs\n\n\n\n10:30 - 12:00\nModelos de Markov\nMarkov Models\n\n\n\n12:00 - 1:15\nCafé\n\n\n\n\n1:15 - 4:00\nCaso de estudio: Modelos de Markov\nCase Study: Firework Injury Model (Markov)\n\n\nViernes\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nAnálisis determinista y de escenarios\nDeterministic and Sensitivity Analysis\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:15\nTécnicas avanzadas de modelización\nAdvanced modeling techniques\n\n\n\n11:15 - 11:45\nCeremonia de entrega de certificados\nClosing Ceremony",
-    "crumbs": [
-      "Home"
-    ]
+    "text": "Important\n\n\n\nPuede descargar las versiones en PDF y Microsoft Word de este estudio de caso utilizando los enlaces de la derecha."
   },
   {
-    "objectID": "case-studies/ESP_cs_injury-markov.html",
-    "href": "case-studies/ESP_cs_injury-markov.html",
-    "title": "Caso de estudio: Modelos de Markov",
-    "section": "",
-    "text": "Este estudio de caso amplía nuestra evaluación de las lesiones por fuegos artificiales mediante un modelo de cohortes de Markov en tiempo discreto. Mientras que el árbol de decisión que construimos ayer proporcionaba resultados y costes inmediatos para diversas estrategias, el modelo de Markov ofrece ventajas significativas para examinar las repercusiones a largo plazo sobre la salud y los costes.\nNuestro modelo de Markov nos permitirá captar la progresión de las lesiones relacionadas con los incendios a lo largo de un periodo prolongado, lo que nos permitirá considerar las implicaciones a largo plazo. Al modelizar los eventos lesionales y las transiciones entre diferentes estados de salud a lo largo del tiempo, podemos comprender mejor los efectos crónicos de las lesiones y los beneficios a largo plazo de las estrategias de intervención.\nEste enfoque proporcionará una evaluación más completa de las repercusiones sanitarias y económicas a lo largo de la vida de las estrategias propuestas, teniendo en cuenta factores como los costes sanitarios a largo plazo, los cambios en las tasas de lesiones y los niveles de cumplimiento. La capacidad del modelo de Markov para incorporar estos horizontes más amplios y los sucesos recurrentes proporcionará una visión más profunda de los enfoques más eficaces y sostenibles para mitigar las lesiones relacionadas con los incendios en Colombia."
+    "objectID": "case-studies/ESP_cs_icer_em.html#instrucciones",
+    "href": "case-studies/ESP_cs_icer_em.html#instrucciones",
+    "title": "Caso de Estudio: RCEIs",
+    "section": "Instrucciones",
+    "text": "Instrucciones\nRealice un an�lisis costo-efectividad de las opciones de tratamiento utilizando los AVAC como medida de los efectos sanitarios. �Qu� estrategia elegir�a y por qu�, si el umbral de disposici�n a pagar es de 50.000 d�lares por a�o de vida ajustado por calidad?\n\n\n\nTratamiento\nCostos\nAVAC\n\n\n\n\nNo hacer nada\n36,000\n43.8\n\n\nTAR 1\n15,525\n73.52\n\n\nTAR 1/2\n11,000\n63.4\n\n\nRetro 200\n20,000\n70.0\n\n\nRetro 400\n22,000\n65.0\n\n\nCentro\n10,000\n50.0\n\n\nCentro / Retro 200\n40,000\n80.0\n\n\nCentro / Retro 400\n35,000\n75.0\n\n\n\n\n\n\n\n\nOpciones de tratamiento\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nRCEI ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nC�lculo del RCEI Tabla 1\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nRCEI ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nC�lculo RCEI Tabla 2\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nRCEI ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n: C�lculo RCEI Tabla 3 {tbl-colwidths=“[20,20,20,20,20,20]”}"
   },
   {
-    "objectID": "case-studies/ESP_cs_injury-markov.html#estructura-de-markov-vivo-muerto",
-    "href": "case-studies/ESP_cs_injury-markov.html#estructura-de-markov-vivo-muerto",
-    "title": "Caso de estudio: Modelos de Markov",
-    "section": "Estructura de Markov: Vivo-Muerto",
-    "text": "Estructura de Markov: Vivo-Muerto\nLa estructura del modelo de Markov para el modelo Vivo-Muerto se muestra en la siguiente figura. Amua tiene un nodo de Markov especial (representado por ). Las ramas que salen de un nodo de Markov designan todos los estados de Markov (y sólo los estados de Markov).\nEn este ejemplo, hay dos estados de salud: (1) Vivo, (2) Muerto. A partir de cada estado de salud, se puede crear un subárbol (también llamado árbol de ciclos) que refleje los eventos que pueden ocurrir durante un ciclo. La última rama al final de cada camino será una transición de estado, que define a qué estado de salud se pasará en el siguiente ciclo.\n\n\n\n\n\n\nNote\n\n\n\nTenga en cuenta que en un modelo de Markov, los resultados se definen en otro lugar - NO al final de la rama, sino en el estado."
-  },
-  {
-    "objectID": "case-studies/ESP_cs_injury-markov.html#construir-el-árbol",
-    "href": "case-studies/ESP_cs_injury-markov.html#construir-el-árbol",
-    "title": "Caso de estudio: Modelos de Markov",
-    "section": "Construir el árbol",
-    "text": "Construir el árbol\n\nEstructura\nDespués de abrir Amua, haga clic en Modelo  Nuevo  Modelo de Markov.\n\nGuarde su modelo desde el principio.\nAhora selecciona el nodo de decisión , Haz clic con el botón derecho del ratón  Añadir   Cadena de Markov .\nEmpiece por desarrollar la estructura del modelo de Markov utilizando Vivo y Muerto para los diferentes estados de salud. Las ramas de la cadena de Markov deben corresponder a los estados del modelo. Etiquete la opción de nombre a la derecha del nodo de decisión como Vivo-Muerto.\n\n\n\n\n\n\n\n\nComplete la estructura del modelo de Markov utilizando la información anterior. Nota: céntrate en añadir las ramas y transiciones para este paso; los parámetros se añadirán más tarde.\n\n\n\n\nCuando llegue al final de la rama, seleccione el nodo de azar que desea convertir en una transición de estado, haga clic derecho, seleccione Cambiar a Transición de Estado. Esto le dará la flecha azul  . A la derecha de esta flecha, encontrará un menú desplegable con los diferentes estados de salud que haya especificado. Seleccione el estado de salud al que pasará esta parte de la cohorte.\nCon este botón  puede alinear los nodos finales.\n\n\n\nTamaño de la cohorte y probabilidades iniciales\n\nVaya a Modelo  Propiedades  seleccione la pestaña Simulación. El tamaño de cohorte por defecto es 1.000. Cambie el tamaño de la cohorte a 1, para que todos los resultados sean a nivel individual (es decir, por persona).\n\n\n\n\n\n\n\nEn la Cadena de Markov  , cambie las probabilidades iniciales de los estados de salud. Como todos los pacientes empiezan en el estado Vivo, cambie el p:0 de la izquierda del estado Local a p:1 (vea el cuadro azul de abajo)."
-  },
-  {
-    "objectID": "case-studies/ESP_cs_injury-markov.html#parámetros-del-modelo",
-    "href": "case-studies/ESP_cs_injury-markov.html#parámetros-del-modelo",
-    "title": "Caso de estudio: Modelos de Markov",
-    "section": "Parámetros del modelo",
-    "text": "Parámetros del modelo\nEn primer lugar, defina los siguientes parámetros de constante temporal para el modelo en el panel “Parámetros”.\n\n\n\n\n\nEsta variable indica a Amua que vamos a modelizar una cohorte de recién nacidos. Sin embargo, podríamos adaptarla fácilmente para modelar una cohorte de personas de 20 años, etc."
-  },
-  {
-    "objectID": "case-studies/ESP_cs_injury-markov.html#probabilidades-de-transición",
-    "href": "case-studies/ESP_cs_injury-markov.html#probabilidades-de-transición",
-    "title": "Caso de estudio: Modelos de Markov",
-    "section": "Probabilidades de transición",
-    "text": "Probabilidades de transición\nLa matriz de probabilidades de transición subyacente tiene la siguiente forma:\n\n\n\n\n\nSin embargo, como estamos modelando una cohorte de recién nacidos hasta la muerte, necesitamos incluir en el modelo probabilidades de transición de muerte que varíen según la edad (es decir, el ciclo). En otras palabras, habrá una probabilidad de muerte diferente en cada ciclo.\n\n\n\n\n\n\nImportant\n\n\n\nEn Amua, los inputs variables en el tiempo se operacionalizan como variables  en lugar de parámetros.\nLas variables  pueden definirse para realizar un seguimiento de los eventos del modelo y actualizar dinámicamente las expresiones a medida que el modelo se ejecuta. Así, a diferencia de los parámetros  que son fijos para una ejecución determinada del modelo, las variables pueden cambiar dentro de una simulación. Las variables pueden cambiar entre individuos, lo que permite modelar la heterogeneidad, o pueden cambiar con el tiempo.\n\n\nPor lo tanto, definiremos p_die como una variable  que hace referencia a valores de una tabla de consulta , siguiendo los pasos que se indican a continuación.\n\n\n\n\n\n\nImportant\n\n\n\nUna tabla de consulta devuelve el valor que corresponde a un índice determinado. La primera columna de una tabla de consulta contiene los índices de la tabla, y pueden definirse una o varias columnas de valores de consulta. Los valores de los índices deben ser únicos y estar en orden ascendente. Hay 3 métodos de búsqueda, (1) exacto, (2) interpolar, y (3) truncar, para más detalles sobre estos métodos visite el Amua Wiki en GitHub.\n\n\nPrimero definimos una tabla de consulta  tbl_death para leer la mortalidad de fondo dependiente de la edad construida a partir de las tablas de vida colombinas.\n\nDescarga de datos\nDescargue el archivo titulado colombia-life-table-death-probabilities.csv de la página web del taller. Esta tabla contiene la probabilidad de mortalidad anual indexada por edad para Colombia. A continuación se muestra una captura de pantalla de las primeras filas de este archivo .csv. La columna index es la edad, mientras que p_die es la probabilidad anual de muerte a cada edad.\n\n\n\n\n\nVaya al panel “Tablas”, haga clic en  para añadir una tabla, y debería ver una ventana “Definir tabla” (véase la captura de pantalla siguiente). Haga clic en el botón Importar  y seleccione el archivo .csv descargado para importarlo. La tabla se redimensionará automáticamente para ajustarse a los datos importados. La primera fila del archivo se utilizará como encabezado de la tabla.\n\nIntroduzca “tbl_p_die” como nombre para esta variable. “Lookup” es el tipo de tabla por defecto (que es lo que queremos aquí). Elija “Interpolar” como método de búsqueda. Haga clic en Guardar para aplicarlo.\nA continuación, podemos definir la variable variable en el tiempo p_die (que lee de la tabla que acabamos de definir y funciona como la probabilidad de mortalidad de fondo en el ciclo actual del modelo, \\(t\\)).\nAsegúrese de crear una variable y no un parámetro. En “Variables”, haga clic en  para añadir una variable p_die = tbl_p_die[age_initial + t, 1].\n\n\n\n\n\n\nNote\n\n\n\nLa primera columna de una tabla se utiliza siempre para la indexación en las tablas. Por lo tanto, el número “1” aquí indicará en realidad la segunda columna de la tabla como valor correspondiente. También puede utilizar el nombre de la columna para leer un valor, por ejemplo, tbl_p_die[edad_inicial + t, “p_die”].\n\n\n\n\n\n\n\n\nTip\n\n\n\nEn Amua, “t” es una variable integrada que registra el número de ciclos. Se actualiza automáticamente cuando se ejecuta el modelo. Por ejemplo, en el ciclo 10^^ del modelo de Markov, t = 10. Por lo tanto, en la fórmula “tbl_p_die[edad_inicial + t, 1]”, edad_inicial + t será igual a la edad modelada del individuo en el ciclo t, y la fórmula completa leerá la mortalidad de fondo dependiente de la edad basada en la edad actual del individuo (en lugar de la edad inicial).\nAmua utiliza por defecto un tiempo de ciclo de \\(t=0\\). Por lo tanto, si pulsa “Evaluar”, el campo Valor esperado debería calcular la probabilidad de muerte de un recién nacido como se muestra en la tabla de consulta .csv.\n\n\n\n\n\n\n\nAhora tenemos definidas todas las probabilidades de transición. Añada estas entradas a las ramas del modelo. Recuerda añadir también las probabilidades complementarias usando “C”."
-  },
-  {
-    "objectID": "case-studies/ESP_cs_injury-markov.html#condición-de-terminación",
-    "href": "case-studies/ESP_cs_injury-markov.html#condición-de-terminación",
-    "title": "Caso de estudio: Modelos de Markov",
-    "section": "Condición de terminación",
-    "text": "Condición de terminación\n\nEspecifique la terminación del modelo seleccionando [terminación] y escriba t==110. Esto permitirá que su modelo funcione durante 110 ciclos, entonces el modelo terminará."
-  },
-  {
-    "objectID": "case-studies/ESP_cs_injury-markov.html#recompensas",
-    "href": "case-studies/ESP_cs_injury-markov.html#recompensas",
-    "title": "Caso de estudio: Modelos de Markov",
-    "section": "Recompensas",
-    "text": "Recompensas\nLa recompensa por defecto en Amua es el coste. Tenemos que cambiar esto para tener la esperanza de vida (LE) como una recompensa. Ir a Modelo  Propiedades  seleccione la pestaña Análisis y cambie la dimensión de coste a LE. Utilice LE como símbolo y ajuste a 4 decimales.\n\n\n\n\n\nAñada la esperanza de vida a la izquierda de cada estado de salud después de “R: (LE)”.\n\n\n\n\n\nAplicar la corrección de medio ciclo. Ir a Modelo  Propiedades  seleccione la pestaña Markov y marque la casilla Corrección de medio ciclo. Haga clic en OK para aplicar.\n\n\n\n\n\nAhora, hemos terminado de construir el modelo Vivo-Muerto. Analice el modelo utilizando una simulación de cohortes haciendo clic en Ejecutar  Ejecutar modelo.\n\n\n\n\n\n\n**Ejecuta el modelo vivo-muerto y calcula la esperanza de vida total."
-  },
-  {
-    "objectID": "case-studies/ESP_cs_injury-markov.html#añadir-nodos-de-probabilidad-de-herida",
-    "href": "case-studies/ESP_cs_injury-markov.html#añadir-nodos-de-probabilidad-de-herida",
-    "title": "Caso de estudio: Modelos de Markov",
-    "section": "Añadir Nodos de Probabilidad de Herida",
-    "text": "Añadir Nodos de Probabilidad de Herida\nDesde el estado de salud “Vivo”, convierte la flecha azul  en un nodo de azar usando el botón de cambio de tipo . A partir de este nodo de probabilidad, incluya la probabilidad de que se produzca una lesión por fuegos artificiales. La probabilidad de una lesión debe basarse en un nuevo parámetro fijo llamado p_lesión.\nA partir de la rama lesión, añade otro nodo de azar para saber si la lesión es mortal o no. Completa la estructura del modelo añadiendo flechas de transición al estado de salud “Vivo” si el individuo no tiene ninguna lesión o tiene una lesión no mortal por fuegos artificiales. Añade una flecha de transición al estado de muerte si el individuo muere a causa de su lesión por fuegos artificiales.\nEl árbol de Markov debería tener este aspecto:"
-  },
-  {
-    "objectID": "case-studies/ESP_cs_injury-markov.html#añadir-lesiones-y-lesiones-mortales-como-resultados",
-    "href": "case-studies/ESP_cs_injury-markov.html#añadir-lesiones-y-lesiones-mortales-como-resultados",
-    "title": "Caso de estudio: Modelos de Markov",
-    "section": "Añadir Lesiones y Lesiones Mortales como Resultados",
-    "text": "Añadir Lesiones y Lesiones Mortales como Resultados\nA continuación, añada los resultados de lesiones por fuegos artificiales (INJ) y lesiones mortales por fuegos artificiales (FINJ) al modelo (Modelo  Propiedades  Análisis ).\n\n\n\n\n\nA continuación, tenemos que añadir un “rastreador” de una sola vez para registrar cada instancia en la que un miembro de la cohorte es herido y fatalmente herido. Podemos hacerlo haciendo clic-derecho en el nodo de azar después de “Herida de Fuego”, y luego haciendo clic en  Add Cost.\n\n\n\n\n\n\n\n**Añade a tu árbol de Markov los resultados de cualquier lesión (LES) y de las lesiones mortales (MORT)."
-  },
-  {
-    "objectID": "case-studies/ESP_cs_injury-markov.html#cambiar-el-tamaño-de-la-cohorte",
-    "href": "case-studies/ESP_cs_injury-markov.html#cambiar-el-tamaño-de-la-cohorte",
-    "title": "Caso de estudio: Modelos de Markov",
-    "section": "Cambiar el tamaño de la cohorte",
-    "text": "Cambiar el tamaño de la cohorte\nNuestro modelo actual está estructurado para un tamaño de cohorte de 1 individuo. Esto suele ser útil -especialmente para calcular la esperanza de vida como resultado-, pero utilizar otros tamaños de cohorte puede ser útil para producir información relevante para la toma de decisiones políticas.\nAhora cambiaremos el modelo de modo que capturemos la experiencia vital de una cohorte de 100.000 recién nacidos. Esto nos permitirá modelizar el número esperado de lesiones totales y mortales por fuegos artificiales a lo largo de la vida para una cohorte grande y, finalmente, ver cómo disminuye el número total de lesiones a lo largo de la vida bajo diferentes opciones políticas.\n\nIr a Modelo  Propiedades  seleccione la pestaña Simulación. Cambie el tamaño de la cohorte a 100.000.\n\n\n\n\n\n\n\nTip\n\n\n\nSu resultado de esperanza de vida (EV) devolverá ahora el total de años de vida esperados para una cohorte de 100.000 personas. Para obtener un resultado de esperanza de vida estándar, puede redefinir el “resultado” para el resultado LE como \\(1/100000\\)."
-  },
-  {
-    "objectID": "case-studies/ESP_cs_injury-markov.html#apply-half-cycle-correction",
-    "href": "case-studies/ESP_cs_injury-markov.html#apply-half-cycle-correction",
-    "title": "Caso de estudio: Modelos de Markov",
-    "section": "Apply Half-Cycle Correction",
-    "text": "Apply Half-Cycle Correction\n\nAplicar corrección de medio ciclo. Vaya a Modelo  Propiedades  seleccione la pestaña Markov y marque la casilla Corrección de medio ciclo. Haga clic en Aceptar para aplicarla."
-  },
-  {
-    "objectID": "case-studies/ESP_cs_injury-markov.html#ejecutar-el-modelo",
-    "href": "case-studies/ESP_cs_injury-markov.html#ejecutar-el-modelo",
-    "title": "Caso de estudio: Modelos de Markov",
-    "section": "Ejecutar el Modelo",
-    "text": "Ejecutar el Modelo\nVerifique que su modelo es capaz de funcionar haciendo clic en el botón  check model. Una vez corregidos todos los errores,  ejecute el modelo.\nDespués de ejecutar el modelo, verá los resultados esperados en la parte inferior de la pantalla. Esta información nos dice que la esperanza de vida total es de 77,04 años y que se esperan 222,07 lesiones por fuegos artificiales y 1,02 lesiones mortales por cada 100.000 recién nacidos en Colombia.\n\nAmua también mostrará una nueva ventana con una figura y una tabla de hoja de cálculo. La figura muestra el número total de personas de la cohorte en cada estado de salud (“Vivo” y “Muerto”) en cada ciclo del modelo. La tabla de la hoja de cálculo contiene la información trazada (en las columnas “Vivo” y “Muerto”), así como los cálculos específicos de cada ciclo para la esperanza de vida y el recuento de lesiones.\nLas columnas que empiezan por Cum_ son recuentos acumulados de cada resultado. El resultado que se muestra a continuación, por ejemplo, indica que en el ciclo \\(t=20\\) (que corresponde a la edad=20 de nuestra cohorte), se prevén 58.951 lesiones relacionadas con incendios en nuestra cohorte de 100.000 recién nacidos."
-  },
-  {
-    "objectID": "case-studies/ESP_cs_injury-markov.html#añadir-la-tabla-de-búsqueda-de-probabilidades-de-lesión",
-    "href": "case-studies/ESP_cs_injury-markov.html#añadir-la-tabla-de-búsqueda-de-probabilidades-de-lesión",
-    "title": "Caso de estudio: Modelos de Markov",
-    "section": "Añadir la tabla de búsqueda de probabilidades de lesión",
-    "text": "Añadir la tabla de búsqueda de probabilidades de lesión\nAl igual que hicimos anteriormente con las probabilidades de mortalidad por edad, descargue el archivo de datos cases-by-age.csv del sitio web del taller.\nVaya al panel “Tablas”, haga clic en  para añadir una tabla, y debería ver una ventana “Definir tabla” (véase la captura de pantalla siguiente). Haga clic en el botón Importar  y seleccione el archivo .csv descargado para importarlo. La tabla se redimensionará automáticamente para ajustarse a los datos importados. La primera fila del archivo se utilizará como encabezado de la tabla.\nIntroduzca “tbl_p_injury” como nombre para esta variable. “Lookup” es el tipo de tabla por defecto (que es lo que queremos aquí). Elija “Interpolar” como método de búsqueda. Haga clic en Guardar para aplicar.\n\n\n\n\n\n\nImportant\n\n\n\nAmua también puede incluir filas en blanco adicionales cuando importa la tabla. Antes de continuar, elimine todas las filas en blanco haciendo clic en la fila y, a continuación, utilizando el botón  situado junto a “Rows” (vea los rectángulos rojos a continuación)."
-  },
-  {
-    "objectID": "case-studies/ESP_cs_injury-markov.html#definir-una-probabilidad-de-lesión-específica-por-edad",
-    "href": "case-studies/ESP_cs_injury-markov.html#definir-una-probabilidad-de-lesión-específica-por-edad",
-    "title": "Caso de estudio: Modelos de Markov",
-    "section": "Definir una probabilidad de lesión específica por edad",
-    "text": "Definir una probabilidad de lesión específica por edad\nA continuación, podemos definir la variable en el tiempo variable p_injury_t (que lee de la tabla que acabamos de definir y opera como la probabilidad de mortalidad de fondo en el ciclo actual del modelo, \\(t\\)).\nAsegúrese de crear una variable y no un parámetro. En “Variables”, haga clic en  para añadir una variable p_injury_t = tbl_p_injury[age_initial + t, 1].\n\n\n\n\n\n\nVuelva a ejecutar el modelo utilizando probabilidades de lesión específicas para cada edad. ¿Cómo cambia el número esperado de lesiones totales y mortales respecto a cuando utilizamos las probabilidades fijas anteriores?"
-  },
-  {
-    "objectID": "case-studies/cs_decision-tree-excel.html",
-    "href": "case-studies/cs_decision-tree-excel.html",
-    "title": "Exercise: Decision Tree in Excel",
-    "section": "",
-    "text": "Download Decision Tree Excel File"
-  },
-  {
-    "objectID": "case-studies/cs_decision-tree-excel.html#assigning-variable-names",
-    "href": "case-studies/cs_decision-tree-excel.html#assigning-variable-names",
-    "title": "Exercise: Decision Tree in Excel",
-    "section": "Assigning Variable Names",
-    "text": "Assigning Variable Names\nOur first step is to assign each base case value its variable name. There are two ways to do this:\n\nUsing the naming box in the upper left of the spreadsheet. This is useful for naming one item at a time.\nBatch naming by using a table selection.\n\nLet’s first run through option 1. In the figure below, we will assign the name “variable1” to the value in cell C5. We do this using the naming box highlighted in the upper left. Simply replace “C5” there with what you want to call the value in that cell, i.e., “variable1.”\n\n\n\nAssign the variable name “variable1” to the value in cell C5.\n\n\nYou can see this process in action in the video below."
-  },
-  {
-    "objectID": "case-studies/cs_decision-tree-excel.html#batch-assigning-variable-names",
-    "href": "case-studies/cs_decision-tree-excel.html#batch-assigning-variable-names",
-    "title": "Exercise: Decision Tree in Excel",
-    "section": "Batch Assigning Variable Names",
-    "text": "Batch Assigning Variable Names\nOften it is more efficient to assign groups of variables, rather than do it one by one. To do this we simply select the “table” we want to use, and then go to the Formulas tab and select Create from Selection.\n\n\n\n\n\n\nMake sure the variable name you want to assign is either in the leftmost row, or the top row (see below). Also make sure the value you want assigned to that variable is in the second column, as shown in the figure.\n\n\n\n\nAssuming you have structured your parameter table as above, and using the guidance above, when excel prompts you to “Create Names” you can tell it the variable names are in the left column:\n\nOnce you have done this, you can select the Name Manager on the Formulas ribbon to confirm the new names have been assigned, and to make changes.\n\n\n\n\n\n\nYou can edit, delete, or reassign the cell values/range in the Name Manager, too.\n\n\n\n\nA video walk-through of this process is shown below.\n\nIf your parameter names are organized as column headers, you can use the same process, as shown in the video below."
-  },
-  {
-    "objectID": "case-studies/cs_decision-tree-excel.html#step-4-calculate-expected-outcomes",
-    "href": "case-studies/cs_decision-tree-excel.html#step-4-calculate-expected-outcomes",
-    "title": "Exercise: Decision Tree in Excel",
-    "section": "Step 4: Calculate Expected Outcomes",
-    "text": "Step 4: Calculate Expected Outcomes\nOur final step is to “fold-back” the decision tree to summarize expected cost and survival outcomes for each strategy under consideration. You will find a summary table of outcomes in the worksheet titled “Summary.”\n\n\n\n\n\n\n\nExercise 1.4\n\n\n\n Calculate expected outcomes for each strategy.\n\n\n\n\n\n\nHINT: For the expected deaths outcome, you can use the total population size and expected survival outcome."
-  },
-  {
-    "objectID": "case-studies/cs_decision-tree-amua.html",
-    "href": "case-studies/cs_decision-tree-amua.html",
-    "title": "Exercise: Decision Tree in Amua",
-    "section": "",
-    "text": "This case study is designed to get you familiar with constructing a decision tree in Amua. Specific learning objectives are as follows:\n\nParameterize and structure a decision tree model.\nEstimate survival and cost outcomes from the decision tree model in the Amua software.\n\n\n\n\n\n\n\nPlease note that this case study is based on the Amua tutorial here. We have modified the tutorial to make it more relevant to the workshop."
-  },
-  {
-    "objectID": "case-studies/cs_decision-tree-amua.html#getting-started",
-    "href": "case-studies/cs_decision-tree-amua.html#getting-started",
-    "title": "Exercise: Decision Tree in Amua",
-    "section": "Getting started",
-    "text": "Getting started\nYou will first need to install Java (1.8 or later) & download Amua. Follow the directions here\nHere is a comprehensive tutorial to get you started. We review some highlights below:"
-  },
-  {
-    "objectID": "case-studies/cs_decision-tree-amua.html#disease-prevalence",
-    "href": "case-studies/cs_decision-tree-amua.html#disease-prevalence",
-    "title": "Exercise: Decision Tree in Amua",
-    "section": "Disease Prevalence",
-    "text": "Disease Prevalence\n\nFor the branch No Screen, click underneath the branch labeled D+ (next to the label p:). A text-entry box will now be outlined in blue. This is where you enter the probability for this branch.\nType prev which we will define as the prevalence of the disease. Hit Enter or click outside the text-box to accept the probability.\nThe text will now turn red because Amua does not recognize prev as a model object, so we will have to\ndefine it later."
-  },
-  {
-    "objectID": "case-studies/cs_decision-tree-amua.html#complementary-probabilities",
-    "href": "case-studies/cs_decision-tree-amua.html#complementary-probabilities",
-    "title": "Exercise: Decision Tree in Amua",
-    "section": "Complementary Probabilities",
-    "text": "Complementary Probabilities\n\nNow enter the probability for the D- branch for No Screen.\nBecause the probabilities for all branches of a chance node must sum to 1.0, we could enter 1-prev as the probability.\n\nThis is called a ‘complementary’ probability as it provides the complement to sum to 1.0.\n\n\n-In Amua you can type C or c to indicate a complementary probability. - Note that there can only be one complementary probability per chance node.\n-Enter C for the probability of D-."
-  },
-  {
-    "objectID": "case-studies/cs_decision-tree-amua.html#define-probabilities-for-screen-strategy",
-    "href": "case-studies/cs_decision-tree-amua.html#define-probabilities-for-screen-strategy",
-    "title": "Exercise: Decision Tree in Amua",
-    "section": "Define Probabilities for Screen Strategy",
-    "text": "Define Probabilities for Screen Strategy\n\nFor the Test + branch enter pTPos as the probability of testing positive, which will be a function of the disease prevalence and test characteristics (sensitivity and specificity).\nEnter C for the probability of Test -.\nNext, we’ll define the probability of having the disease given each test result in the Screen strategy.\n\nOn the Test + branch, click under the D+ branch and type pD_TPos. This will be the probability of having the disease given a positive test.\nClick under D- and type C to indicate a complementary probability.\nFor the Test - branch, click under the D+ branch and type pD_TNeg, which is the probability of having the disease given a negative test.\nClick under D- below and type C again.\n\n\n - Finally, define teh probability of having the disease in the Treat All strategy. 1. Click under D+ and type prev, which is the prevalence of the disease. 2. Enter C for the probability of D-."
-  },
-  {
-    "objectID": "case-studies/cs_prob-decision.html",
-    "href": "case-studies/cs_prob-decision.html",
-    "title": "Case Study: Probabilities & Decision Trees",
-    "section": "",
-    "text": "Important\n\n\n\nPlease note that you can download PDF and Microsoft Word versions of this case study using the links on the right.\n\n\n\nCase 1\nIn a hypothetical community, 60% of all people consume at least 6 alcoholic beverages per week and 50% are overweight. The percentage of people who are both overweight and consume this much alcohol is 40%. Construct a 2x2 table to answer (a)-(c) below. For part (d), construct a decision tree.\n\nWhat percentage of people consume at least 6 alcoholic beverages per week, are overweight, or fall into both categories?\n\n\n\n\n\n\n\n\n\n\n\n\nYou sample at random a person from the community and find that they consume at least 6 alcoholic beverages per week. What is the probability that they are overweight?\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is the probability that someone from this community consumes at least 6 alcoholic beverages per week if they are overweight?\n\n\n\n\n\n\n\n\n\nDraw a decision tree to represent this problem\n\n\n\n\n\n\n\n\n\n\n\n\n\nCase 2\nA new screening procedure can detect 80% of women diagnosed with breast cancer but will falsely identify 2% without breast cancer. The prevalence of breast cancer in the population is 1.6 in 100\n\nWhat is the probability that a woman does not have breast cancer if the test is negative?\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is the probability that a woman has breast cancer if the test is positive?"
+    "objectID": "case-studies/ESP_cs_icer_em.html#instrucciones-1",
+    "href": "case-studies/ESP_cs_icer_em.html#instrucciones-1",
+    "title": "Caso de Estudio: RCEIs",
+    "section": "Instrucciones",
+    "text": "Instrucciones\nCalcule las razones de costo-efectividad incrementales para cada estrategia y determine qu� estrategia de tamizaje elegir�a si, como responsable de la toma de decisiones, estuviera dispuesto a pagar $50.000/QALY (utilizando a�os de vida ajustados por calidad descontados).\n\n\nCostos y Resultados AVAC, seg�n estrategia\n\n\n\n\n\n\n\nEstrategia de cribado\nAVAC descontados\nCostos descontados ($2022)\n\n\n\n\nNo tamizaje\n10.05\n4,130\n\n\nCada 3 a�os\n10.798\n5,178\n\n\nCada 2 a�os\n10.830\n5,583\n\n\nCada 1 a�o\n10.973\n6,417\n\n\nCada 6 meses\n10.988\n8,744\n\n\n\n\nC�lculo del RCEI Tabla 1\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nRCEI ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nC�lculo RCEI Tabla 2\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nRCEI ($/AVAC)"
   },
   {
     "objectID": "case-studies/ESP_cs_decision-tree-excel.html",
