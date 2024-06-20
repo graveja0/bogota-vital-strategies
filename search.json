@@ -4607,23 +4607,23 @@
   {
     "objectID": "case-studies/ESP_cs_icer.html",
     "href": "case-studies/ESP_cs_icer.html",
-    "title": "Case Study: ICERs",
+    "title": "Estudio de Caso: RCEI",
     "section": "",
     "text": "Important\n\n\n\nPuede descargar las versiones en PDF y Microsoft Word de este estudio de caso utilizando los enlaces de la derecha."
   },
   {
     "objectID": "case-studies/ESP_cs_icer.html#instrucciones",
     "href": "case-studies/ESP_cs_icer.html#instrucciones",
-    "title": "Case Study: ICERs",
+    "title": "Estudio de Caso: RCEI",
     "section": "Instrucciones",
     "text": "Instrucciones\nRealice un análisis costo-efectividad de las opciones de tratamiento utilizando los AVAC como medida de los efectos sobre la salud. ¿Qué estrategia elegiría y por qué, si el umbral de disposición a pagar es de 50.000 dólares por año de vida ajustado por calidad?\n\n\n\nTratamiento\nCostos\nAVACs\n\n\n\n\nNo hacer nada\n36,000\n43.8\n\n\nART 1\n15,525\n73.52\n\n\nART 1/2\n11,000\n63.4\n\n\nRetro 200\n20,000\n70.0\n\n\nRetro 400\n22,000\n65.0\n\n\nCentro\n10,000\n50.0\n\n\nCentro / Retro 200\n40,000\n80.0\n\n\nCentro / Retro 400\n35,000\n75.0\n\n\n\n\n\n\n\n\nOpciones de tratamiento\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nRCEI ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo del RCEI Tabla 1\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nRCEI ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo RCEI Tabla 2\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nRCEI ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo RCEI Tabla 3\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nRCEI ($/AVAC)"
   },
   {
     "objectID": "case-studies/ESP_cs_icer.html#instrucciones-1",
     "href": "case-studies/ESP_cs_icer.html#instrucciones-1",
-    "title": "Case Study: ICERs",
+    "title": "Estudio de Caso: RCEI",
     "section": "Instrucciones",
-    "text": "Instrucciones\nCalcule las razones de costo-efectividad incrementales para cada estrategia y determine qué estrategia de tamizaje elegiría si, como responsable de la toma de decisiones, estuviera dispuesto a pagar $50.000/AVAC (utilizando años de vida ajustados por calidad descontados).\n\nCostos y Resultados AVAC, por estrategia\n\n\n\n\n\n\n\nEstrategia de tamizaje\nAVAC descontados\nCostos descontados ($2022)\n\n\n\n\nNo screening\n10.05\n4,130\n\n\nEvery 3 years\n10.798\n5,178\n\n\nEvery 2 years\n10.830\n5,583\n\n\nEvery 1 year\n10.973\n6,417\n\n\nEvery 6 months\n10.988\n8,744\n\n\n\n\nCálculo del RCEI Tabla 1\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nRCEI ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo RCEI Tabla 2\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nRCEI ($/AVAC)"
+    "text": "Instrucciones\nCalcule las razones de costo-efectividad incrementales para cada estrategia y determine qué estrategia de tamizaje elegiría si, como responsable de la toma de decisiones, estuviera dispuesto a pagar $50.000/AVAC (utilizando años de vida ajustados por calidad descontados).\n\nCostos y Resultados AVAC, por estrategia\n\n\n\n\n\n\n\nEstrategia de tamizaje\nAVAC descontados\nCostos descontados ($2022)\n\n\n\n\nSin Tamizaje\n10.05\n4,130\n\n\nCada 3 años\n10.798\n5,178\n\n\nCada 2 años\n10.830\n5,583\n\n\nCada 1 años\n10.973\n6,417\n\n\nCada seis meses\n10.988\n8,744\n\n\n\n\nCálculo del RCEI Tabla 1\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nRCEI ($/AVAC)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCálculo RCEI Tabla 2\n\n\n\n\n\n\n\n\n\n\nEstrategia\nCostos descontados\nAVAC descontados\nCostos incrementales\nIncremento de AVAC\nRCEI ($/AVAC)"
   },
   {
     "objectID": "case-studies/ESP_cs_icer_em.html",
