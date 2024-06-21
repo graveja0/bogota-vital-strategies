@@ -1,15 +1,20 @@
 ---
 title: "Deterministic & Scenario Analysis"
-format: 
+format:
   revealjs:
-      theme: slides.scss
-      background-transition: fade
-      highlight-style: ayu-mirage
-      footer: |
-        [Back to Website](../index.html)
+    theme: slides.scss
+    incremental: true
+    slide-number: true
+    logo: ../vchem.png
+    html-math-method: katex
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    footer: |
+      [Back to website](../index.html)
 editor_options: 
-chunk_output_type: console
-bibliography: ../references.bib
+  chunk_output_type: console
+editor: source
 ---
 
 # Learning Objectives and Outline
