@@ -11,6 +11,10 @@ editor_options:
 bibliography: references.bib
 ---
 
+**!! End slides in day 1 recap didn’t make it into Spanish version.**
+
+**!! Some of the Spanish slides in the advanced topics didn’t render the images !!!**
+
 # Calendario de talleres
 
 +-----------+-----------------+--------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
