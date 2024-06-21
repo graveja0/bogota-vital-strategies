@@ -339,20 +339,20 @@
 <section id="learning-objectives" class="slide level2">
 <h2>Learning Objectives</h2>
 <ul>
-<li><p>Explain the purpose of deterministic sensitivity analysis and provide examples of one-way versus two-way analyses.</p></li>
-<li><p>Detail the advantages/disadvantages of deterministic sensitivity analysis.</p></li>
+<li class="fragment"><p>Explain the purpose of deterministic sensitivity analysis and provide examples of one-way versus two-way analyses.</p></li>
+<li class="fragment"><p>Detail the advantages/disadvantages of deterministic sensitivity analysis.</p></li>
 </ul>
 </section>
 <section id="outline" class="slide level2">
 <h2>Outline</h2>
 <ol type="1">
-<li>One-way sensitivity analysis.</li>
-<li>Examples from publications.</li>
-<li>Two-way sensitivity analysis.</li>
-<li>Examples from publications.</li>
-<li>Limitations and extensions.</li>
-<li>Scenario analysis</li>
-<li>Threshold analysis</li>
+<li class="fragment">One-way sensitivity analysis.</li>
+<li class="fragment">Examples from publications.</li>
+<li class="fragment">Two-way sensitivity analysis.</li>
+<li class="fragment">Examples from publications.</li>
+<li class="fragment">Limitations and extensions.</li>
+<li class="fragment">Scenario analysis</li>
+<li class="fragment">Threshold analysis</li>
 </ol>
 </section></section>
 <section>
@@ -488,8 +488,8 @@
 <section id="caution-limitations" class="slide level2">
 <h2>Caution: Limitations!</h2>
 <ul>
-<li>Limited by the subjectivity of the choice of parameters to analyze</li>
-<li>That’s why we also run PSAs!, i.e., varying ALL input parameters at the same time, using priors to play a distribution around each value</li>
+<li class="fragment">Limited by the subjectivity of the choice of parameters to analyze</li>
+<li class="fragment">That’s why we also run PSAs!, i.e., varying ALL input parameters at the same time, using priors to play a distribution around each value</li>
 </ul>
 </section></section>
 <section id="opportunity-to-practice-in-exercise" class="title-slide slide level1 center">
@@ -505,8 +505,8 @@
 <section id="scenario-analysis-1" class="slide level2">
 <h2>Scenario analysis</h2>
 <ul>
-<li>Focuses more on model <strong>assumptions</strong> rather than parameter uncertainty</li>
-<li>Could include separate analysis on:</li>
+<li class="fragment">Focuses more on model <strong>assumptions</strong> rather than parameter uncertainty</li>
+<li class="fragment">Could include separate analysis on:</li>
 </ul>
 <blockquote>
 <p>Subgroups/sub-populations, including different age cohorts &amp; risk levels</p>
@@ -558,12 +558,12 @@
 <section id="threshold-analysis-1" class="slide level2">
 <h2>Threshold analysis</h2>
 <ul>
-<li>Answers the question: What the input parameter need be to meet the country thresholds of:
+<li class="fragment">Answers the question: What the input parameter need be to meet the country thresholds of:
 <ul>
-<li>$50,000/QALY gained</li>
-<li>$100,000/QALY gained</li>
-<li>$150,000/QALY gained</li>
-<li>$200,000/QALY gained</li>
+<li class="fragment">$50,000/QALY gained</li>
+<li class="fragment">$100,000/QALY gained</li>
+<li class="fragment">$150,000/QALY gained</li>
+<li class="fragment">$200,000/QALY gained</li>
 </ul></li>
 </ul>
 </section>
@@ -579,8 +579,9 @@
 <h1>Thank you!</h1>
 
 <div class="quarto-auto-generated-content">
+<p><img src="../vchem.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="../index.html">Back to Website</a></p>
+<p><a href="../index.html">Back to website</a></p>
 </div>
 </div>
 </section>
@@ -600,7 +601,6 @@
   <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
   <script src="../site_libs/revealjs/plugin/search/search.js"></script>
   <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -635,7 +635,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -740,7 +740,7 @@
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'fade',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
@@ -767,27 +767,9 @@
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
 
-        math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
-
         // reveal.js plugins
         plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
-          RevealMath,
           RevealNotes,
           RevealSearch,
           RevealZoom
