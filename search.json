@@ -935,7 +935,7 @@
     "href": "lectures/ESP_lec_advanced-modeling-techniques.html#objetivos-de-aprendizaje",
     "title": "Técnicas avanzadas de modelización",
     "section": "Objetivos de aprendizaje",
-    "text": "Objetivos de aprendizaje\n\nSer capaz de comprender los conceptos básicos e identificar los puntos fuertes y las limitaciones de técnicas de modelización alternativas, incluyendo:\n\nMicrosimulación (simulación Monte Carlo)\nSimulación de eventos discretos\nModelos (dinámicos) de enfermedades infecciosas :::"
+    "text": "Objetivos de aprendizaje\n\nSer capaz de comprender los conceptos básicos e identificar los puntos fuertes y las limitaciones de técnicas de modelización alternativas, incluyendo:\n\nMicrosimulación (simulación Monte Carlo)\nSimulación de eventos discretos\nModelos (dinámicos) de enfermedades infecciosas"
   },
   {
     "objectID": "lectures/ESP_lec_advanced-modeling-techniques.html#esquema",
@@ -943,13 +943,6 @@
     "title": "Técnicas avanzadas de modelización",
     "section": "Esquema",
     "text": "Esquema\n\nMicrosimulación (simulación Monte Carlo)\nSimulación de eventos discretos\nModelos (dinámicos) de enfermedades infecciosas\nComparación de tipos de modelos"
-  },
-  {
-    "objectID": "lectures/ESP_lec_advanced-modeling-techniques.html#microsimulación",
-    "href": "lectures/ESP_lec_advanced-modeling-techniques.html#microsimulación",
-    "title": "Técnicas avanzadas de modelización",
-    "section": "Microsimulación",
-    "text": "Microsimulación"
   },
   {
     "objectID": "lectures/ESP_lec_advanced-modeling-techniques.html#modelos-de-microsimulación",
@@ -963,7 +956,14 @@
     "href": "lectures/ESP_lec_advanced-modeling-techniques.html#pasos",
     "title": "Técnicas avanzadas de modelización",
     "section": "Pasos",
-    "text": "Pasos\n\nDeterminar el estado inicial, utilizando la distribución de probabilidades de inicio\n\nPor ejemplo, probabilidad de empezar en enfermo/sano\n\nSimular la trayectoria individual a través de los estados de salud, utilizando números aleatorios para determinar las transiciones reales (sí/no) a partir de las probabilidades de transición.\nRegistrar el número de ciclos en cada estado\nRepitar los pasos 1-3 muchas veces (N)\nCalcular el promedio de ciclos a partir de una muestra de N\n\nPuede ponderar los estados por utilidad, costo, factor de descuento (igual que con los modelos de Markov)"
+    "text": "Pasos\n\nDeterminar el estado inicial, utilizando la distribución de probabilidades de inicio\n\nPor ejemplo, probabilidad de empezar en enfermo/sano\n\nSimular la trayectoria individual a través de los estados de salud, utilizando números aleatorios para determinar las transiciones reales (sí/no) a partir de las probabilidades de transición.\nRegistrar el número de ciclos en cada estado\nRepitar los pasos 1-3 muchas veces (N)"
+  },
+  {
+    "objectID": "lectures/ESP_lec_advanced-modeling-techniques.html#pasos-1",
+    "href": "lectures/ESP_lec_advanced-modeling-techniques.html#pasos-1",
+    "title": "Técnicas avanzadas de modelización",
+    "section": "Pasos",
+    "text": "Pasos\n\nCalcular el promedio de ciclos a partir de una muestra de N\n\nPuede ponderar los estados por utilidad, costo, factor de descuento (igual que con los modelos de Markov)"
   },
   {
     "objectID": "lectures/ESP_lec_advanced-modeling-techniques.html#números-aleatorios",
@@ -984,7 +984,7 @@
     "href": "lectures/ESP_lec_advanced-modeling-techniques.html#ejemplo",
     "title": "Técnicas avanzadas de modelización",
     "section": "Ejemplo",
-    "text": "Ejemplo\nContexto: Evaluación económica de la prevención de la tuberculosis entre las personas que viven con el VIH en Tanzania\nZhu et al., The Lancet Global Health, 2022](https://www.sciencedirect.com/science/article/pii/S2214109X22003722)"
+    "text": "Ejemplo\nContexto: Evaluación económica de la prevención de la tuberculosis entre las personas que viven con el VIH en Tanzania\n\n\n\nZhu et al., The Lancet Global Health, 2022"
   },
   {
     "objectID": "lectures/ESP_lec_advanced-modeling-techniques.html#ejemplo-1",
@@ -1036,13 +1036,6 @@
     "text": "Ejemplo\n\nGraves et al, 2017"
   },
   {
-    "objectID": "lectures/ESP_lec_advanced-modeling-techniques.html#modelos-dinámicos-de-enfermedades-infecciosas",
-    "href": "lectures/ESP_lec_advanced-modeling-techniques.html#modelos-dinámicos-de-enfermedades-infecciosas",
-    "title": "Técnicas avanzadas de modelización",
-    "section": "Modelos (dinámicos) de enfermedades infecciosas",
-    "text": "Modelos (dinámicos) de enfermedades infecciosas"
-  },
-  {
     "objectID": "lectures/ESP_lec_advanced-modeling-techniques.html#por-qué-modelos-dinámicos",
     "href": "lectures/ESP_lec_advanced-modeling-techniques.html#por-qué-modelos-dinámicos",
     "title": "Técnicas avanzadas de modelización",
@@ -1054,14 +1047,7 @@
     "href": "lectures/ESP_lec_advanced-modeling-techniques.html#el-modelo-sir",
     "title": "Técnicas avanzadas de modelización",
     "section": "El modelo SIR",
-    "text": "El modelo SIR\nEl modelo más clásico en epidemiología de enfermedades infecciosas. Apropiado para muchas enfermedades infecciosas comunes (por ejemplo, la gripe)."
-  },
-  {
-    "objectID": "lectures/ESP_lec_advanced-modeling-techniques.html#el-modelo-sir-1",
-    "href": "lectures/ESP_lec_advanced-modeling-techniques.html#el-modelo-sir-1",
-    "title": "Técnicas avanzadas de modelización",
-    "section": "El modelo SIR",
-    "text": "El modelo SIR\nFuente: Vynnycky, Emilia; White, Richard. An Introduction to Infectious Disease Modelización](images/paste-36EB7CF0.png)"
+    "text": "El modelo SIR\nEl modelo más clásico en epidemiología de enfermedades infecciosas. Apropiado para muchas enfermedades infecciosas comunes (por ejemplo, la gripe).\n\n\nFuente: Vynnycky, Emilia; White, Richard. An Introduction to Infectious Disease Modelización](images/paste-36EB7CF0.png)"
   },
   {
     "objectID": "lectures/ESP_lec_advanced-modeling-techniques.html#variantes-del-modelo-sir",
@@ -1089,7 +1075,7 @@
     "href": "lectures/ESP_lec_advanced-modeling-techniques.html#comparación-de-tipos-de-modelos-1",
     "title": "Técnicas avanzadas de modelización",
     "section": "Comparación de tipos de modelos",
-    "text": "Comparación de tipos de modelos\n\n\n\n\n\n\n\n\n\nTipo de modelo\nPuntos fuertes\nLimitaciones\n\n\n\n\nÁrbol de decisión\nTransparente\nCálculos sencillos\nDificultad para captar la progresión en el tiempo o los sucesos repetidos.\n\n\nCohorte de Markov\nCaptura de sucesos repetidos a lo largo del tiempo\nRápida velocidad de ejecución\nDificultad para captar la heterogeneidad individual o seguir el historial de eventos.\nDifícil de manejar un proceso de enfermedad complicado (sujeto a explosión de estados)\n\n\n\n*\n\nMicrosimulación**\nFácil seguimiento del historial\nMuy potente y flexible\nRequiere un gran número de ejecuciones para converger\nVelocidad de ejecución más lenta"
+    "text": "Comparación de tipos de modelos\n\n\n\n\n\n\n\n\n\nTipo de modelo\nPuntos fuertes\nLimitaciones\n\n\n\n\nÁrbol de decisión\nTransparente\nCálculos sencillos\nDificultad para captar la progresión en el tiempo o los sucesos repetidos.\n\n\nCohorte de Markov\nCaptura de sucesos repetidos a lo largo del tiempo\nRápida velocidad de ejecución\nDificultad para captar la heterogeneidad individual o seguir el historial de eventos.\nDifícil de manejar un proceso de enfermedad complicado (sujeto a explosión de estados)\n\n\nMicrosimulación\nFácil seguimiento del historial\nMuy potente y flexible\nRequiere un gran número de ejecuciones para converger\nVelocidad de ejecución más lenta"
   },
   {
     "objectID": "lectures/ESP_lec_advanced-modeling-techniques.html#comparación-de-tipos-de-modelos-2",
@@ -4466,7 +4452,7 @@
     "href": "index.html",
     "title": "Taller de Análisis Económico de intervenciones en salud para la toma de decisiones",
     "section": "",
-    "text": "Calendario de talleres\n\n\n\n\n\n\n\n\n\nFecha\nHora programada\nTema\nVersión inglesa\n\n\n\n\nMartes\n9:00 - 9:30 am\nBienvenida y presentaciones\nWelcome\n\n\n\n9:30 - 10:00\nIntroducción al análisis de decisiones\nIntroduction to Decision Analysis\n\n\n\n10:00-11:00\nÁrboles de decisión y probabilidades\nDecision Trees\n\n\n\n11:00-11:15\nCafé\nBreak\n\n\n\n11:15 - 12:00\nCaso de estudio: Probabilidades y árboles de decisión\nRespuestas\nCase Study: Decision Trees\n\n\n\n12:00 - 1:15 pm\nCafé\nBreak\n\n\n\n1:45 - 2:45 pm\nCaso de estudio: Construir un árbol de decisión en Excel\nRespuestas\nCase Study: Excel\n\n\n\n2:45 - 4:00 pm\n\n\n\n\nMiércoles\n9:00-9:15\nRecapitulación y demostración del análisis de umbrales en Amua\nUmbrales de tratamiento y valor de la información\nRecap and Demonstration of Threshold Analysis in Amua\nTreatment Thresholds and Value of Information\n\n\n\n9:15 - 10:15\nCaso de estudio: Construir un árbol de decisión en Amua\nAmua model\nCase Study: Amua\n\n\n\n10:15 - 11:00\nFundamentos CEA 1: Costos\nValuing Costs\n\n\n\n11:00 - 11:05\nCafé\nBreak\n\n\n\n11:05 - 12:00\nFundamentos CEA 2: Resultados sanitarios\nHealth Outcomes\n\n\n\n12:00 - 1:40\nAlmuerzo\nLunch\n\n\n\n1:40 - 2:45\n\nGroup Discussion of Firework Injury Policy Brief\n\n\n\n2:45 - 4:00\nCaso de estudio: Lesiones por pólvora pirotécnica\nRespuestas (.amua file)\nCase Study: Firework Injuries in Colombia\n\n\n\n4:00 - 4:45\nFundamentos del ACE 3: Análisis coste-eficacia incremental\nICERs\n\n\nJueves\n9:00-9:15\nResumen diario\n\n\n\n\n9:15 - 10:30\nFundamentos del ACE 3: Análisis coste-eficacia incremental\nCaso de estudio: Análisis coste-eficacia incremental\nICERs\nCase Study: ICERs\n\n\n\n10:30 - 10:45\nCafé\n\n\n\n\n10:45 - 12:00\nModelos de Markov\nMarkov Models\n\n\n\n12:00 - 1:15\nAlmuerzo\nLunch\n\n\n\n1:15 - 4:00\nCaso de estudio: Modelos de Markov\nCase Study: Firework Injury Model (Markov)\n\n\nViernes\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nAnálisis determinista y de escenarios\nDeterministic and Sensitivity Analysis\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:15\nTécnicas avanzadas de modelización\nAdvanced modeling techniques\n\n\n\n11:15 - 11:45\nCeremonia de entrega de certificados\nClosing Ceremony",
+    "text": "Calendario de talleres\n\n\n\n\n\n\n\n\n\nFecha\nHora programada\nTema\nVersión inglesa\n\n\n\n\nMartes\n9:00 - 9:30 am\nBienvenida y presentaciones\nWelcome\n\n\n\n9:30 - 10:00\nIntroducción al análisis de decisiones\nIntroduction to Decision Analysis\n\n\n\n10:00-11:00\nÁrboles de decisión y probabilidades\nDecision Trees\n\n\n\n11:00-11:15\nCafé\nBreak\n\n\n\n11:15 - 12:00\nCaso de estudio: Probabilidades y árboles de decisión\nRespuestas\nCase Study: Decision Trees\n\n\n\n12:00 - 1:15 pm\nCafé\nBreak\n\n\n\n1:45 - 2:45 pm\nCaso de estudio: Construir un árbol de decisión en Excel\nRespuestas\nCase Study: Excel\n\n\n\n2:45 - 4:00 pm\n\n\n\n\nMiércoles\n9:00-9:15\nRecapitulación y demostración del análisis de umbrales en Amua\nUmbrales de tratamiento y valor de la información\nRecap and Demonstration of Threshold Analysis in Amua\nTreatment Thresholds and Value of Information\n\n\n\n9:15 - 10:15\nCaso de estudio: Construir un árbol de decisión en Amua\nAmua model\nCase Study: Amua\n\n\n\n10:15 - 11:00\nFundamentos CEA 1: Costos\nValuing Costs\n\n\n\n11:00 - 11:05\nCafé\nBreak\n\n\n\n11:05 - 12:00\nFundamentos CEA 2: Resultados sanitarios\nHealth Outcomes\n\n\n\n12:00 - 1:40\nAlmuerzo\nLunch\n\n\n\n1:40 - 2:45\n\nGroup Discussion of Firework Injury Policy Brief\n\n\n\n2:45 - 4:00\nCaso de estudio: Lesiones por pólvora pirotécnica\nRespuestas (.amua file)\nRespuestas (Vídeo en YouTube)\nNota: En el vídeo, la probabilidad de recuperación de una lesión grave es de 0,6, mientras que en el estudio de caso utilizamos 0,1.\nCase Study: Firework Injuries in Colombia\n\n\n\n4:00 - 4:45\nFundamentos del ACE 3: Análisis coste-eficacia incremental\nICERs\n\n\nJueves\n9:00-9:15\nResumen diario\n\n\n\n\n9:15 - 10:30\nFundamentos del ACE 3: Análisis coste-eficacia incremental\nCaso de estudio: Análisis coste-eficacia incremental\nICERs\nCase Study: ICERs\n\n\n\n10:30 - 10:45\nCafé\n\n\n\n\n10:45 - 12:00\nModelos de Markov\nMarkov Models\n\n\n\n12:00 - 1:15\nAlmuerzo\nLunch\n\n\n\n1:15 - 4:00\nCaso de estudio: Modelos de Markov\n\nVivo-Muerto\nModelo simple de lesión\nModelo simple de lesiones con estrategias\nModelo completo de lesiones con estrategias\nModelo completo de lesión con estrategias y secuelas\n\nCase Study: Firework Injury Model (Markov)\n\n\nViernes\n9:00-9:15\nResumen diario\nRecap\n\n\n\n9:15 - 10:00\nAnálisis determinista y de escenarios\nDeterministic and Sensitivity Analysis\n\n\n\n10:00 - 10:15\nCafé\nBreak\n\n\n\n10:15 - 11:15\nTécnicas avanzadas de modelización\nAdvanced modeling techniques\n\n\n\n11:15 - 11:45\nCeremonia de entrega de certificados\nClosing Ceremony",
     "crumbs": [
       "Home"
     ]
@@ -5799,7 +5785,14 @@
     "href": "lectures/lec_advanced-modeling-techniques.html#steps",
     "title": "Advanced Modeling Techniques",
     "section": "Steps",
-    "text": "Steps\n\nDetermine initial state, using the distribution of starting probabilities\n\ne.g. probability of starting in sick/healthy\n\nSimulate individual trajectory through health states, using random numbers to determine actual transitions (yes/no) from transition probabilities\nRecord # of cycles in each state\nRepeat steps 1-3 many times (N)\nCalculate mean # of cycles from sample of N\n\nCan weight states by utility, cost, discount factor (same as with Markov models)"
+    "text": "Steps\n\nDetermine initial state, using the distribution of starting probabilities\n\ne.g. probability of starting in sick/healthy\n\nSimulate individual trajectory through health states, using random numbers to determine actual transitions (yes/no) from transition probabilities\nRecord # of cycles in each state\nRepeat steps 1-3 many times (N)"
+  },
+  {
+    "objectID": "lectures/lec_advanced-modeling-techniques.html#steps-1",
+    "href": "lectures/lec_advanced-modeling-techniques.html#steps-1",
+    "title": "Advanced Modeling Techniques",
+    "section": "Steps",
+    "text": "Steps\n\nCalculate mean # of cycles from sample of N\n\nCan weight states by utility, cost, discount factor (same as with Markov models)"
   },
   {
     "objectID": "lectures/lec_advanced-modeling-techniques.html#random-numbers",

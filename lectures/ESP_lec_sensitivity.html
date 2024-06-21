@@ -339,20 +339,20 @@
 <section id="objetivos-de-aprendizaje" class="slide level2">
 <h2>Objetivos de aprendizaje</h2>
 <ul>
-<li><p>Explicar el propósito del análisis de sensibilidad determinista y proporcionar ejemplos de análisis unidireccionales frente a bidireccionales.</p></li>
-<li><p>Detallar las ventajas/desventajas del análisis de sensibilidad determinista.</p></li>
+<li class="fragment"><p>Explicar el propósito del análisis de sensibilidad determinista y proporcionar ejemplos de análisis unidireccionales frente a bidireccionales.</p></li>
+<li class="fragment"><p>Detallar las ventajas/desventajas del análisis de sensibilidad determinista.</p></li>
 </ul>
 </section>
 <section id="resumen" class="slide level2">
 <h2>Resumen</h2>
 <ol type="1">
-<li>Análisis de sensibilidad unidireccional.</li>
-<li>Ejemplos de publicaciones.</li>
-<li>Análisis de sensibilidad bidireccional.</li>
-<li>Ejemplos de publicaciones.</li>
-<li>Limitaciones y ampliaciones.</li>
-<li>Análisis de escenarios</li>
-<li>Análisis de umbrales</li>
+<li class="fragment">Análisis de sensibilidad unidireccional.</li>
+<li class="fragment">Ejemplos de publicaciones.</li>
+<li class="fragment">Análisis de sensibilidad bidireccional.</li>
+<li class="fragment">Ejemplos de publicaciones.</li>
+<li class="fragment">Limitaciones y ampliaciones.</li>
+<li class="fragment">Análisis de escenarios</li>
+<li class="fragment">Análisis de umbrales</li>
 </ol>
 </section></section>
 <section>
@@ -360,7 +360,7 @@
 <h1>Análisis de sensibilidad unidireccional</h1>
 
 </section>
-<section id="análisis-de-sensibilidad-unidireccional-1" class="slide level2">
+<section id="análisis-de-sensibilidad-unidireccional-1" class="slide level2 smaller">
 <h2>Análisis de sensibilidad unidireccional</h2>
 <div>
 <ul>
@@ -488,8 +488,8 @@
 <section id="precaución-limitaciones" class="slide level2">
 <h2>Precaución: ¡Limitaciones!</h2>
 <ul>
-<li>Limitado por la subjetividad de la elección de los parámetros a analizar</li>
-<li>Por eso también ejecutamos APS!, es decir, variando TODOS los parámetros de entrada al mismo tiempo, usando priors para reproducir una distribución alrededor de cada valor</li>
+<li class="fragment">Limitado por la subjetividad de la elección de los parámetros a analizar</li>
+<li class="fragment">Por eso también ejecutamos APS!, es decir, variando TODOS los parámetros de entrada al mismo tiempo, usando priors para reproducir una distribución alrededor de cada valor</li>
 </ul>
 </section></section>
 <section id="oportunidad-de-practicar-en-el-ejercicio" class="title-slide slide level1 center">
@@ -505,8 +505,8 @@
 <section id="análisis-de-escenarios-1" class="slide level2">
 <h2>Análisis de escenarios</h2>
 <ul>
-<li>Se centra más en las <strong>suposiciones</strong> del modelo que en la incertidumbre de los parámetros</li>
-<li>Podría incluir análisis separados sobre:</li>
+<li class="fragment">Se centra más en las <strong>suposiciones</strong> del modelo que en la incertidumbre de los parámetros</li>
+<li class="fragment">Podría incluir análisis separados sobre:</li>
 </ul>
 <blockquote>
 <p>Subgrupos/subpoblaciones, incluyendo diferentes cohortes de edad y niveles de riesgo.</p>
@@ -558,12 +558,12 @@
 <section id="análisis-de-umbrales-1" class="slide level2">
 <h2>Análisis de umbrales</h2>
 <ul>
-<li>Responde a la pregunta cuál debe ser el parámetro de entrada para alcanzar los umbrales por país de:
+<li class="fragment">Responde a la pregunta cuál debe ser el parámetro de entrada para alcanzar los umbrales por país de:
 <ul>
-<li>50.000 $/AVAC ganado</li>
-<li>100.000 $/AVAC ganado</li>
-<li>150.000 $/AVAC ganado</li>
-<li>200.000 $/AVAC ganado</li>
+<li class="fragment">50.000 $/AVAC ganado</li>
+<li class="fragment">100.000 $/AVAC ganado</li>
+<li class="fragment">150.000 $/AVAC ganado</li>
+<li class="fragment">200.000 $/AVAC ganado</li>
 </ul></li>
 </ul>
 </section>
@@ -579,6 +579,7 @@
 <h1>¡Gracias!</h1>
 
 <div class="quarto-auto-generated-content">
+<p><img src="../vchem.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="../index.html">Volver al sitio web</a></p>
 </div>
@@ -600,7 +601,6 @@
   <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
   <script src="../site_libs/revealjs/plugin/search/search.js"></script>
   <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -635,7 +635,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -740,7 +740,7 @@
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'fade',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
@@ -767,27 +767,9 @@
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
 
-        math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
-
         // reveal.js plugins
         plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
 
-          RevealMath,
           RevealNotes,
           RevealSearch,
           RevealZoom
