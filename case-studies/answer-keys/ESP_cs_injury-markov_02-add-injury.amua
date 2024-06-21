@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Model>
-    <name>cs_markov_alive-dead_age-dependent</name>
+    <name>fireworks_markov_addinjury_spanish</name>
     <type>1</type>
     <Metadata>
-        <author>johngraves</author>
-        <dateCreated>Sat Jun 15 16:19:01 CDT 2024</dateCreated>
+        <author>graceratcliff</author>
+        <dateCreated>Thu Jun 13 08:34:42 CDT 2024</dateCreated>
         <versionCreated>0.3.1</versionCreated>
-        <modifier>johngraves</modifier>
-        <dateModified>Sat Jun 15 16:46:23 CDT 2024</dateModified>
+        <modifier>graceratcliff</modifier>
+        <dateModified>Wed Jun 19 15:49:03 CDT 2024</dateModified>
         <versionModified>0.3.1</versionModified>
     </Metadata>
     <DimInfo>
-        <dimNames>Esperanza de vida</dimNames>
-        <dimNames>Lesiones</dimNames>
+        <dimNames>Esperanza de Vida</dimNames>
+        <dimNames>Lesión</dimNames>
         <dimNames>Lesión mortal</dimNames>
-        <dimSymbols>LE</dimSymbols>
-        <dimSymbols>INJ</dimSymbols>
-        <dimSymbols>FINJ</dimSymbols>
+        <dimSymbols>EV</dimSymbols>
+        <dimSymbols>LES</dimSymbols>
+        <dimSymbols>MLES</dimSymbols>
         <decimals>4</decimals>
         <decimals>4</decimals>
         <decimals>4</decimals>
         <analysisType>0</analysisType>
-        <objective>1</objective>
-        <objectiveDim>1</objectiveDim>
+        <objective>0</objective>
+        <objectiveDim>0</objectiveDim>
         <costDim>0</costDim>
         <effectDim>0</effectDim>
         <WTP>0.0</WTP>
         <extendedDim>0</extendedDim>
     </DimInfo>
-    <scale>100</scale>
-    <alignRight>false</alignRight>
+    <scale>87</scale>
+    <alignRight>true</alignRight>
     <Parameter>
         <name>edad_inicial</name>
         <expression>0</expression>
@@ -46,461 +46,463 @@
         <notes></notes>
     </Parameter>
     <Variable>
-        <name>p_muerte</name>
-        <expression>tbl_p_muerte[edad_inicial+t,1]</expression>
+        <name>p_morir</name>
+        <expression>tbl_p_morir[edad_inicial+t,1]</expression>
         <notes></notes>
     </Variable>
     <Table>
-        <name>tbl_p_muerte</name>
+        <name>tbl_p_morir</name>
         <type>Lookup</type>
-        <lookupMethod>Exact</lookupMethod>
+        <lookupMethod>Interpolate</lookupMethod>
+        <interpolate>Linear</interpolate>
+        <extrapolate>No</extrapolate>
         <numRows>111</numRows>
         <numCols>2</numCols>
-        <headers>"index"</headers>
-        <headers>"p_die"</headers>
+        <headers>index</headers>
+        <headers>p_die</headers>
         <data>
             <item>0.0</item>
-            <item>0.0113560017674502</item>
+            <item>0.011356002</item>
         </data>
         <data>
             <item>1.0</item>
-            <item>4.80921998645245E-4</item>
+            <item>4.80922E-4</item>
         </data>
         <data>
             <item>2.0</item>
-            <item>3.3496980550829E-4</item>
+            <item>3.3497E-4</item>
         </data>
         <data>
             <item>3.0</item>
-            <item>2.70401908538442E-4</item>
+            <item>2.70402E-4</item>
         </data>
         <data>
             <item>4.0</item>
-            <item>2.32980494519697E-4</item>
+            <item>2.3298E-4</item>
         </data>
         <data>
             <item>5.0</item>
-            <item>2.10125200316713E-4</item>
+            <item>2.10125E-4</item>
         </data>
         <data>
             <item>6.0</item>
-            <item>1.9938906136463E-4</item>
+            <item>1.99389E-4</item>
         </data>
         <data>
             <item>7.0</item>
-            <item>2.02208157059514E-4</item>
+            <item>2.02208E-4</item>
         </data>
         <data>
             <item>8.0</item>
-            <item>2.2103514659022E-4</item>
+            <item>2.21035E-4</item>
         </data>
         <data>
             <item>9.0</item>
-            <item>2.57587756696376E-4</item>
+            <item>2.57588E-4</item>
         </data>
         <data>
             <item>10.0</item>
-            <item>3.11990360720493E-4</item>
+            <item>3.1199E-4</item>
         </data>
         <data>
             <item>11.0</item>
-            <item>3.82643929855653E-4</item>
+            <item>3.82644E-4</item>
         </data>
         <data>
             <item>12.0</item>
-            <item>4.6655917825833E-4</item>
+            <item>4.66559E-4</item>
         </data>
         <data>
             <item>13.0</item>
-            <item>5.59890591691037E-4</item>
+            <item>5.59891E-4</item>
         </data>
         <data>
             <item>14.0</item>
-            <item>6.58481324275595E-4</item>
+            <item>6.58481E-4</item>
         </data>
         <data>
             <item>15.0</item>
-            <item>7.58313205931782E-4</item>
+            <item>7.58313E-4</item>
         </data>
         <data>
             <item>16.0</item>
-            <item>8.5582245308069E-4</item>
+            <item>8.55822E-4</item>
         </data>
         <data>
             <item>17.0</item>
-            <item>9.48083183794135E-4</item>
+            <item>9.48083E-4</item>
         </data>
         <data>
             <item>18.0</item>
-            <item>0.00103288146986158</item>
+            <item>0.001032881</item>
         </data>
         <data>
             <item>19.0</item>
-            <item>0.00110870926958917</item>
+            <item>0.001108709</item>
         </data>
         <data>
             <item>20.0</item>
-            <item>0.00117470628923155</item>
+            <item>0.001174706</item>
         </data>
         <data>
             <item>21.0</item>
-            <item>0.00123057293550988</item>
+            <item>0.001230573</item>
         </data>
         <data>
             <item>22.0</item>
-            <item>0.0012764716665814</item>
+            <item>0.001276472</item>
         </data>
         <data>
             <item>23.0</item>
-            <item>0.00131292859497067</item>
+            <item>0.001312929</item>
         </data>
         <data>
             <item>24.0</item>
-            <item>0.0013407427182095</item>
+            <item>0.001340743</item>
         </data>
         <data>
             <item>25.0</item>
-            <item>0.0013609067754411</item>
+            <item>0.001360907</item>
         </data>
         <data>
             <item>26.0</item>
-            <item>0.00137454135284676</item>
+            <item>0.001374541</item>
         </data>
         <data>
             <item>27.0</item>
-            <item>0.00138284230299623</item>
+            <item>0.001382842</item>
         </data>
         <data>
             <item>28.0</item>
-            <item>0.00138704060548944</item>
+            <item>0.001387041</item>
         </data>
         <data>
             <item>29.0</item>
-            <item>0.00138837330213737</item>
+            <item>0.001388373</item>
         </data>
         <data>
             <item>30.0</item>
-            <item>0.00138806394647029</item>
+            <item>0.001388064</item>
         </data>
         <data>
             <item>31.0</item>
-            <item>0.00138731100594736</item>
+            <item>0.001387311</item>
         </data>
         <data>
             <item>32.0</item>
-            <item>0.00138728276739131</item>
+            <item>0.001387283</item>
         </data>
         <data>
             <item>33.0</item>
-            <item>0.00138911746764725</item>
+            <item>0.001389117</item>
         </data>
         <data>
             <item>34.0</item>
-            <item>0.00139392756647838</item>
+            <item>0.001393928</item>
         </data>
         <data>
             <item>35.0</item>
-            <item>0.0014028072748794</item>
+            <item>0.001402807</item>
         </data>
         <data>
             <item>36.0</item>
-            <item>0.00141684263634478</item>
+            <item>0.001416843</item>
         </data>
         <data>
             <item>37.0</item>
-            <item>0.00143712362453574</item>
+            <item>0.001437124</item>
         </data>
         <data>
             <item>38.0</item>
-            <item>0.00146475786575029</item>
+            <item>0.001464758</item>
         </data>
         <data>
             <item>39.0</item>
-            <item>0.00150088571863261</item>
+            <item>0.001500886</item>
         </data>
         <data>
             <item>40.0</item>
-            <item>0.00154669654814521</item>
+            <item>0.001546697</item>
         </data>
         <data>
             <item>41.0</item>
-            <item>0.00160344611818775</item>
+            <item>0.001603446</item>
         </data>
         <data>
             <item>42.0</item>
-            <item>0.00167247509985025</item>
+            <item>0.001672475</item>
         </data>
         <data>
             <item>43.0</item>
-            <item>0.0017552287526017</item>
+            <item>0.001755229</item>
         </data>
         <data>
             <item>44.0</item>
-            <item>0.00185327788601575</item>
+            <item>0.001853278</item>
         </data>
         <data>
             <item>45.0</item>
-            <item>0.00196834125191392</item>
+            <item>0.001968341</item>
         </data>
         <data>
             <item>46.0</item>
-            <item>0.00210230955276913</item>
+            <item>0.00210231</item>
         </data>
         <data>
             <item>47.0</item>
-            <item>0.00225727128320097</item>
+            <item>0.002257271</item>
         </data>
         <data>
             <item>48.0</item>
-            <item>0.00243554064846108</item>
+            <item>0.002435541</item>
         </data>
         <data>
             <item>49.0</item>
-            <item>0.00263968782766499</item>
+            <item>0.002639688</item>
         </data>
         <data>
             <item>50.0</item>
-            <item>0.00287257187056922</item>
+            <item>0.002872572</item>
         </data>
         <data>
             <item>51.0</item>
-            <item>0.00313737653502366</item>
+            <item>0.003137377</item>
         </data>
         <data>
             <item>52.0</item>
-            <item>0.00343764938757973</item>
+            <item>0.003437649</item>
         </data>
         <data>
             <item>53.0</item>
-            <item>0.00377734450153011</item>
+            <item>0.003777345</item>
         </data>
         <data>
             <item>54.0</item>
-            <item>0.00416086909389624</item>
+            <item>0.004160869</item>
         </data>
         <data>
             <item>55.0</item>
-            <item>0.00459313444414966</item>
+            <item>0.004593134</item>
         </data>
         <data>
             <item>56.0</item>
-            <item>0.00507961143083724</item>
+            <item>0.005079611</item>
         </data>
         <data>
             <item>57.0</item>
-            <item>0.00562639100525797</item>
+            <item>0.005626391</item>
         </data>
         <data>
             <item>58.0</item>
-            <item>0.00624024989074801</item>
+            <item>0.00624025</item>
         </data>
         <data>
             <item>59.0</item>
-            <item>0.00692872174799308</item>
+            <item>0.006928722</item>
         </data>
         <data>
             <item>60.0</item>
-            <item>0.00770017397622258</item>
+            <item>0.007700174</item>
         </data>
         <data>
             <item>61.0</item>
-            <item>0.00856389022123716</item>
+            <item>0.00856389</item>
         </data>
         <data>
             <item>62.0</item>
-            <item>0.00953015852688821</item>
+            <item>0.009530159</item>
         </data>
         <data>
             <item>63.0</item>
-            <item>0.0106103648884776</item>
+            <item>0.010610365</item>
         </data>
         <data>
             <item>64.0</item>
-            <item>0.0118170917348416</item>
+            <item>0.011817092</item>
         </data>
         <data>
             <item>65.0</item>
-            <item>0.0131642205694448</item>
+            <item>0.013164221</item>
         </data>
         <data>
             <item>66.0</item>
-            <item>0.0146670376271534</item>
+            <item>0.014667038</item>
         </data>
         <data>
             <item>67.0</item>
-            <item>0.0163423409388609</item>
+            <item>0.016342341</item>
         </data>
         <data>
             <item>68.0</item>
-            <item>0.0182085466264874</item>
+            <item>0.018208547</item>
         </data>
         <data>
             <item>69.0</item>
-            <item>0.0202857915618152</item>
+            <item>0.020285792</item>
         </data>
         <data>
             <item>70.0</item>
-            <item>0.0225960287011082</item>
+            <item>0.022596029</item>
         </data>
         <data>
             <item>71.0</item>
-            <item>0.0251631104433649</item>
+            <item>0.02516311</item>
         </data>
         <data>
             <item>72.0</item>
-            <item>0.0280128542485831</item>
+            <item>0.028012854</item>
         </data>
         <data>
             <item>73.0</item>
-            <item>0.0311730834973707</item>
+            <item>0.031173083</item>
         </data>
         <data>
             <item>74.0</item>
-            <item>0.0346736351913194</item>
+            <item>0.034673635</item>
         </data>
         <data>
             <item>75.0</item>
-            <item>0.038546324619656</item>
+            <item>0.038546325</item>
         </data>
         <data>
             <item>76.0</item>
-            <item>0.0428248556113939</item>
+            <item>0.042824856</item>
         </data>
         <data>
             <item>77.0</item>
-            <item>0.0475446635450462</item>
+            <item>0.047544664</item>
         </data>
         <data>
             <item>78.0</item>
-            <item>0.0527426770311187</item>
+            <item>0.052742677</item>
         </data>
         <data>
             <item>79.0</item>
-            <item>0.0584569832940414</item>
+            <item>0.058456983</item>
         </data>
         <data>
             <item>80.0</item>
-            <item>0.0647263819897936</item>
+            <item>0.064726382</item>
         </data>
         <data>
             <item>81.0</item>
-            <item>0.0715898127859862</item>
+            <item>0.071589813</item>
         </data>
         <data>
             <item>82.0</item>
-            <item>0.0790856438320734</item>
+            <item>0.079085644</item>
         </data>
         <data>
             <item>83.0</item>
-            <item>0.0872508116181859</item>
+            <item>0.087250812</item>
         </data>
         <data>
             <item>84.0</item>
-            <item>0.0961198080200616</item>
+            <item>0.096119808</item>
         </data>
         <data>
             <item>85.0</item>
-            <item>0.105723517862547</item>
+            <item>0.105723518</item>
         </data>
         <data>
             <item>86.0</item>
-            <item>0.116087920293491</item>
+            <item>0.11608792</item>
         </data>
         <data>
             <item>87.0</item>
-            <item>0.127232679624818</item>
+            <item>0.12723268</item>
         </data>
         <data>
             <item>88.0</item>
-            <item>0.139169665742783</item>
+            <item>0.139169666</item>
         </data>
         <data>
             <item>89.0</item>
-            <item>0.15190145998531</item>
+            <item>0.15190146</item>
         </data>
         <data>
             <item>90.0</item>
-            <item>0.165419918323282</item>
+            <item>0.165419918</item>
         </data>
         <data>
             <item>91.0</item>
-            <item>0.179704878059459</item>
+            <item>0.179704878</item>
         </data>
         <data>
             <item>92.0</item>
-            <item>0.194723104937615</item>
+            <item>0.194723105</item>
         </data>
         <data>
             <item>93.0</item>
-            <item>0.210427582153562</item>
+            <item>0.210427582</item>
         </data>
         <data>
             <item>94.0</item>
-            <item>0.226757238965078</item>
+            <item>0.226757239</item>
         </data>
         <data>
             <item>95.0</item>
-            <item>0.243637202592798</item>
+            <item>0.243637203</item>
         </data>
         <data>
             <item>96.0</item>
-            <item>0.260979632058677</item>
+            <item>0.260979632</item>
         </data>
         <data>
             <item>97.0</item>
-            <item>0.278685157130231</item>
+            <item>0.278685157</item>
         </data>
         <data>
             <item>98.0</item>
-            <item>0.296644901960039</item>
+            <item>0.296644902</item>
         </data>
         <data>
             <item>99.0</item>
-            <item>0.314743025385032</item>
+            <item>0.314743025</item>
         </data>
         <data>
             <item>100.0</item>
-            <item>0.332859663574979</item>
+            <item>0.332859664</item>
         </data>
         <data>
             <item>101.0</item>
-            <item>0.350874121778306</item>
+            <item>0.350874122</item>
         </data>
         <data>
             <item>102.0</item>
-            <item>0.368668135858439</item>
+            <item>0.368668136</item>
         </data>
         <data>
             <item>103.0</item>
-            <item>0.386129015194851</item>
+            <item>0.386129015</item>
         </data>
         <data>
             <item>104.0</item>
-            <item>0.403152488024915</item>
+            <item>0.403152488</item>
         </data>
         <data>
             <item>105.0</item>
-            <item>0.419645097332471</item>
+            <item>0.419645097</item>
         </data>
         <data>
             <item>106.0</item>
-            <item>0.435526036237838</item>
+            <item>0.435526036</item>
         </data>
         <data>
             <item>107.0</item>
-            <item>0.450728360899027</item>
+            <item>0.450728361</item>
         </data>
         <data>
             <item>108.0</item>
-            <item>0.465199569757672</item>
+            <item>0.46519957</item>
         </data>
         <data>
             <item>109.0</item>
-            <item>0.478901584466621</item>
+            <item>0.478901584</item>
         </data>
         <data>
             <item>110.0</item>
-            <item>0.491810205262671</item>
+            <item>0.491810205</item>
         </data>
         <notes></notes>
     </Table>
@@ -516,10 +518,10 @@
         <Node>
             <type>0</type>
             <name>Root</name>
-            <xPos>50</xPos>
-            <yPos>208</yPos>
-            <width>20</width>
-            <height>20</height>
+            <xPos>63</xPos>
+            <yPos>210</yPos>
+            <width>17</width>
+            <height>17</height>
             <parentX>0</parentX>
             <parentY>0</parentY>
             <parentType>0</parentType>
@@ -535,12 +537,12 @@
         </Node>
         <Node>
             <type>1</type>
-            <name>Vivos-Muertos</name>
-            <xPos>235</xPos>
-            <yPos>203</yPos>
-            <width>30</width>
-            <height>30</height>
-            <parentX>70</parentX>
+            <name>Vivo-Muerto</name>
+            <xPos>223</xPos>
+            <yPos>206</yPos>
+            <width>26</width>
+            <height>26</height>
+            <parentX>80</parentX>
             <parentY>218</parentY>
             <parentType>0</parentType>
             <childIndices>2</childIndices>
@@ -555,18 +557,18 @@
             <cost>0</cost>
             <cost>0</cost>
             <terminationCondition>t==110</terminationCondition>
-            <stateNames>Vivos</stateNames>
-            <stateNames>Muertos</stateNames>
+            <stateNames>Vivo</stateNames>
+            <stateNames>Muerto</stateNames>
         </Node>
         <Node>
             <type>2</type>
-            <name>Vivos</name>
-            <xPos>320</xPos>
-            <yPos>142</yPos>
-            <width>120</width>
-            <height>40</height>
-            <parentX>265</parentX>
-            <parentY>218</parentY>
+            <name>Vivo</name>
+            <xPos>297</xPos>
+            <yPos>153</yPos>
+            <width>104</width>
+            <height>34</height>
+            <parentX>249</parentX>
+            <parentY>219</parentY>
             <parentType>1</parentType>
             <childIndices>4</childIndices>
             <childIndices>5</childIndices>
@@ -585,13 +587,13 @@
         </Node>
         <Node>
             <type>2</type>
-            <name>Muertos</name>
-            <xPos>320</xPos>
-            <yPos>255</yPos>
-            <width>120</width>
-            <height>40</height>
-            <parentX>265</parentX>
-            <parentY>218</parentY>
+            <name>Muerto</name>
+            <xPos>297</xPos>
+            <yPos>251</yPos>
+            <width>104</width>
+            <height>34</height>
+            <parentX>249</parentX>
+            <parentY>219</parentY>
             <parentType>1</parentType>
             <childIndices>6</childIndices>
             <level>2</level>
@@ -609,13 +611,13 @@
         </Node>
         <Node>
             <type>3</type>
-            <name>Vivos</name>
-            <xPos>605</xPos>
-            <yPos>100</yPos>
-            <width>20</width>
-            <height>20</height>
-            <parentX>440</parentX>
-            <parentY>162</parentY>
+            <name> Sobrevivir</name>
+            <xPos>543</xPos>
+            <yPos>116</yPos>
+            <width>17</width>
+            <height>17</height>
+            <parentX>401</parentX>
+            <parentY>170</parentY>
             <parentType>2</parentType>
             <childIndices>7</childIndices>
             <childIndices>8</childIndices>
@@ -632,34 +634,34 @@
         </Node>
         <Node>
             <type>4</type>
-            <name>Muertos</name>
-            <xPos>605</xPos>
-            <yPos>205</yPos>
-            <width>20</width>
-            <height>20</height>
-            <parentX>440</parentX>
-            <parentY>162</parentY>
+            <name> Morir</name>
+            <xPos>863</xPos>
+            <yPos>207</yPos>
+            <width>17</width>
+            <height>17</height>
+            <parentX>401</parentX>
+            <parentY>170</parentY>
             <parentType>2</parentType>
             <level>3</level>
             <hasCost>false</hasCost>
             <hasVarUpdates>false</hasVarUpdates>
             <visible>true</visible>
             <collapsed>false</collapsed>
-            <prob>p_muerte</prob>
+            <prob>p_morir</prob>
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
-            <transition>Muertos</transition>
+            <transition>Muerto</transition>
         </Node>
         <Node>
             <type>4</type>
-            <name>Permanecer muerto</name>
-            <xPos>605</xPos>
-            <yPos>265</yPos>
-            <width>20</width>
-            <height>20</height>
-            <parentX>440</parentX>
-            <parentY>275</parentY>
+            <name>Muerto</name>
+            <xPos>863</xPos>
+            <yPos>259</yPos>
+            <width>17</width>
+            <height>17</height>
+            <parentX>401</parentX>
+            <parentY>268</parentY>
             <parentType>2</parentType>
             <level>3</level>
             <hasCost>false</hasCost>
@@ -670,17 +672,17 @@
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
-            <transition>Muertos</transition>
+            <transition>Muerto</transition>
         </Node>
         <Node>
             <type>3</type>
-            <name>Lesiones</name>
-            <xPos>790</xPos>
-            <yPos>55</yPos>
-            <width>20</width>
-            <height>20</height>
-            <parentX>625</parentX>
-            <parentY>110</parentY>
+            <name>Lesionado</name>
+            <xPos>703</xPos>
+            <yPos>77</yPos>
+            <width>17</width>
+            <height>17</height>
+            <parentX>560</parentX>
+            <parentY>124</parentY>
             <parentType>3</parentType>
             <childIndices>9</childIndices>
             <childIndices>10</childIndices>
@@ -693,59 +695,58 @@
             <cost>0</cost>
             <cost>1</cost>
             <cost>0</cost>
-            <transition>0</transition>
         </Node>
         <Node>
             <type>4</type>
-            <name>Sin lesiones</name>
-            <xPos>790</xPos>
-            <yPos>145</yPos>
-            <width>20</width>
-            <height>20</height>
-            <parentX>625</parentX>
-            <parentY>110</parentY>
+            <name>No Lesionado</name>
+            <xPos>863</xPos>
+            <yPos>155</yPos>
+            <width>17</width>
+            <height>17</height>
+            <parentX>560</parentX>
+            <parentY>124</parentY>
             <parentType>3</parentType>
             <level>4</level>
             <hasCost>false</hasCost>
             <hasVarUpdates>false</hasVarUpdates>
             <visible>true</visible>
             <collapsed>false</collapsed>
-            <prob>c</prob>
+            <prob>C</prob>
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
-            <transition>Vivos</transition>
+            <transition>Vivo</transition>
         </Node>
         <Node>
             <type>4</type>
-            <name>Sobrevivir</name>
-            <xPos>975</xPos>
-            <yPos>25</yPos>
-            <width>20</width>
-            <height>20</height>
-            <parentX>810</parentX>
-            <parentY>65</parentY>
+            <name> Sobrevivir</name>
+            <xPos>863</xPos>
+            <yPos>51</yPos>
+            <width>17</width>
+            <height>17</height>
+            <parentX>720</parentX>
+            <parentY>85</parentY>
             <parentType>3</parentType>
             <level>5</level>
             <hasCost>false</hasCost>
             <hasVarUpdates>false</hasVarUpdates>
             <visible>true</visible>
             <collapsed>false</collapsed>
-            <prob>c</prob>
+            <prob>C</prob>
             <cost>0</cost>
             <cost>0</cost>
             <cost>0</cost>
-            <transition>Vivos</transition>
+            <transition>Vivo</transition>
         </Node>
         <Node>
             <type>4</type>
-            <name>Lesión mortal</name>
-            <xPos>975</xPos>
-            <yPos>85</yPos>
-            <width>20</width>
-            <height>20</height>
-            <parentX>810</parentX>
-            <parentY>65</parentY>
+            <name> Morir</name>
+            <xPos>863</xPos>
+            <yPos>104</yPos>
+            <width>17</width>
+            <height>17</height>
+            <parentX>720</parentX>
+            <parentY>85</parentY>
             <parentType>3</parentType>
             <level>5</level>
             <hasCost>true</hasCost>
@@ -756,7 +757,7 @@
             <cost>0</cost>
             <cost>0</cost>
             <cost>1</cost>
-            <transition>Muertos</transition>
+            <transition>Muerto</transition>
         </Node>
         <maxCycles>1000</maxCycles>
         <stateDecimals>4</stateDecimals>

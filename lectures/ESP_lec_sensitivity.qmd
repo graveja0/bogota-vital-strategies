@@ -1,15 +1,20 @@
 ---
 title: "Análisis determinista y de escenarios"
-format: 
+format:
   revealjs:
-      theme: slides.scss
-      background-transition: fade
-      highlight-style: ayu-mirage
-      footer: |
-        [Volver al sitio web](../index.html)
+    theme: slides.scss
+    incremental: true
+    slide-number: true
+    logo: ../vchem.png
+    html-math-method: katex
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    footer: |
+      [Volver al sitio web](../index.html)
 editor_options: 
-chunk_output_type: console
-bibliography: ../references.bib
+  chunk_output_type: console
+editor: source
 ---
 
 # Objetivos de aprendizaje y esquema
@@ -32,7 +37,7 @@ bibliography: ../references.bib
 
 # Análisis de sensibilidad unidireccional {background="#43464B"}
 
-## Análisis de sensibilidad unidireccional
+## Análisis de sensibilidad unidireccional {.smaller}
 
 ::: incremental
 -   Suele ser el punto de partida de los análisis de sensibilidad

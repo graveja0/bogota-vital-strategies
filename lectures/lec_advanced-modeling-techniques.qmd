@@ -73,6 +73,8 @@ editor:
 
 4.  Repeat steps 1-3 many times (N)
 
+## Steps {.smaller}
+
 5.  Calculate mean \# of cycles from sample of N
 
     -   Can weight states by utility, cost, discount factor (same as with Markov models)
@@ -202,7 +204,7 @@ Discrete event simulation
 The most classic model in infectious disease epidemiology. Appropriate for many common
 infectious diseases (e.g., the flu).
 
-![](images/SIR.svg)
+![](images/clipboard-1493296139.png)
 
 ## The SIR model
 
@@ -242,21 +244,21 @@ They can be solved by hand or using softwares (e.g. deSolve package in R)
 ## Comparison of model types
 
 ::: {style="font-size: 0.58em; line-height: 1"}
-+---------------+----------------------------------+----------------------------------+
-| Model Type    | Strengths                        | Limitations                      |
-+===============+==================================+==================================+
-| Decision tree | Transparent                      | Difficult to capture progression |
-|               |                                  | over time or repeated events     |
-|               | Straightforward calculations     |                                  |
-+---------------+----------------------------------+----------------------------------+
-| Markov cohort | Able to capture repeated events  | Difficult to capture individual  |
-|               | over time                        | heterogeneity or track history   |
-|               |                                  | of events                        |
-|               | Fast run speed                   |                                  |
-|               |                                  | Hard to handle complicated       |
-|               |                                  | disease process (subject to      |
-|               |                                  | state explosion)                 |
-+---------------+----------------------------------+----------------------------------+
++-------------------+---------------------------------+---------------------------------+
+| Model Type        | Strengths                       | Limitations                     |
++===================+=================================+=================================+
+| Decision tree     | Transparent                     | Difficult to capture            |
+|                   |                                 | progression over time or        |
+|                   | Straightforward calculations    | repeated events                 |
++-------------------+---------------------------------+---------------------------------+
+| Markov cohort     | Able to capture repeated events | Difficult to capture individual |
+|                   | over time                       | heterogeneity or track history  |
+|                   |                                 | of events                       |
+|                   | Fast run speed                  |                                 |
+|                   |                                 | Hard to handle complicated      |
+|                   |                                 | disease process (subject to     |
+|                   |                                 | state explosion)                |
++-------------------+---------------------------------+---------------------------------+
 :::
 
 ## Comparison of model types
@@ -322,42 +324,41 @@ They can be solved by hand or using softwares (e.g. deSolve package in R)
 ## Comparison of model types
 
 ::: {style="font-size: 0.50em; line-height: 1"}
-+---------------------------+----------------------------+----------------------------+
-| Model Type                | Strengths                  | Limitations                |
-+===========================+============================+============================+
-| Decision tree             | Transparent                | Difficult to capture       |
-|                           |                            | progression over time or   |
-|                           | Straightforward            | repeated events            |
-|                           | calculations               |                            |
-+---------------------------+----------------------------+----------------------------+
-| Markov cohort             | Able to capture repeated   | Difficult to capture       |
-|                           | events over time           | individual heterogeneity   |
-|                           |                            | or track history of events |
-|                           | Fast run speed             |                            |
-|                           |                            | Hard to handle complicated |
-|                           |                            | disease process (subject   |
-|                           |                            | to state explosion)        |
-+---------------------------+----------------------------+----------------------------+
-| Microsimulation           | Easy to track history      | Requires a large number of |
-|                           |                            | runs to converge           |
-|                           | Very powerful and flexible |                            |
-|                           |                            | Slowest run speed          |
-+---------------------------+----------------------------+----------------------------+
-| Discrete event simulation | Easy to track history      | Requires a large number of |
-|                           |                            | runs to converge           |
-|                           | Faster than                |                            |
-|                           | microsimulation            | Time-to-event              |
-|                           |                            | distributions are less     |
-|                           |                            | intuitive and harder to    |
-|                           |                            | obtain than event          |
-|                           |                            | rates/probabilities        |
-+---------------------------+----------------------------+----------------------------+
-| **Dynamic**               | **Able to capture          | **More data requirements   |
-|                           | transmission of disease**  | (e.g. contact patterns in  |
-|                           |                            | populaton)**               |
-|                           |                            |                            |
-|                           |                            | **More black-box**         |
-+---------------------------+----------------------------+----------------------------+
++---------------------------+-----------------------------+-----------------------------+
+| Model Type                | Strengths                   | Limitations                 |
++===========================+=============================+=============================+
+| Decision tree             | Transparent                 | Difficult to capture        |
+|                           |                             | progression over time or    |
+|                           | Straightforward             | repeated events             |
+|                           | calculations                |                             |
++---------------------------+-----------------------------+-----------------------------+
+| Markov cohort             | Able to capture repeated    | Difficult to capture        |
+|                           | events over time            | individual heterogeneity or |
+|                           |                             | track history of events     |
+|                           | Fast run speed              |                             |
+|                           |                             | Hard to handle complicated  |
+|                           |                             | disease process (subject to |
+|                           |                             | state explosion)            |
++---------------------------+-----------------------------+-----------------------------+
+| Microsimulation           | Easy to track history       | Requires a large number of  |
+|                           |                             | runs to converge            |
+|                           | Very powerful and flexible  |                             |
+|                           |                             | Slowest run speed           |
++---------------------------+-----------------------------+-----------------------------+
+| Discrete event simulation | Easy to track history       | Requires a large number of  |
+|                           |                             | runs to converge            |
+|                           | Faster than microsimulation |                             |
+|                           |                             | Time-to-event distributions |
+|                           |                             | are less intuitive and      |
+|                           |                             | harder to obtain than event |
+|                           |                             | rates/probabilities         |
++---------------------------+-----------------------------+-----------------------------+
+| **Dynamic**               | **Able to capture           | **More data requirements    |
+|                           | transmission of disease**   | (e.g. contact patterns in   |
+|                           |                             | populaton)**                |
+|                           |                             |                             |
+|                           |                             | **More black-box**          |
++---------------------------+-----------------------------+-----------------------------+
 :::
 
 ## How to choose the right model?

@@ -30,7 +30,7 @@ editor:
 
     -   Simulación de eventos discretos
 
-    -   Modelos (dinámicos) de enfermedades infecciosas :::
+    -   Modelos (dinámicos) de enfermedades infecciosas
 
 ## Esquema
 
@@ -42,7 +42,7 @@ editor:
 
 -   Comparación de tipos de modelos
 
-## Microsimulación
+# Microsimulación
 
 ## Modelos de microsimulación
 
@@ -72,6 +72,8 @@ editor:
 
 4.  Repitar los pasos 1-3 muchas veces (N)
 
+## Pasos {.menores}
+
 5.  Calcular el promedio de ciclos a partir de una muestra de N
 
     -   Puede ponderar los estados por utilidad, costo, factor de descuento (igual que con
@@ -92,8 +94,8 @@ editor:
 Contexto: Evaluación económica de la prevención de la tuberculosis entre las personas que
 viven con el VIH en Tanzania
 
-[Zhu et al., The Lancet Global Health,
-2022](images/paste-693A3914.png)\](https://www.sciencedirect.com/science/article/pii/S2214109X22003722)
+[![Zhu et al., The Lancet Global Health,
+2022](images/paste-693A3914.png)](https://www.sciencedirect.com/science/article/pii/S2214109X22003722)
 
 ## Ejemplo
 
@@ -114,7 +116,7 @@ viven con el VIH en Tanzania
 
 Zhu et al, The Lancet Global Health, 2022\](images/paste-893141CB.png)
 
-## Ejemplo
+## Ejemplo {.smaller}
 
 ::: {.callout-note .fragment appearance="simple"}
 ¿Por qué elegir un modelo de microsimulación?
@@ -187,7 +189,7 @@ Simulación de eventos discretos
 
 ![Graves et al, 2017](images/paste-D21543AB.png)
 
-## Modelos (dinámicos) de enfermedades infecciosas
+# Modelos (dinámicos) de enfermedades infecciosas
 
 ## ¿Por qué modelos dinámicos?
 
@@ -207,12 +209,12 @@ Simulación de eventos discretos
 El modelo más clásico en epidemiología de enfermedades infecciosas. Apropiado para muchas
 enfermedades infecciosas comunes (por ejemplo, la gripe).
 
-![](images/SIR.svg)
+![](images/clipboard-1493296139.png){fig-align="center"}
 
-## El modelo SIR
-
+::: {style="font-size: 0.3em"}
 Fuente: Vynnycky, Emilia; White, Richard. An Introduction to Infectious Disease
 Modelización\](images/paste-36EB7CF0.png)
+:::
 
 ## Variantes del modelo SIR {.smaller}
 
@@ -249,23 +251,23 @@ Se pueden resolver a mano o utilizando softwares (por ejemplo, el paquete deSolv
 ## Comparación de tipos de modelos
 
 ::: {style="font-size: 0.58em; line-height: 1"}
-+-------------------+--------------------------------+--------------------------------+
-| Tipo de modelo    | Puntos fuertes                 | Limitaciones                   |
-+===================+================================+================================+
-| Árbol de decisión | Transparente                   | Dificultad para captar la      |
-|                   |                                | progresión en el tiempo o los  |
-|                   | Cálculos sencillos             | sucesos repetidos.             |
-+-------------------+--------------------------------+--------------------------------+
-| Cohorte de Markov | Captura de sucesos repetidos a | Dificultad para captar la      |
-|                   | lo largo del tiempo            | heterogeneidad individual o    |
-|                   |                                | seguir el historial de         |
-|                   | Rápida velocidad de ejecución  | eventos.                       |
-|                   |                                |                                |
-|                   |                                | Difícil de manejar un proceso  |
-|                   |                                | de enfermedad complicado       |
-|                   |                                | (sujeto a explosión de         |
-|                   |                                | estados)                       |
-+-------------------+--------------------------------+--------------------------------+
++---------------------+--------------------------------+--------------------------------+
+| Tipo de modelo      | Puntos fuertes                 | Limitaciones                   |
++=====================+================================+================================+
+| Árbol de decisión   | Transparente                   | Dificultad para captar la      |
+|                     |                                | progresión en el tiempo o los  |
+|                     | Cálculos sencillos             | sucesos repetidos.             |
++---------------------+--------------------------------+--------------------------------+
+| Cohorte de Markov   | Captura de sucesos repetidos a | Dificultad para captar la      |
+|                     | lo largo del tiempo            | heterogeneidad individual o    |
+|                     |                                | seguir el historial de         |
+|                     | Rápida velocidad de ejecución  | eventos.                       |
+|                     |                                |                                |
+|                     |                                | Difícil de manejar un proceso  |
+|                     |                                | de enfermedad complicado       |
+|                     |                                | (sujeto a explosión de         |
+|                     |                                | estados)                       |
++---------------------+--------------------------------+--------------------------------+
 :::
 
 ## Comparación de tipos de modelos
@@ -288,15 +290,15 @@ Se pueden resolver a mano o utilizando softwares (por ejemplo, el paquete deSolv
 |                     |                               | (sujeto a explosión de        |
 |                     |                               | estados)                      |
 +---------------------+-------------------------------+-------------------------------+
-| -   \*              | **Fácil seguimiento del       | **Requiere un gran número de  |
+| **Microsimulación** | **Fácil seguimiento del       | **Requiere un gran número de  |
 |                     | historial**                   | ejecuciones para converger**  |
-| Microsimulación\*\* |                               |                               |
+|                     |                               |                               |
 |                     | **Muy potente y flexible**    | **Velocidad de ejecución más  |
 |                     |                               | lenta**                       |
 +---------------------+-------------------------------+-------------------------------+
 :::
 
-## Comparación de tipos de modelos
+## Comparación de tipos de modelos {.smaller}
 
 ::: {style="font-size: 0.58em; line-height: 1"}
 +----------------------------+----------------------------+----------------------------+
@@ -335,7 +337,7 @@ Se pueden resolver a mano o utilizando softwares (por ejemplo, el paquete deSolv
 +----------------------------+----------------------------+----------------------------+
 :::
 
-## Comparación de tipos de modelos
+## Comparación de tipos de modelos {.smaller}
 
 ::: {style="font-size: 0.50em; line-height: 1"}
 +----------------------------+----------------------------+----------------------------+
